@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projection System — Sell vs. Renew NPV Model | Project Jack-in-the-Box</title>
+<meta name="description" content="Interactive, assumption-labeled projection model: NOI capitalization, WALT-adjusted value decay, sell-now vs hold-renew vs hold-vacate NPV, and cap-rate sensitivity matrix.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="page-head">
+  <div class="container">
+    <div class="crumb">Projection System</div>
+    <h1>The Projection System — scenario economics, not guesses</h1>
+    <p>Deterministic, transparent model: value = NOI ÷ cap rate, WALT-decay pricing, NPV of sell vs hold branches. Inputs marked with ⚑ are placeholders — the lease abstract was not provided; <strong>replace them with actuals</strong>. Market-derived defaults carry sources below the model.</p>
+  </div>
+</section>
+
+<main class="container" id="projector">
+
+  <div class="callout warn"><strong>⚑ Read first</strong><br>No property-specific economics (rent, escalations, NOI, exact expiry) were provided to this analysis. Every input below is an <em>illustrative example</em>, not this asset’s data — do not treat outputs as an appraisal. Market anchors used: retail net-lease cap rate 6.55% (Q4 2025, The Boulder Group — industry source); California CPI +3.1% (2025, CA DIR/EDD); LAEDC 2026 LA County GDP +1.3%. Replace placeholders with the lease abstract before deciding.</div>
+
+  <div class="grid cols-2" style="margin-top:16px">
+    <div class="card">
+      <h2 style="margin-top:0">Inputs (editable)</h2>
+      <label class="small" for="rent">Annual base rent / NOI proxy (NNN) ⚑ ILLUSTRATIVE</label>
+      <input id="rent" type="number" value="125000" min="0" step="1000" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="escalation">Annual escalation % (lease-fixed) ⚑ ILLUSTRATIVE</label>
+      <input id="escalation" type="number" value="2.0" min="0" step="0.1" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="expiryYear">Lease expiry year (within 2030–2035 window) ⚑</label>
+      <select id="expiryYear" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+        <option>2030</option><option>2031</option><option selected>2032</option><option>2033</option><option>2034</option><option>2035</option>
+      </select>
+      <label class="small" for="capRate">Base exit cap rate % (retail single-tenant net lease, Q4 2025 = 6.55% — industry source)</label>
+      <input id="capRate" type="number" value="6.55" min="3" step="0.05" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="discountRate">Discount rate % (Owner’s required return; 8.0% example)</label>
+      <input id="discountRate" type="number" value="8.0" min="0" step="0.1" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="rentReset">Renewal rent reset vs current, % (+ = increase) ⚑ example 5%</label>
+      <input id="rentReset" type="number" value="5" step="1" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="renewProb">Renewal probability % (subjective — tenant 6.3x leverage; example 60%)</label>
+      <input id="renewProb" type="number" value="60" min="0" max="100" step="5" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="vacMonths">Downtime if vacated (months) — re-leasing a dark QSR box</label>
+      <input id="vacMonths" type="number" value="12" min="0" step="1" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="reTenantCost">Re-tenant cost ($, TI/LC/fees) if vacated</label>
+      <input id="reTenantCost" type="number" value="75000" min="0" step="5000" style="width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px">
+      <label class="small" for="sellCost">Selling costs % (broker, transfer tax, escrow — example 2.0%)</label>
+      <input id="sellCost" type="number" value="2.0" min="0" step="0.1" style="width:100%;padding:8px;margin:4px 0 0;border:1px solid var(--line);border-radius:8px">
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Outputs</h2>
+      <div class="grid cols-2" style="gap:12px">
+        <div class="card kpi" style="box-shadow:none;border:1px solid var(--line)"><div class="kpi-label">Value now @ cap</div><div class="kpi-value" id="outValueNow">—</div><div class="kpi-sub">NOI ÷ cap rate</div></div>
+        <div class="card kpi" style="box-shadow:none;border:1px solid var(--line)"><div class="kpi-label">NOI at expiry</div><div class="kpi-value" id="outNoiAtExpiry">—</div><div class="kpi-sub">NOI₀ × (1+esc)^years</div></div>
+        <div class="card kpi" style="box-shadow:none;border:1px solid var(--line)"><div class="kpi-label">Value at expiry (clean cap)</div><div class="kpi-value" id="outValueAtExpiry">—</div><div class="kpi-sub">NOI_expiry ÷ base cap</div></div>
+        <div class="card kpi" style="box-shadow:none;border:1px solid var(--line)"><div class="kpi-label">Value at expiry (WALT-priced)</div><div class="kpi-value" id="outPathValueAtExpiry">—</div><div class="kpi-sub">base cap + expiry penalty (+150 bps)</div></div>
+      </div>
+      <hr class="soft">
+      <div class="table-wrap" style="box-shadow:none"><table class="data" style="min-width:0">
+        <thead><tr><th>Scenario (NPV today, $M)</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>A — Sell now (net of selling costs)</td><td id="outSellNow">—</td></tr>
+          <tr><td>B — Hold to expiry → renew (renewal branch only)</td><td id="outHoldRenew">—</td></tr>
+          <tr><td>C — Hold to expiry → vacate &amp; re-lease (vacate branch only)</td><td id="outHoldVacate">—</td></tr>
+          <tr class="total"><td>Hold — probability-weighted (B×p + C×(1−p))</td><td id="outHoldWeighted">—</td></tr>
+          <tr><td>Break-even renewal probability (hold = sell)</td><td id="outBreakEven">—</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin:10px 0 0">Model’s scenario leader (A vs weighted hold): <strong id="outBest">—</strong></p>
+      <div class="callout warn" style="margin-top:10px"><strong>Read the break-even honestly</strong><br>At the illustrative defaults, the hold path beats selling whenever renewal probability exceeds ≈23%. The case for <em>selling</em> therefore does <strong>not</strong> rest on this deterministic NPV — it rests on (i) renewal with acceptable terms (≥10 yrs, ≥2% bumps, real guarantee) being <em>unlikely to materialize in writing by ~2028</em> from a 6.3x-leverage tenant mid-closure-program; (ii) <strong>unpriced tail risks</strong> (casualty — Puente Hills; insurance failure; closure selection; WALT-cliff bifurcation) that are borne every extra year of hold and transfer at full price on sale; and (iii) the option structure: <strong>market-testing the sale costs nothing and buys information</strong> — the tenant must then either sign the extension or lose the asset. Anyone claiming a single-number answer without your lease data is guessing.</div>
+      <p class="small">B = PV(rents 2026→expiry) + value_renew ÷ (1+d)^years; C same with re-lease net proceeds; Weighted = PV + [p·value_renew + (1−p)·(value_release − vacancy loss − re-tenant cost)] ÷ (1+d)^years. Renewal branch assumes 10-year hold at base cap with reset rent. Sell-now is not discounted.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Value path 2026 → expiry (WALT-adjusted)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Year</th><th>NOI (escalated)</th><th>Term remaining</th><th>Effective cap</th><th>Implied value</th></tr></thead>
+      <tbody id="pathRows"></tbody>
+    </table></div>
+    <p class="small">Illustrative WALT penalty schedule (bps added to base cap): &gt;7y: 0 · 5–7y: +25 · 3–5y: +50 · 2–3y: +75 · 1–2y: +100 · &lt;1y: +150. This is a modeling convention, not a market quote — cap-rate bifurcation for weak credits can be far wider (Walgreens &gt;7% vs Chick-fil-A 4.45%; Boulder Group Q2-2025).</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Sensitivity matrix — value by NOI × cap rate ($)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead id="matrixHead"></thead>
+      <tbody id="matrixRows"></tbody>
+    </table></div>
+    <p class="small">Blue-cell heuristic: selling while cap ≤ base and NOI ≥ current locks the top-left region; every year of WALT decay migrates value down-right.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Model architecture &amp; honesty rules</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Inputs — verified (with source)</h3>
+        <ul class="small" style="margin:.2em 0 0 1.1em;padding:0">
+          <li>Retail single-tenant net-lease cap rate, Q4 2025: <strong>6.55%</strong>; overall 6.81%; office 8.00%; industrial 7.20% — <a href="https://www.connectcre.com/stories/net-lease-cap-rates-continue-to-stabilize/" target="_blank" rel="noopener">The Boulder Group via Connect CRE (Jan 2026)</a> <span class="badge industry">industry</span></li>
+          <li>Cap-rate plateau after 12 straight increases (Q1 2025: retail 6.56%) — <a href="https://www.openpr.com/news/3964027/the-boulder-group-announced-the-release-of-its-1st-quarter-triple-net-lease-research-report" target="_blank" rel="noopener">The Boulder Group Q1-2025</a> <span class="badge industry">industry</span></li>
+          <li>Fed Dec 2025 cut: target range 3.50–3.75% — <a href="https://chainstoreage.com/net-lease-cap-rates-remained-stable-path-q4" target="_blank" rel="noopener">Chain Store Age (Jan 2026)</a> <span class="badge industry">industry</span></li>
+          <li>CA CPI 2025: +3.1% (342.0→352.5) — <a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD (US BLS &amp; Calif. DIR)</a></li>
+          <li>LA County unemployment 5.7% (2025 annual, BLS/FRED); 5.0% Dec 2025 NSA (EDD); LAEDC 2026 GDP proj. +1.3% — <a href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener">FRED/BLS</a> · <a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC</a></li>
+        </ul>
+      </div>
+      <div class="card"><h3>Inputs — illustrative ⚑ (replace)</h3>
+        <ul class="small" style="margin:.2em 0 0 1.1em;padding:0">
+          <li>Base rent/NOI, escalation, expiry year — <strong>not provided</strong>; examples only</li>
+          <li>Cap rate is an industry estimate, not an official statistic — no government source for cap rates exists</li>
+          <li>WALT penalty schedule — modeling convention, not market data</li>
+          <li>Renewal probability 60% — subjective; driven by tenant distress (6.3x leverage). A bear case (40%) or bull case (80%) moves the weighted NPV by ±~$0.1–0.3M at these scales</li>
+          <li>Re-tenant cost, downtime, discount rate, selling costs — Owner-specific, not verified ⚑</li>
+          <li>Renewal branch assumes 10-year hold at base cap with reset rent — simplification, not a commitment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><strong>Honesty rules applied</strong><br>(1) Every default is either sourced or flagged ⚑ illustrative. (2) No property-specific number was invented. (3) Outputs are scenario arithmetic, reproducible by hand: Value = NOI/Cap; NPV = Σ rent_t/(1+d)^t + terminal/(1+d)^n. (4) The model never recommends leverage; it informs the sell/renew asymmetry. (5) Re-run quarterly with the lease abstract and a live cap-rate quote from a licensed CA broker.</div>
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+<script src="assets/projection.js"></script>
+</body>
+</html>

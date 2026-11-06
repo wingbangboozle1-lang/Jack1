@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property &amp; Lease Profile | Project Jack-in-the-Box</title>
+<meta name="description" content="Anonymized NNN lease profile of the Central Los Angeles Jack in the Box asset: lease abstract status, NNN mechanics, Prop 13, insurance, 1031 exit path.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="page-head">
+  <div class="container">
+    <div class="crumb">Asset Profile</div>
+    <h1>Property &amp; Lease Profile (anonymized)</h1>
+    <p>Everything known about the asset from the Owner’s brief is listed here. Lease-specific economics (rent, escalations, NOI, exact expiry inside the 2030–2035 window, tenant entity) were not provided and are shown blank/⚑ — they are <em>never</em> filled in by inference.</p>
+  </div>
+</section>
+
+<main class="container">
+
+  <div class="section">
+    <h2 class="section-title">1 · Lease abstract — verified status</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Field</th><th>Value</th><th>Status</th><th class="src">Source / how to verify</th></tr></thead>
+      <tbody>
+        <tr><td>Property type</td><td>Single-tenant QSR; land + building</td><td><span class="badge ok">Verified (Owner brief)</span></td><td class="src">Owner brief (anonymized)</td></tr>
+        <tr><td>Brand / trade name</td><td>Jack in the Box®</td><td><span class="badge ok">Verified</span></td><td class="src">Owner brief; <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K" target="_blank" rel="noopener">SEC EDGAR</a></td></tr>
+        <tr><td>Lease structure</td><td>Triple-net (NNN): tenant pays property taxes, insurance, maintenance (typical of single-tenant net lease QSR)</td><td><span class="badge ok">Verified (Owner brief)</span></td><td class="src">Owner brief</td></tr>
+        <tr><td>Lease expiry</td><td>Window 2030–2035</td><td><span class="badge warn">Partial — exact date ⚑</span></td><td class="src">Owner brief ⚑ <a href="flagged.html#lease">flagged</a></td></tr>
+        <tr><td>Base rent (annual)</td><td class="val">— not provided ⚑</td><td><span class="badge bad">Unverified</span></td><td class="src">⚑ <a href="flagged.html#lease">Needs lease abstract</a></td></tr>
+        <tr><td>Escalations</td><td class="val">— not provided ⚑</td><td><span class="badge bad">Unverified</span></td><td class="src">⚑ <a href="flagged.html#lease">Needs lease abstract</a></td></tr>
+        <tr><td>Renewal options</td><td class="val">— not provided ⚑</td><td><span class="badge bad">Unverified</span></td><td class="src">⚑ <a href="flagged.html#lease">Needs lease abstract</a></td></tr>
+        <tr><td>Tenant entity</td><td>Jack in the Box restaurant — company-operated or franchisee; JIB is 93% franchised (1,986 of 2,136 units, FY25)</td><td><span class="badge warn">Partial ⚑</span></td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K" target="_blank" rel="noopener">SEC EDGAR 10-K</a> ⚑ <a href="flagged.html#lease">entity TBD</a></td></tr>
+        <tr><td>Guarantee</td><td class="val">— not provided ⚑ (corporate vs. franchisee guarantee is the #1 credit question)</td><td><span class="badge bad">Unverified</span></td><td class="src">⚑ <a href="flagged.html#lease">Needs lease §guarantees</a></td></tr>
+        <tr><td>Store-level sales / AUV</td><td class="val">— not provided ⚑ (system AUV $1.874M FY25 franchised units — reference only, not this store)</td><td><span class="badge bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K" target="_blank" rel="noopener">SEC EDGAR 10-K (AUV)</a> ⚑ store-level TBD</td></tr>
+        <tr><td>NOI (net operating income)</td><td class="val">— not provided ⚑</td><td><span class="badge bad">Unverified</span></td><td class="src">⚑ Derive from abstract: base rent + escalations − any Owner obligations (≈ $0 under pure NNN)</td></tr>
+        <tr><td>Property tax basis</td><td>Prop 13 acquisition-value basis; 1% + bonds; ≤2%/yr growth cap; resets on ownership change (affects buyer, not seller)</td><td><span class="badge ok">Verified — law</span></td><td class="src"><a href="https://assessor.lacounty.gov/homeowners/realproperty" target="_blank" rel="noopener">LA County Assessor</a></td></tr>
+        <tr><td>Address / parcel</td><td>Withheld — privacy (never published, internal only)</td><td><span class="badge ok">By design</span></td><td class="src">Owner directive</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">2 · What “NNN” means for the Owner’s risk stack</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>Taxes → tenant</h3><p class="small">Prop 13 base-year value with ≤2%/yr cap; on sale, reassessment hits the <em>buyer</em>, not the Owner. Annual increases arepassed through to tenant under NNN — tax escalation risk is contractually transferred. Verify current tax bill &amp; any direct assessments.</p><p class="small"><a href="https://assessor.lacounty.gov/homeowners/realproperty" target="_blank" rel="noopener">LA County Assessor — Prop 13</a></p></div>
+      <div class="card"><h3>Insurance → tenant</h3><p class="small">Tenant carries liability + property coverage (typical NNN). Owner should still carry (i) loss-of-rents, (ii) earthquake (CA policies exclude it by default), (iii) landlord liability. Post-2025 wildfire/quake market: verify coverage limits annually; CA FAIR Plan ≈ $6B exposure in Palisades zone (Jan 2025) signals tightening availability.</p><p class="small"><a href="https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26" target="_blank" rel="noopener">FEMA — Jan 2025 wildfires</a></p></div>
+      <div class="card"><h3>Maintenance → tenant</h3><p class="small">Roof, structure, parking lot, grease interceptors — typically tenant. Residual risks: (i) deferred maintenance at expiry/closure (dark NNN assets get cannibalized), (ii) compliance capex (ADA, seismic URM/soft-story retrofits) may default to landlord on re-lease, (iii) roof/parking life.</p><p class="small">Verify with lease §maintenance + building report before any sale.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">3 · Exit paths (mechanics, with official sources)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Path</th><th>Mechanics</th><th>Key constraint</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Outright taxable sale</td><td>Sell now; pay federal + CA capital gains (CA taxes gains as ordinary income)</td><td>State+federal drag on proceeds; CA top rate 13.3%</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener">IRS — sale vs exchange</a> · CA FTB rate schedules (ftb.ca.gov)</td></tr>
+        <tr><td>IRC §1031 like-kind exchange</td><td>Defer gain by reinvesting into like-kind US real property; real property only (since 2018); use qualified intermediary; 45-day identification / 180-day closing</td><td>Strict timelines; holding purpose must be investment/business; boot is taxable</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener">IRS — Like-kind exchanges</a> · <a href="https://www.irs.gov/instructions/i8824" target="_blank" rel="noopener">Form 8824 Instructions</a></td></tr>
+        <tr><td>Hold &amp; renew</td><td>Negotiate extension (ideally ≥10 yrs, ≥2% escalation, guarantee); no reassessment; cash flow continues</td><td>WALT decay cap-rates reprice asset lower; renewal is optional for tenant, mandatory for no one</td><td class="src"><a href="decision.html">Sell vs. Renew analysis</a></td></tr>
+        <tr><td>Sale-leaseback by tenant</td><td>Tenant (or affiliate) buys asset — corporate already selling owned real estate ($35–45M FY26 target)</td><td>Tenant’s willingness depends on store economics; usually buyer is 3rd party instead</td><td class="src"><a href="https://www.franchisetimes.com/franchise_news/another-ceo-for-jack-in-the-box-as-its-revitalization-efforts-continue/article_3d28e5a9-b9c8-4871-b3c6-c546057dc78a.html" target="_blank" rel="noopener">Franchise Times (JACK real-estate sales)</a></td></tr>
+        <tr><td>Refinance instead of sell</td><td>Pull equity via loan; keep asset; NNN income services debt</td><td>Adds leverage to inflation/rate risk; not tax-deferred equity extraction</td><td class="src">Standard practice — consult CPA</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">4 · Site-specific unknowns that gate every number</h2>
+    <div class="callout warn"><strong>⚑ Flagged — needed from the Owner’s files (not provided, not guessed)</strong>
+      <ol style="margin:.4em 0 0 1.1em">
+        <li>Exact expiry date within 2030–2035; renewal options and strike terms</li>
+        <li>Current base rent, escalation method (fixed % vs CPI), and last increase/reset date</li>
+        <li>Tenant entity name; franchise agreement vs corporate lease; personal/corporate guarantee; SNDA/estoppel availability</li>
+        <li>Store-level P&amp;Ls or sales mix; AUV vs system $1.874M; occupancy-cost ratio proxy</li>
+        <li>Tax bill/assessed value history; insurance certificates; roof/parking/grease reports; Phase I ESA</li>
+        <li>Any lender, JV, or co-ownership encumbrances; 1031 intent; financing on asset</li>
+      </ol>
+    </div>
+    <p class="small">Each unknown is itemized on <a href="flagged.html#lease">Flagged for Review → Lease data</a> with the exact document needed to close it.</p>
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
