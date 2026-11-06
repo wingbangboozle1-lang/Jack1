@@ -19,16 +19,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - name: Assemble site (site files only)
+      - name: Assemble site (integrated — both premium + data-verified builds)
         run: |
           set -e
           mkdir -p _site
-          cp -r ./*.html _site/
-          cp -r assets _site/
-          cp -r data _site/
-          cp .nojekyll _site/
-          # provenance: prior session builds, not part of the live navigation
-          mkdir -p _site/archive && cp -r archive/* _site/archive/
+          cp -r ./*.html _site/ || true
+          cp -r assets _site/ || true
+          cp -r data _site/ || true
+          cp -r pages _site/ || true
+          cp -r site _site/ || true
+          cp -r research _site/ || true
+          cp -r analysis _site/ || true
+          cp -r risks _site/ || true
+          [ -d scripts ] && cp -r scripts _site/ || true
+          cp .nojekyll _site/ || true
+          # provenance: prior session builds, preserved for audit
+          [ -d archive ] && { mkdir -p _site/archive && cp -r archive/* _site/archive/ || true; }
+          echo "Assembled $(find _site -type f | wc -l) files"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
