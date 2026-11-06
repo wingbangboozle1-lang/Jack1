@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "task": "T14",
+    "title": "Projection System — specification, inputs and official anchors",
+    "retrieved": "2026-11-06",
+    "reproducibility": "This file is the complete specification. Every number the Projection page displays is recomputed from these inputs by tools/model.py at build time. Nothing is hand-entered into the rendered tables. Running `python3 tools/model.py` regenerates data/projection_output.json, and `python3 tools/build_site.py` re-renders the page from it.",
+    "unit_convention": "The subject property's value, rent and NOI were never supplied and cannot be verified from any official source. The model therefore runs entirely on a NORMALISED INDEX in which the asset's value on the retrieval date (2026-11-06) equals 100.0. All outputs are index points, not dollars. No dollar figure for the subject property appears anywhere on this site.",
+    "no_official_cap_rate": "No federal, state or local government agency publishes capitalisation rates for single-tenant net-lease quick-service-restaurant real estate. Cap rate therefore enters this model ONLY as an explicitly labelled, UNVERIFIED scenario input, expressed as a spread over the official U.S. Treasury par yield. Every output that depends on it is labelled UNVERIFIED INPUT.",
+    "fairness_rules": [
+      "Both paths bear the same statutory transaction cost: the sell path up front, the hold path on its terminal sale. Without this symmetry holding would win by construction.",
+      "The hold path additionally bears a post-expiry vacancy/downtime scenario, because on expiry of an NNN lease the landlord resumes property tax, insurance and maintenance and may not re-let immediately. The cash cost of carrying the asset during downtime is NOT modelled, so the hold figures remain optimistic and this is stated on the page.",
+      "The sell path's certain net proceeds are not discounted further. Net proceeds either earn the official Treasury risk-free rate or are reinvested in an identical asset at the same capitalisation rate, and both treatments give a present value equal to the net proceeds.",
+      "Tenant non-renewal is run in two regimes: the official system-wide base rate (EQ-4), and a 'signal received' regime at 100% (EQ-13). The second is what the recommended decision path exists to detect early, and it is where the ranking between hold and sell flips.",
+      "A stress case (EQ-14) is built only from already-declared worst-case inputs, and identifies the conditions under which the recommendation is wrong. Those conditions are published, not buried."
+    ]
+  },
+  "official_inputs": [
+    {
+      "id": "IN-1",
+      "name": "risk_free_10y",
+      "value": 4.84,
+      "units": "percent per annum",
+      "period": "November 5, 2026",
+      "s": "U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates, 10-year constant maturity",
+      "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "k": true,
+      "role": "Base of the discount rate and of every cap-rate scenario. Read directly from the Treasury table."
+    },
+    {
+      "id": "IN-2",
+      "name": "risk_free_30y",
+      "value": 5.25,
+      "units": "percent per annum",
+      "period": "November 5, 2026",
+      "s": "U.S. Department of the Treasury",
+      "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "k": true,
+      "role": "The competing risk-free instrument for a long hold. Any hold decision must beat this after risk."
+    },
+    {
+      "id": "IN-3",
+      "name": "cpi_la_low",
+      "value": 2.9,
+      "units": "percent, 12-month change",
+      "period": "February 2026",
+      "s": "U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area",
+      "u": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "k": true,
+      "role": "Lowest official 12-month Los Angeles CPI-U reading published in 2026. Used as the low rent-escalation scenario."
+    },
+    {
+      "id": "IN-4",
+      "name": "cpi_la_median",
+      "value": 3.4,
+      "units": "percent, 12-month change",
+      "period": "March 2026",
+      "s": "U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area",
+      "u": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "k": true,
+      "role": "Median of the five official 12-month Los Angeles CPI-U readings published in 2026 (January +3.0, February +2.9, March +3.4, April +3.7, May +3.6). Used as the central rent-escalation scenario."
+    },
+    {
+      "id": "IN-5",
+      "name": "cpi_la_high",
+      "value": 3.7,
+      "units": "percent, 12-month change",
+      "period": "April 2026",
+      "s": "U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area",
+      "u": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "k": true,
+      "role": "Highest official 12-month Los Angeles CPI-U reading published in 2026. Used as the high rent-escalation scenario."
+    },
+    {
+      "id": "IN-6",
+      "name": "hpi_la_msad_yoy",
+      "value": 1.2,
+      "units": "percent, 12-month change",
+      "period": "2025 Q2 to 2026 Q2",
+      "s": "FHFA All-Transactions House Price Index, Los Angeles-Long Beach-Glendale Metropolitan Division (series ATNHPIUS31084Q)",
+      "u": "https://fred.stlouisfed.org/series/ATNHPIUS31084Q",
+      "k": true,
+      "role": "Official local real-asset price appreciation. Used as the central land-value growth assumption."
+    },
+    {
+      "id": "IN-7",
+      "name": "hpi_pacific_yoy_q1_2026",
+      "value": 0.0,
+      "units": "percent, 12-month change",
+      "period": "2026 Q1",
+      "s": "FHFA purchase-only House Price Index, Pacific census division",
+      "u": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q1",
+      "k": true,
+      "role": "Weakest of the nine census divisions. Used as the downside land-value growth assumption."
+    },
+    {
+      "id": "IN-8",
+      "name": "av_growth_prop13_cap",
+      "value": 2.0,
+      "units": "percent per annum, maximum",
+      "period": "2026 Assessment Roll",
+      "s": "California State Board of Equalization (Proposition 13) and the Los Angeles County Assessor, which applied the maximum allowable 2% factor in 2026",
+      "u": "https://assessor.lacounty.gov/news-information/assessmentroll",
+      "k": true,
+      "role": "Maximum annual growth in the tenant's reimbursable property tax while ownership does not change."
+    },
+    {
+      "id": "IN-9",
+      "name": "closure_rate_ongoing",
+      "value": 1.0,
+      "units": "percent of system units per year",
+      "period": "Plan announced April 23, 2025",
+      "s": "Jack in the Box Inc. plan as disclosed in SEC-filed materials",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm",
+      "k": true,
+      "role": "Company-stated ongoing annual closure rate of 1% of system units, with fiscal 2025 at 1.5% to 2.0%. Drives the tenant non-renewal probability."
+    },
+    {
+      "id": "IN-10",
+      "name": "closure_programme_share_low",
+      "value": 6.84,
+      "units": "percent of the system",
+      "period": "Programme announced April 23, 2025",
+      "s": "Derived from Jack in the Box Inc. SEC filings: 150 closures divided by the 2,191 restaurants at the start of fiscal 2025",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "role": "Lower bound of the JACK on Track block closure programme as a share of the system."
+    },
+    {
+      "id": "IN-11",
+      "name": "closure_programme_share_high",
+      "value": 9.13,
+      "units": "percent of the system",
+      "period": "Programme announced April 23, 2025",
+      "s": "Derived from Jack in the Box Inc. SEC filings: 200 closures divided by the 2,191 restaurants at the start of fiscal 2025",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "role": "Upper bound of the programme as a share of the system. Adverse tenant scenario."
+    },
+    {
+      "id": "IN-12",
+      "name": "eq_m67_30yr",
+      "value": 60.0,
+      "units": "percent probability over 30 years",
+      "period": "UCERF3",
+      "s": "U.S. Geological Survey",
+      "u": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "k": true,
+      "role": "Converted to a five-year decision-window probability by 1 - (1 - 0.60)^(5/30) = 14.2% using the standard independent-annual-hazard restatement, and reported alongside the simpler linear restatement 60% x 5/30 = 10.0%. BOTH are arithmetic restatements of the official figure, not new forecasts."
+    },
+    {
+      "id": "IN-13",
+      "name": "fire_output_loss_low",
+      "value": 5.2,
+      "units": "billion dollars of county economic output",
+      "period": "January 2025 Eaton and Palisades fires",
+      "s": "County of Los Angeles official anniversary fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "role": "Catastrophe severity anchor, lower bound."
+    },
+    {
+      "id": "IN-14",
+      "name": "fire_output_loss_high",
+      "value": 10.1,
+      "units": "billion dollars of county economic output",
+      "period": "January 2025 Eaton and Palisades fires",
+      "s": "County of Los Angeles official anniversary fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "role": "Catastrophe severity anchor, upper bound."
+    },
+    {
+      "id": "IN-15",
+      "name": "la_county_gdp_2024",
+      "value": 818.5,
+      "units": "billion dollars, current dollars",
+      "period": "2024",
+      "s": "U.S. Bureau of Economic Analysis — Gross Domestic Product by County, 2024",
+      "u": "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024",
+      "k": true,
+      "role": "Denominator that converts the fire output loss into a share of one year of county economic activity."
+    },
+    {
+      "id": "IN-16",
+      "name": "ula_rate_lower_tier",
+      "value": 4.0,
+      "units": "percent of the entire consideration or value",
+      "period": "LAMC Section 21.9.2, effective April 1, 2023",
+      "s": "City of Los Angeles Housing Department — official ULA FAQ",
+      "u": "https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf",
+      "k": true,
+      "role": "Transaction-cost scenario for a City of Los Angeles sale at or above the lower threshold."
+    },
+    {
+      "id": "IN-17",
+      "name": "ula_rate_upper_tier",
+      "value": 5.5,
+      "units": "percent of the entire consideration or value",
+      "period": "LAMC Section 21.9.2",
+      "s": "City of Los Angeles Housing Department — official ULA FAQ",
+      "u": "https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf",
+      "k": true,
+      "role": "Transaction-cost scenario for a City of Los Angeles sale at or above the upper threshold."
+    },
+    {
+      "id": "IN-18",
+      "name": "company_book_land_share",
+      "value": 8.79,
+      "units": "percent of gross book cost of land plus buildings",
+      "period": "September 28, 2025",
+      "s": "Derived from Jack in the Box Inc. Form 10-K: land $93,255 thousand divided by land $93,255 thousand plus buildings $967,676 thousand",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "role": "The ONLY official ratio available that separates land from improvements for this asset type. Used as a reference point for the dark-box land residual. IMPORTANT CAVEAT: this is historical book cost for a national portfolio, not market value for Los Angeles land, and it is not used as a market estimate anywhere in the model."
+    }
+  ],
+  "unverified_inputs": [
+    {
+      "id": "UX-1",
+      "name": "cap_spread_grid",
+      "values": [
+        100,
+        150,
+        200,
+        250,
+        300
+      ],
+      "units": "basis points over the official 10-year Treasury par yield",
+      "s": "No official government publisher exists",
+      "u": "",
+      "k": false,
+      "role": "Defines the exit and holding capitalisation rates: 5.84%, 6.34%, 6.84%, 7.34%, 7.84% on a 4.84% base. FLAG F-16. Every output that depends on this grid is labelled UNVERIFIED INPUT on the rendered page."
+    },
+    {
+      "id": "UX-2",
+      "name": "dark_land_residual_grid",
+      "values": [
+        30,
+        50,
+        70
+      ],
+      "units": "percent of total asset value",
+      "s": "No official government publisher exists",
+      "u": "",
+      "k": false,
+      "role": "Value retained by the site if the restaurant closes and only land and shell value remain. The official reference point at IN-18 is 8.79% of book cost, which is NOT a market estimate and is deliberately not used as the default. FLAG F-33."
+    },
+    {
+      "id": "UX-3",
+      "name": "years_to_expiry_grid",
+      "values": [
+        4,
+        6,
+        9
+      ],
+      "units": "years from 2026-11-06",
+      "s": "Not determinable — the expiry is a window, not a date",
+      "u": "",
+      "k": false,
+      "role": "2030, 2032 and 2035 respectively, spanning the disclosed 2030-2035 window. FLAG F-03."
+    },
+    {
+      "id": "UX-4",
+      "name": "rent_escalator_flat",
+      "values": [
+        0.0
+      ],
+      "units": "percent per annum",
+      "s": "Not determinable — the lease was not supplied",
+      "u": "",
+      "k": false,
+      "role": "Structural possibility of a lease with no escalation. Not an official value. FLAG F-02."
+    }
+  ],
+  "equations": [
+    {
+      "id": "EQ-1",
+      "name": "Normalisation",
+      "formula": "V0 = 100.0 index points = asset value on the retrieval date (2026-11-06)",
+      "note": "All outputs are relative to V0. No dollar figure for the subject property is produced anywhere."
+    },
+    {
+      "id": "EQ-2",
+      "name": "Capitalisation rate and opening net operating income",
+      "formula": "cap0 = risk_free_10y/100 + cap_spread_bp/10000  ;  NOI0 = V0 x cap0",
+      "note": "Follows from V = NOI / cap. At the central spread of 200 bp on the official 4.84% ten-year par yield, cap0 = 6.84% and NOI0 = 6.840 index points. cap_spread_bp is UNVERIFIED input UX-1; risk_free_10y is official input IN-1. This is the only place a capitalisation rate enters the income side."
+    },
+    {
+      "id": "EQ-3",
+      "name": "Income path while tenanted",
+      "formula": "NOI_t = NOI0 x (1 + g)^t   for t = 1 .. n",
+      "note": "g is the rent-escalation scenario: 0% (UX-4, unverified, lease not supplied), or 2.9% / 3.4% / 3.7% from the official BLS Los Angeles CPI-U twelve-month readings at IN-3, IN-4 and IN-5."
+    },
+    {
+      "id": "EQ-4",
+      "name": "Tenant non-renewal probability at expiry (base regime)",
+      "formula": "p_dark(n) = 1 - (1 - closure_rate_ongoing/100)^n",
+      "note": "Compound survival at the company-disclosed ongoing annual closure rate of 1% of system units (IN-9). n = 4 gives 3.94%; n = 6 gives 5.85%; n = 9 gives 8.65%. The JACK on Track programme-level bounds of 6.84% to 9.13% (IN-10, IN-11) are published alongside as the adverse case. Neither is site-specific: no public disclosure identifies individual restaurants selected for closure (flag F-31)."
+    },
+    {
+      "id": "EQ-5",
+      "name": "Terminal value at expiry, net of the exit transaction cost",
+      "formula": "TV_gross = (1 - p_dark) x [NOI_n x (1 + g) / cap_exit] + p_dark x [V0 x (residual/100) x (1 + hpi/100)^n]  ;  TV_net = TV_gross x (1 - exit_cost)",
+      "note": "Two branches. The renewing branch re-capitalises the next year's income at cap_exit. The dark branch retains only the land and shell residual (UX-2, unverified) grown at the official FHFA rate (IN-6 central, IN-7 downside). exit_cost is the same Measure ULA rate charged to the sell path, applied here to the terminal sale."
+    },
+    {
+      "id": "EQ-6",
+      "name": "Discount rate",
+      "formula": "d = cap0",
+      "note": "The model discounts at the same rate it capitalises, so the present value of a level perpetuity equals its capitalised value exactly. This is deliberate: it isolates the effect of GROWTH and of TENANT OUTCOME from the effect of the rate level, so the comparison between paths is not an artefact of a chosen discount rate. The integrity check on the page verifies this identity at every point of the spread grid."
+    },
+    {
+      "id": "EQ-7",
+      "name": "Present value of the hold-to-expiry path (Option C)",
+      "formula": "PV_hold = SUM_{t=1..n} [NOI_t / (1+d)^t] + TV_net / (1+d)^(n + downtime)",
+      "note": "downtime is the post-expiry vacancy scenario in years (0, 1 or 2), applied only to the terminal event. It is a scenario input, not an official statistic (flag F-33). Reported in index points per 100 of current value."
+    },
+    {
+      "id": "EQ-8",
+      "name": "Present value of the sell-now path (Option A)",
+      "formula": "PV_sell = V0 x (1 - transaction_cost)",
+      "note": "transaction_cost takes the values 0% (parcel outside the City of Los Angeles, or price below the ULA threshold), 4.0% (IN-16) or 5.5% (IN-17). No further discounting is applied: net proceeds either earn the official Treasury risk-free rate or are reinvested in an identical asset at the same capitalisation rate, and both treatments return a present value equal to the net proceeds. County and City documentary transfer tax is additional but unverified (flag F-23) and is excluded rather than estimated, so PV_sell is OPTIMISTIC by roughly half a percent."
+    },
+    {
+      "id": "EQ-9",
+      "name": "Present value of the extend-then-hold path (Option B)",
+      "formula": "PV_extend = EQ-7 evaluated at n + 10 years, with p_dark recomputed at n + 10",
+      "note": "Ten additional years of firm term is a scenario assumption. The extension is assumed to be granted at existing economics, which is not a forecast: the tenant has no obligation to negotiate early and is led by an interim chief executive (T-15, RK-21)."
+    },
+    {
+      "id": "EQ-10",
+      "name": "Decision rule",
+      "formula": "Choose the path with the higher PV, then test whether that ranking survives the whole unverified-input grid",
+      "note": "Because the capitalisation-rate input is unverified, the RANKING of paths is the output that matters, not the absolute index level. Where the ranking holds at every point of the Treasury-anchored spread grid and at every transaction-cost case, the conclusion is robust. Where it flips, the page says so explicitly rather than choosing a favourite spread."
+    },
+    {
+      "id": "EQ-11",
+      "name": "Catastrophe severity overlay",
+      "formula": "fire_severity_share = fire_output_loss / la_county_gdp_2024",
+      "note": "IN-13 and IN-14 over IN-15 give 0.64% to 1.23% of one year of county economic output for a January-2025-class event. Reported as a severity band and deliberately NOT multiplied into any present value, because no official source maps a county output loss onto a specific commercial parcel's value."
+    },
+    {
+      "id": "EQ-12",
+      "name": "Earthquake frequency overlay",
+      "formula": "p_eq_5yr_compound = 1 - (1 - eq_m67_30yr/100)^(5/30)  ;  p_eq_5yr_linear = eq_m67_30yr/100 x 5/30",
+      "note": "IN-12 gives 14.16% compound and 10.00% linear. Both are published because the restatement method changes the answer. The USGS figure is itself a 30-year probability from a physical model; restating it over a shorter window is arithmetic, not a new geophysical forecast."
+    },
+    {
+      "id": "EQ-13",
+      "name": "Signal regime — hold after the tenant has refused",
+      "formula": "PV_signal = EQ-7 with p_dark set to 1.0",
+      "note": "Once the tenant declines an extension, or discloses a franchise agreement expiring at or before the lease expiry, site-specific non-renewal moves from the system-wide base rate toward certainty and the hold path loses its renewing terminal branch. This is the regime the recommended plan is designed to detect years early, and it is where the ranking between hold and sell flips."
+    },
+    {
+      "id": "EQ-14",
+      "name": "Stress case — the conditions under which the recommendation is wrong",
+      "formula": "PV_stress = EQ-7 with g = 0 (UX-4), residual = min(UX-2), hpi = IN-7, downtime = max scenario, exit_cost = 0, compared against PV_sell at transaction_cost = 0",
+      "note": "Built only from inputs already declared in this specification. A parcel outside the City of Los Angeles pays no Measure ULA (R-15), so the sell path is at its best and the hold path at its worst. Under that combination selling now wins even with no adverse tenant signal. Published because a recommendation that cannot state the conditions under which it is wrong is not a recommendation."
+    },
+    {
+      "id": "EQ-15",
+      "name": "Measure ULA dead band",
+      "formula": "net(P) = P for P <= T ; net(P) = P x (1 - rate) for P > T ; therefore net(P) > net(T) requires P > T / (1 - rate)",
+      "note": "At the official 4% rate (IN-16) the break-even is 1.0417 x T, so a price up to 4.17% above the threshold nets LESS than a sale at the threshold. At 5.5% (IN-17) the break-even is 1.0582 x T, or 5.82% above. Pure arithmetic on the official statutory rates; no market assumption is used. The dollar thresholds themselves are unverified (flag F-24, irregularity IR-07) and are not stated anywhere."
+    }
+  ],
+  "limitations": [
+    "No dollar value, rent, NOI or cap rate for the subject property was supplied or is verifiable from an official source. The model is normalised to an index and its outputs must be read as RELATIVE comparisons between decision paths, never as valuations.",
+    "The cap-rate spread grid (UX-1) is unverified. No government agency publishes net-lease cap rates. Outputs that depend on it are labelled accordingly on every rendered table.",
+    "The dark-box land residual grid (UX-2) is unverified. The only official land-versus-building ratio available (IN-18, 8.79%) is a national historical book-cost figure and is not used as a market estimate.",
+    "The expiry date is a window, 2030 to 2035, not a date (UX-3). Results are shown for 4, 6 and 9 years.",
+    "The lease itself was not supplied: escalator, options, expense stops, exclusive use and continuous operation are all unknown (F-02). The model tests escalation scenarios rather than asserting a lease structure.",
+    "SCAG's adopted 2024 forecast and its 2025 draft cycle disagree on the direction of Los Angeles County population change (IR-02). The model does not use either as a driver; population enters only through the qualitative risk register.",
+    "BEA has discontinued metropolitan-area GDP (E-35), so no MSA-level income projection is possible. County GDP is used instead.",
+    "FEMA National Risk Index county values could not be read from fema.gov in this session (H-31 to H-34) and are not used as model inputs.",
+    "The model contains no forecast of Jack in the Box Inc. financial performance beyond what the company has itself disclosed. Guidance is taken as disclosed and is not extrapolated.",
+    "The post-expiry downtime scenario (0, 1 or 2 years) has no official basis; no government source quantifies quick-service-restaurant re-tenanting vacancy. It is included because omitting it would flatter the hold path, and the cash cost of carrying tax, insurance and maintenance during downtime is still NOT modelled, so the hold figures remain optimistic in a second way.",
+    "The stress case at EQ-14 identifies conditions under which the recommendation reverses. Those conditions are published on the Projection page and in the Executive Summary rather than suppressed."
+  ]
+}

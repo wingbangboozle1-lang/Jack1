@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "task": "T11",
+    "title": "Natural-Hazard, Catastrophe & Black-Swan Exposure",
+    "retrieved": "2026-11-06",
+    "integrity_note": "FEMA National Risk Index (NRI) values for Los Angeles County were NOT read directly from a fema.gov page during this session; they were read from independent republications of the FEMA NRI v1.20 dataset (December 2025). They are therefore recorded in the 'reported' column only, marked UNVERIFIED, and listed on the Flagged for Review page with the official FEMA NRI link for manual confirmation. All other rows on this page were read from an official .gov publisher.",
+    "calibration_note": "The January 2025 Eaton and Palisades fires are the best-calibrated recent black-swan event for this market. Los Angeles County published official loss statistics; they are reproduced below and used as the empirical anchor for the catastrophe scenario in the projection model."
+  },
+  "rows": [
+    {
+      "id": "H-01",
+      "m": "30-year probability of a magnitude 6.7 or greater earthquake in the Los Angeles region",
+      "v": "60%",
+      "p": "Uniform California Earthquake Rupture Forecast 3 (UCERF3)",
+      "s": "U.S. Geological Survey — FAQ, earthquake probabilities for the Los Angeles and San Francisco Bay areas",
+      "u": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "k": true,
+      "n": "Read directly from usgs.gov. 6.7 matches the magnitude of the 1994 Northridge earthquake."
+    },
+    {
+      "id": "H-02",
+      "m": "30-year probability of a magnitude 7.0 or greater earthquake in the Los Angeles region",
+      "v": "46%",
+      "p": "UCERF3",
+      "s": "U.S. Geological Survey",
+      "u": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-03",
+      "m": "30-year probability of a magnitude 7.5 or greater earthquake in the Los Angeles region",
+      "v": "31%",
+      "p": "UCERF3",
+      "s": "U.S. Geological Survey",
+      "u": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "k": true,
+      "n": "Comparative: San Francisco Bay region 72% / 51% / 20% for the same magnitudes."
+    },
+    {
+      "id": "H-04",
+      "m": "Probability that the 60% M6.7 event occurs INSIDE the 2030-2035 lease-expiry decision window",
+      "v": "14.2% on a compound-restatement basis (10.0% on a simple linear restatement)",
+      "p": "Derived from H-01 (USGS UCERF3)",
+      "s": "U.S. Geological Survey (input); arithmetic derivation documented on the Projection page",
+      "u": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "k": true,
+      "n": "This is a transparent arithmetic restatement of the official USGS 30-year probability, not a new forecast. Compound: 1 - 0.40^(5/30) = 14.2%. Linear: 60% x 5/30 = 10.0%. Both are shown because USGS publishes a 30-year probability and the restatement method changes the answer. The derivation and its limits are shown on the Projection page."
+    },
+    {
+      "id": "H-05",
+      "m": "Alquist-Priolo Earthquake Fault Zones — regulatory framework",
+      "v": "Earthquake Fault Zones are delineated by the State Geologist along Holocene-active fault traces, generally with an approximately 500-foot buffer on either side of the trace. Development permits may be withheld until a fault investigation is completed. Sellers must disclose to a buyer if the property lies within an Earthquake Fault Zone.",
+      "p": "Public Resources Code, Division 2, Chapter 7.5, Sections 2621-2630",
+      "s": "California Geological Survey (Department of Conservation) — Alquist-Priolo Earthquake Fault Zones",
+      "u": "https://www.conservation.ca.gov/cgs/alquist-priolo",
+      "k": true,
+      "n": "Disclosure duty under PRC Section 2621.9 attaches on a SALE — directly relevant to the sell-versus-hold decision."
+    },
+    {
+      "id": "H-06",
+      "m": "Alquist-Priolo — new and revised zones proposed for Los Angeles County",
+      "v": "Preliminary Review Maps released for public review and comment detailing proposed new and revised Earthquake Fault Zones for Los Angeles County (Antelope Valley), followed by a State Mining and Geology Board public hearing",
+      "p": "Released July 2024",
+      "s": "County of Los Angeles / California Geological Survey",
+      "u": "https://lacounty.gov/2024-07-11/new-earthquake-fault-zones-mapped-for-the-antelope-valley/",
+      "k": true,
+      "n": "Shows the regulatory hazard map is still EXPANDING, not static. Detailed maps: https://www.conservation.ca.gov/cgs/preliminary-releases"
+    },
+    {
+      "id": "H-07",
+      "m": "CAL FIRE Fire Hazard Severity Zones — Los Angeles County, Local Responsibility Area",
+      "v": "Non-Wildland, Moderate, High and Very High Fire Hazard Severity Zones within the Local Responsibility Area were ESTABLISHED IN 2025",
+      "p": "2025 LRA designation",
+      "s": "Los Angeles County Fire Department, Geographic Information Systems Section (official LA County open-data portal)",
+      "u": "https://data.lacounty.gov/datasets/bf87f4b1e6954f4697006ff41420c083_0/about",
+      "k": true,
+      "n": "CAL FIRE notes that the previously available FHSZ layers were 1985, 2007 SRA and 2007/2025 LRA, and that remapping is ongoing using new data, science and technology. Source data: https://frap.fire.ca.gov/projects/hazard/fhz"
+    },
+    {
+      "id": "H-08",
+      "m": "City of Los Angeles — Very High Fire Hazard Severity Zone",
+      "v": "Established in 1999 under Los Angeles Municipal Code Section 57.21.07; comprises MOST OF THE HILLY AND MOUNTAINOUS REGIONS of the City of Los Angeles",
+      "p": "1999 designation, current",
+      "s": "Los Angeles Fire Department, Bureau of Fire Prevention and Public Safety — Fire Zone History",
+      "u": "https://lafd.org/fire-prevention/brush/fire-zone/fire-zone-history",
+      "k": true,
+      "n": "Named communities inside the City VHFHSZ include Baldwin Hills, Bel Air Estates, Beverly Glen, Brentwood, Chatsworth, Eagle Rock, Echo Park, El Sereno, Encino, Glassell Park, Granada Hills, HOLLYWOOD, Lake View Terrace, Los Feliz, Montecito Heights, Monterey Hills, Mount Olympus, Mount Washington, Pacific Palisades, Porter Ranch, San Pedro, Shadow Hills, Sherman Oaks, SILVER LAKE, Studio City, Sunland, Sun Valley, Sylmar, Tarzana, Tujunga, West Hills, WESTWOOD and Woodland Hills."
+    },
+    {
+      "id": "H-09",
+      "m": "City of Los Angeles — brush clearance requirement inside the VHFHSZ",
+      "v": "Clearance of hazardous vegetation to a total distance of 200 feet from any structure unless otherwise specified by the Chief",
+      "p": "LAMC Section 57.21.07 as amended April 1997",
+      "s": "Los Angeles Fire Department",
+      "u": "https://lafd.org/fire-prevention/brush/fire-zone/fire-zone-history",
+      "k": true,
+      "n": "Inspection fee established by the February 1999 amendment."
+    },
+    {
+      "id": "H-10",
+      "m": "City of Los Angeles — 'Red Flag Day' criteria",
+      "v": "Winds stronger than 25 mph AND humidity less than 15%",
+      "p": "Current LAFD programme",
+      "s": "Los Angeles Fire Department",
+      "u": "https://lafd.org/fire-prevention/brush/fire-zone/fire-zone-history",
+      "k": true,
+      "n": "On Red Flag Days the Fire Department and Department of Transportation remove illegally parked vehicles in posted VHFHSZ locations. This is the official local definition of the weather state that preceded the January 2025 fires."
+    },
+    {
+      "id": "H-11",
+      "m": "City of Los Angeles Fire Code — Very High Fire Hazard Severity Zone provisions",
+      "v": "Chapter 49, Requirements for Wildland-Urban Interface Fire Areas; Section 4911 sets VHFHSZ-specific requirements for Los Angeles (no open burning or smoking in the zone; zones posted with suitable signs; restrictions on flame devices, travel on firebreaks, and off-road motor vehicle operation without a special permit)",
+      "p": "Los Angeles City Fire Code 2022",
+      "s": "Los Angeles City Fire Code (as published through the City's adopted code)",
+      "u": "https://lafd.org/fire-prevention/brush/fire-zone/fire-zone-history",
+      "k": true,
+      "n": "Relevant to any change of use, redevelopment or re-tenanting of a site inside a VHFHSZ."
+    },
+    {
+      "id": "H-12",
+      "m": "Eaton Fire — date started",
+      "v": "January 7, 2025 at 6:18 p.m. (per CAL FIRE records)",
+      "p": "2025",
+      "s": "County of Los Angeles — Key Facts About the Eaton and Palisades Fires (official anniversary fact sheet)",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Agency with jurisdiction: LA County Fire Department. Incident page: https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire"
+    },
+    {
+      "id": "H-13",
+      "m": "Eaton Fire — acreage burned",
+      "v": "14,021 acres",
+      "p": "Contained January 31, 2025",
+      "s": "County of Los Angeles official fact sheet (CAL FIRE incident data)",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-14",
+      "m": "Eaton Fire — structures destroyed",
+      "v": "9,414 (residential, commercial and other)",
+      "p": "As of containment / official fact sheet",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Plus 1,074 structures damaged."
+    },
+    {
+      "id": "H-15",
+      "m": "Eaton Fire — confirmed fatalities",
+      "v": "19",
+      "p": "Official fact sheet",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-16",
+      "m": "Palisades Fire — date started",
+      "v": "January 7, 2025 at 10:30 a.m. (per CAL FIRE)",
+      "p": "2025",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Agency with jurisdiction: LA City Fire Department. Incident page: https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire"
+    },
+    {
+      "id": "H-17",
+      "m": "Palisades Fire — acreage burned",
+      "v": "23,448 acres",
+      "p": "Contained January 31, 2025",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-18",
+      "m": "Palisades Fire — structures destroyed",
+      "v": "6,837",
+      "p": "Official fact sheet",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Plus 973 structures damaged. Confirmed fatalities: 12."
+    },
+    {
+      "id": "H-19",
+      "m": "Eaton + Palisades combined — economic output lost",
+      "v": "$5.2 billion to $10.1 billion",
+      "p": "Official county estimate",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "This is the empirical black-swan calibration used in the projection model."
+    },
+    {
+      "id": "H-20",
+      "m": "Eaton + Palisades combined — businesses impacted",
+      "v": "approximately 6,800",
+      "p": "Official county estimate",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-21",
+      "m": "Eaton + Palisades combined — workers impacted",
+      "v": "approximately 47,000",
+      "p": "Official county estimate",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-22",
+      "m": "Eaton + Palisades combined — labour income lost",
+      "v": "$2.2 billion to $4.2 billion",
+      "p": "Official county estimate",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-23",
+      "m": "Eaton + Palisades combined — tax revenue losses",
+      "v": "$900 million to $1.6 billion",
+      "p": "Official county estimate",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Directly relevant: reduced local tax capacity can slow the public investment that supports trade-area demand."
+    },
+    {
+      "id": "H-24",
+      "m": "Eaton + Palisades combined — recovery debris removed",
+      "v": "More than 2.6 million tons of fire debris removed by the U.S. Army Corps of Engineers; more than 300 tons of household hazardous waste removed by the U.S. Environmental Protection Agency",
+      "p": "Recovery statistics",
+      "s": "County of Los Angeles official fact sheet",
+      "u": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "k": true,
+      "n": "Indicates the scale and duration of post-event economic disruption."
+    },
+    {
+      "id": "H-25",
+      "m": "Los Angeles County — attribution of the 2025 population loss",
+      "v": "DOF attributes the county's 64,000-person 2025 loss to 'a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations'",
+      "p": "January 1, 2025 to January 1, 2026",
+      "s": "California Department of Finance, 2026 Estimates E-1 press release",
+      "u": "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf",
+      "k": true,
+      "n": "Official state acknowledgement that a single catastrophe plus migration policy moved county population."
+    },
+    {
+      "id": "H-26",
+      "m": "California FAIR Plan — residential policy growth, most recent quarter",
+      "v": "approximately 16,000 policies added in Q1 2026, about 2.4% growth over the previous quarter",
+      "p": "Q1 2026",
+      "s": "California Department of Insurance — press release, May 1, 2026",
+      "u": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+      "k": true,
+      "n": "Read from insurance.ca.gov. CDI describes this as 'a substantial slowdown' and 'a leading indicator of the emerging health of the California insurance market'."
+    },
+    {
+      "id": "H-27",
+      "m": "California FAIR Plan — residential policy growth, comparison period",
+      "v": "35,000 to 50,000 policies added per quarter from 2024 through September 2025; approximately 20,000 added between Q3 and Q4 2025",
+      "p": "2024 to Q4 2025",
+      "s": "California Department of Insurance — press release, May 1, 2026",
+      "u": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "H-28",
+      "m": "California FAIR Plan — commercial policy count",
+      "v": "21,200 rising to 21,464 policies",
+      "p": "Q4 2025 to Q1 2026",
+      "s": "California Department of Insurance — press release, May 1, 2026",
+      "u": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+      "k": true,
+      "n": "CDI: 'Commercial policy counts remained relatively stable, increasing only slightly.' Commercial property — the relevant class for this asset — is far less FAIR-Plan dependent than residential."
+    },
+    {
+      "id": "H-29",
+      "m": "California property-insurance market — insurer participation",
+      "v": "Two more Top-10 insurers committed to expanding homeowners coverage in California as of May 1, 2026; the full committed list includes Farmers, Mercury, CSAA, USAA, Horace Mann, Pacific Specialty, California Casualty, Travelers and AAA SoCal",
+      "p": "May 1, 2026",
+      "s": "California Department of Insurance — Sustainable Insurance Strategy press release",
+      "u": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+      "k": true,
+      "n": "CDI: insurers covering roughly one-third of California homes sought rate increases of about 6.9%, described as 'far less than the double-digit increases' of recent years."
+    },
+    {
+      "id": "H-30",
+      "m": "Los Angeles County — CAL FIRE State Responsibility Area mapping vintage",
+      "v": "SRA maps became effective April 1, 2024; LRA maps are being rolled out in phases, with Los Angeles County local-jurisdiction recommendations released during February through March 2025",
+      "p": "2024-2025",
+      "s": "California Department of Forestry and Fire Protection (CAL FIRE), Fire and Resource Assessment Program",
+      "u": "https://frap.fire.ca.gov/projects/hazard/fhz",
+      "k": false,
+      "r": "As stated in the left-hand value column",
+      "n": "LEFT BLANK IN THE VERIFIED COLUMN. The SRA/LRA effective dates were read from a non-government summary page, not directly from fire.ca.gov, in this session. The official CAL FIRE FRAP hazard-mapping programme page is linked for manual confirmation. FLAG F-17."
+    },
+    {
+      "id": "H-31",
+      "m": "FEMA National Risk Index v1.20 — Los Angeles County composite risk score",
+      "v": "",
+      "p": "NRI v1.20, released December 2025",
+      "s": "FEMA National Risk Index",
+      "u": "https://hazards.fema.gov/nri/",
+      "k": false,
+      "r": "100.0 out of 100, rated 'Very High', 100th national percentile",
+      "n": "LEFT BLANK AND FLAGGED. The FEMA NRI is an interactive application; the county values were read from independent republications of the official v1.20 dataset rather than from a fema.gov page. Confirm at the official link. FLAG F-18."
+    },
+    {
+      "id": "H-32",
+      "m": "FEMA NRI v1.20 — Los Angeles County total Expected Annual Loss, all 18 hazard types",
+      "v": "",
+      "p": "NRI v1.20, December 2025",
+      "s": "FEMA National Risk Index",
+      "u": "https://hazards.fema.gov/nri/",
+      "k": false,
+      "r": "$7,601,846,373 per year",
+      "n": "LEFT BLANK AND FLAGGED — see H-31. FLAG F-18."
+    },
+    {
+      "id": "H-33",
+      "m": "FEMA NRI v1.20 — Los Angeles County Expected Annual Loss by hazard",
+      "v": "",
+      "p": "NRI v1.20, December 2025",
+      "s": "FEMA National Risk Index",
+      "u": "https://hazards.fema.gov/nri/",
+      "k": false,
+      "r": "Earthquake $4.57B/yr (about 60% of county EAL); riverine flood $2.81B/yr; wildfire $155M/yr (about 2% of county EAL)",
+      "n": "LEFT BLANK AND FLAGGED — see H-31. Note the reported composition: EARTHQUAKE dominates county-level expected loss, wildfire is a small county-level share but is extremely concentrated in a few tracts. FLAG F-18."
+    },
+    {
+      "id": "H-34",
+      "m": "FEMA NRI v1.20 — Los Angeles County social vulnerability and community resilience components",
+      "v": "",
+      "p": "NRI v1.20, December 2025",
+      "s": "FEMA National Risk Index",
+      "u": "https://hazards.fema.gov/nri/",
+      "k": false,
+      "r": "Social Vulnerability 55.4; Community Resilience (BRIC) 13.5",
+      "n": "LEFT BLANK AND FLAGGED — see H-31. FLAG F-18."
+    },
+    {
+      "id": "H-35",
+      "m": "Los Angeles County — federal disaster declarations",
+      "v": "",
+      "p": "1969 to 2025",
+      "s": "FEMA Disaster Declarations",
+      "u": "https://www.fema.gov/disasters",
+      "k": false,
+      "r": "88 declarations, including fire-management assistance records; most recent cited as the Canyon Fire (fire), declared August 2025",
+      "n": "LEFT BLANK AND FLAGGED — count not read directly from fema.gov in this session. FLAG F-19."
+    },
+    {
+      "id": "H-36",
+      "m": "Subject parcel — FEMA flood zone determination (Special Flood Hazard Area, Zone A / AE / X)",
+      "v": "",
+      "p": "n/a",
+      "s": "FEMA Flood Map Service Center",
+      "u": "https://msc.fema.gov/portal/home",
+      "k": false,
+      "n": "LEFT BLANK — requires the parcel address or coordinates, withheld under the privacy protocol. Official lookup tool linked for manual review. FLAG F-07."
+    },
+    {
+      "id": "H-37",
+      "m": "Subject parcel — CAL FIRE / LACoFD Fire Hazard Severity Zone designation",
+      "v": "",
+      "p": "n/a",
+      "s": "CAL FIRE FRAP FHSZ viewer; LA County Fire Department GIS",
+      "u": "https://data.lacounty.gov/datasets/bf87f4b1e6954f4697006ff41420c083_0/about",
+      "k": false,
+      "n": "LEFT BLANK — parcel-specific. Official layer linked for manual review. FLAG F-07."
+    },
+    {
+      "id": "H-38",
+      "m": "Subject parcel — Alquist-Priolo Earthquake Fault Zone status and disclosure obligation",
+      "v": "",
+      "p": "n/a",
+      "s": "California Geological Survey — Information Warehouse / Alquist-Priolo programme",
+      "u": "https://www.conservation.ca.gov/cgs/alquist-priolo",
+      "k": false,
+      "n": "LEFT BLANK — parcel-specific. Note H-05: if the parcel IS inside an EFZ, a statutory disclosure duty arises on any sale. FLAG F-07."
+    },
+    {
+      "id": "H-39",
+      "m": "Subject parcel — current property insurance carrier, limits, premium and non-renewal history",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — personal/commercial financial information withheld under the privacy protocol. FLAG F-01."
+    },
+    {
+      "id": "H-40",
+      "m": "Subject parcel — structural system, year built, code vintage and seismic retrofit status",
+      "v": "",
+      "p": "n/a",
+      "s": "City of Los Angeles Department of Building and Safety",
+      "u": "https://ladbs.org/",
+      "k": false,
+      "n": "LEFT BLANK — requires parcel-specific permit records and a structural review. Not inferred. FLAG F-20."
+    },
+    {
+      "id": "H-41",
+      "m": "Business-interruption exposure of the tenant during a regional catastrophe",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK - not separately quantifiable from official data. Los Angeles County's official figure of approximately 6,800 businesses impacted by the January 2025 fires (H-20) is a county-wide count, not a restaurant-sector count, and no official source disaggregates it. No site-level interruption estimate is published rather than invented. FLAG F-21."
+    },
+    {
+      "id": "H-42",
+      "m": "Los Angeles County — extreme-heat day frequency and trend",
+      "v": "",
+      "p": "n/a",
+      "s": "NOAA National Centers for Environmental Information",
+      "u": "https://www.ncei.noaa.gov/",
+      "k": false,
+      "n": "LEFT BLANK — no NCEI series was read in this session. Heat affects drive-thru demand positively and tenant cooling cost negatively, so this is a material gap rather than a trivial one. FLAG F-22."
+    }
+  ]
+}

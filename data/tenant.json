@@ -1,0 +1,463 @@
+{
+  "meta": {
+    "task": "T04",
+    "title": "Tenant & Brand Health — Jack in the Box Inc. (NASDAQ: JACK)",
+    "retrieved": "2026-11-06",
+    "issuer": "Jack in the Box Inc., CIK 0000807882, Delaware, SIC 5812 Retail-Eating Places, fiscal year end late September. All figures on this page are taken from that issuer's own filings with the U.S. Securities and Exchange Commission.",
+    "filing_basis": "Every value on this page was read from a document filed with, or a page published by, the U.S. Securities and Exchange Commission or the company's SEC-filed exhibits. No brokerage research, press article or aggregator was used.",
+    "next_event": "The company's fiscal 2026 fourth-quarter results had NOT been filed as of the retrieval date (2026-11-06). The most recent periodic filing is the Form 10-Q for the quarter ended July 5, 2026, filed August 12, 2026."
+  },
+  "rows": [
+    {
+      "id": "T-01",
+      "m": "Jack in the Box system restaurant count",
+      "v": "2,115 total = 149 company-operated + 1,966 franchise-operated",
+      "p": "End of fiscal 2026 third quarter, July 5, 2026",
+      "s": "Jack in the Box Inc., Form 8-K filed 2026-08-12, Exhibit 99.1 (Q3 fiscal 2026 earnings release)",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Prior-year comparison in the same release: 2,168 total (142 company + 2,026 franchise). Net decline of 53 restaurants year over year."
+    },
+    {
+      "id": "T-02",
+      "m": "Restaurant activity in the quarter",
+      "v": "4 openings and 17 closures; net restaurant change -13, or -0.6%",
+      "p": "Fiscal 2026 third quarter (12 weeks ended July 5, 2026)",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Closures are franchise closures; the company opened no new company-operated restaurants in the quarter."
+    },
+    {
+      "id": "T-03",
+      "m": "System same-store sales",
+      "v": "-1.1% (franchise -1.2%, company-operated -0.9%)",
+      "p": "12 weeks ended July 5, 2026",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Company: 'Sales performance resulted primarily from a decline in transactions, partially offset by an increase in price.' TRANSACTION decline, not price decline — the weakest form of softness for a drive-thru asset."
+    },
+    {
+      "id": "T-04",
+      "m": "Prior-year same-store sales for the same quarter",
+      "v": "-7.1% system (-7.2% franchise, -6.4% company)",
+      "p": "12 weeks ended July 6, 2025",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "The rate of decline narrowed sharply from -7.1% to -1.1% year over year. Direction of travel is improving; the level is still negative."
+    },
+    {
+      "id": "T-05",
+      "m": "Systemwide sales",
+      "v": "-1.4%",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-06",
+      "m": "Total revenues",
+      "v": "$257.7 million, down 1.8% from $262.4 million",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-07",
+      "m": "Restaurant-Level Margin (non-GAAP)",
+      "v": "$17.0 million, or 17.6% (prior year $16.9 million, 17.9%)",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Driven primarily by commodity cost inflation and a change in the mix of restaurants, partially offset by increased price."
+    },
+    {
+      "id": "T-08",
+      "m": "Franchise-Level Margin (non-GAAP)",
+      "v": "$60.3 million, or 37.4% (prior year $66.2 million, 39.3%)",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Company attribution: 'lower sales driving lower rent and royalty revenue and a decrease in the number of restaurants as part of the JACK on Track closure program.' LOWER RENT REVENUE IS DIRECTLY RELEVANT: rent is a disclosed revenue line that is shrinking."
+    },
+    {
+      "id": "T-09",
+      "m": "Franchisee bad-debt expense",
+      "v": "Higher versus the prior-year quarter",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "SINGLE MOST IMPORTANT TENANT-CREDIT SIGNAL ON THIS PAGE. The franchisor itself is reporting that its own franchisees are paying it less reliably. A landlord whose tenant is a franchisee is downstream of the same stress."
+    },
+    {
+      "id": "T-10",
+      "m": "Net earnings from continuing operations",
+      "v": "$21.0 million (prior year $22.8 million)",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-11",
+      "m": "Adjusted EBITDA (non-GAAP)",
+      "v": "$61.2 million (prior year $57.1 million)",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Up year over year despite lower sales — cost actions are working at the corporate level."
+    },
+    {
+      "id": "T-12",
+      "m": "Diluted earnings per share from continuing operations",
+      "v": "$1.08 (prior year $1.19)",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Operating EPS (non-GAAP) $0.96 versus $1.04."
+    },
+    {
+      "id": "T-13",
+      "m": "Other operating income, net",
+      "v": "$3.1 million income (prior year $4.5 million expense); swing driven primarily by an increase in gains on the sale of real estate",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "The franchisor is a NET SELLER OF RESTAURANT REAL ESTATE. That increases the supply of comparable JIB boxes coming to market, which is a headwind to a landlord trying to sell a competing JIB asset."
+    },
+    {
+      "id": "T-14",
+      "m": "SG&A",
+      "v": "$17.0 million, down $3.5 million year over year; excluding net COLI gains, G&A was 1.4% of systemwide sales",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-15",
+      "m": "Leadership",
+      "v": "Mark King, Interim Chief Executive Officer; states 'With our refinancing now complete, we're fully focused on improving restaurant performance'",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "Interim leadership is a governance risk factor for a counterparty whose lease decisions run to 2035."
+    },
+    {
+      "id": "T-16",
+      "m": "Del Taco divestiture",
+      "v": "Definitive agreement in October 2025 to sell Del Taco Holdings Inc. to Yadav Enterprises, Inc. and Anil Yadav; SALE COMPLETED DECEMBER 22, 2025; Del Taco results are presented as discontinued operations",
+      "p": "Fiscal 2026",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": "The issuer is now a single-brand company. Brand concentration means there is no second portfolio to offset weakness in Jack in the Box."
+    },
+    {
+      "id": "T-17",
+      "m": "Losses from discontinued operations, net of taxes",
+      "v": "$0.9 million",
+      "p": "Fiscal 2026 third quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-18",
+      "m": "Jack in the Box system restaurant count",
+      "v": "2,136 total = 150 company-operated (7%) + 1,986 franchise-operated (93%)",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K for fiscal year ended September 28, 2025",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "Beginning of year 2,191; new 31; refranchised net zero; closed -86; end of year 2,136."
+    },
+    {
+      "id": "T-19",
+      "m": "Jack in the Box restaurants in California",
+      "v": "941 total = 96 company-operated + 845 franchise-operated",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "California is the single largest state in the system: 44.1% of all Jack in the Box restaurants."
+    },
+    {
+      "id": "T-20",
+      "m": "Market concentration",
+      "v": "Based on number of restaurants, the top 10 major markets comprise approximately 70% of the total system, and Jack in the Box is at least the fourth largest QSR hamburger chain in each of those major markets",
+      "p": "Fiscal year 2025 Form 10-K",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "The brand is a dominant-scale operator in its core markets, which supports long-run site viability even while the system shrinks."
+    },
+    {
+      "id": "T-21",
+      "m": "RESTAURANT BUILDING OWNERSHIP STRUCTURE — company-owned buildings on company-owned land",
+      "v": "164 (8 company-operated + 156 franchise-operated)",
+      "p": "Fiscal year 2025 Form 10-K properties table",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "Jack in the Box segment only."
+    },
+    {
+      "id": "T-22",
+      "m": "RESTAURANT BUILDING OWNERSHIP STRUCTURE — company-owned buildings on LEASED land",
+      "v": "565 (63 company-operated + 510 franchise-operated); subtotal with owned land = 729",
+      "p": "Fiscal year 2025 Form 10-K properties table",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "These are ground-lease situations where the franchisor or franchisee holds the building but leases the land."
+    },
+    {
+      "id": "T-23",
+      "m": "RESTAURANT BUILDING OWNERSHIP STRUCTURE — company-leased restaurant buildings on leased land",
+      "v": "1,020 (87 company-operated + 933 franchise-operated)",
+      "p": "Fiscal year 2025 Form 10-K properties table",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "This is the largest single category — nearly half the system. In this structure a THIRD PARTY owns the real estate and leases it to Jack in the Box Inc., which then sub-leases to the franchisee. THIS IS THE STRUCTURE THAT MATCHES A LANDLORD HOLDING A JIB NNN LEASE."
+    },
+    {
+      "id": "T-24",
+      "m": "RESTAURANT BUILDING OWNERSHIP STRUCTURE — franchise directly-owned or directly-leased buildings",
+      "v": "387",
+      "p": "Fiscal year 2025 Form 10-K properties table",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "In this structure the landlord's counterparty is the FRANCHISEE, not the public company. Credit exposure is to a small private operator. Total restaurant buildings: 2,136."
+    },
+    {
+      "id": "T-25",
+      "m": "Evidence of the head-lease / sub-lease structure in practice",
+      "v": "Franchise rental revenues increased 23.2% in the quarter and 33.3% year to date 'primarily due to higher rental income and property tax revenue resulting from new subleases related to the 47 restaurants refranchised since the third quarter of 2024'",
+      "p": "Fiscal 2025 third quarter Form 10-Q (period ended July 6, 2025)",
+      "s": "Jack in the Box Inc., Form 10-Q",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm",
+      "k": true,
+      "n": "Confirms that when a restaurant is refranchised, Jack in the Box Inc. RETAINS the head lease and sub-leases to the new franchisee, and passes property tax through. If the subject asset is one of these, the landlord's direct contractual counterparty remains the public company even though a franchisee operates."
+    },
+    {
+      "id": "T-26",
+      "m": "Franchise restaurant average unit volume",
+      "v": "$1,874 thousand in fiscal 2025, down from $1,949 thousand in fiscal 2024",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "A 3.8% fall in the average franchise unit's annual sales. Unit economics determine whether a franchisee can keep paying rent through 2030-2035."
+    },
+    {
+      "id": "T-27",
+      "m": "Franchised restaurant sales",
+      "v": "$3,792,222 thousand in fiscal 2025, down from $3,969,200 thousand in fiscal 2024",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-28",
+      "m": "Average number of franchise restaurants",
+      "v": "2,023 in fiscal 2025, down from 2,037 in fiscal 2024",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-29",
+      "m": "Franchise costs as a percentage of total franchise revenues",
+      "v": "60.1% in fiscal 2025, up from 59.1% in fiscal 2024",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "Total franchise costs $443,126 thousand versus $455,626 thousand."
+    },
+    {
+      "id": "T-30",
+      "m": "Royalties as a percentage of franchised restaurant sales",
+      "v": "4.6% in fiscal 2025, down from 4.7% in fiscal 2024",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": ""
+    },
+    {
+      "id": "T-31",
+      "m": "Fiscal 2025 closures attributable to the JACK on Track programme",
+      "v": "51 of the 86 fiscal 2025 closures",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., definitive proxy statement (Form DEF 14A) filed with the SEC",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000076/jack-20251216.htm",
+      "k": true,
+      "n": "The proxy also reports system same-store sales -4.2% for Jack in the Box, total revenues of $1.5 billion for the full year, Jack in the Box restaurant-level margin of 19.6%, franchise-level margin of 39.9%, and a net unit decrease of 55 (31 openings, 86 closures)."
+    },
+    {
+      "id": "T-32",
+      "m": "Fiscal 2025 segment results (GAAP)",
+      "v": "Earnings (loss) from operations: Jack in the Box $315,283 thousand; Del Taco $(191,166) thousand; Other $(142,187) thousand; Total $(18,070) thousand",
+      "p": "52 weeks ended September 28, 2025",
+      "s": "Jack in the Box Inc., definitive proxy statement (DEF 14A)",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000076/jack-20251216.htm",
+      "k": true,
+      "n": "The Jack in the Box brand itself was solidly profitable at the operating line; the consolidated loss came from Del Taco and Other. Post-divestiture that drag is gone."
+    },
+    {
+      "id": "T-33",
+      "m": "Fiscal 2025 restructuring, impairment and closure charges",
+      "v": "Restructuring, integration and strategic initiatives $7,298 thousand; costs of closed restaurants and other $8,467 thousand; restaurant impairment charges $4,384 thousand; accelerated depreciation $99 thousand",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "Restaurant impairment charges of $4,384 thousand in fiscal 2025 relate to underperforming Jack in the Box and Del Taco restaurants. Impairment charges are the accounting recognition that specific sites no longer support their carrying value — the same test a landlord faces at renewal."
+    },
+    {
+      "id": "T-34",
+      "m": "Property and equipment",
+      "v": "Land $93,255 thousand; buildings $967,676 thousand; restaurant and other equipment $225,102 thousand; construction in progress $39,444 thousand; gross $1,314,230 thousand less accumulated depreciation $(870,622) thousand = net $443,608 thousand",
+      "p": "September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "The franchisor holds $93.3 million of land it owns outright — a shrinking pool, since it is selling real estate (T-13)."
+    },
+    {
+      "id": "T-35",
+      "m": "'JACK on Track' strategic plan — announced measures",
+      "v": "(1) A block closure programme projected to result in the closure of approximately 150-200 underperforming restaurants, a majority of which have been in the system for over three decades; (2) exploration of strategic alternatives for Del Taco and possible divestiture; (3) sale of a select number of owned real estate holdings; (4) discontinuation of the dividend; (5) direction of a majority of those funds toward paying down debt",
+      "p": "Announced April 23, 2025",
+      "s": "Jack in the Box Inc. news release, 'JACK on Track' Plan to Improve Long-Term Financial Performance (company investor-relations release; measures also disclosed in the Form 10-Q for the period ended July 6, 2025)",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm",
+      "k": true,
+      "n": "The Form 10-Q records the same plan: 'On April 23, 2025, the Company announced a multi-faceted plan... which is projected to result in the closure of approximately 150-200 underperforming Jack in the Box restaurants.'"
+    },
+    {
+      "id": "T-36",
+      "m": "Closure-programme sequencing",
+      "v": "Approximately 80 to 120 restaurants to close before the end of 2025, with the remaining underperforming locations closing thereafter BASED ON THEIR RESPECTIVE FRANCHISE AGREEMENT TERMINATION DATES; plus an expected 1.5% to 2.0% of system unit closures in fiscal 2025 and an ongoing annual closure rate of 1% of system units thereafter",
+      "p": "Announced April 23, 2025",
+      "s": "Jack in the Box Inc. — plan as disclosed in SEC-filed materials",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm",
+      "k": true,
+      "n": "THE MOST IMPORTANT ROW ON THIS PAGE FOR A LANDLORD. The company has stated that closure timing follows FRANCHISE AGREEMENT TERMINATION DATES. A lease or franchise agreement expiring in 2030-2035 is therefore a scheduled decision point for closure, not merely a rent review."
+    },
+    {
+      "id": "T-37",
+      "m": "Fiscal 2026 guidance issued with the fourth-quarter fiscal 2025 release",
+      "v": "Jack in the Box restaurant count of 2,050 to 2,100, including approximately 20 new openings and approximately 50 to 100 closures, most of which will be franchise restaurants; system same-store sales of -1% to +1% versus fiscal 2025; company-owned restaurant-level margin of 17 to 18%",
+      "p": "Fiscal 2026 guidance",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1 (fourth quarter fiscal 2025 earnings release), filed with the SEC",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "k": true,
+      "n": "Company also expected first-quarter fiscal 2026 results to remain pressured with sequential improvement over the balance of the year."
+    },
+    {
+      "id": "T-38",
+      "m": "Fourth quarter fiscal 2025 closure detail",
+      "v": "15 openings and 47 closures in the quarter; 38 of the 47 closures were part of the JACK on Track block restaurant closure programme",
+      "p": "Fiscal 2025 fourth quarter",
+      "s": "Jack in the Box Inc., Form 8-K Exhibit 99.1 (Q4 fiscal 2025)",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "k": true,
+      "n": "Restaurant-level margin 16.1% for the quarter versus 18.5% a year earlier, with inefficiencies from entry into the Chicago market (8 restaurants opened in the quarter)."
+    },
+    {
+      "id": "T-39",
+      "m": "Workforce profile",
+      "v": "Approximately 84% of restaurant employees were part-time at the end of fiscal 2025; the company reports it has not experienced any significant work stoppages",
+      "p": "Fiscal year ended September 28, 2025",
+      "s": "Jack in the Box Inc., Form 10-K",
+      "u": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "k": true,
+      "n": "A part-time-heavy workforce is highly exposed to the Los Angeles minimum wage schedule at $18.42 per hour from July 1, 2026 (see Regulatory R-16)."
+    },
+    {
+      "id": "T-40",
+      "m": "Fiscal 2026 fourth-quarter results and any updated closure guidance",
+      "v": "",
+      "p": "Fiscal year ending approximately early October 2026",
+      "s": "U.S. Securities and Exchange Commission — EDGAR, Jack in the Box Inc. filings",
+      "u": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K&dateb=&owner=include&count=10",
+      "k": false,
+      "r": "Results expected to be released November 25, 2026",
+      "n": "LEFT BLANK. Not yet filed as of the 2026-11-06 retrieval date. The scheduled release date was seen only on a third-party earnings calendar and is recorded as 'reported'. Re-verify at EDGAR. FLAG F-29."
+    },
+    {
+      "id": "T-41",
+      "m": "Credit rating of Jack in the Box Inc.",
+      "v": "",
+      "p": "n/a",
+      "s": "No official government publisher exists",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK AND FLAGGED. Ratings are issued by private Nationally Recognized Statistical Rating Organizations and are not an official government source. No rating is stated anywhere on this site. FLAG F-30."
+    },
+    {
+      "id": "T-42",
+      "m": "Whether the subject property is leased to Jack in the Box Inc. (corporate), to a franchisee, or held under a corporate head lease with a franchisee sub-lease",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no lease supplied and the counterparty identity is withheld under the privacy protocol. T-21 to T-25 show that all three structures exist in the system and that they carry very different credit risk. FLAG F-05."
+    },
+    {
+      "id": "T-43",
+      "m": "Whether the subject restaurant is on the JACK on Track closure list",
+      "v": "",
+      "p": "n/a",
+      "s": "Jack in the Box Inc. does not publish site-level closure lists",
+      "u": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10",
+      "k": false,
+      "n": "LEFT BLANK AND FLAGGED. No public disclosure identifies individual restaurants selected for closure, so this cannot be verified from any source. It is nonetheless the highest-consequence unknown in the whole analysis and is carried as such in the risk register. FLAG F-31."
+    },
+    {
+      "id": "T-44",
+      "m": "Subject restaurant — sales volume, transaction count, four-wall profitability",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — franchisee financial statements are private and are withheld under the privacy protocol. FLAG F-01."
+    },
+    {
+      "id": "T-45",
+      "m": "Subject restaurant — franchise agreement expiration date",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK. Per T-36 this date drives closure timing, and it may not coincide with the lease expiry. FLAG F-32."
+    }
+  ]
+}

@@ -1,0 +1,947 @@
+{
+  "meta": {
+    "generated_by": "tools/model.py",
+    "spec": "data/projection.json",
+    "unit": "index points, asset value on 2026-11-06 = 100.0",
+    "central_case": {
+      "cap_spread_bp": 200.0,
+      "cap_rate_pct": 6.84,
+      "discount_rate_pct": 6.84,
+      "escalator_pct": 3.4,
+      "land_growth_pct": 1.2,
+      "closure_rate_pct": 1.0,
+      "residual_pct": 50.0,
+      "exit_transaction_cost_pct": 4.0,
+      "downtime_years": 1.0
+    },
+    "fairness_rules": [
+      "Both paths bear the same statutory transaction cost: the sell path up front, the hold path on its terminal sale.",
+      "The hold path additionally bears a vacancy/downtime scenario after expiry, because a NNN landlord resumes tax, insurance and maintenance on expiry and may not re-let immediately.",
+      "The sell path's certain net proceeds are not discounted further. Net proceeds either earn the official Treasury risk-free rate or are reinvested in an identical asset at the same capitalisation rate; both treatments give a present value equal to the net proceeds.",
+      "Tenant non-renewal is run in two regimes: the official system-wide base rate, and a 'signal received' regime at 100%. The second is what the recommended decision path exists to detect early."
+    ],
+    "unverified_dependency": "Every figure below depends on the cap-spread grid UX-1, which is an UNVERIFIED scenario input: no government agency publishes net-lease capitalisation rates. Read the RANKING of paths and the STABILITY of that ranking across the grid, not the absolute index level."
+  },
+  "cap_grid": [
+    {
+      "spread_bp": 100.0,
+      "cap_pct": 5.84,
+      "implied_noi0_index": 5.84
+    },
+    {
+      "spread_bp": 150.0,
+      "cap_pct": 6.34,
+      "implied_noi0_index": 6.34
+    },
+    {
+      "spread_bp": 200.0,
+      "cap_pct": 6.84,
+      "implied_noi0_index": 6.84
+    },
+    {
+      "spread_bp": 250.0,
+      "cap_pct": 7.34,
+      "implied_noi0_index": 7.34
+    },
+    {
+      "spread_bp": 300.0,
+      "cap_pct": 7.84,
+      "implied_noi0_index": 7.84
+    }
+  ],
+  "risk_free": {
+    "ten_year_pct": 4.84,
+    "thirty_year_pct": 5.25
+  },
+  "closure_probability": {
+    "official_annual_rate_pct": 1.0,
+    "by_horizon": [
+      {
+        "years": 4,
+        "expiry_year": 2030,
+        "p_dark_pct": 3.94
+      },
+      {
+        "years": 6,
+        "expiry_year": 2032,
+        "p_dark_pct": 5.85
+      },
+      {
+        "years": 9,
+        "expiry_year": 2035,
+        "p_dark_pct": 8.65
+      }
+    ],
+    "programme_bounds_pct": {
+      "low": 6.84,
+      "high": 9.13
+    },
+    "note": "p_dark uses the company-disclosed ongoing annual closure rate of 1% of system units (IN-9). The programme bounds are the JACK on Track block closure of 150-200 restaurants against the 2,191-restaurant system at the start of fiscal 2025 (IN-10, IN-11). Neither is a site-specific probability: no public disclosure identifies individual restaurants selected for closure (flag F-31)."
+  },
+  "sell_now": [
+    {
+      "case": "Parcel outside the City of Los Angeles, or price below the ULA threshold",
+      "transaction_cost_pct": 0.0,
+      "net_index": 100.0,
+      "official_basis": "Measure ULA applies only to transfers inside the City of Los Angeles (R-15)."
+    },
+    {
+      "case": "City of Los Angeles, price at or above the LOWER ULA threshold",
+      "transaction_cost_pct": 4.0,
+      "net_index": 96.0,
+      "official_basis": "LAMC 21.9.2 / LAHD official FAQ: 4% of the entire consideration or value (IN-16)."
+    },
+    {
+      "case": "City of Los Angeles, price at or above the UPPER ULA threshold",
+      "transaction_cost_pct": 5.5,
+      "net_index": 94.5,
+      "official_basis": "LAMC 21.9.2 / LAHD official FAQ: 5.5% of the entire consideration or value (IN-17)."
+    }
+  ],
+  "sell_now_note": "County and City documentary transfer tax is ADDITIONAL but is unverified (flag F-23) and is therefore excluded rather than estimated, so the net proceeds shown for the sell path are OPTIMISTIC by roughly half a percent of price. Proposition 13 reassessment on a change in ownership is also not modelled as a price discount, because the parcel's current assessed value is unknown (flag F-01); it is a real further discount to what a buyer will pay. Both omissions favour the sell path.",
+  "ula_dead_band": [
+    {
+      "rate_pct": 4.0,
+      "breakeven_multiple_of_threshold": 1.0417,
+      "breakeven_excess_pct": 4.17,
+      "reading": "A price up to 4.17% above the threshold nets LESS than a sale at the threshold itself, because the tax applies to the whole price."
+    },
+    {
+      "rate_pct": 5.5,
+      "breakeven_multiple_of_threshold": 1.0582,
+      "breakeven_excess_pct": 5.82,
+      "reading": "A price up to 5.82% above the threshold nets LESS than a sale at the threshold itself, because the tax applies to the whole price."
+    }
+  ],
+  "ula_dead_band_note": "Derived only from the official statutory rates at IN-16 and IN-17 plus elementary arithmetic: net(P) = P at or below the threshold T, and net(P) = P x (1 - rate) above it, so net(P) > net(T) requires P > T / (1 - rate). The DOLLAR thresholds themselves are unverified (flag F-24, irregularity IR-07) and are not stated anywhere.",
+  "hold_to_expiry": [
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "escalator": "Flat / no escalator - UNVERIFIED, lease not supplied",
+      "escalator_pct": 0.0,
+      "pv_income": 23.25,
+      "pv_terminal": 67.6,
+      "pv_total": 90.86,
+      "p_dark_pct": 3.94,
+      "grid_min": 90.59,
+      "grid_max": 91.17,
+      "grid": [
+        91.17,
+        91.01,
+        90.86,
+        90.72,
+        90.59
+      ]
+    },
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_income": 24.93,
+      "pv_terminal": 77.78,
+      "pv_total": 102.71,
+      "p_dark_pct": 3.94,
+      "grid_min": 102.17,
+      "grid_max": 103.31,
+      "grid": [
+        103.31,
+        103.0,
+        102.71,
+        102.43,
+        102.17
+      ]
+    },
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_income": 25.23,
+      "pv_terminal": 79.66,
+      "pv_total": 104.88,
+      "p_dark_pct": 3.94,
+      "grid_min": 104.29,
+      "grid_max": 105.54,
+      "grid": [
+        105.54,
+        105.2,
+        104.88,
+        104.58,
+        104.29
+      ]
+    },
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_income": 25.41,
+      "pv_terminal": 80.8,
+      "pv_total": 106.21,
+      "p_dark_pct": 3.94,
+      "grid_min": 105.58,
+      "grid_max": 106.89,
+      "grid": [
+        106.89,
+        106.54,
+        106.21,
+        105.89,
+        105.58
+      ]
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "escalator": "Flat / no escalator - UNVERIFIED, lease not supplied",
+      "escalator_pct": 0.0,
+      "pv_income": 32.76,
+      "pv_terminal": 58.65,
+      "pv_total": 91.41,
+      "p_dark_pct": 5.85,
+      "grid_min": 91.36,
+      "grid_max": 91.5,
+      "grid": [
+        91.5,
+        91.45,
+        91.41,
+        91.38,
+        91.36
+      ]
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_income": 36.06,
+      "pv_terminal": 71.25,
+      "pv_total": 107.3,
+      "p_dark_pct": 5.85,
+      "grid_min": 106.8,
+      "grid_max": 107.88,
+      "grid": [
+        107.88,
+        107.58,
+        107.3,
+        107.04,
+        106.8
+      ]
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_income": 36.66,
+      "pv_terminal": 73.65,
+      "pv_total": 110.3,
+      "p_dark_pct": 5.85,
+      "grid_min": 109.7,
+      "grid_max": 110.98,
+      "grid": [
+        110.98,
+        110.63,
+        110.3,
+        109.99,
+        109.7
+      ]
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_income": 37.02,
+      "pv_terminal": 75.12,
+      "pv_total": 112.14,
+      "p_dark_pct": 5.85,
+      "grid_min": 111.48,
+      "grid_max": 112.87,
+      "grid": [
+        112.87,
+        112.49,
+        112.14,
+        111.8,
+        111.48
+      ]
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "escalator": "Flat / no escalator - UNVERIFIED, lease not supplied",
+      "escalator_pct": 0.0,
+      "pv_income": 44.87,
+      "pv_terminal": 47.4,
+      "pv_total": 92.27,
+      "p_dark_pct": 8.65,
+      "grid_min": 92.07,
+      "grid_max": 92.48,
+      "grid": [
+        92.07,
+        92.17,
+        92.27,
+        92.37,
+        92.48
+      ]
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_income": 51.26,
+      "pv_terminal": 62.37,
+      "pv_total": 113.63,
+      "p_dark_pct": 8.65,
+      "grid_min": 113.05,
+      "grid_max": 114.3,
+      "grid": [
+        114.3,
+        113.95,
+        113.63,
+        113.33,
+        113.05
+      ]
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_income": 52.45,
+      "pv_terminal": 65.36,
+      "pv_total": 117.82,
+      "p_dark_pct": 8.65,
+      "grid_min": 117.07,
+      "grid_max": 118.67,
+      "grid": [
+        118.67,
+        118.23,
+        117.82,
+        117.43,
+        117.07
+      ]
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_income": 53.19,
+      "pv_terminal": 67.22,
+      "pv_total": 120.41,
+      "p_dark_pct": 8.65,
+      "grid_min": 119.56,
+      "grid_max": 121.37,
+      "grid": [
+        121.37,
+        120.88,
+        120.41,
+        119.97,
+        119.56
+      ]
+    }
+  ],
+  "hold_after_signal": [
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "pv_income": 25.23,
+      "pv_terminal": 34.5,
+      "pv_total": 59.72,
+      "grid_min": 58.2,
+      "grid_max": 61.19,
+      "sell_now_index_lower_ula": 96.0,
+      "sell_now_wins": true
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "pv_income": 36.66,
+      "pv_terminal": 30.23,
+      "pv_total": 66.88,
+      "grid_min": 64.6,
+      "grid_max": 69.03,
+      "sell_now_index_lower_ula": 96.0,
+      "sell_now_wins": true
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "pv_income": 52.45,
+      "pv_terminal": 24.8,
+      "pv_total": 77.25,
+      "grid_min": 74.1,
+      "grid_max": 80.11,
+      "sell_now_index_lower_ula": 96.0,
+      "sell_now_wins": true
+    }
+  ],
+  "hold_after_signal_note": "This is the regime that decides the recommendation. Once the tenant declines an extension, or discloses a franchise agreement expiring at or before the lease expiry, site-specific non-renewal probability moves from the system-wide base rate toward certainty, and the hold path loses its renewing terminal branch. The sell path then dominates at EVERY point of the cap-spread grid - which is why the recommended plan pre-commits a sell trigger instead of leaving the decision to be re-argued in 2030.",
+  "extend_then_hold": [
+    {
+      "years": 4,
+      "extended_years": 14,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_hold": 102.71,
+      "pv_extend": 122.88,
+      "delta": 20.17,
+      "p_dark_hold_pct": 3.94,
+      "p_dark_extend_pct": 13.13,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 4,
+      "extended_years": 14,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_hold": 104.88,
+      "pv_extend": 128.96,
+      "delta": 24.07,
+      "p_dark_hold_pct": 3.94,
+      "p_dark_extend_pct": 13.13,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 4,
+      "extended_years": 14,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_hold": 106.21,
+      "pv_extend": 132.77,
+      "delta": 26.56,
+      "p_dark_hold_pct": 3.94,
+      "p_dark_extend_pct": 13.13,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 6,
+      "extended_years": 16,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_hold": 107.3,
+      "pv_extend": 126.19,
+      "delta": 18.89,
+      "p_dark_hold_pct": 5.85,
+      "p_dark_extend_pct": 14.85,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 6,
+      "extended_years": 16,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_hold": 110.3,
+      "pv_extend": 132.99,
+      "delta": 22.69,
+      "p_dark_hold_pct": 5.85,
+      "p_dark_extend_pct": 14.85,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 6,
+      "extended_years": 16,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_hold": 112.14,
+      "pv_extend": 137.28,
+      "delta": 25.14,
+      "p_dark_hold_pct": 5.85,
+      "p_dark_extend_pct": 14.85,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 9,
+      "extended_years": 19,
+      "escalator": "Low - BLS LA CPI-U, February 2026",
+      "escalator_pct": 2.9,
+      "pv_hold": 113.63,
+      "pv_extend": 130.79,
+      "delta": 17.16,
+      "p_dark_hold_pct": 8.65,
+      "p_dark_extend_pct": 17.38,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 9,
+      "extended_years": 19,
+      "escalator": "Central - median of the five 2026 BLS LA CPI-U readings",
+      "escalator_pct": 3.4,
+      "pv_hold": 117.82,
+      "pv_extend": 138.64,
+      "delta": 20.82,
+      "p_dark_hold_pct": 8.65,
+      "p_dark_extend_pct": 17.38,
+      "extend_wins_across_grid": true
+    },
+    {
+      "years": 9,
+      "extended_years": 19,
+      "escalator": "High - BLS LA CPI-U, April 2026",
+      "escalator_pct": 3.7,
+      "pv_hold": 120.41,
+      "pv_extend": 143.63,
+      "delta": 23.22,
+      "p_dark_hold_pct": 8.65,
+      "p_dark_extend_pct": 17.38,
+      "extend_wins_across_grid": true
+    }
+  ],
+  "extend_note": "EQ-9 assumes a 10-year extension is granted at existing economics. That is a SCENARIO, not a forecast: the tenant has no obligation to negotiate early and is led by an interim chief executive (T-15, RK-21). The value of the recommended path does not depend on the extension being granted - a refusal is itself the earliest reliable closure signal and moves the decision into the regime above.",
+  "ranking_stability": [
+    {
+      "years": 4,
+      "case": "Parcel outside the City of Los Angeles, or price below the ULA threshold",
+      "transaction_cost_pct": 0.0,
+      "sell_index": 100.0,
+      "hold_range": [
+        107.46,
+        109.01
+      ],
+      "extend_range": [
+        129.59,
+        132.98
+      ],
+      "signal_hold_range": [
+        59.71,
+        62.56
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 4,
+      "case": "City of Los Angeles, price at or above the LOWER ULA threshold",
+      "transaction_cost_pct": 4.0,
+      "sell_index": 96.0,
+      "hold_range": [
+        104.29,
+        105.54
+      ],
+      "extend_range": [
+        127.65,
+        130.42
+      ],
+      "signal_hold_range": [
+        58.2,
+        61.19
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 4,
+      "case": "City of Los Angeles, price at or above the UPPER ULA threshold",
+      "transaction_cost_pct": 5.5,
+      "sell_index": 94.5,
+      "hold_range": [
+        103.11,
+        104.23
+      ],
+      "extend_range": [
+        126.93,
+        129.46
+      ],
+      "signal_hold_range": [
+        57.64,
+        60.67
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 6,
+      "case": "Parcel outside the City of Los Angeles, or price below the ULA threshold",
+      "transaction_cost_pct": 0.0,
+      "sell_index": 100.0,
+      "hold_range": [
+        112.58,
+        114.25
+      ],
+      "extend_range": [
+        133.13,
+        137.19
+      ],
+      "signal_hold_range": [
+        65.95,
+        70.21
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 6,
+      "case": "City of Los Angeles, price at or above the LOWER ULA threshold",
+      "transaction_cost_pct": 4.0,
+      "sell_index": 96.0,
+      "hold_range": [
+        109.7,
+        110.98
+      ],
+      "extend_range": [
+        131.38,
+        134.79
+      ],
+      "signal_hold_range": [
+        64.6,
+        69.03
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 6,
+      "case": "City of Los Angeles, price at or above the UPPER ULA threshold",
+      "transaction_cost_pct": 5.5,
+      "sell_index": 94.5,
+      "hold_range": [
+        108.63,
+        109.75
+      ],
+      "extend_range": [
+        130.73,
+        133.88
+      ],
+      "signal_hold_range": [
+        64.1,
+        68.59
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 9,
+      "case": "Parcel outside the City of Los Angeles, or price below the ULA threshold",
+      "transaction_cost_pct": 0.0,
+      "sell_index": 100.0,
+      "hold_range": [
+        119.55,
+        121.66
+      ],
+      "extend_range": [
+        138.01,
+        143.21
+      ],
+      "signal_hold_range": [
+        75.23,
+        81.05
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 9,
+      "case": "City of Los Angeles, price at or above the LOWER ULA threshold",
+      "transaction_cost_pct": 4.0,
+      "sell_index": 96.0,
+      "hold_range": [
+        117.07,
+        118.67
+      ],
+      "extend_range": [
+        136.5,
+        141.03
+      ],
+      "signal_hold_range": [
+        74.1,
+        80.11
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    },
+    {
+      "years": 9,
+      "case": "City of Los Angeles, price at or above the UPPER ULA threshold",
+      "transaction_cost_pct": 5.5,
+      "sell_index": 94.5,
+      "hold_range": [
+        116.14,
+        117.55
+      ],
+      "extend_range": [
+        135.94,
+        140.21
+      ],
+      "signal_hold_range": [
+        73.67,
+        79.76
+      ],
+      "hold_beats_sell_at_every_spread": true,
+      "extend_beats_sell_at_every_spread": true,
+      "sell_beats_signal_hold_at_every_spread": true,
+      "ranking_is_stable": true
+    }
+  ],
+  "ranking_stability_note": "EQ-10. Because the cap-rate input is unverified, only the RANKING of paths is meaningful, and a ranking that holds at every point of the Treasury-anchored spread grid is a robust conclusion. 'ranking_is_stable' is true only if hold beats sell before any signal, extend beats sell before any signal, AND sell beats hold after a signal - at every spread. That is the exact structure of the recommendation.",
+  "downtime_sensitivity": [
+    {
+      "downtime_years": 0.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 110.33
+        },
+        {
+          "years": 6,
+          "pv_total": 115.34
+        },
+        {
+          "years": 9,
+          "pv_total": 122.29
+        }
+      ]
+    },
+    {
+      "downtime_years": 1.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 104.88
+        },
+        {
+          "years": 6,
+          "pv_total": 110.3
+        },
+        {
+          "years": 9,
+          "pv_total": 117.82
+        }
+      ]
+    },
+    {
+      "downtime_years": 2.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 99.78
+        },
+        {
+          "years": 6,
+          "pv_total": 105.59
+        },
+        {
+          "years": 9,
+          "pv_total": 113.63
+        }
+      ]
+    }
+  ],
+  "downtime_note": "Downtime is a SCENARIO input, not an official statistic: no government source quantifies quick-service-restaurant re-tenanting vacancy (flag F-33, RK-17). It is included because omitting it would flatter the hold path. During downtime the landlord also carries property tax, insurance and maintenance that the NNN tenant previously reimbursed (R-01, R-06); that cash cost is NOT modelled, so the hold figures remain optimistic.",
+  "residual_sensitivity": [
+    {
+      "residual_pct": 30.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 104.34
+        },
+        {
+          "years": 6,
+          "pv_total": 109.59
+        },
+        {
+          "years": 9,
+          "pv_total": 116.96
+        }
+      ]
+    },
+    {
+      "residual_pct": 50.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 104.88
+        },
+        {
+          "years": 6,
+          "pv_total": 110.3
+        },
+        {
+          "years": 9,
+          "pv_total": 117.82
+        }
+      ]
+    },
+    {
+      "residual_pct": 70.0,
+      "pv_total_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 105.43
+        },
+        {
+          "years": 6,
+          "pv_total": 111.01
+        },
+        {
+          "years": 9,
+          "pv_total": 118.68
+        }
+      ]
+    }
+  ],
+  "residual_note": "The dark-box land residual (UX-2) is unverified. The only official land-versus-improvement ratio available is Jack in the Box Inc.'s own balance sheet at IN-18: land of $93,255 thousand against buildings of $967,676 thousand, or 8.79% of gross book cost. That is a national historical COST figure and is expressly not used as a market estimate (flag F-33). Notice how little the answer moves across a 30% to 70% residual range: because the base-rate non-renewal probability is under 9%, the dark branch carries little weight UNTIL A SIGNAL ARRIVES - and then it carries almost all of it.",
+  "land_growth_sensitivity": [
+    {
+      "label": "Downside - FHFA purchase-only Pacific division, 2026 Q1 (IN-7)",
+      "hpi_pct": 0.0,
+      "base_regime_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 104.8832
+        },
+        {
+          "years": 6,
+          "pv_total": 110.3
+        },
+        {
+          "years": 9,
+          "pv_total": 117.8164
+        }
+      ],
+      "signal_regime_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 59.7078
+        },
+        {
+          "years": 6,
+          "pv_total": 66.8622
+        },
+        {
+          "years": 9,
+          "pv_total": 77.223
+        }
+      ]
+    },
+    {
+      "label": "Central - FHFA all-transactions LA-Long Beach-Glendale MSAD, 2026 Q2 (IN-6)",
+      "hpi_pct": 1.2,
+      "base_regime_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 104.8838
+        },
+        {
+          "years": 6,
+          "pv_total": 110.3013
+        },
+        {
+          "years": 9,
+          "pv_total": 117.8187
+        }
+      ],
+      "signal_regime_by_horizon": [
+        {
+          "years": 4,
+          "pv_total": 59.7244
+        },
+        {
+          "years": 6,
+          "pv_total": 66.884
+        },
+        {
+          "years": 9,
+          "pv_total": 77.2497
+        }
+      ]
+    }
+  ],
+  "land_growth_note": "In the BASE regime the two official land-growth assumptions are indistinguishable to two decimal places, because land growth only enters through the dark branch and the base-rate non-renewal probability is under 9%. That is itself a finding: while the tenant is performing, local house-price growth is close to irrelevant to this decision. In the SIGNAL regime the dark branch carries the whole terminal value and land growth starts to matter. Shown to four decimal places so the reader can see the immateriality rather than suspect a rendering error.",
+  "stress_case": [
+    {
+      "years": 4,
+      "expiry_year": 2030,
+      "pv_hold_stress": 88.63,
+      "pv_sell_best_case": 100.0,
+      "sell_wins": true,
+      "gap": 11.37
+    },
+    {
+      "years": 6,
+      "expiry_year": 2032,
+      "pv_hold_stress": 89.25,
+      "pv_sell_best_case": 100.0,
+      "sell_wins": true,
+      "gap": 10.75
+    },
+    {
+      "years": 9,
+      "expiry_year": 2035,
+      "pv_hold_stress": 90.24,
+      "pv_sell_best_case": 100.0,
+      "sell_wins": true,
+      "gap": 9.76
+    }
+  ],
+  "stress_case_note": "This is the honest counter-case to the recommendation, and it is built ONLY from inputs already declared in the specification: a lease with NO escalator (UX-4, unknown because the lease was not supplied), the lowest land residual (UX-2), zero official land-price growth (IN-7), the longest downtime scenario, the shortest horizon, and a parcel OUTSIDE the City of Los Angeles so the sell path pays no Measure ULA at all (R-15). Under that combination the sell path wins even with no adverse tenant signal. It is published because a recommendation that cannot state the conditions under which it is wrong is not a recommendation. Those conditions are exactly the ones step 1 of the plan is designed to resolve: is there an escalator, is the parcel inside the City, and what is the land residual.",
+  "catastrophe_overlay": {
+    "fire_output_loss_share_of_county_gdp_pct": {
+      "low": 0.64,
+      "high": 1.23,
+      "basis": "IN-13 and IN-14 over IN-15: official county loss statistics divided by official BEA county GDP."
+    },
+    "earthquake_five_year_probability_pct": {
+      "compound": 14.16,
+      "linear": 10.0,
+      "thirty_year_official_pct": 60.0,
+      "basis": "IN-12 restated arithmetically over a five-year window. Both restatements are published because the method changes the answer."
+    },
+    "note": "These are severity and frequency BANDS from official statistics. They are deliberately NOT multiplied into the present values above, because no official source maps a county output loss or a regional earthquake probability onto a specific commercial parcel's value. Doing so would manufacture precision the sources do not support."
+  },
+  "sanity": {
+    "test": "A flat, never-ending, never-dark tenancy at any spread must return exactly V0 = 100.00, because V = NOI / cap and NOI0 = V0 x cap. A 60-year flat path with zero residual must also converge to 100.00.",
+    "results": [
+      {
+        "spread_bp": 100.0,
+        "cap_pct": 5.84,
+        "closed_form_perpetuity": 100.0,
+        "sixty_year_flat_path": 100.0
+      },
+      {
+        "spread_bp": 150.0,
+        "cap_pct": 6.34,
+        "closed_form_perpetuity": 100.0,
+        "sixty_year_flat_path": 100.0
+      },
+      {
+        "spread_bp": 200.0,
+        "cap_pct": 6.84,
+        "closed_form_perpetuity": 100.0,
+        "sixty_year_flat_path": 100.0
+      },
+      {
+        "spread_bp": 250.0,
+        "cap_pct": 7.34,
+        "closed_form_perpetuity": 100.0,
+        "sixty_year_flat_path": 100.0
+      },
+      {
+        "spread_bp": 300.0,
+        "cap_pct": 7.84,
+        "closed_form_perpetuity": 100.0,
+        "sixty_year_flat_path": 100.0
+      }
+    ],
+    "passed": true
+  }
+}

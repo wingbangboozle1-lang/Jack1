@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "task": "T03",
+    "title": "Subject Asset & Lease — Anonymized Fact Sheet",
+    "retrieved": "2026-11-06",
+    "privacy_note": "PRIVACY: No deal documents, deed, lease, rent roll, appraisal or correspondence were supplied to this engagement. Under the project privacy rules the subject property is identified ONLY by placeholder. No street address, APN, owner name, entity name, loan number, broker/tenant contact, or personal financial data appears anywhere in this repository or on the published site.",
+    "placeholder_scheme": {
+      "property": "[PROPERTY-ID: JIB-CTLA-01]",
+      "location": "[LOCATION: Central Los Angeles trade area]",
+      "owner": "[OWNER: REDACTED]",
+      "tenant_entity": "[TENANT-ENTITY: REDACTED]",
+      "lease": "[LEASE-DOC: REDACTED]"
+    },
+    "schema_note": "Row schema, identical to every other data file: id, m (metric), v (value - empty string means left blank/unverified), p (period), s (official source name), u (official URL), k (verified true/false), n (note), optional r (value reported by a non-official source, never used as verified). Placeholder tokens such as [PROPERTY-ID: JIB-CTLA-01] are deliberate anonymisation markers, not values."
+  },
+  "rows": [
+    {
+      "id": "A-01",
+      "m": "Property identifier used throughout this file (anonymised)",
+      "v": "[PROPERTY-ID: JIB-CTLA-01]",
+      "p": "Assigned by this engagement",
+      "s": "Not a fact from any source - a placeholder assigned under the privacy protocol",
+      "u": "",
+      "k": false,
+      "n": "A bracketed placeholder, not a value. It exists so the asset can be referenced consistently across every page without disclosing its identity. The full placeholder scheme is declared in the meta block of this file and in docs/methodology.md."
+    },
+    {
+      "id": "A-02",
+      "m": "Asset type",
+      "v": "",
+      "p": "As stated by client brief",
+      "s": "Not confirmable from an official source",
+      "u": "",
+      "k": false,
+      "n": "Stated in the engagement brief, which is not an official source. Without the parcel record no official publisher can confirm the asset type, so the value cell is left blank and the premise is quarantined in the reported field. FLAG F-01.",
+      "r": "[ENGAGEMENT BRIEF] Single-tenant quick-service restaurant freehold, ground and building, occupied by a Jack in the Box restaurant"
+    },
+    {
+      "id": "A-03",
+      "m": "Lease structure",
+      "v": "",
+      "p": "As stated by client brief",
+      "s": "Not confirmable from an official source",
+      "u": "",
+      "k": false,
+      "n": "Stated in the engagement brief. No lease was supplied, so the expense structure, expense stops and caps cannot be verified. The consequences of an NNN structure are analysed throughout this file, but the structure itself is a premise rather than a verified fact. FLAG F-02.",
+      "r": "[ENGAGEMENT BRIEF] Triple net (NNN) - tenant reimburses property taxes, insurance and maintenance"
+    },
+    {
+      "id": "A-04",
+      "m": "Lease expiry window",
+      "v": "",
+      "p": "As stated by client brief",
+      "s": "Not confirmable from an official source",
+      "u": "",
+      "k": false,
+      "n": "Stated in the engagement brief as a WINDOW, not a date. Five years of uncertainty in expiry is more than a 100% difference in remaining firm term, and firm term is the dominant driver of net-lease value. The projection model therefore runs 4, 6 and 9 years rather than choosing a midpoint. FLAG F-03.",
+      "r": "[ENGAGEMENT BRIEF] Lease expires somewhere in the window 2030 to 2035"
+    },
+    {
+      "id": "A-05",
+      "m": "Remaining firm term from analysis date",
+      "v": "",
+      "p": "2026-11-06 to expiry",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — depends on A-04, which is unverified. FLAG F-03."
+    },
+    {
+      "id": "A-06",
+      "m": "Tenant renewal option count / length",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no lease supplied. Never inferred. FLAG F-02."
+    },
+    {
+      "id": "A-07",
+      "m": "Rent escalator (annual % or CPI-linked)",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no lease supplied. FLAG F-02."
+    },
+    {
+      "id": "A-08",
+      "m": "Current contract base rent",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — personal/financial information withheld under privacy protocol. FLAG F-01."
+    },
+    {
+      "id": "A-09",
+      "m": "Net operating income (NOI)",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no rent roll or operating statement supplied. FLAG F-01."
+    },
+    {
+      "id": "A-10",
+      "m": "Current assessed value (LA County roll)",
+      "v": "",
+      "p": "FY2026 roll (lien date 2026-01-01)",
+      "s": "Los Angeles County Assessor — Parcel Access / Assessment Roll",
+      "u": "https://assessor.lacounty.gov/",
+      "k": false,
+      "n": "LEFT BLANK — parcel-level lookup requires the address or APN, which is withheld under the privacy protocol. The official lookup portal is linked for manual review. FLAG F-01."
+    },
+    {
+      "id": "A-11",
+      "m": "Tax Rate Area (TRA) and total property tax rate for the parcel",
+      "v": "",
+      "p": "n/a",
+      "s": "Los Angeles County Auditor-Controller — Tax Rate Area Lookup",
+      "u": "https://auditor.lacounty.gov/tax-rate-area-lookup/",
+      "k": false,
+      "n": "LEFT BLANK — TRA is parcel-specific. Official lookup linked for manual review. FLAG F-04."
+    },
+    {
+      "id": "A-12",
+      "m": "Tenant counterparty identity (corporate, franchisee, or franchisee sub-lessee)",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK and withheld under the privacy protocol. This is the single most important unknown: Jack in the Box Inc. reports that of 2,136 JIB restaurants at FY2025 year-end only 164 sit in company-owned buildings on company-owned land, while 387 are in franchise directly-owned or directly-leased buildings and 1,020 are in company-leased buildings on leased land. Corporate-level credit support differs sharply across those three structures. FLAG F-05."
+    },
+    {
+      "id": "A-13",
+      "m": "Corporate guaranty / letter of credit in place",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no lease or guaranty supplied. FLAG F-05."
+    },
+    {
+      "id": "A-14",
+      "m": "Site area / building square footage",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — no survey, plat or title report supplied. FLAG F-01."
+    },
+    {
+      "id": "A-15",
+      "m": "Zoning designation and permitted alternative uses",
+      "v": "",
+      "p": "n/a",
+      "s": "City of Los Angeles Department of City Planning — Zoning / Community Plan lookup",
+      "u": "https://planning.lacity.gov/",
+      "k": false,
+      "n": "LEFT BLANK — parcel-specific. Official planning portal linked for manual review. FLAG F-06."
+    },
+    {
+      "id": "A-16",
+      "m": "Existing debt / loan balance on the asset",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — personal financial information withheld under the privacy protocol. FLAG F-01."
+    },
+    {
+      "id": "A-17",
+      "m": "Owner cost basis (for capital-gain exposure on a sale)",
+      "v": "",
+      "p": "n/a",
+      "s": "Not determinable from an official source",
+      "u": "",
+      "k": false,
+      "n": "LEFT BLANK — personal financial information withheld under the privacy protocol. FLAG F-01."
+    },
+    {
+      "id": "A-18",
+      "m": "Parcel-level hazard designations (FEMA flood zone, CAL FIRE FHSZ, Alquist-Priolo EFZ)",
+      "v": "",
+      "p": "n/a",
+      "s": "FEMA Flood Map Service Center; LA County Fire Department FHSZ layer; California Geological Survey Alquist-Priolo",
+      "u": "https://msc.fema.gov/portal/home",
+      "k": false,
+      "n": "LEFT BLANK. Three separate official determinations are outstanding and each requires the parcel location, which is withheld: FEMA flood zone, CAL FIRE / LA County Fire Department Fire Hazard Severity Zone, and Alquist-Priolo Earthquake Fault Zone. The third also creates a statutory seller disclosure duty under Public Resources Code Section 2621.9, so it affects the sell path directly. All three are itemised on the Hazards page at rows H-36 to H-38. FLAG F-07."
+    }
+  ]
+}

@@ -1,0 +1,1405 @@
+{
+  "meta": {
+    "task": "T16",
+    "title": "Sources & Verification Register",
+    "generated_by": "tools/collect_sources.py",
+    "retrieved": "2026-11-06",
+    "policy": "Generated automatically from every row in data/*.json so the register cannot drift from the tables it documents. A URL appears here only if at least one row cites it. Every entry is an official government, regulator, central-bank, regional-agency or SEC-filing publisher.",
+    "stats": {
+      "rows_total": 318,
+      "rows_verified": 238,
+      "rows_unverified": 80,
+      "rows_blank": 75,
+      "rows_no_url": 26
+    },
+    "per_file": {
+      "asset.json": {
+        "rows": 18,
+        "verified": 0,
+        "unverified": 18,
+        "blank": 17,
+        "no_url": 14
+      },
+      "demographics.json": {
+        "rows": 43,
+        "verified": 40,
+        "unverified": 3,
+        "blank": 3,
+        "no_url": 0
+      },
+      "income.json": {
+        "rows": 28,
+        "verified": 23,
+        "unverified": 5,
+        "blank": 5,
+        "no_url": 0
+      },
+      "employment.json": {
+        "rows": 40,
+        "verified": 37,
+        "unverified": 3,
+        "blank": 3,
+        "no_url": 0
+      },
+      "schools.json": {
+        "rows": 20,
+        "verified": 14,
+        "unverified": 6,
+        "blank": 6,
+        "no_url": 0
+      },
+      "geography.json": {
+        "rows": 24,
+        "verified": 15,
+        "unverified": 9,
+        "blank": 7,
+        "no_url": 2
+      },
+      "valuation.json": {
+        "rows": 32,
+        "verified": 27,
+        "unverified": 5,
+        "blank": 5,
+        "no_url": 4
+      },
+      "hazards.json": {
+        "rows": 42,
+        "verified": 29,
+        "unverified": 13,
+        "blank": 12,
+        "no_url": 2
+      },
+      "regulatory.json": {
+        "rows": 26,
+        "verified": 14,
+        "unverified": 12,
+        "blank": 11,
+        "no_url": 0
+      },
+      "tenant.json": {
+        "rows": 45,
+        "verified": 39,
+        "unverified": 6,
+        "blank": 6,
+        "no_url": 4
+      },
+      "risks.json": {
+        "rows": 0,
+        "verified": 0,
+        "unverified": 0,
+        "blank": 0,
+        "no_url": 0
+      },
+      "projection.json": {
+        "rows": 0,
+        "verified": 0,
+        "unverified": 0,
+        "blank": 0,
+        "no_url": 0
+      },
+      "flags.json": {
+        "rows": 0,
+        "verified": 0,
+        "unverified": 0,
+        "blank": 0,
+        "no_url": 0
+      },
+      "decisions.json": {
+        "rows": 0,
+        "verified": 0,
+        "unverified": 0,
+        "blank": 0,
+        "no_url": 0
+      }
+    }
+  },
+  "publishers": [
+    {
+      "publisher": "County of Los Angeles",
+      "url_count": 9,
+      "row_citations": 46,
+      "urls": [
+        {
+          "url": "https://assessor.lacounty.gov/",
+          "cited_by": [
+            "A-10",
+            "F-01",
+            "R-21",
+            "V-32"
+          ],
+          "topics": [
+            "Current assessed value (LA County roll)",
+            "Los Angeles County — Assessor parcel-level record for the subject property",
+            "No transaction documents were supplied and all personal financial information is withheld",
+            "Subject property — capitalisation of ground-lease or fee interest on the LA County roll"
+          ]
+        },
+        {
+          "url": "https://auditor.lacounty.gov/tax-rate-area-lookup/",
+          "cited_by": [
+            "A-11",
+            "F-04",
+            "R-05",
+            "S-19"
+          ],
+          "topics": [
+            "Local school bond measures affecting the parcel's direct tax charges",
+            "Los Angeles County — total property tax rate for a specific parcel (Tax Rate Area)",
+            "Tax Rate Area (TRA) and total property tax rate for the parcel",
+            "Tax Rate Area and total parcel tax rate unknown"
+          ]
+        },
+        {
+          "url": "https://assessor.lacounty.gov/news-information/assessmentroll",
+          "cited_by": [
+            "I-19",
+            "IN-8",
+            "R-03",
+            "V-18",
+            "V-19",
+            "V-20",
+            "V-21",
+            "V-22",
+            "V-23",
+            "V-24",
+            "V-25",
+            "V-26",
+            "V-27"
+          ],
+          "topics": [
+            "City of Los Angeles — assessed value on the county roll",
+            "Los Angeles County Assessment Roll — total net taxable value",
+            "Los Angeles County Assessment Roll — year-over-year change",
+            "Los Angeles County — cities with the fastest assessed-value growth",
+            "Los Angeles County — contribution of new construction to roll growth",
+            "Los Angeles County — contribution of property transfers to roll growth"
+          ]
+        },
+        {
+          "url": "https://www.lacounty.gov/",
+          "cited_by": [
+            "I-25"
+          ],
+          "topics": [
+            "Los Angeles County (unincorporated areas) minimum wage"
+          ]
+        },
+        {
+          "url": "https://lacounty.gov/2024-07-11/new-earthquake-fault-zones-mapped-for-the-antelope-valley/",
+          "cited_by": [
+            "H-06"
+          ],
+          "topics": [
+            "Alquist-Priolo — new and revised zones proposed for Los Angeles County"
+          ]
+        },
+        {
+          "url": "https://data.lacounty.gov/datasets/bf87f4b1e6954f4697006ff41420c083_0/about",
+          "cited_by": [
+            "H-07",
+            "H-37"
+          ],
+          "topics": [
+            "CAL FIRE Fire Hazard Severity Zones — Los Angeles County, Local Responsibility Area",
+            "Subject parcel — CAL FIRE / LACoFD Fire Hazard Severity Zone designation"
+          ]
+        },
+        {
+          "url": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+          "cited_by": [
+            "ANC-4",
+            "F-21",
+            "H-12",
+            "H-13",
+            "H-14",
+            "H-15",
+            "H-16",
+            "H-17",
+            "H-18",
+            "H-19",
+            "H-20",
+            "H-21",
+            "H-22",
+            "H-23",
+            "H-24",
+            "IN-13",
+            "IN-14"
+          ],
+          "topics": [
+            "Business-interruption exposure of the tenant during a regional catastrophe not quantifiabl",
+            "Eaton + Palisades combined — businesses impacted",
+            "Eaton + Palisades combined — economic output lost",
+            "Eaton + Palisades combined — labour income lost",
+            "Eaton + Palisades combined — recovery debris removed",
+            "Eaton + Palisades combined — tax revenue losses"
+          ]
+        },
+        {
+          "url": "https://ttc.lacounty.gov/",
+          "cited_by": [
+            "R-01",
+            "R-06"
+          ],
+          "topics": [
+            "Los Angeles County property tax — instalment due dates and delinquency",
+            "Proposition 13 — maximum base property tax rate"
+          ]
+        },
+        {
+          "url": "https://rr.lacounty.gov/",
+          "cited_by": [
+            "F-03",
+            "R-07"
+          ],
+          "topics": [
+            "Lease expiry is a window (2030-2035), not a date",
+            "Los Angeles County — documentary transfer tax rate"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "City of Los Angeles",
+      "url_count": 10,
+      "row_citations": 40,
+      "urls": [
+        {
+          "url": "https://planning.lacity.gov/",
+          "cited_by": [
+            "A-15",
+            "F-06",
+            "G-22",
+            "G-23",
+            "G-24"
+          ],
+          "topics": [
+            "Active entitlement, rezoning or large development applications within the trade area",
+            "Competing QSR sites within the trade area",
+            "Subject parcel — zoning designation, General Plan land use, overlay/specific plan",
+            "Zoning designation and permitted alternative uses",
+            "Zoning, General Plan land use and alternative-use entitlement unknown"
+          ]
+        },
+        {
+          "url": "https://planning.lacity.gov/plans-policies/community-plan-area/central-city",
+          "cited_by": [
+            "D-38",
+            "G-02"
+          ],
+          "topics": [
+            "Central City Community Plan Area — boundaries",
+            "Central City Community Plan Area — land area"
+          ]
+        },
+        {
+          "url": "https://planning.lacity.gov/development-services/eir/downtown-community-plan-updatenew-zoning-code-downtown-community-plan",
+          "cited_by": [
+            "D-39",
+            "D-40",
+            "G-01",
+            "G-03",
+            "G-04",
+            "G-05"
+          ],
+          "topics": [
+            "Central City North Community Plan Area — boundaries",
+            "Central City North Community Plan Area — land area",
+            "Communities bordering the Downtown Plan Area",
+            "Downtown Community Plan — horizon and intent",
+            "Downtown Community Plan — planning horizon",
+            "Official planning geography covering central Los Angeles"
+          ]
+        },
+        {
+          "url": "https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf",
+          "cited_by": [
+            "I-20",
+            "R-16",
+            "R-18"
+          ],
+          "topics": [
+            "City of Los Angeles minimum wage — current rate",
+            "City of Los Angeles paid sick leave",
+            "City of Los Angeles — minimum wage (all employers)"
+          ]
+        },
+        {
+          "url": "https://wagesla.lacity.gov/",
+          "cited_by": [
+            "I-21",
+            "R-17"
+          ],
+          "topics": [
+            "City of Los Angeles minimum wage — applicability test",
+            "City of Los Angeles — minimum wage (all employers)"
+          ]
+        },
+        {
+          "url": "https://lacity.gov/department/transportation",
+          "cited_by": [
+            "F-08",
+            "G-19",
+            "G-20"
+          ],
+          "topics": [
+            "Subject parcel — average daily traffic (ADT) count on the frontage street",
+            "Subject parcel — signalised intersection, ingress/egress, median break, curb cuts",
+            "Trade-area micro-geography cannot be delimited"
+          ]
+        },
+        {
+          "url": "https://finance.lacity.gov/",
+          "cited_by": [
+            "F-23",
+            "F-24",
+            "R-08",
+            "R-12",
+            "R-13"
+          ],
+          "topics": [
+            "City of Los Angeles — documentary transfer tax rate",
+            "County and City documentary transfer tax rates not read from the official publishers",
+            "Current Measure ULA indexed thresholds and the lien-inclusive measurement base not read fr",
+            "Measure ULA — current indexed dollar thresholds",
+            "Measure ULA — measurement base relative to liens"
+          ]
+        },
+        {
+          "url": "https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf",
+          "cited_by": [
+            "ANC-5",
+            "IN-16",
+            "IN-17",
+            "IR-07",
+            "R-09",
+            "R-10",
+            "R-11",
+            "R-14",
+            "R-15"
+          ],
+          "topics": [
+            "Measure ULA (United to House Los Angeles) — statutory basis and effective date",
+            "Measure ULA thresholds are indexed annually but the current schedule is not published in a",
+            "Measure ULA — dollar thresholds originally enacted",
+            "Measure ULA — exemptions administered by the City Office of Finance",
+            "Measure ULA — geographic scope",
+            "Measure ULA — rates"
+          ]
+        },
+        {
+          "url": "https://finance.lacity.gov/taxes/business-taxes",
+          "cited_by": [
+            "F-25",
+            "R-22"
+          ],
+          "topics": [
+            "City of Los Angeles business tax obligations of the tenant operator",
+            "Los Angeles City business tax obligations of the tenant operator not verified"
+          ]
+        },
+        {
+          "url": "https://data.lacity.org/",
+          "cited_by": [
+            "F-28",
+            "IR-06",
+            "R-26"
+          ],
+          "topics": [
+            "Los Angeles Police Department COMPSTAT crime figures not transcribed with confidence",
+            "Los Angeles crime statistics relevant to trade-area demand",
+            "Official LAPD COMPSTAT publications are not reliably machine-readable"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Federal Emergency Management Agency",
+      "url_count": 3,
+      "row_citations": 11,
+      "urls": [
+        {
+          "url": "https://msc.fema.gov/portal/home",
+          "cited_by": [
+            "A-18",
+            "F-07",
+            "H-36"
+          ],
+          "topics": [
+            "Parcel-level hazard designations (FEMA flood zone, CAL FIRE FHSZ, Alquist-Priolo EFZ)",
+            "Parcel-level hazard designations not determined",
+            "Subject parcel — FEMA flood zone determination (Special Flood Hazard Area, Zone A / AE / X"
+          ]
+        },
+        {
+          "url": "https://hazards.fema.gov/nri/",
+          "cited_by": [
+            "F-18",
+            "H-31",
+            "H-32",
+            "H-33",
+            "H-34",
+            "IR-03"
+          ],
+          "topics": [
+            "FEMA NRI v1.20 — Los Angeles County Expected Annual Loss by hazard",
+            "FEMA NRI v1.20 — Los Angeles County social vulnerability and community resilience componen",
+            "FEMA NRI v1.20 — Los Angeles County total Expected Annual Loss, all 18 hazard types",
+            "FEMA National Risk Index county values circulate widely but are not readable as static fig",
+            "FEMA National Risk Index v1.20 — Los Angeles County composite risk score",
+            "FEMA National Risk Index values for Los Angeles County not read from fema.gov"
+          ]
+        },
+        {
+          "url": "https://www.fema.gov/disasters",
+          "cited_by": [
+            "F-19",
+            "H-35"
+          ],
+          "topics": [
+            "Count of federal disaster declarations for Los Angeles County not read from fema.gov",
+            "Los Angeles County — federal disaster declarations"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Census Bureau",
+      "url_count": 4,
+      "row_citations": 56,
+      "urls": [
+        {
+          "url": "https://www.census.gov/quickfacts/losangelescitycalifornia",
+          "cited_by": [
+            "D-01",
+            "D-02",
+            "D-03",
+            "D-04",
+            "D-15",
+            "D-16",
+            "D-18",
+            "D-19",
+            "D-20",
+            "D-21",
+            "D-22",
+            "D-23",
+            "D-24",
+            "D-25",
+            "D-26",
+            "D-30",
+            "E-38",
+            "F-10",
+            "G-10",
+            "G-11",
+            "G-12",
+            "I-01",
+            "I-02",
+            "I-03",
+            "I-07",
+            "I-08",
+            "I-22",
+            "I-26",
+            "I-27",
+            "IR-09"
+          ],
+          "topics": [
+            "Census QuickFacts housing block not captured for the City of Los Angeles",
+            "Census QuickFacts silently withholds city-level business data while publishing it for the ",
+            "City of Los Angeles — Asian alone",
+            "City of Los Angeles — Black or African American alone",
+            "City of Los Angeles — FIPS place code",
+            "City of Los Angeles — Hispanic or Latino"
+          ]
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/losangelescountycalifornia",
+          "cited_by": [
+            "D-05",
+            "D-06",
+            "D-07",
+            "D-17",
+            "D-27",
+            "D-28",
+            "D-29",
+            "D-31",
+            "E-28",
+            "E-29",
+            "E-30",
+            "E-31",
+            "E-32",
+            "E-33",
+            "I-04",
+            "I-05",
+            "I-06",
+            "I-09",
+            "I-10",
+            "I-23"
+          ],
+          "topics": [
+            "Los Angeles County — FIPS code",
+            "Los Angeles County — all employer firms",
+            "Los Angeles County — housing units",
+            "Los Angeles County — land area",
+            "Los Angeles County — mean travel time to work",
+            "Los Angeles County — median household income"
+          ]
+        },
+        {
+          "url": "https://data.census.gov/",
+          "cited_by": [
+            "D-41",
+            "D-42",
+            "I-28"
+          ],
+          "topics": [
+            "Population, households and income within 1 / 3 / 5 mile drive-time rings",
+            "Trade-area household income distribution (quintiles) around the parcel",
+            "Trade-area micro-geography (census tract, PUMA or block group) for the subject property"
+          ]
+        },
+        {
+          "url": "https://www.census.gov/programs-surveys/cbp/data/datasets.html",
+          "cited_by": [
+            "E-40",
+            "F-11",
+            "F-12"
+          ],
+          "topics": [
+            "Census publishes no city-level business or employment fields for Los Angeles",
+            "Limited-service restaurant establishment count (NAICS 722513) not obtained",
+            "NAICS 722513 (Limited-Service Restaurants) establishment count for LA County"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "State of California",
+      "url_count": 18,
+      "row_citations": 53,
+      "urls": [
+        {
+          "url": "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf",
+          "cited_by": [
+            "D-08",
+            "D-09",
+            "D-10",
+            "D-11",
+            "D-12",
+            "D-13",
+            "D-14",
+            "G-13",
+            "G-14",
+            "G-15",
+            "G-16",
+            "H-25"
+          ],
+          "topics": [
+            "California — natural increase",
+            "California — net domestic out-migration",
+            "California — net legal international migration",
+            "California — population",
+            "City of Los Angeles — population change rate",
+            "Housing units lost to fire statewide"
+          ]
+        },
+        {
+          "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
+          "cited_by": [
+            "D-32",
+            "D-33",
+            "D-34"
+          ],
+          "topics": [
+            "City of Los Angeles — employment (jobs located in the city)",
+            "City of Los Angeles — households",
+            "City of Los Angeles — population base used in the Connect SoCal 2024 forecast"
+          ]
+        },
+        {
+          "url": "https://sustain.scag.ca.gov/sites/default/files/2025-12/Technical-Working-Group-November-20%2C2025-Full-Agenda-Packet-Updated.pdf",
+          "cited_by": [
+            "D-35",
+            "D-36",
+            "IR-02"
+          ],
+          "topics": [
+            "Los Angeles County — households forecast",
+            "Los Angeles County — total population forecast",
+            "SCAG's newer forecast reverses the direction of its own adopted forecast for Los Angeles C"
+          ]
+        },
+        {
+          "url": "https://scag.ca.gov/sites/default/files/2024-05/231220_scag_subregional-press-release_los-angeles.pdf",
+          "cited_by": [
+            "D-37",
+            "G-09"
+          ],
+          "topics": [
+            "Los Angeles County — population forecast (superseded 2024 cycle)",
+            "Regional transportation investment programmed for the SCAG six-county region"
+          ]
+        },
+        {
+          "url": "https://dof.ca.gov/forecasting/demographics/estimates/",
+          "cited_by": [
+            "D-43"
+          ],
+          "topics": [
+            "Neighborhood-level population change (below city)"
+          ]
+        },
+        {
+          "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+          "cited_by": [
+            "F-09",
+            "I-24",
+            "R-19"
+          ],
+          "topics": [
+            "California statewide and Los Angeles County minimum wages not read from the official publi",
+            "California statewide minimum wage",
+            "California — statewide minimum wage for 2026"
+          ]
+        },
+        {
+          "url": "https://labormarketinfo.edd.ca.gov/cgi/dataBrowsing/localAreaProfileQSResults.asp?state=true&selectedarea=Los+Angeles+County++++++++++++++++++++++++++++++++++++++++++&menuChoice=localAreaPro&geogArea=0604000037",
+          "cited_by": [
+            "E-23",
+            "E-24"
+          ],
+          "topics": [
+            "LA County — labor force",
+            "LA County — unemployment rate"
+          ]
+        },
+        {
+          "url": "https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localareaprofileqsresults.asp?countyname=&geogarea=0604000037&menuchoice=localareapro&selectedarea=Los+Angeles+County&selectedindex=1&state=true",
+          "cited_by": [
+            "E-36",
+            "E-37"
+          ],
+          "topics": [
+            "LA County — commuting flows (place of residence to place of work)",
+            "LA County — occupations with fastest projected job growth"
+          ]
+        },
+        {
+          "url": "https://labormarketinfo.edd.ca.gov/",
+          "cited_by": [
+            "E-39",
+            "IR-04"
+          ],
+          "topics": [
+            "Central-LA sub-area job growth (below county)",
+            "No official employment projection series extends through the lease expiry window"
+          ]
+        },
+        {
+          "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+          "cited_by": [
+            "IR-05",
+            "S-01",
+            "S-04",
+            "S-05"
+          ],
+          "topics": [
+            "Federal and state school enrolment statistics disagree for the same district",
+            "LAUSD — English Learners",
+            "LAUSD — district type and grade span",
+            "Los Angeles Unified School District — Census Day enrolment"
+          ]
+        },
+        {
+          "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
+          "cited_by": [
+            "S-02",
+            "S-03",
+            "S-14"
+          ],
+          "topics": [
+            "California — total statewide public school enrolment",
+            "LAUSD — direction of enrolment trend",
+            "LAUSD — rank among California public school districts by enrolment"
+          ]
+        },
+        {
+          "url": "https://data1.cde.ca.gov/dataquest/",
+          "cited_by": [
+            "F-13",
+            "S-15",
+            "S-18"
+          ],
+          "topics": [
+            "LAUSD enrolment series by year and the 2026-27 projection not read from CDE or LAUSD",
+            "LAUSD — enrolment by year, 2021-22 through 2025-26",
+            "Schools serving the subject parcel (assigned elementary / middle / high school)"
+          ]
+        },
+        {
+          "url": "https://www.conservation.ca.gov/cgs/alquist-priolo",
+          "cited_by": [
+            "H-05",
+            "H-38"
+          ],
+          "topics": [
+            "Alquist-Priolo Earthquake Fault Zones — regulatory framework",
+            "Subject parcel — Alquist-Priolo Earthquake Fault Zone status and disclosure obligation"
+          ]
+        },
+        {
+          "url": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+          "cited_by": [
+            "H-26",
+            "H-27",
+            "H-28",
+            "H-29"
+          ],
+          "topics": [
+            "California FAIR Plan — commercial policy count",
+            "California FAIR Plan — residential policy growth, comparison period",
+            "California FAIR Plan — residential policy growth, most recent quarter",
+            "California property-insurance market — insurer participation"
+          ]
+        },
+        {
+          "url": "https://frap.fire.ca.gov/projects/hazard/fhz",
+          "cited_by": [
+            "F-17",
+            "H-30"
+          ],
+          "topics": [
+            "CAL FIRE State Responsibility Area and Local Responsibility Area map effective dates not r",
+            "Los Angeles County — CAL FIRE State Responsibility Area mapping vintage"
+          ]
+        },
+        {
+          "url": "https://www.boe.ca.gov/proptaxes/faqs/prop13.htm",
+          "cited_by": [
+            "R-02"
+          ],
+          "topics": [
+            "Proposition 13 — cap on annual growth of assessed value"
+          ]
+        },
+        {
+          "url": "https://www.boe.ca.gov/proptaxes/faqs/changeinownership.htm",
+          "cited_by": [
+            "ANC-6",
+            "R-04"
+          ],
+          "topics": [
+            "Change in ownership — reassessment trigger"
+          ]
+        },
+        {
+          "url": "https://www.insurance.ca.gov/",
+          "cited_by": [
+            "F-27",
+            "R-25"
+          ],
+          "topics": [
+            "California wildfire disclosure and non-renewal moratorium provisions not read from insuran",
+            "California wildfire disclosure requirements affecting insurers"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url_count": 7,
+      "row_citations": 35,
+      "urls": [
+        {
+          "url": "https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260610.htm",
+          "cited_by": [
+            "I-11",
+            "I-16",
+            "I-17",
+            "I-18"
+          ],
+          "topics": [
+            "CPI-U, Los Angeles area — energy index 12-month change",
+            "CPI-U, Los Angeles area — food index 12-month change",
+            "CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change",
+            "CPI-U, Los Angeles-Long Beach-Anaheim — all items less food and energy, 12-month change"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/regions/west/ca_losangeles_msa.htm",
+          "cited_by": [
+            "E-01",
+            "E-02",
+            "E-03",
+            "E-04",
+            "E-05",
+            "E-06",
+            "E-07",
+            "E-08",
+            "E-09",
+            "E-10",
+            "E-11",
+            "E-12",
+            "E-13",
+            "E-14",
+            "E-15",
+            "E-16",
+            "E-17",
+            "E-18",
+            "E-19",
+            "E-20",
+            "E-21",
+            "E-22",
+            "I-12"
+          ],
+          "topics": [
+            "CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change",
+            "LA-Long Beach-Anaheim MSA — civilian labor force",
+            "LA-Long Beach-Anaheim MSA — employment",
+            "LA-Long Beach-Anaheim MSA — number unemployed",
+            "LA-Long Beach-Anaheim MSA — total nonfarm 12-month % change",
+            "LA-Long Beach-Anaheim MSA — total nonfarm payroll employment"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260410.htm",
+          "cited_by": [
+            "I-13"
+          ],
+          "topics": [
+            "CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260311.htm",
+          "cited_by": [
+            "I-14"
+          ],
+          "topics": [
+            "CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260213.htm",
+          "cited_by": [
+            "I-15"
+          ],
+          "topics": [
+            "CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/news.release/archives/metro_08272025.pdf",
+          "cited_by": [
+            "E-26",
+            "E-27"
+          ],
+          "topics": [
+            "LA-Long Beach-Anaheim MSA — civilian labor force, one year earlier",
+            "Los Angeles-Long Beach-Glendale Metropolitan Division — unemployment rate"
+          ]
+        },
+        {
+          "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+          "cited_by": [
+            "IN-3",
+            "IN-4",
+            "IN-5"
+          ],
+          "topics": [
+            "cpi_la_high",
+            "cpi_la_low",
+            "cpi_la_median"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "Federal Reserve Bank of St. Louis (FRED) - republishing official federal series",
+      "url_count": 2,
+      "row_citations": 8,
+      "urls": [
+        {
+          "url": "https://fred.stlouisfed.org/series/LAUMT063108000000003A",
+          "cited_by": [
+            "E-25"
+          ],
+          "topics": [
+            "LA-Long Beach-Anaheim MSA — annual average unemployment rate"
+          ]
+        },
+        {
+          "url": "https://fred.stlouisfed.org/series/ATNHPIUS31084Q",
+          "cited_by": [
+            "ANC-7",
+            "IN-6",
+            "V-09",
+            "V-10",
+            "V-11",
+            "V-12",
+            "V-13"
+          ],
+          "topics": [
+            "FHFA All-Transactions HPI, Los Angeles-Long Beach-Glendale MSAD",
+            "FHFA All-Transactions House Price Index, Los Angeles-Long Beach-Glendale, CA Metropolitan ",
+            "hpi_la_msad_yoy"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "url_count": 1,
+      "row_citations": 4,
+      "urls": [
+        {
+          "url": "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024",
+          "cited_by": [
+            "E-34",
+            "E-35",
+            "IN-15",
+            "IR-01"
+          ],
+          "topics": [
+            "Availability of metropolitan-area GDP for LA-Long Beach-Anaheim MSA",
+            "BEA has discontinued metropolitan-area GDP and personal income statistics",
+            "Los Angeles County GDP",
+            "la_county_gdp_2024"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "California School Dashboard (California Department of Education)",
+      "url_count": 1,
+      "row_citations": 8,
+      "urls": [
+        {
+          "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
+          "cited_by": [
+            "S-06",
+            "S-07",
+            "S-08",
+            "S-09",
+            "S-10",
+            "S-11",
+            "S-12",
+            "S-13"
+          ],
+          "topics": [
+            "LAUSD — 4-year cohort graduation rate, all students",
+            "LAUSD — 5-year cohort graduation rate, all students",
+            "LAUSD — 5-year graduation rate, African American students",
+            "LAUSD — 5-year graduation rate, English Learners",
+            "LAUSD — 5-year graduation rate, White students",
+            "LAUSD — 5-year graduation rate, homeless students"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "Los Angeles Unified School District",
+      "url_count": 1,
+      "row_citations": 1,
+      "urls": [
+        {
+          "url": "https://www.lausd.org/",
+          "cited_by": [
+            "S-16"
+          ],
+          "topics": [
+            "LAUSD — projected enrolment for 2026-27"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. National Center for Education Statistics",
+      "url_count": 2,
+      "row_citations": 3,
+      "urls": [
+        {
+          "url": "https://nces.ed.gov/ccd/",
+          "cited_by": [
+            "F-14",
+            "S-17"
+          ],
+          "topics": [
+            "NCES Common Core of Data figures for LAUSD not read from nces.ed.gov",
+            "NCES Common Core of Data — LAUSD membership"
+          ]
+        },
+        {
+          "url": "https://nces.ed.gov/collegenavigator/",
+          "cited_by": [
+            "S-20"
+          ],
+          "topics": [
+            "Higher-education institutions within the trade area"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "Los Angeles County Metropolitan Transportation Authority (Metro)",
+      "url_count": 2,
+      "row_citations": 5,
+      "urls": [
+        {
+          "url": "https://www.metro.net/projects/westside/",
+          "cited_by": [
+            "F-15",
+            "G-06",
+            "G-07",
+            "G-08"
+          ],
+          "topics": [
+            "Metro D Line (Purple) Subway Extension — Section 1 revenue service",
+            "Metro D Line Extension — Sections 2 and 3",
+            "Metro D Line Extension — revenue opening year for Sections 2 and 3",
+            "Revenue opening year for Metro D Line Sections 2 and 3 not stated on the official project "
+          ]
+        },
+        {
+          "url": "https://www.metro.net/",
+          "cited_by": [
+            "G-21"
+          ],
+          "topics": [
+            "Subject parcel — distance to nearest Metro rail station"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Department of the Treasury",
+      "url_count": 2,
+      "row_citations": 12,
+      "urls": [
+        {
+          "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+          "cited_by": [
+            "ANC-8",
+            "IN-1",
+            "IN-2",
+            "V-01",
+            "V-02",
+            "V-03",
+            "V-04",
+            "V-05",
+            "V-06",
+            "V-07",
+            "V-08"
+          ],
+          "topics": [
+            "Treasury yield-curve shape",
+            "U.S. Treasury par yield — 10-year constant maturity",
+            "U.S. Treasury par yield — 2-year constant maturity",
+            "U.S. Treasury par yield — 30-year constant maturity",
+            "U.S. Treasury par yield — 5-year constant maturity",
+            "risk_free_10y"
+          ]
+        },
+        {
+          "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+          "cited_by": [
+            "F-16"
+          ],
+          "topics": [
+            "No official government source publishes net-lease capitalisation rates"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Federal Housing Finance Agency",
+      "url_count": 3,
+      "row_citations": 5,
+      "urls": [
+        {
+          "url": "https://www.fhfa.gov/Property/HousePriceIndex",
+          "cited_by": [
+            "V-14",
+            "V-15"
+          ],
+          "topics": [
+            "FHFA House Price Index — Pacific census division, 12-month change",
+            "FHFA House Price Index — United States, 12-month change"
+          ]
+        },
+        {
+          "url": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q2",
+          "cited_by": [
+            "V-16"
+          ],
+          "topics": [
+            "FHFA purchase-only HPI — Pacific census division"
+          ]
+        },
+        {
+          "url": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q1",
+          "cited_by": [
+            "IN-7",
+            "V-17"
+          ],
+          "topics": [
+            "FHFA purchase-only HPI — Pacific census division",
+            "hpi_pacific_yoy_q1_2026"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Geological Survey",
+      "url_count": 1,
+      "row_citations": 6,
+      "urls": [
+        {
+          "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+          "cited_by": [
+            "ANC-1",
+            "H-01",
+            "H-02",
+            "H-03",
+            "H-04",
+            "IN-12"
+          ],
+          "topics": [
+            "30-year probability of a magnitude 6.7 or greater earthquake in the Los Angeles region",
+            "30-year probability of a magnitude 7.0 or greater earthquake in the Los Angeles region",
+            "30-year probability of a magnitude 7.5 or greater earthquake in the Los Angeles region",
+            "Probability that the 60% M6.7 event occurs INSIDE the 2030-2035 lease-expiry decision wind",
+            "eq_m67_30yr"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "Los Angeles Fire Department",
+      "url_count": 1,
+      "row_citations": 4,
+      "urls": [
+        {
+          "url": "https://lafd.org/fire-prevention/brush/fire-zone/fire-zone-history",
+          "cited_by": [
+            "H-08",
+            "H-09",
+            "H-10",
+            "H-11"
+          ],
+          "topics": [
+            "City of Los Angeles Fire Code — Very High Fire Hazard Severity Zone provisions",
+            "City of Los Angeles — 'Red Flag Day' criteria",
+            "City of Los Angeles — Very High Fire Hazard Severity Zone",
+            "City of Los Angeles — brush clearance requirement inside the VHFHSZ"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "City of Los Angeles Department of Building and Safety",
+      "url_count": 1,
+      "row_citations": 2,
+      "urls": [
+        {
+          "url": "https://ladbs.org/",
+          "cited_by": [
+            "F-20",
+            "H-40"
+          ],
+          "topics": [
+            "Structural system, year built, code vintage and seismic retrofit status unknown",
+            "Subject parcel — structural system, year built, code vintage and seismic retrofit status"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. National Oceanic and Atmospheric Administration",
+      "url_count": 1,
+      "row_citations": 2,
+      "urls": [
+        {
+          "url": "https://www.ncei.noaa.gov/",
+          "cited_by": [
+            "F-22",
+            "H-42"
+          ],
+          "topics": [
+            "Extreme-heat frequency and trend not obtained",
+            "Los Angeles County — extreme-heat day frequency and trend"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "url_count": 8,
+      "row_citations": 53,
+      "urls": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+          "cited_by": [
+            "R-20",
+            "T-37",
+            "T-38"
+          ],
+          "topics": [
+            "Fiscal 2026 guidance issued with the fourth-quarter fiscal 2025 release",
+            "Fourth quarter fiscal 2025 closure detail",
+            "Jack in the Box Inc. — California operating cost exposure disclosed in its own filings"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+          "cited_by": [
+            "T-01",
+            "T-02",
+            "T-03",
+            "T-04",
+            "T-05",
+            "T-06",
+            "T-07",
+            "T-08",
+            "T-09",
+            "T-10",
+            "T-11",
+            "T-12",
+            "T-13",
+            "T-14",
+            "T-15",
+            "T-16",
+            "T-17"
+          ],
+          "topics": [
+            "Adjusted EBITDA (non-GAAP)",
+            "Del Taco divestiture",
+            "Diluted earnings per share from continuing operations",
+            "Franchise-Level Margin (non-GAAP)",
+            "Franchisee bad-debt expense",
+            "Jack in the Box system restaurant count"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+          "cited_by": [
+            "IN-10",
+            "IN-11",
+            "IN-18",
+            "T-18",
+            "T-19",
+            "T-20",
+            "T-21",
+            "T-22",
+            "T-23",
+            "T-24",
+            "T-26",
+            "T-27",
+            "T-28",
+            "T-29",
+            "T-30",
+            "T-33",
+            "T-34",
+            "T-39"
+          ],
+          "topics": [
+            "Average number of franchise restaurants",
+            "Fiscal 2025 restructuring, impairment and closure charges",
+            "Franchise costs as a percentage of total franchise revenues",
+            "Franchise restaurant average unit volume",
+            "Franchised restaurant sales",
+            "Jack in the Box restaurants in California"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm",
+          "cited_by": [
+            "ANC-2",
+            "ANC-3",
+            "IN-9",
+            "T-25",
+            "T-35",
+            "T-36"
+          ],
+          "topics": [
+            "'JACK on Track' strategic plan — announced measures",
+            "Closure-programme sequencing",
+            "Evidence of the head-lease / sub-lease structure in practice",
+            "closure_rate_ongoing"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000076/jack-20251216.htm",
+          "cited_by": [
+            "T-31",
+            "T-32"
+          ],
+          "topics": [
+            "Fiscal 2025 closures attributable to the JACK on Track programme",
+            "Fiscal 2025 segment results (GAAP)"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K&dateb=&owner=include&count=10",
+          "cited_by": [
+            "F-05",
+            "F-30",
+            "T-40"
+          ],
+          "topics": [
+            "Fiscal 2026 fourth-quarter results and any updated closure guidance",
+            "Lease counterparty identity and credit support unknown",
+            "No credit rating is stated for the tenant anywhere on this site"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10",
+          "cited_by": [
+            "T-43"
+          ],
+          "topics": [
+            "Whether the subject restaurant is on the JACK on Track closure list"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=40",
+          "cited_by": [
+            "F-29",
+            "F-31",
+            "IR-08"
+          ],
+          "topics": [
+            "Fiscal 2026 fourth-quarter results not yet filed; scheduled release date is third-party on",
+            "No public disclosure identifies individual restaurants selected for closure",
+            "The tenant's next earnings date is known only from third-party calendars"
+          ]
+        }
+      ]
+    },
+    {
+      "publisher": "U.S. Internal Revenue Service",
+      "url_count": 2,
+      "row_citations": 3,
+      "urls": [
+        {
+          "url": "https://www.irs.gov/",
+          "cited_by": [
+            "R-23"
+          ],
+          "topics": [
+            "Owner-level tax treatment of a sale (federal and California capital gain, depreciation rec"
+          ]
+        },
+        {
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+          "cited_by": [
+            "F-26",
+            "R-24"
+          ],
+          "topics": [
+            "Section 1031 like-kind exchange availability and deadlines",
+            "Section 1031 like-kind exchange availability and deadlines not verified line by line"
+          ]
+        }
+      ]
+    }
+  ]
+}

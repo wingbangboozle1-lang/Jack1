@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "task": "T13",
+    "title": "Decision Options, Analysis & Recommendation",
+    "retrieved": "2026-11-06",
+    "disclaimer": "This is an analytical framework built exclusively from official government and SEC sources. It is not legal advice, tax advice, an appraisal, or a securities recommendation. No dollar amount relating to the subject property is stated anywhere, because none was supplied and none can be verified from an official source."
+  },
+  "decision_question": "For a single-tenant Jack in the Box ground-and-building freehold in the central Los Angeles trade area, leased NNN with the lease set to expire somewhere in the 2030-2035 window: should the owner SELL before expiry, or HOLD and renew the lease, given the economic activity in the area and the full set of factors that influence value?",
+  "findings": [
+    {
+      "id": "FND-1",
+      "headline": "The binding risk is the tenant's own contraction programme, not the Los Angeles economy.",
+      "detail": "Jack in the Box Inc. disclosed on April 23, 2025 a 'JACK on Track' block closure programme projected to close approximately 150-200 underperforming restaurants, a majority of which have been in the system for over three decades, and stated that the remaining underperforming locations would close THEREAFTON 'based on their respective franchise agreement termination dates'. A lease expiring in 2030-2035 therefore sits inside a scheduled, publicly announced closure window. 150-200 closures against a fiscal-2025 opening system of 2,191 restaurants is 6.8% to 9.1% of the system.",
+      "sources": ["T-35", "T-36", "T-18"]
+    },
+    {
+      "id": "FND-2",
+      "headline": "The system is still shrinking, but the rate of decline is slowing.",
+      "detail": "Restaurant count: 2,191 (start FY2025) -> 2,136 (FY2025 year-end) -> 2,115 (July 5, 2026). Fiscal 2026 guidance was 2,050-2,100. System same-store sales improved from -7.1% in the third quarter of fiscal 2025 to -1.1% in the third quarter of fiscal 2026. The improvement came from price, not traffic: the company attributes the fiscal 2026 result to 'a decline in transactions, partially offset by an increase in price'.",
+      "sources": ["T-18", "T-01", "T-03", "T-04", "T-37"]
+    },
+    {
+      "id": "FND-3",
+      "headline": "Franchisee-level credit stress is now visible in the franchisor's own disclosure.",
+      "detail": "In the third quarter of fiscal 2026 the company reported that 'bad debt expense was also higher versus the prior year quarter' and that franchise-level margin fell to 37.4% from 39.3% on 'lower sales driving lower rent and royalty revenue'. Franchise restaurant average unit volume fell from $1,949 thousand to $1,874 thousand in fiscal 2025. RENT IS A NAMED REVENUE LINE THAT IS SHRINKING.",
+      "sources": ["T-09", "T-08", "T-26"]
+    },
+    {
+      "id": "FND-4",
+      "headline": "The identity of the lease counterparty is unknown, and it changes the risk by an order of magnitude.",
+      "detail": "The fiscal 2025 Form 10-K properties table shows three distinct structures coexisting in the system: 164 restaurants in company-owned buildings on company-owned land; 1,020 in company-leased buildings on leased land; and 387 in franchise directly-owned or directly-leased buildings. A fiscal 2025 Form 10-Q confirms that on refranchising the company retains the head lease and sub-leases to the franchisee, passing property tax through. If the subject asset is a corporate head lease, the landlord's counterparty is an SEC-reporting company. If it is a direct franchisee lease, the counterparty is a small private operator whose parent is reporting rising bad debt.",
+      "sources": ["T-21", "T-22", "T-23", "T-24", "T-25", "A-12"]
+    },
+    {
+      "id": "FND-5",
+      "headline": "Central Los Angeles is losing people but gaining households and jobs.",
+      "detail": "City of Los Angeles population fell 0.8% between the April 2020 census base and July 1, 2025; Los Angeles County fell 3.2%. The Department of Finance records a further 0.9% city decline in 2025-2026 and a 64,000-person county loss in 2025 attributed to 'the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations'. Against that, SCAG's adopted Connect SoCal 2024 forecast projects City of Los Angeles HOUSEHOLDS rising from 1,398,600 (2019) to 1,699,400 by 2035 (+21.5%) and jobs located in the city rising from 1,954,000 to 2,119,800 (+8.5%). Its 2025 draft cycle projects county population down 5% by 2050 but county households UP 6%. Smaller households, more of them: that is a drive-thru-friendly demand structure and it is the single strongest local argument for holding.",
+      "sources": ["D-03", "D-06", "D-12", "D-13", "D-32", "D-33", "D-35", "D-36"]
+    },
+    {
+      "id": "FND-6",
+      "headline": "The local labour market is flat, not collapsing, and the mix is shifting away from central-LA office employment.",
+      "detail": "MSA total nonfarm payroll employment grew 0.5% year over year to September 2026 (preliminary) after running at -0.2% in April and May 2026. The MSA unemployment rate was 4.4% in September 2026 (preliminary), improved from 6.1% in July 2025. But the composition matters: Education and Health Services +3.8% and Leisure and Hospitality +1.5%, against Information -5.7%, Financial Activities -1.7% and Manufacturing -1.2%. Leisure and Hospitality — the sector that contains restaurants — is growing faster than total employment.",
+      "sources": ["E-11", "E-04", "E-26", "E-27", "E-13", "E-15", "E-20", "E-19", "E-18"]
+    },
+    {
+      "id": "FND-7",
+      "headline": "Local price levels are NOT providing tailwind.",
+      "detail": "The FHFA All-Transactions House Price Index for the Los Angeles-Long Beach-Glendale Metropolitan Division rose only 1.2% year over year to 2026 Q2, and the FHFA purchase-only index for the whole Pacific census division was 0.0% year over year in 2026 Q1 and +0.4% in 2026 Q2 — the weakest of the nine divisions. Nationally FHFA reported +2.4% for the twelve months to August 2026. Meanwhile the 10-year Treasury par yield was 4.84% on November 5, 2026 and the 30-year 5.25%: a high, positively sloped curve with no official data supporting near-term cap-rate compression.",
+      "sources": ["V-09", "V-13", "V-16", "V-17", "V-14", "V-01", "V-05", "V-08"]
+    },
+    {
+      "id": "FND-8",
+      "headline": "Cost inflation is running ahead of local revenue growth for the tenant.",
+      "detail": "Los Angeles CPI-U rose 3.6% for the twelve months to May 2026, with food +3.5% and energy +18.0%. The City of Los Angeles minimum wage rose 3.08% to $18.42 per hour on July 1, 2026 and is indexed annually. Approximately 84% of the company's restaurant employees were part-time at the end of fiscal 2025. The company itself cited California payroll taxes as large enough to move its disclosed restaurant-level margin.",
+      "sources": ["I-11", "I-17", "I-18", "I-20", "I-21", "T-39", "R-20"]
+    },
+    {
+      "id": "FND-9",
+      "headline": "Assessed values in the trade area are rising strongly even as market price indices are flat.",
+      "detail": "The Los Angeles County 2026 Assessment Roll closed at a record $2.272 trillion, up 4.42% ($96 billion), the sixteenth consecutive year of growth, with the City of Los Angeles accounting for $926.1 billion. Property transfers added $49 billion, the Prop 13 maximum 2% inflation factor added about $43 billion, and new construction added more than $12 billion. The Assessor reported a median home sales price of $982,000 while describing 'a cooling real estate market'. Under Prop 13 an individual parcel can rise at most 2% a year absent a change in ownership — so a long-held parcel's tax bill is artificially low, and a SALE resets it for the buyer.",
+      "sources": ["V-18", "V-19", "V-20", "V-21", "V-22", "V-23", "I-19", "R-02", "R-04"]
+    },
+    {
+      "id": "FND-10",
+      "headline": "A sale inside the City of Los Angeles carries a severe, cliff-shaped transaction tax.",
+      "detail": "Measure ULA (LAMC Section 21.9.2, effective April 1, 2023) imposes 4% on transfers above the lower indexed threshold and below the upper threshold, and 5.5% at or above the upper threshold, measured on the WHOLE consideration or value, not the excess. It applies only inside the City of Los Angeles, and stacks on top of the City and County documentary transfer taxes. Because it is a cliff, there is a price band just above the lower threshold at which a higher price produces LOWER net proceeds. The current indexed thresholds could not be verified directly from the City Office of Finance in this session and are flagged.",
+      "sources": ["R-09", "R-10", "R-11", "R-12", "R-15", "R-07", "R-08"]
+    },
+    {
+      "id": "FND-11",
+      "headline": "Catastrophe exposure is real, concentrated and officially quantified for this exact market.",
+      "detail": "USGS UCERF3 puts the 30-year probability of a magnitude 6.7 or greater earthquake in the Los Angeles region at 60% — which restates to 14.2% inside a five-year window on a compound basis, or 10.0% on a simple linear basis. The decision window is roughly that length. The January 2025 Eaton and Palisades fires destroyed 9,414 and 6,837 structures respectively, killed 19 and 12 people, impacted approximately 6,800 businesses and 47,000 workers, and cost an official $5.2 billion to $10.1 billion in economic output — between 0.64% and 1.23% of Los Angeles County's $818.5 billion 2024 GDP. The City of Los Angeles Very High Fire Hazard Severity Zone covers most of the hilly and mountainous parts of the city including Hollywood, Silver Lake, Echo Park, Los Feliz, Mount Washington, El Sereno and Baldwin Hills — all of which sit in or adjacent to central Los Angeles. Los Angeles County's Local Responsibility Area Fire Hazard Severity Zones were re-established in 2025.",
+      "sources": ["H-01", "H-02", "H-03", "H-04", "H-14", "H-18", "H-15", "H-18", "H-19", "H-20", "H-21", "E-34", "H-08", "H-07"]
+    },
+    {
+      "id": "FND-12",
+      "headline": "The insurance market is stabilising, which removes one headwind from a hold decision.",
+      "detail": "The California Department of Insurance reported on May 1, 2026 that the FAIR Plan added approximately 16,000 residential policies in Q1 2026 (about 2.4% growth) against 35,000-50,000 per quarter from 2024 through September 2025, and that COMMERCIAL policy counts remained relatively stable, rising only slightly from 21,200 to 21,464. Nine top-ten insurers have committed to expanding coverage. Commercial property — the relevant class here — never experienced the residential exodus.",
+      "sources": ["H-26", "H-27", "H-28", "H-29"]
+    },
+    {
+      "id": "FND-13",
+      "headline": "Access and density fundamentals are improving inside the decision window.",
+      "detail": "Metro's D Line Subway Extension Section 1 opened on May 8, 2026 with three new stations along Wilshire Boulevard; Sections 2 and 3 are under construction. The City's Downtown Community Plan — covering the Central City (approximately 2,161 acres) and Central City North (approximately 2,005 acres) plan areas — is intended to guide development through the year 2040, i.e. beyond the lease expiry. Los Angeles County added 11,260 net housing units in 2025, more than any other California county, and the City of Los Angeles added 7,061 multifamily units, 62.7% of its net housing growth. SCAG has programmed $750 billion of transportation investment across the region over the next quarter-century.",
+      "sources": ["G-06", "G-07", "G-04", "G-01", "G-14", "G-09"]
+    },
+    {
+      "id": "FND-14",
+      "headline": "The franchisor is adding competing supply of the same box type.",
+      "detail": "Jack in the Box Inc. reported other operating income of $3.1 million in the third quarter of fiscal 2026, a $7.6 million swing from a prior-year expense, 'primarily due to an increase in gains on the sale of real estate'. The JACK on Track plan explicitly includes selling a select number of owned real estate holdings. Every JIB box the company sells enters the same buyer pool that a landlord would approach, at the same time.",
+      "sources": ["T-13", "T-35", "T-34"]
+    }
+  ],
+  "options": [
+    {
+      "id": "OPT-A",
+      "name": "Sell now, with the lease in place (immediate disposition, 2026-2027)",
+      "summary": "Market the fee interest as an income-producing single-tenant NNN asset while the maximum number of years of firm term remains.",
+      "strengths": [
+        "Captures the highest present value of the income stream, because value in a net-lease asset is dominated by the length of remaining firm term. Every year of hold mechanically shortens that term (FND-1, FND-2).",
+        "Transfers the closure risk to the buyer. If the restaurant is on the JACK on Track list, the buyer absorbs it (FND-1, T-36).",
+        "Realises value while Los Angeles County assessed values are at a record and have risen for sixteen consecutive years (FND-9).",
+        "Removes exposure to a 10.0%-to-14.2% five-year probability of an M6.7+ earthquake and to a repeat of a January-2025-class fire event (FND-11).",
+        "Converts a single-tenant, single-use, illiquid asset into liquid capital that can be redeployed — the core of wealth preservation."
+      ],
+      "weaknesses": [
+        "Measure ULA: if the parcel is in the City of Los Angeles and the price is at or above the lower threshold, 4% or 5.5% of the ENTIRE price is payable, on top of City and County documentary transfer tax (FND-10). This is the largest single drag on this option.",
+        "Proposition 13: a sale resets the buyer's base-year value to the price paid. If the current assessed value is far below market, the buyer's tax bill — and under NNN the tenant's reimbursement — jumps sharply, which reduces the price a buyer will pay (FND-9, R-04).",
+        "Capital-gain and depreciation-recapture exposure crystallises immediately; the owner's basis is unknown and withheld (R-23).",
+        "Reinvestment risk: proceeds must be redeployed into a 10-year Treasury environment of 4.84% with no official evidence of cap-rate compression (FND-7).",
+        "Sells into a market where the franchisor is itself a net seller of restaurant real estate, adding competing supply (FND-14).",
+        "Forgoes the household-growth upside that SCAG projects for the city through 2035 (FND-5, FND-13)."
+      ],
+      "best_when": "The tenant counterparty is a bare franchisee with no corporate guaranty (FND-4), OR the tenant declines to discuss an extension, OR the price sits below the Measure ULA threshold, OR the owner has a specific, better use for the capital."
+    },
+    {
+      "id": "OPT-B",
+      "name": "Hold and negotiate an early extension / renewal NOW (term-certainty strategy)",
+      "summary": "Do not sell and do not wait. Approach the tenant within the next 12 months to convert the ambiguous 2030-2035 window into a signed, longer firm term.",
+      "strengths": [
+        "Directly attacks the single largest risk identified in this analysis: uncertainty about whether the site survives the closure programme (FND-1).",
+        "If granted, it lengthens firm term and therefore RAISES eventual sale value — it is the only option that improves the exit rather than merely choosing when to take it.",
+        "Avoids Measure ULA and documentary transfer tax entirely, and avoids triggering a Prop 13 reassessment (FND-9, FND-10).",
+        "Keeps the land-option value intact through the Downtown Community Plan's 2040 horizon (FND-13).",
+        "Preserves the household-growth and job-growth upside SCAG projects for the city (FND-5).",
+        "A refusal is itself high-value information: it is the earliest reliable signal that the site is on a closure path, and it triggers Option A while several years of firm term still remain."
+      ],
+      "weaknesses": [
+        "The tenant has no obligation to negotiate early and gains little from doing so while its own system shrinks (FND-2).",
+        "Any extension granted in a weak system will likely be on worse economics — lower rent, tenant improvement allowance, or a termination option — than the existing lease (FND-3).",
+        "Interim corporate leadership reduces the reliability of any counterparty commitment (T-15).",
+        "Time cost: each year spent negotiating is a year of firm term consumed if the negotiation fails.",
+        "Cannot be executed at all until the counterparty identity and option structure are established, both of which are currently unknown (A-06, A-12)."
+      ],
+      "best_when": "The counterparty is Jack in the Box Inc. corporate or a corporate head lease with a franchisee sub-lease (T-23, T-25), the site is in a dense corridor with rising households (FND-5), and the value is at or near a Measure ULA threshold where a sale would be tax-punitive."
+    },
+    {
+      "id": "OPT-C",
+      "name": "Passively hold to expiry and decide in 2030-2035",
+      "summary": "Collect rent, take no action, and reassess when the lease actually expires.",
+      "strengths": [
+        "Zero transaction cost, zero capital-gains event, zero management effort.",
+        "Retains full optionality while the tax bill stays capped at 2% annual growth under Prop 13 (R-02).",
+        "Beneficiary of SCAG's projected household and job growth and of the Metro D Line extension (FND-5, FND-13)."
+      ],
+      "weaknesses": [
+        "WORST OPTION ON A RISK-ADJUSTED BASIS. Firm term decays every year, so the sale price of the income stream decays every year (FND-1).",
+        "By 2030-2035 the closure programme will have completed: JACK on Track targets 150-200 closures and 51 were already executed in fiscal 2025 (T-31, T-35). Waiting means discovering the answer after the market already knows it.",
+        "If the tenant does not renew, the owner holds a dark, single-purpose restaurant building on a small parcel, with no income, carrying costs, demolition or conversion expense, and no leverage (FND-1).",
+        "The franchisor's rising franchisee bad-debt expense means rent interruptions can begin well before expiry (T-09).",
+        "Holding to expiry forfeits the ability to sell while the county assessment roll is at a record (FND-9).",
+        "Leaves the owner exposed for the full period to a 10.0%-to-14.2% five-year earthquake probability and to fire events of the January 2025 scale (FND-11)."
+      ],
+      "best_when": "Essentially never as a deliberate strategy. It is the default outcome of inaction, and it is dominated by Option B, which produces the same information earlier and with the option to exit."
+    },
+    {
+      "id": "OPT-D",
+      "name": "Hold to expiry and re-tenant to an alternative quick-service or convenience operator",
+      "summary": "Plan for the Jack in the Box tenancy to end, and pre-position the site for a different national or regional operator.",
+      "strengths": [
+        "Removes single-tenant and single-brand concentration, which is the structural weakness of the current position (FND-1, FND-4).",
+        "Central Los Angeles density (8,304.2 persons per square mile in the city) and 30.7-minute mean commutes support competing drive-thru concepts (D-26, I-22).",
+        "Leisure and Hospitality employment is growing at +1.5% against +0.5% for total nonfarm, so operator demand for sites exists (E-13, E-11).",
+        "Preserves land value under a Downtown Community Plan horizon of 2040 (FND-13)."
+      ],
+      "weaknesses": [
+        "Downtime between tenants produces zero income while property tax, insurance and maintenance continue — and under a former NNN lease the landlord resumes all three.",
+        "Second-generation QSR conversion usually requires landlord capital for demolition, greasing, HVAC, drive-thru reconfiguration and signage.",
+        "Zoning, use permits and conditional-use requirements are parcel-specific and currently unknown (A-15, G-22).",
+        "Competing supply: the franchisor is selling its own boxes into the same market (FND-14).",
+        "No official data quantifies re-tenanting probability, downtime length or conversion cost. This option cannot be underwritten from verified sources and is flagged."
+      ],
+      "best_when": "The site has confirmed alternative-use zoning, strong frontage and signalisation, and the owner has capital and appetite for an operating rather than a passive position."
+    },
+    {
+      "id": "OPT-E",
+      "name": "Hold and pursue redevelopment or an assemblage under the Downtown Community Plan",
+      "summary": "Treat the parcel as land with an income-producing interim use, targeting residential or mixed-use entitlement through 2040.",
+      "strengths": [
+        "The City's Downtown Community Plan explicitly consolidates Central City and Central City North and is intended to guide development through 2040 (FND-13).",
+        "SCAG projects City of Los Angeles households rising 21.5% by 2035 while population declines — the classic signature of demand for smaller, denser units (FND-5).",
+        "Los Angeles County added 11,260 net housing units in 2025, the most of any California county, and the city added 7,061 multifamily units (G-14).",
+        "The rent stream funds the carry during entitlement, which is the main advantage over vacant land."
+      ],
+      "weaknesses": [
+        "Entitlement risk is entirely parcel-specific and unverified: zoning, General Plan land use and overlay district are unknown (G-22).",
+        "Long, capital-intensive and illiquid — the opposite of wealth preservation through the decision window.",
+        "A single small QSR parcel is rarely independently developable; value depends on assembling neighbours, which the owner does not control.",
+        "The NNN tenant's leasehold rights, exclusive-use clauses and any restriction on landlord termination are unknown (A-03, A-06).",
+        "No official source in this dataset quantifies central-LA development yields; this option is therefore the least evidenced of the five."
+      ],
+      "best_when": "The parcel is large enough or assemblable, sits in a housing-oriented plan designation, and the owner has a multi-decade horizon and development capacity."
+    },
+    {
+      "id": "OPT-F",
+      "name": "Sell and execute a Section 1031 like-kind exchange",
+      "summary": "Combine Option A with a tax-deferred reinvestment into another income property.",
+      "strengths": [
+        "Preserves the risk-transfer benefit of selling while deferring the capital-gain event (R-24).",
+        "Allows rotation out of a single-tenant, single-brand, closure-exposed asset into a diversified or multi-tenant position.",
+        "Does not avoid Measure ULA — the exchange is still a transfer of the relinquished property (FND-10)."
+      ],
+      "weaknesses": [
+        "Strict statutory identification and completion deadlines create execution risk under time pressure.",
+        "Reinvestment is into the same 4.84% ten-year Treasury and flat Pacific-division house-price environment (FND-7).",
+        "No election exists and no qualified intermediary is engaged; the owner's basis and entity structure are unknown and withheld (R-23, R-24).",
+        "Availability and deadlines could not be verified line by line from an official IRS publication in this session and are flagged."
+      ],
+      "best_when": "Option A is chosen and the owner's gain is large relative to the proceeds; requires immediate professional tax confirmation."
+    }
+  ],
+  "recommendation": {
+    "headline": "Hold-and-secure-term now, with a hard, pre-committed sell trigger. Do not sell immediately; do not wait passively for 2030-2035.",
+    "rationale": "Option B is the only choice that is dominant under both branches of the one uncertainty that actually decides the outcome. If the tenant extends, the owner keeps the income, avoids a 4.56%-to-6.06% transaction-tax drag, avoids a Prop 13 reassessment that would depress the price, and exits later with a LONGER firm term and therefore a higher price. If the tenant refuses or signals closure, the owner learns that years earlier than the market's default discovery date of 2030-2035 and can still sell with four to nine years of firm term remaining instead of selling a dark box. Passive holding (Option C) produces exactly the same information but later, at a lower price, with no compensating benefit — it is strictly dominated. Immediate sale (Option A) is the correct answer only in the specific conditions listed below.",
+    "plan": [
+      {
+        "step": 1,
+        "window": "Months 0-3",
+        "action": "Resolve the four unknowns that decide everything, using only the official lookups already linked in this report.",
+        "detail": "(a) Confirm whether the lease counterparty is Jack in the Box Inc., a franchisee, or a corporate head lease with a franchisee sub-lease, and whether any corporate guaranty or letter of credit exists [A-12, A-13]. (b) Confirm the exact expiry date and the full option structure [A-04, A-06]. (c) Pull the parcel record from the Los Angeles County Assessor for assessed value and Tax Rate Area, and the Auditor-Controller Tax Rate Area lookup for the total rate [A-10, A-11, R-05]. (d) Run the three hazard lookups: FEMA Flood Map Service Center, the LA County Fire Department FHSZ layer, and the California Geological Survey Alquist-Priolo zone map [H-36, H-37, H-38]. (e) Confirm whether the parcel is inside the City of Los Angeles, because that alone determines whether Measure ULA applies [R-15]."
+      },
+      {
+        "step": 2,
+        "window": "Months 3-9",
+        "action": "Obtain a valuation range from a licensed appraiser and a written Measure ULA determination.",
+        "detail": "No value in this report is an appraisal; the valuation page deliberately publishes no cap rate because no official government source provides one [V-28]. Establish where the price sits relative to the lower Measure ULA threshold and verify the current indexed thresholds directly with the City of Los Angeles Office of Finance, since they were flagged in this session [R-12]."
+      },
+      {
+        "step": 3,
+        "window": "Months 6-18",
+        "action": "Approach the tenant to convert the 2030-2035 window into a signed longer term.",
+        "detail": "Seek a five-to-ten year extension, or a written statement of renewal intent, or — failing both — confirmation of the franchise agreement expiration date, because the company has stated that closure timing follows franchise agreement termination dates [T-36, T-45]."
+      },
+      {
+        "step": 4,
+        "window": "On trigger",
+        "action": "Execute the sell trigger without further deliberation.",
+        "detail": "SELL IMMEDIATELY if any of the following occurs: the tenant declines to discuss an extension; the franchise agreement is disclosed to expire before or at the lease expiry; rent is paid late more than twice in any twelve months; the tenant requests a rent reduction or a co-tenancy/termination right; the property is disclosed to be in a Very High Fire Hazard Severity Zone and insurance becomes unavailable or unaffordable; or the county-level labour market turns from +0.5% nonfarm growth to sustained decline [E-11, H-08, H-37]."
+      },
+      {
+        "step": 5,
+        "window": "Continuous",
+        "action": "Monitor the six official indicators on this site quarterly.",
+        "detail": "BLS Los Angeles-Long Beach-Anaheim nonfarm employment and the Leisure and Hospitality series; the Jack in the Box Inc. quarterly restaurant count, same-store sales and franchise-level margin commentary on bad debt; FHFA All-Transactions HPI for the Los Angeles-Long Beach-Glendale Metropolitan Division; the U.S. Treasury 10-year par yield; California Department of Finance E-1/E-5 population estimates each May; and California Department of Insurance FAIR Plan commercial policy counts."
+      }
+    ],
+    "sell_now_instead_if": [
+      "The counterparty is a bare franchisee with no corporate guaranty or letter of credit [A-12, A-13, FND-4].",
+      "The parcel sits outside the City of Los Angeles, so Measure ULA does not apply and the transaction-tax drag falls to documentary transfer tax only [R-15, FND-10].",
+      "The parcel is inside a Very High Fire Hazard Severity Zone or an Alquist-Priolo Earthquake Fault Zone, both of which raise insurance cost and statutory disclosure duty on any future sale [H-08, H-05, H-37, H-38].",
+      "The owner's own liquidity, concentration or estate circumstances make a single-tenant, single-brand, illiquid position unacceptable — a personal factor that cannot be assessed here because all personal financial information is withheld [A-16, A-17].",
+      "The franchisor's next quarterly filing shows the restaurant count falling faster than the disclosed 1% ongoing annual closure rate, or franchisee bad-debt expense rising again [T-01, T-09, T-36]."
+    ],
+    "risk_balance": "The recommended path holds a manageable level of risk rather than a minimal one. It retains two exposures deliberately — continued single-tenant concentration and continued exposure to a Los Angeles catastrophe — because eliminating either of them today costs 4.56% to 6.06% of price in transaction tax plus a Prop 13 reassessment discount, and because the local fundamentals (record assessed values, growing households, growing leisure-and-hospitality employment, a stabilising insurance market) do not justify paying that price for immediate exit. It eliminates the one exposure that the evidence says is genuinely likely to impair value: discovering the tenant's closure decision at the same time as everyone else, in 2030-2035, with no firm term left to sell."
+  }
+}
