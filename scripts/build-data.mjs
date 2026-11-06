@@ -33,6 +33,7 @@ const U = {
   dir: "https://www.dir.ca.gov/AB1228/AB1228.html",
   nces: "https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=0622710",
   fred: "https://fred.stlouisfed.org/series/DGS10",
+  fredInc: "https://fred.stlouisfed.org/series/MHICA06037A052NCEN",
 };
 
 const SRC = {
@@ -53,6 +54,7 @@ const SRC = {
   dir: "California Dept. of Industrial Relations, AB 1228 Fast Food Council",
   nces: "National Center for Education Statistics, Common Core of Data — Los Angeles Unified (0622710)",
   fred: "Federal Reserve Bank of St. Louis (FRED), 10-Year Treasury Constant Maturity (DGS10)",
+  fredInc: "Federal Reserve Bank of St. Louis (FRED), Median Household Income — Los Angeles County (SAIPE)",
 };
 
 /* [id, category, metric, value, unit, period, geography, srcKey, status, note] */
@@ -75,7 +77,7 @@ const rows = [
   ["INC-01","Income & Poverty","Median household income (2024 dollars)","81,939","USD / year","2020-2024","Los Angeles city","censusCity","verified",""],
   ["INC-02","Income & Poverty","Per capita income (2024 dollars)","47,685","USD / year","2020-2024","Los Angeles city","censusCity","verified",""],
   ["INC-03","Income & Poverty","Persons below poverty line","16.5","%","2025 estimate","Los Angeles city","censusCity","verified",""],
-  ["INC-04","Income & Poverty","Median household income (2024 dollars)","","USD / year","2020-2024","Los Angeles County","censusCounty","unverified","County median household income was not displayed in the retrieved table segments. Not inferred from the city figure."],
+  ["INC-04","Income & Poverty","Median household income","90,757","USD / year","2024","Los Angeles County","fredInc","verified","SAIPE-based series on FRED. Census QuickFacts did not display a county median in the retrieved segments, so the value is taken from this series instead; it corroborates the figure used in the archived build."],
   ["INC-05","Income & Poverty","Civilian labour force participation (16+)","66.4","%","2020-2024","Los Angeles city","censusCity","verified",""],
   ["INC-06","Income & Poverty","Uninsured residents under 65","10.7","%","2020-2024","Los Angeles city","censusCity","verified",""],
   ["INC-07","Income & Poverty","High school graduate or higher (25+)","79.6","%","2020-2024","Los Angeles city","censusCity","verified",""],

@@ -30,6 +30,7 @@ Statuses: `unclaimed` · `in progress` · `done` · `needs review`. `needs revie
 | T14 | Build gate: 370 structural assertions (blank-value rule, official-domain allowlist, link check) | done | S-83526ad4 | `scripts/verify-data.mjs` |
 | T15 | Site build: 10-page dashboard with per-row source links | done | S-83526ad4 | `*.html`, `assets/` |
 | T16 | Integration pass #2: reconcile all three sessions, archive prior canonical build, publish | done | S-83526ad4 | repo root; `.github/workflows/pages.yml` |
+| T17 | Post-merge verification, deploy check, PR/deploy record | done | S-83526ad4 | `COORDINATION.md` |
 
 No task is claimed by another session at the time of writing. Scopes are file-disjoint.
 
@@ -50,7 +51,7 @@ No task is claimed by another session at the time of writing. Scopes are file-di
 Both prior builds are byte-for-byte preserved in `archive/` and remain reachable. The integration decision was made on three
 verifiable grounds, not preference:
 
-1. **Every row carries its own source link and an enforced status.** 130 rows: 91 `verified`, 3 `derived`, 28 `unverified`
+1. **Every row carries its own source link and an enforced status.** 130 rows: 92 `verified`, 3 `derived`, 27 `unverified`
    (blank by rule), 8 `placeholder` (withheld by policy). The gate in `scripts/verify-data.mjs` fails the build if a number
    appears in an `unverified` row — the strongest available guarantee against a hallucinated figure.
 2. **The prior build's deploy path would have broken this site**: `pages.yml` copied only root `*.html` + `assets/`, and this
@@ -70,7 +71,7 @@ verifiable grounds, not preference:
 - Headless DOM render test of all 10 pages against the real JSON: **no JavaScript errors**, no empty table slots, navigation
   present everywhere, model output identical to the narrative figures (A 13.43× / B 13.15× / C 15.19×, break-even 59.4%).
 - Local HTTP check: all 10 pages + 3 JSON files + 3 assets return 200.
-- Row accounting: 130 = 91 verified + 3 derived + 28 blank + 8 withheld.
+- Row accounting: 130 = 92 verified + 3 derived + 27 blank + 8 withheld.
 
 ### Irregularities logged (non-blocking; published on `flagged.html`)
 
@@ -119,4 +120,26 @@ this merge was made (PR #3, a documentation PR from d2137d88, remains open and u
 | #3 | arena/d2137d88-jack1 | open — documentation only, not merged by this session |
 | **#4** | **arena/83526ad4-jack1** | **merged; see deploy verification below** |
 
-**Deploy verification (PR #4):** recorded in the final entry of this file after the Pages build was checked live.
+**Deploy verification (PR #4):**
+
+| Check | Result |
+|---|---|
+| PR #4 merged | **yes** — merge commit `0fa29e5`, 2026-11-06T13:05:34Z |
+| Pages build (legacy, `main` /) | success |
+| Pages workflow (`Deploy static site to GitHub Pages`) | success |
+| `https://wingbangboozle1-lang.github.io/Jack1/` | **live — serves this build** (executive summary, recommendation, KPI strip verified in the rendered page) |
+| `/data/records.json` | **live (HTTP 200, valid JSON)** — the runtime dataset the tables read |
+| `/model.html` | live; model renders 13.43× / 13.15× / 15.19× and the 59.4% break-even on the deployed page |
+| `/flagged.html` | live; 27 blank + 8 withheld rows published |
+| `/archive/arena-d2137d88/index.html` | live — prior canonical build preserved and still readable, styles and links intact |
+
+**Post-merge integration win:** while reconciling, the archived build's LA County median household income figure ($90,757,
+SAIPE) was re-verified independently against FRED series `MHICA06037A052NCEN` and adopted into the live dataset. That closed
+open item INC-04 (verified rows 91 → 92; blank rows 28 → 27). Nothing was adopted on trust: the value was re-read from the
+official series before use.
+
+**Known cosmetic issue, left deliberately:** `main` triggers two deploy paths (the automatic legacy Pages build and the
+session-contributed `pages.yml` workflow). Both now ship identical content, including `data/` and `archive/`, so the site is
+correct either way; the duplicate runs show as "cancelled" under the workflow's concurrency group. Removing the workflow would
+be a one-line change for a future session, but it is another session's deploy configuration and deleting it unilaterally was
+judged worse than the noise.
