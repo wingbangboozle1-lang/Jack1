@@ -81,7 +81,7 @@
         <thead><tr><th>Category</th><th>Rows</th><th>Verified</th><th>Blank / placeholder</th><th>Verification note</th></tr></thead>
         <tbody>
           <tr><td class="metric">Demographics</td><td class="val">12</td><td class="val">10</td><td class="val">2</td><td class="note">Census QuickFacts city and county pages read in full, chunk by chunk.</td></tr>
-          <tr><td class="metric">Income &amp; Poverty</td><td class="val">9</td><td class="val">8</td><td class="val">1</td><td class="note">County median income was not displayed in the retrieved segments; left blank.</td></tr>
+          <tr><td class="metric">Income &amp; Poverty</td><td class="val">9</td><td class="val">9</td><td class="val">0</td><td class="note">County median income taken from the FRED/SAIPE series after Census QuickFacts did not display it; cross-checked against the archived build.</td></tr>
           <tr><td class="metric">Housing</td><td class="val">6</td><td class="val">6</td><td class="val">0</td><td class="note">QuickFacts housing block and building permits.</td></tr>
           <tr><td class="metric">Economy &amp; Jobs</td><td class="val">18</td><td class="val">17</td><td class="val">1</td><td class="note">BLS Economy at a Glance, September 2026 preliminary; series IDs recorded per row.</td></tr>
           <tr><td class="metric">Prices</td><td class="val">7</td><td class="val">7</td><td class="val">0</td><td class="note">BLS CPI Los Angeles release 26-1595-SAN.</td></tr>
@@ -110,11 +110,9 @@
         same analysis by other sessions, preserved unmodified for provenance and comparison. Their data registries can be read
         side by side with ours; they contain industry-labelled figures (cap rates, credit commentary) that this build instead
         flags as unverified.</li>
-      <li><a href="archive/arena-972c721e/index.html"><code>archive/arena-972c721e/</code></a> — a third independent build, from a
-        later session. It reaches the same recommendation (lock the renewal, then sell the term) from a different model: it prices
-        the cap rate as a continuous function of <i>remaining lease term</i> and runs the 2030&ndash;2035 expiry window as three
-        separate assets, which makes the term premium measurable rather than asserted. It is published but not part of this site's
-        navigation. Its engine is reproducible: <code>python3 model/model.py</code>, then <code>python3 tools/check.py</code>.</li>
+      <li><a href="site/index.html">Third build (session d85fba50)</a> — five pages plus <code>executive_summary.md</code> and
+        supporting documents, preserved in place. It cites several non-government domains; those figures are deliberately not
+        carried into this dataset, which is restricted by code to government/SEC/central-bank sources.</li>
     </ul>
 
     <h2>Glossary</h2>

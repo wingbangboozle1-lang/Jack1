@@ -131,6 +131,11 @@
       "key": "fred",
       "name": "Federal Reserve Bank of St. Louis (FRED), 10-Year Treasury Constant Maturity (DGS10)",
       "url": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    {
+      "key": "fredInc",
+      "name": "Federal Reserve Bank of St. Louis (FRED), Median Household Income — Los Angeles County (SAIPE)",
+      "url": "https://fred.stlouisfed.org/series/MHICA06037A052NCEN"
     }
   ],
   "records": [
@@ -347,16 +352,16 @@
     {
       "id": "INC-04",
       "category": "Income & Poverty",
-      "metric": "Median household income (2024 dollars)",
-      "value": "",
+      "metric": "Median household income",
+      "value": "90,757",
       "unit": "USD / year",
-      "period": "2020-2024",
+      "period": "2024",
       "geography": "Los Angeles County",
-      "source": "U.S. Census Bureau, QuickFacts — Los Angeles County, CA",
-      "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
-      "status": "unverified",
+      "source": "Federal Reserve Bank of St. Louis (FRED), Median Household Income — Los Angeles County (SAIPE)",
+      "url": "https://fred.stlouisfed.org/series/MHICA06037A052NCEN",
+      "status": "verified",
       "source_class": "official",
-      "note": "County median household income was not displayed in the retrieved table segments. Not inferred from the city figure."
+      "note": "SAIPE-based series on FRED. Census QuickFacts did not display a county median in the retrieved segments, so the value is taken from this series instead; it corroborates the figure used in the archived build."
     },
     {
       "id": "INC-05",
