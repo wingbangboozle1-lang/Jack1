@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "version": "1.0",
+    "built": "2026-11-06",
+    "warning": "Every input below is either (a) a VERIFIED figure pulled from an official source and listed in data/facts.json, or (b) a stated ASSUMPTION. No input is a guess dressed up as data. Property-specific inputs (rent, NOI, lease dates) were not supplied and are held as illustrative bands only."
+  },
+  "verified_inputs": {
+    "risk_free_10y_pct": 4.9,
+    "policy_rate_top_pct": 4.0,
+    "cpi_u_yoy_pct": 3.7,
+    "cpi_w_la_yoy_pct": 4.1,
+    "limited_service_meals_yoy_pct": 3.2,
+    "metro_unemployment_pct": 4.4,
+    "metro_jobs_yoy_pct": 0.5,
+    "city_pop_change_pct": -0.8,
+    "county_pop_change_pct": -3.2,
+    "prop13_annual_cap_pct": 2.0,
+    "city_transfer_tax_pct": 0.45,
+    "county_transfer_tax_pct": 0.11,
+    "ula_threshold_2026": 5400000,
+    "ula_tier1_pct": 4.0,
+    "ula_tier2_pct": 5.5,
+    "ulas_upper_threshold": 10900000
+  },
+  "assumptions": [
+    {
+      "key": "A1",
+      "name": "Illustrative NOI cases",
+      "value": "$140,000 / $180,000 / $240,000",
+      "basis": "Assumption. Actual NOI was not supplied. Chosen to bracket a plausible single-tenant QSR footprint in Central LA. Replace with the real figure before acting."
+    },
+    {
+      "key": "A2",
+      "name": "Cap rate \u2014 short remaining term (3 years or less)",
+      "value": "7.25%",
+      "basis": "Assumption = verified 10-year Treasury 4.90% + 235bp. No official series publishes net-lease cap rates, so the spread is stated, not sourced."
+    },
+    {
+      "key": "A3",
+      "name": "Cap rate \u2014 about 5 years remaining",
+      "value": "6.50%",
+      "basis": "Assumption = 10-year 4.90% + 160bp."
+    },
+    {
+      "key": "A4",
+      "name": "Cap rate \u2014 about 8-10 years remaining",
+      "value": "6.00%",
+      "basis": "Assumption = 10-year 4.90% + 110bp."
+    },
+    {
+      "key": "A5",
+      "name": "Cap-rate sensitivity band",
+      "value": "\u00b175bp",
+      "basis": "Assumption. Used to show how much of the answer is a rates call."
+    },
+    {
+      "key": "A6",
+      "name": "In-place rent escalation",
+      "value": "2.0%/yr",
+      "basis": "Assumption. Actual escalator is in the lease, which was not supplied (F109)."
+    },
+    {
+      "key": "A7",
+      "name": "Market rent growth",
+      "value": "3.0%/yr",
+      "basis": "Assumption, anchored to verified CPI (3.7%) and limited-service meal inflation (3.2%)."
+    },
+    {
+      "key": "A8",
+      "name": "Discount rate / required return",
+      "value": "7.40%",
+      "basis": "Assumption = verified 10-year Treasury 4.90% + 250bp illiquidity and single-tenant premium."
+    },
+    {
+      "key": "A9",
+      "name": "Cost of sale \u2014 brokerage, legal, closing",
+      "value": "5.0% of gross price",
+      "basis": "Assumption. Negotiated, not published."
+    },
+    {
+      "key": "A10",
+      "name": "Cost of sale \u2014 transfer taxes",
+      "value": "0.56% of price + Measure ULA where applicable",
+      "basis": "Derived from verified rates: 0.45% city (S13) + 0.11% county (S14), then the ULA tiers."
+    },
+    {
+      "key": "A11",
+      "name": "Downtime if the tenant vacates",
+      "value": "12 months no rent + $150,000 re-tenanting + 6 months of free rent",
+      "basis": "Assumption. Represents the realistic cost of re-leasing a drive-thru box."
+    },
+    {
+      "key": "A12",
+      "name": "Renewal rent reset",
+      "value": "+10% versus in-place rent at renewal",
+      "basis": "Assumption. Six years of 2% contract growth against 3% market growth implies an 8-10% gap by 2032."
+    },
+    {
+      "key": "A13",
+      "name": "Combined income tax on a sale",
+      "value": "Not modelled",
+      "basis": "The owner's basis and depreciation history are private and were not supplied. All proceeds below are PRE-TAX. Tax is discussed qualitatively with the verified 1031 mechanics (F088)."
+    },
+    {
+      "key": "A14",
+      "name": "Horizon",
+      "value": "2026-2035 (9 years)",
+      "basis": "Chosen to cover the whole 2030-2035 expiry window stated by the owner."
+    },
+    {
+      "key": "A15",
+      "name": "Renewal concession (TI / rent abatement)",
+      "value": "$150,000",
+      "basis": "Assumption. A tenant rarely signs an extension for nothing; the model charges the owner for it rather than pretending the extension is free."
+    },
+    {
+      "key": "A16",
+      "name": "Probability the tenant renews at expiry if nothing is negotiated",
+      "value": "60% (band 35%-75%)",
+      "basis": "Assumption, informed by the franchisor's disclosed contraction (50-60 closures a year, mostly franchise) set against a lease that is likely below market after years of 2% escalators in a 3.7-4.1% inflation environment. The band is published so the reader can re-price it."
+    }
+  ],
+  "horizon_years": 9,
+  "start_year": 2026
+}
