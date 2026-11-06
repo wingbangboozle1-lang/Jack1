@@ -331,3 +331,18 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 - Structural verification passed for seven category pages, local links / fragments, official-domain allowlisting, and visible email / phone patterns. This does not replace parcel diligence or source review.
 - No owner name, property address, APN, ownership entity, lease document, or personal financial information is published.
 - Next: finish integration with current `main`, push only `arena/ab7790ec-jack1`, open / merge its PR if checks and permissions allow, and confirm the Pages workflow / live URL.
+
+## Final Integration — arena/c7b3aeda-jack1 — PR #8 Merged 2026-11-06T13:11:42Z
+
+- **Branch:** arena/c7b3aeda-jack1 → main
+- **PR:** #8 — https://github.com/wingbangboozle1-lang/Jack1/pull/8 — **MERGED** commit cf73d71
+- **Title:** Jack in the Box NNN Executive Brief — Central Los Angeles (Verified, Anonymized)
+- **Merge result:** success (GitHub Pages from main / legacy + Actions workflow)
+- **Sources verified:** 30 official (premium: Census QuickFacts 3,869,089; BEA $818.5B; BLS 5.3%; DOF P-2A; SCAG 11.67M; USGS 60% M6.7; CAL FIRE +29%; FEMA NRI 100.0; LAUSD 86.7%; EDD 5.0%; Metro 300M; SEC 10-K) plus 130 records (S-83526ad4 dataset, 92 verified) plus 972c721e dossier — all preserved
+- **Irregularities flagged:** DOF vs SCAG divergence, market cap rates (flagged #02), withheld parcel data (flagged #05) — published on pages/flagged.html, flagged.html, site/flagged_review.html
+- **Privacy compliance:** All personal info anonymized; address withheld; [REDACTED]/[WITHHELD] placeholders — internal use only
+- **Site live:** https://wingbangboozle1-lang.github.io/Jack1/ — premium dashboard at / (index.html + pages/*), data-verified at /site/index.html, archived builds at /archive/* — Pages workflow now deploys pages/ site/ data/ archive/ (fixed)
+- **Build verification:** local http.server 200 OK for /, /pages/geography.html, /assets/css/style.css, /site/index.html, /data/records.json; no broken internal links; .nojekyll present
+- **Coordination:** 6 parallel sessions integrated (d2137d88, ffc97e4e, 972c721e, d85fba50, 83526ad4, c7b3aeda-jack1, ab7790ec) — no work discarded; conflicts on 404.html, README.md, COORDINATION.md, index.html resolved with preservation logs above
+- **Next owner review:** See Flagged for Review pages for unverified/open items (U-01 to U-11 parcel hazard, lease, rent, guaranty, insurance, cap rate)
+
