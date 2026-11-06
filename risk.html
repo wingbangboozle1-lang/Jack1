@@ -3,74 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Risk Matrix — Jack1 | Central LA NNN</title>
-<meta name="description" content="Full risk register for the sell-vs-renew decision: lease, tenant credit, rates, ULA, wildfire, earthquake, pandemic, DTLA distress — with sources and severities.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>Risk Register · JACK NNN Central LA</title>
+<meta name="description" content="Sixteen documented risks across tenant, lease, tax, catastrophe and concentration, with factual anchors and mitigations.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="risk" data-title="Risk Matrix">
-<div class="layout">
-  <div id="site-sidebar"></div>
-  <main class="main">
-    <div id="site-topbar"></div>
-    <div class="container">
+<body data-page="risk.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Risk Register</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
 
-      <div class="page-head">
-        <div class="eyebrow">Analysis · Risk</div>
-        <h1>Risk register — including black swans</h1>
-        <p class="lede">Every material risk to (a) selling now, (b) holding &amp; renewing, or (c) holding unrenewed. Severity = likelihood × impact on wealth preservation. Official sources badged; judged/broker inputs flagged.</p>
-      </div>
+    <p class="eyebrow">Category 5 · what can go wrong, in both directions of the decision</p>
+    <h1>Risk register: business as usual and black swans</h1>
+    <p class="lede">Sixteen risks, each tied to a verifiable fact where one exists. The probability and impact columns are
+    <b>analyst assessments</b>, clearly labelled as such &mdash; they are not statistics and they are not sourced. The factual
+    anchor column is sourced.</p>
 
-      <h2>Severity heat list</h2>
-      <div class="card"><div id="risk-heat"></div></div>
-
-      <h2>Full register (searchable, source-linked)</h2>
-      <div id="tbl-risk" data-table="risk"></div>
-
-      <h2>Scenario stress tests on wealth preservation</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Scenario</th><th>Probability (judged)</th><th>Impact on asset value</th><th>Mitigation</th></tr></thead>
-          <tbody>
-            <tr><td>Normal operations, tenant renews at expiry on current terms + bumps</td><td>Possible — base case</td><td>Neutral to positive; term reset restores value</td><td>Execute renewal 24–36 months early; get JACK parent or franchisee PG in writing</td></tr>
-            <tr><td>Rates stay elevated (10Y ≥ 5%) through 2030</td><td>Plausible (current path)</td><td>Cap rates stay wide; sale proceeds ~10–15% below 2021-peak pricing</td><td>Sell sooner rather than later if term &lt; 7 yrs; or lock long renewal then sell</td></tr>
-            <tr><td>Franchisee default / dark store before expiry</td><td>Low-moderate; rising</td><td>Severe: single-tenant NNN → dark = near-total income loss until re-tenanted</td><td>Estoppel + unit-level P&amp;L; replacement-tenant LOI pre-negotiated (any QSR fits the box); early-warning covenants</td></tr>
-            <tr><td>JACK parent distress (Ch. 11 / forced asset sales)</td><td>Low (liquidity ~$1.5B rev, FCF positive)</td><td>Moderate: headline cap-rate widening across JIB paper</td><td>Hold quality (term + bumps + PG) is everything; sell into strength if renewal signed</td></tr>
-            <tr><td>Wildfire-driven regional shock (repeat of Jan 2025)</td><td>Moderate for SoCal</td><td>Indirect: insurance cost, construction inflation, labor; direct loss unlikely in central LA</td><td>Confirm tenant carries full replacement-cost + BI insurance; owner keeps none</td></tr>
-            <tr><td>Major earthquake (M ≥ 6.7, e.g., Northridge repeat)</td><td>Low per year; certain in 30-yr horizon</td><td>Potentially catastrophic (uninsured seismic loss not covered by NNN)</td><td>Seismic inspection now; require tenant earthquake insurance; confirm construction type (pre-1994 URM risk)</td></tr>
-            <tr><td>LA recession + simultaneous cap-rate widening (2030–2035 window)</td><td>Moderate over 5–9 years</td><td>Double-hit: NOI down, cap up → value −25%+</td><td>Do not hold unrenewed into the window; renew early or exit before 2029</td></tr>
-            <tr><td>Policy shock: ULA expansion/repeal, Prop 13 change</td><td>Low near-term</td><td>±4–5.5% on sale economics; ±tax reset</td><td>Model both; decide on pre-shock fundamentals, not on tax prophecy</td></tr>
-            <tr><td>LA28 (2028) windfall: traffic + investment boom</td><td>Plausible</td><td>Positive for both hold and sell (richer buyer pool)</td><td>Time any sale for 2027–2029 if exiting</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout red"><strong>Concentration truth-bomb:</strong> one asset, one tenant, one market, one brand. No amount of LA optimism diversifies that. The cheapest risk reduction available is either (i) a long renewal that is actually signed, or (ii) a sale into a diversified 1031 replacement portfolio. Doing neither — drifting toward 2030–2035 unrenewed — is the actual risk decision.</div>
-
+    <div class="grid g4">
+      <div class="kpi"><div class="k">Risks registered</div><div class="v" data-stat="risks">—</div><div class="m">business-as-usual + black swan</div></div>
+      <div class="kpi"><div class="k">Highest-frequency threat</div><div class="v warn">Tenant</div><div class="m">credit + lease timing</div></div>
+      <div class="kpi"><div class="k">Largest single loss</div><div class="v down">Seismic</div><div class="m">USGS: $213bn regional</div></div>
+      <div class="kpi"><div class="k">Most certain cost</div><div class="v">Exit tax</div><div class="m">ULA 4.0% / 5.5%</div></div>
     </div>
-    <div id="site-footer"></div>
+
+    <h2>The four risk buckets</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>1 · Income risk (the one that decides the outcome)</h3>
+        <p>Tenant credit, renewal timing and occupancy-cost capacity. A NNN lease transfers <i>expenses</i> to the tenant; it
+        does not transfer <i>vacancy</i>. If the operator fails or declines to renew, the owner holds an empty 1,372 sq ft
+        building on a commercial parcel. Everything else on this page is second-order compared with this.</p>
+      </div>
+      <div class="card">
+        <h3>2 · Exit-cost risk (certain, not contingent)</h3>
+        <p>Measure ULA applies 4.0% of the full price above $5m and 5.5% above $10m, paid by the seller, on top of documentary
+        transfer taxes and advisory fees. This is the only risk on the page that is <b>certain to occur if you sell</b>. It is
+        therefore a cost to be optimised, not a risk to be managed.</p>
+      </div>
+      <div class="card">
+        <h3>3 · Cost-pass-through risk</h3>
+        <p>Energy CPI +20.3% and insurance repricing in a state where the FAIR Plan is the insurer of last resort. In a NNN
+        structure these land on the tenant's occupancy-cost ratio, which is precisely the number that determines whether the
+        tenant can afford the rent at renewal.</p>
+      </div>
+      <div class="card">
+        <h3>4 · Catastrophe risk (low probability, severe)</h3>
+        <p>Earthquake and wildfire are regional events with parcel-level consequences. The honest position: the <b>parcel-level
+        designations for this property are unverified</b> (U-01, U-02), so the mitigation list below is a to-do list, not a
+        reassurance.</p>
+      </div>
+    </div>
+
+    <h2>Black-swan anchors</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Seismic</h3>
+        <p>The USGS/CGS ShakeOut scenario models a magnitude 7.8 rupture on the southern San Andreas Fault producing about
+        <b>1,800 deaths and $213bn of economic losses</b>, That is a scenario, not a forecast &mdash; but it is the planning basis used by the state and it is the reason
+        earthquake cover and retrofit status are non-negotiable diligence items.</p>
+        <p class="small"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener">USGS ShakeOut Scenario ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>Wildfire</h3>
+        <p>The January 2025 Palisades Fire burned <b>23,448 acres</b>, destroyed <b>6,845 structures</b>, damaged 975 and killed
+        12 people over 24 days; the cause is recorded as arson. Central Los Angeles was not in the burn area, but the
+        second-order effects &mdash; insurance repricing, utility costs, regional demand shock &mdash; were metro-wide.</p>
+        <p class="small"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener">CAL FIRE incident record ↗</a></p>
+      </div>
+    </div>
+
+    <h2>Register</h2>
+    <div id="risk-table"></div>
+
+    <h2>Catastrophe and hazard data</h2>
+    <div data-table="catastrophe"></div>
+
+    <div class="callout bad">
+      <div class="h">The two open hazard questions</div>
+      <p><b>U-01</b> — is the parcel in a CAL FIRE Fire Hazard Severity Zone, and at what tier? <b>U-02</b> — is it in an
+      Alquist-Priolo fault zone or a CGS seismic hazard zone, and does the building predate the retrofit ordinances?
+      Both require the address in the official viewers. Both change insurance cost, and therefore the tenant's NNN load.
+      Both are on the <a href="flagged.html">Flagged for Review</a> page with direct links.</p>
+    </div>
+
+    <h2>Risk-balance test</h2>
+    <p>For an individual whose wealth is concentrated in this asset, the correct question is not "which option has the highest
+    expected value" but "which option keeps me solvent under the bad branch". Ranked by that test:</p>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Survival ranking, worst-case branch</div><div class="c">analyst assessment</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Strategy</th><th>Worst case</th><th>Liquidity after</th><th>Survivable?</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">Sell now, hold cash/1031</td><td class="note">Accept a lower price and pay ~6% exit cost</td><td class="note">High &mdash; proceeds are liquid</td><td><span class="pill lo">Yes</span></td></tr>
+          <tr><td class="metric">Renew early, then sell</td><td class="note">Concession reduces rent; tenant still fails later</td><td class="note">Medium-high &mdash; term sold into a better market</td><td><span class="pill lo">Yes</span></td></tr>
+          <tr><td class="metric">Hold to expiry, unhedged</td><td class="note">Tenant leaves; vacancy + carrying cost + forced sale into a land bid</td><td class="note">Low &mdash; illiquid at the worst moment</td><td><span class="pill hi">Marginal</span></td></tr>
+          <tr><td class="metric">Refinance and hold long-term</td><td class="note">Debt service against a single tenant in a seismic zone</td><td class="note">Low &mdash; leveraged, undiversified</td><td><span class="pill sev">No</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="foot"><p><a href="tenant.html">&larr; Tenant &amp; Lease</a> · <a href="model.html">Next: Projection Model &rarr;</a></p></div>
   </main>
 </div>
-<script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
-<script>
-(function () {
-  const sev = { high: ["HIGH", "b-high"], med: ["MEDIUM", "b-med"], low: ["LOW", "b-low"] };
-  const rows = (window.JACK1_DATA.risk || []).slice().sort((a, b) => {
-    const rank = { high: 0, med: 1, low: 2 };
-    return (rank[a.sev] ?? 3) - (rank[b.sev] ?? 3);
-  });
-  document.getElementById("risk-heat").innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:10px">
-      ${rows.map(r => {
-        const [label, cls] = sev[r.sev] || sev.med;
-        return `<div style="display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:10px">
-          <span class="badge ${cls}" style="justify-self:start;margin-top:2px">${label}</span>
-          <div><strong>${r.m}</strong><div class="small" style="margin-top:2px">${r.n}</div></div>
-        </div>`;
-      }).join("")}
-    </div>`;
-})();
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>
