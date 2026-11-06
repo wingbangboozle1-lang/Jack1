@@ -55,7 +55,7 @@ def check_pages():
     pages = [
         "index.html", "decision.html", "risks.html", "market.html", "process.html",
         "property.html", "market_pricing.html", "tenant.html", "rules.html",
-        "sources.html", "flagged.html", "privacy.html",
+        "sources.html", "flagged.html", "privacy.html", "executive_summary.html",
     ]
     for p in pages:
         if not os.path.exists(os.path.join(ROOT, p)):

@@ -37,6 +37,7 @@ RETRIEVED = "2026-11-06"
 
 PAGES = [
     ("index.html", "Overview"),
+    ("executive_summary.html", "Executive Summary"),
     ("decision.html", "Decision"),
     ("risks.html", "Risk Register"),
     ("market.html", "Trade Area"),
@@ -205,6 +206,7 @@ def build_overview():
       <li><a href="tenant.html"><strong>Tenant Credit</strong><span>Jack in the Box Inc. as filed with the SEC.</span></a></li>
       <li><a href="rules.html"><strong>Tax &amp; Rules</strong><span>Prop 13, Measure ULA, the fast-food wage law, 1031, fire and fault zones.</span></a></li>
       <li><a href="sources.html"><strong>Data &amp; Sources</strong><span>All 32 sources, with live links.</span></a></li>
+      <li><a href="executive_summary.html"><strong>Executive Summary</strong><span>The whole analysis on one page, with the decision rule.</span></a></li>
       <li><a href="flagged.html"><strong>Flagged for Review</strong><span>12 items that could not be verified — published, not guessed.</span></a></li>
     </ul>""")
     return page("Overview", "".join(body), "index.html",
@@ -538,6 +540,19 @@ def build_privacy():
                 'and its rent.</p>')
 
 
+
+
+def build_exec_summary():
+    """Renders EXECUTIVE_SUMMARY.md into a page, converting markdown links and
+    tables to HTML without any third-party parser."""
+    import markdown_lite
+    with open(os.path.join(ROOT, "EXECUTIVE_SUMMARY.md")) as fh:
+        md = fh.read()
+    return page("Executive Summary", markdown_lite.to_html(md), "executive_summary.html",
+                '<p class="lede">The whole analysis on one page: the recommendation, the evidence behind it, '
+                'the rules that move the money, and the decision rule.</p>')
+
+
 # --------------------------------------------------------------------------- #
 def write(name, content):
     path = os.path.join(ROOT, name)
@@ -560,6 +575,7 @@ def main():
         ("sources.html", build_sources()),
         ("flagged.html", build_flagged()),
         ("privacy.html", build_privacy()),
+        ("executive_summary.html", build_exec_summary()),
     ]
     for name, content in written:
         write(name, content)
