@@ -52,6 +52,16 @@ Static site: no build step, no dependencies, no trackers, no cookies. GitHub Pag
 - The projection model expresses values as **multiples of one year of base rent** rather than inventing a dollar value.
 - This is analytical work product, not an appraisal, not investment advice, and not tax or legal advice.
 
+## Prior builds (preserved, not deployed as navigation)
+
+Two earlier sessions built complete sites for this same question. Both are preserved intact for provenance and comparison:
+
+- `archive/arena-d2137d88/` — the previous canonical 12-page site plus its 92-row `assets/js/data.js` registry
+- `archive/arena-ffc97e4e/` — an independent parallel build (11 pages, port/wildfire/forecast tables)
+
+Nothing from either was deleted. Their unique research remains in the repository; the root site is the build that carries a
+per-row source link and an enforced blank-value gate.
+
 ## Coordination
 
 `COORDINATION.md` is the shared task board (claims, scope, handoffs, merge record) used while this repository is worked on.

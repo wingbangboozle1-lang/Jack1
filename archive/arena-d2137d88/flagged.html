@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Jack1 | Central LA NNN</title>
+<meta name="description" content="Every unverified, secondary, market-reported or internally inconsistent figure on this site — published for post-merge review, with source links.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="flagged" data-title="Flagged for Review">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
+
+      <div class="page-head">
+        <div class="eyebrow">Governance · Flagged for Review</div>
+        <h1>Flagged for review — nothing here is “verified”</h1>
+        <p class="lede">Per the project's verification protocol, any value that could not be confirmed from an official source is left blank or shown here with its defect. These items do not block the merge; they are published openly so you can review them after the site is live. Report corrections and they will be patched.</p>
+      </div>
+
+      <div class="callout red"><strong>Protocol.</strong> “Official source” badge = checked, unedited, against the primary .gov/company filing linked. “Secondary” = reputable republisher; value probably right but re-verify at the primary link before acting. “Market / broker” = no official series exists. “Unverified” = do not rely on it; it is published for completeness only. “Illustrative” = arithmetic example, never a real quote.</div>
+
+      <div id="tbl-flagged" data-table="flagged"></div>
+
+      <h2>Irregularities observed during research (for your awareness)</h2>
+      <div class="card">
+        <ol class="tight">
+          <li><strong>Westwood comp listing self-contradiction.</strong> The broker offering cites both “expiration July 31, 2031” and “July 31, 2036” for the same asset in the same document, with “±15.5 years remaining” inconsistent with either. Treat that listing as unusable for matched-pair pricing; kept only as an order-of-magnitude illustration and flagged.</li>
+          <li><strong>Three incompatible DTLA vacancy estimates</strong> (22% CCA vs 27.5% Commercial Observer vs 33.3% broker/Q3-2025) with no official series. The <em>direction</em> (elevated vacancy) is consistent; the magnitude is not verified.</li>
+          <li><strong>County GDP double-vision.</strong> FRED GDPALL06037 = $1.003T (current $, 2024) vs USAFacts “real GDP $810.8B +2.1%” — both true, different measures (current vs chained). Secondary coverage mixing them produced a false “$818.5B vs $1T” discrepancy. Site uses each figure labeled by measure.</li>
+          <li><strong>Jan 2025 fire loss estimates span $5.2B–$250B</strong> depending on scope (output loss vs labor income vs total economic loss incl. property). Site uses LA County's official $5.2–10.1B output-loss figure for analysis; $250B appears only as an attributed secondary estimate.</li>
+          <li><strong>JIB financial distress signals are distributed across sources</strong>: 10-K (official) confirms restaurants/sales mix and 93% franchise; dividend discontinuation and ~$115M Del Taco sale and −4.2% SSS come via SEC-filing reprints/aggregators (flagged). The audited 10-K on EDGAR is authoritative — aggregators were not treated as verified.</li>
+          <li><strong>QuickFacts poverty 16.5%</strong> is SAIPE-modeled, not a raw headcount; intended for comparison only.</li>
+          <li><strong>LAUSD math points-from-standard: not captured.</strong> Deliberately blank rather than approximated.</li>
+          <li><strong>Parcel-specific items unverifiable without address</strong> (school assignment, FHSZ, Alquist-Priolo, FEMA flood, zoning, lease guarantee, title). Anonymization is a feature; verification requires the owner's private documents.</li>
+        </ol>
+      </div>
+
+      <div class="callout blue"><strong>How to clear an item:</strong> email/PR the confirming official source (link + accessed date), and the row is promoted from <em>flagged</em> to <em>verified</em> with the date logged in COORDINATION.md.</div>
+
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

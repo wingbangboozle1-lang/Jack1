@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projection Model — Jack1 | Central LA NNN</title>
+<meta name="description" content="Interactive illustrative model: sell now vs renew-and-hold vs ride-to-expiry. All outputs illustrative, not advice.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="projection" data-title="Projection Model">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
+
+      <div class="page-head">
+        <div class="eyebrow">Analysis · Projection</div>
+        <h1>Illustrative projection — sell vs. renew vs. ride</h1>
+        <p class="lede">A transparent, editable model. Defaults use flagged market norms (broker JIB average NOI $129,846; 10%/5-yr bumps). <strong>Every output is illustrative arithmetic — not an appraisal, not tax/investment/legal advice.</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>Inputs <span class="small">(edit freely — everything recalculates)</span></h3>
+        <div class="proj-controls">
+          <div class="field"><label for="in-noi">Annual NOI ($)</label><input id="in-noi" type="number" min="0" step="1000" value="129846"></div>
+          <div class="field"><label for="in-term">Years to current expiry</label><input id="in-term" type="number" min="0.5" max="12" step="0.5" value="7"></div>
+          <div class="field"><label for="in-bump">Escalation per 5 years (%)</label><input id="in-bump" type="number" min="0" max="25" step="1" value="10"></div>
+          <div class="field"><label for="in-capnow">Cap rate — sell now (%)</label><input id="in-capnow" type="number" min="3" max="12" step="0.25" value="7.0"></div>
+          <div class="field"><label for="in-caprenew">Cap rate — sell after renewal (%)</label><input id="in-caprenew" type="number" min="3" max="12" step="0.25" value="5.75"></div>
+          <div class="field"><label for="in-capresid">Cap rate at expiry, unrenewed (%)</label><input id="in-capresid" type="number" min="4" max="14" step="0.25" value="8.5"></div>
+          <div class="field"><label for="in-disc">Discount rate for rent stream (%)</label><input id="in-disc" type="number" min="3" max="20" step="0.25" value="9"></div>
+          <div class="field"><label for="in-termnew">Renewal length offered (yrs)</label><input id="in-termnew" type="number" min="1" max="20" step="1" value="10"></div>
+          <div class="field"><label for="in-sellcost">Selling costs excl. ULA (%)</label><input id="in-sellcost" type="number" min="0" max="8" step="0.25" value="1.5"></div>
+          <div class="field"><label for="in-ula">Measure ULA applies?</label><select id="in-ula"><option value="yes" selected>Yes — asset ≥ $5.4M (4%)</option><option value="high">Yes — asset ≥ $10.9M (5.5%)</option><option value="no">No — outside LA City / below threshold</option></select></div>
+        </div>
+        <p class="small">Assumes NOI bumps at the escalation rate each 5-year anniversary; ULA at 4%/5.5% on the full consideration (LA City conveyances); base 0.56% city+county transfer tax always applies; 1031 defers capital gains but <u>not</u> transfer taxes. Not modeled: property tax reassessment effect on tenant, vacancy downtime, tenant default probability, earthquake/fire losses, financing.</p>
+      </div>
+
+      <div class="card">
+        <h3>Results</h3>
+        <div id="proj-bars"></div>
+        <div class="table-wrap" style="box-shadow:none;margin-top:14px">
+          <table style="min-width:640px">
+            <thead><tr><th>Strategy</th><th>Gross value</th><th>Transfer taxes + selling costs</th><th>Net to owner</th><th>PV of rents + net exit</th></tr></thead>
+            <tbody id="proj-table"></tbody>
+          </table>
+        </div>
+        <div class="callout blue" id="proj-verdict" style="margin-bottom:0"></div>
+      </div>
+
+      <h2>How to read this</h2>
+      <div class="card">
+        <ul class="tight">
+          <li><strong>“Sell now”</strong> = NOI ÷ sell-now cap, minus transfer taxes and selling costs. Simple, certain, one-time.</li>
+          <li><strong>“Renew → hold → sell in 10 yrs”</strong> = present value of bumped rents over the new term <em>plus</em> exit value (bumped NOI ÷ renewal cap), minus taxes and costs, discounted at your required return. This is the C-option quantified.</li>
+          <li><strong>“Ride to expiry, then sell dark”</strong> = PV of rents to today's expiry + sale at expiry at a harsher (residential-conversion/speculator) cap rate. Almost always the loser.</li>
+          <li>Whatever the model says, <strong>kill-switches from the Decision page override it</strong>: tenant distress beats any spreadsheet.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const ids = ["in-noi","in-term","in-bump","in-capnow","in-caprenew","in-capresid","in-disc","in-termnew","in-sellcost","in-ula"];
+  const fmt = n => "$" + Math.round(n).toLocaleString();
+  const fmtM = n => (n < 0 ? "−$" : "$") + Math.abs(n/1e6).toFixed(2) + "M";
+
+  function bumpedNoi(base, years, bumpPct) {
+    // escalation applied once per full 5-year anniversary
+    let n = base, remaining = years;
+    while (remaining >= 5) { n = n * (1 + bumpPct / 100); remaining -= 5; }
+    return n;
+  }
+  function noiAt(year, base, bumpPct) { return base * Math.pow(1 + bumpPct / 100, Math.floor(year / 5)); }
+  function pvRents(base, years, bumpPct, discPct) {
+    let pv = 0;
+    for (let y = 1; y <= Math.round(years); y++) {
+      pv += noiAt(y - 1, base, bumpPct) / Math.pow(1 + discPct / 100, y);
+    }
+    // fractional final year
+    return pv;
+  }
+  function transferTax(gross, ulaMode) {
+    const base = gross * 0.0056; // 0.45% city + 0.11% county
+    let ula = 0;
+    if (ulaMode === "yes") ula = gross * 0.04;
+    else if (ulaMode === "high") ula = gross * 0.055;
+    return base + ula;
+  }
+
+  function compute() {
+    const noi = +$("in-noi").value || 0;
+    const T = Math.max(0.5, +$("in-term").value || 0);
+    const bump = +$("in-bump").value || 0;
+    const capNow = (+$("in-capnow").value || 7) / 100;
+    const capRenew = (+$("in-caprenew").value || 5.75) / 100;
+    const capResid = (+$("in-capresid").value || 8.5) / 100;
+    const disc = +$("in-disc").value || 9;
+    const termNew = +$("in-termnew").value || 10;
+    const sellCost = (+$("in-sellcost").value || 0) / 100;
+    const ulaMode = $("in-ula").value;
+
+    const grossNow = noi / capNow;
+    const taxNow = transferTax(grossNow, ulaMode) + grossNow * sellCost;
+    const netNow = grossNow - taxNow;
+
+    // Renew -> hold termNew years -> exit
+    const noiExit = noiAt(termNew - 0, noi, bump); // bumps at year 5 and 10 etc.
+    const grossExit = noiExit / capRenew;
+    const taxExit = transferTax(grossExit, ulaMode) + grossExit * sellCost;
+    const netExit = grossExit - taxExit;
+    const pvRenew = pvRents(noi, termNew, bump, disc) + netExit / Math.pow(1 + disc / 100, termNew);
+
+    // Ride to expiry -> sell unrenewed
+    const noiAtExpiry = noiAt(T - 0.001, noi, bump);
+    const grossResid = noiAtExpiry / capResid;
+    const taxResid = transferTax(grossResid, ulaMode) + grossResid * sellCost;
+    const netResid = grossResid - taxResid;
+    const pvRide = pvRents(noi, T, bump, disc) + netResid / Math.pow(1 + disc / 100, T);
+
+    const strategies = [
+      { name: "Sell now", gross: grossNow, tax: taxNow, net: netNow, pv: netNow },
+      { name: "Renew → hold → sell", gross: grossExit, tax: taxExit, net: netExit, pv: pvRenew },
+      { name: "Ride to expiry → sell", gross: grossResid, tax: taxResid, net: netResid, pv: pvRide }
+    ];
+
+    const maxPV = Math.max(...strategies.map(s => Math.abs(s.pv)), 1);
+    $("proj-bars").innerHTML = strategies.map(s => {
+      const w = Math.abs(s.pv) / maxPV * 100;
+      return `<div class="barrow"><div>${s.name}</div><div class="bar-track"><div class="bar-fill${s.pv < 0 ? " neg" : ""}" style="width:${w.toFixed(1)}%"></div></div><div style="text-align:right;font-weight:700">${fmtM(s.pv)}</div></div>`;
+    }).join("");
+
+    $("proj-table").innerHTML = strategies.map(s => `
+      <tr><td><strong>${s.name}</strong></td><td>${fmt(s.gross)}</td><td>${fmt(s.tax)}</td><td>${fmt(s.net)}</td><td>${fmt(s.pv)}</td></tr>`).join("");
+
+    const best = strategies.reduce((a, b) => (b.pv > a.pv ? b : a));
+    $("proj-verdict").innerHTML = `<strong>Model verdict (illustrative):</strong> “${best.name}” shows the highest present value under the current inputs — but remember the kill-switches. If the tenant will not sign the renewal, Option C is unavailable regardless of this arithmetic, and Option A/E governs. Change any input above to stress the answer (e.g., 10Y +50bps ⇒ raise all cap rates 0.5; or term = 4 yrs ⇒ watch renew-hold collapse).`;
+  }
+
+  ids.forEach(id => { $(id).addEventListener("input", compute); $(id).addEventListener("change", compute); });
+  compute();
+})();
+</script>
+</body>
+</html>
