@@ -25,7 +25,10 @@ jobs:
           mkdir -p _site
           cp -r ./*.html _site/
           cp -r assets _site/
+          cp -r data _site/
           cp .nojekyll _site/
+          # provenance: prior session builds, not part of the live navigation
+          mkdir -p _site/archive && cp -r archive/* _site/archive/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
