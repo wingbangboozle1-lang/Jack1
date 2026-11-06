@@ -1,0 +1,102 @@
+{
+  "retrieved": "2026-11-06",
+  "intro": "These are the items that could not be confirmed, or where a source contradicts itself. They are published here rather than guessed at, and they do NOT block any decision — each has a stated resolution path.",
+  "items": [
+    {
+      "id": "F-01",
+      "item": "Exact lease expiry date and the remaining rent, escalations and renewal options",
+      "why_flagged": "The principal supplied only a 2030-2035 window and no lease document. Any value figure depends on these, so none is stated anywhere on this site.",
+      "resolution": "Provide the executed lease and amendments (internal use only).",
+      "source": null,
+      "blocks_decision": false
+    },
+    {
+      "id": "F-02",
+      "item": "The actual in-place NOI, pricing, and therefore the 'sell now' value",
+      "why_flagged": "Without rent (F-01) and without a certified appraisal, no sale value can be stated. Market cap-rate evidence (T07) is third-party and brand-wide, not parcel-specific.",
+      "resolution": "Order an MAI appraisal or broker BOV on the actual lease terms.",
+      "source": "S28",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-03",
+      "item": "The parcel's Fire Hazard Severity Zone and Alquist-Priolo/seismic zone status",
+      "why_flagged": "CAL FIRE and CGS publish parcel-level maps, but the parcel number is withheld under the privacy policy, so the specific classification could not be looked up. Only the existence of the regulatory programmes is asserted.",
+      "resolution": "Look up the parcel in the CAL FIRE FHSZ viewer and CGS EQ Zapp using the APN; record the result internally.",
+      "source": "S25",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-04",
+      "item": "A broker flyer used for market context contradicts itself on the lease expiry",
+      "why_flagged": "The flyer's header states 'Lease Expiration: July 31, 2036' while its investment-highlights paragraph states the lease 'expires July 31, 2031'. Only its asking cap rate (4.31%) is used, and only as a market data point.",
+      "resolution": "Treat that flyer as marketing material, not evidence; use it only for the cap rate.",
+      "source": "S30",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-05",
+      "item": "Two Los Angeles-area cap rates in the third-party evidence are not like-for-like",
+      "why_flagged": "The 4.31% figure is an absolute-NNN corporate lease with roughly 15 years of term; the 5.82% figure is a ground lease with about 13 years of term. They are not the same asset structure, so averaging them would be wrong.",
+      "resolution": "Report both with their structures attached (done on the Market Pricing page) and never average them.",
+      "source": "S31",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-06",
+      "item": "Jack in the Box issuer credit rating (S&P / Moody's)",
+      "why_flagged": "No official rating was found on the SEC filings reviewed, and the third-party aggregator page shows 'N/A' for both agencies. A rating is therefore not asserted.",
+      "resolution": "Check the rating agencies directly, or rely on the filed financials (T06) which are official.",
+      "source": "S28",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-07",
+      "item": "Whether the lease is a corporate lease or a franchisee lease with a guaranty",
+      "why_flagged": "Not supplied by the principal. This materially changes the tenant-credit conclusion (R01): a franchisee lease is materially weaker than a corporate one.",
+      "resolution": "Read the lease preamble and guaranty pages.",
+      "source": "S17",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-08",
+      "item": "City-level building permits and employer-establishment counts",
+      "why_flagged": "Census QuickFacts reports 'X' (not applicable/available) for Los Angeles city on Building Permits 2025 and the 2023 business counts. County-level values are published and are used instead.",
+      "resolution": "Use the county series, or query the Census Building Permits Survey and County Business Patterns directly for the city.",
+      "source": "S05",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-09",
+      "item": "Forward population projection for the trade area",
+      "why_flagged": "The California Department of Finance publishes county projections (S12) as Excel/CSV attachments that could not be parsed in this environment, so no forward population figure is published. The projection landing page was verified, the numbers were not.",
+      "resolution": "Download P-2A County Total Population and quote the Los Angeles County row directly.",
+      "source": "S12",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-10",
+      "item": "Insurance cost and availability for the parcel",
+      "why_flagged": "No official source publishes commercial property insurance premiums by parcel. The post-wildfire repricing described in R08 is documented only as a qualitative regulatory fact (FHSZ maps), not as a price series.",
+      "resolution": "Obtain a current insurance quote and the tenant's certificate of insurance.",
+      "source": "S25",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-11",
+      "item": "FRED series named 'LAPOP' is Louisiana, not Los Angeles",
+      "why_flagged": "During research, the series LAPOP was initially assumed to measure Los Angeles population; its own metadata shows it is 'Resident Population in Louisiana'. It was discarded. No value from it appears on this site. Flagged so future sessions do not repeat the error.",
+      "resolution": "Use Census QuickFacts (S05/S06) for Los Angeles population.",
+      "source": "https://fred.stlouisfed.org/series/LAPOP",
+      "blocks_decision": false
+    },
+    {
+      "id": "F-12",
+      "item": "SEIU/tenant level unit sales for the specific store",
+      "why_flagged": "Store-level sales would materially improve the renewal rent argument (OPT-C) but are confidential tenant data and were not available. Renewal economics are therefore framed qualitatively.",
+      "resolution": "Request unit-level AUV and P&L from the tenant under NDA.",
+      "source": null,
+      "blocks_decision": false
+    }
+  ]
+}

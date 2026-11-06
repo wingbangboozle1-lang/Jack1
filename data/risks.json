@@ -1,0 +1,138 @@
+{
+  "retrieved": "2026-11-06",
+  "probability_basis": "Probabilities are the analyst's structured judgement for a 2026-2036 horizon and are labelled as such. They are NOT official statistics. Every factual anchor is sourced in the 'evidence' field.",
+  "risk_classes": [
+    {
+      "id": "R01",
+      "class": "Business as usual",
+      "name": "Tenant credit deterioration / franchisee distress",
+      "description": "The rent is only as good as the operator (corporate or franchisee) behind the lease. Jack in the Box Inc. has posted two consecutive years of net losses and falling revenue while raising $500M of securitized debt whose anticipated repayment date is May 2031.",
+      "evidence": "S15 (revenue FY2023 $1,692.3M → FY2025 $1,465.3M), S16 (net loss FY2024 −$36.7M, FY2025 −$80.7M), S17 ($500M Series 2026-1 7.624% notes; anticipated repayment date May 2031)",
+      "likelihood": "high",
+      "severity": "high",
+      "affects": "both",
+      "mitigation": "Confirm whether the lease is corporate or franchisee-guaranteed; obtain the franchisee's financials; require personal or corporate guaranty; require estoppel and financial reporting covenants at renewal."
+    },
+    {
+      "id": "R02",
+      "class": "Business as usual",
+      "name": "Cap-rate (valuation) expansion while you still own it",
+      "description": "A single-tenant absolute-NNN asset is priced off the spread to risk-free debt. With the 10-year Treasury near 4.9-5.3% in late 2026 and the Baa corporate yield rising to 6.59%, buyers' target returns are being reset upward, which mechanically lowers the multiple paid for any given rent stream.",
+      "evidence": "S09 (10-yr 5.29% on 2026-09-30, 4.90% on 2026-11-04), S10 (Baa 5.88% in 2026-01 → 6.59% in 2026-10)",
+      "likelihood": "high",
+      "severity": "high",
+      "affects": "sell",
+      "mitigation": "Test the exit at multiple cap rates, not one; shorten the time to market if you intend to sell; consider a 1031 exchange to move the tax basis rather than the asset."
+    },
+    {
+      "id": "R03",
+      "class": "Business as usual",
+      "name": "Lease-term decay (the 'ticking clock' discount)",
+      "description": "Each year that passes with no renewal removes a year of contractual income from the buyer's underwriting, and buyers of single-tenant NNN assets steeply discount terms under ~5 years. Residual value therefore declines before the lease expires, not after.",
+      "evidence": "S28, S29, S30, S31 (third-party NNN pricing conventions and observed Los Angeles asking cap rates)",
+      "likelihood": "high",
+      "severity": "high",
+      "affects": "both",
+      "mitigation": "Obtain the lease extension in writing BEFORE going to market; a 10-year extension typically converts a management-intensive re-let into a financeable NNN asset."
+    },
+    {
+      "id": "R04",
+      "class": "Business as usual",
+      "name": "Property tax reassessment on sale (Proposition 13 reset)",
+      "description": "California assesses 1% of base-year value with a cap of +2%/yr, reassessed at market on change of ownership. Selling resets the base-year value to the sale price, which raises property tax permanently for the buyer AND raises the tax burden on the restaurant (often passed through in NNN). Holding preserves a low base-year value; inheriting a low base is itself worth money.",
+      "evidence": "S20 (Prop 13 mechanics), S21 (Prop 8 decline-in-value)",
+      "likelihood": "certain on sale",
+      "severity": "medium",
+      "affects": "sell",
+      "mitigation": "Quantify the tax drag in the offering (it is usually priced into the cap rate); weigh it against the step-up in basis at death for heirs."
+    },
+    {
+      "id": "R05",
+      "class": "Business as usual",
+      "name": "Fast-food labour-cost escalation",
+      "description": "California fast-food minimum wage was set at $20.00/hour effective 2024-04-01, with annual increases capped at the lesser of 3.5% or CPI-W change, and the Council may not set an increase effective after calendar 2029. Cost pressure therefore continues through your lease window but is statutorily bounded.",
+      "evidence": "S19 (Lab. Code §1475(d)(2))",
+      "likelihood": "high",
+      "severity": "medium",
+      "affects": "both",
+      "mitigation": "This is an operator risk that becomes YOUR risk at re-letting; verify the rent escalation structure keeps pace with CPI (relevant CPI: S07, S08)."
+    },
+    {
+      "id": "R06",
+      "class": "Business as usual",
+      "name": "City transfer-tax drag on exit (Measure ULA)",
+      "description": "For City of Los Angeles sales closing after 2026-06-30 the combined city transfer tax is 4.45% between $5.4M and $10.9M and 5.95% at or above $10.9M, paid by the seller (base rate $2.25/$500 plus 4% or 5.5% ULA).",
+      "evidence": "S23",
+      "likelihood": "certain if price exceeds threshold",
+      "severity": "medium",
+      "affects": "sell",
+      "mitigation": "Model net proceeds at the 4.45% tier; a price just under $5.4M avoids ULA entirely, which changes the optimal asking strategy."
+    },
+    {
+      "id": "R07",
+      "class": "Business as usual",
+      "name": "Local demand erosion (population outflow, high poverty and unemployment)",
+      "description": "Los Angeles city population fell 0.8% and the county 3.2% between 2020 and 2025; city poverty is 16.5% vs 13.3% county; MSA unemployment is 4.6-5.6% versus a 4.0% pre-pandemic low. A weaker trade area is a slower restaurant and a weaker renewal.",
+      "evidence": "S05 (city −0.8%, poverty 16.5%), S06 (county −3.2%, poverty 13.3%), S01 (unemployment path)",
+      "likelihood": "medium",
+      "severity": "medium",
+      "affects": "both",
+      "mitigation": "Track the store's own sales (ask the tenant for unit-level sales at renewal); trade-area data beats metro data."
+    },
+    {
+      "id": "R08",
+      "class": "Black swan / tail",
+      "name": "Wildfire (and post-fire insurance repricing)",
+      "description": "CAL FIRE issued 2025 Local Responsibility Area Fire Hazard Severity Zone maps for Los Angeles County, and the model is explicitly a 30-50 year hazard model. Even where the parcel is not in a hazard zone, regional wildfire events reprice insurance and lender appetite for the whole county.",
+      "evidence": "S25",
+      "likelihood": "medium (regional repricing), low (direct parcel impact in a dense urban core)",
+      "severity": "high",
+      "affects": "both",
+      "mitigation": "Order the parcel-specific FHSZ determination from the CAL FIRE viewer; confirm insurance availability and cost in writing before renewal; keep the lease requiring tenant-carried insurance."
+    },
+    {
+      "id": "R09",
+      "class": "Black swan / tail",
+      "name": "Earthquake / surface fault rupture and liquefaction",
+      "description": "Alquist-Priolo earthquake fault zones regulate construction within roughly 50 ft of an active fault trace, and sellers must deliver a Natural Hazard Disclosure Statement identifying the zone. The San Fernando earthquake precedent drove the law.",
+      "evidence": "S26",
+      "likelihood": "low (annual), high (over 10 years)",
+      "severity": "very high",
+      "affects": "both",
+      "mitigation": "Pull the parcel's EQ Zapp result; require seismic retrofit evidence; hold adequate insurance; the disclosure obligation also affects your sale timeline."
+    },
+    {
+      "id": "R10",
+      "class": "Black swan / tail",
+      "name": "Credit-market seizure (exit window closes)",
+      "description": "If commercial credit tightens, buyers of a sub-$10M single-tenant asset lose financing and the bid collapses. History: CRE delinquency went from 0.67% (2019Q4) to 8.75% (2010Q1). Current delinquency is 1.53%, i.e. benign — which is exactly when liquidity looks safest and is most fragile.",
+      "evidence": "S11",
+      "likelihood": "low",
+      "severity": "very high",
+      "affects": "sell",
+      "mitigation": "Do not plan an exit that depends on buyer financing inside a single 6-month window; an all-cash or assumable-debt structure, or selling into strength, reduces this risk."
+    },
+    {
+      "id": "R11",
+      "class": "Black swan / tail",
+      "name": "Tenant insolvency / store closure before expiry",
+      "description": "The chain-level stress in R01 can reach the store level: a rejected lease in bankruptcy or a franchisee failure converts a NNN bond into an empty building with re-letting cost and downtime.",
+      "evidence": "S16, S17",
+      "likelihood": "low-medium",
+      "severity": "very high",
+      "affects": "both",
+      "mitigation": "Security deposit or letter of credit sized to 6-12 months of rent; guaranty; confirm the store is a top-quartile unit."
+    },
+    {
+      "id": "R12",
+      "class": "Black swan / tail",
+      "name": "Regulatory / tax regime change",
+      "description": "Fast-food wage rules (AB 1228) and municipal transfer taxes (Measure ULA) were both created inside a five-year window; both directly hit this exact asset class and this exact city. Further change is plausible, and a new tax on the sale is a cost you cannot negotiate away.",
+      "evidence": "S19, S23",
+      "likelihood": "medium",
+      "severity": "medium",
+      "affects": "both",
+      "mitigation": "Model a sensitivity case with an extra 1% transfer cost; keep the lease's rent escalations and expense pass-throughs current."
+    }
+  ]
+}

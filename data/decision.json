@@ -1,0 +1,113 @@
+{
+  "retrieved": "2026-11-06",
+  "disclaimer": "This is a structured decision analysis for a single asset. It is not legal, tax, or investment advice, and it is not a valuation appraisal. All deal-specific terms must be supplied by the principal; all market inputs are sourced on the Data & Sources page.",
+  "options": [
+    {
+      "id": "OPT-A",
+      "name": "Sell now, before lease-term decay and while the market is liquid",
+      "mechanics": "Market the asset now on the remaining term (target 2026-2027), accept the lease-term discount, and redeploy proceeds into a diversified or longer-WALT position via a 1031 exchange.",
+      "pros": [
+        "Converts a single-tenant, single-city, single-tenant-credit risk into liquid capital at a known cap rate.",
+        "Removes R01, R07, R08, R09, R11 exposure immediately; removes R03 entirely.",
+        "Locks in today's pricing while Treasury yields are near the top of their 2026 range (S09) rather than waiting for further cap-rate expansion.",
+        "A 1031 exchange defers the federal gain if the 45/180-day rules are met (S24)."
+      ],
+      "cons": [
+        "Pays the lease-term discount now, i.e. sells the shortest WALT of the whole holding period.",
+        "Triggers Measure ULA and city transfer tax at 4.45% of price above $5.4M (S23).",
+        "Resets Proposition 13 base-year value for the buyer, which the buyer prices back into the cap rate (S20).",
+        "Gives up the option value of a below-market inherited base and of a renewal-driven re-rating.",
+        "Restarts the 1031 clock: replacement property must be identified in 45 days and acquired in 180 (S24)."
+      ],
+      "best_if": "You need liquidity or diversification, or your view is that cap rates keep expanding.",
+      "key_risks": ["R02", "R03", "R06", "R10", "R12"]
+    },
+    {
+      "id": "OPT-B",
+      "name": "Hold to expiry, do not renew, re-let or redevelop at residual",
+      "mechanics": "Keep collecting NNN rent through the existing term, then take the building back in 2030-2035 and either re-let to a new operator or redevelop the site.",
+      "pros": [
+        "Maximises contractual income years collected with no sale friction and no transfer tax, no ULA, no Prop 13 reset.",
+        "Preserves the low Prop 13 base-year value (S20) for the whole hold.",
+        "Keeps the land and the upside of a re-tenanting or redevelopment in a dense urban core (city density 8,304 persons/sq mi, S05)."
+      ],
+      "cons": [
+        "You own a declining-WALT asset every year (R03) and cannot sell without taking that discount later, probably deeper.",
+        "Full exposure to R01/R11 (tenant credit) with no sale to escape it.",
+        "At expiry you inherit vacancy, tenant-improvement cost, leasing commissions and downtime, and you must fund them yourself.",
+        "Dense-core Los Angeles rents depend on a restaurant operator that can carry $20/hr+ labour (S19)."
+      ],
+      "best_if": "You believe the land value alone exceeds the leased-fee value and you can fund a re-letting.",
+      "key_risks": ["R01", "R03", "R07", "R09", "R11"]
+    },
+    {
+      "id": "OPT-C",
+      "name": "Negotiate a long renewal first, then sell the re-rated asset (recommended)",
+      "mechanics": "Approach the tenant now for a 10-year extension (plus options) with CPI escalations and a corporate or franchisee guaranty; once executed and documented, sell on the lengthened term in 2027-2029, or hold the re-rated asset if pricing does not cooperate.",
+      "pros": [
+        "Directly attacks R03: a 10-year extension typically re-rates a single-tenant asset from a 'short-term' to a 'financeable' cap rate, which is the single largest value lever available to you.",
+        "You keep the sell option the whole time: if the extension is signed and the market pays up, you sell a better asset; if not, you simply do not list it.",
+        "Because you are not forced to sell, you are not exposed to R10 (credit seizure) inside a fixed window.",
+        "Preserves optionality on the tax side: you can still 1031 later (S24) or hold for a step-up in basis.",
+        "Costs you only negotiation time and legal fees; no transfer tax, no ULA, no listing risk until you choose."
+      ],
+      "cons": [
+        "You must accept whatever renewal rent the market bears; a tenant with leverage may ask for a rent reduction, TI, or a co-tenancy/termination right.",
+        "The negotiated term is a documented asset only if the lease amendment is properly executed and the guaranty is real.",
+        "You carry R01/R11 through the negotiation period.",
+        "An extension can convert a favourable below-market base into a market-rent reset for property tax if the county treats improvements/new construction as reassessable (S20)."
+      ],
+      "best_if": "The tenant wants to stay (a 30+ year operating location usually does) — verify before deciding.",
+      "key_risks": ["R01", "R05", "R07", "R12"]
+    }
+  ],
+  "recommendation": {
+    "primary": "OPT-C",
+    "statement": "Pursue a long-term renewal first, then decide whether to sell the re-rated asset or hold. Sell only after the extension is executed (or, if the tenant refuses a renewal on acceptable terms, sell into the current liquid market rather than holding to expiry).",
+    "why": [
+      "The dominant, known, controllable loss is lease-term decay (R03) — it is the only risk on the list that a renewal both removes and monetises.",
+      "The dominant uncontrollable risk is cap-rate expansion (R02); a renewal does not remove it, but it makes the asset eligible for the deepest buyer pool, so you are paid for waiting.",
+      "Selling now (OPT-A) crystallises the shortest WALT of the hold and pays 4.45% transfer tax plus a Prop 13 reset to do it.",
+      "Holding to expiry without renewing (OPT-B) is the highest-variance path: it keeps tenant-credit risk to the end and then hands you vacancy and re-letting cost."
+    ],
+    "conditions_that_flip_the_answer": [
+      "Tenant refuses a renewal above X rent → sell now (OPT-A).",
+      "Tenant refuses any renewal at all → sell now; do not hold to expiry.",
+      "You need cash within 12 months → sell now and start the 1031 identification immediately.",
+      "A recession or credit event is clearly underway → do not list; hold OPT-C, because you are not forced to sell."
+    ],
+    "wealth_preservation_balance": "OPT-C keeps the asset in a low-risk, income-producing state while preserving an exit at a higher price. It converts an irreversible decision (sell now at the shortest WALT) into a reversible one (renew, then choose). That is the definition of preserving wealth with optionality."
+  },
+  "stress_scenarios": [
+    {
+      "id": "SC1",
+      "name": "Base case: rates flat, rent escalates at CPI",
+      "inputs": "Cap rate held at the observed Los Angeles band midpoint (S28-S31); rent escalates with CPI (S07).",
+      "conclusion": "Renewal adds value; selling after renewal captures both the extra term and the escalation."
+    },
+    {
+      "id": "SC2",
+      "name": "Rates +150 bp: cap rate expansion",
+      "inputs": "10-year Treasury sustained at the 2026 high end (S09), Baa widening (S10).",
+      "conclusion": "Asset value falls even with a renewal. This argues for speed rather than delay once a renewal is signed."
+    },
+    {
+      "id": "SC3",
+      "name": "Tenant stress: store-level closure before expiry",
+      "inputs": "Chain-level losses (S16) propagate to a franchisee failure.",
+      "conclusion": "Value collapses toward land value; security deposit, guaranty and a diversified tenant base are the only protections."
+    },
+    {
+      "id": "SC4",
+      "name": "Credit seizure: exit window closes",
+      "inputs": "CRE delinquency reverts toward its 2010 path (S11).",
+      "conclusion": "You cannot sell. Being unforced — i.e. holding a renewed asset — is the difference between a bad year and a forced sale."
+    },
+    {
+      "id": "SC5",
+      "name": "Local shock: wildfire/earthquake event in the county",
+      "inputs": "FHSZ maps (S25) and Alquist-Priolo zones (S26).",
+      "conclusion": "Insurance cost and availability, not the building, become the binding constraint; confirm coverage before renewal."
+    }
+  ]
+}

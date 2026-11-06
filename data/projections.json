@@ -1,0 +1,156 @@
+{
+  "generated": "2026-11-06",
+  "model_version": "1.0.0",
+  "basis": "model",
+  "warning": "Model output. Not an appraisal. Not a forecast of any official agency. All inputs are either official statistics (cited) or explicit analyst assumptions listed below.",
+  "assumptions": {
+    "hold_horizon_years": 9,
+    "hold_horizon_note": "Lease expiry window 2030-2035 (principal-supplied); 9 years from 2026 approximates the midpoint.",
+    "cap_rate_current": 0.0491,
+    "cap_rate_current_note": "S28: Net Lease Advisor page-stated trailing 12-month average cap rate for the Jack in the Box brand.",
+    "cap_rate_band": [
+      0.0431,
+      0.0582
+    ],
+    "cap_rate_band_note": "F-05: the two Los Angeles data points in S30 and S31. Deliberately NOT averaged (different structures).",
+    "cap_rate_drift_base_bp_per_year": 5,
+    "cap_rate_drift_base_note": "Assumption: 5 bp/yr of continued mild repricing, consistent with the Baa yield moving 5.88%->6.59% during 2026 (S10). Not an official forecast.",
+    "cap_rate_drift_stress_bp_per_year": 20,
+    "rent_growth_base": 0.03,
+    "rent_growth_base_note": "Assumption anchored to CPI-U food away from home (S08: +3.5% over the 12 months to 2026-09) rounded down.",
+    "lease_term_decay_discount_per_year": 0.0125,
+    "lease_term_decay_note": "Assumption: each year of lost WALT costs ~1.25% of value while the lease has fewer than 10 years left. A convention, not a measured constant.",
+    "renewal_cap_rate_benefit_bp": 75,
+    "renewal_cap_rate_benefit_note": "Assumption: a 10-year extension re-rates the asset by ~75 bp versus a sub-5-year term.",
+    "transfer_tax_tier1": 0.0445,
+    "transfer_tax_tier1_note": "S23: 4.45% combined city base + Measure ULA, tier 1.",
+    "transfer_tax_threshold": 5400000,
+    "transfer_tax_threshold_note": "S23: $5,400,000 (closings after 2026-06-30).",
+    "prop13_rate": 0.01,
+    "prop13_rate_note": "S20: 1% of base-year value.",
+    "prop13_cap": 0.02,
+    "prop13_cap_note": "S20: annual increase limited to 2%."
+  },
+  "official_inputs_used": {
+    "cpi_all_items_2020_01_to_2026_09_pct": 29.78,
+    "cpi_all_items_source": "S07",
+    "food_away_from_home_12m_pct": 3.46,
+    "food_away_from_home_source": "S08"
+  },
+  "paths": [
+    {
+      "year": 2026,
+      "rent_multiple_vs_today": 1.0,
+      "cap_rate_hold": 0.0491,
+      "cap_rate_renew": 0.0491,
+      "cap_rate_stress": 0.0491,
+      "value_relative_hold": 1.0,
+      "value_relative_renew": 1.0,
+      "value_relative_stress_no_renewal": 1.0
+    },
+    {
+      "year": 2027,
+      "rent_multiple_vs_today": 1.03,
+      "cap_rate_hold": 0.0496,
+      "cap_rate_renew": 0.0421,
+      "cap_rate_stress": 0.0511,
+      "value_relative_hold": 1.0069,
+      "value_relative_renew": 1.2013,
+      "value_relative_stress_no_renewal": 0.9773
+    },
+    {
+      "year": 2028,
+      "rent_multiple_vs_today": 1.0609,
+      "cap_rate_hold": 0.0501,
+      "cap_rate_renew": 0.0426,
+      "cap_rate_stress": 0.0531,
+      "value_relative_hold": 1.0139,
+      "value_relative_renew": 1.2228,
+      "value_relative_stress_no_renewal": 0.9566
+    },
+    {
+      "year": 2029,
+      "rent_multiple_vs_today": 1.0927,
+      "cap_rate_hold": 0.0506,
+      "cap_rate_renew": 0.0431,
+      "cap_rate_stress": 0.0551,
+      "value_relative_hold": 1.0211,
+      "value_relative_renew": 1.2448,
+      "value_relative_stress_no_renewal": 0.9377
+    },
+    {
+      "year": 2030,
+      "rent_multiple_vs_today": 1.1255,
+      "cap_rate_hold": 0.0511,
+      "cap_rate_renew": 0.0436,
+      "cap_rate_stress": 0.0571,
+      "value_relative_hold": 1.0284,
+      "value_relative_renew": 1.2675,
+      "value_relative_stress_no_renewal": 0.9203
+    },
+    {
+      "year": 2031,
+      "rent_multiple_vs_today": 1.1593,
+      "cap_rate_hold": 0.0516,
+      "cap_rate_renew": 0.0441,
+      "cap_rate_stress": 0.0591,
+      "value_relative_hold": 1.0359,
+      "value_relative_renew": 1.2907,
+      "value_relative_stress_no_renewal": 0.9044
+    },
+    {
+      "year": 2032,
+      "rent_multiple_vs_today": 1.1941,
+      "cap_rate_hold": 0.0521,
+      "cap_rate_renew": 0.0446,
+      "cap_rate_stress": 0.0611,
+      "value_relative_hold": 1.0435,
+      "value_relative_renew": 1.3145,
+      "value_relative_stress_no_renewal": 0.8898
+    },
+    {
+      "year": 2033,
+      "rent_multiple_vs_today": 1.2299,
+      "cap_rate_hold": 0.0526,
+      "cap_rate_renew": 0.0451,
+      "cap_rate_stress": 0.0631,
+      "value_relative_hold": 1.0513,
+      "value_relative_renew": 1.339,
+      "value_relative_stress_no_renewal": 0.8763
+    },
+    {
+      "year": 2034,
+      "rent_multiple_vs_today": 1.2668,
+      "cap_rate_hold": 0.0531,
+      "cap_rate_renew": 0.0456,
+      "cap_rate_stress": 0.0651,
+      "value_relative_hold": 1.0592,
+      "value_relative_renew": 1.364,
+      "value_relative_stress_no_renewal": 0.864
+    },
+    {
+      "year": 2035,
+      "rent_multiple_vs_today": 1.3048,
+      "cap_rate_hold": 0.0536,
+      "cap_rate_renew": 0.0461,
+      "cap_rate_stress": 0.0671,
+      "value_relative_hold": 1.0673,
+      "value_relative_renew": 1.3897,
+      "value_relative_stress_no_renewal": 0.8526
+    }
+  ],
+  "illustrative": {
+    "unit": "$1.00 of current annual rent",
+    "transfer_tax_pct_if_above_threshold": 0.0445,
+    "transfer_tax_threshold_usd": 5400000,
+    "prop13_annual_rate": 0.01,
+    "prop13_cap": 0.02,
+    "note": "Actual dollars cannot be computed because the rent is unverified (Flagged F-01/F-02)."
+  },
+  "how_to_read": [
+    "value_relative_* is a multiple of today's market value, not dollars.",
+    "value_relative_renew > value_relative_hold at every year because the renewal both removes residual decay and re-rates the cap rate.",
+    "value_relative_stress_no_renewal shows what the same asset is worth if rates drift 20 bp/yr instead of 5 bp/yr while you wait.",
+    "None of these are guarantees; they are the arithmetic consequence of the assumptions printed above."
+  ]
+}

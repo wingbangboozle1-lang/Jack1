@@ -1,0 +1,261 @@
+{
+  "retrieved": "2026-11-06",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Unemployment Rate in Los Angeles-Long Beach-Anaheim, CA (MSA) \u2014 series LOSA106UR",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED (St. Louis Fed)",
+      "url": "https://fred.stlouisfed.org/series/LOSA106UR",
+      "type": "official",
+      "note": "Smoothed seasonally adjusted, monthly, 1990-01 \u2192 2026-09; last updated 2026-10-28."
+    },
+    {
+      "id": "S02",
+      "title": "All Employees: Total Nonfarm, Los Angeles-Long Beach-Anaheim MSA \u2014 series SMU06310800000000001 (not seasonally adjusted)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/SMU06310800000000001",
+      "type": "official",
+      "note": "Monthly, thousands of persons, 1990-01 \u2192 2026-09."
+    },
+    {
+      "id": "S03",
+      "title": "All Employees: Total Nonfarm, Los Angeles-Long Beach-Anaheim MSA \u2014 series SMS06310800000000001 (seasonally adjusted)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/SMS06310800000000001",
+      "type": "official",
+      "note": "Same measure, seasonally adjusted variant. Quoted separately to avoid mixing NSA and SA."
+    },
+    {
+      "id": "S04",
+      "title": "Estimate of Median Household Income for Los Angeles County, CA \u2014 series MHICA06037A052NCEN",
+      "publisher": "U.S. Census Bureau (SAIPE) via FRED",
+      "url": "https://fred.stlouisfed.org/series/MHICA06037A052NCEN",
+      "type": "official",
+      "note": "Annual, dollars, 1989 \u2192 2024; last updated 2026-02-09."
+    },
+    {
+      "id": "S05",
+      "title": "QuickFacts: Los Angeles city, California",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "type": "official",
+      "note": "Population estimates vintage V2025; ACS 2020-2024 5-year; Economic Census 2022."
+    },
+    {
+      "id": "S06",
+      "title": "QuickFacts: Los Angeles County, California",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224",
+      "type": "official",
+      "note": "Population estimates vintage V2025; ACS 2020-2024 5-year; Economic Census 2022."
+    },
+    {
+      "id": "S07",
+      "title": "Consumer Price Index for All Urban Consumers: All Items (CPIAUCSL)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "type": "official",
+      "note": "Seasonally adjusted, index 1982-84=100."
+    },
+    {
+      "id": "S08",
+      "title": "CPI-U: Food Away from Home in U.S. City Average (CUSR0000SEFV)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/CUSR0000SEFV",
+      "type": "official",
+      "note": "Seasonally adjusted, monthly through 2026-09; last updated 2026-10-14."
+    },
+    {
+      "id": "S09",
+      "title": "10-Year Treasury Constant Maturity Rate (DGS10)",
+      "publisher": "Board of Governors of the Federal Reserve System (H.15) via FRED",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "type": "official",
+      "note": "Daily, percent."
+    },
+    {
+      "id": "S10",
+      "title": "Moody's Seasoned Baa Corporate Bond Yield (BAA)",
+      "publisher": "Moody's / Board of Governors via FRED",
+      "url": "https://fred.stlouisfed.org/series/BAA",
+      "type": "official",
+      "note": "Monthly, percent."
+    },
+    {
+      "id": "S11",
+      "title": "Delinquency Rate on Commercial Real Estate Loans, All Commercial Banks (DRCRELEXFACBS)",
+      "publisher": "Board of Governors of the Federal Reserve System via FRED",
+      "url": "https://fred.stlouisfed.org/series/DRCRELEXFACBS",
+      "type": "official",
+      "note": "Quarterly, percent, 1991Q1 \u2192 2026Q2; last updated 2026-08-25."
+    },
+    {
+      "id": "S12",
+      "title": "Population Projections (Baseline 2024, Vintage 2026) \u2014 P-1, P-2, P-3",
+      "publisher": "California Department of Finance, Demographic Research Unit",
+      "url": "https://dof.ca.gov/forecasting/demographics/projections/",
+      "type": "official",
+      "note": "State and county population projections 2020-2070, released as Excel/CSV. Landing page verified; the projection figures themselves were not transcribed here, so county-level forward population is NOT asserted on the site."
+    },
+    {
+      "id": "S13",
+      "title": "Los Angeles County labor market information",
+      "publisher": "California Employment Development Department, Labor Market Information Division",
+      "url": "https://labormarketinfo.edd.ca.gov/geography/losangeles-county.html",
+      "type": "official",
+      "note": "County profile and links to LAUS/CES/QCEW/OEWS tables."
+    },
+    {
+      "id": "S14",
+      "title": "Jack in the Box Inc. Form 10-K for fiscal year ended 2025-09-28 (accession 0000807882-25-000072)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm",
+      "type": "official",
+      "note": "Filed 2025-11-19."
+    },
+    {
+      "id": "S15",
+      "title": "XBRL company concept: Revenues, Jack in the Box Inc. (CIK 0000807882)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000807882/us-gaap/Revenues.json",
+      "type": "official",
+      "note": "Machine-readable values as filed."
+    },
+    {
+      "id": "S16",
+      "title": "XBRL company concept: NetIncomeLoss, Jack in the Box Inc. (CIK 0000807882)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000807882/us-gaap/NetIncomeLoss.json",
+      "type": "official",
+      "note": "Machine-readable values as filed."
+    },
+    {
+      "id": "S17",
+      "title": "Jack in the Box Inc. Form 8-K dated 2026-06-23 \u2014 $500M Series 2026-1 7.624% Senior Secured Notes; anticipated repayment date May 2031",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000079/jack-20260623.htm",
+      "type": "official",
+      "note": "Item 1.01 description read directly from the filing text."
+    },
+    {
+      "id": "S18",
+      "title": "EDGAR filing index \u2014 Jack in the Box Inc. 10-K filings",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K&dateb=&owner=include&count=40",
+      "type": "official",
+      "note": "Used to confirm the FY2025 10-K is the most recent annual report on file."
+    },
+    {
+      "id": "S19",
+      "title": "AB 1228 (2023-2024), Chapter 262 \u2014 fast food minimum wage and Fast Food Council",
+      "publisher": "California Legislative Information (Legislature of the State of California)",
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1228",
+      "type": "official",
+      "note": "$20.00/hour effective 2024-04-01; annual increases capped at lesser of 3.5% or CPI-W change; council may not set increases effective after calendar 2029 (Lab. Code \u00a71475(d)(2)(F))."
+    },
+    {
+      "id": "S20",
+      "title": "Publication 29 \u2014 California Property Tax: An Overview (March 2025)",
+      "publisher": "California State Board of Equalization",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/pub29.pdf",
+      "type": "official",
+      "note": "Proposition 13: 1% rate, 2%/yr maximum increase, reassessment on change of ownership or new construction; property tax raised more than $89 billion for local government in 2022-23."
+    },
+    {
+      "id": "S21",
+      "title": "Decline in Value \u2014 Proposition 8",
+      "publisher": "California State Board of Equalization",
+      "url": "https://www.boe.ca.gov/proptaxes/decline-in-value/",
+      "type": "official",
+      "note": "Temporary reduction when market value falls below factored base year value on the January 1 lien date."
+    },
+    {
+      "id": "S22",
+      "title": "Letter To Assessors No. 2025/010 \u2014 California Public Record Act Home Address Confidentiality (AB 1785)",
+      "publisher": "California State Board of Equalization",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/lta25010.pdf",
+      "type": "official",
+      "note": "Basis for this project's anonymization policy."
+    },
+    {
+      "id": "S23",
+      "title": "Real Property Transfer Tax and Measure ULA FAQ",
+      "publisher": "City of Los Angeles, Office of Finance",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "type": "official",
+      "note": "Base rate $2.25 per $500; ULA 4% above $5,400,000 and 5.5% at/above $10,900,000 for transactions closing after 2026-06-30."
+    },
+    {
+      "id": "S24",
+      "title": "Like-Kind Exchanges Under IRC Section 1031 \u2014 FS-2008-18",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-news/fs-08-18.pdf",
+      "type": "official",
+      "note": "45-day identification and 180-day completion limits; gain deferred, not forgiven."
+    },
+    {
+      "id": "S25",
+      "title": "Fire Hazard Severity Zones",
+      "publisher": "CAL FIRE \u2014 Office of the State Fire Marshal",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "type": "official",
+      "note": "Hazard (not risk) classes Moderate/High/Very High; 2025 LRA maps released for Los Angeles County; 'hazard' modelled over a 30-50 year period."
+    },
+    {
+      "id": "S26",
+      "title": "Alquist-Priolo Earthquake Fault Zones",
+      "publisher": "California Geological Survey, Department of Conservation",
+      "url": "https://www.conservation.ca.gov/cgs/alquist-priolo",
+      "type": "official",
+      "note": "Regulatory zones around active fault traces; Natural Hazard Disclosure requirement under Civil Code \u00a71103; structures for human occupancy must generally be 50 ft from the fault."
+    },
+    {
+      "id": "S27",
+      "title": "Assessor \u2014 Proposition 13 / Decline-in-Value / Disaster Relief notices",
+      "publisher": "Los Angeles County Office of the Assessor",
+      "url": "https://assessor.lacounty.gov/proposition-13",
+      "type": "official",
+      "note": "Assessor notice: 2026-2027 decline-in-value applications accepted from 2026-07-02, deadline 2026-11-30; disaster relief available for properties damaged by a disaster."
+    },
+    {
+      "id": "S28",
+      "title": "Jack in the Box \u2014 tenant/cap-rate profile (trailing 12-month average cap rate 4.91%)",
+      "publisher": "Net Lease Advisor (third-party market commentary)",
+      "url": "https://netleaseadvisor.com/tenant/jack-in-the-box/",
+      "type": "third-party",
+      "note": "Not an official statistic. Page-stated trailing averages; shown for market context only."
+    },
+    {
+      "id": "S29",
+      "title": "NNN Tenant Profiles & Cap Rates by Tenant \u2014 Jack in the Box 'typical cap 5.0%\u20136.0%'",
+      "publisher": "Solid Investments (third-party broker commentary)",
+      "url": "https://www.solidinvestmentsfl.com/tenants/",
+      "type": "third-party",
+      "note": "Broker-stated typical range for the tenant brand; not a verified transaction record."
+    },
+    {
+      "id": "S30",
+      "title": "Jack in the Box \u2014 Absolute NNN \u2014 4.31% cap \u2014 Westwood (Los Angeles) CA listing flyer",
+      "publisher": "Third-party broker marketing email (Constant Contact)",
+      "url": "https://myemail.constantcontact.com/Jack-in-the-Box---55-Yr-Operating-History---Absolute-NNN---4-31--CAP---Westwood--Los-Angeles--CA.html",
+      "type": "third-party",
+      "note": "Single ask-price data point for a Los Angeles JIB. The flyer is internally inconsistent about the lease expiry year (see Flagged for Review, F-04), so it is used only for the asking cap rate."
+    },
+    {
+      "id": "S31",
+      "title": "NNN properties list \u2014 'Jack in the Box, Los Angeles CA $1,750,000 CAP 5.82%, 13 years remaining on ground lease'",
+      "publisher": "Instone Investments (third-party broker commentary)",
+      "url": "https://instoneinvestments.com/nnn-properties/",
+      "type": "third-party",
+      "note": "Undated listing page; used only to widen the observed Los Angeles cap-rate band."
+    },
+    {
+      "id": "S32",
+      "title": "Unemployment Rate in California (CAUR)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/CAUR",
+      "type": "official",
+      "note": "Monthly, percent, seasonally adjusted."
+    }
+  ]
+}

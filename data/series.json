@@ -1,0 +1,175 @@
+{
+  "retrieved": "2026-11-06",
+  "series": {
+    "los_angeles_county_median_household_income": {
+      "label": "Median household income, Los Angeles County (USD, nominal)",
+      "source": "S04",
+      "unit": "USD",
+      "data": {
+        "2010": 52595,
+        "2011": 52239,
+        "2012": 52929,
+        "2013": 54443,
+        "2014": 55686,
+        "2015": 59045,
+        "2016": 61308,
+        "2017": 64912,
+        "2018": 67986,
+        "2019": 72721,
+        "2020": 75624,
+        "2021": 77356,
+        "2022": 82455,
+        "2023": 86499,
+        "2024": 90757
+      }
+    },
+    "la_msa_unemployment_rate": {
+      "label": "Unemployment rate, Los Angeles-Long Beach-Anaheim MSA (%), smoothed seasonally adjusted",
+      "source": "S01",
+      "unit": "percent",
+      "data": {
+        "2019-12": 4.2,
+        "2020-04": 16.5,
+        "2020-05": 18.2,
+        "2021-12": 5.9,
+        "2022-12": 4.4,
+        "2023-12": 5.0,
+        "2024-07": 5.5,
+        "2024-09": 5.6,
+        "2024-12": 5.4,
+        "2025-03": 5.2,
+        "2025-06": 5.3,
+        "2025-09": 5.4,
+        "2025-12": 5.3,
+        "2026-03": 5.1,
+        "2026-06": 5.0,
+        "2026-08": 4.7,
+        "2026-09": 4.6
+      }
+    },
+    "la_msa_total_nonfarm_sa": {
+      "label": "Total nonfarm employment, LA-Long Beach-Anaheim MSA (thousands, seasonally adjusted)",
+      "source": "S03",
+      "unit": "thousand persons",
+      "data": {
+        "2020-01": 6310.2,
+        "2020-04": 5257.8,
+        "2020-12": 5635.9,
+        "2021-12": 6105.5,
+        "2022-12": 6234.8,
+        "2023-12": 6258.3,
+        "2024-12": 6283.7,
+        "2025-12": 6282.4,
+        "2026-03": 6297.7,
+        "2026-06": 6311.1,
+        "2026-09": 6299.9
+      }
+    },
+    "la_msa_total_nonfarm_nsa": {
+      "label": "Total nonfarm employment, LA-Long Beach-Anaheim MSA (thousands, NOT seasonally adjusted)",
+      "source": "S02",
+      "unit": "thousand persons",
+      "data": {
+        "2019-12": 6347.6,
+        "2020-04": 5252.9,
+        "2022-12": 6234.8,
+        "2023-12": 6258.3,
+        "2024-12": 6283.7,
+        "2025-12": 6282.4,
+        "2026-06": 6311.1,
+        "2026-09": 6299.9
+      }
+    },
+    "food_away_from_home_cpi": {
+      "label": "CPI-U, food away from home (index 1982-84=100, SA)",
+      "source": "S08",
+      "unit": "index",
+      "data": {
+        "2019-12": 298.253,
+        "2020-12": 299.369,
+        "2022-12": 343.559,
+        "2023-12": 361.564,
+        "2024-12": 374.644,
+        "2025-12": 389.889,
+        "2026-06": 395.633,
+        "2026-09": 398.783,
+        "2025-09": 385.451
+      }
+    },
+    "cpi_all_items": {
+      "label": "CPI-U, all items (index 1982-84=100, SA)",
+      "source": "S07",
+      "unit": "index",
+      "data": {
+        "2020-01": 259.127,
+        "2022-06": 294.957,
+        "2024-12": 317.604,
+        "2025-12": 326.031,
+        "2026-09": 336.298
+      }
+    },
+    "treasury_10y": {
+      "label": "10-year Treasury constant maturity yield (%, daily selected)",
+      "source": "S09",
+      "unit": "percent",
+      "data": {
+        "2020-01-02": 1.88,
+        "2021-12-31": 1.51,
+        "2026-01-02": 4.19,
+        "2026-02-27": 3.97,
+        "2026-06-30": 4.44,
+        "2026-09-30": 5.29,
+        "2026-10-05": 5.31,
+        "2026-11-04": 4.9
+      }
+    },
+    "baa_corporate_yield": {
+      "label": "Moody's Baa corporate bond yield (%)",
+      "source": "S10",
+      "unit": "percent",
+      "data": {
+        "2026-01": 5.88,
+        "2026-06": 6.0,
+        "2026-08": 6.32,
+        "2026-09": 6.47,
+        "2026-10": 6.59
+      }
+    },
+    "cre_delinquency": {
+      "label": "Commercial real estate loan delinquency rate, all commercial banks (%)",
+      "source": "S11",
+      "unit": "percent",
+      "data": {
+        "2010-01": 8.75,
+        "2019-10": 0.67,
+        "2020-10": 1.15,
+        "2024-10": 1.56,
+        "2025-10": 1.58,
+        "2026-04": 1.53
+      }
+    },
+    "jack_revenue_fy": {
+      "label": "Jack in the Box Inc. total revenues, fiscal year (USD)",
+      "source": "S15",
+      "unit": "USD",
+      "note": "FY2025 = fiscal year ended 2025-09-28; FY2024 = 2024-09-29; FY2023 = 2023-10-01 (52/53-week fiscal years).",
+      "data": {
+        "FY2023": 1692306000,
+        "FY2024": 1571306000,
+        "FY2025": 1465314000
+      }
+    },
+    "jack_net_income_fy": {
+      "label": "Jack in the Box Inc. net income (loss), fiscal year (USD)",
+      "source": "S16",
+      "unit": "USD",
+      "note": "FY2023 and FY2022 are positive net income; FY2024 and FY2025 are net losses.",
+      "data": {
+        "FY2022": 115781000,
+        "FY2023": 130826000,
+        "FY2024": -36695000,
+        "FY2025": -80719000
+      }
+    }
+  }
+}
