@@ -317,3 +317,17 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 
 **Wealth preservation recommendation (consistent across builds):** Dual-track — market 2028–2031 with term remaining while negotiating 10yr+ renewal in parallel. See `pages/decision.html` and `site/projection_system.html`.
 
+
+---
+
+## Arena session `arena/ab7790ec-jack1` — current work
+
+| Task | Status | Files / scope |
+|---|---|---|
+| Source-linked executive summary and privacy-first category dashboard for a Jack in the Box NNN property described as near central Los Angeles | Site implemented; PR and Pages verification pending | Root category pages, `assets/styles.css`, `assets/site.js`, `scripts/validate_site.py`, `.github/workflows/pages.yml`, `README.md`, this session note |
+
+- The site keeps unconfirmed parcel, lease, tenant/guarantor, rent, value, condition, hazard, school, and owner-tax fields blank. It does not make a parcel-level conclusion or a definitive sell/renew recommendation.
+- Research uses official Census, BLS, EDD, SCAG, City / County, California, FEMA, USGS, IRS / FTB, and SEC sources; all 114 published table-body rows have a source link.
+- Structural verification passed for seven category pages, local links / fragments, official-domain allowlisting, and visible email / phone patterns. This does not replace parcel diligence or source review.
+- No owner name, property address, APN, ownership entity, lease document, or personal financial information is published.
+- Next: finish integration with current `main`, push only `arena/ab7790ec-jack1`, open / merge its PR if checks and permissions allow, and confirm the Pages workflow / live URL.
