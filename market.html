@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market, Population &amp; Income · JACK NNN Central LA</title>
+<meta name="description" content="Official Census and California Department of Finance data on population, income, housing and the 2030-2035 population outlook for Los Angeles.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="market.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Market &amp; Demographics</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
+
+    <p class="eyebrow">Category 1 · who lives there and what they earn</p>
+    <h1>Market fundamentals and the population outlook to 2035</h1>
+    <p class="lede">A restaurant lease is a claim on a catchment area's disposable spending. This page tests that catchment
+    with the two most authoritative series available: the U.S. Census Bureau's official estimates and the California
+    Department of Finance's official projections.</p>
+
+    <div class="callout warn">
+      <div class="h">Geography limitation — read this first</div>
+      <p>No parcel address was supplied, so no trade area could be geocoded. The statistics below are for <b>Los Angeles city</b>
+      and <b>Los Angeles County</b>, which are the smallest geographies for which every metric on this page is officially
+      published. A three-mile trade area would differ, in either direction. That row is left blank rather than guessed.</p>
+    </div>
+
+    <div class="grid g4">
+      <div class="kpi"><div class="k">City population, 2025</div><div class="v">3,869,089</div><div class="m">Census Vintage 2025</div></div>
+      <div class="kpi"><div class="k">County population, 2025</div><div class="v">9,694,934</div><div class="m">Census Vintage 2025</div></div>
+      <div class="kpi"><div class="k">County change since 2020</div><div class="v down">&minus;3.2%</div><div class="m">Census, as published</div></div>
+      <div class="kpi"><div class="k">Median household income</div><div class="v">$81,939</div><div class="m">City, 2020&ndash;2024 ACS</div></div>
+    </div>
+
+    <h2>What the numbers say</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>The catchment is contracting, officially</h3>
+        <p>Los Angeles County lost 3.2% of its residents between April 2020 and July 2025 &mdash; about 322,000 people on the
+        published base. The state's own projection has the county at 9.73m in 2030 and 9.71m in 2035, i.e. <b>another 1.5%
+        decline across the exact window in which this lease expires</b>. California as a whole is projected to grow over the
+        same period, so this is a share shift away from Los Angeles, not a state-level story.</p>
+        <p class="small">Implication: do not underwrite unit-volume growth. Every dollar of projected rent growth should come
+        from contractual escalation, not from more customers.</p>
+      </div>
+      <div class="card">
+        <h3>Income supports a value-led QSR, not a premium one</h3>
+        <p>Median household income of $81,939 against a median home value of $921,200 and median gross rent of $1,933 leaves
+        little discretionary slack; 16.5% of residents are below the poverty line and the owner-occupancy rate is 36.0%, so
+        the trade area is renter-dominated and highly price-sensitive. Food-away-from-home inflation is running at 2.8%,
+        below the 3.7% all-items rate.</p>
+        <p class="small">Implication: a $20/hour statutory wage floor plus a price-sensitive catchment is the hardest
+        combination in food service. It caps what the tenant can pay at renewal.</p>
+      </div>
+      <div class="card">
+        <h3>Housing supply is responding, slowly</h3>
+        <p>22,250 building permits were issued county-wide in 2025 against 3.73m housing units, with 8,304 people per square
+        mile in the city. Density plus permit flow is what creates redevelopment optionality for a 1,372 sq ft prototype on a
+        commercially-zoned parcel.</p>
+        <p class="small">Implication: the residual land value may exceed the going-concern restaurant value if the lease lapses.
+        That is a floor, not a strategy.</p>
+      </div>
+      <div class="card">
+        <h3>Two official population series disagree &mdash; by design</h3>
+        <p>Census puts the county at 9,694,934 for 2025; the California Department of Finance's Baseline-2024 projection puts
+        it at 9,853,435 for the same year, a gap of 158,501. They are different products with different methods and different
+        vintages. Both are published here as separate rows and never blended.</p>
+        <p class="small">This is <b>irregularity R-01</b> in the verification log. It does not change the direction of travel:
+        both series have the county flat-to-declining through 2035.</p>
+      </div>
+    </div>
+
+    <h2>Demographics</h2>
+    <div data-table="demographics"></div>
+
+    <h2>Income, poverty and human capital</h2>
+    <div data-table="income"></div>
+
+    <h2>Housing</h2>
+    <div data-table="housing"></div>
+
+    <h2>Population outlook across the lease-expiry window</h2>
+    <p>These are <b>projections</b>, not observations. They are the State of California's official planning series and are the
+    correct basis for a decision that runs to 2035.</p>
+    <div data-table="population"></div>
+
+    <div class="callout">
+      <div class="h">What this page does to the decision</div>
+      <p>It removes the growth case for holding. If the catchment is flat-to-shrinking and incomes are stretched, a renewal
+      can only be justified by the tenant's own performance or by redevelopment value &mdash; not by the neighbourhood getting
+      better. That narrows the hold case to two narrow conditions, which the <a href="decision.html">decision page</a> tests.</p>
+    </div>
+
+    <div class="foot"><p><a href="index.html">&larr; Dashboard</a> · <a href="economy.html">Next: Economy &amp; Prices &rarr;</a></p></div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision &amp; Recommendation · JACK NNN Central LA</title>
+<meta name="description" content="The recommended course of action, the decision rules that support it, a wealth-preservation plan and a black-swan playbook.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="decision.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Decision</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
+
+    <p class="eyebrow">Category 7 · the recommendation</p>
+    <h1>What to do with this property</h1>
+    <p class="lede">One asset, one tenant, one expiry window, one owner whose wealth is concentrated. The recommendation below
+    is built to survive bad luck, not to maximise a spreadsheet.</p>
+
+    <div class="rec">
+      <span class="tag">Recommended course of action</span>
+      <h2>Renew early into a long term, then sell into that term &mdash; and start now, not in 2030.</h2>
+      <p style="color:#cfe8db">Selling before expiry and renewing are not opposites; they are sequential steps in the same
+      plan. The value of a single-tenant NNN asset <i>is</i> its remaining lease term. So the highest-value sequence is:
+      create term at a market rent, then sell the term to a buyer who can finance it.</p>
+      <p style="color:#cfe8db">If the tenant will not sign a market renewal, the plan changes immediately and without
+      sentiment: <b>market the property while at least three years of term remain</b>. What must never happen is the third
+      option &mdash; drifting to expiry with no signed renewal and no buyer &mdash; because at that point the asset is priced as
+      vacant land and the Measure ULA tax becomes an unavoidable cost on a damaged price.</p>
+    </div>
+
+    <h2>The arithmetic behind it</h2>
+    <p>Values are multiples of one year of current base rent, using the default assumptions on the
+    <a href="model.html">model page</a>. Change any assumption there and this table changes with it.</p>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Default run &mdash; 6 November 2026</div><div class="c">R<sub>0</sub> = 1.00</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Strategy</th><th>Value (× annual rent)</th><th>What has to be true</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">A · Sell now with ~6 years of term</td><td class="val">13.43×</td>
+            <td class="note">Buyer accepts a short lease at a ~7.0% cap; seller absorbs ~6% exit cost.</td></tr>
+          <tr><td class="metric">B · Hold to expiry, then renew or re-lease</td><td class="val">13.15×</td>
+            <td class="note">Requires P(renewal) ≥ 59.4% to match A. Default assumption is 55%.</td></tr>
+          <tr><td class="metric">C · Renew early, sell in 2032</td><td class="val" style="color:#3ddc97">15.19×</td>
+            <td class="note">Tenant signs a long renewal at a market reset; exit at ~5.5% cap on a fresh term.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="h">The one number that can overturn this</div>
+      <p>Everything depends on the cap rate a buyer applies today. If the achievable cap on a short-lease asset is
+      <b>6.5%</b> rather than 7.0%, selling now is worth 14.46× and holding needs a <b>75.5%</b> renewal probability to compete.
+      If it is <b>7.5%</b>, the bar drops to <b>45.4%</b>. That is a 30-point swing in the decision threshold produced by a
+      100bp pricing difference &mdash; which is why the first spend of money in this plan is an appraisal and a broker opinion of
+      value, not a lawyer.</p>
+    </div>
+
+    <h2>Decision rules</h2>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">If → then</div><div class="c">apply in order; first match wins</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>#</th><th>Condition (verify, do not assume)</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td class="id">R1</td><td class="metric">Tenant signs ≥10 years at ≥ current rent, with a corporate guaranty or LOC, before 2029</td>
+            <td class="note"><b>Sign it, hold through the stabilised period, sell 2031&ndash;2033</b> into a long term. This is strategy C.</td></tr>
+          <tr><td class="id">R2</td><td class="metric">Tenant offers renewal only at a discount &gt;10% or for &lt;5 years</td>
+            <td class="note"><b>Do not sign.</b> Market the asset in the same quarter, with the existing term still on it.</td></tr>
+          <tr><td class="id">R3</td><td class="metric">Tenant declines to discuss renewal by mid-2028</td>
+            <td class="note"><b>List in 2028&ndash;2029.</b> Silence is information; the buyer pool decays from here.</td></tr>
+          <tr><td class="id">R4</td><td class="metric">Operator is a franchisee with no corporate guaranty and weak financials</td>
+            <td class="note"><b>Treat the lease as unsecured.</b> Sell before expiry; do not extend credit by granting rent deferrals.</td></tr>
+          <tr><td class="id">R5</td><td class="metric">Broker opinion of value implies a cap &lt;6.25% on a short-lease sale</td>
+            <td class="note"><b>Sell sooner rather than later</b> &mdash; the market is paying up for term and the term is expiring.</td></tr>
+          <tr><td class="id">R6</td><td class="metric">Broker opinion of value implies a cap &gt;7.5% and the tenant will renew</td>
+            <td class="note"><b>Hold and renew</b>; selling into a wide-cap market destroys value for no strategic reason.</td></tr>
+          <tr><td class="id">R7</td><td class="metric">Parcel-level hazard or insurance review reveals uninsurable or unretrofittable exposure</td>
+            <td class="note"><b>Sell.</b> An uninsurable building is not a hold; the NNN tenant will not absorb it either.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>Timeline</h2>
+    <div class="steps">
+      <div class="step"><b>Q4 2026 &ndash; Q1 2027 &mdash; close the information gaps.</b> Pull the lease and amendments, the guaranty,
+        the estoppel, the insurance declarations, the property tax bill, and the parcel hazard lookups (U-01, U-02). Order an
+        appraisal and a broker opinion of value. Nothing is signed before this is done.</div>
+      <div class="step"><b>2027 &mdash; test the tenant's intention in writing.</b> Ask for a renewal proposal and, directly,
+        whether this unit is on the retention list. Put the question in front of the franchisee and the franchisor; the
+        franchisor's consent matters even when it is not the payer.</div>
+      <div class="step"><b>2028 &mdash; the decision year.</b> If a market renewal exists, sign it (strategy C) and begin
+        preparing the asset for sale. If it does not exist, list the property with at least three years of term remaining.</div>
+      <div class="step"><b>2028&ndash;2029 &mdash; exploit the events.</b> The Los Angeles market has a demand peak scheduled in
+        2028; a stabilised, long-lease asset should be marketed into it, not after it. Confirm any event-specific assumptions
+        independently before relying on them.</div>
+      <div class="step"><b>2029&ndash;2031 &mdash; execute the exit or hold the new lease.</b> If sold, complete the exchange or
+        diversification inside the statutory window. If held, the asset is now a long-lease bond and the decision cadence
+        drops to annual review.</div>
+    </div>
+
+    <h2>Wealth preservation plan for the individual</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Concentration is the biggest risk you own</h3>
+        <p>The largest exposure on this site is not the tenant, the cap rate or the fault line &mdash; it is that one lease, one
+        building and one seismic region may be most of your net worth. Before optimising the sale price, set a hard ceiling on
+        the share of net worth this asset may represent and work towards it deliberately. The <a href="risk.html">risk
+        register</a> treats that as RSK-15.</p>
+      </div>
+      <div class="card">
+        <h3>Exit mechanics worth more than a rent negotiation</h3>
+        <ul class="clean tight">
+          <li><b>Exchange, don't just sell.</b> A like-kind exchange defers federal capital-gains and depreciation-recapture
+            tax; it must be set up before closing (qualified intermediary, strict deadlines). Confirm with tax counsel &mdash;
+            this site does not give tax advice.</li>
+          <li><b>Installment / structured sale.</b> Spreading gain over years can reduce bracket compression and, in some
+            structures, the ULA hit &mdash; model it before listing, not after.</li>
+          <li><b>Price the ULA in from day one.</b> 4.0% (or 5.5% above $10m) of the full price is a seller cost in the City of
+            Los Angeles. A $5m sale loses $200,000 to it before any other cost.</li>
+          <li><b>Do not personally guarantee.</b> No new recourse, no cross-collateralisation, no guarantee of a franchisee's
+            obligation.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Liquidity rule</h3>
+        <p>Hold 12&ndash;24 months of carrying costs and personal living expenses outside this asset. The purpose is not
+        return; it is to prevent a forced sale. A forced sale in a wide-cap market, on a short lease, pays the ULA tax on a
+        depressed price &mdash; the worst of all outcomes.</p>
+      </div>
+      <div class="card">
+        <h3>Diversify across tenants, geographies and hazards</h3>
+        <p>If the proceeds are reinvested, spread them: different tenants, different metros, different seismic and wildfire
+        zones, and a mix of lease lengths. A diversified NNN portfolio or a DST interest can hold the income profile without
+        re-concentrating the risk. Size each position so that no single vacancy matters.</p>
+      </div>
+    </div>
+
+    <h2>Black-swan playbook</h2>
+    <p>Pre-committed actions, so that a bad week does not become a bad decision. Triggers are observable; actions are decided
+    now, in advance.</p>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Trigger → action</div><div class="c">decide before the event, not during it</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Event</th><th>Observable trigger</th><th>Pre-committed action</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">Tenant distress</td><td class="note">Missed or late rent; JACK discloses further closures or a covenant breach</td>
+            <td class="note">Serve notice immediately, demand the guaranty, start marketing within 30 days. Do not grant deferrals.</td></tr>
+          <tr><td class="metric">Major earthquake</td><td class="note">Regional M6.5+ with damage in the trade area</td>
+            <td class="note">Insurance claim first, then structural assessment. Do not sell into a panicked market; re-lease with a
+            rent concession if the building is sound.</td></tr>
+          <tr><td class="metric">Wildfire / smoke event</td><td class="note">Regional fire affecting utilities, air quality or insurance</td>
+            <td class="note">Expect a premium reset at the next renewal; obtain competing quotes early. Pass-through is the tenant's,
+            but a spike in occupancy cost accelerates a non-renewal.</td></tr>
+          <tr><td class="metric">Rate shock</td><td class="note">10-year Treasury above 5.5% sustained for two quarters</td>
+            <td class="note">Defer sale; the buyer pool for short-lease assets is leverage-driven and will thin further. Revisit when
+            rates fall or the renewal is signed.</td></tr>
+          <tr><td class="metric">New local tax</td><td class="note">Any new City/County transfer or vacancy levy proposed</td>
+            <td class="note">Accelerate the sale ahead of the effective date if the asset was already a sell; do not create a
+            taxable event that did not exist.</td></tr>
+          <tr><td class="metric">Civil disruption</td><td class="note">Curfew or prolonged closure in the trade area</td>
+            <td class="note">Confirm business-interruption and civil-commotion cover before the event, not after.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>What would change this recommendation</h2>
+    <ul class="clean">
+      <li><b>A corporate lease with a strong guaranty.</b> If the payer on this lease is Jack in the Box Inc. itself rather than a
+        franchisee, the credit is materially better and strategy C becomes clearly dominant instead of merely preferred.</li>
+      <li><b>Anchored, long-lease, high-growth submarket.</b> If the parcel is in a corridor with verified transit investment and
+        rising household income &mdash; not measurable without the address &mdash; holding to redevelop rather than sell could
+        outperform.</li>
+      <li><b>A cap-rate environment below 6%.</b> If term is cheap, holding and refinancing becomes rational again.</li>
+      <li><b>Documented, insurable, retrofitted building.</b> Removes the tail-risk discount that currently pushes towards exit.</li>
+    </ul>
+
+    <div class="callout bad">
+      <div class="h">Three things this analysis cannot tell you</div>
+      <p><b>1.</b> What the property is actually worth today (no appraisal). <b>2.</b> What the lease actually says (no lease).
+      <b>3.</b> What the parcel-level hazard exposure is (no address). The recommendation is deliberately built to be
+      <i>robust to those gaps</i> &mdash; renew-then-sell works across the assumptions, and the fallback is triggered by
+      information, not by hope. But it is not a substitute for the three documents that would close them.</p>
+    </div>
+
+    <div class="foot"><p><a href="model.html">&larr; Projection Model</a> · <a href="flagged.html">Next: Flagged for Review &rarr;</a></p></div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

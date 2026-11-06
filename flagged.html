@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review · JACK NNN Central LA</title>
+<meta name="description" content="Every unverified value, every withheld private field and every source irregularity, published openly with official links for manual review.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="flagged.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Flagged for Review</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
+
+    <p class="eyebrow">Open items · nothing here is hidden</p>
+    <h1>Flagged for review</h1>
+    <p class="lede">Thirty-six rows on this site are not filled in: 28 because no official source confirms the value, and 8
+    because the value is private property information that must not be published. They are listed here, in the open, with the
+    official link a human needs to close each one. <b>A blank is information; a guess is a liability.</b></p>
+
+    <div class="grid g4">
+      <div class="kpi"><div class="k">Left blank</div><div class="v warn" data-stat="unverified">—</div><div class="m">no official confirmation</div></div>
+      <div class="kpi"><div class="k">Withheld by policy</div><div class="v" data-stat="placeholder">—</div><div class="m">private property data</div></div>
+      <div class="kpi"><div class="k">Open items</div><div class="v">11</div><div class="m">U-01 to U-11</div></div>
+      <div class="kpi"><div class="k">Source irregularities</div><div class="v">2</div><div class="m">R-01, R-02</div></div>
+    </div>
+
+    <h2>Open items and how to close them</h2>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">U-01 to U-11</div><div class="c">each one changes at least one number in the model</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>ID</th><th>Missing value</th><th>Why it is missing</th><th>Where to get it (official)</th><th>What it changes</th></tr></thead>
+        <tbody>
+          <tr><td class="id">U-01</td><td class="metric">Fire Hazard Severity Zone of the parcel</td>
+            <td class="note">Requires an address lookup; the address is withheld and was not used.</td>
+            <td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener">osfm.fire.ca.gov ↗</a></td>
+            <td class="note">Insurance cost &rarr; tenant occupancy cost &rarr; renewal capacity.</td></tr>
+          <tr><td class="id">U-02</td><td class="metric">Alquist-Priolo / seismic hazard zone status, year built, retrofit status</td>
+            <td class="note">Parcel-level lookup required; no APN supplied.</td>
+            <td class="src"><a href="https://www.conservation.ca.gov/cgs/alquist-priolo" target="_blank" rel="noopener">conservation.ca.gov/cgs ↗</a></td>
+            <td class="note">Catastrophe exposure, insurability, capital reserve.</td></tr>
+          <tr><td class="id">U-03</td><td class="metric">The lease: term, expiry date, escalations, options, guarantor, recovery caps</td>
+            <td class="note">Private document held by the owner; no public record contains it.</td>
+            <td class="src">Owner's file / title company</td>
+            <td class="note">Everything. This is the single most important document in the analysis.</td></tr>
+          <tr><td class="id">U-04</td><td class="metric">Zoning and community-plan designation; redevelopment potential</td>
+            <td class="note">Parcel-specific; requires APN.</td>
+            <td class="src"><a href="https://zimas.lacity.org/" target="_blank" rel="noopener">zimas.lacity.org ↗</a></td>
+            <td class="note">Residual land value floor if the unit goes dark.</td></tr>
+          <tr><td class="id">U-05</td><td class="metric">LAUSD graduation rate and CAASPP proficiency</td>
+            <td class="note">Published only through dynamic query tools that returned no stable values to automated retrieval.</td>
+            <td class="src"><a href="https://dq.cde.ca.gov/dataquest/" target="_blank" rel="noopener">dq.cde.ca.gov/dataquest ↗</a></td>
+            <td class="note">Neighbourhood quality narrative; low weight on the rent decision.</td></tr>
+          <tr><td class="id">U-06</td><td class="metric">Cap rates, vacancy, achievable sale price</td>
+            <td class="note">No government agency publishes QSR net-lease cap rates. Private data vendors only.</td>
+            <td class="src">Appraisal + broker opinion of value</td>
+            <td class="note">The decision threshold itself (see the 30-point swing on the decision page).</td></tr>
+          <tr><td class="id">U-07</td><td class="metric">Three-mile trade area population, income, traffic counts</td>
+            <td class="note">Requires geocoding the parcel; no address supplied.</td>
+            <td class="src">Census geocoder + city traffic counts (with the address)</td>
+            <td class="note">Catchment quality; unit-level sales capacity.</td></tr>
+          <tr><td class="id">U-08</td><td class="metric">Office-using employment within three miles</td>
+            <td class="note">BLS publishes at MSA level only; sub-geography requires a licensed private dataset.</td>
+            <td class="src"><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener">bls.gov ↗</a> (MSA only)</td>
+            <td class="note">Lunch daypart demand.</td></tr>
+          <tr><td class="id">U-09</td><td class="metric">Current CPI-indexed Measure ULA thresholds; documentary transfer tax rates</td>
+            <td class="note">The statutory 4.0%/5.5% rates are verified. The annually indexed dollar thresholds are not stated on any official page located in this session, and third-party figures conflict by up to $300,000.</td>
+            <td class="src"><a href="https://finance.lacity.gov/" target="_blank" rel="noopener">finance.lacity.gov ↗</a> (search the transfer-tax page)</td>
+            <td class="note">Whether a sale falls in the 4.0% or 5.5% band.</td></tr>
+          <tr><td class="id">U-10</td><td class="metric">City of Los Angeles minimum wage for 2026; any Fast Food Council increase after $20</td>
+            <td class="note">DIR confirms the $20 rate from 1 April 2024 only; no subsequent figure was published on the page retrieved.</td>
+            <td class="src"><a href="https://www.dir.ca.gov/AB1228/AB1228.html" target="_blank" rel="noopener">dir.ca.gov/AB1228 ↗</a></td>
+            <td class="note">Tenant labour cost &rarr; rent capacity.</td></tr>
+          <tr><td class="id">U-11</td><td class="metric">Current insurance policy, premium, deductible, FAIR Plan eligibility</td>
+            <td class="note">Private document.</td>
+            <td class="src"><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2024/release031-2024.cfm" target="_blank" rel="noopener">insurance.ca.gov ↗</a> + declarations</td>
+            <td class="note">Occupancy cost and uninsurable-risk screen (decision rule R7).</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>Source irregularities found during verification</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>R-01 · Two official population series disagree by 158,501</h3>
+        <p>U.S. Census Bureau, Vintage 2025: Los Angeles County = <b>9,694,934</b> (1 July 2025).
+        California Department of Finance, Baseline 2024 / Vintage 2026: <b>9,853,435</b> for the same date.
+        Different products, different methods, both official. Published as separate rows; never blended or averaged.</p>
+        <p class="small"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener">Census ↗</a> ·
+        <a href="https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx" target="_blank" rel="noopener">DOF P-2A ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>R-02 · The company disagrees with itself on its own store count</h3>
+        <p>The FY2025 Form 10-K Item 1 states <b>2,136 restaurants across 22 states</b>. The boilerplate in the Q4 earnings
+        release issued the same day states "approximately 2,135 restaurants across 21 states". A one-unit, one-state
+        discrepancy inside a single filing day. The site uses 2,136 (the audited business description) and flags the conflict.</p>
+        <p class="small"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener">10-K ↗</a> ·
+        <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener">Exhibit 99.1 ↗</a></p>
+      </div>
+    </div>
+
+    <h2>Every open row in the dataset</h2>
+    <div id="flagged-table"></div>
+
+    <div class="callout">
+      <div class="h">A note on what "verified" means here</div>
+      <p>A row is marked <span class="pill ok">verified</span> only when the exact number was read on the cited official page
+      during this session and transcribed without adjustment. Anything second-hand, inferred, rounded to fit, or remembered
+      was excluded. Rows marked <span class="pill der">derived</span> show arithmetic explicitly. Rows marked
+      <span class="pill unv">unverified</span> carry a blank value &mdash; never an estimate.</p>
+    </div>
+
+    <div class="foot"><p><a href="decision.html">&larr; Decision &amp; Recommendation</a> · <a href="sources.html">Next: Sources &amp; Method &rarr;</a></p></div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
