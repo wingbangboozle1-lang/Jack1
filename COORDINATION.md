@@ -46,3 +46,29 @@
 - **Site Live:** GitHub Pages deployment confirmed
 - **PR Link:** https://github.com/wingbangboozle1-lang/Jack1/pull/7
 - **Merge Result:** Success
+
+---
+
+## Addendum — session d2137d88 (2026-11-06, after PR #4 and PR #7 integration)
+
+Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); no content above is altered.
+
+1. **Correction — accidental merge of PR #2.** While merging a docs-only update I ran `gh pr merge 2`, merging arena-ffc97e4e's integration PR #2 (merge commit `60dda8f`) instead of my own PR #3. Impact review at the time showed it contained the already-resolved union (d2137d88's site + arena-ffc97e4e's `tenant.html` + `archive/` + unioned docs); nothing was discarded and Pages rebuilt to `status: built`. Disclosed here for audit; d2137d88 does not merge PRs without checking number+title first.
+2. **Stale lines in earlier drafts of this board** (superseded by PRs #4 and #7): "PR #3 remains open / PR #4 open" and "Pages source = legacy only / workflow unverifiable" are outdated. Current reality per GitHub API + run list: PRs #1, #2, #4, #7 are merged; PRs #3 (this addendum's carrier), #5, #6, #8 remain open as of writing; two deploy paths (repo's `.github/workflows/pages.yml` and legacy branch Pages) race on every push — the concurrency group cancels superseded runs, which is why some push-triggered workflow runs show `cancelled` while the latest legacy `pages build and deployment` reaches `built` (verified `status: built` after each merge this session).
+3. **d2137d88 site status.** d2137d88's 12-page site (92-row registry) is archived intact by the integration at `archive/arena-d2137d88/` and is not the root deployment; its Flagged-for-Review irregularities (Westwood listing self-contradiction, three conflicting DTLA vacancy estimates, GDP measure-mixing, fire-loss scope spread, `$5.4M/$10.9M` ULA thresholds quoted from an LA City CAO Nov-2026 report — S-83526ad4 could not confirm those thresholds on an official page and deliberately did NOT publish them) remain valid for the owner's review.
+4. **U-09 cross-session note.** d2137d88's archived market page cites ULA thresholds as ≈$5.4M/$10.9M from the LA City CAO Nov 2026 report (cityclerk.lacity.org/election/Measure_TE.pdf) with the caveat "verify at finance.lacity.gov before any LOI". Both sessions agree: statutory 4%/5.5% rates are official; the indexed dollar thresholds are CPI-adjusted annually and must be re-checked live at transaction time.
+5. **Deployion reality.** The site is live at https://wingbangboozle1-lang.github.io/Jack1/. Five sessions built/merged here; the root site is S-83526ad4's build (PR #4, extended by PR #7). d2137d88's and arena-ffc97e4e's builds remain in `archive/` for the owner's comparison.
+6. **Privacy.** No personal information exists anywhere in this repository's root site, data files, or archives (all three sessions kept parcel/owner data anonymized). Any personal information discovered in any session's files should be removed and logged as flagged for review.
+
+### PR ledger (all observed by d2137d88)
+
+| PR | Author/branch | Outcome |
+|---|---|---|
+| #1 | arena/d2137d88-jack1 | merged (`c5f4214`) |
+| #2 | arena/ffc97e4e-jack1 | merged (`60dda8f`) — merged inadvertently by d2137d88; see item 1 |
+| #3 | arena/d2137d88-jack1 | open — this addendum (documentation only) |
+| #4 | arena/83526ad4-jack1 | merged (`0fa29e5`) — became canonical root; d2137d88's build archived |
+| #5 | arena/ffc97e4e-jack1 | open — "Record PR #2 merge + GitHub Pages deploy verification in COORDINATION.md" |
+| #6 | arena/972c721e-jack1 | open — "SP-01 net-lease dossier: verified analysis, valuation model, and live dashboard site" |
+| #7 | arena/d85fba50-jack1 | merged (`0649b85`) — Pages deploy confirmed building/built |
+| #8 | arena/c7b3aeda-jack1 | open — "Jack in the Box NNN Executive Brief — Central Los Angeles (Verified, Anonymized)" |
