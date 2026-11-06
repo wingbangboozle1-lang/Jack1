@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources &amp; Verification — Jack1 | Central LA NNN</title>
+<meta name="description" content="Master source registry with links and verification protocol for every figure on this site.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="sources" data-title="Sources &amp; Verification">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
+
+      <div class="page-head">
+        <div class="eyebrow">Governance · Sources</div>
+        <h1>Source registry &amp; verification protocol</h1>
+        <p class="lede">Every figure on this site traces to one of the sources below. Official = primary government/filing, accessed 2026-11-06. Secondary = reputable republisher (re-verify at primary). Market = broker data (no official exists). Nothing is on this site without a source or an explicit flag.</p>
+      </div>
+
+      <h2>Verification protocol (how this site was built)</h2>
+      <div class="card">
+        <ol class="tight">
+          <li><strong>Collection.</strong> Data pulled 2026-11-06 from official portals (census.gov, bls.gov, bea.gov, fred.stlouisfed.org, cde.ca.gov, lausd.org, sec.gov/EDGAR, fire.ca.gov, lacounty.gov, lacity.gov/CAO, metro.net, lahsa.org, la28.org, dir.ca.gov, boe.ca.gov, usgs.gov). Browser-transcribed into the registry with access date.</li>
+          <li><strong>No hallucinations.</strong> If a number could not be confirmed on an official page, it was either omitted (left blank) or published on <a href="flagged.html">Flagged for Review</a> with the reason. Mixed-measure confusions (current vs real GDP; output loss vs total loss) were kept separate and labeled.</li>
+          <li><strong>Link-per-row.</strong> Every table row on every page carries its own source link(s) and a status badge; the master list below deduplicates them.</li>
+          <li><strong>Privacy.</strong> No owner, occupant, store number, address, APN, or lease economics are published. Location described only at district level. This repo contains no personal information.</li>
+          <li><strong>Currency &amp; staleness.</strong> Census V2025 population estimates are July 2025; ACS income is 2020–2024; SAIPE 2024; BEA county GDP 2024; BLS MSA unemployment 2025 (Dec-2025 print 4.8%); 10Y Treasury Oct-2026 = 5.13%; fire figures as of the County's anniversary fact sheet. Stale items (e.g., Mar-2024 cap comps) are marked stale.</li>
+          <li><strong>Re-verification before action.</strong> Any transaction decision must re-pull live figures (caps, 10Y, ULA threshold, lease estoppel) at the moment of LOI/escrow. Prices and taxes move; this site is a snapshot.</li>
+        </ol>
+      </div>
+
+      <h2>Master source registry <span class="small" id="src-count"></span></h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Source</th><th>Type</th><th>Link</th></tr></thead>
+          <tbody id="src-table"></tbody>
+        </table>
+      </div>
+
+      <h2>Changelog</h2>
+      <div class="card">
+        <ul class="tight">
+          <li>2026-11-06 — Initial build. Research collected; all pages published; 15 flagged items opened on <a href="flagged.html">Flagged for Review</a>. COORDINATION.md records tasks T1–T9.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function () {
+  const badge = { official: "b-official", secondary: "b-secondary", market: "b-market", unverified: "b-unverified" };
+  const label = { official: "Official", secondary: "Secondary", market: "Market / broker", unverified: "Unverified" };
+  const entries = Object.entries(window.JACK1_SOURCES || {});
+  document.getElementById("src-count").textContent = "— " + entries.length + " sources";
+  document.getElementById("src-table").innerHTML = entries.map(([id, s], i) => `
+    <tr><td>${i + 1}</td><td>${s.label}</td><td><span class="badge ${badge[s.type] || "b-unverified"}">${label[s.type] || s.type}</span></td>
+    <td><a href="${s.url}" target="_blank" rel="noopener noreferrer">open ↗</a></td></tr>`).join("");
+})();
+</script>
+</body>
+</html>

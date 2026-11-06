@@ -1,0 +1,85 @@
+{
+  "currency_note": "All values are expressed as a multiple of ONE YEAR of current base rent (R0 = 1.00). No property-specific dollar amount is invented. Multiply any output by the actual annual base rent to obtain dollars.",
+  "inputs_placeholder": {
+    "annual_base_rent": "[WITHHELD] — set R0 = 1.00 as the unit of account",
+    "expiry_year": "2030-2035 (use 2032.5 midpoint for modelling)",
+    "discount_rate_anchor": {
+      "value": 4.9,
+      "source": "FRED DGS10, 2026-11-04",
+      "url": "https://fred.stlouisfed.org/series/DGS10"
+    }
+  },
+  "assumptions": [
+    [
+      "discount_rate",
+      7.9,
+      "%",
+      "10-yr Treasury 4.90% (verified) + 3.00% illiquidity/equity premium (assumption)."
+    ],
+    [
+      "rent_escalation",
+      2,
+      "%/yr",
+      "Fixed NNN bumps typical of QSR leases; below LA CPI of 3.7%."
+    ],
+    [
+      "years_to_expiry_midpoint",
+      6,
+      "years",
+      "Midpoint of the owner-stated 2030-2035 window measured from 2026."
+    ],
+    [
+      "exit_cap_rate_renewed",
+      6,
+      "%",
+      "Assumption: credit-tenant QSR NNN pricing. Not an official statistic (U-06)."
+    ],
+    [
+      "exit_cap_rate_short_term",
+      7,
+      "%",
+      "Assumption: 100 bp penalty for <3 years remaining term / renewal uncertainty."
+    ],
+    [
+      "sale_cost_pct",
+      6,
+      "% of price",
+      "Measure ULA 4.0% (verified, if >$5m) + ~1.0% transfer/title + ~1.0% advisory."
+    ],
+    [
+      "renewal_probability",
+      0.55,
+      "probability",
+      "Assumption informed by tenant trajectory (5 negative indicators), not a published statistic."
+    ],
+    [
+      "dark_value_multiple",
+      8,
+      "x annual rent",
+      "Assumption: vacant/alternative-use land+building value as a multiple of the current rent."
+    ],
+    [
+      "hold_opex_leakage",
+      0.5,
+      "% of rent/yr",
+      "Non-recoverable owner costs under NNN (legal, asset management, vacancy-period carry)."
+    ]
+  ],
+  "strategies": [
+    [
+      "A",
+      "Sell now (2027) with the lease in place",
+      "Capitalise current rent at the renewed-asset cap, net of sale costs, then redeploy proceeds."
+    ],
+    [
+      "B",
+      "Hold to expiry (2032-2035), then renew if the tenant will, else lease or sell vacant",
+      "Collect contractual rent to expiry, then bear renewal or vacancy risk."
+    ],
+    [
+      "C",
+      "Renew early (2028-2029) on a reset rent, then sell in 2031-2032 with long term remaining",
+      "Trade near-term rent for term certainty and a tighter exit cap."
+    ]
+  ]
+}

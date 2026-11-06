@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projection Model · JACK NNN Central LA</title>
+<meta name="description" content="A transparent hold-versus-sell projection engine expressed as multiples of annual rent, with break-even renewal probability and a sensitivity grid.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="model.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Projection Model</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
+
+    <p class="eyebrow">Category 6 · the projection system</p>
+    <h1>A projection model that refuses to invent the property</h1>
+    <p class="lede">The rent, the price, the assessed value and the cap rate are all unknown or private. So the model is built
+    in <b>units of one year of current base rent</b>. Every output is a multiple. Multiply by the real rent when you have it
+    &mdash; the structure of the answer does not change.</p>
+
+    <div class="callout">
+      <div class="h">Why this design</div>
+      <p>It is easy to produce a confident-looking dollar valuation from invented inputs. That is what most property
+      "analyses" do. This one separates the two things cleanly: verified facts (Treasury yield, ULA rate, tenant trajectory,
+      population projection) and transparent assumptions (cap rates, renewal probability, dark value). Only the second group is
+      adjustable, and every one of them is listed with its reason.</p>
+    </div>
+
+    <h2>The three strategies</h2>
+    <div class="grid g3">
+      <div class="card"><h3>A · Sell now (2027)</h3>
+        <p>Capitalise current rent at a <b>wider</b> cap rate, because a buyer is taking a lease with about six years left.
+        Net of exit cost (~6%: ULA 4.0% verified plus assumptions).</p></div>
+      <div class="card"><h3>B · Hold to expiry</h3>
+        <p>Collect contractual rent to expiry, then face the branch: the tenant renews (probability <i>p</i>) and the asset is
+        sold on a fresh lease, or the tenant leaves and the asset is worth vacant/redevelopment value.</p></div>
+      <div class="card"><h3>C · Renew early, then sell</h3>
+        <p>Convert uncertainty into term in 2028 by signing a long renewal at a market reset, then sell in ~2032 with
+        double-digit years remaining &mdash; a bigger buyer pool and a tighter cap.</p></div>
+    </div>
+
+    <h2>Run it</h2>
+    <div id="model-app"></div>
+
+    <h2>Calibration of the assumptions</h2>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Where each input comes from</div><div class="c">verified vs. assumption</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Input</th><th>Default</th><th>Status</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">Discount-rate anchor</td><td class="val">4.90%</td><td><span class="pill ok">verified</span></td>
+            <td class="note">10-year Treasury constant maturity, 4 Nov 2026. <a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">FRED ↗</a></td></tr>
+          <tr><td class="metric">Exit cost &mdash; ULA component</td><td class="val">4.00%</td><td><span class="pill ok">verified</span></td>
+            <td class="note">Measure ULA on sales above $5m in the City of Los Angeles. <a href="https://cityattorney.lacity.gov/homelessness" target="_blank" rel="noopener">City Attorney ↗</a></td></tr>
+          <tr><td class="metric">Equity / illiquidity premium</td><td class="val">3.00%</td><td><span class="pill der">assumption</span></td>
+            <td class="note">Added to the Treasury to set the discount rate. No official series exists.</td></tr>
+          <tr><td class="metric">Exit cap, short lease</td><td class="val">7.00%</td><td><span class="pill der">assumption</span></td>
+            <td class="note">Wider cap for &lt;5 years of term. Not published by any agency (U-06).</td></tr>
+          <tr><td class="metric">Exit cap, fresh long lease</td><td class="val">6.00%</td><td><span class="pill der">assumption</span></td>
+            <td class="note">Credit-tenant QSR NNN pricing. Not published by any agency (U-06).</td></tr>
+          <tr><td class="metric">P(renewal at expiry)</td><td class="val">55%</td><td><span class="pill der">assessment</span></td>
+            <td class="note">Informed by five negative tenant indicators. Not a statistical estimate.</td></tr>
+          <tr><td class="metric">Vacant / alternative-use value</td><td class="val">8.0&times;</td><td><span class="pill der">assumption</span></td>
+            <td class="note">Land plus building if the unit goes dark. Requires the appraisal (U-06).</td></tr>
+          <tr><td class="metric">Rent escalation</td><td class="val">2.00%</td><td><span class="pill der">assumption</span></td>
+            <td class="note">Typical fixed NNN bumps; below the verified LA CPI of 3.7%.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>What the model is not</h2>
+    <ul class="clean tight">
+      <li>It is not an appraisal and does not produce a price. A licensed appraiser and a broker opinion of value do that.</li>
+      <li>It does not model local rent comparables, because none were verified for this parcel.</li>
+      <li>It does not model tax on sale (federal/state capital gains, depreciation recapture) &mdash; that requires the owner's
+        basis, which is private. ULA is included because it is a per-transaction statutory cost.</li>
+      <li>It does not assume the tenant's credit improves. That would be an inference, not a fact.</li>
+    </ul>
+
+    <div class="foot"><p><a href="risk.html">&larr; Risk Register</a> · <a href="decision.html">Next: Decision &amp; Recommendation &rarr;</a></p></div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+<script src="assets/model.js"></script>
+</body>
+</html>
