@@ -3,87 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Risk Register — Business-as-Usual &amp; Black Swans | Project Jack-in-the-Box</title>
-<meta name="description" content="Full risk register for the Central LA NNN Jack in the Box asset: market, tenant, structural, and catastrophic (Puente Hills earthquake, wildfire, unrest, rate shock, trade/oil shock) with likelihood, impact, and mitigation.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<title>Risk Matrix — Jack1 | Central LA NNN</title>
+<meta name="description" content="Full risk register for the sell-vs-renew decision: lease, tenant credit, rates, ULA, wildfire, earthquake, pandemic, DTLA distress — with sources and severities.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<div id="site-header"></div>
+<body data-page="risk" data-title="Risk Matrix">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
 
-<section class="page-head">
-  <div class="container">
-    <div class="crumb">Risk Analysis</div>
-    <h1>Risk Register — ordinary risks and rare catastrophes</h1>
-    <p>Likelihood (L) × Impact (I) scored 1–5. Business-as-usual risks are expected to occur; black swans are rare, severe, and mostly uninsurable or under-insured. NNN transfers operations risk to the tenant — but <em>asset-level</em> tail risk stays with the Owner.</p>
-  </div>
-</section>
+      <div class="page-head">
+        <div class="eyebrow">Analysis · Risk</div>
+        <h1>Risk register — including black swans</h1>
+        <p class="lede">Every material risk to (a) selling now, (b) holding &amp; renewing, or (c) holding unrenewed. Severity = likelihood × impact on wealth preservation. Official sources badged; judged/broker inputs flagged.</p>
+      </div>
 
-<main class="container">
+      <h2>Severity heat list</h2>
+      <div class="card"><div id="risk-heat"></div></div>
 
-  <div class="section">
-    <h2 class="section-title">1 · How to read the register</h2>
-    <div class="pill-row">
-      <span class="badge ok">L1–2 = unlikely</span><span class="badge warn">L3 = possible</span><span class="badge bad">L4–5 = likely/certain</span>
-      <span class="badge info">I1–2 = minor</span><span class="badge warn">I3 = material</span><span class="badge bad">I4–5 = severe/catastrophic</span>
+      <h2>Full register (searchable, source-linked)</h2>
+      <div id="tbl-risk" data-table="risk"></div>
+
+      <h2>Scenario stress tests on wealth preservation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Scenario</th><th>Probability (judged)</th><th>Impact on asset value</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td>Normal operations, tenant renews at expiry on current terms + bumps</td><td>Possible — base case</td><td>Neutral to positive; term reset restores value</td><td>Execute renewal 24–36 months early; get JACK parent or franchisee PG in writing</td></tr>
+            <tr><td>Rates stay elevated (10Y ≥ 5%) through 2030</td><td>Plausible (current path)</td><td>Cap rates stay wide; sale proceeds ~10–15% below 2021-peak pricing</td><td>Sell sooner rather than later if term &lt; 7 yrs; or lock long renewal then sell</td></tr>
+            <tr><td>Franchisee default / dark store before expiry</td><td>Low-moderate; rising</td><td>Severe: single-tenant NNN → dark = near-total income loss until re-tenanted</td><td>Estoppel + unit-level P&amp;L; replacement-tenant LOI pre-negotiated (any QSR fits the box); early-warning covenants</td></tr>
+            <tr><td>JACK parent distress (Ch. 11 / forced asset sales)</td><td>Low (liquidity ~$1.5B rev, FCF positive)</td><td>Moderate: headline cap-rate widening across JIB paper</td><td>Hold quality (term + bumps + PG) is everything; sell into strength if renewal signed</td></tr>
+            <tr><td>Wildfire-driven regional shock (repeat of Jan 2025)</td><td>Moderate for SoCal</td><td>Indirect: insurance cost, construction inflation, labor; direct loss unlikely in central LA</td><td>Confirm tenant carries full replacement-cost + BI insurance; owner keeps none</td></tr>
+            <tr><td>Major earthquake (M ≥ 6.7, e.g., Northridge repeat)</td><td>Low per year; certain in 30-yr horizon</td><td>Potentially catastrophic (uninsured seismic loss not covered by NNN)</td><td>Seismic inspection now; require tenant earthquake insurance; confirm construction type (pre-1994 URM risk)</td></tr>
+            <tr><td>LA recession + simultaneous cap-rate widening (2030–2035 window)</td><td>Moderate over 5–9 years</td><td>Double-hit: NOI down, cap up → value −25%+</td><td>Do not hold unrenewed into the window; renew early or exit before 2029</td></tr>
+            <tr><td>Policy shock: ULA expansion/repeal, Prop 13 change</td><td>Low near-term</td><td>±4–5.5% on sale economics; ±tax reset</td><td>Model both; decide on pre-shock fundamentals, not on tax prophecy</td></tr>
+            <tr><td>LA28 (2028) windfall: traffic + investment boom</td><td>Plausible</td><td>Positive for both hold and sell (richer buyer pool)</td><td>Time any sale for 2027–2029 if exiting</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout red"><strong>Concentration truth-bomb:</strong> one asset, one tenant, one market, one brand. No amount of LA optimism diversifies that. The cheapest risk reduction available is either (i) a long renewal that is actually signed, or (ii) a sale into a diversified 1031 replacement portfolio. Doing neither — drifting toward 2030–2035 unrenewed — is the actual risk decision.</div>
+
     </div>
-    <p class="small">Scores are analytical judgments of this review (Nov 2026), not actuarial outputs. L×I ≥ 12 = red; 6–10 = amber; ≤5 = green. Sources linked per row; judgment flagged where no official source exists.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">2 · Business-as-usual (likely) risks</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>ID</th><th>Risk</th><th>L</th><th>I</th><th>L×I</th><th>Mitigation</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>BAU-01</td><td>Lease-expiry value cliff — buyer re-prices as WALT shrinks inside 5–3 years; QSR NNN exit pricing degrades</td><td>4</td><td>4</td><td><span class="badge bad">16</span></td><td>Sell while ≥4–5 yrs term remain; negotiate early extension before marketing</td><td class="src"><a href="https://www.connectcre.com/stories/net-lease-cap-rates-continue-to-stabilize/" target="_blank" rel="noopener">Boulder Group Q4-25 (industry)</a></td></tr>
-        <tr><td>BAU-02</td><td>Tenant decline → unit closure under JACK on Track (150–200 + 50–100 FY26 closures)</td><td>3</td><td>5</td><td><span class="badge bad">15</span></td><td>Get unit’s status in writing from franchisor; estoppel; confirm unit economics; consider sale while occupancy strong</td><td class="src"><a href="https://www.franchisetimes.com/franchise_news/another-ceo-for-jack-in-the-box-as-its-revitalization-efforts-continue/article_3d28e5a9-b9c8-4871-b3c6-c546057dc78a.html" target="_blank" rel="noopener">Franchise Times</a> · <a href="https://www.stocktitan.net/sec-filings/JACK/8-k-jack-in-the-box-inc-reports-material-event-d2dff82cf37a.html" target="_blank" rel="noopener">Q3 FY26 8-K</a></td></tr>
-        <tr><td>BAU-03</td><td>Franchisee default — actual rent payer is a franchisee (93% of system); AUV $1.874M FY25 vs $1.949M FY24 (−3.8%); franchise margin 37.4% and falling</td><td>3</td><td>4</td><td><span class="badge bad">12</span></td><td>Require franchisee P&amp;L; verify store profitability; parent guarantee or security deposit; SNDA</td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K" target="_blank" rel="noopener">SEC EDGAR 10-K</a> · <a href="https://tickertrends.io/transcripts/JACK/Q3-earnings-transcript-2026" target="_blank" rel="noopener">Q3 FY26 call</a></td></tr>
-        <tr><td>BAU-04</td><td>Inflation Outpaces fixed escalations — CA CPI +3.1% (2025) vs typical 2% NNN bumps → real rent declines each year</td><td>5</td><td>2</td><td><span class="badge warn">10</span></td><td>Negotiate CPI-linked or ≥3% escalations at renewal; reset rent to market</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD — CPI</a></td></tr>
-        <tr><td>BAU-05</td><td>Population/demand stagnation — LA city −0.8% vs 2020; county −3.2%; QSR transactions falling systemwide (−1.1% SSS Q3 FY26)</td><td>4</td><td>3</td><td><span class="badge warn">12</span></td><td>Underwrite flat-to-declining NOI; do not pay growth multiple; emphasize 1031 replacement with growth market</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/0644000/POP255225" target="_blank" rel="noopener">Census QuickFacts</a> · <a href="https://www.stocktitan.net/sec-filings/JACK/8-k-jack-in-the-box-inc-reports-material-event-d2dff82cf37a.html" target="_blank" rel="noopener">Q3 FY26 8-K</a></td></tr>
-        <tr><td>BAU-06</td><td>Property tax escalation beyond 2% cap via direct assessments / bond overrides; reassessment risk if Owner entity changes</td><td>2</td><td>3</td><td><span class="badge warn">6</span></td><td>NNN passes through; confirm tenant pays all assessments; avoid ownership-entity change triggering reassessment</td><td class="src"><a href="https://assessor.lacounty.gov/homeowners/realproperty" target="_blank" rel="noopener">LA County Assessor — Prop 13</a></td></tr>
-        <tr><td>BAU-07</td><td>Competition / QSR oversupply Central LA — value-QSR density high; Jack same-store sales lag sector 7 straight quarters (May 2025)</td><td>4</td><td>3</td><td><span class="badge warn">12</span></td><td>Moat check: signal visibility, ingress/egress, drive-thru stacking; confirm exclusives</td><td class="src"><a href="https://finance.yahoo.com/news/truist-downgrades-jack-box-amid-slowing-192430837.html" target="_blank" rel="noopener">Yahoo Finance / Truist</a> — industry ⚑</td></tr>
-        <tr><td>BAU-08</td><td>Deferred maintenance / capex at expiry — dark NNN boxes degrade; roof, parking, grease, seismic retrofit transfer to Owner on re-lease</td><td>3</td><td>3</td><td><span class="badge warn">9</span></td><td>Lease inspection now; roof/parking reports; require tenant restoration clause; reserve $75–150k</td><td class="src">⚑ judgment — no official source; inspect asset</td></tr>
-        <tr><td>BAU-09</td><td>Interest-rate re-pricing — net-lease cap rates rose ~2022–24; if rates rise again, exit value drops even with full term</td><td>3</td><td>4</td><td><span class="badge warn">12</span></td><td>Sell into current stable 6.55% environment; avoid being forced seller at expiry during a rate spike</td><td class="src"><a href="https://www.openpr.com/news/3964027/the-boulder-group-announced-the-release-of-its-1st-quarter-triple-net-lease-research-report" target="_blank" rel="noopener">Boulder Group Q1-25 (industry)</a></td></tr>
-        <tr><td>BAU-10</td><td>1031 execution failure — 45-day ID / 180-day close missed → capital gains (federal + CA) triggered</td><td>2</td><td>4</td><td><span class="badge warn">8</span></td><td>Engage QI before listing; pre-identify 3 replacement properties; backup options</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener">IRS — §1031</a> · <a href="https://www.irs.gov/instructions/i8824" target="_blank" rel="noopener">Form 8824</a></td></tr>
-        <tr><td>BAU-11</td><td>Comment: immigration-enforcement demand shock specific to SoCal (~30% of JIB units) — foot-traffic disruption &amp; civil unrest</td><td>3</td><td>3</td><td><span class="badge warn">9</span></td><td>Monitor store-level traffic; SoCal concentration argues for exit over hold</td><td class="src"><a href="https://finance.yahoo.com/news/jack-box-rating-cut-immigration-135600192.html" target="_blank" rel="noopener">Stifel via Yahoo Finance</a> — industry ⚑</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">3 · Black swans &amp; severe tail risks</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>ID</th><th>Event</th><th>L</th><th>I</th><th>L×I</th><th>Evidence &amp; mitigation</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>BS-01</td><td><strong>Magnitude 7.0–7.5 Puente Hills blind-thrust earthquake</strong> directly beneath Central LA (fault runs 5–15 km deep, ~25 miles under the basin incl. DTLA, USC, Koreatown)</td><td>2</td><td>5</td><td><span class="badge warn">10 — catastrophic tail</span></td><td>USGS/SCEC: 3,000–18,000 deaths; ~$250B losses; shaking 10× amplified in sedimentary basin; ShakeAlert gives ≤5–10 s warning. <em>Mitigation: sell (transfer risk) or verify earthquake insurance + URM/soft-story status; NNN does NOT protect against asset destruction.</em></td><td class="src"><a href="https://www.latimes.com/california/story/2024-08-13/recent-series-of-l-a-earthquakes-was-along-dangerous-fault-system-that-rivals-the-san-andreas" target="_blank" rel="noopener">LA Times / USGS / SCEC (Aug 2024)</a> · <a href="https://www.newsweek.com/earthquake-los-angeles-puente-hills-fault-san-andreas-california-1939276" target="_blank" rel="noopener">Newsweek</a></td></tr>
-        <tr><td>BS-02</td><td>Great ShakeOut scenario — San Andreas M7.8 (Wrightwood nucleation): 1,800 deaths, 53,000 injuries, $213B damage (first 2 weeks)</td><td>1</td><td>5</td><td><span class="badge warn">5</span></td><td>Regional-scale event; losses to all LA real estate; insurance + 1031 diversification across geographies is the hedge</td><td class="src"><a href="https://earthquakeradar.io/blog/los-angeles-earthquake-preparedness-guide.html" target="_blank" rel="noopener">Summary of USGS ShakeOut scenario</a> ⚑ verify at USGS ShakeOut (usgs.gov)</td></tr>
-        <tr><td>BS-03</td><td>Wildfire complex in LA (Palisades/Eaton precedent, Jan 2025) — not a direct-hit risk to DTLA site, but cascade: insurance market failure, FAIR-Plan crowding, construction-cost inflation, displaced households, county GDP −$4.6–8.9B over 5 yrs</td><td>3</td><td>4</td><td><span class="badge bad">12</span></td><td>Jan 2025 proof: 40,000+ acres, ~16,200 structures, ≥27 deaths; LAEDC: $4.6–8.9B 5-yr GDP hit, ~50k job-years, $1.41B tax loss. <em>Mitigation: earthquake+fire insurance continuity; FAIR Plan + difference-in-conditions; sell before insurance becomes unavailable/unaffordable</em></td><td class="src"><a href="https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26" target="_blank" rel="noopener">FEMA</a> · <a href="https://www.foxla.com/news/palisades-eaton-fires-could-cost-local-economy-up-9-billion-new-report-says" target="_blank" rel="noopener">LAEDC via FOXLA</a></td></tr>
-        <tr><td>BS-04</td><td>Tenant bankruptcy / insolvency tail — JACK: $1.5B debt, 6.3x net leverage, $225M Adj. EBITDA guide, interim CEO, dividends suspended; securitized 2019-1 notes; franchisee-layer insolvency risk on top</td><td>2</td><td>5</td><td><span class="badge warn">10 — catastrophic tail</span></td><td>Guaranty/SNDA review; estoppel; sale before maturity date of 2019-1 notes (Class A-2-II repay target) or FY27 closure announcements</td><td class="src"><a href="https://www.stocktitan.net/sec-filings/JACK/8-k-jack-in-the-box-inc-reports-material-event-d2dff82cf37a.html" target="_blank" rel="noopener">Q3 FY26 8-K</a> · <a href="https://www.investing.com/news/analyst-ratings/guggenheim-downgrades-jack-in-the-box-stock-rating-on-debt-concerns-93CH-4714291" target="_blank" rel="noopener">Guggenheim (industry)</a> ⚑</td></tr>
-        <tr><td>BS-05</td><td>Civil disorder / unrest in Central LA (1992 Rodney King; 2020 George Floyd; 2025 immigration-enforcement unrest) — looting, board-up, foot-traffic collapse; insurers excluded/limited riot cover</td><td>2</td><td>4</td><td><span class="badge warn">8</span></td><td>Confirm SIR/riot terms; negotiate lease casualty/unrest clause; sell if uninsurability emerges</td><td class="src">⚑ historical record; no official loss dataset pulled — flagged</td></tr>
-        <tr><td>BS-06</td><td>Trade war / tariff shock + oil shock (2026 Iran war) — port throughput −0.56% (2025); 2026 recessionary risk; UCLA Anderson: recovery pushed to early 2027</td><td>3</td><td>3</td><td><span class="badge warn">9</span></td><td>Do not underwrite trade-linked upside; value QSR is counter-cyclical-ish but not immune; monitor Fed path</td><td class="src"><a href="https://www.anderson.ucla.edu/news-and-events/ucla-anderson-forecast-sees-resilient-growth-despite-inflation-weak-labor-markets" target="_blank" rel="noopener">UCLA Anderson (Sep 2026)</a> · <a href="https://container-news.com/port-of-los-angeles-container-throughput-tops-10-2-million-teus-in-2025/" target="_blank" rel="noopener">Port of LA 2025</a></td></tr>
-        <tr><td>BS-07</td><td>Pandemic-scale health event (COVID-19 precedent: LA 18.4% unemployment May 2020) — mandated dine-in closure; QSR drive-thru resilient but hurting</td><td>1</td><td>4</td><td><span class="badge warn">4</span></td><td>Drive-thru formats are the most pandemic-resilient retail; prefer assets with drive-thru; insurance for business interruption is usually excluded — accept, don’t underwrite it</td><td class="src"><a href="https://www.macrotrends.net/4847/los-angeles-area-unemployment-rate" target="_blank" rel="noopener">LA unemployment history (May 2020: 18.4%)</a> — industry aggregator ⚑</td></tr>
-        <tr><td>BS-08</td><td>Insurance-market failure in CA — admitted-market withdrawals (State Farm/Allstate 2023–24), FAIR Plan $6B Palisades exposure, premium spikes, coverage caps; NNN passes premiums to tenant but Owner bears non-renewal tail</td><td>3</td><td>4</td><td><span class="badge bad">12</span></td><td>Annual insurance review; tenant must maintain; Owner carries loss-of-rents + earthquake landlord policy; sell if tenant’s coverage lapses</td><td class="src"><a href="https://en.wikipedia.org/wiki/Palisades_Fire" target="_blank" rel="noopener">CA FAIR Plan ≈$6B exposure (reported)</a> ⚑</td></tr>
-        <tr><td>BS-09</td><td>Liquidity spiral in net-lease market — wide bid/ask in a rate shock; forced sale at 8–9% cap rates (2023 analog: retail cap +4bps to 6.56% Q1-25 after 12 consecutive increases)</td><td>2</td><td>4</td><td><span class="badge warn">8</span></td><td>List in 2026–27 window; net-lease depth currently improving with Fed cuts; do not wait for expiry</td><td class="src"><a href="https://www.openpr.com/news/3964027/the-boulder-group-announced-the-release-of-its-1st-quarter-triple-net-lease-research-report" target="_blank" rel="noopener">Boulder Group Q1-25 (industry)</a></td></tr>
-        <tr><td>BS-10</td><td>Water/drought &amp; heat — catastrophic drought, extreme-heat days shutting lunch dayparts; brush-fire interface drift into urban LA</td><td>2</td><td>3</td><td><span class="badge warn">6</span></td><td>None property-specific; regional resilience planning; CA water agencies mandates monitor</td><td class="src">⚑ no official dataset pulled — flagged</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">4 · Risk heat summary</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Bucket</th><th>Red rows</th><th>Amber rows</th><th>Verdict</th></tr></thead>
-      <tbody>
-        <tr><td>Business-as-usual</td><td>BAU-01, BAU-02, BAU-03, BAU-05, BAU-07, BAU-09</td><td>BAU-04, BAU-06, BAU-08, BAU-10, BAU-11</td><td>Concentrated in <strong>expiry timing + tenant credit</strong> — both mitigated by selling early</td></tr>
-        <tr><td>Black swans</td><td>BS-01, BS-03, BS-04, BS-08</td><td>BS-02, BS-05, BS-06, BS-07, BS-09, BS-10</td><td>Catastrophic-but-rare; carried every year of hold; transferred at full price on sale</td></tr>
-        <tr class="total"><td>Net effect</td><td colspan="2">Holding to 2030–35 stacks BAU-01/02/03 on top of every black swan, every year</td><td>Sell-early dominates on risk-adjusted basis</td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout"><strong>Residual-risk logic</strong><br>NNN shifts operating risk (taxes, insurance, maintenance) to the tenant, but <em>cannot</em> shift: (i) asset value/cap-rate risk, (ii) vacancy re-leasing risk, (iii) casualty destruction risk, (iv) tenant credit risk at the franchisee layer. Those four stay with the Owner until closing — which is precisely why the decision is “sell vs. renew,” not “hold forever.”</div>
-  </div>
-
-</main>
-<div id="site-footer"></div>
-<script src="assets/app.js"></script>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function () {
+  const sev = { high: ["HIGH", "b-high"], med: ["MEDIUM", "b-med"], low: ["LOW", "b-low"] };
+  const rows = (window.JACK1_DATA.risk || []).slice().sort((a, b) => {
+    const rank = { high: 0, med: 1, low: 2 };
+    return (rank[a.sev] ?? 3) - (rank[b.sev] ?? 3);
+  });
+  document.getElementById("risk-heat").innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:10px">
+      ${rows.map(r => {
+        const [label, cls] = sev[r.sev] || sev.med;
+        return `<div style="display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:10px">
+          <span class="badge ${cls}" style="justify-self:start;margin-top:2px">${label}</span>
+          <div><strong>${r.m}</strong><div class="small" style="margin-top:2px">${r.n}</div></div>
+        </div>`;
+      }).join("")}
+    </div>`;
+})();
+</script>
 </body>
 </html>

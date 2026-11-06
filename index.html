@@ -3,85 +3,121 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Project Jack-in-the-Box | NNN Lease — Sell vs. Renew Dashboard (Central Los Angeles)</title>
-<meta name="description" content="Executive dashboard analyzing a triple-net (NNN) leased Jack in the Box restaurant in Central Los Angeles: market, economy, tenant credit, projections, risks, and a sell-vs-renew recommendation.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<title>Jack1 — Executive Summary | Sell vs. Renew: Central LA Jack in the Box NNN</title>
+<meta name="description" content="Executive summary: decide whether to sell a central Los Angeles Jack in the Box NNN-leased asset before its 2030–2035 lease expiry, or renew. Data-verified, source-linked, privacy-safe.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<div id="site-header"></div>
+<body data-page="index" data-title="Executive Summary">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
 
-<section class="page-head">
-  <div class="container">
-    <div class="crumb">Dashboard · Decision Support</div>
-    <h1>A Central&nbsp;Los&nbsp;Angeles Jack&nbsp;in&nbsp;the&nbsp;Box — NNN lease expiring 2030–2035: <span style="color:#ffd79a">sell before expiry, or renew?</span></h1>
-    <p>Full diligence on the property, the Central LA market, the local economy, tenant credit, black-swan risk, and a quantified sell-vs-renew framework — built only from official/primary sources, with every figure linked. Unverified items are blank and flagged, never estimated.</p>
-    <div class="pill-row">
-      <span class="badge info">NNN single-tenant QSR</span>
-      <span class="badge warn">Lease expiry window: 2030–2035</span>
-      <span class="badge ok">Central Los Angeles</span>
-      <span class="badge bad">Tenant leverage 6.3x net debt/EBITDA (Q3 FY26)</span>
+      <div class="page-head">
+        <div class="eyebrow">Executive Summary</div>
+        <h1>Jack in the Box, central Los Angeles — <br>sell before the 2030–2035 lease expiry, or renew?</h1>
+        <p class="lede">A decision brief for a single anonymized, single-tenant, absolute-NNN quick-service restaurant in central Los Angeles, with a corporate/franchise NNN lease expiring in the 2030–2035 window. Every figure below is tied to a public source or explicitly flagged. <strong>No personal information appears on this site or in this research.</strong></p>
+        <div class="kpi-strip">
+          <span class="chip">Asset type: Single-tenant QSR (Jack in the Box)</span>
+          <span class="chip">Structure: Absolute NNN</span>
+          <span class="chip">Lease expiry window: 2030–2035</span>
+          <span class="chip">Location: Central Los Angeles, CA</span>
+          <span class="chip">Address &amp; owner: withheld (privacy)</span>
+        </div>
+      </div>
+
+      <div class="callout green">
+        <strong>BOTTOM LINE (see Decision page for the full analysis):</strong> Do <u>not</u> ride the lease to expiry unrenewed. Start a parallel track now — (1) negotiate a renewal/extension with the tenant (target ≥10 years, 5–10% bumps every 5 years), and (2) prepare a sale process ready to launch if renewal terms fail or the tenant shows distress. <strong>If a ≥7–9-year term reset is signed: hold</strong> (maximum NNN value, optionality preserved). <strong>If not signed — or tenant credit deteriorates further: sell in 2026–2028</strong> while the remaining term still supports NNN pricing, ideally via a 1031 exchange into a diversified replacement. Selling into a &lt;5-year-remaining window is the worst outcome and should be avoided.
+      </div>
+
+      <h2>The decision at a glance</h2>
+      <div class="grid kpi-grid" id="kpi-grid"></div>
+
+      <h2>Why this decision matters now</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <div class="card">
+          <h3>1 · Tenant credit is the pivot</h3>
+          <p class="small" style="font-size:.85rem;color:var(--ink-soft)">Jack in the Box Inc. (NASDAQ: JACK) reported FY2025 (ended 2025-09-28) revenue ≈ <strong>$1.5B</strong>, adjusted EBITDA ≈ <strong>$270.9M</strong>, system same-store sales of <strong>−4.2%</strong>, a discontinued dividend, a ~$115M Del Taco divestiture and a contested 2026 shareholder vote. It is <strong>not S&amp;P/Moody's rated</strong> (broker-reported). 93% of the 2,136 restaurants are franchised — the store-level covenant is usually a franchisee LLC, not the JACK parent. (<a href="market.html">NNN / QSR market</a> · sources: SEC EDGAR 10-K; filing summaries — see <a href="flagged.html">Flagged for Review</a>.)</p>
+        </div>
+        <div class="card">
+          <h3>2 · Value decays as expiry approaches</h3>
+          <p class="small" style="font-size:.85rem;color:var(--ink-soft)">NNN pricing is a function of remaining term × escalations × cap rate. With expiry in 2030–2035, every year of unrenewed runway widens the cap rate buyers demand. A reset 10-year term is worth materially more than the same asset at expiry minus two years.</p>
+        </div>
+        <div class="card">
+          <h3>3 · LA City sales friction is real money</h3>
+          <p class="small" style="font-size:.85rem;color:var(--ink-soft)">Measure ULA adds <strong>4%</strong> above ~$5.4M and <strong>5.5%</strong> above ~$10.9M (Chained-CPI-adjusted; 2026 figures per LA City CAO), on top of ≈0.56% base city+county transfer tax. On a $6.5M exit that is ≈ <strong>$295K+</strong> before capital gains — material to net proceeds. (<a href="market.html#ula">ULA details</a>.)</p>
+        </div>
+        <div class="card">
+          <h3>4 · Central LA fundamentals are mixed but stabilizing</h3>
+          <p class="small" style="font-size:.85rem;color:var(--ink-soft)">LA city population <strong>3.87M</strong> (−0.8% since 2020); median HH income <strong>$81,939</strong>; poverty <strong>16.5%</strong>; LA County GDP <strong>$1.003T</strong> (current $, 2024); MSA unemployment <strong>5.3%</strong> (2025 avg); multifamily occupancy ≈91% downtown; office vacancy elevated (22–33.3%, conflicting secondary sources); LA28 Olympics (Jul 2028) and D Line extension are real catalysts. (<a href="economy.html">Economy</a>, <a href="demographics.html">Demographics</a>.)</p>
+        </div>
+      </div>
+
+      <h2>What the evidence says — key indicators</h2>
+      <div class="table-wrap">
+        <table id="kpi-table">
+          <thead><tr><th>Indicator</th><th>Reading</th><th>Direction for the asset</th><th>Source</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h2>Decision framework used</h2>
+      <div class="card">
+        <ol class="tight">
+          <li><strong>Inventory of options</strong> — A) sell now; B) hold to expiry &amp; renew; C) renegotiate/extend first, then hold; D) re-tenant or redevelop at expiry; E) 1031 exchange / recapitalize. (<a href="decision.html">Decision analysis</a>)</li>
+          <li><strong>Risk-adjusted comparison</strong> — each option scored on wealth preservation, growth, liquidity, concentration, tax friction, and black-swan resilience. (<a href="risk.html">Risk matrix</a>)</li>
+          <li><strong>Illustrative NPV</strong> — hold-vs-sell arithmetic under stated, editable assumptions. (<a href="projection.html">Projection model</a> — all outputs illustrative, not advice)</li>
+          <li><strong>Trigger plan</strong> — explicit, dated conditions that switch the plan from “renew &amp; hold” to “sell now.” (<a href="decision.html#triggers">Triggers</a>)</li>
+        </ol>
+      </div>
+
+      <div class="callout amber">
+        <strong>What would change this recommendation:</strong> a signed renewal with ≥8–10 years and rent bumps; an acquisition offer ≥ the hold-case PV net of ULA and 1031 friction; a credit event at JACK or the franchisee-operator; parcel-specific findings (fault zone, FHSZ, flood, title/lease defects); or a material move in the 10Y (each +50 bps ≈ −7% on NNN value). See <a href="flagged.html">Flagged for Review</a> for every unverified item, and <a href="sources.html">Sources &amp; Verification</a> for the full audit trail.
+      </div>
+
     </div>
-  </div>
-</section>
+    <div id="site-footer"></div>
+  </main>
+</div>
 
-<main class="container">
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+// KPI cards + evidence table for the executive summary (values pulled from the verified registry)
+(function () {
+  const kpis = [
+    { label: "10Y Treasury (Oct 2026)", value: "5.13%", note: "FRED GS10 — sets the NNN pricing floor" },
+    { label: "LA city population", value: "3.87M", note: "−0.8% vs 2020 (Census QuickFacts)" },
+    { label: "LA County GDP 2024", value: "$1.003T", note: "BEA, current $; real +2.1% YoY" },
+    { label: "MSA unemployment", value: "5.3%", note: "2025 avg (BLS); Dec 2025: 4.8%" },
+    { label: "JIB system SSS FY2025", value: "−4.2%", note: "10-K via filing summary — flagged" },
+    { label: "Measure ULA (LA City)", value: "4% / 5.5%", note: "> $5.4M / ≥ $10.9M (2026, CPI-adj.)" },
+    { label: "LAUSD ELA (2025)", value: "17.8 pts below", note: "CA Dashboard — improved from 28.2 (2024)" },
+    { label: "Homeless, City of LA", value: "43,695", note: "LAHSA 2025 (2nd annual decline)" }
+  ];
+  document.getElementById("kpi-grid").innerHTML = kpis.map(k => `
+    <div class="kpi"><div class="k-label">${k.label}</div><div class="k-value">${k.value}</div><div class="k-note">${k.note}</div></div>`).join("");
 
-  <div class="section">
-    <h2 class="section-title">Headline verdict</h2>
-    <div class="big-verdict">Recommendation: market-test a sale well before the 2030–2035 expiry window — do not wait for lease expiry. Renew only if the tenant executes a 10+ year extension with ≥2% annual escalations and a creditworthy parent/franchisee guarantee, verified in writing, before ~2028.
-      <div class="small" style="color:#9fb6cd;margin-top:8px">Basis and sensitivity: <a href="decision.html" style="color:#ffd79a">Sell vs. Renew analysis →</a> · <a href="projections.html" style="color:#ffd79a">Projection model →</a></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Key indicators at a glance</h2>
-    <div class="grid cols-4">
-      <div class="card kpi"><div class="kpi-label">LA city population (Jul 1, 2025)</div><div class="kpi-value">3,869,089</div><div class="kpi-sub">−0.8% vs 2020 Census · <a href="https://www.census.gov/quickfacts/fact/table/0644000/POP255225" target="_blank" rel="noopener">Census QuickFacts</a></div></div>
-      <div class="card kpi"><div class="kpi-label">LA County population (Jul 1, 2025)</div><div class="kpi-value">9,694,934</div><div class="kpi-sub">−3.2% vs 2020 · <a href="https://www.census.gov/quickfacts/fact/table/06037/POP255225" target="_blank" rel="noopener">Census QuickFacts</a></div></div>
-      <div class="card kpi"><div class="kpi-label">LA County median HH income (2020–24)</div><div class="kpi-value">$90,112</div><div class="kpi-sub">LA city $81,939 · poverty 13.3% / 16.5% · <a href="https://www.census.gov/quickfacts/fact/table/06037/POP255225" target="_blank" rel="noopener">Census QuickFacts</a></div></div>
-      <div class="card kpi"><div class="kpi-label">LA County unemployment (Dec 2025, NSA)</div><div class="kpi-value">5.0%</div><div class="kpi-sub">LF 5.15M · BLS annual 2025: 5.7% · <a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD</a> · <a href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener">FRED/BLS</a></div></div>
-      <div class="card kpi"><div class="kpi-label">Retail net-lease cap rate (Q4 2025)</div><div class="kpi-value">6.55%</div><div class="kpi-sub">Single-tenant net lease · overall 6.81% · <span class="badge industry">industry source</span> <a href="https://www.connectcre.com/stories/net-lease-cap-rates-continue-to-stabilize/" target="_blank" rel="noopener">The Boulder Group</a></div></div>
-      <div class="card kpi"><div class="kpi-label">Jack in the Box system size (FY25)</div><div class="kpi-value">2,136</div><div class="kpi-sub">93% franchised (1,986) · JACK FY26 guide ≈2,100 · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K" target="_blank" rel="noopener">SEC EDGAR 10-K</a></div></div>
-      <div class="card kpi"><div class="kpi-label">JIB same-store sales (FY2025)</div><div class="kpi-value">−4.2%</div><div class="kpi-sub">FY26 Q3: −1.1%; Q4-to-date low-single-digit positive · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K" target="_blank" rel="noopener">SEC EDGAR 8-K</a></div></div>
-      <div class="card kpi"><div class="kpi-label">Port of LA throughput (2025)</div><div class="kpi-value">10.24M TEU</div><div class="kpi-sub">−0.56% YoY · 26th straight year as top U.S. port · <a href="https://container-news.com/port-of-los-angeles-container-throughput-tops-10-2-million-teus-in-2025/" target="_blank" rel="noopener">Port of LA (reported)</a></div></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Decision support — category map</h2>
-    <div class="grid cols-3">
-      <a class="card" href="executive-summary.html" style="color:inherit"><h3>📋 Executive Summary</h3><p class="small">The full story in two pages: asset, market, tenant, risks, recommendation.</p></a>
-      <a class="card" href="property.html" style="color:inherit"><h3>🏬 Property &amp; Lease</h3><p class="small">NNN mechanics, lease abstract (anonymized), Prop 13 tax, insurance, 1031 exit path, unknowns flagged.</p></a>
-      <a class="card" href="market.html" style="color:inherit"><h3>🗺️ Central LA Market</h3><p class="small">Geography, density, demographics, income, housing, commute, LAUSD schools, retail vacancy context.</p></a>
-      <a class="card" href="economy.html" style="color:inherit"><h3>📈 Economy &amp; Jobs</h3><p class="small">Employment, unemployment, Port of LA trade, LAEDC/UCLA forecasts, 2028 Olympics, wildfire fiscal impact.</p></a>
-      <a class="card" href="tenant.html" style="color:inherit"><h3>🍔 Tenant: Jack in the Box Inc.</h3><p class="small">FY25–FY26 financials, 6.3x leverage, Del Taco sale, leadership upheaval, JACK on Track real-estate sales.</p></a>
-      <a class="card" href="projections.html" style="color:inherit"><h3>🧮 Projection System</h3><p class="small">NOI→value cap-rate matrix, lease-expiry value decay, sell-now vs hold vs renew scenarios, sensitivity &amp; assumptions.</p></a>
-      <a class="card" href="risk.html" style="color:inherit"><h3>⚠️ Risk Analysis</h3><p class="small">Business-as-usual + black-swan register (wildfire, Puente Hills earthquake, unrest, rate shock, tenant distress) with mitigations.</p></a>
-      <a class="card" href="decision.html" style="color:inherit"><h3>⚖️ Sell vs. Renew</h3><p class="small">Decision tree, scored scorecard, risk-adjusted recommendation for wealth preservation + growth.</p></a>
-      <a class="card" href="flagged.html" style="color:inherit"><h3>⚑ Flagged for Review</h3><p class="small">Every irregularity and unverified figure — with source links — for your review.</p></a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">What could change the answer</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Trigger (watch item)</th><th>Direction</th><th>Source</th></tr></thead>
-      <tbody>
-        <tr><td>Tenant signs 10+ yr extension, ≥2% escalations, parent guarantee</td><td><span class="badge ok">Toward RENEW</span></td><td class="src"><a href="decision.html">Decision framework</a></td></tr>
-        <tr><td>Closure of this unit under “JACK on Track” (150–200 closures announced Apr 2025)</td><td><span class="badge bad">Toward SELL NOW</span></td><td class="src"><a href="https://www.franchisetimes.com/franchise_news/another-ceo-for-jack-in-the-box-as-its-revitalization-efforts-continue/article_3d28e5a9-b9c8-4871-b3c6-c546057dc78a.html" target="_blank" rel="noopener">Franchise Times</a></td></tr>
-        <tr><td>Net-lease retail cap rates re-tighten below ~6.25% (rate cuts)</td><td><span class="badge warn">Improves exit pricing</span></td><td class="src"><a href="https://www.connectcre.com/stories/net-lease-cap-rates-continue-to-stabilize/" target="_blank" rel="noopener">The Boulder Group (industry)</a></td></tr>
-        <tr><td>2028 Olympics infrastructure / tourism tailwind in LA</td><td><span class="badge ok">Supports LA demand</span></td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Forecast</a></td></tr>
-        <tr><td>Franchisee insolvency / JACK bankruptcy tail-risk (6.3x net leverage)</td><td><span class="badge bad">Downside for hold</span></td><td class="src"><a href="https://www.stocktitan.net/sec-filings/JACK/8-k-jack-in-the-box-inc-reports-material-event-d2dff82cf37a.html" target="_blank" rel="noopener">JACK Q3 FY26 8-K (SEC)</a></td></tr>
-        <tr><td>Union/wage, menu-price &amp; transaction weakness in QSR sector</td><td><span class="badge warn">Monitor comps</span></td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K" target="_blank" rel="noopener">SEC EDGAR</a></td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="callout warn"><strong>Verification status</strong><br>Every figure on these pages was checked against the linked source at build time (Nov 2026). Items that could not be confirmed from an official source are shown blank with a ⚑ flag and listed on <a href="flagged.html">Flagged for Review</a>. Market/lease-specific numbers unique to this asset (rent, escalations, NOI, exact expiry date inside 2030–2035, tenant entity) were not provided to this analysis and are <em>not invented</em>; the model uses clearly labeled illustrative inputs you can replace.</div>
-
-</main>
-<div id="site-footer"></div>
-<script src="assets/app.js"></script>
+  const rows = [
+    ["LA city population 2025-07-01", "3,869,089 (−0.8% since 2020)", "Stable demand base; mild outflow", "quickfacts_la_city"],
+    ["LA County median HH income 2024", "$90,757 (SAIPE)", "Purchasing power supports QSR", "fred_lacounty_mhi"],
+    ["LA city accommodation & food services sales 2022", "$17.37B", "Direct demand pool for the tenant", "quickfacts_la_city"],
+    ["LA MSA unemployment 2025", "5.3% avg (4.8% Dec 2025)", "Soft but improving labour market", "fred_unemp_msa"],
+    ["LA County real GDP 2024", "+2.1% (real $810.8B)", "Growth engine intact", "usafacts_gdp"],
+    ["10Y Treasury, Oct 2026", "5.13%", "Headwind for NNN cap rates", "fred_gs10"],
+    ["JACK FY2025", "$1.5B rev · $270.9M adj. EBITDA · SSS −4.2%", "Weak covenant vs. lease term", "stocktitan_10k"],
+    ["DTLA office vacancy", "22–33.3% (conflicting)", "Central-LA traffic headwind — flagged", "commercialobserver_dtla"],
+    ["LA28 Olympics", "Jul 14–30, 2028", "Upside catalyst 2026–2028", "la28"],
+    ["Jan 2025 wildfires", "$5.2–10.1B output loss (County est.)", "Black-swan case study — insurance stress", "la_county_fire_factsheet"]
+  ];
+  document.querySelector("#kpi-table tbody").innerHTML = rows.map(([a,b,c,src]) => {
+    const s = window.JACK1_SOURCES[src];
+    const link = s ? `<a href="${s.url}" target="_blank" rel="noopener noreferrer">source ↗</a>` : "—";
+    return `<tr><td>${a}</td><td><strong>${b}</strong></td><td>${c}</td><td>${link}</td></tr>`;
+  }).join("");
+})();
+</script>
 </body>
 </html>

@@ -3,104 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flagged for Review | Project Jack-in-the-Box</title>
-<meta name="description" content="Every unverified figure, irregularity, and assumption on this site — with the exact document needed to close each item.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<title>Flagged for Review — Jack1 | Central LA NNN</title>
+<meta name="description" content="Every unverified, secondary, market-reported or internally inconsistent figure on this site — published for post-merge review, with source links.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<div id="site-header"></div>
+<body data-page="flagged" data-title="Flagged for Review">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
 
-<section class="page-head">
-  <div class="container">
-    <div class="crumb">Flagged for Review</div>
-    <h1>Flagged for Review — open items before you rely on this</h1>
-    <p>Nothing here is hidden. Each flag states what is unknown, why, and the exact source/document that closes it. Flags do not block the analysis; they bound it.</p>
-  </div>
-</section>
+      <div class="page-head">
+        <div class="eyebrow">Governance · Flagged for Review</div>
+        <h1>Flagged for review — nothing here is “verified”</h1>
+        <p class="lede">Per the project's verification protocol, any value that could not be confirmed from an official source is left blank or shown here with its defect. These items do not block the merge; they are published openly so you can review them after the site is live. Report corrections and they will be patched.</p>
+      </div>
 
-<main class="container">
+      <div class="callout red"><strong>Protocol.</strong> “Official source” badge = checked, unedited, against the primary .gov/company filing linked. “Secondary” = reputable republisher; value probably right but re-verify at the primary link before acting. “Market / broker” = no official series exists. “Unverified” = do not rely on it; it is published for completeness only. “Illustrative” = arithmetic example, never a real quote.</div>
 
-  <div class="section">
-    <h2 class="section-title" id="lease">1 · Lease &amp; property data (Owner-side, not provided)</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>⚑ #</th><th>Missing / unverified item</th><th>Why it matters</th><th>Document that closes it</th></tr></thead>
-      <tbody>
-        <tr class="unverified"><td>L-01</td><td><span class="val">Exact lease expiry date within 2030–2035</span></td><td>WALT drives exit pricing directly</td><td>Executed lease + amendments</td></tr>
-        <tr class="unverified"><td>L-02</td><td><span class="val">Base rent, escalations, escalation method (fixed/CPI)</span></td><td>NOI; real-rent decay vs CA CPI</td><td>Lease §rent + escalation exhibits</td></tr>
-        <tr class="unverified"><td>L-03</td><td><span class="val">Renewal options, strike, notice windows</span></td><td>Renewal path value; timing of exit decision</td><td>Lease §options</td></tr>
-        <tr class="unverified"><td>L-04</td><td><span class="val">Tenant entity &amp; guarantee (corporate vs franchisee; SNDA)</span></td><td>Credit for rent stream; estoppel for sale</td><td>Lease §guarantees; franchisee articles; estoppel</td></tr>
-        <tr class="unverified"><td>L-05</td><td><span class="val">Store-level AUV/P&amp;L vs system $1.874M; occupancy-cost ratio</span></td><td>Unit viability; closure-program selection risk</td><td>Franchisee statements; franchisor confirmation</td></tr>
-        <tr class="unverified"><td>L-06</td><td><span class="val">Tax bill &amp; Prop 13 base year; direct assessments/bonds</span></td><td>NNN pass-through but bond overrides are real</td><td>LA County Assessor parcel lookup; property tax bill</td></tr>
-        <tr class="unverified"><td>L-07</td><td><span class="val">Insurance: tenant GL/property; Owner loss-of-rents; earthquake</span></td><td>Uninsurable = unsellable at full price</td><td>Current certificates; earthquake quotes</td></tr>
-        <tr class="unverified"><td>L-08</td><td><span class="val">Roof/parking/grease/seismic (URM/soft-story) condition</span></td><td>Re-tenant capex; sale contingencies</td><td>Building inspection; LA soft-story/URM inventory check</td></tr>
-        <tr class="unverified"><td>L-09</td><td><span class="val">Encumbrances: loan, JV/co-ownership, 1031 intent</span></td><td>Closing feasibility &amp; timeline</td><td>Title report; entity docs</td></tr>
-        <tr class="unverified"><td>L-10</td><td><span class="val">NOI actual (escalated rent less any Owner obligations)</span></td><td>Every valuation number in this analysis</td><td>Lease-derived NOI schedule</td></tr>
-      </tbody>
-    </table></div>
-  </div>
+      <div id="tbl-flagged" data-table="flagged"></div>
 
-  <div class="section">
-    <h2 class="section-title" id="disaster">2 · Figures sourced to non-official or mirror reporting (verify against primary)</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>⚑ #</th><th>Figure as shown</th><th>Source used</th><th>Primary source to confirm</th></tr></thead>
-      <tbody>
-        <tr class="unverified"><td>S-01</td><td><span class="val">Palisades Fire: 23,448 ac; 6,837 structures; 12 deaths; $25B cost</span></td><td>Wikipedia (citing CAL FIRE final Jan 30, 2025)</td><td>CAL FIRE DINS / incident archives — fire.ca.gov; FEMA hub</td></tr>
-        <tr class="unverified"><td>S-02</td><td><span class="val">Eaton Fire: ≈14,021 ac; 9,418 structures; 17 deaths</span></td><td>Wikipedia (citing CAL FIRE)</td><td>CAL FIRE DINS</td></tr>
-        <tr class="unverified"><td>S-03</td><td><span class="val">Insured losses ≈$30B (Wells Fargo/Goldman); AccuWeather $250–275B total</span></td><td>Inc. magazine (Jan 23, 2025)</td><td>Bank research notes; CDI (insurance.ca.gov) catastrophe reports</td></tr>
-        <tr class="unverified"><td>S-04</td><td><span class="val">CA FAIR Plan ≈$6B exposure in Palisades zone (Jan 8, 2025)</span></td><td>Wikipedia — Palisades Fire</td><td>CA FAIR Plan annual report; CDI data calls</td></tr>
-        <tr class="unverified"><td>S-05</td><td><span class="val">Puente Hills loss model “~$250B”; ShakeOut M7.8 $213B / 1,800 deaths / 53,000 injuries</span></td><td>Newsweek, LA Times, preparedness summary (secondary)</td><td>USGS ShakeOut scenario reports; SCEC; usgs.gov &amp; scec.org</td></tr>
-        <tr class="unverified"><td>S-06</td><td><span class="val">Port of Long Beach 9.88M TEUs (2025)</span></td><td>Industry round-up (AMOU)</td><td>polb.com official statistics</td></tr>
-        <tr class="unverified"><td>S-07</td><td><span class="val">Port of LA official 10,239,318 TEUs — cited via Container News, not portoflosangeles.org release path (not confirmed)</span></td><td>Container News (Jan 27, 2026)</td><td>Port of LA — Newsroom / Statistics pages</td></tr>
-        <tr class="unverified"><td>S-08</td><td><span class="val">JIB: &gt;50% units West Coast, ~30% SoCal; 7 straight quarters lagging; $2.61B total debt; 0.65 current ratio; −40%/6-mo stock</span></td><td>Industry (Stifel, Truist, Guggenheim, brokerage consensus)</td><td>SEC filings (10-K/10-Q balance sheet); company IR releases</td></tr>
-        <tr class="unverified"><td>S-09</td><td><span class="val">“7 decades QSR cap-rate bifurcation: Walgreens &gt;7%; Chick-fil-A 4.45%; McDonald’s 4.38% (Q2 2025)”</span></td><td>The Boulder Group via MBA Newslink / Globe &amp; Mail</td><td>The Boulder Group full Q2-2025 PDF (registration required)</td></tr>
-        <tr class="unverified"><td>S-10</td><td><span class="val">LA May 2020 unemployment 18.4% (pandemic precedent)</span></td><td>Macrotrends (BLS-derived aggregator)</td><td>BLS LAUS Table 1 / FRED series</td></tr>
-        <tr class="unverified"><td>S-11</td><td><span class="val">SCAG: 2024 GCP +3.8%; 2025 GCP print unspecified in excerpt</span></td><td>SCAG Regional Economic Analysis (Jan 2026 PDF)</td><td>SCAG PDF exhibit directly (linked)</td></tr>
-        <tr class="unverified"><td>S-12</td><td><span class="val">LAUSD trend frame: 548,338 (2021–22) → 497,105 (2025–26)</span></td><td>US School Index (Ed-Data/CDE series)</td><td>CDE Ed-Data enrollment pages; CDE Dataquest</td></tr>
-        <tr class="unverified"><td>S-13</td><td><span class="val">JIB FY25 systemwide sales, FY25 net income/loss, FY26 net income YTD; Del Taco exact closing confirmation (expected Jan 2026)</span></td><td>Shown as “n/d ⚑” on site; not published in excerpts pulled</td><td>SEC 10-K FY2026 (expected Nov 2026); 8-K closing confirmation (Jan 2026)</td></tr>
-      </tbody>
-    </table></div>
-  </div>
+      <h2>Irregularities observed during research (for your awareness)</h2>
+      <div class="card">
+        <ol class="tight">
+          <li><strong>Westwood comp listing self-contradiction.</strong> The broker offering cites both “expiration July 31, 2031” and “July 31, 2036” for the same asset in the same document, with “±15.5 years remaining” inconsistent with either. Treat that listing as unusable for matched-pair pricing; kept only as an order-of-magnitude illustration and flagged.</li>
+          <li><strong>Three incompatible DTLA vacancy estimates</strong> (22% CCA vs 27.5% Commercial Observer vs 33.3% broker/Q3-2025) with no official series. The <em>direction</em> (elevated vacancy) is consistent; the magnitude is not verified.</li>
+          <li><strong>County GDP double-vision.</strong> FRED GDPALL06037 = $1.003T (current $, 2024) vs USAFacts “real GDP $810.8B +2.1%” — both true, different measures (current vs chained). Secondary coverage mixing them produced a false “$818.5B vs $1T” discrepancy. Site uses each figure labeled by measure.</li>
+          <li><strong>Jan 2025 fire loss estimates span $5.2B–$250B</strong> depending on scope (output loss vs labor income vs total economic loss incl. property). Site uses LA County's official $5.2–10.1B output-loss figure for analysis; $250B appears only as an attributed secondary estimate.</li>
+          <li><strong>JIB financial distress signals are distributed across sources</strong>: 10-K (official) confirms restaurants/sales mix and 93% franchise; dividend discontinuation and ~$115M Del Taco sale and −4.2% SSS come via SEC-filing reprints/aggregators (flagged). The audited 10-K on EDGAR is authoritative — aggregators were not treated as verified.</li>
+          <li><strong>QuickFacts poverty 16.5%</strong> is SAIPE-modeled, not a raw headcount; intended for comparison only.</li>
+          <li><strong>LAUSD math points-from-standard: not captured.</strong> Deliberately blank rather than approximated.</li>
+          <li><strong>Parcel-specific items unverifiable without address</strong> (school assignment, FHSZ, Alquist-Priolo, FEMA flood, zoning, lease guarantee, title). Anonymization is a feature; verification requires the owner's private documents.</li>
+        </ol>
+      </div>
 
-  <div class="section">
-    <h2 class="section-title" id="method">3 · Methodology flags &amp; analytical judgments</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>⚑ #</th><th>Item</th><th>Nature of flag</th></tr></thead>
-      <tbody>
-        <tr class="unverified"><td>M-01</td><td>Projection model defaults ($125k rent, 2.0% escalation, 60% renewal probability, 12-month downtime, $75k re-tenant cost, 2.0% selling costs, 8.0% discount rate)</td><td><span class="val">ILLUSTRATIVE — not the property’s data</span>; replace with abstract</td></tr>
-        <tr class="unverified"><td>M-02</td><td>WALT penalty schedule (0/25/50/75/100/150 bps)</td><td><span class="val">Modeling convention</span>, not market data; sensitivity shown via matrix</td></tr>
-        <tr class="unverified"><td>M-03</td><td>Scorecard weights (credit ×3, WALT ×2, cash ×2, growth ×2, black-swans ×2, tax ×1, certainty ×1) and 61 vs 26 totals</td><td><span class="val">Subjective framework</span>; direction robust to re-weighting, magnitude not</td></tr>
-        <tr class="unverified"><td>M-04</td><td>Renewal-branch assumption: 10-year hold at base cap with reset rent; flat re-lease NOI</td><td><span class="val">Simplification</span>; actual reset may be ±20%</td></tr>
-        <tr class="unverified"><td>M-05</td><td>Risk L×I scores and 12/6/5 thresholds</td><td><span class="val">Calibrated judgment</span>, not actuarial; re-score with your risk appetite</td></tr>
-        <tr class="unverified"><td>M-06</td><td>“Sell-early dominates” conclusion</td><td><span class="val">Analytical judgment</span>, not legal/investment advice; depends on L-01…L-05 data</td></tr>
-        <tr class="unverified"><td>M-07</td><td>AUV $1.874M labeled “franchised AUV FY2025”</td><td>10-K prints franchise AUV in thousands; unit interpretation standard but confirm units in filing</td></tr>
-        <tr class="unverified"><td>M-08</td><td>Net debt/Adjusted EBITDA “6.3x” (Q3 FY26)</td><td>Company-reported on earnings call (not audited GAAP metric)</td></tr>
-        <tr class="unverified"><td>M-09</td><td>JIB FY25 revenue “$1.5B”</td><td>Proxy Notice figure; FY25 10-K income statement should match — verify exact</td></tr>
-        <tr class="unverified"><td>M-10</td><td>No property address appears anywhere (privacy directive)</td><td>By design — all geography analysis at city/county level</td></tr>
-      </tbody>
-    </table></div>
-  </div>
+      <div class="callout blue"><strong>How to clear an item:</strong> email/PR the confirming official source (link + accessed date), and the row is promoted from <em>flagged</em> to <em>verified</em> with the date logged in COORDINATION.md.</div>
 
-  <div class="section">
-    <h2 class="section-title" id="irregularities">4 · Irregularities found during review (repo + data)</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>⚑ #</th><th>Irregularity</th><th>Disposition</th></tr></thead>
-      <tbody>
-        <tr class="unverified"><td>R-01</td><td>Repository was empty except a 7-byte README (“# Jack1”) at commit ef1b4c6 — no lease data, no asset file, no prior analysis</td><td>All lease economics therefore unknown; see §1 above</td></tr>
-        <tr class="unverified"><td>R-02</td><td>Tenant of record unverified: NNN portfolios of this style are commonly franchisee-leased with parent guarantee; JIB system is 93% franchised</td><td>Verify L-04; do not assume corporate tenancy</td></tr>
-        <tr class="unverified"><td>R-03</td><td>JACK is in active distress mid-hold: CEO replaced twice in 6 months; dividends/buybacks suspended; closure program underway; company selling owned real estate</td><td>Central to recommendation; verify latest 10-Q/8-K after Nov 2026</td></tr>
-        <tr class="unverified"><td>R-04</td><td>California CPI (+3.1%) exceeds typical 2.0% NNN escalations in 2025</td><td>Structural real-rent loss; argue for CPI bumps at renewal</td></tr>
-        <tr class="unverified"><td>R-05</td><td>No official government series exists for net-lease cap rates; only industry data (Boulder Group) is available</td><td>Cap rates labeled industry; not cited as “official”</td></tr>
-        <tr class="unverified"><td>R-06</td><td>LA County households/owner-occupancy/median-rent not in QuickFacts excerpt pulled (city-only shown); county employment detail partial</td><td>City figures used; county n/d flagged on Market page</td></tr>
-        <tr class="unverified"><td>R-07</td><td>Data-vintage mismatch: ACS 2020–24 5-yr averages vs Jul-2025 population estimates vs Dec-2025 labor data — different reference periods</td><td>Each table shows its own period; do not mix vintages</td></tr>
-        <tr class="unverified"><td>R-08</td><td>“Central Los Angeles” scope undefined (DTLA? Crenshaw? Hollywood? South LA?) — trade-area analysis is citywide-aggregate</td><td>Provide parcel/zip for trade-area refinement</td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout warn"><strong>How to close these</strong><br>Owner to supply: lease abstract, parcel #, tenant entity; we then re-run projections with actuals, pull the parcel from LA County Assessor, and tighten trade-area demographics to the zip/tract. Nothing above blocks forming the preliminary direction (sell-before-expiry bias), but it must be resolved before signing a listing agreement or an extension.</div>
-  </div>
-
-</main>
-<div id="site-footer"></div>
-<script src="assets/app.js"></script>
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

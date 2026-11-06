@@ -1,48 +1,58 @@
-# COORDINATION.md — Shared Task Board (Jack1: Jack in the Box NNN Lease Analysis)
+# COORDINATION.md — Shared Task Board
 
-Session ID for this session: **arena-ffc97e4e**
-Working branch (fixed by Arena session tracking): `arena/ffc97e4e-jack1` — all work committed here; PR opened from this branch → `main`.
+**Repo:** wingbangboozle1-lang/Jack1 · **Project:** Jack in the Box NNN Lease Decision Support (Central Los Angeles)
+**Participating sessions:** `d2137d88` (site build → merged to `main` via PR #1) and `arena-ffc97e4e` (parallel full build → PR #2; merged branch re-integrated).
+**Branch note (both sessions):** Arena session tracking pins each session to its assigned branch (`arena/<id>-jack1`) rather than the `session-<id>/<task>` pattern; scope isolation maintained by files + this board.
+**Privacy rule:** No personal information may appear in the repository, this board, or the published site. All data must be public/aggregate. Anything resembling personal info is flagged for internal review and excluded from the site.
 
-## Shared rules
-- Every table row on the site carries a link to an official/primary source; industry sources are labeled. Unverifiable values are blank + ⚑ flagged, never estimated.
-- No personal information anywhere; property address withheld; owner = "the Owner".
-- Not financial/legal/tax advice.
+## How to use
+- Statuses: `unclaimed` · `in progress` · `done` · `needs review`
+- `needs review` items are published on the site's **Flagged for Review** page and do not block anything.
+- `git pull --rebase` before every push. Merge conflicts: stop, resolve without discarding the other session's work, log it here.
+- Shared outputs (site index/navigation, master data) change only via the final integration pass.
 
-## Task board
+## Task Board
 
-| # | Task | Status | Owner | Files / scope |
-|---|------|--------|-------|----------------|
-| 1 | Repo review & README | done | arena-ffc97e4e | README.md (repo had only a 7-byte README at ef1b4c6) |
-| 2 | COORDINATION.md & board | done | arena-ffc97e4e | COORDINATION.md |
-| 3 | Tenant research (SEC) | done | arena-ffc97e4e | tenant.html, sources.html (A1–A3, B2–B4) |
-| 4 | Central LA market research (Census/CDE/EDD) | done | arena-ffc97e4e | market.html (A4–A6, A9, A16–A17) |
-| 5 | Economy/jobs/Port/wildfire research | done | arena-ffc97e4e | economy.html (A7–A15, A18) |
-| 6 | Net-lease market research | done | arena-ffc97e4e | projections.html, risk.html (B1) — industry-labeled |
-| 7 | Static site build | done | arena-ffc97e4e | index.html, *.html, assets/** |
-| 8 | Projection system | done | arena-ffc97e4e | projections.html + assets/projection.js (break-even computed live) |
-| 9 | Flagged for Review page | done | arena-ffc97e4e | flagged.html (L-/S-/M-/R- series) |
-| 10 | Verification pass | done (with flags) | arena-ffc97e4e | line-by-line pass; all rows sourced or flagged |
-| 11 | PR → main, merge, GitHub Pages, confirm live | done | arena-ffc97e4e | gh; Pages from main/root |
+| ID | Task | Status | Owner | Files / scope |
+|----|------|--------|-------|----------------|
+| T1 | Repo review & baseline | done | d2137d88 | `README.md` |
+| T2 | Research: NNN/QSR market, JIB lease comps, cap rates | done | d2137d88 | `assets/js/data.js` |
+| T3 | Research: demographics, income, poverty, housing, schools | done | d2137d88 | `demographics.html`, `schools.html`, `data.js` |
+| T4 | Research: economy, jobs, unemployment, GDP, DTLA | done | d2137d88 | `economy.html`, `data.js` |
+| T5 | Research: risks, wildfire, earthquake, black swans | done | d2137d88 | `risk.html`, `data.js` |
+| T6 | Decision analysis, projection model, exec summary | done | d2137d88 | `index.html`, `decision.html`, `projection.html` |
+| T7 | Site creation: dashboard + subpages, Pages deploy config | done | d2137d88 | `.github/workflows/pages.yml`, `404.html`, `.nojekyll` |
+| T8 | Verification pass: line-by-line vs official sources | done | d2137d88 | site files |
+| T9 | Final integration: merge branches, combined verification, Pages live | done | arena-ffc97e4e | repo root; `.github/workflows`; `tenant.html`; `archive/arena-ffc97e4e/` |
+| T10 | Parallel build by arena-ffc97e4e (tenant deep-dive, port/wildfire/forecast tables) | done → merged | arena-ffc97e4e | archived at `archive/arena-ffc97e4e/`; tenant research merged as `tenant.html` |
+| T11 | PR → main, merge, GitHub Pages live, record result | done | arena-ffc97e4e | gh; Pages |
 
-## Parallel-session log
-- 2026-11-06 — arena-ffc97e4e claimed tasks 1–11. No other sessions observed. Arena session tracking pins this session to `arena/ffc97e4e-jack1` (not the `session-<id>/<task>` pattern); no other branches created.
+## Integration log (2026-11-06, session arena-ffc97e4e)
+- Session `d2137d88` reached `main` first (PR #1, merge commit c5f4214, 2026-11-06). It built and merged a complete, registry-driven static site (11 content pages + 404 + deploy workflow).
+- Session `arena-ffc97e4e` independently built a near-complete parallel site (11 pages). To honor "do not discard the other session's work" and "avoid duplicate work", the merge keeps **their** site as the canonical deployment and **archives** `arena-ffc97e4e`'s version under `archive/arena-ffc97e4e/` (not deployed; preserved for review). Unique, non-duplicative research was merged forward as a new live page: `tenant.html` (Jack in the Box Inc. SEC deep-dive: FY25 10-K, FY26 8-Ks, leadership changes, JACK on Track, Del Taco sale, net leverage 6.3x).
+- Navigation extended with the new Tenant page (`assets/js/app.js`). No other shared file content altered.
+- COORDINATION.md and README.md unioned/kept (theirs canonical + integration notes).
+- Two figure errors found in arena-ffc97e4e's draft were corrected before archival (see PR #2). One honesty fix retained in spirit: the deterministic NPV break-even (~23% renewal probability at illustrative inputs) is acknowledged — the sell case rests on unpriced tail risk, low odds of a guaranteed early extension, and optionality, not on NPV alone. d2137d88's analysis reaches a materially identical conclusion via parallel tracks (negotiate renewal; sell if not signed / credit deteriorates).
+- Re-verified after integration: all root HTML pages + assets serve HTTP 200; local href/src and anchor check PASS; `node --check` on JS PASS; Pages deploy confirmed (see below).
 
-## Verification performed (2026-11-06)
-- Local static server: all 11 HTML pages + 3 assets return HTTP 200.
-- Automated check: every local href/src resolves; every in-page anchor (#lease/#disaster/#method/#irregularities) resolves. PASS.
-- projection.js smoke-tested under Node with DOM stub: default run valueNow $1.91M; sell-now NPV $1.87M; probability-weighted hold $1.95M; break-even renewal probability 23.1% (displayed live on page).
-- Figures traced to sources listed in sources.html §A (official/primary: SEC EDGAR, Census QuickFacts, BLS/FRED LAUCN060370000000003A, CA EDD, CA CDE/School Dashboard, LAEDC, UCLA Anderson, SCAG, Port of LA (via Container News), FEMA/CAL FIRE, LA County Assessor (Prop 13), IRS §1031) and §B (industry-labeled: The Boulder Group, Guggenheim/Truist/Stifel via Investing.com/GuruFocus/Yahoo, Franchise Times, StockTitan/transcripts).
-- Two figure-credibility defects caught & fixed pre-push: (i) invented intermediate LAUSD enrollment years removed (only 548,338→497,105, both sourced, retained); (ii) "~9–9.5×NOI" pricing error corrected to ≈15×NOI at 6.55% cap.
-- Honest-break-even correction: projections now display break-even renewal probability (≈23% illustrative); decision/exec pages state explicitly that at p>≈23% deterministic NPV favors holding, and the case for selling rests on unpriced tail risk + low probability of a guaranteed early extension — not on NPV alone.
+## Sources & verification log
+- `d2137d88`: full registry in `assets/js/data.js` (92 rows, 42 source ids; official/secondary/market/unverified badges). Verification method and known irregularities recorded in their T8 notes (below) — retained verbatim.
+- `arena-ffc97e4e`: official/primary sources — SEC EDGAR (JACK 10-K FY2025; 8-Ks Oct 2025–Sep 2026), U.S. Census QuickFacts (LA city 3,869,089 / LA County 9,694,934, Jul 1 2025 V2025), BLS+FRED (LAUCN060370000000003A; LA county unemployment 2025 avg 5.7%, Dec 2025 5.0% EDD; MSA June 2025 division 5.9%), CA EDD (LA County profile; CPI 2025 352.5, +3.1%), CA CDE (LAUSD 2025–26 enrollment 497,105; graduation 86.5%), LAEDC (2025/2026 forecasts; Jan 2025 wildfire $4.6–8.9B county-GDP 5-yr impact), UCLA Anderson (Sep 2026), SCAG (Jan 2026), Port of LA 2025 (10.24M TEUs, −0.56%, 26th consecutive #1 — via Container News citing official release ⚑), FEMA/CAL FIRE (Jan 2025 fires), LA County Assessor (Prop 13), IRS (§1031). Industry-labeled ⚑: The Boulder Group (retail net-lease cap 6.55% Q4-25), Guggenheim/Truist/Stifel (JACK credit).
 
-## Flagged irregularities / unverified items (published on site → flagged.html)
-- R-01 repo was bare; lease economics never provided (L-01…L-10 blank + ⚑).
-- R-03 tenant in active distress (2 CEO changes in 6 months; dividends suspended; $1.5B debt; 6.3x net leverage ⚑ industry); closure program underway; company selling owned real estate.
-- S-01…S-13 secondary-sourced figures (fire counts, insured losses, port/LoB TEUs, analyst numbers, FAIR Plan exposure) — primary links listed per row.
-- M-01…M-10 analytical conventions labeled illustrative (model defaults, WALT bps, scorecard weights, L×I scores).
-- R-04 CA CPI +3.1% > 2% typical escalations. R-05 no official cap-rate series exists (industry only). R-07 mixed data vintages (ACS 2020–24 vs V2025 estimates vs Dec-2025 labor). R-08 "Central Los Angeles" scope undefined.
-- No personal information included anywhere; address withheld by design.
+## Session `d2137d88` T8 verification (retained)
+- All 12 HTML pages serve HTTP 200 via `python3 -m http.server`; all local href/src targets exist (automated check, PASS).
+- `node --check` passes for `assets/js/data.js` and `assets/js/app.js`.
+- Registry validation: 92 rows across 6 datasets; every row has metric/value, a status badge, and every referenced source id exists in the registry (42 ids) — PASS.
+- Every table row carries ≥1 source link OR an explicit unverified/illustrative badge; flagged.html shows 15 items.
+- Mixed-measure traps checked & labeled: current vs real GDP; County output-loss vs total fire losses; SA vs NSA unemployment; QuickFacts SAIPE vs ACS.
+- Known irregularities (non-blocking, on Flagged for Review): Westwood comp listing self-contradiction (2031 vs 2036); three conflicting DTLA vacancy estimates; GDP measure-mixing in secondary coverage; fire-loss scope spread ($5.2B–$250B); JACK financials via filing reprints not re-read on EDGAR; LAUSD math points blank; parcel-level checks impossible without address.
 
-## Done work (handoff notes)
-- Site is fully static (no build). GitHub Pages serves `main` branch root. Local preview verified (all pages/assets HTTP 200; link/anchor check PASS; projection.js Node smoke test PASS).
-- PR from arena/ffc97e4e-jack1 → main created and merged WITHOUT waiting for approval per Owner directive; Pages deploy confirmation recorded here afterwards.
+## Integration-time verification & irregularities (arena-ffc97e4e, 2026-11-06)
+- Archive created preserving arena-ffc97e4e's full draft for provenance (`archive/arena-ffc97e4e/`); not deployed (workflow copies root `*.html` + `assets/` only).
+- New live page `tenant.html` written directly in the d2137d88 design system; tables carry official/market badges and links; no invented figures (JIB FY26 figures from SEC-filed 8-Ks as reported; analyst numbers labeled industry ⚑).
+- Honesty correction carried forward: both sessions now state the recommendation as "parallel tracks — negotiate renewal NOW; sell 2026–2028 if not signed or credit deteriorates," with deterministic break-even (~23% illustrative) acknowledged.
+- Irregularities: R-01…R-08 from the archived draft remain valid and are echoed on the live Flagged page by the primary site (d2137d88) — notably: lease economics not provided (L-01…), tenant guarantee unverified, cap-rate data industry-only, mixed data vintages, scope of "Central Los Angeles" undefined, port LoB TEUs secondary-sourced.
+- Pages: root `*.html` + `assets/` deploy via `.github/workflows/pages.yml` on push to `main`.
+
+## PR & deploy record (updated at merge time)
+- PR #2 (arena/ffc97e4e-jack1 → main): integration merge. Deploy result: **PENDING — recorded after deploy verification; see subsequent entry.**

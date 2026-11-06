@@ -3,114 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economy &amp; Jobs — Central Los Angeles | Project Jack-in-the-Box</title>
-<meta name="description" content="Los Angeles County employment, unemployment, port trade volumes, LAEDC and UCLA Anderson forecasts, wildfire fiscal impact, 2028 Olympics, and business-cost pressures — official sources.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<title>Economy &amp; Jobs — Jack1 | Central LA NNN</title>
+<meta name="description" content="Verified economic data for Los Angeles: county GDP, metro unemployment, labor force, sector sales, DTLA distress, LA28, D Line. Source-linked per row.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<div id="site-header"></div>
+<body data-page="economy" data-title="Economy &amp; Jobs">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
 
-<section class="page-head">
-  <div class="container">
-    <div class="crumb">Economy &amp; Jobs</div>
-    <h1>The Los Angeles Economy — Growth Engines and Fault Lines</h1>
-    <p>Employment, trade, GDP forecasts and disaster-cost evidence bearing on demand for a Central LA QSR and on the resale market for net-lease retail. Verified from BLS, CA EDD, LAEDC, UCLA Anderson, SCAG, and the Port of Los Angeles.</p>
-  </div>
-</section>
+      <div class="page-head">
+        <div class="eyebrow">Research · Economy</div>
+        <h1>Economic activity — Los Angeles County &amp; MSA</h1>
+        <p class="lede">Scale, growth, and stress points for the central-LA economy. Official figures (BEA, BLS, Census) are badged official; DTLA office distress appears only as clearly-flagged secondary press/association estimates because <strong>no official vacancy series exists</strong>.</p>
+      </div>
 
-<main class="container">
+      <div id="tbl-economy" data-table="economy"></div>
 
-  <div class="section">
-    <h2 class="section-title">1 · Employment &amp; unemployment</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Metric</th><th>Value</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>LA County labor force (Dec 2025, NSA)</td><td>5,148,900; employed 4,889,600; unemployed 259,300; rate 5.0%</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD — LA County Profile</a></td></tr>
-        <tr><td>LA County unemployment — annual</td><td>2022: 5.0% · 2023: 5.1% · 2024: 5.8% · 2025: 5.7%</td><td class="src"><a href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener">FRED (BLS series LAUCN060370000000003A)</a></td></tr>
-        <tr><td>LA–Long Beach–Glendale metro division, June 2025</td><td>5.9% — highest among metropolitan divisions nationally (civilian labor force 5,101,860; rate rose from 5.4% a year earlier)</td><td class="src"><a href="https://www.bls.gov/news.release/archives/metro_07302025.pdf" target="_blank" rel="noopener">BLS — Metropolitan Area Employment and Unemployment, June 2025</a></td></tr>
-        <tr><td>LA–Long Beach–Anaheim MSA employment, June 2025</td><td>6,278.5K (level)</td><td class="src"><a href="https://www.bls.gov/news.release/archives/metro_07302025.pdf" target="_blank" rel="noopener">BLS — June 2025</a></td></tr>
-        <tr><td>LA County employer establishments, 2023</td><td>304,988 establishments · 3,987,736 employees · payroll $299.6B · employment +2.3% (2022→2023)</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/06037/POP255225" target="_blank" rel="noopener">Census QuickFacts — County (BZA010223…BZA115223)</a></td></tr>
-        <tr><td>LA County Q3 occupation growth note</td><td>Fastest growth in healthcare/service occupations (see Market page); manufacturing in structural decline</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD</a></td></tr>
-      </tbody>
-    </table></div>
-  </div>
+      <h2>Reading the economy for this asset</h2>
+      <div class="card">
+        <ul class="tight">
+          <li><strong>Scale without momentum.</strong> A $1.003T current-dollar county economy (2nd-largest U.S. county economy per secondary press reading of BEA 2024 tables — flagged) growing in real terms only +2.1% in 2024. LA is not shrinking, but it is not booming; NNN underwriting should use flat real growth.</li>
+          <li><strong>Labor market is the pivot for QSR traffic.</strong> 5.3% 2025 average MSA unemployment (4.8% Dec 2025) is soft but improving from 2023–2024; labor force ≈6.73M. A return to ≤4.5% would support rent growth; a slide back to ≥6% would pressure the franchisee and any renewal terms.</li>
+          <li><strong>Sector mix favors central LA's service economy.</strong> Information ($134B), professional/business services ($120.3B) and real estate ($105.9B) dominate county GDP (USAFacts/BEA — flagged secondary). These sectors feed hybrid/remote work patterns that hollow out 5-day downtown lunch traffic — the structural headwind cited for JIB daypart sales.</li>
+          <li><strong>Catalyst stack 2026–2028.</strong> D Line Section 1 opened 2026-05-08 (3 stations; full buildout to Westwood/VA forecast 2026–2027, ≈$9.7B per secondary press), LA28 Olympics July 2028, and continued DTLA residential absorption (≈91% multifamily occupancy) all support 2027–2029 central-LA foot traffic. These are real, dated, verifiable events — but they are upside, not base case.</li>
+          <li><strong>Restaurant economics are regulated.</strong> The $20/hr California fast-food minimum (2024-04-01, DIR) compresses franchisee margins and makes large rent escalators at renewal hard to absorb — expect operators to resist big bumps and lenders to haircut franchisee guarantees.</li>
+          <li><strong>Homelessness trend is improving but material.</strong> City of LA count 43,695 (LAHSA, Jan 2025, second annual decline) — central-LA QSR operators still absorb security/loitering costs; this is a real operating risk and a tenant-relations lever in renewal talks.</li>
+        </ul>
+      </div>
 
-  <div class="section">
-    <h2 class="section-title">2 · GDP &amp; forward outlook (official forecasting bodies)</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Forecast / fact</th><th>Value</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>LA County real GDP growth</td><td>2024: +3.4% (actual, strong) · 2025: +2.1% (proj.) · 2026: +1.3% (proj.)</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Economic Forecast</a></td></tr>
-        <tr><td>LA County nonfarm payroll growth</td><td>2025: +0.7% · 2026: +0.2%</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Economic Forecast</a></td></tr>
-        <tr><td>LA County unemployment (LAEDC projection)</td><td>6.1% in 2025 vs 5.7% in 2024</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Economic Forecast</a></td></tr>
-        <tr><td>LAEDC 2026 Annual Economic Forecast theme</td><td>“From Disruption to Direction” (Feb 25, 2026): continued but moderated employment growth; housing-affordability drag; strength in trade &amp; logistics; AI-enabled workforce; 2026 forecast published</td><td class="src"><a href="https://laedc.org/laedc-releases-the-2026-economic-forecast" target="_blank" rel="noopener">LAEDC 2026 Economic Forecast release</a></td></tr>
-        <tr><td>SCAG 2025 SoCal Economic Update — LA County</td><td>2024 real GCP +3.8%; growth moderated in 2025 and is expected to pick up in 2026 ⚑ (exact 2025 print not shown in excerpt); population +0.1% (2024), +0.3% (2025 proj.), −0.2% (2026 proj.); taxable sales +2.4% (2025 proj., tariff front-running) then +1.2% (2026 proj., tariffs bite); job losses in manufacturing, construction, professional services; film below pandemic levels; tariff uncertainty on port volumes</td><td class="src"><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" target="_blank" rel="noopener">SCAG (Jan 2026)</a> ⚑ 2025 GCP print not verified — see flagged page</td></tr>
-        <tr><td>UCLA Anderson Forecast (Sep 2026) — California</td><td>Total employment −0.2% (2026), +0.6% (2027), +1.8% (2028); payrolls +0.9% / +1.2% / +2.2%; real personal income +1.0% (2026), +2.4% (2027); recovery expected early 2027 then stronger 2028; oil shock (Iran war) replaced tariffs as key risk; national unemployment ≈4.2%</td><td class="src"><a href="https://www.anderson.ucla.edu/news-and-events/ucla-anderson-forecast-sees-resilient-growth-despite-inflation-weak-labor-markets" target="_blank" rel="noopener">UCLA Anderson Forecast — Sep 30, 2026</a></td></tr>
-        <tr><td>Cost of doing business in LA</td><td>≈20% higher than U.S. national average (persistent pressure on local business margins)</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Economic Forecast</a></td></tr>
-        <tr><td>Film/TV production employment</td><td>Below pandemic levels; not fully recovered post-strikes; expected to stabilize as content pipelines normalize</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 / 2026</a></td></tr>
-      </tbody>
-    </table></div>
-  </div>
+      <div class="callout amber"><strong>Watch items (quarterly):</strong> BLS LA MSA unemployment release; JACK next 10-Qs (same-store sales, liquidity, franchisee health, any renewed guidance on dividend/store closures); DTLA residential leasing; LA28 venue build-out; any Measure ULA litigation/amendment; 10Y Treasury path.</div>
 
-  <div class="section">
-    <h2 class="section-title">3 · The trade anchor — Port of Los Angeles &amp; San Pedro Bay</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Port metric</th><th>Value</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>Port of LA container throughput — 2025</td><td>10,239,318 TEUs (−0.56% vs 10,297,352 in 2024; +18.65% vs 8,629,681 in 2023); 3rd time topping 10M TEUs; 26th consecutive year as #1 U.S. port; 3rd-busiest year in 118-year history</td><td class="src"><a href="https://container-news.com/port-of-los-angeles-container-throughput-tops-10-2-million-teus-in-2025/" target="_blank" rel="noopener">Container News (Jan 27, 2026), reporting Port of LA official release</a> · <a href="https://www.portoflosangeles.org/" target="_blank" rel="noopener">portoflosangeles.org</a></td></tr>
-        <tr><td>Loaded imports 2025</td><td>5,316,713 TEUs (−0.75% vs 2024)</td><td class="src">Same as above</td></tr>
-        <tr><td>Loaded exports 2025</td><td>1,429,260 TEUs (−4.35% vs 2024)</td><td class="src">Same as above</td></tr>
-        <tr><td>Port of Long Beach 2025</td><td>≈9.88M TEUs — San Pedro Bay complex &gt;20M TEUs combined</td><td class="src"><a href="https://www.amousinternational.com/post/the-10-busiest-freight-ports-in-america" target="_blank" rel="noopener">Industry round-up</a> — ⚑ LoB figure not from official POLB source; treat as approximate</td></tr>
-        <tr><td>2026 trade risk</td><td>Tariff uncertainty; UCLA Anderson: oil-shock/Iran war 2026 replaced tariffs as leading expansion threat; port volumes “might improve” depending on federal policy</td><td class="src"><a href="https://www.anderson.ucla.edu/news-and-events/ucla-anderson-forecast-sees-resilient-growth-despite-inflation-weak-labor-markets" target="_blank" rel="noopener">UCLA Anderson (Sep 2026)</a> · <a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" target="_blank" rel="noopener">SCAG</a></td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout"><strong>Read-through</strong><br>Goods-movement jobs (trucking, warehousing, drayage) form a large hourly-wage base in Central/South LA — the Jack in the Box core customer. Stable 10M+ TEU throughput supports baseline QSR traffic; tariffs/oil shock are the swing factor through 2027.</div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">4 · 2028 Olympics &amp; infrastructure catalysts</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Catalyst</th><th>Expected effect</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>LA28 Olympic &amp; Paralympic Games (2028)</td><td>Infrastructure investment and business opportunities; LAEDC cites as continuing driver in 2025 &amp; 2026 forecasts</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC 2025 Economic Forecast</a></td></tr>
-        <tr><td>Building permits, LA County 2025</td><td>20,192 permits, $4.20B total value (multifamily 10,809 / $1.57B; single-family 9,383 / $2.63B)</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD (US Census Building Permits)</a></td></tr>
-        <tr><td>Wildfire rebuild stimulus</td><td>Palisades/Eaton rebuilding expected to generate thousands of county jobs (localized); LAEDC Nov 2025 update</td><td class="src"><a href="https://laedc.org/laedc-releases-2025-economic-forecast-report/" target="_blank" rel="noopener">LAEDC — wildfire economic update (Nov 18, 2025)</a></td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">5 · Disaster-cost evidence — Jan 2025 wildfires (the live case study)</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Item</th><th>Value</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>Palisades Fire (CAL FIRE final, Jan 30, 2025)</td><td>23,448 acres; 6,837 structures destroyed (1,017 damaged); 12 deaths; ~$25B cost (Wikipedia-curated CAL FIRE data) — treat exact loss figure as estimate ⚑</td><td class="src"><a href="https://en.wikipedia.org/wiki/Palisades_Fire" target="_blank" rel="noopener">CAL FIRE via Wikipedia</a> · ⚑ <a href="flagged.html#disaster">CAL FIRE official DINS not directly pulled</a></td></tr>
-        <tr><td>Eaton Fire (CAL FIRE final, Jan 30, 2025)</td><td>≈14,021 acres; 9,418 structures destroyed (1,073 damaged); 17 deaths</td><td class="src">Same source ⚑</td></tr>
-        <tr><td>Combined acres / structures / deaths</td><td>&gt;40,000 acres; ~16,200 structures; ≥27 deaths</td><td class="src"><a href="https://gis-fema.hub.arcgis.com/pages/1ee8ccb97b8d44a7ae2ae0d23e90ee26" target="_blank" rel="noopener">FEMA — Jan 2025 California wildfires hub</a> · <a href="https://www.foxla.com/news/palisades-eaton-fires-could-cost-local-economy-up-9-billion-new-report-says" target="_blank" rel="noopener">LAEDC via FOXLA</a></td></tr>
-        <tr><td>LA County 5-yr economic impact (LAEDC, Mar 2025)</td><td>$4.6B (fast recovery) → $8.9B (slow scenario); up to ~50,000 job-years lost; up to $1.41B government revenue loss; supply-chain costs $5–9.7B</td><td class="src"><a href="https://www.foxla.com/news/palisades-eaton-fires-could-cost-local-economy-up-9-billion-new-report-says" target="_blank" rel="noopener">LAEDC Institute for Applied Economics (Mar 2025)</a></td></tr>
-        <tr><td>Property damage, Eaton+Palisades zones (IAE est.)</td><td>$28B–$54B</td><td class="src">LAEDC reporting (same source)</td></tr>
-        <tr><td>Insured losses (banks’ estimate, Jan 2025)</td><td>≈$30B (Wells Fargo / Goldman Sachs); AccuWeather total damage estimate $250–275B (not official — private estimate) ⚑</td><td class="src"><a href="https://www.inc.com/brian-contreras/the-cost-of-the-los-angeles-fires-is-looking-like-30-billion-and-counting/91111161" target="_blank" rel="noopener">Inc. (Jan 23, 2025)</a> ⚑ industry estimate</td></tr>
-        <tr><td>CA FAIR Plan exposure, Palisades area</td><td>≈$6B as of Jan 8, 2025</td><td class="src"><a href="https://en.wikipedia.org/wiki/Palisades_Fire" target="_blank" rel="noopener">FAIR Plan reporting via Wikipedia</a> ⚑</td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout bad"><strong>Why this matters for the lease question</strong><br>The Jan 2025 fires were a ~$5–9B local-GDP event concentrated in <em>residential</em> zones; a Central LA QSR was not burned, but the second-order effects — construction-cost inflation, insurance re-pricing and availability, FAIR Plan crowding, displaced households — directly raise operating costs and re-sale risk premiums for every LA asset. Insurance and earthquake coverage are now first-order diligence items, not boilerplate.</div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">6 · CPI &amp; business climate</h2>
-    <div class="table-wrap"><table class="data">
-      <thead><tr><th>Index</th><th>2024</th><th>2025</th><th>Change</th><th class="src">Source</th></tr></thead>
-      <tbody>
-        <tr><td>US CPI (annual)</td><td>313.7</td><td>321.9</td><td>+2.6%</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD (US BLS &amp; Calif. DIR)</a></td></tr>
-        <tr><td>California CPI (annual)</td><td>342.0</td><td>352.5</td><td>+3.1%</td><td class="src">CA EDD (US BLS &amp; Calif. DIR)</td></tr>
-      </tbody>
-    </table></div>
-    <p class="small">NNN leases with fixed escalations below CA inflation (3.1% 2025) lose real purchasing power annually — a structural argument for either higher reset rents at renewal or selling before renewal math compounds against the Owner.</p>
-  </div>
-
-</main>
-<div id="site-footer"></div>
-<script src="assets/app.js"></script>
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
