@@ -60,7 +60,7 @@ produced any file.
 | 2026-11-06 | Stale-claim rule not invoked: no claim was taken over from a live session. The nine branches were abandoned at their initial commit and contained no work product. |
 | 2026-11-06 | Integration verification complete. `tools/check_links.py` exits 0: no broken internal links, no unsourced verified rows, no non-official hosts in verified rows, no external assets, no privacy-pattern leaks. T01–T17 marked done or needs review. |
 | 2026-11-06 | PR opened from `arena/d3fdafdd-jack1` to `main` and merged without waiting for review, per instruction. Link and merge result recorded in the two rows below. |
-| _pending_ | **PR:** _to be recorded on the next commit._ |
+| 2026-11-06 | **PR opened:** https://github.com/wingbangboozle1-lang/Jack1/pull/14 — `arena/d3fdafdd-jack1` → `main`. Body contains the summary of changes, the full list of official sources used, all 9 flagged irregularities, the 4 structural flag groups, the privacy protocol and the coordination conflict resolution. |
 | _pending_ | **Merge result & Pages deployment:** _to be recorded on the next commit._ |
 
 ## Verification policy
