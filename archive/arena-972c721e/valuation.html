@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Anonymised, source-verified analysis of a single-tenant net-lease property in Central Los Angeles. No personal information is published.">
+<title>Valuation &amp; projection · SP-01 Dossier</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">SP-01</span>
+      <span class="brand-text"><strong>Net-lease decision dossier</strong>
+      <small>Central Los Angeles · Jack in the Box · NNN · expiry 2030&ndash;2035</small></span>
+    </div>
+    <nav><a href="index.html">Dashboard</a><a href="property.html">Property</a><a href="market.html">Market</a><a href="tenant.html">Tenant</a><a href="valuation.html" class="active">Valuation</a><a href="decision.html">Decision</a><a href="risks.html">Risks</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<h1>Valuation &amp; projection</h1>
+<p class="lede">A deterministic engine: cap rates as a function of lease term, anchored to a verified risk-free rate, with every assumption published.</p>
+
+<section class="hero compact">
+  <p class="tag">Valuation engine</p>
+  <h2 class="hero-q">Value is income divided by a cap rate. Everything else is an argument about the cap rate.</h2>
+  <p class="hero-a">The cap rate is not a constant. It is a function of how many years of rent the buyer can
+  count on, and of what the risk-free rate is that day. So the engine models two things explicitly: a
+  <strong>term structure</strong> (shorter lease, higher cap) and a <strong>rate sensitivity</strong>
+  (verified 10-year Treasury of 4.90% as the anchor, with a ±75bp band).</p>
+</section>
+
+<div class="kpis">
+  <div class="kpi"><div class="kpi-label">Term premium, 3 → 9 years</div><div class="kpi-value">+20.8%</div><div class="kpi-note">Same NOI. The entire difference is remaining lease term.</div></div>
+  <div class="kpi"><div class="kpi-label">Term premium, 3 → 5 years</div><div class="kpi-value">+11.5%</div><div class="kpi-note">Why even a five-year extension is worth negotiating hard for.</div></div>
+  <div class="kpi"><div class="kpi-label">Round-trip sale friction</div><div class="kpi-value">5.56%</div><div class="kpi-note">Brokerage and closing plus city/county transfer tax, before ULA.</div></div>
+  <div class="kpi"><div class="kpi-label">Proposition 13 wedge over 9 years</div><div class="kpi-value">8.41%</div><div class="kpi-note">Assessed value is capped at +2%/yr while the model assumes +3% market growth.</div></div>
+</div>
+
+<h2>The cap-rate term structure (assumption, stated as such)</h2>
+<p>No government series publishes net-lease cap rates. Rather than assert a market cap rate, the engine builds
+one from the verified 10-year Treasury plus a stated spread, and applies it by remaining term.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Remaining lease term</th><th class="num">Cap rate</th><th class="num">Spread over the 4.90% 10-year</th></tr></thead>
+<tbody><tr><td class="num">0 years</td><td class="num">7.25%</td><td class="num">+235 bp</td></tr><tr><td class="num">3 years</td><td class="num">7.25%</td><td class="num">+235 bp</td></tr><tr><td class="num">5 years</td><td class="num">6.50%</td><td class="num">+160 bp</td></tr><tr><td class="num">9 years</td><td class="num">6.00%</td><td class="num">+110 bp</td></tr><tr><td class="num">15 years</td><td class="num">5.90%</td><td class="num">+100 bp</td></tr></tbody></table></div>
+
+<h2>What one extra year of term is worth</h2>
+<p>Per $100,000 of net operating income, at the interpolated cap rate:</p>
+<div class="table-wrap"><table>
+<thead><tr><th class="num">Years of term</th><th class="num">Cap rate</th><th class="num">Value per $100k NOI</th><th class="num">vs. 3-year term</th></tr></thead>
+<tbody><tr><td class="num">1</td><td class="num">7.25%</td><td class="num">$1,379,310</td><td class="num">0.0%</td></tr><tr><td class="num">2</td><td class="num">7.25%</td><td class="num">$1,379,310</td><td class="num">0.0%</td></tr><tr><td class="num">3</td><td class="num">7.25%</td><td class="num">$1,379,310</td><td class="num">0.0%</td></tr><tr><td class="num">4</td><td class="num">6.88%</td><td class="num">$1,454,545</td><td class="num">+5.5%</td></tr><tr><td class="num">5</td><td class="num">6.50%</td><td class="num">$1,538,462</td><td class="num">+11.5%</td></tr><tr><td class="num">6</td><td class="num">6.38%</td><td class="num">$1,568,627</td><td class="num">+13.7%</td></tr><tr><td class="num">7</td><td class="num">6.25%</td><td class="num">$1,600,000</td><td class="num">+16.0%</td></tr><tr><td class="num">8</td><td class="num">6.12%</td><td class="num">$1,632,653</td><td class="num">+18.4%</td></tr><tr><td class="num">9</td><td class="num">6.00%</td><td class="num">$1,666,667</td><td class="num">+20.8%</td></tr><tr><td class="num">10</td><td class="num">5.98%</td><td class="num">$1,671,309</td><td class="num">+21.2%</td></tr></tbody></table></div>
+
+<h2>Strategy comparison</h2>
+<p>Illustrative NOI case of <strong>$180,000</strong> — the middle of the three cases. <em>These are model
+outputs on assumed inputs, not market facts.</em> The NPV column measures each strategy against selling today
+at a 7.40% required return; the wealth column reinvests every dollar received at the verified 4.90% Treasury
+yield until 2035.</p>
+
+<h3>If the lease expires in 2030 (4 years remaining)</h3>
+<p class="small">Cap rate today on that remaining term: <strong>6.875%</strong>.
+Selling today would net <strong>$2,472,611</strong> after costs.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Strategy</th><th class="num">Gross price</th><th class="num">Net proceeds</th>
+<th class="num">NPV vs selling today</th><th class="num">IRR</th><th class="num">Wealth 2035</th></tr></thead>
+<tbody><tr><td class="mono">A</td><td>Sell now, at the cap the remaining term deserves</td><td class="num">$2,618,182</td><td class="num">$2,472,611</td><td class="num">$0</td><td class="num">4.9%</td><td class="num">$3,803,077</td></tr><tr><td class="mono">B</td><td>Hold to expiry, tenant leaves, re-tenant and sell in 2035</td><td class="num">$3,437,716</td><td class="num">$3,246,579</td><td class="num">$233,084</td><td class="num">8.7%</td><td class="num">$4,966,241</td></tr><tr><td class="mono">C</td><td>Hold to expiry and renew then — probability-weighted</td><td class="num">$3,711,089</td><td class="num">$3,504,753</td><td class="num">$519,183</td><td class="num">n/a</td><td class="num">$5,475,127</td></tr><tr><td class="mono">D</td><td>Renew now, then sell in 2028 while the term is still long</td><td class="num">$2,898,196</td><td class="num">$2,737,056</td><td class="num">$116,900</td><td class="num">9.8%</td><td class="num">$4,179,054</td></tr><tr><td class="mono">E</td><td>Extend now on a long term, hold five years, sell with term intact</td><td class="num">$3,430,464</td><td class="num">$3,239,730</td><td class="num">$494,888</td><td class="num">11.7%</td><td class="num">$5,093,193</td></tr></tbody></table></div>
+<h3>If the lease expires in 2032 (6 years remaining)</h3>
+<p class="small">Cap rate today on that remaining term: <strong>6.375%</strong>.
+Selling today would net <strong>$2,666,541</strong> after costs.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Strategy</th><th class="num">Gross price</th><th class="num">Net proceeds</th>
+<th class="num">NPV vs selling today</th><th class="num">IRR</th><th class="num">Wealth 2035</th></tr></thead>
+<tbody><tr><td class="mono">A</td><td>Sell now, at the cap the remaining term deserves</td><td class="num">$2,823,529</td><td class="num">$2,666,541</td><td class="num">$0</td><td class="num">4.9%</td><td class="num">$4,101,358</td></tr><tr><td class="mono">B</td><td>Hold to expiry, tenant leaves, re-tenant and sell in 2035</td><td class="num">$3,304,226</td><td class="num">$3,120,511</td><td class="num">($23,504)</td><td class="num">7.3%</td><td class="num">$4,820,000</td></tr><tr><td class="mono">C</td><td>Hold to expiry and renew then — probability-weighted</td><td class="num">$3,784,213</td><td class="num">$3,573,810</td><td class="num">$306,983</td><td class="num">n/a</td><td class="num">$5,432,309</td></tr><tr><td class="mono">D</td><td>Renew now, then sell in 2028 while the term is still long</td><td class="num">$2,898,196</td><td class="num">$2,737,056</td><td class="num">($77,030)</td><td class="num">5.9%</td><td class="num">$4,179,054</td></tr><tr><td class="mono">E</td><td>Extend now on a long term, hold five years, sell with term intact</td><td class="num">$3,430,464</td><td class="num">$3,239,730</td><td class="num">$300,958</td><td class="num">9.9%</td><td class="num">$5,093,193</td></tr></tbody></table></div>
+<h3>If the lease expires in 2035 (9 years remaining)</h3>
+<p class="small">Cap rate today on that remaining term: <strong>6.0%</strong>.
+Selling today would net <strong>$2,833,200</strong> after costs.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Strategy</th><th class="num">Gross price</th><th class="num">Net proceeds</th>
+<th class="num">NPV vs selling today</th><th class="num">IRR</th><th class="num">Wealth 2035</th></tr></thead>
+<tbody><tr><td class="mono">A</td><td>Sell now, at the cap the remaining term deserves</td><td class="num">$3,000,000</td><td class="num">$2,833,200</td><td class="num">$0</td><td class="num">4.9%</td><td class="num">$4,357,693</td></tr><tr><td class="mono">B</td><td>Hold to expiry, tenant leaves, re-tenant and sell in 2035</td><td class="num">$2,967,126</td><td class="num">$2,802,154</td><td class="num">($96,533)</td><td class="num">6.9%</td><td class="num">$4,973,630</td></tr><tr><td class="mono">C</td><td>Hold to expiry and renew then — probability-weighted</td><td class="num">$3,974,540</td><td class="num">$3,753,555</td><td class="num">$203,712</td><td class="num">n/a</td><td class="num">$5,544,471</td></tr><tr><td class="mono">D</td><td>Renew now, then sell in 2028 while the term is still long</td><td class="num">$2,898,196</td><td class="num">$2,737,056</td><td class="num">($243,689)</td><td class="num">2.8%</td><td class="num">$4,179,054</td></tr><tr><td class="mono">E</td><td>Extend now on a long term, hold five years, sell with term intact</td><td class="num">$3,430,464</td><td class="num">$3,239,730</td><td class="num">$134,299</td><td class="num">8.5%</td><td class="num">$5,093,193</td></tr></tbody></table></div>
+
+<h2>NPV across every NOI and expiry case</h2>
+<div class="table-wrap"><table>
+<thead><tr><th class="num">NOI</th><th class="num">Expiry</th><th class="num">A sell now</th><th class="num">B hold, tenant leaves</th>
+<th class="num">C wait and renew</th><th class="num">D extend, sell 2028</th><th class="num">E extend, sell 2031</th></tr></thead>
+<tbody><tr><td class="num">$140,000</td><td class="num">2030</td><td class="num ">$0</td><td class="num pos">$157,960</td><td class="num pos">$394,478</td><td class="num pos">$57,589</td><td class="num pos">$351,579</td></tr><tr><td class="num">$140,000</td><td class="num">2032</td><td class="num ">$0</td><td class="num neg">($38,504)</td><td class="num pos">$230,675</td><td class="num neg">($93,246)</td><td class="num pos">$200,745</td></tr><tr><td class="num">$140,000</td><td class="num">2035</td><td class="num ">$0</td><td class="num neg">($75,082)</td><td class="num pos">$158,443</td><td class="num neg">($222,869)</td><td class="num pos">$71,121</td></tr><tr><td class="num">$180,000</td><td class="num">2030</td><td class="num ">$0</td><td class="num pos">$233,084</td><td class="num pos">$519,183</td><td class="num pos">$116,900</td><td class="num pos">$494,888</td></tr><tr><td class="num">$180,000</td><td class="num">2032</td><td class="num ">$0</td><td class="num neg">($23,504)</td><td class="num pos">$306,983</td><td class="num neg">($77,030)</td><td class="num pos">$300,958</td></tr><tr><td class="num">$180,000</td><td class="num">2035</td><td class="num ">$0</td><td class="num neg">($96,533)</td><td class="num pos">$203,712</td><td class="num neg">($243,689)</td><td class="num pos">$134,299</td></tr><tr><td class="num">$240,000</td><td class="num">2030</td><td class="num ">$0</td><td class="num pos">$345,768</td><td class="num pos">$706,240</td><td class="num pos">$205,867</td><td class="num pos">$709,851</td></tr><tr><td class="num">$240,000</td><td class="num">2032</td><td class="num ">$0</td><td class="num neg">($1,003)</td><td class="num pos">$421,444</td><td class="num neg">($52,707)</td><td class="num pos">$451,277</td></tr><tr><td class="num">$240,000</td><td class="num">2035</td><td class="num ">$0</td><td class="num neg">($128,711)</td><td class="num pos">$271,616</td><td class="num neg">($274,919)</td><td class="num pos">$229,065</td></tr></tbody></table></div>
+<p class="small">Positive = better than selling today. Note that C is the highest or near-highest in every
+case and E is the only strategy that is positive in <em>all</em> of them — which is precisely why the
+recommendation is E rather than C: C's number assumes the renewal happens.</p>
+
+<h2>How much of this answer is just a rates call?</h2>
+<p>Selling today, at the $180,000 NOI and a 2032 expiry, against a shift in the cap rate:</p>
+<div class="table-wrap"><table>
+<thead><tr><th class="num">Cap shift</th><th class="num">Cap rate</th><th class="num">Gross value</th><th class="num">Net proceeds</th><th>Measure ULA applies?</th></tr></thead>
+<tbody><tr><td class="num">-75 bp</td><td class="num">5.62%</td><td class="num">$3,200,000</td><td class="num">$3,022,080</td><td>no</td></tr><tr><td class="num">-50 bp</td><td class="num">5.88%</td><td class="num">$3,063,830</td><td class="num">$2,893,481</td><td>no</td></tr><tr><td class="num">-25 bp</td><td class="num">6.12%</td><td class="num">$2,938,776</td><td class="num">$2,775,380</td><td>no</td></tr><tr><td class="num">+0 bp</td><td class="num">6.38%</td><td class="num">$2,823,529</td><td class="num">$2,666,541</td><td>no</td></tr><tr><td class="num">+25 bp</td><td class="num">6.62%</td><td class="num">$2,716,981</td><td class="num">$2,565,917</td><td>no</td></tr><tr><td class="num">+50 bp</td><td class="num">6.88%</td><td class="num">$2,618,182</td><td class="num">$2,472,611</td><td>no</td></tr><tr><td class="num">+75 bp</td><td class="num">7.13%</td><td class="num">$2,526,316</td><td class="num">$2,385,853</td><td>no</td></tr></tbody></table></div>
+<p class="small">A 75bp move at this size is worth roughly a year and a half of rent. That is why the
+recommendation separates the <em>lease</em> decision (in your control) from the <em>rate</em> decision
+(not in your control).</p>
+
+<h2>Every assumption in the engine</h2>
+<p>If you disagree with the model, this is where to find it. Property-specific inputs were not supplied,
+so they are assumptions with a stated basis, not data.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Key</th><th>Assumption</th><th>Value</th><th>Basis</th></tr></thead>
+<tbody><tr><td class="mono">A1</td><td>Illustrative NOI cases</td><td class="val">$140,000 / $180,000 / $240,000</td><td>Assumption. Actual NOI was not supplied. Chosen to bracket a plausible single-tenant QSR footprint in Central LA. Replace with the real figure before acting.</td></tr><tr><td class="mono">A2</td><td>Cap rate — short remaining term (3 years or less)</td><td class="val">7.25%</td><td>Assumption = verified 10-year Treasury 4.90% + 235bp. No official series publishes net-lease cap rates, so the spread is stated, not sourced.</td></tr><tr><td class="mono">A3</td><td>Cap rate — about 5 years remaining</td><td class="val">6.50%</td><td>Assumption = 10-year 4.90% + 160bp.</td></tr><tr><td class="mono">A4</td><td>Cap rate — about 8-10 years remaining</td><td class="val">6.00%</td><td>Assumption = 10-year 4.90% + 110bp.</td></tr><tr><td class="mono">A5</td><td>Cap-rate sensitivity band</td><td class="val">±75bp</td><td>Assumption. Used to show how much of the answer is a rates call.</td></tr><tr><td class="mono">A6</td><td>In-place rent escalation</td><td class="val">2.0%/yr</td><td>Assumption. Actual escalator is in the lease, which was not supplied (F109).</td></tr><tr><td class="mono">A7</td><td>Market rent growth</td><td class="val">3.0%/yr</td><td>Assumption, anchored to verified CPI (3.7%) and limited-service meal inflation (3.2%).</td></tr><tr><td class="mono">A8</td><td>Discount rate / required return</td><td class="val">7.40%</td><td>Assumption = verified 10-year Treasury 4.90% + 250bp illiquidity and single-tenant premium.</td></tr><tr><td class="mono">A9</td><td>Cost of sale — brokerage, legal, closing</td><td class="val">5.0% of gross price</td><td>Assumption. Negotiated, not published.</td></tr><tr><td class="mono">A10</td><td>Cost of sale — transfer taxes</td><td class="val">0.56% of price + Measure ULA where applicable</td><td>Derived from verified rates: 0.45% city (S13) + 0.11% county (S14), then the ULA tiers.</td></tr><tr><td class="mono">A11</td><td>Downtime if the tenant vacates</td><td class="val">12 months no rent + $150,000 re-tenanting + 6 months of free rent</td><td>Assumption. Represents the realistic cost of re-leasing a drive-thru box.</td></tr><tr><td class="mono">A12</td><td>Renewal rent reset</td><td class="val">+10% versus in-place rent at renewal</td><td>Assumption. Six years of 2% contract growth against 3% market growth implies an 8-10% gap by 2032.</td></tr><tr><td class="mono">A13</td><td>Combined income tax on a sale</td><td class="val">Not modelled</td><td>The owner's basis and depreciation history are private and were not supplied. All proceeds below are PRE-TAX. Tax is discussed qualitatively with the verified 1031 mechanics (F088).</td></tr><tr><td class="mono">A14</td><td>Horizon</td><td class="val">2026-2035 (9 years)</td><td>Chosen to cover the whole 2030-2035 expiry window stated by the owner.</td></tr><tr><td class="mono">A15</td><td>Renewal concession (TI / rent abatement)</td><td class="val">$150,000</td><td>Assumption. A tenant rarely signs an extension for nothing; the model charges the owner for it rather than pretending the extension is free.</td></tr><tr><td class="mono">A16</td><td>Probability the tenant renews at expiry if nothing is negotiated</td><td class="val">60% (band 35%-75%)</td><td>Assumption, informed by the franchisor's disclosed contraction (50-60 closures a year, mostly franchise) set against a lease that is likely below market after years of 2% escalators in a 3.7-4.1% inflation environment. The band is published so the reader can re-price it.</td></tr></tbody></table></div>
+
+<h2>Run it yourself</h2>
+<p>Enter your own NOI, cap rate and remaining term. Nothing leaves your browser — the calculation is
+JavaScript in this page, and the page makes no network requests at all.</p>
+<div class="panel calc">
+  <label>Net operating income ($) <input id="c-noi" type="number" value="180000" step="5000"></label>
+  <label>Cap rate (%) <input id="c-cap" type="number" value="6.875" step="0.125"></label>
+  <label>Years of lease term remaining <input id="c-term" type="number" value="4" step="1" min="0" max="20"></label>
+  <label>Sale price ($, optional — for the ULA check) <input id="c-price" type="number" value="" placeholder="auto"></label>
+  <div class="calc-out" id="c-out">—</div>
+</div>
+<script>
+(function() {
+  var ULA_LOW = 5400000, ULA_HIGH = 10900000;
+  function money(n) { return (n < 0 ? "($" : "$") + Math.abs(Math.round(n)).toLocaleString() + (n < 0 ? ")" : ""); }
+  function capForTerm(t) {
+    var k = [[0,0.0725],[3,0.0725],[5,0.0650],[9,0.0600],[15,0.0590]];
+    if (t <= 0) return k[0][1];
+    for (var i = 0; i < k.length - 1; i++) {
+      if (t >= k[i][0] && t <= k[i+1][0]) {
+        var f = (t - k[i][0]) / (k[i+1][0] - k[i][0]);
+        return k[i][1] + (k[i+1][1] - k[i][1]) * f;
+      }
+    }
+    return k[k.length-1][1];
+  }
+  var noi = document.getElementById("c-noi"),
+      cap = document.getElementById("c-cap"),
+      term = document.getElementById("c-term"),
+      price = document.getElementById("c-price"),
+      out = document.getElementById("c-out");
+  function calc() {
+    var n = parseFloat(noi.value) || 0,
+        c = (parseFloat(cap.value) || 0) / 100,
+        t = parseFloat(term.value) || 1,
+        mid = capForTerm(t);
+    var v = c > 0 ? n / c : 0;
+    var sugg = n / mid;
+    var p = parseFloat(price.value) || v;
+    var ula = p >= ULA_HIGH ? p * 0.055 : (p > ULA_LOW ? p * 0.04 : 0);
+    var costs = p * 0.05 + p * 0.0056 + ula;
+    out.innerHTML =
+      "<div><span>Implied value at your cap rate</span><strong>" + money(v) + "</strong></div>" +
+      "<div><span>Model cap rate for " + t + " years of term</span><strong>" + (mid*100).toFixed(2) + "%</strong></div>" +
+      "<div><span>Implied value at the model's cap for that term</span><strong>" + money(sugg) + "</strong></div>" +
+      "<div><span>Measure ULA on " + money(p) + "</span><strong>" + (ula ? money(ula) : "none") + "</strong></div>" +
+      "<div><span>Total cost of sale (5% + 0.56% + ULA)</span><strong>" + money(costs) + "</strong></div>" +
+      "<div><span>Net proceeds</span><strong>" + money(p - costs) + "</strong></div>";
+  }
+  [noi, cap, term, price].forEach(function(el) { el.addEventListener("input", calc); });
+  calc();
+})();
+</script>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Privacy:</strong> this site contains no address, parcel number, owner name, rent, or NOI. The subject property is referred to only as SP-01. Anything knowable only from private documents is shown as <code>[WITHHELD]</code> or as a labelled assumption.</p>
+    <p><strong>Verification:</strong> 99 facts confirmed against official sources, 2 derived by arithmetic on those facts, 20 published as blank and flagged. Every row links to the source that was actually opened. Data accessed 2026-11-06.</p>
+    <p>This is analysis, not legal, tax or investment advice. Verify the lease, the parcel and the tenant before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

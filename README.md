@@ -65,3 +65,27 @@ per-row source link and an enforced blank-value gate.
 ## Coordination
 
 `COORDINATION.md` is the shared task board (claims, scope, handoffs, merge record) used while this repository is worked on.
+
+---
+
+## Archived dossier — session `arena-972c721e`
+
+A third, independent analysis of the same question was built in parallel and is preserved intact at
+`archive/arena-972c721e/` (pages) with its engine at `model/`, its dataset at `data/*.json`, and its
+integrity gate at `tools/check.py`. It is reachable from the live site at
+`/archive/arena-972c721e/index.html`.
+
+It is **not** the canonical navigation. It is published because its methodology is different in one
+respect that is worth keeping: it prices the cap rate as a continuous function of *remaining lease term*
+(7.25% at ≤3 years → 6.00% at 9+ years) and runs the owner's five-year expiry window as three separate
+assets (2030, 2032, 2035), which makes the "term is the price" finding measurable rather than asserted.
+Its engine is deterministic and reproducible:
+
+```
+python3 model/model.py > data/model.json     # re-derive every figure
+python3 tools/build.py                       # regenerate archive/arena-972c721e/
+python3 tools/check.py                       # link, source-coverage, PII and model gate
+```
+
+Its written deliverables are at the repository root: `EXECUTIVE_SUMMARY.md`, `DECISION_MEMO.md`,
+`RISK_REGISTER.md`, `METHODOLOGY.md`, and `research/verification-report.md`.

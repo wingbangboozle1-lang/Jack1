@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Anonymised, source-verified analysis of a single-tenant net-lease property in Central Los Angeles. No personal information is published.">
+<title>The property · SP-01 Dossier</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">SP-01</span>
+      <span class="brand-text"><strong>Net-lease decision dossier</strong>
+      <small>Central Los Angeles · Jack in the Box · NNN · expiry 2030&ndash;2035</small></span>
+    </div>
+    <nav><a href="index.html">Dashboard</a><a href="property.html" class="active">Property</a><a href="market.html">Market</a><a href="tenant.html">Tenant</a><a href="valuation.html">Valuation</a><a href="decision.html">Decision</a><a href="risks.html">Risks</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<h1>The property</h1>
+<p class="lede">An anonymised dossier: what is known, what is withheld, and the lease clock that actually forces the decision.</p>
+
+<section class="panel">
+<h2>What is actually known</h2>
+<ul class="tight">
+  <li><strong>Asset type:</strong> single-tenant quick-service restaurant building on a net (NNN) lease.</li>
+  <li><strong>Tenant brand:</strong> Jack in the Box (NASDAQ: JACK — verified via SEC filings).</li>
+  <li><strong>Location granularity:</strong> "around Central Los Angeles" — the owner's own wording. Not narrowed further, by design.</li>
+  <li><strong>Lease expiry:</strong> somewhere in 2030–2035 — the owner's own wording. Presented as three cases, not one number.</li>
+  <li><strong>Decision to be made:</strong> sell before expiry, or renew and hold.</li>
+</ul>
+</section>
+
+<section class="panel">
+<h2>The lease clock</h2>
+<p class="lede">A net lease does not end on the expiry date. It ends when the renewal option lapses, which is why the
+notice window — not the expiry date — is the decision deadline.</p>
+<ol class="timeline"><li><strong>Today</strong><span>Lease in force. Remaining term is somewhere between 4 and 9 years, because the expiry sits somewhere in a five-year window. The owner has not supplied the exact date.</span></li><li><strong>Notice window</strong><span>Typically 6–12 months before expiry in a net lease. This, not the expiry date, is the real decision deadline — miss it and the tenant's option lapses and the asset is priced as a vacancy risk.</span></li><li><strong>2030–2035</strong><span>Lease expiry, per the owner's own description. At expiry the tenant either renews, renegotiates, or leaves.</span></li><li><strong>Today to 2035</strong><span>The investment horizon used throughout the model.</span></li></ol>
+</section>
+
+<h2>What is withheld, and why</h2>
+<p>The brief requires that no personal information appears in the product. A property address is personal
+information: it identifies the owner. So the address, parcel number, rent, NOI, tenant of record and lease
+document are all withheld, and every analysis below is either area-level (public data) or explicitly
+labelled as an assumption band.</p>
+<div class="callout">
+<strong>The consequence you should weigh:</strong> the decision framework is complete, but the final numbers are not.
+The model runs on three illustrative NOI cases. Replace them with your actual NOI and the same engine
+gives you your actual answer — that is what the <a href="valuation.html">Valuation page</a> and its
+calculator are for.
+</div>
+
+<h2>Property-specific inputs</h2>
+<p>Each row below is blank on purpose. "Unverified" here is not a data failure; it is a decision to publish a
+gap rather than invent a number.</p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Metric</th><th>Value</th><th>Unit</th><th>Period</th><th>Sources</th><th>Status</th></tr></thead><tbody><tr><td class="mono">F102</td><td>Street address of SP-01</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Deliberately excluded for privacy. Consequence: no parcel-level lookup (FHSZ, flood, seismic, zoning, school assignment) is possible, and every such row below is blank.</div></td></tr><tr><td class="mono">F103</td><td>Assessor's parcel number / assessed value</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Needed to compute the Prop 13 base, the annual tax bill and any reassessment effect.</div></td></tr><tr><td class="mono">F104</td><td>Building area / land area</td><td class="val">[WITHHELD]</td><td>sq ft</td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Needed for price-per-square-foot and land-value cross-checks.</div></td></tr><tr><td class="mono">F105</td><td>Current rent and net operating income</td><td class="val">[WITHHELD]</td><td>USD</td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">The single most important missing input. The model therefore runs on labelled illustrative NOI cases, not on the property's real numbers.</div></td></tr><tr><td class="mono">F106</td><td>Lease commencement, expiry, renewal options and notice windows</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Owner states expiry falls somewhere in 2030–2035. The exact date, and therefore the notice deadline that actually forces the decision, is unknown.</div></td></tr><tr><td class="mono">F107</td><td>Identity and financial condition of the tenant of record</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Corporate-operated unit versus a franchisee changes the renewal analysis completely. The franchisor is shrinking; individual franchisee credit is unknown.</div></td></tr><tr><td class="mono">F108</td><td>Whether the lease is truly triple-net (who pays insurance, roof, structure, tax)</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Determines whether insurance inflation and capital items hit the owner's NOI or the tenant's occupancy cost.</div></td></tr><tr><td class="mono">F109</td><td>Rent escalation mechanism in the lease</td><td class="val">[WITHHELD]</td><td></td><td class='nowrap'>—</td><td><span class="src none" title="No official source available">none</span></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">A flat lease in a 3.7–4.1% inflation environment is a slow transfer of wealth from owner to tenant.</div></td></tr><tr><td class="mono">F110</td><td>Fire Hazard Severity Zone class for the parcel</td><td class="val"><span class="blank">— blank —</span></td><td></td><td class='nowrap'>—</td><td><a class="src" href="sources.html#S16" title="Fire Hazard Severity Zones — CAL FIRE — Office of the State Fire Marshal">S16</a></td><td><span class="badge flagged" title="Could not be confirmed from an official source">flagged</span></td></tr><tr class="note-row"><td></td><td colspan="6"><div class="note">Requires the address; for City of LA parcels the LRA determination comes from the local jurisdiction. Not inferred.</div></td></tr></tbody></table></div>
+
+<h2>Privacy statement</h2>
+<div class="panel">
+<p>This project processes no personal information. Specifically:</p>
+<ul class="tight">
+  <li>No name, address, parcel number, phone, email or account identifier is stored in this repository or published on this site.</li>
+  <li>The subject property is labelled <code>SP-01</code> throughout, including in the source code, the data files and the model.</li>
+  <li>The site makes zero third-party requests: no fonts, no analytics, no trackers, no CDN. The pages are plain HTML and one local stylesheet.</li>
+  <li>The valuation calculator runs entirely in your browser. Nothing typed into it is transmitted, stored, logged or committed.</li>
+  <li>Any figure that could only be known from private documents is rendered as <code>[WITHHELD]</code> rather than approximated.</li>
+</ul>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Privacy:</strong> this site contains no address, parcel number, owner name, rent, or NOI. The subject property is referred to only as SP-01. Anything knowable only from private documents is shown as <code>[WITHHELD]</code> or as a labelled assumption.</p>
+    <p><strong>Verification:</strong> 99 facts confirmed against official sources, 2 derived by arithmetic on those facts, 20 published as blank and flagged. Every row links to the source that was actually opened. Data accessed 2026-11-06.</p>
+    <p>This is analysis, not legal, tax or investment advice. Verify the lease, the parcel and the tenant before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

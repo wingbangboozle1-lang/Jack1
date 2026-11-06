@@ -110,6 +110,11 @@
         same analysis by other sessions, preserved unmodified for provenance and comparison. Their data registries can be read
         side by side with ours; they contain industry-labelled figures (cap rates, credit commentary) that this build instead
         flags as unverified.</li>
+      <li><a href="archive/arena-972c721e/index.html"><code>archive/arena-972c721e/</code></a> — a third independent build, from a
+        later session. It reaches the same recommendation (lock the renewal, then sell the term) from a different model: it prices
+        the cap rate as a continuous function of <i>remaining lease term</i> and runs the 2030&ndash;2035 expiry window as three
+        separate assets, which makes the term premium measurable rather than asserted. It is published but not part of this site's
+        navigation. Its engine is reproducible: <code>python3 model/model.py</code>, then <code>python3 tools/check.py</code>.</li>
     </ul>
 
     <h2>Glossary</h2>
