@@ -25,14 +25,14 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review` (publish
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
 | T01 | Board creation + task claims | done | ARENA-119c72a5 | `COORDINATION.md` | Created 2026-11-06 |
-| T02 | Anonymization policy + placeholder scheme | in progress | ARENA-119c72a5 | `research/PRIVACY.md`, `content/*.json` | No address, APN, owner, or tenant-contact data may reach the site |
-| T03 | Official-source research dossier (property, market, risk, tenant credit) | in progress | ARENA-119c72a5 | `research/**` | raw extracts + retrieval dates; no derived values |
-| T04 | Verified data tables (every row sourced or blank+flagged) | unclaimed | — | `data/**` | |
-| T05 | Projection model (documented, deterministic) | unclaimed | — | `tools/model.py`, `data/projections.json` | |
-| T06 | Site build (landing + category subpages + dashboard UI) | unclaimed | — | `index.html`, `*.html`, `assets/**`, `tools/build_site.py` | |
-| T07 | Line-by-line verification pass (every table row → official link) | unclaimed | — | `research/VERIFICATION_LOG.md` | |
-| T08 | Link check + build check | unclaimed | — | `tools/check_links.py` | |
-| T09 | PR to `main`, merge, confirm Pages deploy | unclaimed | — | — | |
+| T02 | Anonymization policy + placeholder scheme | done | ARENA-119c72a5 | `research/PRIVACY.md`, `privacy.html` | No address, APN, owner, or tenant-contact data may reach the site. Enforced by `tools/check_site.py` §privacy |
+| T03 | Official-source research dossier (property, market, risk, tenant credit) | done | ARENA-119c72a5 | `research/**` | 32 sources; raw extracts in `research/raw/`; retrieval date 2026-11-06 |
+| T04 | Verified data tables (every row sourced or blank+flagged) | done | ARENA-119c72a5 | `data/facts.json`, `data/sources.json`, `data/series.json` | 113 rows checked; blank+flagged where unconfirmed |
+| T05 | Projection model (documented, deterministic) | done | ARENA-119c72a5 | `tools/model.py`, `data/projections.json` | All assumptions printed on `process.html` |
+| T06 | Site build (landing + category subpages + dashboard UI) | done | ARENA-119c72a5 | `index.html`, `*.html`, `assets/**`, `tools/build_site.py` | 13 pages |
+| T07 | Line-by-line verification pass (every table row → official link) | needs review | ARENA-119c72a5 | `research/VERIFICATION_LOG.md`, `flagged.html` | 6 transcription errors found and corrected; 12 items published on Flagged for Review |
+| T08 | Link check + build check | done | ARENA-119c72a5 | `tools/check_site.py` | exit 0, 0 errors, 0 warnings |
+| T09 | PR to `main`, merge, confirm Pages deploy | in progress | ARENA-119c72a5 | — | Pages source is `main` root |
 
 ## Log
 
@@ -46,3 +46,28 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review` (publish
   `sec.gov`, `census.gov`). All fetched extracts are saved verbatim under `research/raw/` with retrieval dates
   so every published row is reproducible.
 - Files claimed by this session: all paths above (sole session). No handoff or conflict recorded.
+
+### 2026-11-06 (later) — ARENA-119c72a5, task close-out
+- No other session ever registered on this board; no claim collisions, no merge conflicts, no handoffs.
+- **Sources used:** 32 total, listed in `data/sources.json` and rendered with live links on `sources.html`.
+  Official: BLS via FRED (LOSA106UR, SMU/SMS06310800000000001, CAUR), Census via FRED (MHICA06037A052NCEN),
+  Census QuickFacts (LA city, LA county), BLS CPI via FRED (CPIAUCSL, CUSR0000SEFV), Federal Reserve via FRED
+  (DGS10, BAA, DRCRELEXFACBS), SEC EDGAR + XBRL (10-K FY2025, Revenues, NetIncomeLoss, 8-K 2026-06-23),
+  California DOF projections landing page, EDD LMI, CA LegInfo (AB 1228), CA BOE (Pub 29, Prop 8, LTA 2025/010),
+  City of LA Office of Finance (Measure ULA FAQ), IRS (FS-2008-18 §1031), CAL FIRE/OSFM (FHSZ),
+  CA Geological Survey (Alquist-Priolo), LA County Assessor. Third-party market commentary: Net Lease Advisor,
+  Solid Investments, a JIB Westwood flyer, Instone Investments — all labelled non-official.
+- **Verification performed:** every fact row re-read against the issuing page during this session;
+  `tools/check_site.py` enforces (a) every valued row carries a resolving source id, (b) every internal link
+  resolves, (c) every source URL is https on a recognised host, (d) no address/APN/email/phone leakage,
+  (e) navigation completeness. Last run: **13 pages, 0 errors, 0 warnings**.
+- **Irregularities recorded (non-blocking, published on `flagged.html`):**
+  F-01 exact lease terms withheld · F-02 no in-place NOI/appraisal · F-03 parcel FHSZ/seismic status
+  unavailable without the APN · F-04 a broker flyer contradicts itself on lease expiry · F-05 two LA cap rates
+  are not like-for-like · F-06 no official issuer credit rating · F-07 corporate vs franchisee lease unknown ·
+  F-08 Census shows `X` for two city metrics · F-09 CA DOF projection attachment not parseable here ·
+  F-10 no official insurance price series · F-11 FRED `LAPOP` is Louisiana, not Los Angeles (discarded) ·
+  F-12 store-level sales are confidential tenant data.
+- **Corrections made during verification:** FY2023 revenue corrected to $1,692,306,000; FY2023 net income
+  corrected to **+$130,826,000** (it is not a loss); model normalisation bug fixed so all paths start at 1.000;
+  an undefined source id (`S34`) replaced by a defined one (`S32`); stray `|` markers stripped from rendered cells.
