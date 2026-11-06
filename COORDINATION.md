@@ -24,7 +24,7 @@
 | T6 | Decision analysis: sell-before-expiry vs renew/hold; projection model; executive summary | done | d2137d88 | `index.html`, `decision.html`, `projection.html` |
 | T7 | Site creation: static dashboard + subpages, GitHub Pages deploy config | done | d2137d88 | repo root site files, `.github/workflows/pages.yml` |
 | T8 | Verification pass: line-by-line vs official sources; every table row sourced or flagged | done | d2137d88 | site files, `COORDINATION.md` |
-| T9 | Final integration: combine, builds clean, no broken links, PR to main, merge, Pages live, record PR + deploy | unclaimed | — | repo root, `.github/workflows` |
+| T9 | Final integration: combine, builds clean, no broken links, PR to main, merge, Pages live, record PR + deploy | done | d2137d88 | repo root, `.github/workflows` |
 
 ## Log
 - 2026-11-06 — Session `d2137d88` created this board. Repo contained only `README.md` ("# Jack1"). Git history: single commit `ef1b4c6` ("Initial commit"). Privacy scan of repo: no personal information found (repo has no content beyond README). Claiming T1 (done), T2 (in progress). Will claim remaining tasks as capacity allows; this session performs the full pipeline including final integration, as no other sessions have claimed any task.
@@ -44,3 +44,12 @@ All research figures used on the site were collected from official sources (Cens
 - Privacy scan: no phone numbers, no emails, no street addresses, no APNs, no personal names anywhere in repo. Location described only at district level; exact parcel intentionally absent.
 - Known irregularities (published on Flagged for Review, non-blocking): Westwood comp listing self-contradiction (2031 vs 2036); three conflicting DTLA vacancy estimates; GDP measure-mixing in secondary coverage; fire-loss scope spread ($5.2B–$250B); JACK financials via filing reprints not yet re-read on EDGAR; LAUSD math points blank; parcel-level hazard/school/zoning checks impossible without address (anonymized).
 - Nothing was marked "verified" without an attached official source link; secondary/market/unverified items carry explicit badges.
+
+## T9 integration & release record (2026-11-06, session d2137d88)
+- PR #1: https://github.com/wingbangboozle1-lang/Jack1/pull/1 — merged 2026-11-06T13:01:26Z, merge commit c5f4214da9d314d6389f9823ad97322794c45a08 (--merge, no squash).
+- GitHub Pages: legacy branch-based deploy from main / — status "built" at https://wingbangboozle1-lang.github.io/Jack1/ (verified via API; custom domain none; HTTPS enforced; custom 404 active).
+- Both post-merge workflows finished with conclusion=success: "Deploy static site to GitHub Pages" (run 42222151401) and legacy "pages build and deployment" (run 42222151095).
+- Note: repo Pages setting is build_type=legacy (main /). The Actions workflow ALSO succeeded; both paths publish the same static root, so the site is live regardless of which path serves it. Token could not switch build_type to workflow (403) — left as-is since both deploy paths work; flagged for owner attention if they want to consolidate on one mechanism.
+- Site contents: 12 HTML pages, registry of 92 sourced rows across 6 datasets, 42 deduplicated source links. All local links resolve; all pages HTTP 200 locally; registry validation PASS; privacy scan PASS (no PII, parcel anonymized).
+- 15 flagged-for-review items published at /flagged.html (broker cap rates, JACK credit & loss figures via reprints/aggregators, conflicting DTLA vacancy, USAFacts secondary GDP figures, blank LAUSD math points, fire-loss scope spread, parcel-level hazard checks impossible without address). None are marked verified; owner review requested.
+- Open follow-ups for owner: (1) review Flagged for Review page; (2) provide parcel/lease docs to re-verify parcel-specific items; (3) re-pull live 10Y/ULA/cap rates at any LOI/escrow; (4) choose Pages build mechanism (legacy vs workflow) if consolidation desired.
