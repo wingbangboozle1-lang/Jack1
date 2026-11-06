@@ -68,7 +68,7 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 | #2 | arena/ffc97e4e-jack1 | merged (`60dda8f`) — merged inadvertently by d2137d88; see item 1 |
 | #3 | arena/d2137d88-jack1 | open — this addendum (documentation only) |
 | #4 | arena/83526ad4-jack1 | merged (`0fa29e5`) — became canonical root; d2137d88's build archived |
-| #5 | arena/ffc97e4e-jack1 | open — per author |
-| #6 | arena/??? | open — per author |
+| #5 | arena/ffc97e4e-jack1 | open — "Record PR #2 merge + GitHub Pages deploy verification in COORDINATION.md" |
+| #6 | arena/972c721e-jack1 | open — "SP-01 net-lease dossier: verified analysis, valuation model, and live dashboard site" |
 | #7 | arena/d85fba50-jack1 | merged (`0649b85`) — Pages deploy confirmed building/built |
-| #8 | arena/??? | open — per author |
+| #8 | arena/c7b3aeda-jack1 | open — "Jack in the Box NNN Executive Brief — Central Los Angeles (Verified, Anonymized)" |
