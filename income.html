@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Income, Prices &amp; Consumer Spending &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="What the trade area earns, what it pays for housing, and what inflation is doing to both &amp;mdash; and to the tenant&amp;rsquo;s cost base.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html">Executive Summary</a><a href="methodology.html">Methodology &amp; Privacy</a><a href="repo-audit.html">Repo Audit &amp; Irregularities</a><a href="asset.html">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html" class="on">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">Income, Prices & Consumer Spending</h2>
+<p class="lede">What the trade area earns, what it pays for housing, and what inflation is doing to both &mdash; and to the tenant&rsquo;s cost base.</p>
+<div class="card tight"><div class="bar"><i style="width:82.14%;background:#12854a">82%</i><i style="width:0.00%;background:#c98a00"></i><i style="width:17.86%;background:#b42318">18%</i></div><div class="legend"><span><span class="sw" style="background:#12854a"></span>Verified from an official source: 23 of 28 (82.1%)</span><span><span class="sw" style="background:#c98a00"></span>Value seen only in a non-official source, withheld: 0</span><span><span class="sw" style="background:#b42318"></span>Left blank and flagged: 5</span></div></div>
+<div class="callout"><strong>Schema note.</strong> Same row schema as demographics.json. v = verified value; empty string means LEFT BLANK and flagged UNVERIFIED.</div>
+<h3>Every row, with its official source</h3>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Metric</th><th>Value</th><th>Status</th><th>Period / vintage</th><th>Official source &amp; link</th><th>Note, derivation or reason for the gap</th></tr></thead><tbody><tr><td class="id">I-01</td><td class="metric">City of Los Angeles — median household income</td><td class='val'>$81,939</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year, in 2024 dollars</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Read directly from census.gov.</td></tr><tr><td class="id">I-02</td><td class="metric">City of Los Angeles — per capita income</td><td class='val'>$47,685</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year, in 2024 dollars</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-03</td><td class="metric">City of Los Angeles — persons in poverty</td><td class='val'>16.5%</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Higher poverty than the county (I-06): value-tier QSR demand is present but disposable-income headroom is thinner.</td></tr><tr><td class="id">I-04</td><td class="metric">Los Angeles County — median household income</td><td class='val'>$90,112</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year, in 2024 dollars</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">City median is 9.1% BELOW the county median.</td></tr><tr><td class="id">I-05</td><td class="metric">Los Angeles County — per capita income</td><td class='val'>$45,792</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year, in 2024 dollars</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Note the inversion: county per-capita income is LOWER than the city&amp;#x27;s while county median household income is HIGHER — the city has larger households.</td></tr><tr><td class="id">I-06</td><td class="metric">Los Angeles County — persons in poverty</td><td class='val'>13.3%</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-07</td><td class="metric">City of Los Angeles — total retail sales</td><td class='val'>$81,351,523 thousand</td><td><span class="pill p-ok">Verified</span></td><td class="per">2022 Economic Census</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-08</td><td class="metric">City of Los Angeles — retail sales per capita</td><td class='val'>$21,281</td><td><span class="pill p-ok">Verified</span></td><td class="per">2022 Economic Census</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-09</td><td class="metric">Los Angeles County — total retail sales</td><td class='val'>$213,932,785 thousand</td><td><span class="pill p-ok">Verified</span></td><td class="per">2022 Economic Census</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-10</td><td class="metric">Los Angeles County — retail sales per capita</td><td class='val'>$22,010</td><td><span class="pill p-ok">Verified</span></td><td class="per">2022 Economic Census</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">County per-capita retail spend is 3.4% above the city&amp;#x27;s.</td></tr><tr><td class="id">I-11</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change</td><td class='val'>+3.6%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending May 2026 (not seasonally adjusted)</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260610.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Latest LA-area CPI release identified on the BLS Los Angeles regional page as at the retrieval date.</td></tr><tr><td class="id">I-12</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change</td><td class='val'>+3.7%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending April 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/ca_losangeles_msa.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-13</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change</td><td class='val'>+3.4%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending March 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260410.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-14</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change</td><td class='val'>+2.9%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending February 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260311.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-15</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — 12-month change</td><td class='val'>+3.0%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending January 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260213.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-16</td><td class="metric">CPI-U, Los Angeles-Long Beach-Anaheim — all items less food and energy, 12-month change</td><td class='val'>+2.5%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending May 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260610.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Shelter component +2.6% over the year; other goods and services +9.8%.</td></tr><tr><td class="id">I-17</td><td class="metric">CPI-U, Los Angeles area — food index 12-month change</td><td class='val'>+3.5%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending May 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260610.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Direct input-cost and menu-price environment for the tenant.</td></tr><tr><td class="id">I-18</td><td class="metric">CPI-U, Los Angeles area — energy index 12-month change</td><td class='val'>+18.0%</td><td><span class="pill p-ok">Verified</span></td><td class="per">12 months ending May 2026</td><td class="src">U.S. Bureau of Labor Statistics, Western Information Office<br><a href="https://www.bls.gov/regions/west/news-release/2026/consumerpriceindex_losangeles_20260610.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Large energy shock; raises the tenant&amp;#x27;s occupancy cost even under an NNN structure and pressures drive-thru trip volumes.</td></tr><tr><td class="id">I-19</td><td class="metric">Los Angeles County — median home sales price</td><td class='val'>$982,000</td><td><span class="pill p-ok">Verified</span></td><td class="per">2026 Assessment Roll year (lien date January 1, 2026)</td><td class="src">Los Angeles County Assessor, 2026 Assessment Roll announcement<br><a href="https://assessor.lacounty.gov/news-information/assessmentroll" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Assessor: &amp;#x27;Although the housing market showed signs of moderation during the year, property values remained strong.&amp;#x27;</td></tr><tr><td class="id">I-20</td><td class="metric">City of Los Angeles — minimum wage (all employers)</td><td class='val'>$18.42 per hour</td><td><span class="pill p-ok">Verified</span></td><td class="per">Effective July 1, 2026</td><td class="src">City of Los Angeles Office of Wage Standards — official Minimum Wage Ordinance notice<br><a href="https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Los Angeles Minimum Wage Ordinance, LAMC sections 187 and 188. Rate adjusts annually to CPI-W for the Los Angeles metropolitan area.</td></tr><tr><td class="id">I-21</td><td class="metric">City of Los Angeles — minimum wage (all employers)</td><td class='val'>$17.87 per hour</td><td><span class="pill p-ok">Verified</span></td><td class="per">January 1 to June 30, 2026</td><td class="src">City of Los Angeles Office of Wage Standards<br><a href="https://wagesla.lacity.gov/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">+3.08% step to $18.42 on July 1, 2026. Directly raises the tenant&amp;#x27;s labour cost line at the subject restaurant.</td></tr><tr><td class="id">I-22</td><td class="metric">City of Los Angeles — mean travel time to work</td><td class='val'>30.7 minutes</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year, workers age 16+</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">Long commutes support both a.m. and p.m. drive-thru dayparts.</td></tr><tr><td class="id">I-23</td><td class="metric">Los Angeles County — mean travel time to work</td><td class='val'>30.4 minutes</td><td><span class="pill p-ok">Verified</span></td><td class="per">2020-2024 ACS 5-year</td><td class="src">U.S. Census Bureau, QuickFacts<br><a href="https://www.census.gov/quickfacts/losangelescountycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&mdash;</td></tr><tr><td class="id">I-24</td><td class="metric">California statewide minimum wage</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">2026</td><td class="src">California Department of Industrial Relations<br><a href="https://www.dir.ca.gov/dlse/faq_minimumwage.htm" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&lt;span class=&quot;pill p-info&quot;&gt;Reported by a non-official source &amp;mdash; NOT used&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;small&quot;&gt;$16.90 per hour (2026)&lt;/span&gt;&lt;br&gt;LEFT BLANK. The value was NOT read directly from dir.ca.gov during this session, only from secondary summaries, so it is recorded as &amp;#x27;reported&amp;#x27; only and flagged. The City of Los Angeles rate at I-20 IS official and is the binding rate inside city limits. FLAG F-09.</td></tr><tr><td class="id">I-25</td><td class="metric">Los Angeles County (unincorporated areas) minimum wage</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">Effective July 1, 2026</td><td class="src">Los Angeles County<br><a href="https://www.lacounty.gov/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">&lt;span class=&quot;pill p-info&quot;&gt;Reported by a non-official source &amp;mdash; NOT used&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;small&quot;&gt;$18.47 per hour&lt;/span&gt;&lt;br&gt;LEFT BLANK — not read directly from an official County page in this session. Only relevant if the parcel lies in unincorporated territory. FLAG F-09.</td></tr><tr><td class="id">I-26</td><td class="metric">City of Los Angeles — median gross rent</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">2020-2024 ACS 5-year</td><td class="src">U.S. Census Bureau, QuickFacts / data.census.gov<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — the housing block of QuickFacts was not captured line-by-line in this session and the value will not be transcribed from memory. Re-verify at the linked official page. FLAG F-10.</td></tr><tr><td class="id">I-27</td><td class="metric">City of Los Angeles — median value of owner-occupied housing units</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">2020-2024 ACS 5-year</td><td class="src">U.S. Census Bureau, QuickFacts / data.census.gov<br><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — not captured; will not be inferred. FLAG F-10.</td></tr><tr><td class="id">I-28</td><td class="metric">Trade-area household income distribution (quintiles) around the parcel</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">U.S. Census Bureau — data.census.gov<br><a href="https://data.census.gov/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — parcel-specific. FLAG F-08.</td></tr></tbody></table></div>
+<div class="pager"><a href="demographics.html">&larr; Population &amp; Demographics</a><a href="employment.html">Employment &amp; Job Growth &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>

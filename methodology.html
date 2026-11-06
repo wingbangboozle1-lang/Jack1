@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology, Verification Standard &amp; Privacy Protocol &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="How every row was sourced, what was declined, what was left blank, and why the subject property is anonymised.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html">Executive Summary</a><a href="methodology.html" class="on">Methodology &amp; Privacy</a><a href="repo-audit.html">Repo Audit &amp; Irregularities</a><a href="asset.html">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">Methodology, Verification Standard & Privacy Protocol</h2>
+<p class="lede">How every row was sourced, what was declined, what was left blank, and why the subject property is anonymised.</p>
+<h3>What this file is</h3>
+<p>A decision file for one commercial property: a single-tenant Jack in the Box freehold, ground and building, in the central Los Angeles trade area, leased triple-net, with the lease expiring somewhere between 2030 and 2035. The decision is binary in form — sell before expiry, or renew and hold — and is complicated by the fact that almost every property-specific input is unknown.</p>
+<p>The file is organised so that a reader can check any single number against its official publisher without reading anything else. Every row is self-contained: metric, geography, value, period, publisher, URL, verification status, and a note.</p>
+<h3>The verification standard</h3>
+<p><strong>Every table row carries a source link to an official publisher.</strong> Official means one of:</p>
+<ul class="clean"><li>a United States federal statistical or regulatory agency (Census, BLS, BEA, FHFA, FEMA, USGS, NCES, NOAA, Treasury, SEC, IRS);</li><li>a Federal Reserve Bank republishing an official federal series with the originating agency named on the series page;</li><li>a State of California agency (Department of Finance, Department of Insurance, Department of Education, Department of Industrial Relations, Employment Development Department, Department of Forestry and Fire Protection, Geological Survey, State Board of Equalization);</li><li>a California regional planning agency acting under federal designation (Southern California Association of Governments);</li><li>Los Angeles County (Assessor, Auditor-Controller, Treasurer and Tax Collector, Registrar-Recorder, Fire Department, open-data portal);</li><li>the City of Los Angeles (Department of City Planning, Office of Finance, Office of Wage Standards, Housing Department, Fire Department, Police Department, Department of Transportation, Department of Building and Safety, open-data portal);</li><li>a document filed with the U.S. Securities and Exchange Commission by the tenant&#x27;s parent, Jack in the Box Inc.</li></ul>
+<p><strong>If a value could not be confirmed from an official source, the value cell is left blank.</strong> It is never filled from memory, never filled by inference from a neighbouring geography, never filled from a news article, and never filled from a data aggregator. The row is marked unverified and registered on the Flagged for Review page with the official link needed to close it.</p>
+<p><strong>A distinction is drawn between blank and withheld.</strong> Some cells are blank because the information is parcel-specific and no official source can supply it without a location, which is withheld. Some are blank because the official publisher does not release the series at that geography at all — Census QuickFacts publishes no business or employment fields for the City of Los Angeles, for example. Some are blank because the value exists only in private market data that no government agency publishes, such as capitalisation rates. Each row states which case applies.</p>
+<p><strong>Values seen only in non-official sources are recorded separately and never used.</strong> Where a figure was encountered in a secondary source and could not be confirmed officially, it is stored in a distinct <code>r</code> field, rendered under a <em>Reported by a non-official source — NOT used</em> marker, and excluded from every model input and from the recommendation. It is published only so a reader can see precisely what was declined, and can go and confirm or refute it. That is more useful than silence.</p>
+<h3>Sources deliberately excluded</h3>
+<p>The following classes of source were encountered during research and were excluded from the verified dataset in every case:</p>
+<ul class="clean"><li>commercial hazard and risk aggregators that republish FEMA National Risk Index data;</li><li>real-estate brokerages, investment platforms and capitalisation-rate research providers;</li><li>credit-rating agencies;</li><li>local and national news outlets, including television stations and newspapers;</li><li>encyclopedias and wikis;</li><li>earnings calendars, stock-screeners and financial data aggregators;</li><li>legal-information and tax-calculator websites;</li><li>insurance comparison and lead-generation websites;</li><li>real-estate listing portals and neighbourhood-score providers.</li></ul>
+<p>Two exclusions deserve specific mention because they were tempting. <strong>Capitalisation rates</strong> are published only by private brokerages and research firms; no government agency produces them, so none is stated as fact anywhere on this site. <strong>Credit ratings</strong> are issued by private Nationally Recognized Statistical Rating Organizations; none is quoted. Tenant credit is instead assessed entirely from the company&#x27;s own SEC-filed disclosures — restaurant count trajectory, same-store sales, franchise-level margin, franchisee bad-debt expense, average unit volume, and leadership status.</p>
+<h3>The privacy protocol</h3>
+<p>Privacy was treated as the highest-priority constraint. The subject property is anonymised throughout.</p>
+<p><strong>Not published anywhere on this site, and not stored in the underlying data files either:</strong> the property&#x27;s street address, cross streets or parcel number; the owner&#x27;s name, entity structure or contact details; the purchase price, basis or holding period; the contract rent, net operating income or market value; the tenant&#x27;s or franchisee&#x27;s identity at site level; and the insurance carrier, limits or premium.</p>
+<p><strong>Consequence, stated plainly:</strong> every parcel-specific and owner-specific analysis is impossible, and this file says so rather than working around it. Traffic counts, assigned schools, zoning, flood zone, fire hazard severity zone, earthquake fault zone, Tax Rate Area, assessed value and competing-site density all require a location. They are left blank, flagged, and paired with the official lookup tool a reader would use to obtain them. The recommendation is therefore structured as a decision tree whose branches are resolved by facts the owner can obtain, rather than as a single instruction that pretends those facts are known.</p>
+<h3>Geography discipline</h3>
+<p>Los Angeles has four official geographies that are routinely confused, and confusing them produces wrong numbers. Every row on this site states which one it uses:</p>
+<ul class="clean"><li><strong>City of Los Angeles</strong> — Census QuickFacts, City Planning community plan areas, the Office of Wage Standards minimum wage, Measure ULA.</li><li><strong>Los Angeles County</strong> — Census QuickFacts, the County Assessor&#x27;s roll, Department of Finance population estimates, BEA county GDP, County Fire Department hazard zones.</li><li><strong>Los Angeles–Long Beach–Anaheim metropolitan statistical area</strong> — BLS local area unemployment statistics and current employment statistics.</li><li><strong>Los Angeles–Long Beach–Glendale metropolitan division</strong> — BLS metropolitan area employment and unemployment releases; FHFA house price index. This division is coterminous with Los Angeles County and is the closest official geography to &quot;central Los Angeles&quot; for price series.</li></ul>
+<p>County values are never substituted for city values, and metropolitan-area values are never presented as county values. Where a series simply does not exist at the needed geography, the row is blank and the reason is stated.</p>
+<h3>Vintage discipline</h3>
+<p>No number is published without a period. Several are explicitly preliminary — BLS marks September 2026 metropolitan figures <code>(p)</code> — and that marking is carried through to the rendered table rather than dropped. Where two official sources disagree about the same quantity, both are published with their vintages and the disagreement is logged as an irregularity; the analysis does not silently choose one.</p>
+<p>Two structural vintage problems were encountered and are disclosed rather than smoothed over. The State of California&#x27;s official occupational projection window runs 2022 to 2032, which <strong>ends before the lease expiry window</strong>, so no official employment projection covers the final years of the decision. And the Bureau of Economic Analysis has <strong>discontinued</strong> metropolitan-area GDP and personal income statistics, so metropolitan-level income projections can no longer be sourced at all; the analysis was rebuilt on county GDP.</p>
+<h3>The projection system</h3>
+<p>The model is specified entirely in <code>data/projection.json</code> and computed at build time by <code>tools/model.py</code>, which writes <code>data/projection_output.json</code>. <code>tools/build_site.py</code> renders those outputs. No number in a rendered table is hand-entered, so published figures cannot drift from the specification.</p>
+<p>Four design choices matter:</p>
+<p><strong>Normalisation.</strong> The property&#x27;s value, rent and net operating income were never supplied. The model therefore runs on an index in which the asset&#x27;s value on the retrieval date equals 100.0. Outputs are index points and must be read as relative comparisons between decision paths, never as valuations.</p>
+<p><strong>Only official inputs drive it.</strong> The risk-free anchor is the U.S. Treasury par yield, read directly from the Treasury table. Rent-escalation scenarios are the low, median and high of the five official BLS Los Angeles CPI-U twelve-month readings published in 2026. Land-value growth is the official FHFA index. Tenant non-renewal probability compounds at the company-disclosed 1% ongoing annual closure rate. Catastrophe severity is the County&#x27;s own official January 2025 fire loss statistics divided by official BEA county GDP.</p>
+<p><strong>Unverifiable inputs are gridded, not chosen.</strong> The capitalisation spread, the dark-box land residual, the years to expiry and the post-expiry downtime have no official publisher. Each is declared as an unverified input, varied across a grid, and every dependent output is labelled. The conclusion is drawn from the <strong>ranking</strong> of paths and from whether that ranking is <strong>stable across the whole grid</strong> — not from any single unverified number.</p>
+<p><strong>Both sides of the comparison are charged the same frictions.</strong> The sell path bears Measure ULA up front. The hold path bears the same statutory transaction cost on its terminal sale, plus a post-expiry vacancy scenario. Without that symmetry, holding would win by construction and the comparison would be meaningless. The model also runs a <strong>stress case</strong> built only from already-declared worst inputs, which identifies the conditions under which the recommendation is wrong. Those conditions are published on the Projection page rather than buried.</p>
+<p>A model integrity check is rendered on the page: a flat, never-ending, never-dark tenancy must return exactly 100.00 index points at every point of the spread grid. If it does not, the build is wrong.</p>
+<h3>The risk register</h3>
+<p>Twenty-eight risks are scored across six decision paths, each on likelihood and impact from 1 to 5, giving a score from 1 to 25. Where a likelihood is anchored in an official published statistic, the anchor is named and the row is marked <strong>Official</strong>. Where no official statistic exists, the row is marked <strong>Judgement</strong> and is also listed on the Flagged for Review page. No judgement-based likelihood is presented anywhere on this site as a verified number.</p>
+<p>Five rows are marked as black swans, using a definition stated up front: a low-probability event producing damage disproportionate to the asset&#x27;s income, where the loss is not diversifiable inside a single-asset, single-tenant position.</p>
+<h3>The coordination protocol</h3>
+<p>Work was coordinated through <code>COORDINATION.md</code> in the repository root: a task board with status and owning session, a session registry, a change-request log, a conflict log, and the privacy rules. Claims were written and pushed before work began. Commits were small and frequent, with <code>git pull --rebase</code> before every push. Nine other <code>arena/*</code> branches were found to have written competing whole-repository claims; none contained any deliverable, so the conflict was logged and resolved rather than honoured, and no work was duplicated or discarded. The full inventory and the resolution are on the Repo Audit page.</p>
+<h3>Reproducing this site</h3>
+<pre>python3 tools/model.py            # data/projection.json -&gt; data/projection_output.json
+python3 tools/collect_sources.py  # every data/*.json row -&gt; data/sources.json
+python3 tools/audit_repo.py       # repository state -&gt; docs/repo-audit.md
+python3 tools/build_site.py       # data/*.json -&gt; all 19 HTML pages
+python3 tools/check_links.py      # fails on a missing internal link, an unsourced
+                                  # verified row, a non-official host in a verified
+                                  # row, or a privacy-pattern leak</pre>
+<p><code>check_links.py</code> is a gate, not a report. It exits non-zero if any verified row lacks a URL, if any internal link is broken, if any verified row cites a host outside the official allowlist, or if any rendered page matches a privacy pattern such as a street address or a parcel-number format. The site is not published while it fails.</p>
+<h3>Row schema used in every data file</h3>
+<div class="scroll"><table><thead><tr><th>Key</th><th>Meaning</th><th>Rule</th></tr></thead><tbody>
+<tr><td class='id'>id</td><td>Row identifier, prefixed by category (A-, D-, I-, E-, S-, G-, V-, H-, R-, T-, RK-, IN-, UX-, F-, IR-)</td><td class='note'>Stable. Referenced from other pages.</td></tr>
+<tr><td class='id'>m</td><td>Metric name, with its geography stated explicitly</td><td class='note'>Geography is never implied. City, county, metropolitan area and metropolitan division are distinct and are labelled as such.</td></tr>
+<tr><td class='id'>v</td><td>Verified value</td><td class='note'>Empty string means the value is left blank. A blank is never filled by inference.</td></tr>
+<tr><td class='id'>p</td><td>Period or vintage of the value</td><td class='note'>Mandatory. A number without a vintage is not published.</td></tr>
+<tr><td class='id'>s</td><td>Official publisher, named in full</td><td class='note'>Must be a government agency, regulator, central bank, regional planning agency, or an SEC filing.</td></tr>
+<tr><td class='id'>u</td><td>Official URL for manual review</td><td class='note'>Mandatory for every verified row. The build fails if a verified row has no URL.</td></tr>
+<tr><td class='id'>k</td><td>Verified true / false</td><td class='note'>true only if the value was read from the official publisher during this session.</td></tr>
+<tr><td class='id'>n</td><td>Note, derivation, or the reason for the gap</td><td class='note'>Also carries the flag identifier where one applies.</td></tr>
+<tr><td class='id'>r</td><td>Value reported by a NON-official source</td><td class='note'>Never used as a verified value and never used as a model input. Shown only so a reader can see what was declined and why.</td></tr>
+</tbody></table></div>
+<h3>How the projection system stays reproducible</h3>
+<pre>python3 tools/model.py            # reads data/projection.json, writes data/projection_output.json
+python3 tools/collect_sources.py  # scans every row, writes data/sources.json
+python3 tools/build_site.py       # renders all 19 pages from data/*.json
+python3 tools/check_links.py      # fails the build on a missing link, an
+                                  # unsourced verified row, or a privacy leak</pre>
+<p class='small'>Every number on the Projection page is computed at build time from the declared inputs. Nothing is hand-entered into a rendered table, so the published figures cannot drift from the specification.</p>
+<h3>Classes of source deliberately excluded</h3><ul class='clean'>
+<li>Commercial hazard and risk aggregators that republish FEMA National Risk Index data</li>
+<li>Real-estate brokerages, investment platforms and cap-rate research providers</li>
+<li>Credit-rating agencies</li>
+<li>Local and national news outlets, including television stations and newspapers</li>
+<li>Encyclopedias and wikis</li>
+<li>Earnings calendars, stock-screeners and financial data aggregators</li>
+<li>Legal-information and tax-calculator websites</li>
+<li>Insurance comparison and lead-generation websites</li>
+<li>Real-estate listing portals and neighbourhood-score providers</li>
+</ul>
+<p class="small">A complete list of every official publisher used, with the exact URL and what was read from it, is on the Sources &amp; Verification page and in docs/SOURCES.md.</p>
+<div class="pager"><a href="executive-summary.html">&larr; Executive Summary</a><a href="repo-audit.html">Repo Audit &amp; Irregularities &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>

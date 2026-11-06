@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Summary &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="The important details, the decision, and the conditions under which the decision is wrong.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html" class="on">Executive Summary</a><a href="methodology.html">Methodology &amp; Privacy</a><a href="repo-audit.html">Repo Audit &amp; Irregularities</a><a href="asset.html">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">Executive Summary</h2>
+<p class="lede">The important details, the decision, and the conditions under which the decision is wrong.</p>
+<h3>The question</h3>
+<p>A single-tenant Jack in the Box freehold — ground and building — sits in the central Los Angeles trade area. It is leased on a triple-net basis, so the tenant pays the property tax, the insurance and the maintenance. The lease expires somewhere in the window 2030 to 2035; an exact date was never supplied. The owner must decide whether to sell before expiry or to renew and hold, balancing wealth preservation, growth opportunity and manageable risk.</p>
+<p>This file answers that question using only official sources: United States federal statistical agencies, the U.S. Treasury, the Securities and Exchange Commission, California state agencies, Los Angeles County, and the City of Los Angeles. Where the official record could not confirm a value, the value cell was left blank and the gap was flagged. Nothing was inferred.</p>
+<h3>The recommendation</h3>
+<p><strong>Hold and secure the term now, with a hard, pre-committed sell trigger. Do not sell immediately. Do not wait passively for 2030–2035.</strong></p>
+<p>Approach the tenant within the next twelve months and try to convert the ambiguous 2030–2035 window into a signed, longer firm term. If an extension is granted, hold: the income continues, no transaction tax is paid, no Proposition 13 reassessment is triggered, and the eventual exit happens with a longer firm term and therefore a higher price. If the tenant refuses to negotiate, or discloses a franchise agreement expiring at or before the lease expiry, sell immediately — while four to nine years of firm term still remain and the asset is still worth something as an income property rather than as a dark box.</p>
+<p>This is the only path that is dominant under both branches of the one uncertainty that actually decides the outcome. The projection system confirms it arithmetically: in the base regime, holding beats selling at every point of the capitalisation-rate grid and at every transaction-tax case; once a non-renewal signal arrives, selling beats holding at every point of the same grid, by a wide margin. The ranking flips on the tenant signal and on almost nothing else.</p>
+<h3>Why the tenant, not Los Angeles, is the binding risk</h3>
+<p>The most consequential single fact in this file is one the company published itself. On 23 April 2025 Jack in the Box Inc. announced a plan called <em>JACK on Track</em>, projected to close approximately 150 to 200 underperforming restaurants, a majority of which have been in the system for over three decades. The company stated that roughly 80 to 120 would close before the end of 2025 and that <strong>the remaining underperforming locations would close thereafter based on their respective franchise agreement termination dates</strong>.</p>
+<p>A lease expiring between 2030 and 2035 therefore sits inside a scheduled, publicly announced closure window. The expiry is not merely a rent-review date. It is a date on which the tenant has already told the market it will make a keep-or-close decision about underperforming sites.</p>
+<p>The supporting numbers all point the same way:</p>
+<div class="scroll"><table><thead><tr><th>Evidence</th><th>Official figure</th><th>Source</th></tr></thead><tbody><tr><td>System restaurant count</td><td>2,191 at the start of fiscal 2025 → 2,136 at fiscal year-end → 2,115 at 5 July 2026</td><td>SEC Form 10-K and Form 8-K Ex-99.1</td></tr><tr><td>Fiscal 2026 guidance</td><td>2,050–2,100 units, about 20 openings, about 50–100 closures</td><td>SEC Form 8-K Ex-99.1</td></tr><tr><td>System same-store sales</td><td>−1.1% in fiscal 2026 Q3, improved from −7.1% a year earlier</td><td>SEC Form 8-K Ex-99.1</td></tr><tr><td>Cause of the decline</td><td>&quot;a decline in transactions, partially offset by an increase in price&quot;</td><td>SEC Form 8-K Ex-99.1</td></tr><tr><td>Franchise average unit volume</td><td>$1,949k (FY2024) → $1,874k (FY2025), −3.8%</td><td>SEC Form 10-K</td></tr><tr><td>Franchise-level margin</td><td>39.3% → 37.4%, on &quot;lower sales driving lower rent and royalty revenue&quot;</td><td>SEC Form 8-K Ex-99.1</td></tr><tr><td>Franchisee bad debt</td><td>&quot;higher versus the prior year quarter&quot;</td><td>SEC Form 8-K Ex-99.1</td></tr><tr><td>Real estate</td><td>Other operating income of $3.1m driven by &quot;gains on the sale of real estate&quot;</td><td>SEC Form 8-K Ex-99.1</td></tr></tbody></table></div>
+<p>Two of those rows deserve emphasis. <strong>Rent is a named, shrinking revenue line</strong> in the company&#x27;s own margin explanation. And the franchisor is a <strong>net seller of restaurant real estate</strong>, which means it is adding competing supply of the same box type into the same buyer pool a landlord would approach.</p>
+<p>The rate of decline is slowing, which is the honest counterweight: −7.1% became −1.1% in a year, adjusted EBITDA rose from $57.1m to $61.2m, and the Del Taco divestiture completed on 22 December 2025 removed the segment that produced the fiscal 2025 consolidated operating loss. The company is stabilising. It is stabilising at a smaller size, and it is still closing restaurants.</p>
+<h3>What the local economy actually shows</h3>
+<p>The popular narrative about Los Angeles — declining, unaffordable, emptying out — is half right, and the half that is right is not the half that matters for a drive-thru.</p>
+<p><strong>Population is falling.</strong> The City of Los Angeles lost 0.8% of its population between the April 2020 census base and 1 July 2025; Los Angeles County lost 3.2%. The California Department of Finance records a further 0.9% city decline in 2025–26 and a 64,000-person county loss in 2025, which it attributes to &quot;a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations&quot;. Statewide, California lost 54,000 people in 2025 — its first annual loss after three years of gains — because net legal international migration halved from 248,400 to 126,400. The city is 35.7% foreign-born, so migration policy is a structural feature of this trade area, not a cyclical one.</p>
+<p><strong>Households are rising.</strong> The Southern California Association of Governments&#x27; adopted <em>Connect SoCal 2024</em> forecast projects City of Los Angeles households rising from 1,398,600 in 2019 to 1,699,400 by 2035 — up 21.5% — and jobs located in the city rising from 1,954,000 to 2,119,800, up 8.5%. Its 2025 draft cycle projects county population <em>down</em> 5% by 2050 but county households <em>up</em> 6%. Fewer people, more households, smaller households: that is a drive-thru-friendly demand structure, and it is the single strongest local argument for holding.</p>
+<p><strong>Employment is flat, and the mix is shifting.</strong> Total nonfarm payroll employment in the Los Angeles–Long Beach–Anaheim metropolitan statistical area grew 0.5% year over year to September 2026 (preliminary), after running at −0.2% in April and May. The unemployment rate was 4.4% in September 2026, improved from 6.1% in July 2025. The composition matters more than the headline: Education and Health Services +3.8% and Leisure and Hospitality +1.5% — the supersector that contains restaurants — against Information −5.7%, Financial Activities −1.7% and Manufacturing −1.2%. White-collar central-LA office employment is contracting while restaurant-sector employment grows faster than the total.</p>
+<p><strong>Incomes are high by national standards and low relative to the county.</strong> Median household income was $81,939 in the city against $90,112 in the county; per capita income $47,685 against $45,792; poverty 16.5% against 13.3%. Retail sales in 2022 were $81.35 billion in the city, or $21,281 per capita, and $213.93 billion in the county, or $22,010 per capita.</p>
+<p><strong>Cost inflation is running ahead of local revenue growth.</strong> Los Angeles CPI-U rose 3.6% for the twelve months to May 2026, with food +3.5% and energy +18.0%. The City of Los Angeles minimum wage rose 3.08% to $18.42 per hour on 1 July 2026 and is indexed annually. Approximately 84% of the company&#x27;s restaurant employees were part-time at the end of fiscal 2025. The company itself cited California payroll taxes as large enough to move its disclosed restaurant-level margin. That combination — 3.6% consumer inflation, a rising wage floor, and falling average unit volumes — is a margin squeeze on the tenant, and a tenant margin squeeze becomes a landlord problem.</p>
+<p><strong>Asset prices are flat in real terms.</strong> The FHFA All-Transactions House Price Index for the Los Angeles–Long Beach–Glendale Metropolitan Division rose only 1.2% year over year to 2026 Q2, and actually fell from Q1 to Q2. The FHFA purchase-only index for the whole Pacific census division was 0.0% year over year in 2026 Q1 and +0.4% in Q2 — the weakest of the nine divisions, against +2.4% nationally. With local consumer inflation at 3.6%, real asset prices are declining.</p>
+<p><strong>Assessed values are not.</strong> The Los Angeles County 2026 Assessment Roll closed at a record $2.272 trillion, up 4.42% ($96 billion), the sixteenth consecutive year of growth. The City of Los Angeles accounts for $926.1 billion of it — 40.8% of the entire county roll. Property transfers added $49 billion, the Proposition 13 maximum 2% inflation factor added about $43 billion, and new construction added more than $12 billion.</p>
+<p><strong>Access is improving.</strong> Metro&#x27;s D Line Subway Extension Section 1 opened on 8 May 2026 with three new stations along Wilshire Boulevard; Sections 2 and 3 are under construction. The City&#x27;s Downtown Community Plan — consolidating the Central City (about 2,161 acres) and Central City North (about 2,005 acres) plan areas — is intended to guide development through 2040, beyond the lease expiry. Los Angeles County added 11,260 net housing units in 2025, more than any other California county, and the City of Los Angeles added 7,061 multifamily units, 62.7% of its net housing growth.</p>
+<p><strong>Schools are stable and very large.</strong> Los Angeles Unified enrolled 497,105 students on 2025–26 Census Day, the largest district in California and 8.7% of statewide enrolment, with an 86.5% five-year cohort graduation rate. The wide outcome gap is at English Learners, 66.8%.</p>
+<h3>The transaction-cost problem that governs the sell side</h3>
+<p>If the parcel is inside the City of Los Angeles, a sale is expensive in a way that is easy to underestimate.</p>
+<p><strong>Measure ULA</strong> — the United to House Los Angeles ordinance, Los Angeles Municipal Code §21.9.2, effective 1 April 2023 — imposes <strong>4% on transfers above the lower indexed threshold and below the upper threshold, and 5.5% at or above the upper threshold</strong>. Critically, the official City Housing Department FAQ records the tax as 4% <em>of the consideration or value</em> — that is, of the <strong>whole price</strong>, not of the excess above the threshold. It stacks on top of the County and City documentary transfer taxes. It applies <strong>only inside the City of Los Angeles</strong>, so whether the parcel is in the City is a binary, order-of-magnitude question about net proceeds.</p>
+<p>Because the tax is a cliff applied to the entire price, there is a <strong>dead band</strong>: at a 4% rate, any price up to <strong>4.17% above the threshold nets less than a sale at the threshold itself</strong>; at 5.5%, up to <strong>5.82% above</strong>. A higher price can produce lower proceeds. This is arithmetic on the official statutory rates and requires no market assumption at all.</p>
+<p>The current dollar thresholds are indexed annually to the Bureau of Labor Statistics Chained Consumer Price Index and published each year before 1 July by the City Office of Finance. <strong>They could not be read directly from the official City page in this session and are therefore flagged rather than stated.</strong> Verify them in writing before relying on any figure.</p>
+<p><strong>Proposition 13</strong> works against the sell side in a second, quieter way. A change in ownership establishes a new base-year value at full market value, while an unchanged parcel may rise at most 2% a year. The County applied that maximum 2% factor in 2026 because California CPI exceeded the constitutional limit. If the owner has held this asset for many years, its assessed value is likely far below market — which means the buyer inherits a sharply higher tax bill, and under a triple-net lease that higher bill flows straight through to the tenant&#x27;s occupancy cost. A buyer prices that in. It reduces what a buyer will pay, and it is a reason a long-held low-assessed asset should be marketed on the strength of its in-place tax position rather than discovered in negotiation.</p>
+<h3>Catastrophe exposure</h3>
+<p>This is a real risk in this market and it is officially quantified.</p>
+<p><strong>Earthquake.</strong> USGS UCERF3 puts the 30-year probability of a magnitude 6.7 or greater earthquake in the Los Angeles region at <strong>60%</strong> — 46% for M7.0+, 31% for M7.5+. Restated over a five-year decision window that is <strong>10.0% on a simple linear basis or 14.2% on a compound basis</strong>. Both are published because the restatement method changes the answer.</p>
+<p><strong>Wildfire.</strong> The January 2025 Eaton and Palisades fires are the best-calibrated catastrophe this market has produced. In the County&#x27;s own official statistics: Eaton burned 14,021 acres and destroyed 9,414 structures with 19 fatalities; Palisades burned 23,448 acres and destroyed 6,837 structures with 12 fatalities. Together they impacted approximately <strong>6,800 businesses and 47,000 workers</strong>, destroyed <strong>$5.2 to $10.1 billion in economic output</strong>, cost <strong>$2.2 to $4.2 billion in labour income</strong>, and produced <strong>$900 million to $1.6 billion in tax revenue losses</strong>. Against Los Angeles County&#x27;s 2024 GDP of $818.5 billion, that output loss is <strong>0.64% to 1.23% of one year of county economic activity</strong>.</p>
+<p>The City of Los Angeles Very High Fire Hazard Severity Zone, established in 1999 under Municipal Code §57.21.07, covers most of the hilly and mountainous parts of the city and explicitly includes Hollywood, Silver Lake, Echo Park, Los Feliz, Mount Washington, El Sereno, Eagle Rock and Baldwin Hills — all in or adjacent to central Los Angeles. Los Angeles County&#x27;s Local Responsibility Area Fire Hazard Severity Zones were <strong>re-established in 2025</strong>, so a parcel can newly fall inside a designated zone without anything changing on the parcel itself.</p>
+<p><strong>Insurance is stabilising, which helps the hold case.</strong> The California Department of Insurance reported on 1 May 2026 that the FAIR Plan added about 16,000 residential policies in Q1 2026 — roughly 2.4% growth — against 35,000 to 50,000 per quarter from 2024 through September 2025, and that <strong>commercial</strong> policy counts were stable, rising only slightly from 21,200 to 21,464. Nine of the top ten insurers have committed to expanding coverage. Commercial property, which is the relevant class here, never experienced the residential exodus.</p>
+<h3>What is deliberately not known</h3>
+<p>Four facts decide this case and none of them was available. Each is resolvable from public records or from documents the owner already holds.</p>
+<ol class="clean"><li><strong>Who the counterparty is.</strong> The company&#x27;s own Form 10-K properties table shows three structures coexisting: 164 restaurants in company-owned buildings on company-owned land; 1,020 in company-leased buildings on leased land; and 387 in franchise directly-owned or directly-leased buildings. A Form 10-Q confirms that on refranchising, the company retains the head lease, sub-leases to the franchisee, and passes property tax through. If this asset is a corporate head lease, the counterparty is an SEC-reporting company. If it is a direct franchisee lease, the counterparty is a small private operator whose parent is reporting rising bad debt. The credit risk differs by an order of magnitude.</li><li><strong>Whether the parcel is inside the City of Los Angeles.</strong> This alone determines whether Measure ULA applies, and therefore whether the exit costs 0% or 4–5.5% of the whole price.</li><li><strong>The exact expiry date and the full option structure.</strong> 2030 and 2035 are five years apart, which is more than a 100% difference in remaining firm term — and firm term is the dominant driver of net-lease value.</li><li><strong>The franchise agreement expiration date.</strong> Because the company has said closures follow those dates, and that date may not coincide with the lease expiry.</li></ol>
+<p>Also unknown and flagged: the lease escalator, expense stops and covenants; zoning and alternative-use entitlement; the parcel&#x27;s FEMA flood zone, fire hazard severity zone and Alquist-Priolo earthquake fault zone status; the Tax Rate Area and total tax rate; structural system, year built and seismic retrofit status; and every financial particular of the property and its owner, which are withheld under the privacy protocol.</p>
+<h3>What no official source can tell you</h3>
+<p>There is <strong>no official government publisher of single-tenant net-lease capitalisation rates</strong>, of comparable quick-service-restaurant rent per square foot, of credit spreads for net-lease paper, or of credit ratings. All four are private market data. Rather than quote a third-party number as fact, the projection model runs an explicit, labelled capitalisation-spread sensitivity grid over the official U.S. Treasury par yield — 4.84% for the ten-year and 5.25% for the thirty-year on 5 November 2026 — and marks every dependent output as an unverified input.</p>
+<p>That is why the model&#x27;s outputs should be read as a <strong>ranking of decision paths</strong>, not as a valuation. The ranking is stable across the entire grid in both regimes, which is what makes the conclusion robust despite the missing input.</p>
+<h3>The plan</h3>
+<div class="scroll"><table><thead><tr><th>Step</th><th>Window</th><th>Action</th></tr></thead><tbody><tr><td>1</td><td>Months 0–3</td><td>Resolve the four unknowns using only the official lookups linked in this report: counterparty and guaranty; expiry and options; Assessor parcel record, assessed value and Tax Rate Area; FEMA flood zone, LA County fire hazard severity zone, and Alquist-Priolo zone; and whether the parcel is inside the City of Los Angeles.</td></tr><tr><td>2</td><td>Months 3–9</td><td>Obtain a valuation range from a licensed appraiser and a written Measure ULA determination, including the current indexed thresholds verified directly with the City Office of Finance.</td></tr><tr><td>3</td><td>Months 6–18</td><td>Approach the tenant to convert the 2030–2035 window into a signed longer term — a five-to-ten year extension, a written statement of renewal intent, or failing both, confirmation of the franchise agreement expiration date.</td></tr><tr><td>4</td><td>On trigger</td><td>Execute the sell trigger without further deliberation.</td></tr><tr><td>5</td><td>Continuous</td><td>Monitor six official indicators quarterly: BLS metropolitan nonfarm employment and the Leisure and Hospitality series; the company&#x27;s quarterly restaurant count, same-store sales and franchise-level margin commentary on bad debt; FHFA house price index for the Los Angeles–Long Beach–Glendale Metropolitan Division; the U.S. Treasury ten-year par yield; the California Department of Finance E-1 population estimates each May; and California Department of Insurance FAIR Plan commercial policy counts.</td></tr></tbody></table></div>
+<p><strong>The sell trigger.</strong> Sell immediately, without re-opening the analysis, if any of the following occurs: the tenant declines to discuss an extension; the franchise agreement is disclosed to expire before or at the lease expiry; rent is paid late more than twice in any twelve months; the tenant requests a rent reduction or a co-tenancy or termination right; the property is disclosed to be in a Very High Fire Hazard Severity Zone and insurance becomes unavailable or unaffordable; or metropolitan nonfarm employment turns from +0.5% growth to sustained decline.</p>
+<p><strong>Sell now instead of following the plan if</strong> the counterparty is a bare franchisee with no corporate guaranty or letter of credit; the parcel sits outside the City of Los Angeles, so Measure ULA does not apply; the parcel is inside a Very High Fire Hazard Severity Zone or an Alquist-Priolo Earthquake Fault Zone, both of which raise insurance cost and create a statutory disclosure duty on any future sale; the owner&#x27;s own liquidity, concentration or estate circumstances make a single-tenant, single-brand, illiquid position unacceptable; or the next quarterly filing shows the restaurant count falling faster than the disclosed 1% ongoing annual closure rate, or franchisee bad-debt expense rising again.</p>
+<h3>Risk balance</h3>
+<p>The recommended path holds a <strong>manageable</strong> level of risk rather than a minimal one. It retains two exposures deliberately — continued single-tenant concentration, and continued exposure to a Los Angeles catastrophe — because eliminating either today costs 4.5% to 6.1% of price in transaction tax plus a Proposition 13 reassessment discount, and because the local fundamentals do not justify paying that price for an immediate exit: a record assessment roll rising for sixteen consecutive years, growing households, growing leisure-and-hospitality employment, a new subway line, and a stabilising commercial insurance market.</p>
+<p>It eliminates the one exposure the evidence says is genuinely likely to impair value: <strong>discovering the tenant&#x27;s closure decision at the same time as everyone else, in 2030–2035, with no firm term left to sell.</strong></p>
+<p>The projection system&#x27;s stress case states plainly when this recommendation is wrong: a lease with no escalator, a low land residual, zero land-price growth, a long post-expiry vacancy, and a parcel outside the City of Los Angeles where no Measure ULA is payable. Under that combination, selling now wins even with no adverse tenant signal. Those conditions are exactly the ones step 1 of the plan exists to resolve.</p>
+<hr>
+<p><em>This is an analytical research file built from official sources. It is not legal advice, tax advice, an appraisal, or a securities recommendation. No dollar amount relating to the subject property is stated anywhere, because none was supplied and none can be verified from an official source.</em></p>
+<div class="pager"><a href="index.html">&larr; Landing Page</a><a href="methodology.html">Methodology &amp; Privacy &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>

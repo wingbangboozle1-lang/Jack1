@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Property &amp; The Lease &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="Everything that is known, and everything that is deliberately blank, about the subject asset. This page is almost entirely gaps &amp;mdash; and those gaps are the reason the recommendation is a decision tree rather than a single instruction.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html">Executive Summary</a><a href="methodology.html">Methodology &amp; Privacy</a><a href="repo-audit.html">Repo Audit &amp; Irregularities</a><a href="asset.html" class="on">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">The Property & The Lease</h2>
+<p class="lede">Everything that is known, and everything that is deliberately blank, about the subject asset. This page is almost entirely gaps &mdash; and those gaps are the reason the recommendation is a decision tree rather than a single instruction.</p>
+<div class="card tight"><div class="bar"><i style="width:0.00%;background:#12854a"></i><i style="width:5.56%;background:#c98a00"></i><i style="width:94.44%;background:#b42318">94%</i></div><div class="legend"><span><span class="sw" style="background:#12854a"></span>Verified from an official source: 0 of 18 (0.0%)</span><span><span class="sw" style="background:#c98a00"></span>Value seen only in a non-official source, withheld: 1</span><span><span class="sw" style="background:#b42318"></span>Left blank and flagged: 17</span></div></div>
+<div class="callout bad"><strong>Privacy protocol.</strong> The subject property is anonymised. Its address, parcel number, owner identity and all financial particulars are withheld from this site by design and are not stored in the underlying data files either. Rows marked <span class="pill p-blank">Blank</span> below are blank for one of two reasons, and each row says which: either the information is withheld under the privacy protocol, or it is parcel-specific and no official source can supply it without the location.</div><div class="callout warn"><strong>The four premises of this engagement.</strong> Four things were given in the brief and are treated as premises throughout, not as verified facts: the asset is a single-tenant quick-service restaurant freehold comprising ground and building, occupied by a Jack in the Box restaurant; the lease is triple net, so the tenant reimburses property tax, insurance and maintenance; the tenant operates under the Jack in the Box brand; and the lease expires somewhere in the window 2030 to 2035. None of the four is confirmable from an official source without the parcel record and the lease, so all four appear below in the value column as blank with the premise quarantined in a separate field. Everything else on this page is a gap with a named official route to close it.</div>
+<div class="callout"><strong>Schema note.</strong> Row schema, identical to every other data file: id, m (metric), v (value - empty string means left blank/unverified), p (period), s (official source name), u (official URL), k (verified true/false), n (note), optional r (value reported by a non-official source, never used as verified). Placeholder tokens such as [PROPERTY-ID: JIB-CTLA-01] are deliberate anonymisation markers, not values.</div>
+<h3>Every row, with its official source</h3>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Metric</th><th>Value</th><th>Status</th><th>Period / vintage</th><th>Official source &amp; link</th><th>Note, derivation or reason for the gap</th></tr></thead><tbody><tr><td class="id">A-01</td><td class="metric">Property identifier used throughout this file (anonymised)</td><td class='val'>[PROPERTY-ID: JIB-CTLA-01]</td><td><span class="pill p-no">Unverified</span></td><td class="per">Assigned by this engagement</td><td class="src">Not a fact from any source - a placeholder assigned under the privacy protocol<br><span class="pill p-grey">No official publisher</span></td><td class="note">A bracketed placeholder, not a value. It exists so the asset can be referenced consistently across every page without disclosing its identity. The full placeholder scheme is declared in the meta block of this file and in docs/methodology.md.</td></tr><tr><td class="id">A-02</td><td class="metric">Asset type</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">As stated by client brief</td><td class="src">Not confirmable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">&lt;span class=&quot;pill p-info&quot;&gt;Engagement premise &amp;mdash; not an official source, not used as a value&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;small&quot;&gt;Single-tenant quick-service restaurant freehold, ground and building, occupied by a Jack in the Box restaurant&lt;/span&gt;&lt;br&gt;Stated in the engagement brief, which is not an official source. Without the parcel record no official publisher can confirm the asset type, so the value cell is left blank and the premise is quarantined in the reported field. FLAG F-01.</td></tr><tr><td class="id">A-03</td><td class="metric">Lease structure</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">As stated by client brief</td><td class="src">Not confirmable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">&lt;span class=&quot;pill p-info&quot;&gt;Engagement premise &amp;mdash; not an official source, not used as a value&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;small&quot;&gt;Triple net (NNN) - tenant reimburses property taxes, insurance and maintenance&lt;/span&gt;&lt;br&gt;Stated in the engagement brief. No lease was supplied, so the expense structure, expense stops and caps cannot be verified. The consequences of an NNN structure are analysed throughout this file, but the structure itself is a premise rather than a verified fact. FLAG F-02.</td></tr><tr><td class="id">A-04</td><td class="metric">Lease expiry window</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">As stated by client brief</td><td class="src">Not confirmable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">&lt;span class=&quot;pill p-info&quot;&gt;Engagement premise &amp;mdash; not an official source, not used as a value&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;small&quot;&gt;Lease expires somewhere in the window 2030 to 2035&lt;/span&gt;&lt;br&gt;Stated in the engagement brief as a WINDOW, not a date. Five years of uncertainty in expiry is more than a 100% difference in remaining firm term, and firm term is the dominant driver of net-lease value. The projection model therefore runs 4, 6 and 9 years rather than choosing a midpoint. FLAG F-03.</td></tr><tr><td class="id">A-05</td><td class="metric">Remaining firm term from analysis date</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">2026-11-06 to expiry</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — depends on A-04, which is unverified. FLAG F-03.</td></tr><tr><td class="id">A-06</td><td class="metric">Tenant renewal option count / length</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — no lease supplied. Never inferred. FLAG F-02.</td></tr><tr><td class="id">A-07</td><td class="metric">Rent escalator (annual % or CPI-linked)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — no lease supplied. FLAG F-02.</td></tr><tr><td class="id">A-08</td><td class="metric">Current contract base rent</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — personal/financial information withheld under privacy protocol. FLAG F-01.</td></tr><tr><td class="id">A-09</td><td class="metric">Net operating income (NOI)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — no rent roll or operating statement supplied. FLAG F-01.</td></tr><tr><td class="id">A-10</td><td class="metric">Current assessed value (LA County roll)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">FY2026 roll (lien date 2026-01-01)</td><td class="src">Los Angeles County Assessor — Parcel Access / Assessment Roll<br><a href="https://assessor.lacounty.gov/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — parcel-level lookup requires the address or APN, which is withheld under the privacy protocol. The official lookup portal is linked for manual review. FLAG F-01.</td></tr><tr><td class="id">A-11</td><td class="metric">Tax Rate Area (TRA) and total property tax rate for the parcel</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Los Angeles County Auditor-Controller — Tax Rate Area Lookup<br><a href="https://auditor.lacounty.gov/tax-rate-area-lookup/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — TRA is parcel-specific. Official lookup linked for manual review. FLAG F-04.</td></tr><tr><td class="id">A-12</td><td class="metric">Tenant counterparty identity (corporate, franchisee, or franchisee sub-lessee)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK and withheld under the privacy protocol. This is the single most important unknown: Jack in the Box Inc. reports that of 2,136 JIB restaurants at FY2025 year-end only 164 sit in company-owned buildings on company-owned land, while 387 are in franchise directly-owned or directly-leased buildings and 1,020 are in company-leased buildings on leased land. Corporate-level credit support differs sharply across those three structures. FLAG F-05.</td></tr><tr><td class="id">A-13</td><td class="metric">Corporate guaranty / letter of credit in place</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — no lease or guaranty supplied. FLAG F-05.</td></tr><tr><td class="id">A-14</td><td class="metric">Site area / building square footage</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — no survey, plat or title report supplied. FLAG F-01.</td></tr><tr><td class="id">A-15</td><td class="metric">Zoning designation and permitted alternative uses</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">City of Los Angeles Department of City Planning — Zoning / Community Plan lookup<br><a href="https://planning.lacity.gov/" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK — parcel-specific. Official planning portal linked for manual review. FLAG F-06.</td></tr><tr><td class="id">A-16</td><td class="metric">Existing debt / loan balance on the asset</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — personal financial information withheld under the privacy protocol. FLAG F-01.</td></tr><tr><td class="id">A-17</td><td class="metric">Owner cost basis (for capital-gain exposure on a sale)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">Not determinable from an official source<br><span class="pill p-grey">No official publisher</span></td><td class="note">LEFT BLANK — personal financial information withheld under the privacy protocol. FLAG F-01.</td></tr><tr><td class="id">A-18</td><td class="metric">Parcel-level hazard designations (FEMA flood zone, CAL FIRE FHSZ, Alquist-Priolo EFZ)</td><td class="val blank">left blank</td><td><span class="pill p-blank">Blank &middot; unverified</span></td><td class="per">n/a</td><td class="src">FEMA Flood Map Service Center; LA County Fire Department FHSZ layer; California Geological Survey Alquist-Priolo<br><a href="https://msc.fema.gov/portal/home" rel="noopener noreferrer external">Open official source &#8599;</a></td><td class="note">LEFT BLANK. Three separate official determinations are outstanding and each requires the parcel location, which is withheld: FEMA flood zone, CAL FIRE / LA County Fire Department Fire Hazard Severity Zone, and Alquist-Priolo Earthquake Fault Zone. The third also creates a statutory seller disclosure duty under Public Resources Code Section 2621.9, so it affects the sell path directly. All three are itemised on the Hazards page at rows H-36 to H-38. FLAG F-07.</td></tr></tbody></table></div>
+<div class="pager"><a href="repo-audit.html">&larr; Repo Audit &amp; Irregularities</a><a href="tenant.html">Tenant Health (JACK) &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>

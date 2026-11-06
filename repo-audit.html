@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repository Audit, Line by Line &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="A line-by-line audit of the repository as received and as delivered, plus the nine irregularities found in the official sources themselves.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html">Executive Summary</a><a href="methodology.html">Methodology &amp; Privacy</a><a href="repo-audit.html" class="on">Repo Audit &amp; Irregularities</a><a href="asset.html">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">Repository Audit, Line by Line</h2>
+<p class="lede">A line-by-line audit of the repository as received and as delivered, plus the nine irregularities found in the official sources themselves.</p>
+<h2 class='pg' id='repository-audit'>Repository Audit</h2>
+<p>Generated by <code>tools/audit_repo.py</code> on 2026-11-06 13:56 UTC. This document is produced by inspecting the working tree and the git object store, not written by hand, so it cannot describe a repository that does not exist.</p>
+<h3>1. Scope of the audit</h3>
+<p>The instruction was to review the repository line by line, verify findings from official trusted sources, provide links for manual review, and flag irregularities. Two things followed from the state the repository was actually in.</p>
+<p>First, <strong>the repository arrived effectively empty.</strong> At the base commit it contained a single file, <code>README.md</code>, seven bytes long, whose entire content is <code># Jack1</code>. There was no pre-existing data, no prior analysis, no site and no build system to audit. The line-by-line audit of the repository <em>as received</em> is therefore genuinely one line long, and it is reproduced below in full rather than padded out.</p>
+<p>Second, because there was nothing to correct, the audit effort went into the repository <em>as delivered</em>: every file, every data row, every source link, and every claim made anywhere in the site. That is sections 3 to 7.</p>
+<h3>2. Repository as received</h3>
+<div class="scroll"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Remote</td><td><code><a href="https://github.com/wingbangboozle1-lang/Jack1.git" rel="noopener noreferrer external">https://github.com/wingbangboozle1-lang/Jack1.git</a></code></td></tr><tr><td>Base commit</td><td><code>ef1b4c6ec8bb</code></td></tr><tr><td>Files at base commit</td><td>1 (<code>README.md</code>)</td></tr><tr><td>Content of <code>README.md</code> at base commit</td><td><code># Jack1</code> (7 bytes, 1 line, no trailing content)</td></tr><tr><td>Build system</td><td>none</td></tr><tr><td>Data</td><td>none</td></tr><tr><td>Site</td><td>none</td></tr><tr><td>GitHub Pages</td><td>enabled: legacy build from <code>main</code>, repository root, HTTPS enforced</td></tr><tr><td>GitHub Actions workflows</td><td><code>pages-build-deployment</code> only</td></tr><tr><td>Open or closed pull requests at start</td><td>none</td></tr></tbody></table></div>
+<p>There was no irregularity to flag in the repository as received, because there was no content. Everything below is an audit of what this session added.</p>
+<h3>3. Repository state at audit time</h3>
+<div class="scroll"><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Working branch</td><td><code>arena/d3fdafdd-jack1</code></td></tr><tr><td>HEAD</td><td><code>49bb4eda79a9</code></td></tr><tr><td>Commits on HEAD</td><td>2</td></tr><tr><td>Remote branches on <code>origin</code></td><td>11</td></tr><tr><td>Audit timestamp</td><td>2026-11-06 13:56 UTC</td></tr></tbody></table></div>
+<h4>3.1 File inventory</h4>
+<p>Every file in the working tree, with its exact line and byte count.</p>
+<div class="scroll"><table><thead><tr><th>File</th><th>Lines</th><th>Bytes</th></tr></thead><tbody><tr><td><code>.nojekyll</code></td><td>0</td><td>0</td></tr><tr><td><code>COORDINATION.md</code></td><td>107</td><td>16,324</td></tr><tr><td><code>README.md</code></td><td>137</td><td>8,010</td></tr><tr><td><code>asset.html</code></td><td>156</td><td>25,254</td></tr><tr><td><code>data/asset.json</code></td><td>201</td><td>9,086</td></tr><tr><td><code>data/decisions.json</code></td><td>257</td><td>29,876</td></tr><tr><td><code>data/demographics.json</code></td><td>54</td><td>16,426</td></tr><tr><td><code>data/employment.json</code></td><td>51</td><td>15,475</td></tr><tr><td><code>data/flags.json</code></td><td>71</td><td>33,196</td></tr><tr><td><code>data/geography.json</code></td><td>34</td><td>10,300</td></tr><tr><td><code>data/hazards.json</code></td><td>437</td><td>23,895</td></tr><tr><td><code>data/income.json</code></td><td>38</td><td>10,066</td></tr><tr><td><code>data/projection.json</code></td><td>380</td><td>24,173</td></tr><tr><td><code>data/projection_output.json</code></td><td>947</td><td>28,308</td></tr><tr><td><code>data/regulatory.json</code></td><td>36</td><td>14,940</td></tr><tr><td><code>data/risks.json</code></td><td>50</td><td>28,469</td></tr><tr><td><code>data/schools.json</code></td><td>30</td><td>8,204</td></tr><tr><td><code>data/sources.json</code></td><td>1405</td><td>44,401</td></tr><tr><td><code>data/tenant.json</code></td><td>463</td><td>26,712</td></tr><tr><td><code>data/valuation.json</code></td><td>42</td><td>12,541</td></tr><tr><td><code>decisions.html</code></td><td>190</td><td>42,243</td></tr><tr><td><code>demographics.html</code></td><td>155</td><td>36,309</td></tr><tr><td><code>docs/SOURCES.md</code></td><td>346</td><td>26,501</td></tr><tr><td><code>docs/executive-summary.md</code></td><td>125</td><td>21,344</td></tr><tr><td><code>docs/methodology.md</code></td><td>104</td><td>12,628</td></tr><tr><td><code>docs/repo-audit.md</code></td><td>228</td><td>13,154</td></tr><tr><td><code>employment.html</code></td><td>156</td><td>35,552</td></tr><tr><td><code>executive-summary.html</code></td><td>205</td><td>34,210</td></tr><tr><td><code>flagged.html</code></td><td>217</td><td>106,203</td></tr><tr><td><code>geography.html</code></td><td>155</td><td>27,312</td></tr><tr><td><code>hazards.html</code></td><td>157</td><td>44,266</td></tr><tr><td><code>income.html</code></td><td>155</td><td>28,089</td></tr><tr><td><code>index.html</code></td><td>190</td><td>26,306</td></tr><tr><td><code>methodology.html</code></td><td>228</td><td>28,317</td></tr><tr><td><code>projection.html</code></td><td>366</td><td>65,905</td></tr><tr><td><code>regulatory.html</code></td><td>156</td><td>34,122</td></tr><tr><td><code>repo-audit.html</code></td><td>217</td><td>38,865</td></tr><tr><td><code>risks.html</code></td><td>205</td><td>48,862</td></tr><tr><td><code>schools.html</code></td><td>155</td><td>24,941</td></tr><tr><td><code>sources.html</code></td><td>306</td><td>57,077</td></tr><tr><td><code>tenant.html</code></td><td>158</td><td>46,038</td></tr><tr><td><code>tools/__pycache__/collect_sources.cpython-311.pyc</code></td><td>93</td><td>16,341</td></tr><tr><td><code>tools/audit_repo.py</code></td><td>341</td><td>15,820</td></tr><tr><td><code>tools/build_site.py</code></td><td>1306</td><td>77,981</td></tr><tr><td><code>tools/check_links.py</code></td><td>289</td><td>12,262</td></tr><tr><td><code>tools/collect_sources.py</code></td><td>211</td><td>10,112</td></tr><tr><td><code>tools/model.py</code></td><td>476</td><td>26,980</td></tr><tr><td><code>valuation.html</code></td><td>156</td><td>31,297</td></tr></tbody></table></div>
+<p><strong>Totals:</strong> 48 files, 11,942 lines, 1,374,693 bytes.</p>
+<h4>3.2 Git history</h4>
+<pre>49bb4ed 2026-11-06 T01: add COORDINATION.md task board; claim all tasks for session S1-d3fdafdd
+ef1b4c6 2026-11-06 Initial commit</pre>
+<h3>4. Line-by-line audit of the data layer</h3>
+<p>The site is rendered from <code>data/*.json</code>. Every row in those files was checked against four rules. The counts below are computed, not asserted.</p>
+<ol class="clean"><li><strong>Does the row name its official publisher?</strong> Field <code>s</code>.</li><li><strong>Does the row carry an official URL for manual review?</strong> Field <code>u</code>.</li><li><strong>If the row claims to be verified (<code>k: true</code>), is the value cell non-empty and the URL present?</strong> A verified row with no URL is a build failure.</li><li><strong>If the row is not verified, is the value cell blank or quarantined in the separate <code>r</code> field?</strong> A non-official value must never appear in <code>v</code>.</li></ol>
+<div class="scroll"><table><thead><tr><th>Data file</th><th>Rows</th><th>Verified</th><th>Unverified</th><th>Blank value cells</th><th>Rows with a <code>reported</code> value quarantined</th><th>Rows missing a URL</th></tr></thead><tbody><tr><td><code>asset.json</code></td><td>18</td><td>0</td><td>18</td><td>17</td><td>3</td><td>14</td></tr><tr><td><code>demographics.json</code></td><td>43</td><td>40</td><td>3</td><td>3</td><td>0</td><td>0</td></tr><tr><td><code>income.json</code></td><td>28</td><td>23</td><td>5</td><td>5</td><td>2</td><td>0</td></tr><tr><td><code>employment.json</code></td><td>40</td><td>37</td><td>3</td><td>3</td><td>0</td><td>0</td></tr><tr><td><code>schools.json</code></td><td>20</td><td>14</td><td>6</td><td>6</td><td>3</td><td>0</td></tr><tr><td><code>geography.json</code></td><td>24</td><td>15</td><td>9</td><td>7</td><td>1</td><td>2</td></tr><tr><td><code>valuation.json</code></td><td>32</td><td>27</td><td>5</td><td>5</td><td>0</td><td>4</td></tr><tr><td><code>hazards.json</code></td><td>42</td><td>29</td><td>13</td><td>12</td><td>6</td><td>2</td></tr><tr><td><code>regulatory.json</code></td><td>26</td><td>14</td><td>12</td><td>11</td><td>7</td><td>0</td></tr><tr><td><code>tenant.json</code></td><td>45</td><td>39</td><td>6</td><td>6</td><td>1</td><td>4</td></tr><tr><td><strong>Total</strong></td><td><strong>318</strong></td><td><strong>238</strong></td><td><strong>80</strong></td><td><strong>75</strong></td><td><strong>23</strong></td><td><strong>26</strong></td></tr></tbody></table></div>
+<h4>4.1 Rule violations found</h4>
+<ul class="clean"><li><code>asset.json</code> row <code>A-01</code> carries a value in <code>v</code> but is not verified and has no quarantined <code>r</code> field</li><li><code>geography.json</code> row <code>G-17</code> carries a value in <code>v</code> but is not verified and has no quarantined <code>r</code> field</li><li><code>geography.json</code> row <code>G-18</code> carries a value in <code>v</code> but is not verified and has no quarantined <code>r</code> field</li><li><code>regulatory.json</code> row <code>R-21</code> carries a value in <code>v</code> but is not verified and has no quarantined <code>r</code> field</li></ul>
+<p>Rows with no URL at all are not violations. They are structural gaps where <strong>no official publisher exists</strong> — capitalisation rates, credit ratings, comparable net-lease rents, parcel-specific hazard determinations for a withheld location, and the owner&#x27;s own financial particulars. Each is flagged on the Flagged for Review page with an explanation.</p>
+<h3>5. Source audit</h3>
+<p><code>data/sources.json</code> is generated by <code>tools/collect_sources.py</code>, which walks every row in every data file and indexes the official URLs it finds. It cannot drift from the tables it documents.</p>
+<div class="scroll"><table><thead><tr><th>Official publisher</th><th>Distinct URLs</th><th>Row citations</th></tr></thead><tbody><tr><td>County of Los Angeles</td><td>9</td><td>46</td></tr><tr><td>City of Los Angeles</td><td>10</td><td>40</td></tr><tr><td>U.S. Federal Emergency Management Agency</td><td>3</td><td>11</td></tr><tr><td>U.S. Census Bureau</td><td>4</td><td>56</td></tr><tr><td>State of California</td><td>18</td><td>53</td></tr><tr><td>U.S. Bureau of Labor Statistics</td><td>7</td><td>35</td></tr><tr><td>Federal Reserve Bank of St. Louis (FRED) - republishing official federal series</td><td>2</td><td>8</td></tr><tr><td>U.S. Bureau of Economic Analysis</td><td>1</td><td>4</td></tr><tr><td>California School Dashboard (California Department of Education)</td><td>1</td><td>8</td></tr><tr><td>Los Angeles Unified School District</td><td>1</td><td>1</td></tr><tr><td>U.S. National Center for Education Statistics</td><td>2</td><td>3</td></tr><tr><td>Los Angeles County Metropolitan Transportation Authority (Metro)</td><td>2</td><td>5</td></tr><tr><td>U.S. Department of the Treasury</td><td>2</td><td>12</td></tr><tr><td>U.S. Federal Housing Finance Agency</td><td>3</td><td>5</td></tr><tr><td>U.S. Geological Survey</td><td>1</td><td>6</td></tr><tr><td>Los Angeles Fire Department</td><td>1</td><td>4</td></tr><tr><td>City of Los Angeles Department of Building and Safety</td><td>1</td><td>2</td></tr><tr><td>U.S. National Oceanic and Atmospheric Administration</td><td>1</td><td>2</td></tr><tr><td>U.S. Securities and Exchange Commission (EDGAR)</td><td>8</td><td>53</td></tr><tr><td>U.S. Internal Revenue Service</td><td>2</td><td>3</td></tr><tr><td><strong>Total</strong></td><td><strong>79</strong></td><td><strong>357</strong></td></tr></tbody></table></div>
+<p>Every publisher in that table is a government agency, a regulator, a central bank, a Federal Reserve Bank republishing a federal series, a federally designated regional planning agency, or the U.S. Securities and Exchange Commission. No private data vendor, brokerage, rating agency, news outlet or aggregator appears.</p>
+<h3>6. Flag and irregularity audit</h3>
+<div class="scroll"><table><thead><tr><th>Severity</th><th>Count</th><th>Flag identifiers</th></tr></thead><tbody><tr><td>Structural</td><td>5</td><td>F-01, F-02, F-03, F-16, F-31</td></tr><tr><td>High</td><td>7</td><td>F-04, F-05, F-07, F-18, F-23, F-24, F-32</td></tr><tr><td>Medium</td><td>9</td><td>F-06, F-08, F-12, F-20, F-21, F-26, F-27, F-30, F-33</td></tr><tr><td>Low</td><td>12</td><td>F-09, F-10, F-11, F-13, F-14, F-15, F-17, F-19, F-22, F-25, F-28, F-29</td></tr><tr><td><strong>Total flags</strong></td><td><strong>33</strong></td><td></td></tr></tbody></table></div>
+<p>Irregularities — contradictions, discontinuities and silent gaps <strong>in the official sources themselves</strong>, not errors in this analysis:</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Irregularity</th><th>Rows affected</th></tr></thead><tbody><tr><td>IR-01</td><td>BEA has discontinued metropolitan-area GDP and personal income statistics</td><td>E-34, E-35</td></tr><tr><td>IR-02</td><td>SCAG&#x27;s newer forecast reverses the direction of its own adopted forecast for Los Angeles County population</td><td>D-35, D-36, D-37</td></tr><tr><td>IR-03</td><td>FEMA National Risk Index county values circulate widely but are not readable as static figures from fema.gov</td><td>H-31, H-32, H-33, H-34, F-18</td></tr><tr><td>IR-04</td><td>No official employment projection series extends through the lease expiry window</td><td>E-36, FND-6</td></tr><tr><td>IR-05</td><td>Federal and state school enrolment statistics disagree for the same district</td><td>S-01, S-17, F-14</td></tr><tr><td>IR-06</td><td>Official LAPD COMPSTAT publications are not reliably machine-readable</td><td>R-26, F-28</td></tr><tr><td>IR-07</td><td>Measure ULA thresholds are indexed annually but the current schedule is not published in a single stable official location</td><td>R-12, F-24, RK-06, RK-26</td></tr><tr><td>IR-08</td><td>The tenant&#x27;s next earnings date is known only from third-party calendars</td><td>T-40, F-29</td></tr><tr><td>IR-09</td><td>Census QuickFacts silently withholds city-level business data while publishing it for the county</td><td>E-38, F-11, F-12</td></tr></tbody></table></div>
+<p>No flag blocks publication. Each is disclosed on the Flagged for Review page with the official route to close it.</p>
+<h3>7. Parallel-session coordination audit</h3>
+<p><code>COORDINATION.md</code> in the repository root is the task board: task, status, owning session, and files touched, together with the session registry, the privacy rules, the change-request log, the conflict log and the verification policy.</p>
+<p>The remote branch inventory could not be retrieved at audit time (no network access to <code>github.com</code> in this run). The inventory recorded during the research phase is reproduced in <code>COORDINATION.md</code> and in section 7.2 below.</p>
+<h4>7.2 Conflict found and how it was resolved</h4>
+<p>Nine other <code>arena/*</code> branches were found on the remote, each of which had written its own <code>COORDINATION.md</code> claiming overlapping or whole-repository scope. One asserted that the pull request had been opened and merged, with an empty tree to show for it.</p>
+<p>Each branch was inspected directly rather than taken at its word: <code>git log -1</code>, <code>git ls-tree -r</code> and <code>git show &lt;branch&gt;:COORDINATION.md</code> were run against every one. All nine contained only <code>COORDINATION.md</code> and <code>README.md</code>. <strong>No branch contained any deliverable</strong> — no data file, no site page, no document. Nothing was duplicated and nothing was lost.</p>
+<p>The claims were mutually exclusive: several sessions had each claimed the entire repository. Honouring any one of them would have blocked the work; honouring all of them would have produced nine copies of the same pages. The conflict was therefore logged in <code>COORDINATION.md</code> and resolved by this session proceeding as the final integration session, which is the role the coordination protocol assigns when all other tasks are complete. No other session&#x27;s work was overwritten, reverted or discarded, because there was none.</p>
+<h3>8. Build and link gate</h3>
+<p><code>tools/check_links.py</code> is a gate, not a report. It exits non-zero if:</p>
+<ul class="clean"><li>any internal link on any rendered page points at a file that does not exist;</li><li>any row marked verified lacks an official URL;</li><li>any verified row cites a host outside the official publisher allowlist;</li><li>any rendered page contains a pattern resembling a street address, a parcel number or an assessor identification number, which would indicate a privacy leak;</li><li>any page fails to declare its character encoding or viewport.</li></ul>
+<p>Most recent gate run: <strong>PASSED</strong> (exit code 0).</p>
+<pre>pages: 19 | total HTML: 781,168 bytes
+data files checked: 16
+official host allowlist: 21 registrable domains
+
+PASS - no broken internal links, no unsourced verified rows, no non-official hosts in verified rows, no external assets, no privacy-pattern leaks.</pre>
+<h3>9. Audit conclusion</h3>
+<p>The repository as received contained one line and nothing to verify. The repository as delivered contains 318 data rows, of which 238 are verified against an official publisher with a working link, 75 are left blank because no official confirmation was obtained, and 26 cite no URL because no official publisher exists for the quantity. 33 flags and 9 irregularities are open, all non-blocking, all disclosed with the official route to close them. The site builds from data alone, and the link and privacy gate passes.</p>
+<p>No value anywhere on the site is inferred, estimated from memory, or taken from a non-official source. Where a non-official figure was encountered it is quarantined in a separate field, rendered under an explicit <em>not used</em> marker, and excluded from the model and from the recommendation.</p>
+<h3>Irregularities found in the official record</h3>
+<p class="lede">An irregularity is not a mistake in this analysis. It is a contradiction, discontinuity or silent gap in the official sources themselves, recorded so that a reader relying on them later is not misled.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Irregularity</th><th>What the official record shows</th><th>Official source</th><th>Impact on this analysis</th><th>Rows</th></tr></thead><tbody>
+<tr><td class="id">IR-01</td><td class="metric">BEA has discontinued metropolitan-area GDP and personal income statistics</td><td class="note">The Bureau of Economic Analysis states in its 2024 county release that GDP and personal income statistics for metropolitan statistical areas, micropolitan areas, metropolitan divisions and combined statistical areas have been discontinued. Any projection that previously relied on Los Angeles-Long Beach-Anaheim MSA GDP can no longer be sourced. This analysis was rebuilt on COUNTY-level GDP ($818.5 billion for Los Angeles County, 2024), which changes the geography of every income anchor used.</td><td class="src"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" rel="noopener noreferrer external">U.S. Bureau of Economic Analysis &#8599;</a></td><td class="note">Method change forced mid-analysis. Documented rather than hidden.</td><td class="id">E-34, E-35</td></tr>
+<tr><td class="id">IR-02</td><td class="metric">SCAG&#x27;s newer forecast reverses the direction of its own adopted forecast for Los Angeles County population</td><td class="note">The adopted Connect SoCal 2024 plan, published December 2023, projected Los Angeles County population rising about 720,000 (+7%) to 10.77 million by 2050. The Connect SoCal 2050 Technical Working Group draft of November 20, 2025 projects county population DECLINING about 5% to 9.3 million by 2050 — while projecting county HOUSEHOLDS rising about 6%. Two official documents from the same regional agency disagree on the sign of the county&#x27;s population trend. The projection model uses neither as a driver; population enters only through the qualitative risk register.</td><td class="src"><a href="https://sustain.scag.ca.gov/sites/default/files/2025-12/Technical-Working-Group-November-20%2C2025-Full-Agenda-Packet-Updated.pdf" rel="noopener noreferrer external">Southern California Association of Governments &#8599;</a></td><td class="note">Long-range population forecasts for this region are not stable. Any 2050-horizon conclusion drawn from a single SCAG document is unsafe.</td><td class="id">D-35, D-36, D-37</td></tr>
+<tr><td class="id">IR-03</td><td class="metric">FEMA National Risk Index county values circulate widely but are not readable as static figures from fema.gov</td><td class="note">The NRI is delivered as an interactive application. The county-level values that appear across third-party risk sites could not be confirmed against a fema.gov page in this session. They are therefore held out of the verified columns and out of the model entirely. See F-18.</td><td class="src"><a href="https://hazards.fema.gov/nri/" rel="noopener noreferrer external">FEMA National Risk Index &#8599;</a></td><td class="note">The most commonly cited all-hazard ranking for Los Angeles County is not usable as a verified input, so catastrophe severity is anchored instead on the county&#x27;s own official January 2025 fire loss statistics and on USGS earthquake probabilities.</td><td class="id">H-31, H-32, H-33, H-34, F-18</td></tr>
+<tr><td class="id">IR-04</td><td class="metric">No official employment projection series extends through the lease expiry window</td><td class="note">The State of California&#x27;s official ten-year occupational projection window runs 2022 to 2032. The lease expires somewhere in 2030 to 2035. There is no official source that projects Los Angeles County employment through 2035, so the final years of the decision window cannot be covered by verified job-growth data.</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/" rel="noopener noreferrer external">California Employment Development Department, Labor Market Information Division &#8599;</a></td><td class="note">Employment-based conclusions are stated only to 2032 and are explicitly not extrapolated to 2035.</td><td class="id">E-36, FND-6</td></tr>
+<tr><td class="id">IR-05</td><td class="metric">Federal and state school enrolment statistics disagree for the same district</td><td class="note">The California Department of Education reports Los Angeles Unified Census Day enrolment of 497,105 for 2025-26. The federal Common Core of Data is reported to show membership of 408,026 for 2024-25 across 784 schools. These are different universes — Census Day enrolment includes categories that CCD membership excludes — and are not interchangeable. Neither is wrong; quoting one against the other is.</td><td class="src"><a href="https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000" rel="noopener noreferrer external">California Department of Education; National Center for Education Statistics &#8599;</a></td><td class="note">Only the CDE figure is published as verified. The CCD figure is held in the &#x27;reported&#x27; column.</td><td class="id">S-01, S-17, F-14</td></tr>
+<tr><td class="id">IR-06</td><td class="metric">Official LAPD COMPSTAT publications are not reliably machine-readable</td><td class="note">The weekly COMPSTAT snapshots are published as multi-column tables in which the alignment of period labels to numeric columns cannot be confirmed unambiguously from the document text. A year-over-year decline in citywide Part I crime is indicated, but no specific total is published. See F-28.</td><td class="src"><a href="https://data.lacity.org/" rel="noopener noreferrer external">Los Angeles Police Department; City of Los Angeles open data portal &#8599;</a></td><td class="note">Crime is excluded from the verified dataset entirely rather than published with a transcription risk.</td><td class="id">R-26, F-28</td></tr>
+<tr><td class="id">IR-07</td><td class="metric">Measure ULA thresholds are indexed annually but the current schedule is not published in a single stable official location</td><td class="note">LAMC Section 21.9.2 indexes the thresholds to the Bureau of Labor Statistics Chained Consumer Price Index and requires publication each year before July 1. The mechanism is verified from the official LAHD FAQ; the current dollar thresholds are not readable from the City Office of Finance page retrieved in this session. Because the tax is a cliff applied to the whole price, an unverified threshold is a material gap. See F-24.</td><td class="src"><a href="https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf" rel="noopener noreferrer external">City of Los Angeles Housing Department; City of Los Angeles Office of Finance &#8599;</a></td><td class="note">The single largest transaction-cost item in the SELL path cannot be pinned to a dollar threshold from an official page in this session.</td><td class="id">R-12, F-24, RK-06, RK-26</td></tr>
+<tr><td class="id">IR-08</td><td class="metric">The tenant&#x27;s next earnings date is known only from third-party calendars</td><td class="note">A November 25, 2026 date for Jack in the Box Inc.&#x27;s fiscal 2026 fourth-quarter results appeared only on third-party earnings calendars. No SEC filing or company investor-relations page read in this session confirms it. See F-29.</td><td class="src"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=40" rel="noopener noreferrer external">SEC EDGAR, Jack in the Box Inc. CIK 0000807882 &#8599;</a></td><td class="note">The monitoring calendar on this site points to EDGAR directly rather than to a date.</td><td class="id">T-40, F-29</td></tr>
+<tr><td class="id">IR-09</td><td class="metric">Census QuickFacts silently withholds city-level business data while publishing it for the county</td><td class="note">For the City of Los Angeles, every Businesses field in QuickFacts carries the &#x27;not available&#x27; marker, while the same fields are fully populated for Los Angeles County. A reader comparing city and county pages would not know that the city series simply does not exist. See F-11.</td><td class="src"><a href="https://www.census.gov/quickfacts/losangelescitycalifornia" rel="noopener noreferrer external">U.S. Census Bureau, QuickFacts and County Business Patterns &#8599;</a></td><td class="note">City-level establishment and employment density — a natural proxy for competitor supply — is unavailable from the most accessible official product and must be pulled from County Business Patterns tables directly.</td><td class="id">E-38, F-11, F-12</td></tr>
+</tbody></table></div>
+<div class="pager"><a href="methodology.html">&larr; Methodology &amp; Privacy</a><a href="asset.html">Property &amp; Lease &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>

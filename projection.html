@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projection System &amp;mdash; Specification, Inputs &amp; Results &middot; Central LA Jack in the Box NNN Asset</title>
+<meta name="description" content="A documented, reproducible model built only from official inputs, with every unverifiable input declared, gridded and labelled. Normalised to an index: current asset value = 100.0.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#12161c; --ink2:#4a5563; --ink3:#77828f;
+  --line:#dfe3e8; --line2:#eceff3; --accent:#0b5cad; --accent2:#e8f1fb;
+  --ok:#0f6b3d; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fdf3dc;
+  --bad:#9b1c1c; --badbg:#fbeaea; --info:#3b3f8f; --infobg:#ecebfa;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.site{background:#0d1520;color:#fff;border-bottom:3px solid var(--accent)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+header.site h1{font-size:19px;margin:0;letter-spacing:-.2px;font-weight:650}
+header.site .sub{font-size:12.5px;color:#a9b6c6;margin-top:3px}
+.badge-date{font-family:var(--mono);font-size:11.5px;background:#1b2735;border:1px solid #2c3b4d;
+  color:#cfe0f2;padding:5px 9px;border-radius:6px;white-space:nowrap}
+nav.main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.main .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;padding-top:6px;padding-bottom:6px}
+nav.main a{font-size:12.8px;color:var(--ink2);padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.main a:hover{background:var(--line2);text-decoration:none}
+nav.main a.on{background:var(--accent2);color:var(--accent);font-weight:650}
+main{padding:26px 0 60px}
+h2.pg{font-size:27px;margin:0 0 6px;letter-spacing:-.5px;line-height:1.25}
+p.lede{color:var(--ink2);font-size:15.5px;margin:0 0 20px;max-width:900px}
+h3{font-size:19px;margin:34px 0 10px;letter-spacing:-.2px}
+h4{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px}
+.card.tight{padding:14px 16px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3);font-weight:650}
+.kpi .v{font-size:24px;font-weight:680;letter-spacing:-.6px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.kpi .m{font-size:12.3px;color:var(--ink2);line-height:1.45}
+.kpi .m a{font-size:12.3px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13.6px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink2);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+thead th{background:#f0f3f6;border-bottom:1px solid var(--line);font-size:11.6px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);font-weight:700;position:sticky;top:41px;z-index:5}
+tbody tr:hover{background:#fafbfc}
+td.id{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+td.metric{min-width:210px;font-weight:560}
+td.val{font-variant-numeric:tabular-nums;min-width:150px}
+td.val.blank{color:var(--ink3);font-style:italic}
+td.note{color:var(--ink2);font-size:12.8px;min-width:230px}
+td.src{font-size:12.4px;min-width:170px}
+td.per{font-size:12.4px;color:var(--ink2);min-width:130px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.scroll table{border:0}
+.pill{display:inline-block;font-size:10.6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.p-ok{background:var(--okbg);color:var(--ok);border-color:#bfe3cd}
+.p-no{background:var(--warnbg);color:var(--warn);border-color:#f0dfb4}
+.p-blank{background:var(--badbg);color:var(--bad);border-color:#f0cccc}
+.p-info{background:var(--infobg);color:var(--info);border-color:#d3d1f0}
+.p-grey{background:#eef1f4;color:var(--ink2);border-color:#dde2e8}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:13px 16px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:14.2px}
+.callout.warn{border-left-color:#c98a00;background:var(--warnbg)}
+.callout.bad{border-left-color:#b42318;background:var(--badbg)}
+.callout.ok{border-left-color:#12854a;background:var(--okbg)}
+.callout strong{font-weight:700}
+.callout p:last-child{margin-bottom:0}
+.small{font-size:12.6px;color:var(--ink2)}
+.mono{font-family:var(--mono);font-size:12.6px}
+ul.clean,ol.clean{margin:0 0 14px;padding-left:22px}
+ul.clean li,ol.clean li{margin-bottom:7px}
+.opt{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:16px 18px;margin-bottom:14px}
+.opt h4{margin:0 0 4px;font-size:16.5px}
+.opt .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.twocol{grid-template-columns:1fr}thead th{position:static}}
+.pros h5,.cons h5{font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 7px}
+.pros h5{color:var(--ok)}.cons h5{color:var(--bad)}
+.pros ul,.cons ul{margin:0;padding-left:19px;font-size:13.3px}
+.pros li,.cons li{margin-bottom:6px}
+.rec{border:2px solid var(--accent);border-radius:12px;background:#fff;padding:20px 22px;margin-bottom:20px}
+.rec h3{margin-top:0}
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.step .b{flex:1}
+.step .w{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+.scorebar{display:inline-block;height:9px;border-radius:5px;background:var(--line);min-width:74px;position:relative;vertical-align:middle}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;display:block}
+.s-lo{background:#2e9e5b}.s-mo{background:#7bb662}.s-el{background:#e0a800}.s-hi{background:#e07000}.s-se{background:#c0261c}
+footer.site{border-top:1px solid var(--line);background:#fff;padding:22px 0 34px;margin-top:20px}
+footer.site .wrap{font-size:12.6px;color:var(--ink2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-size:13.4px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.toc{columns:2;column-gap:26px;font-size:13.6px}
+@media(max-width:700px){.toc{columns:1}}
+.toc a{display:block;padding:3px 0}
+.bar{height:22px;border-radius:4px;background:var(--line2);overflow:hidden;display:flex;font-size:11px;line-height:22px;color:#fff;font-weight:700}
+.bar i{display:block;text-align:center;font-style:normal;white-space:nowrap;overflow:hidden}
+.legend{font-size:12.3px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-block;margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+code{font-family:var(--mono);font-size:12.6px;background:#f0f3f6;padding:1.5px 5px;border-radius:4px}
+pre{background:#0d1520;color:#dce6f2;padding:14px 16px;border-radius:8px;overflow-x:auto;font-family:var(--mono);font-size:12.6px;line-height:1.55}
+@media print{nav.main,header.site,.pager{display:none}body{background:#fff}.card,.scroll{border-color:#bbb}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<div><h1>Central LA Jack in the Box NNN Asset</h1><div class="sub">Sell-before-expiry vs. renew-and-hold &mdash; an evidence-only decision file</div></div>
+<div class="badge-date">Data retrieved 2026-11-06</div>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Landing Page</a><a href="executive-summary.html">Executive Summary</a><a href="methodology.html">Methodology &amp; Privacy</a><a href="repo-audit.html">Repo Audit &amp; Irregularities</a><a href="asset.html">Property &amp; Lease</a><a href="tenant.html">Tenant Health (JACK)</a><a href="demographics.html">Population &amp; Demographics</a><a href="income.html">Income &amp; Consumer Spending</a><a href="employment.html">Employment &amp; Job Growth</a><a href="schools.html">Schools &amp; Education</a><a href="geography.html">Geography, Access &amp; Transit</a><a href="valuation.html">Valuation &amp; Capital Markets</a><a href="hazards.html">Hazards &amp; Black Swans</a><a href="regulatory.html">Tax &amp; Regulatory</a><a href="risks.html">Risk Register</a><a href="decisions.html">Options &amp; Recommendation</a><a href="projection.html" class="on">Projection System</a><a href="sources.html">Sources &amp; Verification</a><a href="flagged.html">Flagged for Review</a></div></nav>
+<main class="wrap">
+<h2 class="pg">Projection System &mdash; Specification, Inputs & Results</h2>
+<p class="lede">A documented, reproducible model built only from official inputs, with every unverifiable input declared, gridded and labelled. Normalised to an index: current asset value = 100.0.</p>
+<div class="callout bad"><strong>Read the unit convention first.</strong> The subject property&#x27;s value, rent and NOI were never supplied and cannot be verified from any official source. The model therefore runs entirely on a NORMALISED INDEX in which the asset&#x27;s value on the retrieval date (2026-11-06) equals 100.0. All outputs are index points, not dollars. No dollar figure for the subject property appears anywhere on this site.</div>
+<div class="callout warn"><strong>No official cap rate exists.</strong> No federal, state or local government agency publishes capitalisation rates for single-tenant net-lease quick-service-restaurant real estate. Cap rate therefore enters this model ONLY as an explicitly labelled, UNVERIFIED scenario input, expressed as a spread over the official U.S. Treasury par yield. Every output that depends on it is labelled UNVERIFIED INPUT.</div>
+<p class="small"><strong>Reproducibility.</strong> This file is the complete specification. Every number the Projection page displays is recomputed from these inputs by tools/model.py at build time. Nothing is hand-entered into the rendered tables. Running <code>python3 tools/model.py</code> regenerates data/projection_output.json, and <code>python3 tools/build_site.py</code> re-renders the page from it.</p>
+<p class='small'>Generated by <code>tools/model.py</code> from <code>data/projection.json</code>. Central case: cap spread bp 200.0, cap rate pct 6.84, discount rate pct 6.84, escalator pct 3.4, land growth pct 1.2, closure rate pct 1.0, residual pct 50.0, exit transaction cost pct 4.0, downtime years 1.0.</p>
+<h3>Model integrity check</h3>
+<div class="callout ok"><strong>PASSED</strong><br><span class="small mono">A flat, never-ending, never-dark tenancy at any spread must return exactly V0 = 100.00, because V = NOI / cap and NOI0 = V0 x cap. A 60-year flat path with zero residual must also converge to 100.00.</span></div>
+<div class="scroll"><table><caption>A flat, never-ending, never-dark tenancy must return exactly 100.00 index points at every spread.</caption><thead><tr><th>Spread over 10-yr UST</th><th>Capitalisation rate</th><th>Closed-form perpetuity</th><th>60-year flat path</th></tr></thead><tbody>
+<tr><td class='id'>100 bp</td><td class='val'>5.84%</td><td class='val'>100.00</td><td class='val'>100.00</td></tr>
+<tr><td class='id'>150 bp</td><td class='val'>6.34%</td><td class='val'>100.00</td><td class='val'>100.00</td></tr>
+<tr><td class='id'>200 bp</td><td class='val'>6.84%</td><td class='val'>100.00</td><td class='val'>100.00</td></tr>
+<tr><td class='id'>250 bp</td><td class='val'>7.34%</td><td class='val'>100.00</td><td class='val'>100.00</td></tr>
+<tr><td class='id'>300 bp</td><td class='val'>7.84%</td><td class='val'>100.00</td><td class='val'>100.00</td></tr>
+</tbody></table></div>
+<h3>Fairness rules applied to both sides of the comparison</h3><ol class='clean'>
+<li>Both paths bear the same statutory transaction cost: the sell path up front, the hold path on its terminal sale.</li>
+<li>The hold path additionally bears a vacancy/downtime scenario after expiry, because a NNN landlord resumes tax, insurance and maintenance on expiry and may not re-let immediately.</li>
+<li>The sell path&#x27;s certain net proceeds are not discounted further. Net proceeds either earn the official Treasury risk-free rate or are reinvested in an identical asset at the same capitalisation rate; both treatments give a present value equal to the net proceeds.</li>
+<li>Tenant non-renewal is run in two regimes: the official system-wide base rate, and a &#x27;signal received&#x27; regime at 100%. The second is what the recommended decision path exists to detect early.</li>
+</ol>
+<h3>Official model inputs</h3>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Input</th><th>Value</th><th>Units</th><th>Period</th><th>Role in the model</th><th>Official source</th><th>Status</th></tr></thead><tbody>
+<tr><td class="id">IN-1</td><td class="metric"><code>risk_free_10y</code></td><td class="val">4.84</td><td class="per">percent per annum</td><td class="per">November 5, 2026</td><td class="note">Base of the discount rate and of every cap-rate scenario. Read directly from the Treasury table.</td><td class="src"><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" rel="noopener noreferrer external">U.S. Department of the Treasury — Daily Treasury Par Yield Curve Rates, 10-year constant maturity &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-2</td><td class="metric"><code>risk_free_30y</code></td><td class="val">5.25</td><td class="per">percent per annum</td><td class="per">November 5, 2026</td><td class="note">The competing risk-free instrument for a long hold. Any hold decision must beat this after risk.</td><td class="src"><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" rel="noopener noreferrer external">U.S. Department of the Treasury &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-3</td><td class="metric"><code>cpi_la_low</code></td><td class="val">2.9</td><td class="per">percent, 12-month change</td><td class="per">February 2026</td><td class="note">Lowest official 12-month Los Angeles CPI-U reading published in 2026. Used as the low rent-escalation scenario.</td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer external">U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-4</td><td class="metric"><code>cpi_la_median</code></td><td class="val">3.4</td><td class="per">percent, 12-month change</td><td class="per">March 2026</td><td class="note">Median of the five official 12-month Los Angeles CPI-U readings published in 2026 (January +3.0, February +2.9, March +3.4, April +3.7, May +3.6). Used as the central rent-escalation scenario.</td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer external">U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-5</td><td class="metric"><code>cpi_la_high</code></td><td class="val">3.7</td><td class="per">percent, 12-month change</td><td class="per">April 2026</td><td class="note">Highest official 12-month Los Angeles CPI-U reading published in 2026. Used as the high rent-escalation scenario.</td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer external">U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-6</td><td class="metric"><code>hpi_la_msad_yoy</code></td><td class="val">1.2</td><td class="per">percent, 12-month change</td><td class="per">2025 Q2 to 2026 Q2</td><td class="note">Official local real-asset price appreciation. Used as the central land-value growth assumption.</td><td class="src"><a href="https://fred.stlouisfed.org/series/ATNHPIUS31084Q" rel="noopener noreferrer external">FHFA All-Transactions House Price Index, Los Angeles-Long Beach-Glendale Metropolitan Division (series ATNHPIUS31084Q) &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-7</td><td class="metric"><code>hpi_pacific_yoy_q1_2026</code></td><td class="val">0.0</td><td class="per">percent, 12-month change</td><td class="per">2026 Q1</td><td class="note">Weakest of the nine census divisions. Used as the downside land-value growth assumption.</td><td class="src"><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q1" rel="noopener noreferrer external">FHFA purchase-only House Price Index, Pacific census division &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-8</td><td class="metric"><code>av_growth_prop13_cap</code></td><td class="val">2.0</td><td class="per">percent per annum, maximum</td><td class="per">2026 Assessment Roll</td><td class="note">Maximum annual growth in the tenant&#x27;s reimbursable property tax while ownership does not change.</td><td class="src"><a href="https://assessor.lacounty.gov/news-information/assessmentroll" rel="noopener noreferrer external">California State Board of Equalization (Proposition 13) and the Los Angeles County Assessor, which applied the maximum allowable 2% factor in 2026 &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-9</td><td class="metric"><code>closure_rate_ongoing</code></td><td class="val">1.0</td><td class="per">percent of system units per year</td><td class="per">Plan announced April 23, 2025</td><td class="note">Company-stated ongoing annual closure rate of 1% of system units, with fiscal 2025 at 1.5% to 2.0%. Drives the tenant non-renewal probability.</td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000043/jack-20250706.htm" rel="noopener noreferrer external">Jack in the Box Inc. plan as disclosed in SEC-filed materials &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-10</td><td class="metric"><code>closure_programme_share_low</code></td><td class="val">6.84</td><td class="per">percent of the system</td><td class="per">Programme announced April 23, 2025</td><td class="note">Lower bound of the JACK on Track block closure programme as a share of the system.</td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer external">Derived from Jack in the Box Inc. SEC filings: 150 closures divided by the 2,191 restaurants at the start of fiscal 2025 &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-11</td><td class="metric"><code>closure_programme_share_high</code></td><td class="val">9.13</td><td class="per">percent of the system</td><td class="per">Programme announced April 23, 2025</td><td class="note">Upper bound of the programme as a share of the system. Adverse tenant scenario.</td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer external">Derived from Jack in the Box Inc. SEC filings: 200 closures divided by the 2,191 restaurants at the start of fiscal 2025 &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-12</td><td class="metric"><code>eq_m67_30yr</code></td><td class="val">60.0</td><td class="per">percent probability over 30 years</td><td class="per">UCERF3</td><td class="note">Converted to a five-year decision-window probability by 1 - (1 - 0.60)^(5/30) = 14.2% using the standard independent-annual-hazard restatement, and reported alongside the simpler linear restatement 60% x 5/30 = 10.0%. BOTH are arithmetic restatements of the official figure, not new forecasts.</td><td class="src"><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" rel="noopener noreferrer external">U.S. Geological Survey &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-13</td><td class="metric"><code>fire_output_loss_low</code></td><td class="val">5.2</td><td class="per">billion dollars of county economic output</td><td class="per">January 2025 Eaton and Palisades fires</td><td class="note">Catastrophe severity anchor, lower bound.</td><td class="src"><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" rel="noopener noreferrer external">County of Los Angeles official anniversary fact sheet &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-14</td><td class="metric"><code>fire_output_loss_high</code></td><td class="val">10.1</td><td class="per">billion dollars of county economic output</td><td class="per">January 2025 Eaton and Palisades fires</td><td class="note">Catastrophe severity anchor, upper bound.</td><td class="src"><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" rel="noopener noreferrer external">County of Los Angeles official anniversary fact sheet &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-15</td><td class="metric"><code>la_county_gdp_2024</code></td><td class="val">818.5</td><td class="per">billion dollars, current dollars</td><td class="per">2024</td><td class="note">Denominator that converts the fire output loss into a share of one year of county economic activity.</td><td class="src"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" rel="noopener noreferrer external">U.S. Bureau of Economic Analysis — Gross Domestic Product by County, 2024 &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-16</td><td class="metric"><code>ula_rate_lower_tier</code></td><td class="val">4.0</td><td class="per">percent of the entire consideration or value</td><td class="per">LAMC Section 21.9.2, effective April 1, 2023</td><td class="note">Transaction-cost scenario for a City of Los Angeles sale at or above the lower threshold.</td><td class="src"><a href="https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf" rel="noopener noreferrer external">City of Los Angeles Housing Department — official ULA FAQ &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-17</td><td class="metric"><code>ula_rate_upper_tier</code></td><td class="val">5.5</td><td class="per">percent of the entire consideration or value</td><td class="per">LAMC Section 21.9.2</td><td class="note">Transaction-cost scenario for a City of Los Angeles sale at or above the upper threshold.</td><td class="src"><a href="https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf" rel="noopener noreferrer external">City of Los Angeles Housing Department — official ULA FAQ &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+<tr><td class="id">IN-18</td><td class="metric"><code>company_book_land_share</code></td><td class="val">8.79</td><td class="per">percent of gross book cost of land plus buildings</td><td class="per">September 28, 2025</td><td class="note">The ONLY official ratio available that separates land from improvements for this asset type. Used as a reference point for the dark-box land residual. IMPORTANT CAVEAT: this is historical book cost for a national portfolio, not market value for Los Angeles land, and it is not used as a market estimate anywhere in the model.</td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer external">Derived from Jack in the Box Inc. Form 10-K: land $93,255 thousand divided by land $93,255 thousand plus buildings $967,676 thousand &#8599;</a></td><td><span class="pill p-ok">Verified</span></td></tr>
+</tbody></table></div>
+<h3>Unverified scenario inputs</h3>
+<div class="callout warn">These are the only inputs in the model that are not official. Each is flagged, each is varied across a grid, and each output that depends on one is labelled. No output rests on a single unverified number.</div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Input</th><th>Grid</th><th>Units</th><th>Role</th><th>Status</th></tr></thead><tbody>
+<tr><td class="id">UX-1</td><td class="metric"><code>cap_spread_grid</code></td><td class="val">100, 150, 200, 250, 300</td><td class="per">basis points over the official 10-year Treasury par yield</td><td class="note">Defines the exit and holding capitalisation rates: 5.84%, 6.34%, 6.84%, 7.34%, 7.84% on a 4.84% base. FLAG F-16. Every output that depends on this grid is labelled UNVERIFIED INPUT on the rendered page.</td><td><span class="pill p-blank">Unverified input</span><br><span class="small">No official government publisher exists</span></td></tr>
+<tr><td class="id">UX-2</td><td class="metric"><code>dark_land_residual_grid</code></td><td class="val">30, 50, 70</td><td class="per">percent of total asset value</td><td class="note">Value retained by the site if the restaurant closes and only land and shell value remain. The official reference point at IN-18 is 8.79% of book cost, which is NOT a market estimate and is deliberately not used as the default. FLAG F-33.</td><td><span class="pill p-blank">Unverified input</span><br><span class="small">No official government publisher exists</span></td></tr>
+<tr><td class="id">UX-3</td><td class="metric"><code>years_to_expiry_grid</code></td><td class="val">4, 6, 9</td><td class="per">years from 2026-11-06</td><td class="note">2030, 2032 and 2035 respectively, spanning the disclosed 2030-2035 window. FLAG F-03.</td><td><span class="pill p-blank">Unverified input</span><br><span class="small">Not determinable — the expiry is a window, not a date</span></td></tr>
+<tr><td class="id">UX-4</td><td class="metric"><code>rent_escalator_flat</code></td><td class="val">0.0</td><td class="per">percent per annum</td><td class="note">Structural possibility of a lease with no escalation. Not an official value. FLAG F-02.</td><td><span class="pill p-blank">Unverified input</span><br><span class="small">Not determinable — the lease was not supplied</span></td></tr>
+</tbody></table></div>
+<h3>Equations</h3>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Name</th><th>Formula</th><th>Note</th></tr></thead><tbody>
+<tr><td class="id">EQ-1</td><td class="metric">Normalisation</td><td class="note mono">V0 = 100.0 index points = asset value on the retrieval date (2026-11-06)</td><td class="note">All outputs are relative to V0. No dollar figure for the subject property is produced anywhere.</td></tr>
+<tr><td class="id">EQ-2</td><td class="metric">Capitalisation rate and opening net operating income</td><td class="note mono">cap0 = risk_free_10y/100 + cap_spread_bp/10000  ;  NOI0 = V0 x cap0</td><td class="note">Follows from V = NOI / cap. At the central spread of 200 bp on the official 4.84% ten-year par yield, cap0 = 6.84% and NOI0 = 6.840 index points. cap_spread_bp is UNVERIFIED input UX-1; risk_free_10y is official input IN-1. This is the only place a capitalisation rate enters the income side.</td></tr>
+<tr><td class="id">EQ-3</td><td class="metric">Income path while tenanted</td><td class="note mono">NOI_t = NOI0 x (1 + g)^t   for t = 1 .. n</td><td class="note">g is the rent-escalation scenario: 0% (UX-4, unverified, lease not supplied), or 2.9% / 3.4% / 3.7% from the official BLS Los Angeles CPI-U twelve-month readings at IN-3, IN-4 and IN-5.</td></tr>
+<tr><td class="id">EQ-4</td><td class="metric">Tenant non-renewal probability at expiry (base regime)</td><td class="note mono">p_dark(n) = 1 - (1 - closure_rate_ongoing/100)^n</td><td class="note">Compound survival at the company-disclosed ongoing annual closure rate of 1% of system units (IN-9). n = 4 gives 3.94%; n = 6 gives 5.85%; n = 9 gives 8.65%. The JACK on Track programme-level bounds of 6.84% to 9.13% (IN-10, IN-11) are published alongside as the adverse case. Neither is site-specific: no public disclosure identifies individual restaurants selected for closure (flag F-31).</td></tr>
+<tr><td class="id">EQ-5</td><td class="metric">Terminal value at expiry, net of the exit transaction cost</td><td class="note mono">TV_gross = (1 - p_dark) x [NOI_n x (1 + g) / cap_exit] + p_dark x [V0 x (residual/100) x (1 + hpi/100)^n]  ;  TV_net = TV_gross x (1 - exit_cost)</td><td class="note">Two branches. The renewing branch re-capitalises the next year&#x27;s income at cap_exit. The dark branch retains only the land and shell residual (UX-2, unverified) grown at the official FHFA rate (IN-6 central, IN-7 downside). exit_cost is the same Measure ULA rate charged to the sell path, applied here to the terminal sale.</td></tr>
+<tr><td class="id">EQ-6</td><td class="metric">Discount rate</td><td class="note mono">d = cap0</td><td class="note">The model discounts at the same rate it capitalises, so the present value of a level perpetuity equals its capitalised value exactly. This is deliberate: it isolates the effect of GROWTH and of TENANT OUTCOME from the effect of the rate level, so the comparison between paths is not an artefact of a chosen discount rate. The integrity check on the page verifies this identity at every point of the spread grid.</td></tr>
+<tr><td class="id">EQ-7</td><td class="metric">Present value of the hold-to-expiry path (Option C)</td><td class="note mono">PV_hold = SUM_{t=1..n} [NOI_t / (1+d)^t] + TV_net / (1+d)^(n + downtime)</td><td class="note">downtime is the post-expiry vacancy scenario in years (0, 1 or 2), applied only to the terminal event. It is a scenario input, not an official statistic (flag F-33). Reported in index points per 100 of current value.</td></tr>
+<tr><td class="id">EQ-8</td><td class="metric">Present value of the sell-now path (Option A)</td><td class="note mono">PV_sell = V0 x (1 - transaction_cost)</td><td class="note">transaction_cost takes the values 0% (parcel outside the City of Los Angeles, or price below the ULA threshold), 4.0% (IN-16) or 5.5% (IN-17). No further discounting is applied: net proceeds either earn the official Treasury risk-free rate or are reinvested in an identical asset at the same capitalisation rate, and both treatments return a present value equal to the net proceeds. County and City documentary transfer tax is additional but unverified (flag F-23) and is excluded rather than estimated, so PV_sell is OPTIMISTIC by roughly half a percent.</td></tr>
+<tr><td class="id">EQ-9</td><td class="metric">Present value of the extend-then-hold path (Option B)</td><td class="note mono">PV_extend = EQ-7 evaluated at n + 10 years, with p_dark recomputed at n + 10</td><td class="note">Ten additional years of firm term is a scenario assumption. The extension is assumed to be granted at existing economics, which is not a forecast: the tenant has no obligation to negotiate early and is led by an interim chief executive (T-15, RK-21).</td></tr>
+<tr><td class="id">EQ-10</td><td class="metric">Decision rule</td><td class="note mono">Choose the path with the higher PV, then test whether that ranking survives the whole unverified-input grid</td><td class="note">Because the capitalisation-rate input is unverified, the RANKING of paths is the output that matters, not the absolute index level. Where the ranking holds at every point of the Treasury-anchored spread grid and at every transaction-cost case, the conclusion is robust. Where it flips, the page says so explicitly rather than choosing a favourite spread.</td></tr>
+<tr><td class="id">EQ-11</td><td class="metric">Catastrophe severity overlay</td><td class="note mono">fire_severity_share = fire_output_loss / la_county_gdp_2024</td><td class="note">IN-13 and IN-14 over IN-15 give 0.64% to 1.23% of one year of county economic output for a January-2025-class event. Reported as a severity band and deliberately NOT multiplied into any present value, because no official source maps a county output loss onto a specific commercial parcel&#x27;s value.</td></tr>
+<tr><td class="id">EQ-12</td><td class="metric">Earthquake frequency overlay</td><td class="note mono">p_eq_5yr_compound = 1 - (1 - eq_m67_30yr/100)^(5/30)  ;  p_eq_5yr_linear = eq_m67_30yr/100 x 5/30</td><td class="note">IN-12 gives 14.16% compound and 10.00% linear. Both are published because the restatement method changes the answer. The USGS figure is itself a 30-year probability from a physical model; restating it over a shorter window is arithmetic, not a new geophysical forecast.</td></tr>
+<tr><td class="id">EQ-13</td><td class="metric">Signal regime — hold after the tenant has refused</td><td class="note mono">PV_signal = EQ-7 with p_dark set to 1.0</td><td class="note">Once the tenant declines an extension, or discloses a franchise agreement expiring at or before the lease expiry, site-specific non-renewal moves from the system-wide base rate toward certainty and the hold path loses its renewing terminal branch. This is the regime the recommended plan is designed to detect years early, and it is where the ranking between hold and sell flips.</td></tr>
+<tr><td class="id">EQ-14</td><td class="metric">Stress case — the conditions under which the recommendation is wrong</td><td class="note mono">PV_stress = EQ-7 with g = 0 (UX-4), residual = min(UX-2), hpi = IN-7, downtime = max scenario, exit_cost = 0, compared against PV_sell at transaction_cost = 0</td><td class="note">Built only from inputs already declared in this specification. A parcel outside the City of Los Angeles pays no Measure ULA (R-15), so the sell path is at its best and the hold path at its worst. Under that combination selling now wins even with no adverse tenant signal. Published because a recommendation that cannot state the conditions under which it is wrong is not a recommendation.</td></tr>
+<tr><td class="id">EQ-15</td><td class="metric">Measure ULA dead band</td><td class="note mono">net(P) = P for P &lt;= T ; net(P) = P x (1 - rate) for P &gt; T ; therefore net(P) &gt; net(T) requires P &gt; T / (1 - rate)</td><td class="note">At the official 4% rate (IN-16) the break-even is 1.0417 x T, so a price up to 4.17% above the threshold nets LESS than a sale at the threshold. At 5.5% (IN-17) the break-even is 1.0582 x T, or 5.82% above. Pure arithmetic on the official statutory rates; no market assumption is used. The dollar thresholds themselves are unverified (flag F-24, irregularity IR-07) and are not stated anywhere.</td></tr>
+</tbody></table></div>
+<h3>Capitalisation-rate grid</h3>
+<div class="scroll"><table>
+<caption>Anchored on the official U.S. Treasury 10-year par yield of 4.84% on November 5, 2026. The spread is an UNVERIFIED scenario input (UX-1).</caption>
+<thead><tr><th>Spread</th><th>Cap rate</th><th>Implied opening NOI (index)</th></tr></thead><tbody>
+<tr><td class='id'>100 bp</td><td class='val'>5.84%</td><td class='val'>5.840</td></tr>
+<tr><td class='id'>150 bp</td><td class='val'>6.34%</td><td class='val'>6.340</td></tr>
+<tr><td class='id'>200 bp</td><td class='val'>6.84%</td><td class='val'>6.840</td></tr>
+<tr><td class='id'>250 bp</td><td class='val'>7.34%</td><td class='val'>7.340</td></tr>
+<tr><td class='id'>300 bp</td><td class='val'>7.84%</td><td class='val'>7.840</td></tr>
+</tbody></table></div>
+<p class="small">Risk-free anchors: 10-year 4.84%, 30-year 5.25% (U.S. Treasury, November 5, 2026).</p>
+<h3>Tenant non-renewal probability (EQ-4)</h3>
+<div class="scroll"><table>
+<caption>Compound survival at the company-disclosed ongoing annual closure rate of 1.0% of system units. Programme-level bounds: 6.84% to 9.13% of the system.</caption>
+<thead><tr><th>Years to expiry</th><th>Expiry year</th><th>P(non-renewal)</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='val'><strong>3.94%</strong></td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='val'><strong>5.85%</strong></td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='val'><strong>8.65%</strong></td></tr>
+</tbody></table></div>
+<p class="small">p_dark uses the company-disclosed ongoing annual closure rate of 1% of system units (IN-9). The programme bounds are the JACK on Track block closure of 150-200 restaurants against the 2,191-restaurant system at the start of fiscal 2025 (IN-10, IN-11). Neither is a site-specific probability: no public disclosure identifies individual restaurants selected for closure (flag F-31).</p>
+<h3>Option A &mdash; sell now (EQ-8)</h3>
+<div class="scroll"><table>
+<caption>Present value of selling today, net of the statutory transaction cost. Index 100.0 = current asset value.</caption>
+<thead><tr><th>Case</th><th>Transaction cost</th><th>Net index</th></tr></thead><tbody>
+<tr><td class='metric'>Parcel outside the City of Los Angeles, or price below the ULA threshold</td><td class='val'>0.0%</td><td class='val'><strong>100.00</strong></td></tr>
+<tr><td class='metric'>City of Los Angeles, price at or above the LOWER ULA threshold</td><td class='val'>4.0%</td><td class='val'><strong>96.00</strong></td></tr>
+<tr><td class='metric'>City of Los Angeles, price at or above the UPPER ULA threshold</td><td class='val'>5.5%</td><td class='val'><strong>94.50</strong></td></tr>
+</tbody></table></div>
+<p class="small">County and City documentary transfer tax is ADDITIONAL but is unverified (flag F-23) and is therefore excluded rather than estimated, so the net proceeds shown for the sell path are OPTIMISTIC by roughly half a percent of price. Proposition 13 reassessment on a change in ownership is also not modelled as a price discount, because the parcel&#x27;s current assessed value is unknown (flag F-01); it is a real further discount to what a buyer will pay. Both omissions favour the sell path.</p>
+<h3>The Measure ULA dead band</h3>
+<div class="scroll"><table>
+<caption>Pure arithmetic on the official statutory rates (IN-16, IN-17). The dollar thresholds themselves are unverified and are not stated.</caption>
+<thead><tr><th>Statutory rate</th><th>Break-even multiple of threshold</th><th>Break-even excess</th><th>Reading</th></tr></thead><tbody>
+<tr><td class='val'>4.0%</td><td class='val'>1.0417&times;</td><td class='val'>4.17%</td><td class='note'>A price up to 4.17% above the threshold nets LESS than a sale at the threshold itself, because the tax applies to the whole price.</td></tr>
+<tr><td class='val'>5.5%</td><td class='val'>1.0582&times;</td><td class='val'>5.82%</td><td class='note'>A price up to 5.82% above the threshold nets LESS than a sale at the threshold itself, because the tax applies to the whole price.</td></tr>
+</tbody></table></div>
+<p class="small">Derived only from the official statutory rates at IN-16 and IN-17 plus elementary arithmetic: net(P) = P at or below the threshold T, and net(P) = P x (1 - rate) above it, so net(P) &gt; net(T) requires P &gt; T / (1 - rate). The DOLLAR thresholds themselves are unverified (flag F-24, irregularity IR-07) and are not stated anywhere.</p>
+<h3>Option C &mdash; hold to expiry, base regime (EQ-7)</h3>
+<div class="scroll"><table>
+<caption>Present value of holding, at the central case, net of a 4.0% exit transaction cost and one year of post-expiry downtime. The official system-wide non-renewal base rate applies.</caption>
+<thead><tr><th>Years</th><th>Expiry</th><th>Escalator</th><th>Escalator %</th><th>PV of income</th><th>PV of terminal</th><th>PV total</th><th>P(dark)</th><th>Range across cap grid</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='per'>Flat / no escalator - UNVERIFIED, lease not supplied</td><td class='val'>0.0%</td><td class='val'>23.25</td><td class='val'>67.60</td><td class='val'><strong>90.86</strong></td><td class='val'>3.94%</td><td class='val small'>90.59 &ndash; 91.17</td></tr>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='per'>Low - BLS LA CPI-U, February 2026</td><td class='val'>2.9%</td><td class='val'>24.93</td><td class='val'>77.78</td><td class='val'><strong>102.71</strong></td><td class='val'>3.94%</td><td class='val small'>102.17 &ndash; 103.31</td></tr>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='per'>Central - median of the five 2026 BLS LA CPI-U readings</td><td class='val'>3.4%</td><td class='val'>25.23</td><td class='val'>79.66</td><td class='val'><strong>104.88</strong></td><td class='val'>3.94%</td><td class='val small'>104.29 &ndash; 105.54</td></tr>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='per'>High - BLS LA CPI-U, April 2026</td><td class='val'>3.7%</td><td class='val'>25.41</td><td class='val'>80.80</td><td class='val'><strong>106.21</strong></td><td class='val'>3.94%</td><td class='val small'>105.58 &ndash; 106.89</td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='per'>Flat / no escalator - UNVERIFIED, lease not supplied</td><td class='val'>0.0%</td><td class='val'>32.76</td><td class='val'>58.65</td><td class='val'><strong>91.41</strong></td><td class='val'>5.85%</td><td class='val small'>91.36 &ndash; 91.50</td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='per'>Low - BLS LA CPI-U, February 2026</td><td class='val'>2.9%</td><td class='val'>36.06</td><td class='val'>71.25</td><td class='val'><strong>107.30</strong></td><td class='val'>5.85%</td><td class='val small'>106.80 &ndash; 107.88</td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='per'>Central - median of the five 2026 BLS LA CPI-U readings</td><td class='val'>3.4%</td><td class='val'>36.66</td><td class='val'>73.65</td><td class='val'><strong>110.30</strong></td><td class='val'>5.85%</td><td class='val small'>109.70 &ndash; 110.98</td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='per'>High - BLS LA CPI-U, April 2026</td><td class='val'>3.7%</td><td class='val'>37.02</td><td class='val'>75.12</td><td class='val'><strong>112.14</strong></td><td class='val'>5.85%</td><td class='val small'>111.48 &ndash; 112.87</td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='per'>Flat / no escalator - UNVERIFIED, lease not supplied</td><td class='val'>0.0%</td><td class='val'>44.87</td><td class='val'>47.40</td><td class='val'><strong>92.27</strong></td><td class='val'>8.65%</td><td class='val small'>92.07 &ndash; 92.48</td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='per'>Low - BLS LA CPI-U, February 2026</td><td class='val'>2.9%</td><td class='val'>51.26</td><td class='val'>62.37</td><td class='val'><strong>113.63</strong></td><td class='val'>8.65%</td><td class='val small'>113.05 &ndash; 114.30</td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='per'>Central - median of the five 2026 BLS LA CPI-U readings</td><td class='val'>3.4%</td><td class='val'>52.45</td><td class='val'>65.36</td><td class='val'><strong>117.82</strong></td><td class='val'>8.65%</td><td class='val small'>117.07 &ndash; 118.67</td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='per'>High - BLS LA CPI-U, April 2026</td><td class='val'>3.7%</td><td class='val'>53.19</td><td class='val'>67.22</td><td class='val'><strong>120.41</strong></td><td class='val'>8.65%</td><td class='val small'>119.56 &ndash; 121.37</td></tr>
+</tbody></table></div>
+<p class="small">Compare with the sell-now net index of 94.50 to 100.00 above. In the base regime holding beats selling at every point of the cap grid.</p>
+<h3>The decisive case &mdash; hold AFTER a non-renewal signal (EQ-7, P(dark) = 100%)</h3>
+<div class="scroll"><table>
+<caption>The same hold path, but with site-specific non-renewal treated as certain because the tenant has refused an extension or disclosed a franchise agreement expiring at or before the lease expiry.</caption>
+<thead><tr><th>Years</th><th>Expiry</th><th>PV of income</th><th>PV of terminal (dark)</th><th>PV total</th><th>Range across cap grid</th><th>Sell now (lower ULA tier)</th><th>Sell wins?</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='val'>25.23</td><td class='val'>34.50</td><td class='val'><strong>59.72</strong></td><td class='val small'>58.20 &ndash; 61.19</td><td class='val'>96.00</td><td><span class='pill p-blank'>YES &mdash; sell</span></td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='val'>36.66</td><td class='val'>30.23</td><td class='val'><strong>66.88</strong></td><td class='val small'>64.60 &ndash; 69.03</td><td class='val'>96.00</td><td><span class='pill p-blank'>YES &mdash; sell</span></td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='val'>52.45</td><td class='val'>24.80</td><td class='val'><strong>77.25</strong></td><td class='val small'>74.10 &ndash; 80.11</td><td class='val'>96.00</td><td><span class='pill p-blank'>YES &mdash; sell</span></td></tr>
+</tbody></table></div>
+<p class="small">This is the regime that decides the recommendation. Once the tenant declines an extension, or discloses a franchise agreement expiring at or before the lease expiry, site-specific non-renewal probability moves from the system-wide base rate toward certainty, and the hold path loses its renewing terminal branch. The sell path then dominates at EVERY point of the cap-spread grid - which is why the recommended plan pre-commits a sell trigger instead of leaving the decision to be re-argued in 2030.</p>
+<h3>Option B &mdash; extend the term, then hold (EQ-9)</h3>
+<div class="scroll"><table>
+<caption>A 10-year extension granted at existing economics, against holding to the original expiry. Central case.</caption>
+<thead><tr><th>Original years</th><th>Extended years</th><th>Escalator %</th><th>PV hold</th><th>PV extend</th><th>Difference</th><th>P(dark) hold</th><th>P(dark) extend</th><th>Extension wins at every spread?</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='val'>14</td><td class='val'>2.9%</td><td class='val'>102.71</td><td class='val'><strong>122.88</strong></td><td class='val'>+20.17</td><td class='val'>3.94%</td><td class='val'>13.13%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>4</td><td class='val'>14</td><td class='val'>3.4%</td><td class='val'>104.88</td><td class='val'><strong>128.96</strong></td><td class='val'>+24.07</td><td class='val'>3.94%</td><td class='val'>13.13%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>4</td><td class='val'>14</td><td class='val'>3.7%</td><td class='val'>106.21</td><td class='val'><strong>132.77</strong></td><td class='val'>+26.56</td><td class='val'>3.94%</td><td class='val'>13.13%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>6</td><td class='val'>16</td><td class='val'>2.9%</td><td class='val'>107.30</td><td class='val'><strong>126.19</strong></td><td class='val'>+18.89</td><td class='val'>5.85%</td><td class='val'>14.85%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>6</td><td class='val'>16</td><td class='val'>3.4%</td><td class='val'>110.30</td><td class='val'><strong>132.99</strong></td><td class='val'>+22.69</td><td class='val'>5.85%</td><td class='val'>14.85%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>6</td><td class='val'>16</td><td class='val'>3.7%</td><td class='val'>112.14</td><td class='val'><strong>137.28</strong></td><td class='val'>+25.14</td><td class='val'>5.85%</td><td class='val'>14.85%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>9</td><td class='val'>19</td><td class='val'>2.9%</td><td class='val'>113.63</td><td class='val'><strong>130.79</strong></td><td class='val'>+17.16</td><td class='val'>8.65%</td><td class='val'>17.38%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>9</td><td class='val'>19</td><td class='val'>3.4%</td><td class='val'>117.82</td><td class='val'><strong>138.64</strong></td><td class='val'>+20.82</td><td class='val'>8.65%</td><td class='val'>17.38%</td><td><span class='pill p-ok'>yes</span></td></tr>
+<tr><td class='val'>9</td><td class='val'>19</td><td class='val'>3.7%</td><td class='val'>120.41</td><td class='val'><strong>143.63</strong></td><td class='val'>+23.22</td><td class='val'>8.65%</td><td class='val'>17.38%</td><td><span class='pill p-ok'>yes</span></td></tr>
+</tbody></table></div>
+<p class="small">EQ-9 assumes a 10-year extension is granted at existing economics. That is a SCENARIO, not a forecast: the tenant has no obligation to negotiate early and is led by an interim chief executive (T-15, RK-21). The value of the recommended path does not depend on the extension being granted - a refusal is itself the earliest reliable closure signal and moves the decision into the regime above.</p>
+<h3>Ranking stability across the whole cap grid (EQ-10)</h3>
+<div class="scroll"><table>
+<caption>The cap-rate input is unverified, so only the RANKING of paths is meaningful. A ranking is robust only if it holds at every point of the Treasury-anchored spread grid.</caption>
+<thead><tr><th>Years</th><th>Transaction-cost case</th><th>Sell index</th><th>Hold range</th><th>Extend range</th><th>Hold-after-signal range</th><th>Stable?</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='per'>Parcel outside the City of Los Angeles, or price below the ULA threshold</td><td class='val'>100.00</td><td class='val small'>107.46 &ndash; 109.01</td><td class='val small'>129.59 &ndash; 132.98</td><td class='val small'>59.71 &ndash; 62.56</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>4</td><td class='per'>City of Los Angeles, price at or above the LOWER ULA threshold</td><td class='val'>96.00</td><td class='val small'>104.29 &ndash; 105.54</td><td class='val small'>127.65 &ndash; 130.42</td><td class='val small'>58.20 &ndash; 61.19</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>4</td><td class='per'>City of Los Angeles, price at or above the UPPER ULA threshold</td><td class='val'>94.50</td><td class='val small'>103.11 &ndash; 104.23</td><td class='val small'>126.93 &ndash; 129.46</td><td class='val small'>57.64 &ndash; 60.67</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>6</td><td class='per'>Parcel outside the City of Los Angeles, or price below the ULA threshold</td><td class='val'>100.00</td><td class='val small'>112.58 &ndash; 114.25</td><td class='val small'>133.13 &ndash; 137.19</td><td class='val small'>65.95 &ndash; 70.21</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>6</td><td class='per'>City of Los Angeles, price at or above the LOWER ULA threshold</td><td class='val'>96.00</td><td class='val small'>109.70 &ndash; 110.98</td><td class='val small'>131.38 &ndash; 134.79</td><td class='val small'>64.60 &ndash; 69.03</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>6</td><td class='per'>City of Los Angeles, price at or above the UPPER ULA threshold</td><td class='val'>94.50</td><td class='val small'>108.63 &ndash; 109.75</td><td class='val small'>130.73 &ndash; 133.88</td><td class='val small'>64.10 &ndash; 68.59</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>9</td><td class='per'>Parcel outside the City of Los Angeles, or price below the ULA threshold</td><td class='val'>100.00</td><td class='val small'>119.55 &ndash; 121.66</td><td class='val small'>138.01 &ndash; 143.21</td><td class='val small'>75.23 &ndash; 81.05</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>9</td><td class='per'>City of Los Angeles, price at or above the LOWER ULA threshold</td><td class='val'>96.00</td><td class='val small'>117.07 &ndash; 118.67</td><td class='val small'>136.50 &ndash; 141.03</td><td class='val small'>74.10 &ndash; 80.11</td><td><span class='pill p-ok'>stable</span></td></tr>
+<tr><td class='val'>9</td><td class='per'>City of Los Angeles, price at or above the UPPER ULA threshold</td><td class='val'>94.50</td><td class='val small'>116.14 &ndash; 117.55</td><td class='val small'>135.94 &ndash; 140.21</td><td class='val small'>73.67 &ndash; 79.76</td><td><span class='pill p-ok'>stable</span></td></tr>
+</tbody></table></div>
+<p class="small">EQ-10. Because the cap-rate input is unverified, only the RANKING of paths is meaningful, and a ranking that holds at every point of the Treasury-anchored spread grid is a robust conclusion. &#x27;ranking_is_stable&#x27; is true only if hold beats sell before any signal, extend beats sell before any signal, AND sell beats hold after a signal - at every spread. That is the exact structure of the recommendation.</p>
+<h3>Stress case &mdash; the conditions under which this recommendation is wrong</h3>
+<div class="scroll"><table>
+<caption>Worst declared inputs: no escalator, lowest land residual, zero official land-price growth, longest downtime, and a parcel outside the City of Los Angeles so the sell path pays no Measure ULA at all.</caption>
+<thead><tr><th>Years</th><th>Expiry</th><th>PV hold (stress)</th><th>PV sell (best case)</th><th>Sell wins?</th><th>Gap</th></tr></thead><tbody>
+<tr><td class='val'>4</td><td class='val'>2030</td><td class='val'>88.63</td><td class='val'>100.00</td><td><span class='pill p-blank'>YES</span></td><td class='val'>11.37</td></tr>
+<tr><td class='val'>6</td><td class='val'>2032</td><td class='val'>89.25</td><td class='val'>100.00</td><td><span class='pill p-blank'>YES</span></td><td class='val'>10.75</td></tr>
+<tr><td class='val'>9</td><td class='val'>2035</td><td class='val'>90.24</td><td class='val'>100.00</td><td><span class='pill p-blank'>YES</span></td><td class='val'>9.76</td></tr>
+</tbody></table></div>
+<p class="small">This is the honest counter-case to the recommendation, and it is built ONLY from inputs already declared in the specification: a lease with NO escalator (UX-4, unknown because the lease was not supplied), the lowest land residual (UX-2), zero official land-price growth (IN-7), the longest downtime scenario, the shortest horizon, and a parcel OUTSIDE the City of Los Angeles so the sell path pays no Measure ULA at all (R-15). Under that combination the sell path wins even with no adverse tenant signal. It is published because a recommendation that cannot state the conditions under which it is wrong is not a recommendation. Those conditions are exactly the ones step 1 of the plan is designed to resolve: is there an escalator, is the parcel inside the City, and what is the land residual.</p>
+<h3>Sensitivity &mdash; post-expiry downtime</h3>
+<div class="scroll"><table>
+<caption>Downtime is a scenario input, not an official statistic (flag F-33). It is included because omitting it would flatter the hold path.</caption>
+<thead><tr><th>Downtime (years)</th><th>PV at 4 years</th><th>PV at 6 years</th><th>PV at 9 years</th></tr></thead><tbody>
+<tr><td class='val'>0.0</td><td class='val'>110.33</td><td class='val'>115.34</td><td class='val'>122.29</td></tr>
+<tr><td class='val'>1.0</td><td class='val'>104.88</td><td class='val'>110.30</td><td class='val'>117.82</td></tr>
+<tr><td class='val'>2.0</td><td class='val'>99.78</td><td class='val'>105.59</td><td class='val'>113.63</td></tr>
+</tbody></table></div>
+<p class="small">Downtime is a SCENARIO input, not an official statistic: no government source quantifies quick-service-restaurant re-tenanting vacancy (flag F-33, RK-17). It is included because omitting it would flatter the hold path. During downtime the landlord also carries property tax, insurance and maintenance that the NNN tenant previously reimbursed (R-01, R-06); that cash cost is NOT modelled, so the hold figures remain optimistic.</p>
+<h3>Sensitivity &mdash; dark-box land residual</h3>
+<div class="scroll"><table>
+<caption>What the site retains if the restaurant closes and only land and shell value remain. Unverified input (UX-2).</caption>
+<thead><tr><th>Land residual (% of value)</th><th>PV at 4 years</th><th>PV at 6 years</th><th>PV at 9 years</th></tr></thead><tbody>
+<tr><td class='val'>30%</td><td class='val'>104.34</td><td class='val'>109.59</td><td class='val'>116.96</td></tr>
+<tr><td class='val'>50%</td><td class='val'>104.88</td><td class='val'>110.30</td><td class='val'>117.82</td></tr>
+<tr><td class='val'>70%</td><td class='val'>105.43</td><td class='val'>111.01</td><td class='val'>118.68</td></tr>
+</tbody></table></div>
+<p class="small">The dark-box land residual (UX-2) is unverified. The only official land-versus-improvement ratio available is Jack in the Box Inc.&#x27;s own balance sheet at IN-18: land of $93,255 thousand against buildings of $967,676 thousand, or 8.79% of gross book cost. That is a national historical COST figure and is expressly not used as a market estimate (flag F-33). Notice how little the answer moves across a 30% to 70% residual range: because the base-rate non-renewal probability is under 9%, the dark branch carries little weight UNTIL A SIGNAL ARRIVES - and then it carries almost all of it.</p>
+<h3>Sensitivity &mdash; official land-price growth</h3>
+<div class="scroll"><table>
+<caption>Two official FHFA assumptions, in both regimes.</caption>
+<thead><tr><th>Official assumption</th><th>Growth</th><th>Regime</th><th>4 yr</th><th>6 yr</th><th>9 yr</th></tr></thead><tbody>
+<tr><td class='metric' rowspan='2'>Downside - FHFA purchase-only Pacific division, 2026 Q1 (IN-7)</td><td class='val' rowspan='2'>0.0%</td><td class='per'>Base</td><td class='val'>104.8832</td><td class='val'>110.3000</td><td class='val'>117.8164</td></tr><tr><td class='per'>After signal</td><td class='val'>59.7078</td><td class='val'>66.8622</td><td class='val'>77.2230</td></tr>
+<tr><td class='metric' rowspan='2'>Central - FHFA all-transactions LA-Long Beach-Glendale MSAD, 2026 Q2 (IN-6)</td><td class='val' rowspan='2'>1.2%</td><td class='per'>Base</td><td class='val'>104.8838</td><td class='val'>110.3013</td><td class='val'>117.8187</td></tr><tr><td class='per'>After signal</td><td class='val'>59.7244</td><td class='val'>66.8840</td><td class='val'>77.2497</td></tr>
+</tbody></table></div>
+<p class="small">In the BASE regime the two official land-growth assumptions are indistinguishable to two decimal places, because land growth only enters through the dark branch and the base-rate non-renewal probability is under 9%. That is itself a finding: while the tenant is performing, local house-price growth is close to irrelevant to this decision. In the SIGNAL regime the dark branch carries the whole terminal value and land growth starts to matter. Shown to four decimal places so the reader can see the immateriality rather than suspect a rendering error.</p>
+<h3>Catastrophe overlay (EQ-11, EQ-12)</h3>
+<div class="scroll"><table>
+<caption>Severity and frequency bands drawn from official statistics, deliberately NOT multiplied into the present values above.</caption>
+<thead><tr><th>Measure</th><th>Value</th><th>Basis</th></tr></thead><tbody>
+<tr><td class='metric'>January-2025-class fire, share of one year of county economic output</td><td class='val'><strong>0.64% to 1.23%</strong></td><td class='note'>IN-13 and IN-14 over IN-15: official county loss statistics divided by official BEA county GDP.</td></tr><tr><td class='metric'>M6.7+ earthquake, official 30-year probability</td><td class='val'>60.0%</td><td class='note'>IN-12 restated arithmetically over a five-year window. Both restatements are published because the method changes the answer.</td></tr><tr><td class='metric'>Same event restated over a five-year window &mdash; compound</td><td class='val'>14.16%</td><td class='note' rowspan='2'>IN-12 restated arithmetically over a five-year window. Both restatements are published because the method changes the answer.</td></tr><tr><td class='metric'>Same event restated over a five-year window &mdash; linear</td><td class='val'>10.00%</td></tr>
+</tbody></table></div>
+<p class="small">These are severity and frequency BANDS from official statistics. They are deliberately NOT multiplied into the present values above, because no official source maps a county output loss or a regional earthquake probability onto a specific commercial parcel&#x27;s value. Doing so would manufacture precision the sources do not support.</p>
+<h3>Limitations</h3><ol class='clean'>
+<li>No dollar value, rent, NOI or cap rate for the subject property was supplied or is verifiable from an official source. The model is normalised to an index and its outputs must be read as RELATIVE comparisons between decision paths, never as valuations.</li>
+<li>The cap-rate spread grid (UX-1) is unverified. No government agency publishes net-lease cap rates. Outputs that depend on it are labelled accordingly on every rendered table.</li>
+<li>The dark-box land residual grid (UX-2) is unverified. The only official land-versus-building ratio available (IN-18, 8.79%) is a national historical book-cost figure and is not used as a market estimate.</li>
+<li>The expiry date is a window, 2030 to 2035, not a date (UX-3). Results are shown for 4, 6 and 9 years.</li>
+<li>The lease itself was not supplied: escalator, options, expense stops, exclusive use and continuous operation are all unknown (F-02). The model tests escalation scenarios rather than asserting a lease structure.</li>
+<li>SCAG&#x27;s adopted 2024 forecast and its 2025 draft cycle disagree on the direction of Los Angeles County population change (IR-02). The model does not use either as a driver; population enters only through the qualitative risk register.</li>
+<li>BEA has discontinued metropolitan-area GDP (E-35), so no MSA-level income projection is possible. County GDP is used instead.</li>
+<li>FEMA National Risk Index county values could not be read from fema.gov in this session (H-31 to H-34) and are not used as model inputs.</li>
+<li>The model contains no forecast of Jack in the Box Inc. financial performance beyond what the company has itself disclosed. Guidance is taken as disclosed and is not extrapolated.</li>
+<li>The post-expiry downtime scenario (0, 1 or 2 years) has no official basis; no government source quantifies quick-service-restaurant re-tenanting vacancy. It is included because omitting it would flatter the hold path, and the cash cost of carrying tax, insurance and maintenance during downtime is still NOT modelled, so the hold figures remain optimistic in a second way.</li>
+<li>The stress case at EQ-14 identifies conditions under which the recommendation reverses. Those conditions are published on the Projection page and in the Executive Summary rather than suppressed.</li>
+</ol>
+<div class="pager"><a href="decisions.html">&larr; Options &amp; Recommendation</a><a href="sources.html">Sources &amp; Verification &rarr;</a></div>
+</main>
+<footer class="site"><div class="wrap">
+<p><strong>Verification standard.</strong> Every table row on this site carries a link to an
+official publisher &mdash; a government agency, a regulator, a central bank, a regional planning
+agency, or a document filed with the U.S. Securities and Exchange Commission. Where a value
+could not be confirmed from an official source, the value cell is left <em>blank</em>, the row is
+marked <span class="pill p-no">Unverified</span>, and the reason is registered on the
+<a href="flagged.html">Flagged for Review</a> page. No value on this site is inferred,
+estimated from memory, or taken from a news article, brokerage, aggregator or wiki.</p>
+<p><strong>Privacy.</strong> The subject property is deliberately anonymised. Its address, parcel
+number, owner identity, purchase price, rent, net operating income and insurance details are
+withheld and are not published anywhere on this site, including in the underlying data files.
+Every parcel-specific and owner-specific field is therefore blank by design and flagged as such.</p>
+<p><strong>Not advice.</strong> This is an analytical research file, not legal advice, tax advice,
+an appraisal, or a securities recommendation. Sources retrieved 2026-11-06.
+<a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a> &middot;
+<a href="flagged.html">Flagged for Review</a> &middot;
+<a href="https://github.com/wingbangboozle1-lang/Jack1" rel="noopener noreferrer">Repository</a></p>
+</div></footer>
+</body>
+</html>
