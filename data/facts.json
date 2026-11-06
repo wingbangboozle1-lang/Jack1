@@ -8,173 +8,761 @@
   "tables": [
     {
       "id": "T01",
-      "title": "Property & lease (placeholders only — no personal data)",
+      "title": "Property & lease (placeholders only \u2014 no personal data)",
       "note": "The specific parcel, owner identity and lease document are deliberately not reproduced. See Privacy & Method.",
-      "columns": ["Field", "Value", "Basis / status", "Source"],
+      "columns": [
+        "Field",
+        "Value",
+        "Basis / status",
+        "Source"
+      ],
       "rows": [
-        ["Asset type", "Single-tenant quick-service restaurant (free-standing), absolute-NNN lease structure as described by the principal", "Principal-supplied description; the executed lease was not provided", null],
-        ["Sub-market", "[CITY-CENTRAL-LA] — generic Central Los Angeles", "Principal-supplied, generalised per privacy policy", null],
-        ["Parcel / APN", "[PARCEL-REDACTED]", "Withheld by design", null],
-        ["Owner of record", "[OWNER-ENTITY]", "Withheld by design", null],
-        ["Tenant entity", "[TENANT-ENTITY]", "Withheld by design", null],
-        ["Lease commencement", "[LEASE-START]", "Principal-supplied; not verified against a document", null],
-        ["Lease expiry window", "2030-2035 (range supplied by principal)", "Principal-supplied range; exact date not verified", null],
-        ["Rent, escalations, options", "[RENT]", "Not transcribed; not verified", null],
-        ["Building area / land area", "", "Not provided; cannot be sourced", null],
-        ["Current assessed value", "", "Would require the parcel number, which is withheld", null]
+        [
+          "Asset type",
+          "Single-tenant quick-service restaurant (free-standing), absolute-NNN lease structure as described by the principal",
+          "Principal-supplied description; the executed lease was not provided",
+          "P"
+        ],
+        [
+          "Sub-market",
+          "[CITY-CENTRAL-LA] \u2014 generic Central Los Angeles",
+          "Principal-supplied, generalised per privacy policy",
+          "P"
+        ],
+        [
+          "Parcel / APN",
+          "[PARCEL-REDACTED]",
+          "Withheld by design",
+          "P"
+        ],
+        [
+          "Owner of record",
+          "[OWNER-ENTITY]",
+          "Withheld by design",
+          "P"
+        ],
+        [
+          "Tenant entity",
+          "[TENANT-ENTITY]",
+          "Withheld by design",
+          "P"
+        ],
+        [
+          "Lease commencement",
+          "[LEASE-START]",
+          "Principal-supplied; not verified against a document",
+          "P"
+        ],
+        [
+          "Lease expiry window",
+          "2030-2035 (range supplied by principal)",
+          "Principal-supplied range; exact date not verified",
+          "P"
+        ],
+        [
+          "Rent, escalations, options",
+          "[RENT]",
+          "Not transcribed; not verified",
+          "P"
+        ],
+        [
+          "Building area / land area",
+          "",
+          "Not provided; cannot be sourced",
+          "P"
+        ],
+        [
+          "Current assessed value",
+          "",
+          "Would require the parcel number, which is withheld",
+          "P"
+        ]
       ]
     },
     {
       "id": "T02",
-      "title": "Trade-area demographics — City of Los Angeles",
-      "columns": ["Indicator", "Value", "Vintage", "Source"],
+      "title": "Trade-area demographics \u2014 City of Los Angeles",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Vintage",
+        "Source"
+      ],
       "rows": [
-        ["Population estimate", "3,869,089", "July 1, 2025 (V2025)", "S05"],
-        ["Population, 2020 Census", "3,898,747", "April 1, 2020", "S05"],
-        ["Population change 2020→2025", "−0.8%", "V2025", "S05"],
-        ["Median household income (2024 dollars)", "$81,939", "ACS 2020-2024", "S05"],
-        ["Per capita income (2024 dollars)", "$47,685", "ACS 2020-2024", "S05"],
-        ["Persons in poverty", "16.5%", "SAIPE (as shown on QuickFacts)", "S05"],
-        ["Bachelor's degree or higher", "38.5%", "ACS 2020-2024", "S05"],
-        ["High school graduate or higher", "79.6%", "ACS 2020-2024", "S05"],
-        ["Labor-force participation rate", "66.4%", "ACS 2020-2024", "S05"],
-        ["Owner-occupied housing unit rate", "36.0%", "ACS 2020-2024", "S05"],
-        ["Median gross rent", "$1,933", "ACS 2020-2024", "S05"],
-        ["Median home value", "$921,200", "ACS 2020-2024", "S05"],
-        ["Households", "1,439,097", "ACS 2020-2024", "S05"],
-        ["Persons per household", "2.61", "ACS 2020-2024", "S05"],
-        ["Language other than English at home", "56.4%", "ACS 2020-2024", "S05"],
-        ["Mean travel time to work (minutes)", "30.7", "ACS 2020-2024", "S05"],
-        ["Population per square mile", "8,304.2", "2020 Census", "S05"],
-        ["Total retail sales (2022)", "$81,351,523 thousand", "Economic Census 2022", "S05"],
-        ["Retail sales per capita (2022)", "$21,281", "Economic Census 2022", "S05"],
-        ["Accommodation & food services sales (2022)", "$17,366,966 thousand", "Economic Census 2022", "S05"],
-        ["Building permits, 2025", "", "Census QuickFacts shows 'X' (not applicable/available) for the city", "S05"],
-        ["Total employer establishments, 2023", "", "Census QuickFacts shows 'X' for the city", "S05"]
+        [
+          "Population estimate",
+          "3,869,089",
+          "July 1, 2025 (V2025)",
+          "S05"
+        ],
+        [
+          "Population, 2020 Census",
+          "3,898,747",
+          "April 1, 2020",
+          "S05"
+        ],
+        [
+          "Population change 2020\u21922025",
+          "\u22120.8%",
+          "V2025",
+          "S05"
+        ],
+        [
+          "Median household income (2024 dollars)",
+          "$81,939",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Per capita income (2024 dollars)",
+          "$47,685",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Persons in poverty",
+          "16.5%",
+          "SAIPE (as shown on QuickFacts)",
+          "S05"
+        ],
+        [
+          "Bachelor's degree or higher",
+          "38.5%",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "High school graduate or higher",
+          "79.6%",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Labor-force participation rate",
+          "66.4%",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Owner-occupied housing unit rate",
+          "36.0%",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Median gross rent",
+          "$1,933",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Median home value",
+          "$921,200",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Households",
+          "1,439,097",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Persons per household",
+          "2.61",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Language other than English at home",
+          "56.4%",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Mean travel time to work (minutes)",
+          "30.7",
+          "ACS 2020-2024",
+          "S05"
+        ],
+        [
+          "Population per square mile",
+          "8,304.2",
+          "2020 Census",
+          "S05"
+        ],
+        [
+          "Total retail sales (2022)",
+          "$81,351,523 thousand",
+          "Economic Census 2022",
+          "S05"
+        ],
+        [
+          "Retail sales per capita (2022)",
+          "$21,281",
+          "Economic Census 2022",
+          "S05"
+        ],
+        [
+          "Accommodation & food services sales (2022)",
+          "$17,366,966 thousand",
+          "Economic Census 2022",
+          "S05"
+        ],
+        [
+          "Building permits, 2025",
+          "",
+          "Census QuickFacts shows 'X' (not applicable/available) for the city",
+          "S05"
+        ],
+        [
+          "Total employer establishments, 2023",
+          "",
+          "Census QuickFacts shows 'X' for the city",
+          "S05"
+        ]
       ]
     },
     {
       "id": "T03",
-      "title": "Trade-area demographics — Los Angeles County",
-      "columns": ["Indicator", "Value", "Vintage", "Source"],
+      "title": "Trade-area demographics \u2014 Los Angeles County",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Vintage",
+        "Source"
+      ],
       "rows": [
-        ["Population estimate", "9,694,934", "July 1, 2025 (V2025)", "S06"],
-        ["Population, 2020 Census", "10,014,009", "April 1, 2020", "S06"],
-        ["Population change 2020→2025", "−3.2%", "V2025", "S06"],
-        ["Median household income (2024 dollars)", "$90,112", "ACS 2020-2024", "S06"],
-        ["Per capita income (2024 dollars)", "$45,792", "ACS 2020-2024", "S06"],
-        ["Persons in poverty", "13.3%", "SAIPE (as shown on QuickFacts)", "S06"],
-        ["Bachelor's degree or higher", "36.0%", "ACS 2020-2024", "S06"],
-        ["Labor-force participation rate", "64.7%", "ACS 2020-2024", "S06"],
-        ["Median gross rent", "$1,954", "ACS 2020-2024", "S06"],
-        ["Median home value", "$834,200", "ACS 2020-2024", "S06"],
-        ["Households", "3,416,449", "ACS 2020-2024", "S06"],
-        ["Mean travel time to work (minutes)", "30.4", "ACS 2020-2024", "S06"],
-        ["Population per square mile", "2,466.9", "2020 Census", "S06"],
-        ["Building permits, 2025", "22,250", "Census Building Permits Survey", "S06"],
-        ["Total employer establishments, 2023", "304,988", "County Business Patterns 2023", "S06"],
-        ["Total employment, 2023", "3,987,736", "County Business Patterns 2023", "S06"],
-        ["Total employment change, 2022→2023", "+2.3%", "County Business Patterns", "S06"],
-        ["Total annual payroll, 2023", "$299,616,607 thousand", "County Business Patterns 2023", "S06"],
-        ["Total retail sales (2022)", "$213,932,785 thousand", "Economic Census 2022", "S06"],
-        ["Accommodation & food services sales (2022)", "$44,000,801 thousand", "Economic Census 2022", "S06"],
-        ["County median household income, 2024 (SAIPE)", "$90,757", "SAIPE 2024", "S04"]
+        [
+          "Population estimate",
+          "9,694,934",
+          "July 1, 2025 (V2025)",
+          "S06"
+        ],
+        [
+          "Population, 2020 Census",
+          "10,014,009",
+          "April 1, 2020",
+          "S06"
+        ],
+        [
+          "Population change 2020\u21922025",
+          "\u22123.2%",
+          "V2025",
+          "S06"
+        ],
+        [
+          "Median household income (2024 dollars)",
+          "$90,112",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Per capita income (2024 dollars)",
+          "$45,792",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Persons in poverty",
+          "13.3%",
+          "SAIPE (as shown on QuickFacts)",
+          "S06"
+        ],
+        [
+          "Bachelor's degree or higher",
+          "36.0%",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Labor-force participation rate",
+          "64.7%",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Median gross rent",
+          "$1,954",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Median home value",
+          "$834,200",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Households",
+          "3,416,449",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Mean travel time to work (minutes)",
+          "30.4",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "Population per square mile",
+          "2,466.9",
+          "2020 Census",
+          "S06"
+        ],
+        [
+          "Building permits, 2025",
+          "22,250",
+          "Census Building Permits Survey",
+          "S06"
+        ],
+        [
+          "Total employer establishments, 2023",
+          "304,988",
+          "County Business Patterns 2023",
+          "S06"
+        ],
+        [
+          "Total employment, 2023",
+          "3,987,736",
+          "County Business Patterns 2023",
+          "S06"
+        ],
+        [
+          "Total employment change, 2022\u21922023",
+          "+2.3%",
+          "County Business Patterns",
+          "S06"
+        ],
+        [
+          "Total annual payroll, 2023",
+          "$299,616,607 thousand",
+          "County Business Patterns 2023",
+          "S06"
+        ],
+        [
+          "Total retail sales (2022)",
+          "$213,932,785 thousand",
+          "Economic Census 2022",
+          "S06"
+        ],
+        [
+          "Accommodation & food services sales (2022)",
+          "$44,000,801 thousand",
+          "Economic Census 2022",
+          "S06"
+        ],
+        [
+          "County median household income, 2024 (SAIPE)",
+          "$90,757",
+          "SAIPE 2024",
+          "S04"
+        ]
       ]
     },
     {
       "id": "T04",
       "title": "Labour market",
-      "columns": ["Indicator", "Value", "Period", "Source"],
+      "columns": [
+        "Indicator",
+        "Value",
+        "Period",
+        "Source"
+      ],
       "rows": [
-        ["MSA unemployment rate", "4.6%", "2026-09", "S01"],
-        ["MSA unemployment rate", "5.0%", "2026-06", "S01"],
-        ["MSA unemployment rate, 2026 peak in series window", "5.4%", "2025-09", "S01"],
-        ["MSA unemployment rate, pre-pandemic low", "4.0%", "2000-09/2000-10 (series low)", "S01"],
-        ["MSA unemployment rate, pandemic peak", "18.2%", "2020-05", "S01"],
-        ["MSA total nonfarm employment (SA)", "6,299.9 thousand", "2026-09", "S03"],
-        ["MSA total nonfarm employment (SA)", "6,311.1 thousand", "2026-06", "S03"],
-        ["MSA total nonfarm employment (SA), Jan 2020", "6,310.2 thousand", "2020-01", "S03"],
-        ["MSA total nonfarm employment (SA), pandemic trough", "5,257.8 thousand", "2020-04", "S03"],
-        ["County employment change 2022→2023", "+2.3%", "2023", "S06"],
-        ["County labour-force participation", "64.7%", "ACS 2020-2024", "S06"],
-        ["State of California unemployment rate", "5.1%", "2026-09", "S32"]
+        [
+          "MSA unemployment rate",
+          "4.6%",
+          "2026-09",
+          "S01"
+        ],
+        [
+          "MSA unemployment rate",
+          "5.0%",
+          "2026-06",
+          "S01"
+        ],
+        [
+          "MSA unemployment rate, 2026 peak in series window",
+          "5.4%",
+          "2025-09",
+          "S01"
+        ],
+        [
+          "MSA unemployment rate, pre-pandemic low",
+          "4.0%",
+          "2000-09/2000-10 (series low)",
+          "S01"
+        ],
+        [
+          "MSA unemployment rate, pandemic peak",
+          "18.2%",
+          "2020-05",
+          "S01"
+        ],
+        [
+          "MSA total nonfarm employment (SA)",
+          "6,299.9 thousand",
+          "2026-09",
+          "S03"
+        ],
+        [
+          "MSA total nonfarm employment (SA)",
+          "6,311.1 thousand",
+          "2026-06",
+          "S03"
+        ],
+        [
+          "MSA total nonfarm employment (SA), Jan 2020",
+          "6,310.2 thousand",
+          "2020-01",
+          "S03"
+        ],
+        [
+          "MSA total nonfarm employment (SA), pandemic trough",
+          "5,257.8 thousand",
+          "2020-04",
+          "S03"
+        ],
+        [
+          "County employment change 2022\u21922023",
+          "+2.3%",
+          "2023",
+          "S06"
+        ],
+        [
+          "County labour-force participation",
+          "64.7%",
+          "ACS 2020-2024",
+          "S06"
+        ],
+        [
+          "State of California unemployment rate",
+          "5.1%",
+          "2026-09",
+          "S32"
+        ]
       ]
     },
     {
       "id": "T05",
       "title": "Prices, rates and credit",
-      "columns": ["Indicator", "Value", "Period", "Source"],
+      "columns": [
+        "Indicator",
+        "Value",
+        "Period",
+        "Source"
+      ],
       "rows": [
-        ["CPI-U, all items (index)", "336.298", "2026-09", "S07"],
-        ["CPI-U all items, change vs 2020-01", "+29.8% (derived)", "2020-01 → 2026-09", "S07"],
-        ["CPI-U food away from home (index)", "398.783", "2026-09", "S08"],
-        ["CPI-U food away from home, 12-month change", "+3.5% (derived, 385.451→398.783)", "2025-09 → 2026-09", "S08"],
-        ["10-year Treasury yield", "4.90%", "2026-11-04", "S09"],
-        ["10-year Treasury yield", "5.29%", "2026-09-30", "S09"],
-        ["10-year Treasury yield, 2026 low in window", "3.97%", "2026-02-27", "S09"],
-        ["10-year Treasury yield, 2026 high in window", "5.31%", "2026-10-05", "S09"],
-        ["Moody's Baa corporate yield", "6.59%", "2026-10", "S10"],
-        ["Moody's Baa corporate yield", "5.88%", "2026-01", "S10"],
-        ["CRE loan delinquency rate", "1.53%", "2026Q2", "S11"],
-        ["CRE loan delinquency rate", "1.58%", "2025Q4", "S11"],
-        ["CRE loan delinquency rate, GFC peak", "8.75%", "2010Q1", "S11"]
+        [
+          "CPI-U, all items (index)",
+          "336.298",
+          "2026-09",
+          "S07"
+        ],
+        [
+          "CPI-U all items, change vs 2020-01",
+          "+29.8% (derived)",
+          "2020-01 \u2192 2026-09",
+          "S07"
+        ],
+        [
+          "CPI-U food away from home (index)",
+          "398.783",
+          "2026-09",
+          "S08"
+        ],
+        [
+          "CPI-U food away from home, 12-month change",
+          "+3.5% (derived, 385.451\u2192398.783)",
+          "2025-09 \u2192 2026-09",
+          "S08"
+        ],
+        [
+          "10-year Treasury yield",
+          "4.90%",
+          "2026-11-04",
+          "S09"
+        ],
+        [
+          "10-year Treasury yield",
+          "5.29%",
+          "2026-09-30",
+          "S09"
+        ],
+        [
+          "10-year Treasury yield, 2026 low in window",
+          "3.97%",
+          "2026-02-27",
+          "S09"
+        ],
+        [
+          "10-year Treasury yield, 2026 high in window",
+          "5.31%",
+          "2026-10-05",
+          "S09"
+        ],
+        [
+          "Moody's Baa corporate yield",
+          "6.59%",
+          "2026-10",
+          "S10"
+        ],
+        [
+          "Moody's Baa corporate yield",
+          "5.88%",
+          "2026-01",
+          "S10"
+        ],
+        [
+          "CRE loan delinquency rate",
+          "1.53%",
+          "2026Q2",
+          "S11"
+        ],
+        [
+          "CRE loan delinquency rate",
+          "1.58%",
+          "2025Q4",
+          "S11"
+        ],
+        [
+          "CRE loan delinquency rate, GFC peak",
+          "8.75%",
+          "2010Q1",
+          "S11"
+        ]
       ]
     },
     {
       "id": "T06",
-      "title": "Tenant credit — Jack in the Box Inc. (CIK 0000807882)",
-      "columns": ["Indicator", "Value", "Period", "Source"],
+      "title": "Tenant credit \u2014 Jack in the Box Inc. (CIK 0000807882)",
+      "columns": [
+        "Indicator",
+        "Value",
+        "Period",
+        "Source"
+      ],
       "rows": [
-        ["Total revenues", "$1,465.3 million", "FY ended 2025-09-28", "S15"],
-        ["Total revenues", "$1,571.3 million", "FY ended 2024-09-29", "S15"],
-        ["Total revenues", "$1,692.3 million", "FY ended 2023-10-01", "S15"],
-        ["Net income (loss)", "−$80.7 million", "FY 2025", "S16"],
-        ["Net income (loss)", "−$36.7 million", "FY 2024", "S16"],
-        ["Net income (loss)", "$130.8 million", "FY 2023", "S16"],
-        ["Securitized debt raised", "$500 million Series 2026-1 7.624% fixed-rate senior secured notes, Class A-2", "Closed 2026-06-23", "S17"],
-        ["Anticipated repayment date of the Class A-2 notes", "May 2031", "2026-06-23 filing", "S17"],
-        ["Legal final maturity of the 2026 notes", "May 2056", "2026-06-23 filing", "S17"],
-        ["Revolving facility capacity", "Up to $150 million (Series 2026-1 Class A-1 variable funding notes)", "2026-06-23", "S17"],
-        ["Most recent annual report on file", "Form 10-K for FY ended 2025-09-28, filed 2025-11-19", "2025-11-19", "S14"],
-        ["S&P / Moody's issuer credit rating", "", "Not disclosed on any official source reviewed; see F-06", null]
+        [
+          "Total revenues",
+          "$1,465.3 million",
+          "FY ended 2025-09-28",
+          "S15"
+        ],
+        [
+          "Total revenues",
+          "$1,571.3 million",
+          "FY ended 2024-09-29",
+          "S15"
+        ],
+        [
+          "Total revenues",
+          "$1,692.3 million",
+          "FY ended 2023-10-01",
+          "S15"
+        ],
+        [
+          "Net income (loss)",
+          "\u2212$80.7 million",
+          "FY 2025",
+          "S16"
+        ],
+        [
+          "Net income (loss)",
+          "\u2212$36.7 million",
+          "FY 2024",
+          "S16"
+        ],
+        [
+          "Net income (loss)",
+          "$130.8 million",
+          "FY 2023",
+          "S16"
+        ],
+        [
+          "Securitized debt raised",
+          "$500 million Series 2026-1 7.624% fixed-rate senior secured notes, Class A-2",
+          "Closed 2026-06-23",
+          "S17"
+        ],
+        [
+          "Anticipated repayment date of the Class A-2 notes",
+          "May 2031",
+          "2026-06-23 filing",
+          "S17"
+        ],
+        [
+          "Legal final maturity of the 2026 notes",
+          "May 2056",
+          "2026-06-23 filing",
+          "S17"
+        ],
+        [
+          "Revolving facility capacity",
+          "Up to $150 million (Series 2026-1 Class A-1 variable funding notes)",
+          "2026-06-23",
+          "S17"
+        ],
+        [
+          "Most recent annual report on file",
+          "Form 10-K for FY ended 2025-09-28, filed 2025-11-19",
+          "2025-11-19",
+          "S14"
+        ],
+        [
+          "S&P / Moody's issuer credit rating",
+          "",
+          "Not disclosed on any official source reviewed; see F-06",
+          null
+        ]
       ]
     },
     {
       "id": "T07",
-      "title": "Market pricing — single-tenant NNN (third-party commentary, not official)",
+      "title": "Market pricing \u2014 single-tenant NNN (third-party commentary, not official)",
       "note": "These are broker/aggregator statements, NOT official statistics. They are shown because no government source prices NNN assets.",
-      "columns": ["Indicator", "Value", "Basis", "Source"],
+      "columns": [
+        "Indicator",
+        "Value",
+        "Basis",
+        "Source"
+      ],
       "rows": [
-        ["Jack in the Box trailing 12-month average cap rate", "4.91%", "Net Lease Advisor page-stated trailing average", "S28"],
-        ["Jack in the Box average sale price", "$2,707,997", "Net Lease Advisor page-stated trailing average", "S28"],
-        ["Jack in the Box average NOI", "$129,846", "Net Lease Advisor page-stated trailing average", "S28"],
-        ["Jack in the Box typical cap-rate range", "5.0% – 6.0%", "Broker-stated 'typical 2026' range", "S29"],
-        ["Los Angeles JIB asking cap rate (Westwood)", "4.31% in place", "Broker flyer, single listing", "S30"],
-        ["Los Angeles JIB asking price (second listing)", "$1,750,000 at 5.82% cap", "Broker list page, undated", "S31"],
-        ["QSR sector average cap rate", "5.72%", "Aggregator page-stated sector average", "S28"]
+        [
+          "Jack in the Box trailing 12-month average cap rate",
+          "4.91%",
+          "Net Lease Advisor page-stated trailing average",
+          "S28"
+        ],
+        [
+          "Jack in the Box average sale price",
+          "$2,707,997",
+          "Net Lease Advisor page-stated trailing average",
+          "S28"
+        ],
+        [
+          "Jack in the Box average NOI",
+          "$129,846",
+          "Net Lease Advisor page-stated trailing average",
+          "S28"
+        ],
+        [
+          "Jack in the Box typical cap-rate range",
+          "5.0% \u2013 6.0%",
+          "Broker-stated 'typical 2026' range",
+          "S29"
+        ],
+        [
+          "Los Angeles JIB asking cap rate (Westwood)",
+          "4.31% in place",
+          "Broker flyer, single listing",
+          "S30"
+        ],
+        [
+          "Los Angeles JIB asking price (second listing)",
+          "$1,750,000 at 5.82% cap",
+          "Broker list page, undated",
+          "S31"
+        ],
+        [
+          "QSR sector average cap rate",
+          "5.72%",
+          "Aggregator page-stated sector average",
+          "S28"
+        ]
       ]
     },
     {
       "id": "T08",
       "title": "Tax, regulatory and hazard rules that bind the decision",
-      "columns": ["Rule", "What it says", "Source"],
+      "columns": [
+        "Rule",
+        "What it says",
+        "Source"
+      ],
       "rows": [
-        ["Proposition 13 property tax", "1% of base-year value plus voter-approved debt; annual increase limited to 2%; reassessed at market on change of ownership or new construction", "S20"],
-        ["Property tax scale", "Property tax raised more than $89 billion for local government in 2022-23", "S20"],
-        ["Proposition 8 decline-in-value", "Assessed value may be temporarily reduced when market value falls below factored base-year value on the January 1 lien date", "S21"],
-        ["Decline-in-value filing window (LA County)", "Applications for 2026-2027 accepted from 2026-07-02; deadline 2026-11-30", "S27"],
-        ["City of LA transfer tax — base", "$2.25 per $500 of consideration", "S23"],
-        ["Measure ULA tier 1", "4% additional on conveyances over $5,400,000 and under $10,900,000 (closings after 2026-06-30)", "S23"],
-        ["Measure ULA tier 2", "5.5% additional at or above $10,900,000 (closings after 2026-06-30)", "S23"],
-        ["Combined city transfer tax", "4.45% (tier 1) / 5.95% (tier 2) of value conveyed, seller-paid", "S23"],
-        ["Fast-food minimum wage", "$20.00/hour effective 2024-04-01", "S19"],
-        ["Fast-food wage escalation cap", "Annual increase no more than the lesser of 3.5% or the CPI-W change, rounded to $0.10", "S19"],
-        ["Fast-food Council sunset on increases", "Council may not set an increase taking effect after calendar year 2029", "S19"],
-        ["1031 exchange limits", "45 days to identify replacement property; 180 days to complete; gain deferred, not forgiven", "S24"],
-        ["Fire Hazard Severity Zones", "Moderate/High/Very High classes; 2025 LRA maps issued for Los Angeles County; 'hazard' modelled over 30-50 years", "S25"],
-        ["Alquist-Priolo fault zones", "No structure for human occupancy within ~50 ft of an active fault trace; Natural Hazard Disclosure required on sale (Civil Code §1103)", "S26"],
-        ["Disaster relief", "Property tax relief available for properties damaged by a disaster (LA County Assessor)", "S27"],
-        ["Address/PIN publication limits", "Government Code §7928.205 restricts public internet posting of an official's address or name+APN (AB 1785)", "S22"]
+        [
+          "Proposition 13 property tax",
+          "1% of base-year value plus voter-approved debt; annual increase limited to 2%; reassessed at market on change of ownership or new construction",
+          "S20"
+        ],
+        [
+          "Property tax scale",
+          "Property tax raised more than $89 billion for local government in 2022-23",
+          "S20"
+        ],
+        [
+          "Proposition 8 decline-in-value",
+          "Assessed value may be temporarily reduced when market value falls below factored base-year value on the January 1 lien date",
+          "S21"
+        ],
+        [
+          "Decline-in-value filing window (LA County)",
+          "Applications for 2026-2027 accepted from 2026-07-02; deadline 2026-11-30",
+          "S27"
+        ],
+        [
+          "City of LA transfer tax \u2014 base",
+          "$2.25 per $500 of consideration",
+          "S23"
+        ],
+        [
+          "Measure ULA tier 1",
+          "4% additional on conveyances over $5,400,000 and under $10,900,000 (closings after 2026-06-30)",
+          "S23"
+        ],
+        [
+          "Measure ULA tier 2",
+          "5.5% additional at or above $10,900,000 (closings after 2026-06-30)",
+          "S23"
+        ],
+        [
+          "Combined city transfer tax",
+          "4.45% (tier 1) / 5.95% (tier 2) of value conveyed, seller-paid",
+          "S23"
+        ],
+        [
+          "Fast-food minimum wage",
+          "$20.00/hour effective 2024-04-01",
+          "S19"
+        ],
+        [
+          "Fast-food wage escalation cap",
+          "Annual increase no more than the lesser of 3.5% or the CPI-W change, rounded to $0.10",
+          "S19"
+        ],
+        [
+          "Fast-food Council sunset on increases",
+          "Council may not set an increase taking effect after calendar year 2029",
+          "S19"
+        ],
+        [
+          "1031 exchange limits",
+          "45 days to identify replacement property; 180 days to complete; gain deferred, not forgiven",
+          "S24"
+        ],
+        [
+          "Fire Hazard Severity Zones",
+          "Moderate/High/Very High classes; 2025 LRA maps issued for Los Angeles County; 'hazard' modelled over 30-50 years",
+          "S25"
+        ],
+        [
+          "Alquist-Priolo fault zones",
+          "No structure for human occupancy within ~50 ft of an active fault trace; Natural Hazard Disclosure required on sale (Civil Code \u00a71103)",
+          "S26"
+        ],
+        [
+          "Disaster relief",
+          "Property tax relief available for properties damaged by a disaster (LA County Assessor)",
+          "S27"
+        ],
+        [
+          "Address/PIN publication limits",
+          "Government Code \u00a77928.205 restricts public internet posting of an official's address or name+APN (AB 1785)",
+          "S22"
+        ]
       ]
     }
   ]

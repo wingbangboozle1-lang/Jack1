@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projections · Jack in the Box NNN — Decision Dashboard</title>
+<meta name="description" content="Anonymized, source-verified analysis of a Central Los Angeles Jack in the Box NNN asset: hold-to-expiry, renew, or sell.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">JIB</span>
+      <span class="brandtext"><strong>NNN Decision Dashboard</strong>
+      <small>Central Los Angeles · single-tenant · anonymized</small></span>
+    </div>
+    <nav><a href="index.html">Overview</a><a href="decision.html">Decision</a><a href="risks.html">Risk Register</a><a href="market.html">Trade Area</a><a href="process.html" class="active">Projections</a><a href="property.html">Property &amp; Lease</a><a href="market_pricing.html">Market Pricing</a><a href="tenant.html">Tenant Credit</a><a href="rules.html">Tax &amp; Rules</a><a href="sources.html">Data &amp; Sources</a><a href="flagged.html">Flagged for Review</a><a href="privacy.html">Privacy &amp; Method</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<h1>Projections</h1>
+<p class="lede">A deterministic, reproducible projection system for the trade area and the asset — with every assumption printed on the page.</p>
+<div class="callout info"><h3>What this model is and is not</h3><p>Model output. Not an appraisal. Not a forecast of any official agency. All inputs are either official statistics (cited) or explicit analyst assumptions listed below.</p></div><h2>How the model is built</h2><ol><li>It loads official series from <code>data/series.json</code> (CPI, food-away-from-home CPI, unemployment, employment).</li><li>It applies the explicit analyst assumptions printed below. None are hidden.</li><li>Value is computed as rent ÷ cap rate, expressed as a <em>multiple of today's value</em>, because the actual rent is unverified (Flagged F-01/F-02).</li><li>Running <code>python3 tools/model.py</code> regenerates every number on this page.</li></ol><h2>Official inputs actually used</h2><div class="tablewrap"><table class="data"><thead><tr><th>Input</th><th>Value</th><th>Source</th></tr></thead><tbody><tr><td>CPI-U all items change, 2020-01 → 2026-09</td><td>29.78%</td><td><a class="src official" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener" title="U.S. Bureau of Labor Statistics via FRED — Consumer Price Index for All Urban Consumers: All Items (CPIAUCSL)">S07</a></td></tr><tr><td>CPI-U food away from home, 12 months to 2026-09</td><td>3.46%</td><td><a class="src official" href="https://fred.stlouisfed.org/series/CUSR0000SEFV" target="_blank" rel="noopener" title="U.S. Bureau of Labor Statistics via FRED — CPI-U: Food Away from Home in U.S. City Average (CUSR0000SEFV)">S08</a></td></tr></tbody></table></div><h2>Paths, 2026 → 2035 (index: 2026 = 1.00)</h2><div class="tablewrap"><table class="data"><thead><tr><th>Year</th><th>Rent multiple</th><th>Cap rate: hold</th><th>Cap rate: renew</th><th>Value index: hold to expiry</th><th>Value index: renew then hold</th><th>Value index: rates-stress, no renewal</th></tr></thead><tbody><tr><td>2026</td><td>1.000×</td><td>4.91%</td><td>4.91%</td><td>1.000</td><td>1.000</td><td>1.000</td></tr><tr><td>2027</td><td>1.030×</td><td>4.96%</td><td>4.21%</td><td>1.007</td><td>1.201</td><td>0.977</td></tr><tr><td>2028</td><td>1.061×</td><td>5.01%</td><td>4.26%</td><td>1.014</td><td>1.223</td><td>0.957</td></tr><tr><td>2029</td><td>1.093×</td><td>5.06%</td><td>4.31%</td><td>1.021</td><td>1.245</td><td>0.938</td></tr><tr><td>2030</td><td>1.125×</td><td>5.11%</td><td>4.36%</td><td>1.028</td><td>1.268</td><td>0.920</td></tr><tr><td>2031</td><td>1.159×</td><td>5.16%</td><td>4.41%</td><td>1.036</td><td>1.291</td><td>0.904</td></tr><tr><td>2032</td><td>1.194×</td><td>5.21%</td><td>4.46%</td><td>1.044</td><td>1.315</td><td>0.890</td></tr><tr><td>2033</td><td>1.230×</td><td>5.26%</td><td>4.51%</td><td>1.051</td><td>1.339</td><td>0.876</td></tr><tr><td>2034</td><td>1.267×</td><td>5.31%</td><td>4.56%</td><td>1.059</td><td>1.364</td><td>0.864</td></tr><tr><td>2035</td><td>1.305×</td><td>5.36%</td><td>4.61%</td><td>1.067</td><td>1.390</td><td>0.853</td></tr></tbody></table></div><h2>Assumptions (all labelled, all editable)</h2><div class="tablewrap"><table class="data"><thead><tr><th>Assumption</th><th>Value</th><th>Justification</th></tr></thead><tbody><tr><td>hold_horizon_years</td><td>9</td><td>Lease expiry window 2030-2035 (principal-supplied); 9 years from 2026 approximates the midpoint.</td></tr><tr><td>cap_rate_current</td><td>0.0491</td><td>S28: Net Lease Advisor page-stated trailing 12-month average cap rate for the Jack in the Box brand.</td></tr><tr><td>cap_rate_band</td><td>0.0431, 0.0582</td><td>F-05: the two Los Angeles data points in S30 and S31. Deliberately NOT averaged (different structures).</td></tr><tr><td>cap_rate_drift_base_bp_per_year</td><td>5</td><td><span class="blank">—</span></td></tr><tr><td>cap_rate_drift_stress_bp_per_year</td><td>20</td><td><span class="blank">—</span></td></tr><tr><td>rent_growth_base</td><td>0.03</td><td>Assumption anchored to CPI-U food away from home (S08: +3.5% over the 12 months to 2026-09) rounded down.</td></tr><tr><td>lease_term_decay_discount_per_year</td><td>0.0125</td><td><span class="blank">—</span></td></tr><tr><td>renewal_cap_rate_benefit_bp</td><td>75</td><td><span class="blank">—</span></td></tr><tr><td>transfer_tax_tier1</td><td>0.0445</td><td>S23: 4.45% combined city base + Measure ULA, tier 1.</td></tr><tr><td>transfer_tax_threshold</td><td>5400000</td><td>S23: $5,400,000 (closings after 2026-06-30).</td></tr><tr><td>prop13_rate</td><td>0.01</td><td>S20: 1% of base-year value.</td></tr><tr><td>prop13_cap</td><td>0.02</td><td>S20: annual increase limited to 2%.</td></tr></tbody></table></div><h2>How to read it</h2><ul><li>value_relative_* is a multiple of today&#x27;s market value, not dollars.</li><li>value_relative_renew &gt; value_relative_hold at every year because the renewal both removes residual decay and re-rates the cap rate.</li><li>value_relative_stress_no_renewal shows what the same asset is worth if rates drift 20 bp/yr instead of 5 bp/yr while you wait.</li><li>None of these are guarantees; they are the arithmetic consequence of the assumptions printed above.</li></ul><div class="callout warn"><h3>The honest limitation</h3><p>These are not forecasts of an official agency and they are not an appraisal. They are the arithmetic consequence of the printed assumptions, which is exactly what makes them auditable. Change an assumption, re-run, and see what changes.</p></div>
+</main>
+<footer class="wrap">
+  <p><strong>Privacy:</strong> this site contains no street address, parcel number, owner identity, tenant contact
+  or lease financials. Parcels are shown as <code>[PARCEL-REDACTED]</code>.</p>
+  <p><strong>Verification:</strong> every factual cell links to its official source. Empty cells are unverified
+  and are listed on <a href="flagged.html">Flagged for Review</a>. Data retrieved 2026-11-06.</p>
+  <p><strong>Not advice.</strong> This is a decision-support analysis, not an appraisal, and not legal, tax or
+  investment advice. Model output is labelled as such.</p>
+</footer>
+</body>
+</html>

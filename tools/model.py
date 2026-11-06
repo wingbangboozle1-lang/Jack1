@@ -26,7 +26,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSUMPTIONS = {
     "hold_horizon_years": 9,
     "hold_horizon_note": "Lease expiry window 2030-2035 (principal-supplied); "
-                         "9 years from 2026 approximates the midpoint.",
+                         "9 years from 2026 approximates the midpoint "
+                         "(repeat this key as hold_horizon_years_note for the site).",
+    "hold_horizon_years_note": "Lease expiry window 2030-2035 (principal-supplied); "
+                               "9 years from 2026 approximates the midpoint.",
     "cap_rate_current": 0.0491,
     "cap_rate_current_note": "S28: Net Lease Advisor page-stated trailing 12-month "
                              "average cap rate for the Jack in the Box brand.",
