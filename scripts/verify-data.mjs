@@ -85,7 +85,7 @@ for (const m of appjs.matchAll(/\{"?([a-z0-9-]+\.html)"?/g)) { /* noop guard */ 
 const counts = {};
 for (const r of rec.records) counts[r.category] = (counts[r.category] || 0) + 1;
 const declared = {
-  "Demographics": [12, 10, 2], "Income & Poverty": [9, 8, 1], "Housing": [6, 6, 0],
+  "Demographics": [12, 10, 2], "Income & Poverty": [9, 9, 0], "Housing": [6, 6, 0],
   "Economy & Jobs": [18, 17, 1], "Prices": [7, 7, 0], "Population Outlook": [7, 7, 0],
   "Schools": [9, 6, 3], "Tenant": [22, 19, 3], "Property & Lease": [15, 0, 15],
   "Tax & Regulation": [8, 5, 3], "Catastrophe": [13, 8, 5], "Capital Markets": [4, 1, 3],
@@ -137,8 +137,8 @@ if (!idx.includes(`${tot.records} data rows`) || !idx.includes(`${tot.verified} 
 }
 const flg = readFileSync("flagged.html", "utf8");
 const words = { 28: "28", 8: "8" };
-if (tot.unverified !== 28 || tot.placeholder !== 8) fail("flagged.html narrative says 28 blank / 8 withheld; dataset differs");
-if (!flg.includes("Thirty-six")) fail("flagged.html lead paragraph must state the total open rows");
+if (tot.unverified !== 27 || tot.placeholder !== 8) fail("flagged.html narrative says 27 blank / 8 withheld; dataset differs");
+if (!flg.includes("Thirty-five")) fail("flagged.html lead paragraph must state the total open rows");
 
 ok();
 if (errors.length) {
