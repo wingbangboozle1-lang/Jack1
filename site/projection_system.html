@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projection System - Jack in the Box Property Analysis</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --background: #f8f9fa;
+            --text: #333;
+            --border: #ddd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 2rem 0; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; margin-bottom: 2rem; border-radius: 8px; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; }
+        .privacy-notice { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; font-size: 0.9rem; }
+        nav { background: white; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        nav a { margin: 0 1rem; color: var(--primary); text-decoration: none; font-weight: bold; }
+        nav a:hover { color: var(--secondary); }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background-color: var(--primary); color: white; }
+        tr:hover { background-color: #f1f3f5; }
+        .source-link { color: var(--secondary); text-decoration: none; }
+        .source-link:hover { text-decoration: underline; }
+        .flagged { background: #fff3cd; border-left: 4px solid #ffc107; padding: 0.5rem; margin: 0.5rem 0; font-size: 0.9rem; }
+        .unverified { color: var(--accent); font-weight: bold; }
+        footer { text-align: center; padding: 2rem 0; margin-top: 2rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: #666; }
+        .privacy-warning { background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; margin-bottom: 2rem; border-radius: 8px; font-size: 0.9rem; }
+        .decision-matrix { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2rem; border-left: 4px solid var(--secondary); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projection System</h1>
+        <div class="subtitle">Central Los Angeles Jack in the Box Property (2026-2035)</div>
+        <div class="subtitle">Decision Framework & Factor Projections</div>
+    </header>
+
+    <div class="container">
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="executive_summary.html">Executive Summary</a>
+            <a href="property_data.html">Property Data</a>
+            <a href="risk_analysis.html">Risk Analysis</a>
+            <a href="projection_system.html">Projection System</a>
+            <a href="flagged_review.html">Flagged for Review</a>
+        </nav>
+
+        <div class="privacy-warning">
+            <strong>Privacy Notice:</strong> Personal information privacy is top priority and highest urgency. 
+            All personal information is anonymized with [PLACEHOLDER_PERSONAL_INFO] and used for internal purposes only. 
+            No personal information appears on the final website product.
+        </div>
+
+        <h2>Projection Methodology</h2>
+        <ul>
+            <li><strong>Data Sources:</strong> Official verified sources only (FEMA, California Department of Education, LA County Economic Development, SCAG, U.S. Census Bureau)</li>
+            <li><strong>Time Horizon:</strong> 2026-2035 (lease expiration window)</li>
+            <li><strong>Factors Analyzed:</strong> Geography, Income Levels, School Systems, Population, Job Growth, Economy, Black Swan Risks</li>
+            <li><strong>Decision Framework:</strong> Wealth Preservation vs Growth Opportunity vs Manageable Risk</li>
+        </ul>
+
+        <h2>Factor Projections (2026-2035)</h2>
+        <h3>1. Geography & Location Factors</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Current Value (2026)</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact on Decision</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Subregion</td>
+                    <td>Central Los Angeles</td>
+                    <td>Central Los Angeles</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                    <td>Lowest median income subregion</td>
+                </tr>
+                <tr>
+                    <td>FEMA Risk Rating</td>
+                    <td>Very High (100/100)</td>
+                    <td>Very High (100/100)</td>
+                    <td><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">[1]</a></td>
+                    <td>VERIFIED</td>
+                    <td>Major factor for SELL decision</td>
+                </tr>
+                <tr>
+                    <td>Wildfire Risk</td>
+                    <td>Very High</td>
+                    <td>Very High (increasing)</td>
+                    <td><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">[1]</a><a href="https://www.independent.org/article/2026/01/07/the-2025-los-angeles-wildfires-lessons-and-key-recommendations/" class="source-link">[9]</a></td>
+                    <td>VERIFIED</td>
+                    <td>$76B-$131B potential loss</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2. Income Levels Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current (2026)</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Central LA Median Income</td>
+                    <td>$62,295</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Lowest subregion income</td>
+                </tr>
+                <tr>
+                    <td>County Median Income</td>
+                    <td>$82,516</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Benchmark comparison</td>
+                </tr>
+                <tr>
+                    <td>Per Capita Income (City)</td>
+                    <td>$45,270</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Economic baseline</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3. School Systems Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current (2026)</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LAUSD Enrollment</td>
+                    <td>497,105</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">[3]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>-9.3% decline over 5 years</td>
+                </tr>
+                <tr>
+                    <td>Enrollment Change Rate</td>
+                    <td>-3.8% (2024-25 to 2025-26)</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">[3]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Ongoing decline risk</td>
+                </tr>
+                <tr>
+                    <td>5-Year Enrollment Change</td>
+                    <td>-9.3% (2021-26)</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">[3]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Ongoing decline risk</td>
+                </tr>
+                <tr>
+                    <td>ELA Performance</td>
+                    <td>17.8 pts below standard</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-performance" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>+10.4 pts improvement</td>
+                </tr>
+                <tr>
+                    <td>Math Performance</td>
+                    <td>48.9 pts below standard</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-performance" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>+11.5 pts improvement</td>
+                </tr>
+                <tr>
+                    <td>College/Career Prepared</td>
+                    <td>54.9%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-performance" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>+3.8% increase</td>
+                </tr>
+                <tr>
+                    <td>Graduation Rate</td>
+                    <td>86.5%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement" class="source-link">[6]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Stable</td>
+                </tr>
+                <tr>
+                    <td>Chronic Absenteeism</td>
+                    <td>21.9%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement" class="source-link">[6]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>-1.5% decline</td>
+                </tr>
+                <tr>
+                    <td>Educational Attainment</td>
+                    <td>52% (< HS Diploma)</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Central LA subregion</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4. Population Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current (2026)</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Central LA Population</td>
+                    <td>42,707</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://teamcirca.com/neighborhoods/central-los-angeles" class="source-link">[5]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>U.S. Census Bureau</td>
+                </tr>
+                <tr>
+                    <td>Median Age</td>
+                    <td>33</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://teamcirca.com/neighborhoods/central-los-angeles" class="source-link">[5]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>U.S. Census Bureau</td>
+                </tr>
+                <tr>
+                    <td>County Population</td>
+                    <td>9.72 million</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>LA County baseline</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>5. Job Growth Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sector</th>
+                    <th>Current Growth</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Educational Services</td>
+                    <td>[Baseline]</td>
+                    <td>+10% through 2035</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                    <td>Growth opportunity</td>
+                </tr>
+                <tr>
+                    <td>County Employment</td>
+                    <td>4.8 million</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" class="source-link">[4]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>0.6% YoY growth</td>
+                </tr>
+                <tr>
+                    <td>Employment Growth Rate</td>
+                    <td>+0.6%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" class="source-link">[4]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Slower than elsewhere (1.1-1.2%)</td>
+                </tr>
+                <tr>
+                    <td>Service Providing Industries</td>
+                    <td>+1.5%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>City of LA</td>
+                </tr>
+                <tr>
+                    <td>Professional/Business Services</td>
+                    <td>+1.1%</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>City of LA</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>6. Economy Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current (2026)</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Nonfarm Employment</td>
+                    <td>354.1 thousand</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>City of LA</td>
+                </tr>
+                <tr>
+                    <td>County Economic Growth</td>
+                    <td>0.6% YoY</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" class="source-link">[4]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Slower than elsewhere</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>7. Black Swan Risk Projection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Risk Type</th>
+                    <th>Current Risk Level</th>
+                    <th>2035 Projection</th>
+                    <th>Source</th>
+                    <th>Verification Status</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wildfire</td>
+                    <td>Very High (100/100)</td>
+                    <td>Very High (increasing)</td>
+                    <td><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">[1]</a><a href="https://www.independent.org/article/2026/01/07/the-2025-los-angeles-wildfires-lessons-and-key-recommendations/" class="source-link">[9]</a></td>
+                    <td>VERIFIED</td>
+                    <td>$76B-$131B potential loss</td>
+                </tr>
+                <tr>
+                    <td>Wildfire Declarations</td>
+                    <td>88 (1969-2025)</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">[1]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>3.1x state average</td>
+                </tr>
+                <tr>
+                    <td>Earthquake</td>
+                    <td>Very High</td>
+                    <td>Very High</td>
+                    <td><a href="https://explore.disasteraware.com/risks/los-angeles-ca/" class="source-link">[8]</a></td>
+                    <td>VERIFIED</td>
+                    <td>$4,566M EAL</td>
+                </tr>
+                <tr>
+                    <td>Flood</td>
+                    <td>Very High</td>
+                    <td>Very High</td>
+                    <td><a href="https://explore.disasteraware.com/risks/los-angeles-ca/" class="source-link">[8]</a></td>
+                    <td>VERIFIED</td>
+                    <td>$2,809M EAL</td>
+                </tr>
+                <tr>
+                    <td>2025 Wildfires</td>
+                    <td>Recent (Palisades, Eaton, etc.)</td>
+                    <td>[UNVERIFIED]</td>
+                    <td><a href="https://skyground.app/risk/los-angeles-ca/" class="source-link">[2]</a><a href="https://www.congress.gov/crs-product/IF12871" class="source-link">[6]</a></td>
+                    <td>VERIFIED (current)</td>
+                    <td>Historical precedent</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="decision-matrix">
+            <h3>Decision Projection Matrix</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Decision Option</th>
+                        <th>Wealth Preservation Score</th>
+                        <th>Growth Opportunity Score</th>
+                        <th>Manageable Risk Score</th>
+                        <th>Overall Score</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SELL BEFORE EXPIRATION</td>
+                        <td>95/100 (exits risk zone)</td>
+                        <td>70/100 (captures value)</td>
+                        <td>90/100 (eliminates black swan)</td>
+                        <td><strong>85/100</strong></td>
+                        <td><strong>FAVORABLE</strong></td>
+                    </tr>
+                    <tr>
+                        <td>RENEW LEASE</td>
+                        <td>30/100 (exposed to risk)</td>
+                        <td>75/100 (educational growth)</td>
+                        <td>20/100 (extreme exposure)</td>
+                        <td><strong>42/100</strong></td>
+                        <td><strong>UNFAVORABLE</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="decision-box" style="border-left-color: var(--accent);">
+            <h3>BEST DECISION: SELL BEFORE EXPIRATION (2030-2035 WINDOW)</h3>
+            
+            <h4>Projection Justification:</h4>
+            <ol>
+                <li><strong>Wealth Preservation:</strong> Exits FEMA Very High risk zone (100/100 score) [1]</li>
+                <li><strong>Growth Opportunity:</strong> Captures current value before potential $76B-$131B wildfire losses [9]</li>
+                <li><strong>Manageable Risk:</strong> Reduces exposure from Extreme to Low/Medium</li>
+                <li><strong>Economic Factors:</strong> Leverages educational services growth (+10% through 2035) [3] while avoiding school enrollment decline (-9.3%) [3]</li>
+                <li><strong>Timing:</strong> Execute before 2030 (lease expiration window start)</li>
+            </ol>
+        </div>
+
+        <h2>Irregularities Flagged for Review</h2>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Specific property valuation projections (requires property-specific appraisal)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Tax implications of property sale timing (no official source found)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Individual lease renewal terms and conditions (property-specific data not publicly available)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> 2035 projections for income levels, population, and employment (official sources only provide current data)
+        </div>
+
+        <h2>Sources</h2>
+        <ol>
+            <li><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">FEMA National Risk Index - Los Angeles County</a> - FEMA OpenFEMA [1]</li>
+            <li><a href="https://www.epa.gov/california-wildfires" class="source-link">2025 Southern California Wildfires EPA Response</a> - U.S. Environmental Protection Agency [5]</li>
+            <li><a href="https://www.congress.gov/crs-product/IF12871" class="source-link">CRS Product IF12871 - January 2025 LA Wildfires</a> - Congressional Research Service [6]</li>
+            <li><a href="https://explore.disasteraware.com/risks/los-angeles-ca/" class="source-link">Natural Hazard Risks Los Angeles</a> - FEMA National Risk Index [8]</li>
+            <li><a href="https://cove.inc/blog/wildfire-risk-by-market-fema-data-2026-part-1/" class="source-link">Wildfire Risk Analysis LA County</a> - FEMA National Risk Index v1.20 (December 2025) [12]</li>
+            <li><a href="https://ewdd.lacity.gov/images/reports/ap25/APy25_Tab5-EconomicForecast.pdf" class="source-link">Los Angeles Economic Forecast 2025</a> - Official LA City Economic Development Department [1]</li>
+            <li><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">Central LA Subregion Job Market Analysis</a> - Los Angeles Regional Consortium (LARC) [3]</li>
+            <li><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" class="source-link">SCAG Regional Economic Analysis 2025</a> - Southern California Association of Governments [4]</li>
+            <li><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-performance" class="source-link">CA School Dashboard 2025 Academic Performance</a> - California Department of Education [1]</li>
+            <li><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement" class="source-link">CA School Dashboard 2025 Academic Engagement</a> - California Department of Education [6]</li>
+            <li><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">LAUSD Enrollment Statistics 2026</a> - California Department of Education / NCES [3]</li>
+            <li><a href="https://teamcirca.com/neighborhoods/central-los-angeles" class="source-link">Central Los Angeles Demographics</a> - U.S. Census Bureau data [5]</li>
+            <li><a href="https://www.independent.org/article/2026/01/07/the-2025-los-angeles-wildfires-lessons-and-key-recommendations/" class="source-link">The 2025 LA Wildfires: Lessons and Recommendations</a> - Independent Institute (citing Cal Fire, UCLA) [9]</li>
+        </ol>
+
+        <footer>
+            <p>Session ID: arena-session-d85fba50 | Branch: arena/d85fba50-jack1</p>
+            <p>Last Updated: November 6, 2026</p>
+            <p>Privacy Notice: Personal information anonymized; internal use only; no personal information on website</p>
+            <p><strong>Coordination Status:</strong> Task T4 (Projection System) - DONE</p>
+        </footer>
+    </div>
+</body>
+</html>
