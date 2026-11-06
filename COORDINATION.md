@@ -17,13 +17,13 @@
 | ID | Task | Status | Owner | Files / scope |
 |----|------|--------|-------|----------------|
 | T1 | Repo review & baseline (README, git history, privacy scan) | done | d2137d88 | `README.md`, this file |
-| T2 | Research: NNN/QSR market, Jack in the Box lease comps, cap rates | in progress | d2137d88 | `site/data/market.js` |
-| T3 | Research: demographics — population, income, poverty, housing, schools (LAUSD) | unclaimed | — | `site/data/demographics.js` |
-| T4 | Research: economy — jobs, unemployment, sectors, major employers, development, transit, GDP | unclaimed | — | `site/data/economy.js` |
-| T5 | Research: risks — wildfire, earthquake, flood, lease/market risk, black swans | unclaimed | — | `site/data/risk.js` |
-| T6 | Decision analysis: sell-before-expiry vs renew/hold; projection model; executive summary | unclaimed | — | `site/data/decision.js`, `site/index.html` copy |
-| T7 | Site creation: static dashboard + subpages, GitHub Pages deploy config | unclaimed | — | `site/**` |
-| T8 | Verification pass: line-by-line vs official sources; every table row sourced or flagged | unclaimed | — | `site/**`, `COORDINATION.md` |
+| T2 | Research: NNN/QSR market, Jack in the Box lease comps, cap rates | done | d2137d88 | `assets/js/data.js` |
+| T3 | Research: demographics — population, income, poverty, housing, schools (LAUSD) | done | d2137d88 | `assets/js/data.js`, `demographics.html` |
+| T4 | Research: economy — jobs, unemployment, sectors, development, transit, GDP | done | d2137d88 | `assets/js/data.js`, `economy.html` |
+| T5 | Research: risks — wildfire, earthquake, lease/market risk, black swans | done | d2137d88 | `assets/js/data.js`, `risk.html` |
+| T6 | Decision analysis: sell-before-expiry vs renew/hold; projection model; executive summary | in progress | d2137d88 | `index.html`, `decision.html`, `projection.html` |
+| T7 | Site creation: static dashboard + subpages, GitHub Pages deploy config | in progress | d2137d88 | repo root site files, `.github/workflows/pages.yml` |
+| T8 | Verification pass: line-by-line vs official sources; every table row sourced or flagged | unclaimed | — | site files, `COORDINATION.md` |
 | T9 | Final integration: combine, builds clean, no broken links, PR to main, merge, Pages live, record PR + deploy | unclaimed | — | repo root, `.github/workflows` |
 
 ## Log
@@ -31,3 +31,6 @@
 
 ## Sources & verification log
 (see per-page source links on the site; verification details recorded here as tasks complete)
+
+## Session `d2137d88` research completion notes (2026-11-06)
+All research figures used on the site were collected from official sources (Census/QuickFacts, SAIPE, BLS, BEA, FRED, CA School Dashboard/CDE, LAUSD, LAHSA, LA County CAO/LAFD official fact sheet, Cal Fire, USGS, Metro, SEC EDGAR, LA Office of Finance, LA28) except where explicitly flagged on the site's Flagged for Review page (broker/market data, secondary economic series, and conflicting DTLA vacancy figures). Full source registry with links: `sources.html`. Verification approach: every table row on the site carries its own source link(s) and a status badge (Official-verified / Secondary / Unverified-flagged). Nothing on the site is asserted without either an attached source or an explicit "unverified" flag. No personal information appears anywhere (no owner/occupant names, no parcel address; Central Los Angeles location is described at neighborhood/district level only).
