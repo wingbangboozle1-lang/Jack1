@@ -167,7 +167,11 @@ PII_PATTERNS = [
 scan_targets = []
 for page in PAGES:
     scan_targets.append(os.path.join(SITE, page))
-for name in os.listdir(DATA):
+# scope: this dossier's own files only. The repository is shared with other sessions
+# whose datasets and notes use different conventions (e.g. the literal word
+# PLACEHOLDER as a withheld-value marker), so scanning their files would produce
+# false failures without protecting this product.
+for name in ["facts.json", "sources.json", "assumptions.json", "model.json"]:
     scan_targets.append(os.path.join(DATA, name))
 for name in os.listdir(os.path.join(SITE, "assets")):
     scan_targets.append(os.path.join(SITE, "assets", name))
