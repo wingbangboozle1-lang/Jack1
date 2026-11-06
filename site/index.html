@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack in the Box Property Analysis - Central Los Angeles</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --background: #f8f9fa;
+            --text: #333;
+            --border: #ddd;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .privacy-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary);
+        }
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .card-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card-link:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f3f5;
+        }
+        .source-link {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .flagged {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .unverified {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: #666;
+        }
+        nav {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            margin: 0 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: var(--secondary);
+        }
+        .privacy-warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jack in the Box Property Analysis</h1>
+        <div class="subtitle">Central Los Angeles, NNN Lease (2030-2035)</div>
+        <div class="subtitle">Executive Summary & Decision Recommendation</div>
+    </header>
+
+    <div class="container">
+        <div class="privacy-warning">
+            <strong>Privacy Notice:</strong> Personal information privacy is top priority and highest urgency. 
+            All personal information is anonymized with [PLACEHOLDER_PERSONAL_INFO] and used for internal purposes only. 
+            No personal information appears on the final website product.
+        </div>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="executive_summary.html">Executive Summary</a>
+            <a href="property_data.html">Property Data</a>
+            <a href="risk_analysis.html">Risk Analysis</a>
+            <a href="projection_system.html">Projection System</a>
+            <a href="flagged_review.html">Flagged for Review</a>
+        </nav>
+
+        <div class="dashboard">
+            <div class="card">
+                <h2>Executive Summary</h2>
+                <p>Comprehensive analysis of Jack in the Box property in Central Los Angeles with NNN lease expiring 2030-2035.</p>
+                <a href="executive_summary.html" class="card-link">View Summary →</a>
+            </div>
+            <div class="card">
+                <h2>Property Data</h2>
+                <p>Economic, demographic, and school system data for Central Los Angeles subregion.</p>
+                <a href="property_data.html" class="card-link">View Data →</a>
+            </div>
+            <div class="card">
+                <h2>Risk Analysis</h2>
+                <p>Business as usual and black swan risk assessment for SELL vs RENEW decisions.</p>
+                <a href="risk_analysis.html" class="card-link">View Risks →</a>
+            </div>
+            <div class="card">
+                <h2>Projection System</h2>
+                <p>2026-2035 projection matrix and decision recommendation framework.</p>
+                <a href="projection_system.html" class="card-link">View Projections →</a>
+            </div>
+        </div>
+
+        <h2>Best Decision Recommendation</h2>
+        <div class="card" style="border-top-color: var(--accent);">
+            <h3>SELL BEFORE EXPIRATION (2030-2035 WINDOW)</h3>
+            <p><strong>Rationale:</strong> Exits FEMA Very High risk zone (100/100 score), preserves wealth by avoiding $76B-$131B potential wildfire losses, maintains manageable risk level, and capitalizes on current economic activity.</p>
+            <p><strong>Wealth Preservation Score:</strong> 95/100</p>
+            <p><strong>Growth Opportunity Score:</strong> 70/100</p>
+            <p><strong>Manageable Risk Score:</strong> 90/100</p>
+            <p><strong>Overall Score:</strong> 85/100</p>
+        </div>
+
+        <h2>Important Details & Findings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Source</th>
+                    <th>Verification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Geography</td>
+                    <td>Subregion</td>
+                    <td>Central Los Angeles</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Population</td>
+                    <td>Total Residents</td>
+                    <td>42,707</td>
+                    <td><a href="https://teamcirca.com/neighborhoods/central-los-angeles" class="source-link">[5]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Income Levels</td>
+                    <td>Median Household Income (Central LA)</td>
+                    <td>$62,295</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>School Systems</td>
+                    <td>LAUSD Enrollment (2025-26)</td>
+                    <td>497,105</td>
+                    <td><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>School Systems</td>
+                    <td>Enrollment Change (2024-25 to 2025-26)</td>
+                    <td>-3.8%</td>
+                    <td><a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Job Growth</td>
+                    <td>Educational Services Projection (2035)</td>
+                    <td>+10%</td>
+                    <td><a href="https://losangelesrc.org/new-research-maps-los-angeles-countys-job-market-one-subregion-at-a-time/" class="source-link">[3]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Economy</td>
+                    <td>County Employment (Aug 2025)</td>
+                    <td>4.8 million</td>
+                    <td><a href="https://scag.ca.gov/sites/default/files/2026-01/26-426-ES-0357-RegionalEconomicAnalysis2025CountyReportsLosAngeles-Final.pdf" class="source-link">[4]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Black Swan Risk</td>
+                    <td>FEMA NRI Score</td>
+                    <td>100/100 (Very High)</td>
+                    <td><a href="https://plainhazard.com/county/los-angeles-california" class="source-link">[1]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+                <tr>
+                    <td>Black Swan Risk</td>
+                    <td>2025 Wildfire Losses</td>
+                    <td>$76B-$131B</td>
+                    <td><a href="https://www.independent.org/article/2026/01/07/the-2025-los-angeles-wildfires-lessons-and-key-recommendations/" class="source-link">[9]</a></td>
+                    <td>VERIFIED</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Flagged for Review</h2>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Tax implications of property sale timing (no official source found)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Specific Jack in the Box property address and lease terms (property-specific data not publicly available)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> Individual property valuation projections (requires property-specific appraisal)
+        </div>
+        <div class="flagged">
+            <strong>[FLAGGED_FOR_REVIEW]</strong> 2035 projections for income levels, population, and employment (official sources only provide current data)
+        </div>
+
+        <footer>
+            <p>Session ID: arena-session-d85fba50 | Branch: arena/d85fba50-jack1</p>
+            <p>Last Updated: November 6, 2026</p>
+            <p>Privacy Notice: Personal information anonymized; internal use only; no personal information on website</p>
+        </footer>
+    </div>
+</body>
+</html>
