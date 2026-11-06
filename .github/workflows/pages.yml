@@ -1,43 +1,60 @@
-name: Deploy static site to GitHub Pages
+name: Validate and publish the decision brief
+
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
-  pages: write
-  id-token: write
+
 concurrency:
-  group: pages
+  group: github-pages-${{ github.ref }}
   cancel-in-progress: true
+
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate site and source links
+        run: python scripts/validate_site.py
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - name: Assemble site (integrated — both premium + data-verified builds)
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare the public dashboard files only
         run: |
-          set -e
-          mkdir -p _site
-          cp -r ./*.html _site/ || true
-          cp -r assets _site/ || true
-          cp -r data _site/ || true
-          cp -r pages _site/ || true
-          cp -r site _site/ || true
-          cp -r research _site/ || true
-          cp -r analysis _site/ || true
-          cp -r risks _site/ || true
-          [ -d scripts ] && cp -r scripts _site/ || true
-          cp .nojekyll _site/ || true
-          # provenance: prior session builds, preserved for audit
-          [ -d archive ] && { mkdir -p _site/archive && cp -r archive/* _site/archive/ || true; }
-          echo "Assembled $(find _site -type f | wc -l) files"
-      - uses: actions/upload-pages-artifact@v3
+          set -eu
+          mkdir -p _site/assets
+          cp index.html market.html property.html decision.html risks.html flagged.html sources.html _site/
+          cp assets/styles.css assets/site.js _site/assets/
+          cp .nojekyll _site/.nojekyll
+          echo "Assembled $(find _site -type f | wc -l) public files"
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
