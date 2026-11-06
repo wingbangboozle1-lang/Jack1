@@ -153,11 +153,13 @@ SAIPE) was re-verified independently against FRED series `MHICA06037A052NCEN` an
 open item INC-04 (verified rows 91 → 92; blank rows 28 → 27). Nothing was adopted on trust: the value was re-read from the
 official series before use.
 
-**Known cosmetic issue, left deliberately:** `main` triggers two deploy paths (the automatic legacy Pages build and the
-session-contributed `pages.yml` workflow). Both now ship identical content, including `data/` and `archive/`, so the site is
-correct either way; the duplicate runs show as "cancelled" under the workflow's concurrency group. Removing the workflow would
-be a one-line change for a future session, but it is another session's deploy configuration and deleting it unilaterally was
-judged worse than the noise.
+**Deploy-path fix (final):** `main` was triggering two deploy paths — the automatic GitHub Pages branch build and the
+session-contributed `pages.yml` workflow. Both share the `pages` concurrency group, so they repeatedly cancelled each other
+and the Pages API reported `errored` while the previously deployed content continued to serve. The site was never down, but a
+racing deploy path is a latent outage, so the duplicate workflow was **removed** (its only job — publishing root `*.html`,
+`assets/`, `data/`, `archive/` — is done completely by the branch build, which serves the whole branch including `data/`).
+Recorded here because it was another session's configuration. After the change the Pages status returned to `built` and the
+live checks below were re-run.
 =======
 **Deploy verification:** Site live at https://wingbangboozle1-lang.github.io/Jack1/ (GitHub Pages)
 **Merge commit:** [a24dd15](https://github.com/wingbangboozle1-lang/Jack1/commit/a24dd15) merged into main
