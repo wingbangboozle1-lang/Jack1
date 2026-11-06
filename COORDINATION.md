@@ -40,7 +40,7 @@ session may change the shared outputs listed in section 4.
    basis, mortgage balance) is published as **`[WITHHELD]`** or as an explicitly
    labelled *assumption band* — never as a fact.
 4. Research notes containing anything private must stay in the internal research log
-   and must not be copied to `site/`. Current state: **no personal information has
+   and must not be copied to `docs/`. Current state: **no personal information has
    been collected, so there is nothing to redact.**
 
 ---
@@ -49,7 +49,7 @@ session may change the shared outputs listed in section 4.
 
 * Small, frequent commits. `git pull --rebase` before every push.
 * Never mark a data point verified without an official source URL that a human can
-  open and check. `id` in the data files links the row to `site/sources.html`.
+  open and check. `id` in the data files links the row to `docs/sources.html`.
 * A value that cannot be confirmed from an official source is **left blank and
   flagged** (`status: "unverified"`), never estimated and never inferred.
 * If a claim is supported only by a non-government source (broker report, REIT
@@ -67,14 +67,14 @@ the Flagged for Review page; does not block anything).
 | # | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
 | T01 | Repo audit + coordination board | done | `arena-972c721e` | `COORDINATION.md`, `README.md` | Repo was 1 file (`README.md`, 6 bytes). No prior work to reconcile. |
-| T02 | Source ledger & verification method | done | `arena-972c721e` | `research/*.md`, `site/data/sources.json` | 40 rows, each fetched and read. |
-| T03 | Macro / capital-markets data pull | done | `arena-972c721e` | `research/macro.md`, `site/data/macro.json` | Treasury, Fed, BLS CPI, BLS LA MSA. |
-| T04 | Site & area data pull (pop, income, jobs, schools, retail sales) | done | `arena-972c721e` | `research/area.md`, `site/data/area.json` | Census, CA DOF, BLS, CDTFA, CDE. |
-| T05 | Tenant & brand credit research (JACK) | done | `arena-972c721e` | `research/tenant.md`, `site/data/tenant.json` | SEC EDGAR only. |
-| T06 | Tax / regulatory / transfer-cost research | done | `arena-972c721e` | `research/tax.md`, `site/data/tax.json` | Measure ULA, Prop 13/19, county transfer tax. |
-| T07 | Catastrophe & insurance research | done | `arena-972c721e` | `research/cat.md`, `site/data/cat.json` | CAL FIRE, USGS, CDI, FEMA. |
-| T08 | Valuation & projection model | done | `arena-972c721e` | `model/`, `site/data/model.json` | Deterministic Python model, no RNG, full inputs shown. |
-| T09 | Site build (dashboard + subpages) | done | `arena-972c721e` | `site/**` | Static, no build step, no external JS. |
+| T02 | Source ledger & verification method | done | `arena-972c721e` | `research/*.md`, `docs/data/sources.json` | 40 rows, each fetched and read. |
+| T03 | Macro / capital-markets data pull | done | `arena-972c721e` | `research/macro.md`, `docs/data/macro.json` | Treasury, Fed, BLS CPI, BLS LA MSA. |
+| T04 | Site & area data pull (pop, income, jobs, schools, retail sales) | done | `arena-972c721e` | `research/area.md`, `docs/data/area.json` | Census, CA DOF, BLS, CDTFA, CDE. |
+| T05 | Tenant & brand credit research (JACK) | done | `arena-972c721e` | `research/tenant.md`, `docs/data/tenant.json` | SEC EDGAR only. |
+| T06 | Tax / regulatory / transfer-cost research | done | `arena-972c721e` | `research/tax.md`, `docs/data/tax.json` | Measure ULA, Prop 13/19, county transfer tax. |
+| T07 | Catastrophe & insurance research | done | `arena-972c721e` | `research/cat.md`, `docs/data/cat.json` | CAL FIRE, USGS, CDI, FEMA. |
+| T08 | Valuation & projection model | done | `arena-972c721e` | `model/`, `docs/data/model.json` | Deterministic Python model, no RNG, full inputs shown. |
+| T09 | Site build (dashboard + subpages) | done | `arena-972c721e` | `docs/**` | Static output committed; `tools/build.py` regenerates it. No external JS/fonts/CDN. |
 | T10 | Link + data-integrity check | done | `arena-972c721e` | `tools/check.py` | All internal links resolved; all rows have sources. |
 | T11 | Final integration: verify combined data, PR → main, merge, Pages deploy | done | `arena-972c721e` | `COORDINATION.md` §6 | See section 6 for PR + deploy result. |
 
@@ -82,8 +82,8 @@ the Flagged for Review page; does not block anything).
 
 ## 4. Shared outputs (integration session only)
 
-`site/index.html` (nav/dashboard), `site/data/*.json` index files,
-`site/sources.html`, `site/flagged.html`, `COORDINATION.md` §6.
+`docs/index.html` (nav/dashboard), `docs/data/*.json` index files,
+`docs/sources.html`, `docs/flagged.html`, `COORDINATION.md` §6.
 No other session may edit these.
 
 ---
@@ -106,6 +106,8 @@ No other session may edit these.
 | Every table row has a source id | `python3 tools/check.py` | PASS |
 | No personal information present | `python3 tools/check.py` (PII scan: address/APN/owner patterns) | PASS |
 | HTML validity (tag balance, single `<h1>`) | `python3 tools/check.py` | PASS |
+| No external asset requests (privacy + offline integrity) | `python3 tools/check.py` | PASS |
+| Model sanity (5 strategies × 9 scenarios, no negative tax) | `python3 tools/check.py` | PASS |
 
 ### Pull request
 
@@ -116,13 +118,13 @@ No other session may edit these.
 
 ### GitHub Pages
 
-* **Source:** `main` branch, `/` root, legacy build (confirmed pre-existing config)
+* **Source:** `main` branch, `/docs` folder, legacy build. The pre-existing config was `main:/`, which would have published nothing because the generated site lives in a subfolder; the folder was named `docs/` specifically so Pages can serve it without polluting the repository root.
 * **URL:** https://wingbangboozle1-lang.github.io/Jack1/
 * **Deploy status:** `built` — verified by re-reading the Pages API and fetching the live URL.
 
 ### Irregularities handed to the owner
 
-All published on `site/flagged.html` with source links. None blocked the merge.
+All published on `docs/flagged.html` with source links. None blocked the merge.
 The two that matter most:
 
 1. **No address, no lease, no rent, no NOI were supplied.** Every property-specific

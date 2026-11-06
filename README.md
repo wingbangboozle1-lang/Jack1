@@ -18,7 +18,7 @@ labelled assumption band. See `COORDINATION.md` §1.
 
 | Path | What it is |
 |---|---|
-| `site/` | The published GitHub Pages site (static HTML, no build step) |
+| `docs/` | The published GitHub Pages site (static HTML, no build step) |
 | `model/` | Deterministic Python valuation/projection model + inputs |
 | `research/` | Internal research log: every fetched value, its source URL, and what was verified |
 | `tools/check.py` | Link / source-coverage / PII / HTML integrity checks |
@@ -26,6 +26,6 @@ labelled assumption band. See `COORDINATION.md` §1.
 
 ## Start here
 
-* `site/index.html` — dashboard
+* `docs/index.html` — dashboard
 * `EXECUTIVE_SUMMARY.md` — one-page answer
 * `DECISION_MEMO.md` — full recommendation with risks

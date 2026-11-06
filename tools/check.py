@@ -20,7 +20,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "site")
+SITE = os.path.join(ROOT, "docs")
 DATA = os.path.join(ROOT, "data")
 
 failures = []
