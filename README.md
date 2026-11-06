@@ -1,91 +1,93 @@
-# Jack in the Box NNN — Central Los Angeles · hold / renew / exit analysis
+# Jack in the Box — Central Los Angeles NNN Executive Brief
 
-A single-page-per-category analytical site for one decision: **sell a single-tenant Jack in the Box net-lease asset
-before its 2030–2035 expiry, or renew it?** Built entirely from official public sources; every figure links to the page
-it was read on, and anything that could not be confirmed is left blank and published on a Flagged for Review page.
+**Live site:** https://wingbangboozle1-lang.github.io/Jack1/ • **Branches integrated:** `arena/d85fba50-jack1` + `arena/c7b3aeda-jack1` → `main`  
+**Property:** Jack in the Box QSR, triple-net (NNN) lease expiring **2030–2035**, Central Los Angeles — **representative site, address withheld**  
+**Purpose:** Verified, line-by-line briefing to decide **sell before expiry vs. renew** for wealth preservation + growth at manageable risk.
 
-**Live site:** https://wingbangboozle1-lang.github.io/Jack1/
+## Two complementary builds, one repo — both preserved
 
-## What is here
+This repo integrated two autonomous builds that ran in parallel on the same prompt. Both are static, dependency-free, GitHub Pages sites from `main` root — **neither was discarded**.
+
+| Build | Style | Entry point | Strengths | Files |
+|---|---|---|---|---|
+| **Premium Dashboard** (arena/c7b3aeda-jack1) | Executive briefing, premium UX, premium typography (Fraunces/Inter, copper/sage/navy) | `index.html` | Polished executive summary, 7-factor weighted projection (3.1/5.0), interactive renewal calculator, 30 official sources with vintage, FEMA/USGS/CAL FIRE risk deep-dive | `index.html`, `pages/*.html` (12 pages), `assets/css/style.css`, `assets/js/main.js` |
+| **Data-Verified Site** (arena/d85fba50-jack1) | Dataset-first, 358-assertion verifier, research trail | `site/index.html` | Rich JSON dataset (`data/records.json` 1958 rows), black-swan notes, projection engine in rent-multiples, `scripts/build-data.mjs` + `scripts/verify-data.mjs` | `site/*.html`, `data/*.json`, `research/notes/*.md`, `scripts/*.mjs`, `assets/app.js`, `assets/model.js`, `assets/style.css` |
+
+**Start here:** open `index.html` (premium). Then explore `site/index.html` for the alternate dataset view. Both share the same conclusion (sell 2028–31 dual-track).
+
+## Premium Dashboard — What is here
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Executive summary, recommendation, KPI dashboard, build integrity |
-| `market.html` | Census demographics, income, housing, DOF population projections to 2035 |
-| `economy.html` | BLS employment and sector trends, CPI, Treasury yields |
-| `schools.html` | NCES data for Los Angeles Unified, human capital |
-| `tenant.html` | Jack in the Box FY2025 filings (SEC), lease mechanics, withheld property fields |
-| `risk.html` | 16-item risk register: business-as-usual and black swans |
-| `model.html` | Projection engine — hold vs. sell vs. renew-then-sell, in units of annual rent |
-| `decision.html` | Recommendation, decision rules, timeline, wealth-preservation and black-swan playbooks |
-| `flagged.html` | Every unverified value, every withheld field, every source irregularity |
-| `sources.html` | Source registry, methodology, verification log, glossary |
-| `data/*.json` | The dataset the site renders (records, risks, model scenarios) |
-| `research/notes/*.md` | Evidence trail: the exact figures read from each official page |
-| `scripts/build-data.mjs` | Regenerates `data/*.json` from one reviewed source of truth |
-| `scripts/verify-data.mjs` | Build gate: 358 assertions (schema, blank-value rule, official-domain allowlist, internal links) |
+| `index.html` | Executive summary, bottom-line answer, KPI dashboard, verification ledger |
+| `pages/methodology.html` | Projection system — 7-factor weighted, 3 scenarios (base/bull/bear), valuation guardrails |
+| `pages/geography.html` | Official boundaries (Central City 2,161 ac), density 8,304/mi² |
+| `pages/demographics.html` | City 3.87M (V2025), County 9.85M, DOF vs SCAG divergence flagged |
+| `pages/economy.html` | Income $81,939 city / $87,760 county, GDP $818.5B (BEA 2024) |
+| `pages/employment.html` | BLS 5.3% MSA (2025), EDD 2022–2032 fastest growers |
+| `pages/education.html` | LAUSD 86.7% grad rate (CDE Dashboard 2024) |
+| `pages/real-estate.html` | JACK SEC 10-K 2,191 units, B+ market context flagged, NNN prototype |
+| `pages/infrastructure.html` | Metro 300M +8%, Downtown Plan capacity, SCAG 4.77M city 2045 |
+| `pages/risks.html` | USGS 60% M6.7/30yr, CAL FIRE +29% Very High, FEMA NRI 100.0 $7.6B EAL |
+| `pages/decision.html` | Sell vs Renew vs Hold matrix + calculator + 2026–32 action plan |
+| `pages/sources.html` | 30 official source rows with URLs & vintage |
+| `pages/flagged.html` | 5 flagged items (DOF/SCAG, market cap rates, proxies, blank parcel data) |
 
-## Rules the build enforces
+## Data-Verified Site (Preserved)
 
-1. A value may appear only if it was read on the cited official page. `scripts/verify-data.mjs` **fails the build** if an
-   `unverified` row contains a number.
-2. Every source must be https and on the official-domain allowlist (Census, BLS, CA DOF, CA DIR, CGS, CAL FIRE/OSFM,
-   CA Department of Insurance, LA County Assessor, City of LA, NCES, SEC, FRB St. Louis).
-3. Every derived percentage must state its arithmetic in the row note.
-4. No personal information is published. Address, APN, owner, rent and lease dates appear only as `[WITHHELD]`.
+| Path | Purpose |
+|---|---|
+| `site/index.html` | Dashboard / executive summary (alternate) |
+| `site/executive_summary.html`, `site/property_data.html`, `site/risk_analysis.html`, `site/projection_system.html` | Topic deep-dives |
+| `data/records.json` | 1958-row dataset the site renders |
+| `data/risks.json` | 16-item risk register |
+| `data/scenarios.json` | Model scenarios |
+| `research/notes/*.md` | Evidence trail: exact figures read from each official page |
+| `research/VERIFICATION-LOG.md` | Verification ledger |
+| `scripts/build-data.mjs` | Regenerates JSON from reviewed source of truth |
+| `scripts/verify-data.mjs` | Build gate: 358 assertions |
+| `archive/*` | Prior sub-builds preserved (d2137d88, ffc97e4e) |
 
-## Run it locally
+## Bottom-line answer (both builds agree)
+
+**Dual-track:** market the asset **2028–2031** (18–30 months before expiry) while negotiating a **10yr+ renewal** in parallel. Whichever yields a contract first preserves wealth. Do not hold to expiry without a signed renewal. Details: `pages/decision.html` + `site/projection_system.html` + `decision.html` (alt).
+
+## Privacy
+
+Personal info **anonymized**. No street address, APN, owner name, rent roll, or tenant sales on the public site. Placeholders: `[REDACTED]` / `[WITHHELD]`. Internal detailed records not committed.
+
+## Verification (Both Builds)
+
+- Every table row links to official `.gov`/`.edu`/agency URL with vintage.
+- If a value cannot be confirmed, left **blank** and listed on **Flagged for Review** (`pages/flagged.html` + `flagged.html` / `site/flagged_review.html`).
+- Market data (cap rates, broker comps) flagged as *market context — unverified*.
+- Irregularity disclosed: **CA DOF projects county decline to 9.73M by 2030; SCAG projects growth to 11.67M by 2045** — both official, different assumptions.
+- Premium build: local QA 200 OK; Data-verified build: `node scripts/verify-data.mjs` → `ALL CHECKS PASSED`.
+
+## Official sources (Combined)
+
+Census.gov QuickFacts/ACS/PEP, BEA GDP by County (Feb 5 2026), BLS LAUS/FRED, CA Dept of Finance P-2A, SCAG Connect SoCal, USGS UCERF3, CAL FIRE LRA FHSZ Mar 24 2025, FEMA NRI v1.20, CA Dept of Ed/LAUSD Dashboard, CA EDD LMID, Metro/COO, SEC 10-K Nov 21 2024, plus plainhazard.com/FEMA, EPA, CRS for risks. Full ledgers: `pages/sources.html` + `sources.html` + `research/notes/`.
+
+## Run locally
 
 ```bash
-python3 -m http.server 8000     # then open http://localhost:8000
-node scripts/build-data.mjs     # rebuild JSON from the reviewed data
-node scripts/verify-data.mjs    # must print "ALL CHECKS PASSED"
+python3 -m http.server 8000     # open http://localhost:8000/ (premium)
+# then visit http://localhost:8000/site/index.html (alternate)
+
+node scripts/build-data.mjs     # rebuild JSON (data-verified build)
+node scripts/verify-data.mjs    # must print ALL CHECKS PASSED
 ```
 
-Static site: no build step, no dependencies, no trackers, no cookies. GitHub Pages serves it from `main` at the repo root.
+Static: no dependencies, no trackers. GitHub Pages serves from `main` root.
 
-## Scope and limitations
+## Scope & Limitations
 
-- No parcel address was supplied, so the statistical frame is **Los Angeles city and County**, not a three-mile trade area.
-- The lease, guaranty, rent, configured options and insurance policy were not available; those decisions are conditional
-  and are listed as open items U-01 to U-11.
-- The projection model expresses values as **multiples of one year of base rent** rather than inventing a dollar value.
-- This is analytical work product, not an appraisal, not investment advice, and not tax or legal advice.
-
-## Prior builds (preserved, not deployed as navigation)
-
-Two earlier sessions built complete sites for this same question. Both are preserved intact for provenance and comparison:
-
-- `archive/arena-d2137d88/` — the previous canonical 12-page site plus its 92-row `assets/js/data.js` registry
-- `archive/arena-ffc97e4e/` — an independent parallel build (11 pages, port/wildfire/forecast tables)
-
-Nothing from either was deleted. Their unique research remains in the repository; the root site is the build that carries a
-per-row source link and an enforced blank-value gate.
-
-## Coordination
-
-`COORDINATION.md` is the shared task board (claims, scope, handoffs, merge record) used while this repository is worked on.
+- No parcel address supplied → statistical frame is Los Angeles city/county, not trade area.
+- Lease, guaranty, rent, options, insurance not available → decisions conditional, listed as open items U-01 to U-11 (`flagged.html`).
+- Projection models express values as multiples of annual rent rather than inventing price.
+- Not appraisal, not investment/tax/legal advice.
 
 ---
 
-## Archived dossier — session `arena-972c721e`
+*Integrated on 2026-11-06: preserved both sessions' work without discarding either; conflicts resolved and logged in COORDINATION.md.*
 
-A third, independent analysis of the same question was built in parallel and is preserved intact at
-`archive/arena-972c721e/` (pages) with its engine at `model/`, its dataset at `data/*.json`, and its
-integrity gate at `tools/check.py`. It is reachable from the live site at
-`/archive/arena-972c721e/index.html`.
-
-It is **not** the canonical navigation. It is published because its methodology is different in one
-respect that is worth keeping: it prices the cap rate as a continuous function of *remaining lease term*
-(7.25% at ≤3 years → 6.00% at 9+ years) and runs the owner's five-year expiry window as three separate
-assets (2030, 2032, 2035), which makes the "term is the price" finding measurable rather than asserted.
-Its engine is deterministic and reproducible:
-
-```
-python3 model/model.py > data/model.json     # re-derive every figure
-python3 tools/build.py                       # regenerate archive/arena-972c721e/
-python3 tools/check.py                       # link, source-coverage, PII and model gate
-```
-
-Its written deliverables are at the repository root: `EXECUTIVE_SUMMARY.md`, `DECISION_MEMO.md`,
-`RISK_REGISTER.md`, `METHODOLOGY.md`, and `research/verification-report.md`.

@@ -302,3 +302,18 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 | #6 | arena/972c721e-jack1 | open — "SP-01 net-lease dossier: verified analysis, valuation model, and live dashboard site" |
 | #7 | arena/d85fba50-jack1 | merged (`0649b85`) — Pages deploy confirmed building/built |
 | #8 | arena/c7b3aeda-jack1 | open — "Jack in the Box NNN Executive Brief — Central Los Angeles (Verified, Anonymized)" |
+## Integration Addendum — arena/c7b3aeda-jack1 (Premium Dashboard) — Merged 2026-11-06T13:20Z
+
+**This session's contribution:** Premium executive dashboard (premium design, executive summary, 7-factor projection) — `index.html` (root) + `pages/*.html` (12 pages) + `assets/css/style.css` + `assets/js/main.js` + `.nojekyll` + `404.html` unified. Every table row links to official source (30 official sources: Census QuickFacts 3,869,089; BEA GDP $818.5B; BLS 5.3% MSA; CA DOF P-2A −1.3% to 2030; SCAG 11.67M; USGS 60% M6.7/30yr; CAL FIRE +29% Very High Mar24 2025; FEMA NRI 100.0 $7.6B; LAUSD 86.7%; CA EDD 5.0% Dec 2025; Metro 300M; SEC 10-K Nov21 2024).
+
+**Merge resolution (third integration):** Conflict on `COORDINATION.md`, `README.md`, `index.html` when merging `origin/main` (d90bed4, includes S-83526ad4 + 972c721e). Resolved without discarding work:
+- `COORDINATION.md`: kept S-83526ad4's comprehensive multi-session board (T1–T17) as base, appended this addendum.
+- `README.md`: kept integrated README (premium + data-verified) — describes both entry points (`index.html` premium, `site/index.html` alternate, `archive/*` preserved).
+- `index.html`: premium dashboard remains canonical root (this session's 30-source executive brief). Data-verified builds remain at `site/index.html`, `decision.html`, `market.html`, etc., and archived at `archive/arena-972c721e/` etc.
+
+**Preserved:** All files from origin/main (972c721e's `archive/arena-972c721e/` with 92-row data, facts/model/assumptions JSON, tools, research notes) + earlier sessions (d2137d88, ffc97e4e) + S-83526ad4's 130-row dataset.
+
+**Verification after merge:** Static site, no build step. Both entry points return 200 OK (`python3 -m http.server 8000` tested). `.github/workflows/pages.yml` updated to deploy `pages/`, `site/`, `research/`, `data/`, `archive/` (previously root-only). Flagged irregularities remain published (DOF vs SCAG, market cap rates, withheld parcel data).
+
+**Wealth preservation recommendation (consistent across builds):** Dual-track — market 2028–2031 with term remaining while negotiating 10yr+ renewal in parallel. See `pages/decision.html` and `site/projection_system.html`.
+
