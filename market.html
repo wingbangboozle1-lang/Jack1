@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central Los Angeles Market &amp; Demographics | Project Jack-in-the-Box</title>
+<meta name="description" content="Central Los Angeles geography, population, income, housing, education, schools (LAUSD), and commute data from official Census and California Dept. of Education sources.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📦</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="page-head">
+  <div class="container">
+    <div class="crumb">Central LA Market</div>
+    <h1>Central Los Angeles — Geography, People, Schools</h1>
+    <p>Every figure below is from the U.S. Census Bureau QuickFacts, California School Dashboard / CDE (official), or is explicitly flagged. Central LA (DTLA + adjacent neighborhoods) is analyzed as part of the City of LA and LA County.</p>
+  </div>
+</section>
+
+<main class="container">
+
+  <div class="section">
+    <h2 class="section-title">1 · Geography &amp; scale</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Metric</th><th>Los Angeles city</th><th>Los Angeles County</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Population, July 1, 2025 (V2025)</td><td>3,869,089</td><td>9,694,934</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/0644000/POP255225" target="_blank" rel="noopener">Census — City</a> · <a href="https://www.census.gov/quickfacts/fact/table/06037/POP255225" target="_blank" rel="noopener">Census — County</a></td></tr>
+        <tr><td>Population, Census April 1, 2020</td><td>3,898,747</td><td>10,014,009</td><td class="src">Same QuickFacts links (POP010220)</td></tr>
+        <tr><td>Population change, 2020 → Jul 1, 2025</td><td>−0.8%</td><td>−3.2%</td><td class="src">Same QuickFacts links (PST120225)</td></tr>
+        <tr><td>Population per sq mile (2020)</td><td>8,304.2</td><td>2,466.9</td><td class="src">Same QuickFacts links (POP060220)</td></tr>
+        <tr><td>Land area (2020)</td><td>469.49 sq mi</td><td>4,059.28 sq mi</td><td class="src">Same QuickFacts links (LND110220)</td></tr>
+        <tr><td>FIPS code</td><td>0644000 (place)</td><td>06037 (county)</td><td class="src">Same QuickFacts links</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><strong>Read-through</strong><br>Flat-to-negative population = no growth-tailwind for same-store sales; value-QSR appeal depends on trade-area density and lunch/commute traffic, which Central LA still has (8,304 persons/sq mi citywide, higher downtown). Demand risk is structural, not cyclical.</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">2 · Income &amp; poverty (spending power)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Metric (2020–2024, 2024 $)</th><th>LA city</th><th>LA County</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Median household income</td><td>$81,939</td><td>$90,112</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/0644000/POP255225" target="_blank" rel="noopener">Census QuickFacts</a> (INC110224)</td></tr>
+        <tr><td>Per capita income (12-mo)</td><td>$47,685</td><td>$45,792</td><td class="src">Census QuickFacts (INC910224)</td></tr>
+        <tr><td>Persons in poverty</td><td>16.5%</td><td>13.3%</td><td class="src">Census QuickFacts (IPE120225)</td></tr>
+        <tr><td>Retail sales per capita (2022, Economic Census)</td><td>$21,281</td><td>$22,010</td><td class="src">Census QuickFacts (RTN131222)</td></tr>
+        <tr><td>Total retail sales (2022)</td><td>$81.35B</td><td>$213.93B</td><td class="src">Census QuickFacts (RTN130222 / RTN131222)</td></tr>
+        <tr><td>Accommodation &amp; food services sales (2022)</td><td>$17.37B</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (AFN120222) ⚑ county not pulled</td></tr>
+        <tr><td>Mean travel time to work</td><td>30.7 min</td><td>30.4 min</td><td class="src">Census QuickFacts (LFE305224)</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">3 · Demographics &amp; household composition</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Metric</th><th>LA city</th><th>LA County</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Hispanic or Latino</td><td>47.2%</td><td>49.3%</td><td class="src">Census QuickFacts (RHI725225)</td></tr>
+        <tr><td>Asian</td><td>12.1%</td><td>16.6%</td><td class="src">Census QuickFacts (RHI425225)</td></tr>
+        <tr><td>Black or African American</td><td>8.4%</td><td>8.9%</td><td class="src">Census QuickFacts (RHI225225)</td></tr>
+        <tr><td>White alone</td><td>33.4%</td><td>62.9%</td><td class="src">Census QuickFacts (RHI125225)</td></tr>
+        <tr><td>Two or More Races</td><td>18.9%</td><td>5.8%</td><td class="src">Census QuickFacts (RHI625225)</td></tr>
+        <tr><td>Foreign-born</td><td>35.7%</td><td>33.4%</td><td class="src">Census QuickFacts (POP645224)</td></tr>
+        <tr><td>Under 18</td><td>19.2%</td><td>19.2%</td><td class="src">Census QuickFacts (AGE295225)</td></tr>
+        <tr><td>65 and over</td><td>14.2%</td><td>17.1%</td><td class="src">Census QuickFacts (AGE775225)</td></tr>
+        <tr><td>Language other than English at home (5+, 2020–24)</td><td>56.4%</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (POP815224) ⚑</td></tr>
+        <tr><td>Households (2020–24)</td><td>1,439,097</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSD410224) ⚑</td></tr>
+        <tr><td>Persons per household</td><td>2.61</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSD310224) ⚑</td></tr>
+        <tr><td>In civilian labor force (16+)</td><td>66.4%</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (LFE041224) ⚑</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">4 · Housing (cost of households; competition for QSR wallet)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Metric (2020–24 unless noted)</th><th>LA city</th><th>LA County</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Owner-occupied rate</td><td>36.0%</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSG445224) ⚑</td></tr>
+        <tr><td>Median value, owner-occupied</td><td>$921,200</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSG495224) ⚑</td></tr>
+        <tr><td>Median gross rent</td><td>$1,933</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSG860224) ⚑</td></tr>
+        <tr><td>Median owner cost w/ mortgage</td><td>$3,497/mo</td><td>n/d (flagged) ⚑</td><td class="src">Census QuickFacts city (HSG650224) ⚑</td></tr>
+        <tr><td>Building permits (2025, per EDD/Census): total</td><td>n/d (County-level)</td><td>20,192 permits · $4.20B cost</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD — LA County Profile</a> (Multi-family 10,809 · $1.57B; Single-family 9,383 · $2.63B)</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">5 · Education &amp; school systems</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Metric</th><th>Value</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>LAUSD 2025–26 Census Day enrollment</td><td>497,105 (≈8.7% of CA’s 5,731,260 public-school students; largest district in state)</td><td class="src"><a href="https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000" target="_blank" rel="noopener">CA Dept of Education — LAUSD District Profile</a></td></tr>
+        <tr><td>LAUSD English-language learners</td><td>81,328 (16.4%)</td><td class="src"><a href="https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000" target="_blank" rel="noopener">CA Dept of Education</a></td></tr>
+        <tr><td>LAUSD enrollment trend</td><td>548,338 (2021–22) → 497,105 (2025–26 Census Day), −9.3% over the period; 2025–26 alone −3.8% (−19,580)</td><td class="src"><a href="https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000" target="_blank" rel="noopener">CDE District Profile</a> · <a href="https://usschoolindex.org/los-angeles-unified-school-district-statistics/" target="_blank" rel="noopener">Ed-Data/CDE series</a></td></tr>
+        <tr><td>LAUSD graduation rate (4-yr)</td><td>2022: 86% · 2023: 83.6% · 2024: 86.7% · 2025: 86.5% (2019: 82.1%)</td><td class="src"><a href="https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement" target="_blank" rel="noopener">CA School Dashboard — LAUSD</a></td></tr>
+        <tr><td>California statewide graduation rate 2025</td><td>87.5% — highest since Dashboard launch (2017)</td><td class="src"><a href="https://www.cde.ca.gov/nr/ne/yr25/yr25rel49.asp" target="_blank" rel="noopener">CDE press release (Nov 13, 2025)</a></td></tr>
+        <tr><td>Bachelor’s degree+ (persons 25+, city)</td><td>38.5%</td><td class="src">Census QuickFacts city (EDU685224)</td></tr>
+        <tr><td>High school graduate+ (persons 25+, city)</td><td>79.6%</td><td class="src">Census QuickFacts city (EDU635224)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><strong>Read-through</strong><br>LAUSD is stable academically (86.5% graduation) but shrinking (−3.8% enrollment in 2025–26; −9.3% since 2021–22). Families are not flooding in; school-quality arguments for household formation are neutral here. This is not a growth corridor; it is a dense, mature, high-income-per-capita trade area with cost-of-living pressure — supportive of value QSR, not of premium concepts.</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">6 · Local labor structure (who eats here)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Fastest-growing LA County occupations (2023→2033)</th><th>Est. 2023</th><th>Proj. 2033</th><th>Growth</th><th class="src">Source</th></tr></thead>
+      <tbody>
+        <tr><td>Nurse practitioners</td><td>4,490</td><td>6,680</td><td>+48.8%</td><td class="src"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener">CA EDD — LA County Profile</a></td></tr>
+        <tr><td>Solar photovoltaic installers</td><td>1,210</td><td>1,650</td><td>+36.4%</td><td class="src">CA EDD — LA County Profile</td></tr>
+        <tr><td>Home health &amp; personal care aides</td><td>289,930</td><td>390,820</td><td>+34.8%</td><td class="src">CA EDD — LA County Profile</td></tr>
+        <tr><td>Data scientists</td><td>7,320</td><td>9,790</td><td>+33.7%</td><td class="src">CA EDD — LA County Profile</td></tr>
+        <tr><td>Cooks, restaurant</td><td>40,760</td><td>54,070</td><td>+32.7%</td><td class="src">CA EDD — LA County Profile</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Healthcare/aides growth (+35–49%) implies a rising base of hourly service workers — core Jack in the Box customer demographic — but also rising wage pressure on the franchisee P&amp;L.</p>
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
