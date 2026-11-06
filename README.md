@@ -7,6 +7,7 @@ Decision-support research and a public dashboard site for one **anonymized**, si
 ## What's inside
 
 - `index.html` — executive summary & dashboard
+- `tenant.html` — Jack in the Box Inc. (JACK) tenant-credit deep-dive (SEC-verified) *(added in PR #2 integration)*
 - `asset.html` — anonymized asset profile & pre-transaction checklist
 - `demographics.html`, `economy.html`, `schools.html`, `market.html` — verified research tables (every row source-linked; unverifiable values flagged, never guessed)
 - `risk.html` — risk register incl. black swans (wildfire, earthquake, pandemic, DTLA distress)

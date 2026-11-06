@@ -11,6 +11,7 @@
     { id: "economy",      href: "economy.html",      label: "Economy & Jobs" },
     { id: "schools",      href: "schools.html",      label: "School Systems" },
     { id: "market",       href: "market.html",       label: "NNN / QSR Market & Taxes" },
+    { id: "tenant",       href: "tenant.html",       label: "Tenant: Jack in the Box (SEC)" },
     { section: "Analysis" },
     { id: "risk",         href: "risk.html",         label: "Risk Matrix (incl. Black Swans)" },
     { id: "decision",     href: "decision.html",     label: "Decision: Sell vs. Renew" },
