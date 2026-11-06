@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Anonymised, source-verified analysis of a single-tenant net-lease property in Central Los Angeles. No personal information is published.">
+<title>Dashboard · SP-01 Dossier</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">SP-01</span>
+      <span class="brand-text"><strong>Net-lease decision dossier</strong>
+      <small>Central Los Angeles · Jack in the Box · NNN · expiry 2030&ndash;2035</small></span>
+    </div>
+    <nav><a href="index.html" class="active">Dashboard</a><a href="property.html">Property</a><a href="market.html">Market</a><a href="tenant.html">Tenant</a><a href="valuation.html">Valuation</a><a href="decision.html">Decision</a><a href="risks.html">Risks</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<h1>Dashboard</h1>
+<p class="lede">One property, one question, one answer — with the working shown.</p>
+
+<section class="hero">
+  <p class="tag">Decision brief · built 2026-11-06</p>
+  <h2 class="hero-q">Sell the Jack in the Box before the lease expires, or renew and hold?</h2>
+  <p class="hero-a"><strong>Renew — but renew now, and do not sell into the expiry.</strong>
+  The single most valuable thing in this file is <em>time</em>: a buyer pays roughly
+  <strong>20.8% more</strong> for the same net operating income when nine years of lease term remain instead of three.
+  Waiting until the lease is nearly over is the one path the model shows destroying value in
+  every expiry case, and it is also the path that requires no decision at all.</p>
+  <p class="hero-a">The recommended sequence is: <strong>negotiate a long extension now</strong> (while the tenant still
+  wants the site), <strong>hold about five years</strong> to keep the rent and the Proposition 13 tax wedge,
+  then <strong>sell with five years of firm term</strong> into the deepest buyer pool. If the tenant refuses
+  to extend, the answer flips: sell within twelve months rather than ride the lease to expiry.</p>
+</section>
+
+<div class="kpis"><div class="kpi"><div class="kpi-label">Recommendation</div><div class="kpi-value">Extend now · hold ~5 yrs · sell with term</div><div class="kpi-note">Strategy E — highest risk-adjusted score (4.20 / 5)</div></div><div class="kpi"><div class="kpi-label">What the term is worth</div><div class="kpi-value">+20.8%</div><div class="kpi-note">Same NOI at 9 years of term instead of 3. Term, not rent, is the biggest lever in the file.</div></div><div class="kpi"><div class="kpi-label">Sell-today friction</div><div class="kpi-value">5.56%</div><div class="kpi-note">Brokerage, closing, city and county transfer tax — before any Measure ULA.</div></div><div class="kpi"><div class="kpi-label">Measure ULA cliff</div><div class="kpi-value">$216,000</div><div class="kpi-note">Tax triggered the moment a sale price crosses $5,400,000.</div></div><div class="kpi"><div class="kpi-label">Tenant trajectory</div><div class="kpi-value">−1.1%</div><div class="kpi-note">JACK system same-store sales, Q3 FY2026. 50–60 closures guided for FY2026.</div></div><div class="kpi"><div class="kpi-label">Metro labour market</div><div class="kpi-value">4.4%</div><div class="kpi-note">LA unemployment, Sep 2026 — tight labour, but total jobs only +0.5% year over year.</div></div><div class="kpi"><div class="kpi-label">10-year Treasury</div><div class="kpi-value">4.90%</div><div class="kpi-note">The discount rate that sets every cap rate in this file. Verified 2026-11-04.</div></div><div class="kpi"><div class="kpi-label">Verified vs flagged</div><div class="kpi-value">99 / 20</div><div class="kpi-note">Facts confirmed on official sources versus rows deliberately left blank and flagged.</div></div></div>
+
+<h2>Decision at a glance</h2>
+<p>Five strategies, each run against the owner's whole stated expiry window (2030, 2032 and 2035)
+and three illustrative NOI cases. Scores are judgement against the verified evidence; the
+weights and every cell are published on the <a href="decision.html">Decision</a> page so you can
+disagree with a specific cell rather than the whole conclusion.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>ID</th><th>Strategy</th><th class="num">Score / 5</th><th class="num">NPV vs selling today (central NOI)</th></tr></thead>
+<tbody><tr><td class="rank">1</td><td class="mono">E</td><td>Extend now on a long term, hold five years, sell with term intact</td><td class="num">4.20</td><td class="num">$134,299 – $494,888</td></tr><tr><td class="rank">2</td><td class="mono">C</td><td>Hold to expiry and renew then — probability-weighted</td><td class="num">3.55</td><td class="num">$203,712 – $519,183</td></tr><tr><td class="rank">3</td><td class="mono">A</td><td>Sell now, at the cap the remaining term deserves</td><td class="num">3.25</td><td class="num">$0 – $0</td></tr><tr><td class="rank">4</td><td class="mono">D</td><td>Renew now, then sell in 2028 while the term is still long</td><td class="num">2.80</td><td class="num">($243,689) – $116,900</td></tr><tr><td class="rank">5</td><td class="mono">B</td><td>Hold to expiry, tenant leaves, re-tenant and sell in 2035</td><td class="num">2.35</td><td class="num">($96,533) – $233,084</td></tr></tbody></table></div>
+<p class="small">NPV is measured at a 7.40% required return against a sell-today baseline, so 0 means
+"no better or worse than selling now". Negative means "you would be paying to wait".</p>
+
+<h2>The three findings that drive the answer</h2>
+<div class="cards">
+  <article class="card"><h3>1 · Term is the price</h3>
+  <p>Cap rates are a function of how long the buyer can count on the rent. In this model
+  3 years of term prices at 7.25%, five years at 6.5%,
+  nine years at 6.0%. On unchanged income that is a
+  <strong>11.5% step</strong> from three to five years and
+  <strong>20.8%</strong> from three to nine.</p>
+  <p><a href="valuation.html">See the term curve →</a></p></article>
+
+  <article class="card"><h3>2 · The tenant is contracting</h3>
+  <p>Jack in the Box Inc. reported system same-store sales of <strong>−1.1%</strong>, guided to
+  <strong>50–60 closures</strong> in fiscal 2026 — "most of which will be franchise restaurants" — and
+  folds "block closure" and "selling real estate" into its own turnaround plan. A renewal is not
+  something to assume; it is something to negotiate while you still have something to trade.</p>
+  <p><a href="tenant.html">Read the SEC record →</a></p></article>
+
+  <article class="card"><h3>3 · The area is full, but not growing</h3>
+  <p>Los Angeles unemployment is <strong>4.4%</strong> — effectively full employment — while total
+  nonfarm jobs grew <strong>0.5%</strong> year over year and the city's population is down
+  <strong>0.8%</strong> since 2020 (the county, −3.2%). Demand is deep but static, and the local
+  wage floor is the highest in the country for this format.</p>
+  <p><a href="market.html">Interrogate the market data →</a></p></article>
+</div>
+
+<h2>Where the risk sits</h2>
+<div class="cards">
+  <article class="card warn"><h3>Black-swan surface</h3>
+  <p>Wildfire, earthquake, and the insurance channel that links them. California's FAIR Plan now
+  carries <strong>21,717 commercial policies</strong> (from 7,315 in 2022) and <strong>$724 billion</strong>
+  of exposure. A net lease passes insurance cost to the tenant — which protects the owner's income
+  but raises the tenant's occupancy cost, and therefore the odds it walks.</p>
+  <p><a href="risks.html">The full risk register →</a></p></article>
+
+  <article class="card warn"><h3>What is missing</h3>
+  <p>No address, no rent, no NOI, no lease document, no parcel number. Those are withheld on purpose
+  and every property-specific number on this site is a labelled assumption band. The framework is
+  sound; the final arithmetic is not, until the documents are read.</p>
+  <p><a href="flagged.html">20 flagged items →</a></p></article>
+
+  <article class="card"><h3>How to read this site</h3>
+  <p>Everything either says <span class="badge verified">verified</span> with a link to the official
+  page that was actually opened, <span class="badge derived">derived</span> where it is arithmetic on
+  those figures, or <span class="badge flagged">flagged</span> where it could not be confirmed and was
+  left blank instead of guessed.</p>
+  <p><a href="sources.html">The source ledger →</a></p></article>
+</div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Privacy:</strong> this site contains no address, parcel number, owner name, rent, or NOI. The subject property is referred to only as SP-01. Anything knowable only from private documents is shown as <code>[WITHHELD]</code> or as a labelled assumption.</p>
+    <p><strong>Verification:</strong> 99 facts confirmed against official sources, 2 derived by arithmetic on those facts, 20 published as blank and flagged. Every row links to the source that was actually opened. Data accessed 2026-11-06.</p>
+    <p>This is analysis, not legal, tax or investment advice. Verify the lease, the parcel and the tenant before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

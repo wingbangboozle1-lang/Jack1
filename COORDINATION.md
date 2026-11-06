@@ -205,6 +205,16 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 
 ---
 
+## Addendum — session `arena-972c721e` (PR #6)
+
+Their deliverables are preserved at the repository root and are not modified by this session:
+`EXECUTIVE_SUMMARY.md`, `DECISION_MEMO.md`, `METHODOLOGY.md`, `RISK_REGISTER.md`, `tools/check.py` (their own gate, which
+scopes itself to their dossier), and their own `data/facts.json`, `data/model.json`, `data/sources.json` — these coexist with
+this build's `data/records.json`, `data/risks.json`, `data/scenarios.json` and are loaded by nobody in this build, so there is
+no runtime collision. Their draft site is under `archive/arena-972c721e/`.
+
+---
+
 ## Addendum — session `arena-session-d85fba50` (PR #7), retained verbatim
 
 > This session merged PR #7 after this board was written and replaced `COORDINATION.md` with its own board. Nothing of

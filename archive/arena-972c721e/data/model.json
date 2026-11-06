@@ -1,0 +1,3274 @@
+{
+  "meta": {
+    "version": "1.0",
+    "built": "2026-11-06",
+    "warning": "Every input below is either (a) a VERIFIED figure pulled from an official source and listed in data/facts.json, or (b) a stated ASSUMPTION. No input is a guess dressed up as data. Property-specific inputs (rent, NOI, lease dates) were not supplied and are held as illustrative bands only."
+  },
+  "framing": {
+    "baseline": "Selling today at the cap rate the remaining lease term deserves, net of 5.0% cost of sale, 0.56% city+county transfer tax, and Measure ULA where it applies.",
+    "npv_meaning": "NPV is measured against that sell-today baseline at a 7.40% required return. Positive means the strategy is worth more than selling now.",
+    "wealth_meaning": "Wealth in 2035 reinvests every dollar received at the moment it is received at the verified 4.90% 10-year Treasury yield, so strategies with different cash-flow timing are compared like for like.",
+    "term_structure": "Cap rate is a function of remaining lease term, not a single number: 7.25% at <=3 years, 6.50% at 5 years, 6.00% at 9+ years, linearly interpolated between."
+  },
+  "verified_inputs": {
+    "risk_free_10y_pct": 4.9,
+    "policy_rate_top_pct": 4.0,
+    "cpi_u_yoy_pct": 3.7,
+    "cpi_w_la_yoy_pct": 4.1,
+    "limited_service_meals_yoy_pct": 3.2,
+    "metro_unemployment_pct": 4.4,
+    "metro_jobs_yoy_pct": 0.5,
+    "city_pop_change_pct": -0.8,
+    "county_pop_change_pct": -3.2,
+    "prop13_annual_cap_pct": 2.0,
+    "city_transfer_tax_pct": 0.45,
+    "county_transfer_tax_pct": 0.11,
+    "ula_threshold_2026": 5400000,
+    "ula_tier1_pct": 4.0,
+    "ula_tier2_pct": 5.5,
+    "ulas_upper_threshold": 10900000
+  },
+  "assumptions": [
+    {
+      "key": "A1",
+      "name": "Illustrative NOI cases",
+      "value": "$140,000 / $180,000 / $240,000",
+      "basis": "Assumption. Actual NOI was not supplied. Chosen to bracket a plausible single-tenant QSR footprint in Central LA. Replace with the real figure before acting."
+    },
+    {
+      "key": "A2",
+      "name": "Cap rate \u2014 short remaining term (3 years or less)",
+      "value": "7.25%",
+      "basis": "Assumption = verified 10-year Treasury 4.90% + 235bp. No official series publishes net-lease cap rates, so the spread is stated, not sourced."
+    },
+    {
+      "key": "A3",
+      "name": "Cap rate \u2014 about 5 years remaining",
+      "value": "6.50%",
+      "basis": "Assumption = 10-year 4.90% + 160bp."
+    },
+    {
+      "key": "A4",
+      "name": "Cap rate \u2014 about 8-10 years remaining",
+      "value": "6.00%",
+      "basis": "Assumption = 10-year 4.90% + 110bp."
+    },
+    {
+      "key": "A5",
+      "name": "Cap-rate sensitivity band",
+      "value": "\u00b175bp",
+      "basis": "Assumption. Used to show how much of the answer is a rates call."
+    },
+    {
+      "key": "A6",
+      "name": "In-place rent escalation",
+      "value": "2.0%/yr",
+      "basis": "Assumption. Actual escalator is in the lease, which was not supplied (F109)."
+    },
+    {
+      "key": "A7",
+      "name": "Market rent growth",
+      "value": "3.0%/yr",
+      "basis": "Assumption, anchored to verified CPI (3.7%) and limited-service meal inflation (3.2%)."
+    },
+    {
+      "key": "A8",
+      "name": "Discount rate / required return",
+      "value": "7.40%",
+      "basis": "Assumption = verified 10-year Treasury 4.90% + 250bp illiquidity and single-tenant premium."
+    },
+    {
+      "key": "A9",
+      "name": "Cost of sale \u2014 brokerage, legal, closing",
+      "value": "5.0% of gross price",
+      "basis": "Assumption. Negotiated, not published."
+    },
+    {
+      "key": "A10",
+      "name": "Cost of sale \u2014 transfer taxes",
+      "value": "0.56% of price + Measure ULA where applicable",
+      "basis": "Derived from verified rates: 0.45% city (S13) + 0.11% county (S14), then the ULA tiers."
+    },
+    {
+      "key": "A11",
+      "name": "Downtime if the tenant vacates",
+      "value": "12 months no rent + $150,000 re-tenanting + 6 months of free rent",
+      "basis": "Assumption. Represents the realistic cost of re-leasing a drive-thru box."
+    },
+    {
+      "key": "A12",
+      "name": "Renewal rent reset",
+      "value": "+10% versus in-place rent at renewal",
+      "basis": "Assumption. Six years of 2% contract growth against 3% market growth implies an 8-10% gap by 2032."
+    },
+    {
+      "key": "A13",
+      "name": "Combined income tax on a sale",
+      "value": "Not modelled",
+      "basis": "The owner's basis and depreciation history are private and were not supplied. All proceeds below are PRE-TAX. Tax is discussed qualitatively with the verified 1031 mechanics (F088)."
+    },
+    {
+      "key": "A14",
+      "name": "Horizon",
+      "value": "2026-2035 (9 years)",
+      "basis": "Chosen to cover the whole 2030-2035 expiry window stated by the owner."
+    },
+    {
+      "key": "A15",
+      "name": "Renewal concession (TI / rent abatement)",
+      "value": "$150,000",
+      "basis": "Assumption. A tenant rarely signs an extension for nothing; the model charges the owner for it rather than pretending the extension is free."
+    },
+    {
+      "key": "A16",
+      "name": "Probability the tenant renews at expiry if nothing is negotiated",
+      "value": "60% (band 35%-75%)",
+      "basis": "Assumption, informed by the franchisor's disclosed contraction (50-60 closures a year, mostly franchise) set against a lease that is likely below market after years of 2% escalators in a 3.7-4.1% inflation environment. The band is published so the reader can re-price it."
+    }
+  ],
+  "horizon": {
+    "start": 2026,
+    "end": 2035,
+    "years": 9
+  },
+  "cap_curve": [
+    {
+      "term_years": 0.0,
+      "cap_pct": 7.25
+    },
+    {
+      "term_years": 3.0,
+      "cap_pct": 7.25
+    },
+    {
+      "term_years": 5.0,
+      "cap_pct": 6.5
+    },
+    {
+      "term_years": 9.0,
+      "cap_pct": 6.0
+    },
+    {
+      "term_years": 15.0,
+      "cap_pct": 5.9
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "NOI140k-EXP2030",
+      "noi": 140000,
+      "expiry": 2030,
+      "years_left": 4,
+      "cap_today_pct": 6.875,
+      "sell_today_net": 1923142,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 1923142
+            }
+          ],
+          "gross_price": 2036364,
+          "costs": {
+            "gross_price": 2036364,
+            "brokerage_and_closing": 101818,
+            "transfer_taxes_city_county": 11404,
+            "measure_ula": 0,
+            "total_costs": 113222,
+            "net_proceeds": 1923142
+          },
+          "terminal_wealth_2035": 2957949,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -231149
+            },
+            {
+              "year": 2032,
+              "label": "Re-leased at market rent",
+              "cash_flow": 167167
+            },
+            {
+              "year": 2033,
+              "label": "Re-leased at market rent",
+              "cash_flow": 175626
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 184513
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 193849
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 2525117
+            }
+          ],
+          "gross_price": 2673779,
+          "costs": {
+            "gross_price": 2673779,
+            "brokerage_and_closing": 133689,
+            "transfer_taxes_city_county": 14973,
+            "measure_ula": 0,
+            "total_costs": 148662,
+            "net_proceeds": 2525117
+          },
+          "terminal_wealth_2035": 3822269,
+          "npv": 157960,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 8.55
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "Renewed at market with reset",
+              "cash_flow": 173328
+            },
+            {
+              "year": 2032,
+              "label": "Renewed at market with reset",
+              "cash_flow": 176795
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 180331
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 183937
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 187616
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 2725919
+            }
+          ],
+          "gross_price": 2886403,
+          "costs": {
+            "gross_price": 2886403,
+            "brokerage_and_closing": 144320,
+            "transfer_taxes_city_county": 16164,
+            "measure_ula": 0,
+            "total_costs": 160484,
+            "net_proceeds": 2725919
+          },
+          "terminal_wealth_2035": 4242287,
+          "npv": 394478,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 552157,
+          "npv_if_leaves": 157960,
+          "terminal_wealth_if_renews": 4522300,
+          "terminal_wealth_if_leaves": 3822269,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2128821
+            }
+          ],
+          "gross_price": 2254152,
+          "costs": {
+            "gross_price": 2254152,
+            "brokerage_and_closing": 112708,
+            "transfer_taxes_city_county": 12623,
+            "measure_ula": 0,
+            "total_costs": 125331,
+            "net_proceeds": 2128821
+          },
+          "terminal_wealth_2035": 3199106,
+          "npv": 57589,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 8.93
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 163426
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 166695
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 170028
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 2519790
+            }
+          ],
+          "gross_price": 2668139,
+          "costs": {
+            "gross_price": 2668139,
+            "brokerage_and_closing": 133407,
+            "transfer_taxes_city_county": 14942,
+            "measure_ula": 0,
+            "total_costs": 148349,
+            "net_proceeds": 2519790
+          },
+          "terminal_wealth_2035": 3910103,
+          "npv": 351579,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 11.29
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 6.13,
+          "gross_value": 2285714,
+          "net_proceeds": 2158629,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 6.38,
+          "gross_value": 2196078,
+          "net_proceeds": 2073976,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.62,
+          "gross_value": 2113208,
+          "net_proceeds": 1995713,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.88,
+          "gross_value": 2036364,
+          "net_proceeds": 1923142,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 7.13,
+          "gross_value": 1964912,
+          "net_proceeds": 1855663,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 7.38,
+          "gross_value": 1898305,
+          "net_proceeds": 1792759,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.63,
+          "gross_value": 1836066,
+          "net_proceeds": 1733980,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI140k-EXP2032",
+      "noi": 140000,
+      "expiry": 2032,
+      "years_left": 6,
+      "cap_today_pct": 6.375,
+      "sell_today_net": 2073976,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 2073976
+            }
+          ],
+          "gross_price": 2196078,
+          "costs": {
+            "gross_price": 2196078,
+            "brokerage_and_closing": 109804,
+            "transfer_taxes_city_county": 12298,
+            "measure_ula": 0,
+            "total_costs": 122102,
+            "net_proceeds": 2073976
+          },
+          "terminal_wealth_2035": 3189945,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 154571
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 157663
+            },
+            {
+              "year": 2033,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -236091
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 177348
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 186322
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 2427064
+            }
+          ],
+          "gross_price": 2569953,
+          "costs": {
+            "gross_price": 2569953,
+            "brokerage_and_closing": 128498,
+            "transfer_taxes_city_county": 14392,
+            "measure_ula": 0,
+            "total_costs": 142889,
+            "net_proceeds": 2427064
+          },
+          "terminal_wealth_2035": 3712209,
+          "npv": -38504,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 7.12
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 154571
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 157663
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 183884
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 187562
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 191313
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 2779630
+            }
+          ],
+          "gross_price": 2943276,
+          "costs": {
+            "gross_price": 2943276,
+            "brokerage_and_closing": 147164,
+            "transfer_taxes_city_county": 16482,
+            "measure_ula": 0,
+            "total_costs": 163646,
+            "net_proceeds": 2779630
+          },
+          "terminal_wealth_2035": 4210457,
+          "npv": 230675,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 410128,
+          "npv_if_leaves": -38504,
+          "terminal_wealth_if_renews": 4542622,
+          "terminal_wealth_if_leaves": 3712209,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2128821
+            }
+          ],
+          "gross_price": 2254152,
+          "costs": {
+            "gross_price": 2254152,
+            "brokerage_and_closing": 112708,
+            "transfer_taxes_city_county": 12623,
+            "measure_ula": 0,
+            "total_costs": 125331,
+            "net_proceeds": 2128821
+          },
+          "terminal_wealth_2035": 3199106,
+          "npv": -93246,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 5.05
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 163426
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 166695
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 170028
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 2519790
+            }
+          ],
+          "gross_price": 2668139,
+          "costs": {
+            "gross_price": 2668139,
+            "brokerage_and_closing": 133407,
+            "transfer_taxes_city_county": 14942,
+            "measure_ula": 0,
+            "total_costs": 148349,
+            "net_proceeds": 2519790
+          },
+          "terminal_wealth_2035": 3910103,
+          "npv": 200745,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 9.52
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.62,
+          "gross_value": 2488889,
+          "net_proceeds": 2350507,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.88,
+          "gross_value": 2382979,
+          "net_proceeds": 2250485,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.12,
+          "gross_value": 2285714,
+          "net_proceeds": 2158629,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.38,
+          "gross_value": 2196078,
+          "net_proceeds": 2073976,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.62,
+          "gross_value": 2113208,
+          "net_proceeds": 1995713,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.88,
+          "gross_value": 2036364,
+          "net_proceeds": 1923142,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.13,
+          "gross_value": 1964912,
+          "net_proceeds": 1855663,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI140k-EXP2035",
+      "noi": 140000,
+      "expiry": 2035,
+      "years_left": 9,
+      "cap_today_pct": 6.0,
+      "sell_today_net": 2203600,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 2203600
+            }
+          ],
+          "gross_price": 2333333,
+          "costs": {
+            "gross_price": 2333333,
+            "brokerage_and_closing": 116667,
+            "transfer_taxes_city_county": 13067,
+            "measure_ula": 0,
+            "total_costs": 129733,
+            "net_proceeds": 2203600
+          },
+          "terminal_wealth_2035": 3389317,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 154571
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 157663
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 160816
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 164032
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 167313
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 0.5 years of term",
+              "cash_flow": 2179453
+            }
+          ],
+          "gross_price": 2307765,
+          "costs": {
+            "gross_price": 2307765,
+            "brokerage_and_closing": 115388,
+            "transfer_taxes_city_county": 12923,
+            "measure_ula": 0,
+            "total_costs": 128312,
+            "net_proceeds": 2179453
+          },
+          "terminal_wealth_2035": 3868379,
+          "npv": -75082,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 6.87
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 142800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 145656
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 148569
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 151541
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 154571
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 157663
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 160816
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 164032
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 167313
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 2919432
+            }
+          ],
+          "gross_price": 3091309,
+          "costs": {
+            "gross_price": 3091309,
+            "brokerage_and_closing": 154565,
+            "transfer_taxes_city_county": 17311,
+            "measure_ula": 0,
+            "total_costs": 171877,
+            "net_proceeds": 2919432
+          },
+          "terminal_wealth_2035": 4312366,
+          "npv": 158443,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 314126,
+          "npv_if_leaves": -75082,
+          "terminal_wealth_if_renews": 4608358,
+          "terminal_wealth_if_leaves": 3868379,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2128821
+            }
+          ],
+          "gross_price": 2254152,
+          "costs": {
+            "gross_price": 2254152,
+            "brokerage_and_closing": 112708,
+            "transfer_taxes_city_county": 12623,
+            "measure_ula": 0,
+            "total_costs": 125331,
+            "net_proceeds": 2128821
+          },
+          "terminal_wealth_2035": 3199106,
+          "npv": -222869,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 2.01
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 157080
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 160222
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 163426
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 166695
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 170028
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 2519790
+            }
+          ],
+          "gross_price": 2668139,
+          "costs": {
+            "gross_price": 2668139,
+            "brokerage_and_closing": 133407,
+            "transfer_taxes_city_county": 14942,
+            "measure_ula": 0,
+            "total_costs": 148349,
+            "net_proceeds": 2519790
+          },
+          "terminal_wealth_2035": 3910103,
+          "npv": 71121,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 8.13
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.25,
+          "gross_value": 2666667,
+          "net_proceeds": 2518400,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.5,
+          "gross_value": 2545455,
+          "net_proceeds": 2403927,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 5.75,
+          "gross_value": 2434783,
+          "net_proceeds": 2299409,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.0,
+          "gross_value": 2333333,
+          "net_proceeds": 2203600,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.25,
+          "gross_value": 2240000,
+          "net_proceeds": 2115456,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.5,
+          "gross_value": 2153846,
+          "net_proceeds": 2034092,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 6.75,
+          "gross_value": 2074074,
+          "net_proceeds": 1958756,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI180k-EXP2030",
+      "noi": 180000,
+      "expiry": 2030,
+      "years_left": 4,
+      "cap_today_pct": 6.875,
+      "sell_today_net": 2472611,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 2472611
+            }
+          ],
+          "gross_price": 2618182,
+          "costs": {
+            "gross_price": 2618182,
+            "brokerage_and_closing": 130909,
+            "transfer_taxes_city_county": 14662,
+            "measure_ula": 0,
+            "total_costs": 145571,
+            "net_proceeds": 2472611
+          },
+          "terminal_wealth_2035": 3803077,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -254335
+            },
+            {
+              "year": 2032,
+              "label": "Re-leased at market rent",
+              "cash_flow": 214929
+            },
+            {
+              "year": 2033,
+              "label": "Re-leased at market rent",
+              "cash_flow": 225805
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 237231
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 249234
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 3246579
+            }
+          ],
+          "gross_price": 3437716,
+          "costs": {
+            "gross_price": 3437716,
+            "brokerage_and_closing": 171886,
+            "transfer_taxes_city_county": 19251,
+            "measure_ula": 0,
+            "total_costs": 191137,
+            "net_proceeds": 3246579
+          },
+          "terminal_wealth_2035": 4966241,
+          "npv": 233084,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 8.72
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "Renewed at market with reset",
+              "cash_flow": 222851
+            },
+            {
+              "year": 2032,
+              "label": "Renewed at market with reset",
+              "cash_flow": 227308
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 231854
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 236491
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 241221
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 3504753
+            }
+          ],
+          "gross_price": 3711089,
+          "costs": {
+            "gross_price": 3711089,
+            "brokerage_and_closing": 185554,
+            "transfer_taxes_city_county": 20782,
+            "measure_ula": 0,
+            "total_costs": 206337,
+            "net_proceeds": 3504753
+          },
+          "terminal_wealth_2035": 5475127,
+          "npv": 519183,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 709916,
+          "npv_if_leaves": 233084,
+          "terminal_wealth_if_renews": 5814385,
+          "terminal_wealth_if_leaves": 4966241,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2737056
+            }
+          ],
+          "gross_price": 2898196,
+          "costs": {
+            "gross_price": 2898196,
+            "brokerage_and_closing": 144910,
+            "transfer_taxes_city_county": 16230,
+            "measure_ula": 0,
+            "total_costs": 161140,
+            "net_proceeds": 2737056
+          },
+          "terminal_wealth_2035": 4179054,
+          "npv": 116900,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 9.85
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 210119
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 214322
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 218608
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 3239730
+            }
+          ],
+          "gross_price": 3430464,
+          "costs": {
+            "gross_price": 3430464,
+            "brokerage_and_closing": 171523,
+            "transfer_taxes_city_county": 19211,
+            "measure_ula": 0,
+            "total_costs": 190734,
+            "net_proceeds": 3239730
+          },
+          "terminal_wealth_2035": 5093193,
+          "npv": 494888,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 11.71
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 6.13,
+          "gross_value": 2938776,
+          "net_proceeds": 2775380,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 6.38,
+          "gross_value": 2823529,
+          "net_proceeds": 2666541,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.62,
+          "gross_value": 2716981,
+          "net_proceeds": 2565917,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.88,
+          "gross_value": 2618182,
+          "net_proceeds": 2472611,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 7.13,
+          "gross_value": 2526316,
+          "net_proceeds": 2385853,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 7.38,
+          "gross_value": 2440678,
+          "net_proceeds": 2304976,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.63,
+          "gross_value": 2360656,
+          "net_proceeds": 2229403,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI180k-EXP2032",
+      "noi": 180000,
+      "expiry": 2032,
+      "years_left": 6,
+      "cap_today_pct": 6.375,
+      "sell_today_net": 2666541,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 2666541
+            }
+          ],
+          "gross_price": 2823529,
+          "costs": {
+            "gross_price": 2823529,
+            "brokerage_and_closing": 141176,
+            "transfer_taxes_city_county": 15812,
+            "measure_ula": 0,
+            "total_costs": 156988,
+            "net_proceeds": 2666541
+          },
+          "terminal_wealth_2035": 4101358,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 198735
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 202709
+            },
+            {
+              "year": 2033,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -260689
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 228019
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 239556
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 3120511
+            }
+          ],
+          "gross_price": 3304226,
+          "costs": {
+            "gross_price": 3304226,
+            "brokerage_and_closing": 165211,
+            "transfer_taxes_city_county": 18504,
+            "measure_ula": 0,
+            "total_costs": 183715,
+            "net_proceeds": 3120511
+          },
+          "terminal_wealth_2035": 4820000,
+          "npv": -23504,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 7.27
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 198735
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 202709
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 236422
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 241151
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 245974
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 3573810
+            }
+          ],
+          "gross_price": 3784213,
+          "costs": {
+            "gross_price": 3784213,
+            "brokerage_and_closing": 189211,
+            "transfer_taxes_city_county": 21192,
+            "measure_ula": 0,
+            "total_costs": 210402,
+            "net_proceeds": 3573810
+          },
+          "terminal_wealth_2035": 5432309,
+          "npv": 306983,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 527307,
+          "npv_if_leaves": -23504,
+          "terminal_wealth_if_renews": 5840514,
+          "terminal_wealth_if_leaves": 4820000,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2737056
+            }
+          ],
+          "gross_price": 2898196,
+          "costs": {
+            "gross_price": 2898196,
+            "brokerage_and_closing": 144910,
+            "transfer_taxes_city_county": 16230,
+            "measure_ula": 0,
+            "total_costs": 161140,
+            "net_proceeds": 2737056
+          },
+          "terminal_wealth_2035": 4179054,
+          "npv": -77030,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 5.87
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 210119
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 214322
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 218608
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 3239730
+            }
+          ],
+          "gross_price": 3430464,
+          "costs": {
+            "gross_price": 3430464,
+            "brokerage_and_closing": 171523,
+            "transfer_taxes_city_county": 19211,
+            "measure_ula": 0,
+            "total_costs": 190734,
+            "net_proceeds": 3239730
+          },
+          "terminal_wealth_2035": 5093193,
+          "npv": 300958,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 9.9
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.62,
+          "gross_value": 3200000,
+          "net_proceeds": 3022080,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.88,
+          "gross_value": 3063830,
+          "net_proceeds": 2893481,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.12,
+          "gross_value": 2938776,
+          "net_proceeds": 2775380,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.38,
+          "gross_value": 2823529,
+          "net_proceeds": 2666541,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.62,
+          "gross_value": 2716981,
+          "net_proceeds": 2565917,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.88,
+          "gross_value": 2618182,
+          "net_proceeds": 2472611,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.13,
+          "gross_value": 2526316,
+          "net_proceeds": 2385853,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI180k-EXP2035",
+      "noi": 180000,
+      "expiry": 2035,
+      "years_left": 9,
+      "cap_today_pct": 6.0,
+      "sell_today_net": 2833200,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 2833200
+            }
+          ],
+          "gross_price": 3000000,
+          "costs": {
+            "gross_price": 3000000,
+            "brokerage_and_closing": 150000,
+            "transfer_taxes_city_county": 16800,
+            "measure_ula": 0,
+            "total_costs": 166800,
+            "net_proceeds": 2833200
+          },
+          "terminal_wealth_2035": 4357693,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 198735
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 202709
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 206763
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 210899
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 215117
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 0.5 years of term",
+              "cash_flow": 2802154
+            }
+          ],
+          "gross_price": 2967126,
+          "costs": {
+            "gross_price": 2967126,
+            "brokerage_and_closing": 148356,
+            "transfer_taxes_city_county": 16616,
+            "measure_ula": 0,
+            "total_costs": 164972,
+            "net_proceeds": 2802154
+          },
+          "terminal_wealth_2035": 4973630,
+          "npv": -96533,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 6.87
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 183600
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 187272
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 191017
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 194838
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 198735
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 202709
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 206763
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 210899
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 215117
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 3753555
+            }
+          ],
+          "gross_price": 3974540,
+          "costs": {
+            "gross_price": 3974540,
+            "brokerage_and_closing": 198727,
+            "transfer_taxes_city_county": 22257,
+            "measure_ula": 0,
+            "total_costs": 220984,
+            "net_proceeds": 3753555
+          },
+          "terminal_wealth_2035": 5544471,
+          "npv": 203712,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 403876,
+          "npv_if_leaves": -96533,
+          "terminal_wealth_if_renews": 5925031,
+          "terminal_wealth_if_leaves": 4973630,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 2737056
+            }
+          ],
+          "gross_price": 2898196,
+          "costs": {
+            "gross_price": 2898196,
+            "brokerage_and_closing": 144910,
+            "transfer_taxes_city_county": 16230,
+            "measure_ula": 0,
+            "total_costs": 161140,
+            "net_proceeds": 2737056
+          },
+          "terminal_wealth_2035": 4179054,
+          "npv": -243689,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 2.77
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 201960
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 205999
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 210119
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 214322
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 218608
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 3239730
+            }
+          ],
+          "gross_price": 3430464,
+          "costs": {
+            "gross_price": 3430464,
+            "brokerage_and_closing": 171523,
+            "transfer_taxes_city_county": 19211,
+            "measure_ula": 0,
+            "total_costs": 190734,
+            "net_proceeds": 3239730
+          },
+          "terminal_wealth_2035": 5093193,
+          "npv": 134299,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 8.48
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.25,
+          "gross_value": 3428571,
+          "net_proceeds": 3237943,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.5,
+          "gross_value": 3272727,
+          "net_proceeds": 3090764,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 5.75,
+          "gross_value": 3130435,
+          "net_proceeds": 2956383,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.0,
+          "gross_value": 3000000,
+          "net_proceeds": 2833200,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.25,
+          "gross_value": 2880000,
+          "net_proceeds": 2719872,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.5,
+          "gross_value": 2769231,
+          "net_proceeds": 2615262,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 6.75,
+          "gross_value": 2666667,
+          "net_proceeds": 2518400,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI240k-EXP2030",
+      "noi": 240000,
+      "expiry": 2030,
+      "years_left": 4,
+      "cap_today_pct": 6.875,
+      "sell_today_net": 3296815,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 3296815
+            }
+          ],
+          "gross_price": 3490909,
+          "costs": {
+            "gross_price": 3490909,
+            "brokerage_and_closing": 174545,
+            "transfer_taxes_city_county": 19549,
+            "measure_ula": 0,
+            "total_costs": 194095,
+            "net_proceeds": 3296815
+          },
+          "terminal_wealth_2035": 5070770,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -289113
+            },
+            {
+              "year": 2032,
+              "label": "Re-leased at market rent",
+              "cash_flow": 286573
+            },
+            {
+              "year": 2033,
+              "label": "Re-leased at market rent",
+              "cash_flow": 301073
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 316307
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 332313
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 4328772
+            }
+          ],
+          "gross_price": 4583622,
+          "costs": {
+            "gross_price": 4583622,
+            "brokerage_and_closing": 229181,
+            "transfer_taxes_city_county": 25668,
+            "measure_ula": 0,
+            "total_costs": 254849,
+            "net_proceeds": 4328772
+          },
+          "terminal_wealth_2035": 6682198,
+          "npv": 345768,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 8.87
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "Renewed at market with reset",
+              "cash_flow": 297134
+            },
+            {
+              "year": 2032,
+              "label": "Renewed at market with reset",
+              "cash_flow": 303077
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 309139
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 315321
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 321628
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 4673004
+            }
+          ],
+          "gross_price": 4948119,
+          "costs": {
+            "gross_price": 4948119,
+            "brokerage_and_closing": 247406,
+            "transfer_taxes_city_county": 27709,
+            "measure_ula": 0,
+            "total_costs": 275115,
+            "net_proceeds": 4673004
+          },
+          "terminal_wealth_2035": 7324387,
+          "npv": 706240,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 946555,
+          "npv_if_leaves": 345768,
+          "terminal_wealth_if_renews": 7752514,
+          "terminal_wealth_if_leaves": 6682198,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 3649408
+            }
+          ],
+          "gross_price": 3864261,
+          "costs": {
+            "gross_price": 3864261,
+            "brokerage_and_closing": 193213,
+            "transfer_taxes_city_county": 21640,
+            "measure_ula": 0,
+            "total_costs": 214853,
+            "net_proceeds": 3649408
+          },
+          "terminal_wealth_2035": 5648976,
+          "npv": 205867,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 10.68
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 280159
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 285762
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 291477
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 4319640
+            }
+          ],
+          "gross_price": 4573952,
+          "costs": {
+            "gross_price": 4573952,
+            "brokerage_and_closing": 228698,
+            "transfer_taxes_city_county": 25614,
+            "measure_ula": 0,
+            "total_costs": 254312,
+            "net_proceeds": 4319640
+          },
+          "terminal_wealth_2035": 6867829,
+          "npv": 709851,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 12.07
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 6.13,
+          "gross_value": 3918367,
+          "net_proceeds": 3700506,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 6.38,
+          "gross_value": 3764706,
+          "net_proceeds": 3555388,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.62,
+          "gross_value": 3622642,
+          "net_proceeds": 3421223,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.88,
+          "gross_value": 3490909,
+          "net_proceeds": 3296815,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 7.13,
+          "gross_value": 3368421,
+          "net_proceeds": 3181137,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 7.38,
+          "gross_value": 3254237,
+          "net_proceeds": 3073302,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.63,
+          "gross_value": 3147541,
+          "net_proceeds": 2972538,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI240k-EXP2032",
+      "noi": 240000,
+      "expiry": 2032,
+      "years_left": 6,
+      "cap_today_pct": 6.375,
+      "sell_today_net": 3555388,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 3555388
+            }
+          ],
+          "gross_price": 3764706,
+          "costs": {
+            "gross_price": 3764706,
+            "brokerage_and_closing": 188235,
+            "transfer_taxes_city_county": 21082,
+            "measure_ula": 0,
+            "total_costs": 209318,
+            "net_proceeds": 3555388
+          },
+          "terminal_wealth_2035": 5468477,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 264979
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 270279
+            },
+            {
+              "year": 2033,
+              "label": "Vacant year: re-tenanting cost plus free rent",
+              "cash_flow": -297585
+            },
+            {
+              "year": 2034,
+              "label": "Re-leased at market rent",
+              "cash_flow": 304025
+            },
+            {
+              "year": 2035,
+              "label": "Re-leased at market rent",
+              "cash_flow": 319408
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 3.0 years of term",
+              "cash_flow": 4160681
+            }
+          ],
+          "gross_price": 4405634,
+          "costs": {
+            "gross_price": 4405634,
+            "brokerage_and_closing": 220282,
+            "transfer_taxes_city_county": 24672,
+            "measure_ula": 0,
+            "total_costs": 244953,
+            "net_proceeds": 4160681
+          },
+          "terminal_wealth_2035": 6481687,
+          "npv": -1003,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 7.4
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 264979
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 270279
+            },
+            {
+              "year": 2033,
+              "label": "Renewed at market with reset",
+              "cash_flow": 315230
+            },
+            {
+              "year": 2034,
+              "label": "Renewed at market with reset",
+              "cash_flow": 321534
+            },
+            {
+              "year": 2035,
+              "label": "Renewed at market with reset",
+              "cash_flow": 327965
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 4765080
+            }
+          ],
+          "gross_price": 5045617,
+          "costs": {
+            "gross_price": 5045617,
+            "brokerage_and_closing": 252281,
+            "transfer_taxes_city_county": 28255,
+            "measure_ula": 0,
+            "total_costs": 280536,
+            "net_proceeds": 4765080
+          },
+          "terminal_wealth_2035": 7265086,
+          "npv": 421444,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 703076,
+          "npv_if_leaves": -1003,
+          "terminal_wealth_if_renews": 7787353,
+          "terminal_wealth_if_leaves": 6481687,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 3649408
+            }
+          ],
+          "gross_price": 3864261,
+          "costs": {
+            "gross_price": 3864261,
+            "brokerage_and_closing": 193213,
+            "transfer_taxes_city_county": 21640,
+            "measure_ula": 0,
+            "total_costs": 214853,
+            "net_proceeds": 3649408
+          },
+          "terminal_wealth_2035": 5648976,
+          "npv": -52707,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 6.61
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 280159
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 285762
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 291477
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 4319640
+            }
+          ],
+          "gross_price": 4573952,
+          "costs": {
+            "gross_price": 4573952,
+            "brokerage_and_closing": 228698,
+            "transfer_taxes_city_county": 25614,
+            "measure_ula": 0,
+            "total_costs": 254312,
+            "net_proceeds": 4319640
+          },
+          "terminal_wealth_2035": 6867829,
+          "npv": 451277,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 10.24
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.62,
+          "gross_value": 4266667,
+          "net_proceeds": 4029440,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.88,
+          "gross_value": 4085106,
+          "net_proceeds": 3857974,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 6.12,
+          "gross_value": 3918367,
+          "net_proceeds": 3700506,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.38,
+          "gross_value": 3764706,
+          "net_proceeds": 3555388,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.62,
+          "gross_value": 3622642,
+          "net_proceeds": 3421223,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.88,
+          "gross_value": 3490909,
+          "net_proceeds": 3296815,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 7.13,
+          "gross_value": 3368421,
+          "net_proceeds": 3181137,
+          "ula_applies": false
+        }
+      ]
+    },
+    {
+      "id": "NOI240k-EXP2035",
+      "noi": 240000,
+      "expiry": 2035,
+      "years_left": 9,
+      "cap_today_pct": 6.0,
+      "sell_today_net": 3777600,
+      "strategies": [
+        {
+          "id": "A",
+          "name": "Sell now, at the cap the remaining term deserves",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Sale at today's term-appropriate cap",
+              "cash_flow": 3777600
+            }
+          ],
+          "gross_price": 4000000,
+          "costs": {
+            "gross_price": 4000000,
+            "brokerage_and_closing": 200000,
+            "transfer_taxes_city_county": 22400,
+            "measure_ula": 0,
+            "total_costs": 222400,
+            "net_proceeds": 3777600
+          },
+          "terminal_wealth_2035": 5810257,
+          "npv": 0,
+          "irr_pct": 4.9,
+          "is_baseline": true,
+          "annual_note": "Baseline. Cash today, no tenant, no lease tail, no re-tenanting risk \u2014 but no Prop 13 wedge and no rent either."
+        },
+        {
+          "id": "B",
+          "name": "Hold to expiry, tenant leaves, re-tenant and sell in 2035",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 264979
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 270279
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 275685
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 281198
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 286822
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 0.5 years of term",
+              "cash_flow": 3736206
+            }
+          ],
+          "gross_price": 3956169,
+          "costs": {
+            "gross_price": 3956169,
+            "brokerage_and_closing": 197808,
+            "transfer_taxes_city_county": 22155,
+            "measure_ula": 0,
+            "total_costs": 219963,
+            "net_proceeds": 3736206
+          },
+          "terminal_wealth_2035": 6631507,
+          "npv": -128711,
+          "annual_note": "The do-nothing path. Rent stops when the lease stops, the owner pays to refill a drive-thru box in a metro that is losing population, and the asset is then sold with almost no term left.",
+          "irr_pct": 6.87
+        },
+        {
+          "id": "C",
+          "name": "Hold to expiry and renew then \u2014 probability-weighted",
+          "rows": [
+            {
+              "year": 2027,
+              "label": "In-place rent",
+              "cash_flow": 244800
+            },
+            {
+              "year": 2028,
+              "label": "In-place rent",
+              "cash_flow": 249696
+            },
+            {
+              "year": 2029,
+              "label": "In-place rent",
+              "cash_flow": 254690
+            },
+            {
+              "year": 2030,
+              "label": "In-place rent",
+              "cash_flow": 259784
+            },
+            {
+              "year": 2031,
+              "label": "In-place rent",
+              "cash_flow": 264979
+            },
+            {
+              "year": 2032,
+              "label": "In-place rent",
+              "cash_flow": 270279
+            },
+            {
+              "year": 2033,
+              "label": "In-place rent",
+              "cash_flow": 275685
+            },
+            {
+              "year": 2034,
+              "label": "In-place rent",
+              "cash_flow": 281198
+            },
+            {
+              "year": 2035,
+              "label": "In-place rent",
+              "cash_flow": 286822
+            },
+            {
+              "year": 2035,
+              "label": "Sale with 5 years of renewed term",
+              "cash_flow": 5004741
+            }
+          ],
+          "gross_price": 5299386,
+          "costs": {
+            "gross_price": 5299386,
+            "brokerage_and_closing": 264969,
+            "transfer_taxes_city_county": 29677,
+            "measure_ula": 0,
+            "total_costs": 294646,
+            "net_proceeds": 5004741
+          },
+          "terminal_wealth_2035": 7392628,
+          "npv": 271616,
+          "annual_note": "The 'do nothing and hope' path, priced honestly: a 60% chance the tenant renews, a 40% chance the box goes dark for a year. Published NPV is the weighted average of those two worlds, not the good one.",
+          "npv_if_renews": 538501,
+          "npv_if_leaves": -128711,
+          "terminal_wealth_if_renews": 7900042,
+          "terminal_wealth_if_leaves": 6631507,
+          "p_renew": 0.6,
+          "p_renew_band": [
+            0.35,
+            0.75
+          ],
+          "irr_pct": null
+        },
+        {
+          "id": "D",
+          "name": "Renew now, then sell in 2028 while the term is still long",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2028,
+              "label": "Sale with 3 years firm plus options",
+              "cash_flow": 3649408
+            }
+          ],
+          "gross_price": 3864261,
+          "costs": {
+            "gross_price": 3864261,
+            "brokerage_and_closing": 193213,
+            "transfer_taxes_city_county": 21640,
+            "measure_ula": 0,
+            "total_costs": 214853,
+            "net_proceeds": 3649408
+          },
+          "terminal_wealth_2035": 5648976,
+          "npv": -274919,
+          "annual_note": "Same building, same corner, same tenant base. The only thing that changes is the number of years the buyer can count on \u2014 and a three-year tail is priced very differently from a four-to-nine-year one.",
+          "irr_pct": 3.44
+        },
+        {
+          "id": "E",
+          "name": "Extend now on a long term, hold five years, sell with term intact",
+          "rows": [
+            {
+              "year": 2026,
+              "label": "Renewal concession (TI / abatement)",
+              "cash_flow": -150000
+            },
+            {
+              "year": 2027,
+              "label": "Extended-term rent",
+              "cash_flow": 269280
+            },
+            {
+              "year": 2028,
+              "label": "Extended-term rent",
+              "cash_flow": 274666
+            },
+            {
+              "year": 2029,
+              "label": "Extended-term rent",
+              "cash_flow": 280159
+            },
+            {
+              "year": 2030,
+              "label": "Extended-term rent",
+              "cash_flow": 285762
+            },
+            {
+              "year": 2031,
+              "label": "Extended-term rent",
+              "cash_flow": 291477
+            },
+            {
+              "year": 2031,
+              "label": "Sale with ~5 years of firm term",
+              "cash_flow": 4319640
+            }
+          ],
+          "gross_price": 4573952,
+          "costs": {
+            "gross_price": 4573952,
+            "brokerage_and_closing": 228698,
+            "transfer_taxes_city_county": 25614,
+            "measure_ula": 0,
+            "total_costs": 254312,
+            "net_proceeds": 4319640
+          },
+          "terminal_wealth_2035": 6867829,
+          "npv": 229065,
+          "annual_note": "The compromise: the term premium is captured while you still own the asset, and the sale happens at the point where the buyer pool is deepest \u2014 five years of firm term plus options.",
+          "irr_pct": 8.79
+        }
+      ],
+      "rate_sensitivity": [
+        {
+          "shift_bp": -75,
+          "cap_pct": 5.25,
+          "gross_value": 4571429,
+          "net_proceeds": 4317257,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -50,
+          "cap_pct": 5.5,
+          "gross_value": 4363636,
+          "net_proceeds": 4121018,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": -25,
+          "cap_pct": 5.75,
+          "gross_value": 4173913,
+          "net_proceeds": 3941843,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 0,
+          "cap_pct": 6.0,
+          "gross_value": 4000000,
+          "net_proceeds": 3777600,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 25,
+          "cap_pct": 6.25,
+          "gross_value": 3840000,
+          "net_proceeds": 3626496,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 50,
+          "cap_pct": 6.5,
+          "gross_value": 3692308,
+          "net_proceeds": 3487015,
+          "ula_applies": false
+        },
+        {
+          "shift_bp": 75,
+          "cap_pct": 6.75,
+          "gross_value": 3555556,
+          "net_proceeds": 3357867,
+          "ula_applies": false
+        }
+      ]
+    }
+  ],
+  "term_value": [
+    {
+      "term_years": 1,
+      "cap_pct": 7.25,
+      "value_per_100k_noi": 1379310,
+      "pct_vs_3yr": 0.0
+    },
+    {
+      "term_years": 2,
+      "cap_pct": 7.25,
+      "value_per_100k_noi": 1379310,
+      "pct_vs_3yr": 0.0
+    },
+    {
+      "term_years": 3,
+      "cap_pct": 7.25,
+      "value_per_100k_noi": 1379310,
+      "pct_vs_3yr": 0.0
+    },
+    {
+      "term_years": 4,
+      "cap_pct": 6.88,
+      "value_per_100k_noi": 1454545,
+      "pct_vs_3yr": 5.5
+    },
+    {
+      "term_years": 5,
+      "cap_pct": 6.5,
+      "value_per_100k_noi": 1538462,
+      "pct_vs_3yr": 11.5
+    },
+    {
+      "term_years": 6,
+      "cap_pct": 6.38,
+      "value_per_100k_noi": 1568627,
+      "pct_vs_3yr": 13.7
+    },
+    {
+      "term_years": 7,
+      "cap_pct": 6.25,
+      "value_per_100k_noi": 1600000,
+      "pct_vs_3yr": 16.0
+    },
+    {
+      "term_years": 8,
+      "cap_pct": 6.12,
+      "value_per_100k_noi": 1632653,
+      "pct_vs_3yr": 18.4
+    },
+    {
+      "term_years": 9,
+      "cap_pct": 6.0,
+      "value_per_100k_noi": 1666667,
+      "pct_vs_3yr": 20.8
+    },
+    {
+      "term_years": 10,
+      "cap_pct": 5.98,
+      "value_per_100k_noi": 1671309,
+      "pct_vs_3yr": 21.2
+    }
+  ],
+  "derived": {
+    "prop13_wedge_ratio": 0.9159,
+    "prop13_wedge_pct": 8.41,
+    "prop13_note": "Verified Proposition 13 caps annual assessed-value growth at 2% (F087) while the model assumes 3% market growth. After 9 years the taxable base sits about 8.4% below what a 3%-growth market implies. That wedge accrues only while the owner holds, and a sale destroys it.",
+    "ula_threshold": 5400000,
+    "ula_at_threshold": 216000,
+    "ula_note": "A sale at $5,399,000 pays no ULA. A sale at $5,400,001 pays about $216,000, because the rate applies to the whole price, not the excess.",
+    "sell_cost_pct_pre_ula": 5.56,
+    "term_premium_3_to_9_pct": 20.8,
+    "term_premium_3_to_5_pct": 11.5
+  },
+  "decision": {
+    "criteria": [
+      {
+        "key": "risk",
+        "name": "Downside / risk control",
+        "weight": 0.3
+      },
+      {
+        "key": "value",
+        "name": "Value and return",
+        "weight": 0.25
+      },
+      {
+        "key": "liquidity",
+        "name": "Liquidity and optionality",
+        "weight": 0.15
+      },
+      {
+        "key": "tax",
+        "name": "Tax efficiency",
+        "weight": 0.15
+      },
+      {
+        "key": "growth",
+        "name": "Growth potential",
+        "weight": 0.1
+      },
+      {
+        "key": "simple",
+        "name": "Execution burden (higher = simpler)",
+        "weight": 0.05
+      }
+    ],
+    "matrix": [
+      {
+        "id": "E",
+        "scores": {
+          "risk": 4,
+          "value": 5,
+          "liquidity": 4,
+          "tax": 4,
+          "growth": 4,
+          "simple": 3
+        },
+        "weighted_score": 4.2,
+        "why": "Negotiates the extension now, so the tenant tail is resolved while the owner still has leverage; holds five more years to keep rent and the Prop 13 wedge; then sells with five years of firm term into the deepest part of the buyer pool. Positive NPV in all three expiry cases and the best risk-adjusted result."
+      },
+      {
+        "id": "C",
+        "scores": {
+          "risk": 2,
+          "value": 5,
+          "liquidity": 2,
+          "tax": 5,
+          "growth": 4,
+          "simple": 5
+        },
+        "weighted_score": 3.55,
+        "why": "Highest expected NPV in two of three expiry cases and keeps the Prop 13 wedge, but the owner spends four to nine more years exposed to a franchisor that is closing 50-60 units a year with no term secured. Roughly a 40% chance of absorbing a vacant year plus a re-tenanting bill. Requires no action, which is exactly the problem."
+      },
+      {
+        "id": "A",
+        "scores": {
+          "risk": 5,
+          "value": 2,
+          "liquidity": 5,
+          "tax": 1,
+          "growth": 1,
+          "simple": 5
+        },
+        "weighted_score": 3.25,
+        "why": "Deletes single-asset and single-tenant concentration in one transaction and prices in the short remaining term. But it sells the same NOI at the short-lease cap, crystallises capital-gains tax unless a 1031 is executed inside the IRS 45/180-day windows, and forfeits the Prop 13 wedge. Financially the weakest of the sensible options; operationally the cleanest."
+      },
+      {
+        "id": "D",
+        "scores": {
+          "risk": 3,
+          "value": 2,
+          "liquidity": 4,
+          "tax": 3,
+          "growth": 2,
+          "simple": 3
+        },
+        "weighted_score": 2.8,
+        "why": "Secures the term, then exits almost immediately and gives up the rent stream that the extension was supposed to protect. Only wins when the lease has a very short tail (the 2030 case); negative NPV in the 2032 and 2035 cases."
+      },
+      {
+        "id": "B",
+        "scores": {
+          "risk": 1,
+          "value": 3,
+          "liquidity": 2,
+          "tax": 4,
+          "growth": 2,
+          "simple": 4
+        },
+        "weighted_score": 2.35,
+        "why": "Combines the tenant's contraction risk with a 12-month vacancy and a re-tenanting bill, then sells the asset just after the market watched it go dark. In the 2032 and 2035 expiry cases this path destroys value even before risk is considered."
+      }
+    ],
+    "ranking": [
+      "E",
+      "C",
+      "A",
+      "D",
+      "B"
+    ],
+    "note": "Scores are analyst judgement against the verified evidence, not a statistical estimate. Weights and every cell are published so a reader can reject a specific judgement rather than the whole conclusion."
+  }
+}
