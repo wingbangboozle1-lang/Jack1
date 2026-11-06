@@ -2,7 +2,7 @@
 """
 Static site generator for the SP-01 dossier.
 
-Reads data/*.json and writes plain HTML into docs/. No framework, no external
+Reads data/*.json and writes plain HTML into archive/arena-972c721e/. No framework, no external
 CSS/JS, no analytics, no fonts fetched from anywhere: the published site makes
 zero third-party requests, which is also the point for privacy.
 
@@ -15,7 +15,7 @@ import shutil
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "docs")
+SITE = os.path.join(ROOT, "archive", "arena-972c721e")
 DATA = os.path.join(ROOT, "data")
 
 

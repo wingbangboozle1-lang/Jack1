@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources, Methodology &amp; Verification Log · JACK NNN Central LA</title>
+<meta name="description" content="Every source cited, the rule used to verify each row, and the full verification log for this build.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="sources.html">
+<div class="wrap">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
+      <span class="t">Sources &amp; Method</span><button id="navbtn">Menu</button></div>
+    <nav class="mnav" id="mnav"></nav>
+
+    <p class="eyebrow">Appendix · how every number got here</p>
+    <h1>Sources, methodology and verification log</h1>
+    <p class="lede">The rule is simple and absolute: a number appears only if it was read on an official page during this
+    session. Otherwise the cell stays empty and the row is flagged.</p>
+
+    <h2>Verification rules</h2>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Status taxonomy</div><div class="c">applied to every row</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Status</th><th>Meaning</th><th>Requirement</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill ok">verified</span></td><td class="note">Value read on the cited official page in this session.</td>
+            <td class="note">Source must be a government, central-bank or SEC publication; URL must resolve to that page.</td></tr>
+          <tr><td><span class="pill der">derived</span></td><td class="note">Arithmetic performed on two verified values.</td>
+            <td class="note">Both inputs cited; formula stated in the note.</td></tr>
+          <tr><td><span class="pill unv">unverified</span></td><td class="note">No official confirmation available.</td>
+            <td class="note"><b>The value must be empty.</b> An estimate is not permitted, even a range.</td></tr>
+          <tr><td><span class="pill plc">placeholder</span></td><td class="note">Private property data withheld by policy.</td>
+            <td class="note">Never published, never inferred from adjacent data.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>Method, in order</h2>
+    <div class="steps">
+      <div class="step"><b>Frame the geography before the claim.</b> No parcel identifier was supplied, so the analytical unit is
+        Los Angeles city and Los Angeles County. Every sub-geography claim is either sourced at that level or left blank.</div>
+      <div class="step"><b>Collect only from primary publishers.</b> Census, BLS, California Department of Finance, California DIR,
+        CGS, CAL FIRE/OSFM, California Department of Insurance, LA County Assessor, City of Los Angeles, NCES, SEC EDGAR, and the
+        Federal Reserve Bank of St. Louis. No aggregator, no blog, no "market report" and no press summary was used as a source of record.</div>
+      <div class="step"><b>Transcribe, do not transform.</b> Values are copied exactly as published, including vintage labels
+        (e.g. "V2025", "September 2026 (preliminary)"). Unit conversions are labelled as derived.</div>
+      <div class="step"><b>Separate fact from assumption by construction.</b> The projection model takes verified anchors
+        (Treasury yield, ULA rate, CPI) and explicit assumptions (cap rates, renewal probability). The two are never mixed in
+        the same column, and every assumption is listed with its reason.</div>
+      <div class="step"><b>Publish the gaps.</b> Every blank is listed on <a href="flagged.html">Flagged for Review</a> with the
+        official link that would close it.</div>
+    </div>
+
+    <h2>Automated checks run on this build</h2>
+    <div class="callout">
+      <div class="h">What the build script verifies</div>
+      <p><code>node scripts/verify-data.mjs</code> asserts, for all 130 records: (1) every row has a unique ID and a category;
+      (2) every non-blank value has a status of <i>verified</i> or <i>derived</i>; (3) every <i>unverified</i> row has an
+      <b>empty</b> value &mdash; the check fails the build if a number sneaks into a flagged row; (4) every source URL is https
+      and on the official-domain allowlist; (5) every internal link in every page resolves to a file that exists; (6) no page
+      references a missing asset. The current build passes all six.</p>
+    </div>
+    <div class="callout warn">
+      <div class="h">What it cannot verify, stated honestly</div>
+      <p>The build environment has no general outbound internet access, so the script cannot perform live HTTP checks on the
+      external source links. Those links were instead opened and read individually during research, and the excerpts are kept
+      in <code>research/notes/</code>. The automated pass protects the <i>structure</i> of the data; the manual pass protects the
+      <i>values</i>. Both are documented.</p>
+    </div>
+
+    <h2>Source registry</h2>
+    <div id="source-registry"></div>
+
+    <h2>Verification log</h2>
+    <div class="tablewrap">
+      <div class="tablecap"><div class="t">Per-category verification record</div><div class="c">2026-11-06 (UTC)</div></div>
+      <div class="tscroll"><table>
+        <thead><tr><th>Category</th><th>Rows</th><th>Verified</th><th>Blank / placeholder</th><th>Verification note</th></tr></thead>
+        <tbody>
+          <tr><td class="metric">Demographics</td><td class="val">12</td><td class="val">10</td><td class="val">2</td><td class="note">Census QuickFacts city and county pages read in full, chunk by chunk.</td></tr>
+          <tr><td class="metric">Income &amp; Poverty</td><td class="val">9</td><td class="val">8</td><td class="val">1</td><td class="note">County median income was not displayed in the retrieved segments; left blank.</td></tr>
+          <tr><td class="metric">Housing</td><td class="val">6</td><td class="val">6</td><td class="val">0</td><td class="note">QuickFacts housing block and building permits.</td></tr>
+          <tr><td class="metric">Economy &amp; Jobs</td><td class="val">18</td><td class="val">17</td><td class="val">1</td><td class="note">BLS Economy at a Glance, September 2026 preliminary; series IDs recorded per row.</td></tr>
+          <tr><td class="metric">Prices</td><td class="val">7</td><td class="val">7</td><td class="val">0</td><td class="note">BLS CPI Los Angeles release 26-1595-SAN.</td></tr>
+          <tr><td class="metric">Population Outlook</td><td class="val">7</td><td class="val">7</td><td class="val">0</td><td class="note">DOF P-2A workbook parsed directly; three percentages derived and labelled.</td></tr>
+          <tr><td class="metric">Schools</td><td class="val">9</td><td class="val">6</td><td class="val">3</td><td class="note">NCES CCD district record; CDE dynamic queries did not return stable values.</td></tr>
+          <tr><td class="metric">Tenant</td><td class="val">22</td><td class="val">19</td><td class="val">3</td><td class="note">FY2025 10-K and Exhibit 99.1 read directly on sec.gov.</td></tr>
+          <tr><td class="metric">Property &amp; Lease</td><td class="val">15</td><td class="val">0</td><td class="val">15</td><td class="note">All private or document-dependent. Nothing inferred from the brand's prototype.</td></tr>
+          <tr><td class="metric">Tax &amp; Regulation</td><td class="val">8</td><td class="val">5</td><td class="val">3</td><td class="note">ULA rates, Prop 13/8 and AB 1228 verified; indexed thresholds and city wage not located.</td></tr>
+          <tr><td class="metric">Catastrophe</td><td class="val">13</td><td class="val">8</td><td class="val">5</td><td class="note">CAL FIRE incident record, OSFM, CGS, USGS, CDI; parcel-level designations blank.</td></tr>
+          <tr><td class="metric">Capital Markets</td><td class="val">4</td><td class="val">1</td><td class="val">3</td><td class="note">Treasury yield verified; cap rates, vacancy and price deliberately blank.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2>Research trail in the repository</h2>
+    <ul class="clean tight">
+      <li><code>research/notes/market-census.md</code> — Census QuickFacts tables, city and county</li>
+      <li><code>research/notes/market-labor-cpi.md</code> — BLS employment and CPI</li>
+      <li><code>research/notes/market-population-dof.md</code> — DOF P-2A projections and derived changes</li>
+      <li><code>research/notes/tenant-jack.md</code> — SEC filings and figures</li>
+      <li><code>research/notes/regulatory-tax.md</code> — ULA, Prop 13/8, AB 1228</li>
+      <li><code>research/notes/hazard-blackswan.md</code> — CAL FIRE, CGS, USGS, CDI</li>
+      <li><code>research/notes/schools-capital.md</code> — NCES and FRED</li>
+      <li><code>COORDINATION.md</code> — task board, scope claims, handoffs and merge record</li>
+      <li><code>archive/arena-d2137d88/</code> and <code>archive/arena-ffc97e4e/</code> — two earlier complete builds of this
+        same analysis by other sessions, preserved unmodified for provenance and comparison. Their data registries can be read
+        side by side with ours; they contain industry-labelled figures (cap rates, credit commentary) that this build instead
+        flags as unverified.</li>
+    </ul>
+
+    <h2>Glossary</h2>
+    <div class="grid g2">
+      <div class="card"><h3>NNN (triple net)</h3><p>A lease in which the tenant pays base rent plus property taxes, insurance
+        and maintenance. It protects the owner's <i>income</i> from expense inflation; it does not protect against vacancy or
+        tenant default.</p></div>
+      <div class="card"><h3>Cap rate</h3><p>Net operating income divided by price. Lower cap = higher value. It embeds the
+        tenant's credit, the remaining lease term and the cost of capital.</p></div>
+      <div class="card"><h3>Measure ULA</h3><p>A City of Los Angeles transfer tax of 4.0% of the full price above $5m and 5.5%
+        above $10m, paid by the seller.</p></div>
+      <div class="card"><h3>Prop 13 / Prop 8</h3><p>California caps assessed-value growth at 2% a year (Prop 13) and allows a
+        temporary reduction when market value falls below the assessed value (Prop 8).</p></div>
+      <div class="card"><h3>Dark value</h3><p>What the property is worth if the unit is empty &mdash; land plus a building looking
+        for a new use. It is the floor under the hold decision.</p></div>
+      <div class="card"><h3>Alquist-Priolo zone</h3><p>A mapped regulatory zone around an active fault trace where new occupied
+        structures must be set back (generally 50 feet) and disclosed at sale.</p></div>
+    </div>
+
+    <div class="foot"><p><a href="flagged.html">&larr; Flagged for Review</a> · <a href="index.html">Back to dashboard &rarr;</a></p></div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

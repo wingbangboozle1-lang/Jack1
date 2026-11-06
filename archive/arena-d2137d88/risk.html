@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Matrix — Jack1 | Central LA NNN</title>
+<meta name="description" content="Full risk register for the sell-vs-renew decision: lease, tenant credit, rates, ULA, wildfire, earthquake, pandemic, DTLA distress — with sources and severities.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="risk" data-title="Risk Matrix">
+<div class="layout">
+  <div id="site-sidebar"></div>
+  <main class="main">
+    <div id="site-topbar"></div>
+    <div class="container">
+
+      <div class="page-head">
+        <div class="eyebrow">Analysis · Risk</div>
+        <h1>Risk register — including black swans</h1>
+        <p class="lede">Every material risk to (a) selling now, (b) holding &amp; renewing, or (c) holding unrenewed. Severity = likelihood × impact on wealth preservation. Official sources badged; judged/broker inputs flagged.</p>
+      </div>
+
+      <h2>Severity heat list</h2>
+      <div class="card"><div id="risk-heat"></div></div>
+
+      <h2>Full register (searchable, source-linked)</h2>
+      <div id="tbl-risk" data-table="risk"></div>
+
+      <h2>Scenario stress tests on wealth preservation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Scenario</th><th>Probability (judged)</th><th>Impact on asset value</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td>Normal operations, tenant renews at expiry on current terms + bumps</td><td>Possible — base case</td><td>Neutral to positive; term reset restores value</td><td>Execute renewal 24–36 months early; get JACK parent or franchisee PG in writing</td></tr>
+            <tr><td>Rates stay elevated (10Y ≥ 5%) through 2030</td><td>Plausible (current path)</td><td>Cap rates stay wide; sale proceeds ~10–15% below 2021-peak pricing</td><td>Sell sooner rather than later if term &lt; 7 yrs; or lock long renewal then sell</td></tr>
+            <tr><td>Franchisee default / dark store before expiry</td><td>Low-moderate; rising</td><td>Severe: single-tenant NNN → dark = near-total income loss until re-tenanted</td><td>Estoppel + unit-level P&amp;L; replacement-tenant LOI pre-negotiated (any QSR fits the box); early-warning covenants</td></tr>
+            <tr><td>JACK parent distress (Ch. 11 / forced asset sales)</td><td>Low (liquidity ~$1.5B rev, FCF positive)</td><td>Moderate: headline cap-rate widening across JIB paper</td><td>Hold quality (term + bumps + PG) is everything; sell into strength if renewal signed</td></tr>
+            <tr><td>Wildfire-driven regional shock (repeat of Jan 2025)</td><td>Moderate for SoCal</td><td>Indirect: insurance cost, construction inflation, labor; direct loss unlikely in central LA</td><td>Confirm tenant carries full replacement-cost + BI insurance; owner keeps none</td></tr>
+            <tr><td>Major earthquake (M ≥ 6.7, e.g., Northridge repeat)</td><td>Low per year; certain in 30-yr horizon</td><td>Potentially catastrophic (uninsured seismic loss not covered by NNN)</td><td>Seismic inspection now; require tenant earthquake insurance; confirm construction type (pre-1994 URM risk)</td></tr>
+            <tr><td>LA recession + simultaneous cap-rate widening (2030–2035 window)</td><td>Moderate over 5–9 years</td><td>Double-hit: NOI down, cap up → value −25%+</td><td>Do not hold unrenewed into the window; renew early or exit before 2029</td></tr>
+            <tr><td>Policy shock: ULA expansion/repeal, Prop 13 change</td><td>Low near-term</td><td>±4–5.5% on sale economics; ±tax reset</td><td>Model both; decide on pre-shock fundamentals, not on tax prophecy</td></tr>
+            <tr><td>LA28 (2028) windfall: traffic + investment boom</td><td>Plausible</td><td>Positive for both hold and sell (richer buyer pool)</td><td>Time any sale for 2027–2029 if exiting</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout red"><strong>Concentration truth-bomb:</strong> one asset, one tenant, one market, one brand. No amount of LA optimism diversifies that. The cheapest risk reduction available is either (i) a long renewal that is actually signed, or (ii) a sale into a diversified 1031 replacement portfolio. Doing neither — drifting toward 2030–2035 unrenewed — is the actual risk decision.</div>
+
+    </div>
+    <div id="site-footer"></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function () {
+  const sev = { high: ["HIGH", "b-high"], med: ["MEDIUM", "b-med"], low: ["LOW", "b-low"] };
+  const rows = (window.JACK1_DATA.risk || []).slice().sort((a, b) => {
+    const rank = { high: 0, med: 1, low: 2 };
+    return (rank[a.sev] ?? 3) - (rank[b.sev] ?? 3);
+  });
+  document.getElementById("risk-heat").innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:10px">
+      ${rows.map(r => {
+        const [label, cls] = sev[r.sev] || sev.med;
+        return `<div style="display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:10px">
+          <span class="badge ${cls}" style="justify-self:start;margin-top:2px">${label}</span>
+          <div><strong>${r.m}</strong><div class="small" style="margin-top:2px">${r.n}</div></div>
+        </div>`;
+      }).join("")}
+    </div>`;
+})();
+</script>
+</body>
+</html>
