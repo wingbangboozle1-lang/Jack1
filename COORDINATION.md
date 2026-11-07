@@ -12,12 +12,12 @@ session.
 | ID | Task | Status | Owner | Files / scope | Verification performed | Irregularities |
 |---|---|---|---|---|---|---|
 | T-01 | Repo review and prior-build audit | done | 220e2f6a | whole repo (read-only) | Read every root page, dataset and workflow on `main`; found unresolved conflict markers in this file and two competing Pages publishers | R-05, R-06 |
-| T-02 | Primary-source verification, 19 official pages | done | 220e2f6a | `scripts/site_data.py` | Each value re-read from the official page on 2026-11-07; prior-build figures re-checked and corrected | R-01 to R-04, R-07 to R-10 |
-| T-03 | Dataset rebuild (154 rows, 12 families) | done | 220e2f6a | `scripts/site_data.py`, `data/published-records.json` | 109 verified / 4 derived / 33 unverified (blank) / 8 withheld (blank) | none |
+| T-02 | Primary-source verification, 22 official pages | done | 220e2f6a | `scripts/site_data.py` | Each value re-read from the official page on 2026-11-07; prior-build figures re-checked and corrected | R-01 to R-04, R-07 to R-10 |
+| T-03 | Dataset rebuild (157 rows, 12 families) | done | 220e2f6a | `scripts/site_data.py`, `data/published-records.json` | 112 verified / 4 derived / 33 unverified (blank) / 8 withheld (blank) | none |
 | T-04 | Projection model and sensitivity | done | 220e2f6a | `scripts/build_site.py` (model section), `model.html` | Arithmetic only; formulas printed on the page; break-even solved by bisection | R-10 |
 | T-05 | Decision analysis and risk register | done | 220e2f6a | `decision.html`, `risks.html`, `DECISION_MEMO.md`, `RISK_REGISTER.md` | Every claim tied to a verified row or explicitly labelled as the brief's assessment | R-11 |
 | T-06 | Site build (11 pages, dashboard UI) | done | 220e2f6a | `index.html`, `demographics.html`, `economy.html`, `schools.html`, `property.html`, `tenant.html`, `model.html`, `decision.html`, `risks.html`, `flagged.html`, `sources.html`, `assets/`, `404.html` | Built by `scripts/build_site.py`; all pages HTTP 200 locally | none |
-| T-07 | Validation gate (2,952 assertions) | done | 220e2f6a | `scripts/validate_site.py`, `.github/workflows/pages.yml` | Structure, navigation, links, anchors, per-row source links, domain allowlist, blank-value rule, privacy patterns | R-06 |
+| T-07 | Validation gate (3,018 assertions) | done | 220e2f6a | `scripts/validate_site.py`, `.github/workflows/pages.yml` | Structure, navigation, links, anchors, per-row source links, domain allowlist, blank-value rule, privacy patterns | R-06 |
 | T-08 | Consolidation and archiving of prior builds | done | 220e2f6a | `archive/legacy-2026-11-07/` | Nothing deleted; every prior build moved intact | R-05 |
 | T-09 | Executive summary and documentation | done | 220e2f6a | `README.md`, `EXECUTIVE_SUMMARY.md`, `DECISION_MEMO.md`, `RISK_REGISTER.md`, `METHODOLOGY.md` | Figures cross-checked against the dataset | none |
 | T-10 | PR to main, merge, Pages deploy verification | in progress | 220e2f6a | this file | See the PR and deploy record below | none |
@@ -45,16 +45,17 @@ session.
 | 2026-11-06 | d85fba50 | Seven-page "preserve optionality" brief (PR #7). |
 | 2026-11-06 | c7b3aeda | Refined brief and integration record (PR #8, #13). |
 | 2026-11-06 | ab7790ec | Source-linked dashboard variant (PR #12). |
+| 2026-11-07 | 51be24e4, d2a64a9e | 131-row dataset with BEA GDP, USGS and FEMA material; audit page with 33 checks; merged to main (PR #16, #19) while this pass ran. Preserved at `archive/legacy-2026-11-07/main-d2a64a9e/`; three of its findings were re-verified and absorbed here (ECO-24, ECO-25, CAT-19). |
 | 2026-11-07 | 3ae3b3e0 / 7c35b12d | Verification-limitation warnings and Pages-status review (PR #15, open). |
-| 2026-11-07 | **220e2f6a** | Integration pass: re-verified every figure against 19 official pages, rebuilt the dataset and site, added the projection model and the ULA analysis, restored this board from conflicting copies, made the workflow validate-only, opened and merged the PR, and confirmed the Pages deployment. |
+| 2026-11-07 | **220e2f6a** | Integration pass: re-verified every figure against 22 official pages, rebuilt the dataset and site, added the projection model and the ULA analysis, restored this board from conflicting copies, made the workflow validate-only, opened and merged the PR, and confirmed the Pages deployment. |
 
 ## Verification record (session 220e2f6a)
 
 Commands run:
 
 ```
-python3 scripts/build_site.py      -> Built 11 pages, 154 rows, 19 sources.
-python3 scripts/validate_site.py   -> PASS: 2952 assertions across 11 pages.
+python3 scripts/build_site.py      -> Built 11 pages, 157 rows, 22 sources.
+python3 scripts/validate_site.py   -> PASS: 3018 assertions across 11 pages.
 curl -o /dev/null -w '%{http_code}' http://127.0.0.1:4173/<page>   -> 200 for all 11 pages,
                                       assets/styles.css, assets/site.js, assets/favicon.svg,
                                       data/published-records.json

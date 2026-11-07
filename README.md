@@ -37,18 +37,18 @@ the site; the short version:
 | [`decision.html`](decision.html) | Recommendation, five moves, triggers, risk balance, black-swan playbook |
 | [`risks.html`](risks.html) | Thirteen registered risks, hazards, insurance gap |
 | [`flagged.html`](flagged.html) | Every unverified and withheld row plus eleven recorded irregularities |
-| [`sources.html`](sources.html) | The 19 official sources, method, reproduction steps, limits |
+| [`sources.html`](sources.html) | The 22 official sources, method, reproduction steps, limits |
 
 ## Data and verification
 
-154 published rows: **109 verified**, **4 derived**, **33 unverified** (value blank), **8 withheld** (value blank).
+157 published rows: **112 verified**, **4 derived**, **33 unverified** (value blank), **8 withheld** (value blank).
 Every verified row links the exact official page it was read from on 2026-11-07. Derived rows state their formula
 in the row. A blank is never zero and never an estimate.
 
 - Dataset: `scripts/site_data.py` (single source of truth)
 - Build: `python3 scripts/build_site.py` (deterministic; writes all 11 pages, CSS, JS, favicon and
   `data/published-records.json`)
-- Gate: `python3 scripts/validate_site.py` (2952 assertions: structure, navigation, link resolution, per-row
+- Gate: `python3 scripts/validate_site.py` (3,018 assertions: structure, navigation, link resolution, per-row
   official source links, official-domain allowlist, blank-value rule, no email or phone patterns)
 
 Sources used: U.S. Census Bureau QuickFacts (city and county), BLS Economy at a Glance and the Los Angeles CPI

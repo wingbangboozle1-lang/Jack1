@@ -39,6 +39,24 @@ SOURCES = {
         "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
         "as_of": "September 2026, released 2026-10-14",
     },
+    "FRED-GDP-METRO": {
+        "title": "Total Gross Domestic Product for Los Angeles-Long Beach-Anaheim, CA (MSA) (NGMP31080, series marked DISCONTINUED)",
+        "publisher": "U.S. Bureau of Economic Analysis via FRED",
+        "url": "https://fred.stlouisfed.org/series/NGMP31080",
+        "as_of": "2023 annual, updated 2024-12-04",
+    },
+    "FRED-GDP-COUNTY": {
+        "title": "Gross Domestic Product: All Industries in Los Angeles County, CA (GDPALL06037)",
+        "publisher": "U.S. Bureau of Economic Analysis via FRED",
+        "url": "https://fred.stlouisfed.org/series/GDPALL06037",
+        "as_of": "2024 annual, updated 2026-02-05",
+    },
+    "USGS-UCERF3": {
+        "title": "What is the probability that an earthquake will occur in the Los Angeles area? (UCERF3)",
+        "publisher": "U.S. Geological Survey",
+        "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+        "as_of": "UCERF3, 30-year horizon",
+    },
     "FRED-DGS10": {
         "title": "10-Year Treasury Constant Maturity Rate (DGS10), H.15 Selected Interest Rates",
         "publisher": "Board of Governors of the Federal Reserve System via FRED",
@@ -224,6 +242,10 @@ add("ECO-18", "Retail sales per capita", "$21,281", "2022 Economic Census", "Los
 add("ECO-19", "Employer establishments", "304,988", "2023", "Los Angeles County", "verified", "CEN-COUNTY")
 add("ECO-20", "Total employment (establishment basis)", "3,987,736", "2023", "Los Angeles County", "verified", "CEN-COUNTY")
 add("ECO-21", "Total employment, 2022-2023 change", "+2.3%", "2022 to 2023", "Los Angeles County", "verified", "CEN-COUNTY")
+add("ECO-24", "Metropolitan output (GDP), nominal", "$1,295.4 billion", "2023", "Los Angeles-Long Beach-Anaheim MSA", "verified", "FRED-GDP-METRO",
+    "The metro GDP series is marked DISCONTINUED on its official page; 2023 is the latest year it publishes, so no 2024 metro figure is stated.")
+add("ECO-25", "County output (GDP), nominal", "$1,003.0 billion", "2024", "Los Angeles County", "verified", "FRED-GDP-COUNTY",
+    "BEA GDP by county. Output produced in the county, not resident income and not property value.")
 add("ECO-22", "Unemployment rate", "", "Latest county figure", "Los Angeles County", "unverified", "BLS-EAG",
     "The BLS page read covers the metropolitan statistical area, not the county. No county rate is published here.")
 add("ECO-23", "Employment within three miles of the site", "", "Not determinable", "Subject site", "unverified", "BLS-EAG",
@@ -332,6 +354,8 @@ add("CAT-09", "Alquist-Priolo fault-rupture setback", "Structures for human occu
 add("CAT-10", "Definition of an active fault under the Alquist-Priolo Act", "A fault that has ruptured in the last 11,000 years", "In force", "California", "verified", "CGS-AP")
 add("CAT-11", "Alquist-Priolo earthquake fault zone status of this parcel", "", "Parcel not matched", "Subject property", "unverified", "CGS-AP")
 add("CAT-12", "Seismic hazard zone (liquefaction / landslide) status of this parcel", "", "Parcel not matched", "Subject property", "unverified", "CGS-AP")
+add("CAT-19", "Probability of a major earthquake in the Los Angeles region within 30 years", "60% for magnitude 6.7 or greater; 46% for 7.0 or greater; 31% for 7.5 or greater", "UCERF3, 30-year horizon", "Los Angeles region", "verified", "USGS-UCERF3",
+    "A regional probability published by USGS. It is not a parcel-level probability and says nothing about damage at this site.")
 add("CAT-13", "ShakeOut Mw 7.8 scenario - modelled deaths", "1,800 (plus 53,000 injuries requiring emergency care)", "Hypothetical scenario", "Southern California", "verified", "USGS-SHAKEOUT")
 add("CAT-14", "ShakeOut Mw 7.8 scenario - modelled economic loss", "$191 billion total (fire $87 billion, shake damage $46 billion, water-outage business interruption $24 billion)", "Hypothetical scenario", "Southern California", "verified", "USGS-SHAKEOUT")
 add("CAT-15", "ShakeOut Mw 7.8 scenario - fires ignited", "About 1,600 fires; 200 million sq ft of building stock destroyed", "Hypothetical scenario", "Southern California", "verified", "USGS-SHAKEOUT")

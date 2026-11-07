@@ -4,7 +4,7 @@
 central Los Angeles, with an expiry window the owner puts at 2030-2035.
 **Question:** sell before expiry, or renew?
 **Answer:** **renew on market terms, hold, and sell only into a priced bid or on a stated trigger.**
-**Evidence date:** 2026-11-07. **Published rows:** 154 (109 verified, 4 derived, 33 unverified/blank, 8 withheld/blank).
+**Evidence date:** 2026-11-07. **Published rows:** 157 (112 verified, 4 derived, 33 unverified/blank, 8 withheld/blank).
 
 ## 1. The recommendation in one paragraph
 
@@ -60,7 +60,7 @@ conditional - which is why the brief publishes ranges and rules instead of a val
 Live dashboard with eleven pages (`index.html`, `demographics.html`, `economy.html`, `schools.html`,
 `property.html`, `tenant.html`, `model.html`, `decision.html`, `risks.html`, `flagged.html`, `sources.html`),
 a machine-readable dataset (`data/published-records.json`), a deterministic generator (`scripts/build_site.py`),
-a 2,952-assertion validation gate (`scripts/validate_site.py`), this summary, `DECISION_MEMO.md`,
+a 3,018-assertion validation gate (`scripts/validate_site.py`), this summary, `DECISION_MEMO.md`,
 `RISK_REGISTER.md`, `METHODOLOGY.md`, and the shared task board (`COORDINATION.md`).
 
 *Analysis for the owner. Not appraisal, legal, tax or investment advice.*

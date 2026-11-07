@@ -2,11 +2,11 @@
  "generated": "2026-11-07",
  "note": "Published rows. Blank value = unverified or withheld; see status.",
  "counts": {
-  "verified": 109,
+  "verified": 112,
   "derived": 4,
   "unverified": 33,
   "withheld": 8,
-  "total": 154
+  "total": 157
  },
  "sources": {
   "CEN-CITY": {
@@ -32,6 +32,24 @@
    "publisher": "U.S. Bureau of Labor Statistics, Western Information Office",
    "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
    "as_of": "September 2026, released 2026-10-14"
+  },
+  "FRED-GDP-METRO": {
+   "title": "Total Gross Domestic Product for Los Angeles-Long Beach-Anaheim, CA (MSA) (NGMP31080, series marked DISCONTINUED)",
+   "publisher": "U.S. Bureau of Economic Analysis via FRED",
+   "url": "https://fred.stlouisfed.org/series/NGMP31080",
+   "as_of": "2023 annual, updated 2024-12-04"
+  },
+  "FRED-GDP-COUNTY": {
+   "title": "Gross Domestic Product: All Industries in Los Angeles County, CA (GDPALL06037)",
+   "publisher": "U.S. Bureau of Economic Analysis via FRED",
+   "url": "https://fred.stlouisfed.org/series/GDPALL06037",
+   "as_of": "2024 annual, updated 2026-02-05"
+  },
+  "USGS-UCERF3": {
+   "title": "What is the probability that an earthquake will occur in the Los Angeles area? (UCERF3)",
+   "publisher": "U.S. Geological Survey",
+   "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+   "as_of": "UCERF3, 30-year horizon"
   },
   "FRED-DGS10": {
    "title": "10-Year Treasury Constant Maturity Rate (DGS10), H.15 Selected Interest Rates",
@@ -784,6 +802,28 @@
    "status": "verified",
    "src": "CEN-COUNTY",
    "note": ""
+  },
+  {
+   "id": "ECO-24",
+   "metric": "Metropolitan output (GDP), nominal",
+   "value": "$1,295.4 billion",
+   "unit": "",
+   "period": "2023",
+   "geo": "Los Angeles-Long Beach-Anaheim MSA",
+   "status": "verified",
+   "src": "FRED-GDP-METRO",
+   "note": "The metro GDP series is marked DISCONTINUED on its official page; 2023 is the latest year it publishes, so no 2024 metro figure is stated."
+  },
+  {
+   "id": "ECO-25",
+   "metric": "County output (GDP), nominal",
+   "value": "$1,003.0 billion",
+   "unit": "",
+   "period": "2024",
+   "geo": "Los Angeles County",
+   "status": "verified",
+   "src": "FRED-GDP-COUNTY",
+   "note": "BEA GDP by county. Output produced in the county, not resident income and not property value."
   },
   {
    "id": "ECO-22",
@@ -1708,6 +1748,17 @@
    "status": "unverified",
    "src": "CGS-AP",
    "note": ""
+  },
+  {
+   "id": "CAT-19",
+   "metric": "Probability of a major earthquake in the Los Angeles region within 30 years",
+   "value": "60% for magnitude 6.7 or greater; 46% for 7.0 or greater; 31% for 7.5 or greater",
+   "unit": "",
+   "period": "UCERF3, 30-year horizon",
+   "geo": "Los Angeles region",
+   "status": "verified",
+   "src": "USGS-UCERF3",
+   "note": "A regional probability published by USGS. It is not a parcel-level probability and says nothing about damage at this site."
   },
   {
    "id": "CAT-13",

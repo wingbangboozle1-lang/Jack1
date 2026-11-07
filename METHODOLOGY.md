@@ -36,6 +36,8 @@ A blank is never zero and never an estimate.
 | NCES Common Core of Data, Los Angeles Unified | Schools, enrolment, teachers, ratio, revenue and spending per student |
 | California School Dashboard (CDE) | Official lookup for district performance (not opened; item left blank) |
 | California Department of Finance, population projections | Official county projections (workbook unreadable; items left blank) |
+| BEA GDP by metro area and by county (via FRED) | Metropolitan and county output |
+| USGS UCERF3 FAQ | 30-year regional earthquake probability |
 | IRS, Section 1031 fact sheet | 45-day identification, 180-day completion, real-property scope |
 | LA City Planning (ZIMAS), LA County Assessor lookup | Official parcel lookups (no query run without the address) |
 
@@ -53,7 +55,7 @@ growth 2.5%, discount rate 7.5%, sale costs 2.0%. They are inputs chosen to show
 
 ## 5. Validation gate
 
-`python3 scripts/validate_site.py` performs 2,952 assertions and fails the build on:
+`python3 scripts/validate_site.py` performs 3,018 assertions and fails the build on:
 
 1. a missing page, asset or dataset;
 2. a page missing its doctype, language, title, single `h1`, main landmark or navigation, or a navigation that does not

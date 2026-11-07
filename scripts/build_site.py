@@ -22,6 +22,9 @@ SHORT = {
     "BLS-EAG": "BLS",
     "BLS-CPI": "BLS",
     "FRED-DGS10": "Federal Reserve / FRED",
+    "FRED-GDP-METRO": "BEA via FRED",
+    "FRED-GDP-COUNTY": "BEA via FRED",
+    "USGS-UCERF3": "USGS",
     "SEC-Q4": "SEC EDGAR",
     "LA-ULA": "LA Office of Finance",
     "LACO-ASSESSOR": "LA County Assessor",
@@ -935,6 +938,9 @@ def page_risks():
         ["Regional earthquake scenario",
          "ShakeOut Mw 7.8: 1,800 deaths, 53,000 injuries, $191 billion economic loss, about 1,600 fires.",
          '<span class="badge badge-verified">Verified</span>', "Seismic retrofit status, deductibles, business-interruption limits.", "USGS-SHAKEOUT"],
+        ["Regional earthquake probability",
+         "USGS/UCERF3: 60% chance of M6.7+ in the Los Angeles region within 30 years, 46% for M7.0+, 31% for M7.5+.",
+         '<span class="badge badge-verified">Verified (regional)</span>', "Retrofit status, deductibles and business-interruption limits; the probability is regional, not parcel-level.", "USGS-UCERF3"],
         ["Population decline",
          "Los Angeles County population -3.2% and city -0.8% since the 2020 estimate base; annualised -0.62% and -0.15%.",
          '<span class="badge badge-verified">Verified</span>', "Do not underwrite traffic growth; re-check annually.", "CEN-COUNTY"],
@@ -948,7 +954,7 @@ def page_risks():
 
     body = hero(
         "Analysis &middot; risk register",
-        "Thirteen registered risks; none quantified for the parcel",
+        "Fourteen registered risks; none quantified for the parcel",
         "The exposures are real; the probabilities are not knowable from here.",
         "Each row links the official page that evidences the risk. Where the exposure depends on the parcel, the row says so "
         "rather than assigning a score. Items with no official source at all are on the Flagged for review page, not here.",
@@ -1039,6 +1045,15 @@ as a single board on this branch; every prior session's record is preserved in i
 workflow now validates only, which makes the published site exactly the repository root. The live URL is checked after merge and
 the result is recorded on the task board.</p>
 </div>""")
+
+    body += section("Prior sessions", "Preserved work from parallel sessions", """
+<p class="prose">Earlier sessions published their own sites and verification ledgers on this URL. Nothing was deleted. The
+build that was live on <code>main</code> before this integration - including its <em>Verification audit</em> page, which
+re-checked 33 figures and corrected two - is preserved at
+<a href="archive/legacy-2026-11-07/main-d2a64a9e/audit.html">archive/legacy-2026-11-07/main-d2a64a9e/audit.html</a> and
+remains readable. Three of its findings that could be re-verified here were absorbed into this dataset: metropolitan GDP
+(ECO-24), county GDP (ECO-25) and the USGS 30-year regional earthquake probability (CAT-19). Its FEMA National Risk Index
+values were withheld there for want of a readable official page, and they are not published here either.</p>""")
 
     body += section("Privacy", "Privacy audit of this publication", """
 <div class="callout">
