@@ -562,3 +562,11 @@ figures and the metro GDP year were changed, each with the reported value kept v
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
+
+### T18 completion record — session d18e3065
+
+- **PR:** #17 `arena/d18e3065-jack1` → `main`, merged (merge commit 608f9fd, 2026-11-07 20:22 UTC). Validation check passed before merge (validate_site.py: 8 pages, 209 table-body rows, allowlist OK).
+- **Deploy:** `Validate and publish the decision brief` run 42410770151 on main: success. Live URL serves the merged flagged page (T18 rows present).
+- **Blocker, not resolved:** GitHub Pages build type is still `legacy` (source main /). Changing it to `workflow` returned HTTP 403 for this session's integration token. A repository admin must set Settings → Pages → Source = GitHub Actions. Until then the legacy build serves the site from main root.
+- **Merge note:** main advanced (PRs #16, #19, #20 by other sessions) during this task. T18 merged main into its branch and kept the other session's verified EDD/BLS county correction and audit.html. Conflicts resolved in favour of the verified versions; T18 rows re-added where not duplicated.
+- **Open items for owner:** verify-data.mjs stale gate; LA County heat-brief link; SCAG Table 12; ULA intro wording; PR #14 (arena/d3fdafdd-jack1) not reviewed.
