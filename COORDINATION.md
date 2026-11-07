@@ -42,3 +42,46 @@
   and their branches are not being pushed to during this session).
 - **Privacy:** no owner name, street address, APN, entity, lease document, rent, or personal financial detail
   is published. Property fields stay `[WITHHELD]` placeholders. Nothing about the owner is collected.
+
+---
+
+## Session log — `arena-22afad63` (final)
+
+**Branch:** `arena/22afad63-jack1` · **Scope:** V1–V5 (self-coordinated; no competing live claim was found)
+
+### What was verified, and how
+
+Every one of the 189 rows in `scripts/dataset.py` was traced to an official page that was opened and read
+during this session. Reproduced excerpts are committed in `verification/captures/` (8 files), and the
+row-by-row result is in `verification/VERIFICATION-LOG.md`.
+
+Outcome: **142 verified, 4 derived, 33 unverified (blank), 10 withheld.**
+
+### Defects found in the inherited build and corrected
+
+| # | Defect in the inherited root site | Correction |
+|---|---|---|
+| 1 | `REG-01`/`REG-02` cited `cityattorney.lacity.gov/homelessness` for the 4.0%/5.5% Measure ULA rates. That page is about homelessness programmes and does **not** contain the rates. | Re-sourced to `finance.lacity.gov/faq/measure-ula`, which publishes the rates, the current $5.4m/$10.9m thresholds and the annual CPI indexing. |
+| 2 | County population density was published blank with the note "not displayed in the retrieved table segments". | QuickFacts does publish it: **2,466.9/sq mi**. Now a verified row (`D-15`). |
+| 3 | County median household income was sourced to FRED SAIPE with the note that QuickFacts "did not display a county median". | QuickFacts publishes **$90,112** (2020–2024 ACS). Both figure now appear as separate rows (`I-02`, `I-03`) with the series difference stated. |
+| 4 | City poverty was labelled a "2025 estimate". | The Census methodology note states sub-county poverty is ACS 5-year data. Period corrected to 2020–2024 (`I-07`, `I-08`). |
+| 5 | `REG-07` cited the state DIR AB 1228 page for a "City of Los Angeles minimum wage (2026)". | DIR publishes the state fast-food wage, not a city minimum wage. Row left blank and flagged (`X-12`). |
+| 6 | Unverified rows cited unrelated pages as their "official lookup" (e.g. `PRP-01` street address → a homelessness page; `CAP-02` cap rate → FRED DGS10). | Each blank row now points to the tool that could actually resolve it, or is explained as having no official source at all. |
+| 7 | `COORDINATION.md` on `main` contained three unresolved merge-conflict blocks (lines 22–203). | Board rebuilt; the corrupted file preserved verbatim at `archive/coordination-history/`. |
+| 8 | Six archived HTML files under `archive/arena-ffc97e4e/` still contain conflict markers. | **Not corrected** — archived deliverables are preserved as-is by policy. Recorded here as a known cosmetic defect; they are not published. |
+
+### Conflicts between official sources, published rather than resolved
+
+- **2025 Los Angeles County building permits:** Census QuickFacts **22,250** vs State EDD profile **20,192**.
+  Both are published (`H-09`, `H-10`); they report different things and are not netted.
+- **County median household income:** ACS 5-year **$90,112** vs SAIPE 2024 **$90,757**. Different series,
+  different periods, both published.
+- **Unemployment:** metro **4.4%** (Sep 2026, preliminary), county **4.5%** (Sep 2026), city **5.8%** (2025
+  annual average excluding October). Three geographies and periods; labelled as such.
+
+### What remains unverified and cannot be closed from public data
+
+The lease itself (rent, escalations, options, guaranty, casualty clause), the identity of the obligor, the
+parcel (address, AIN, area, year built, zoning), the owner's basis, debt and liquidity, and every asset-level
+valuation input. 33 rows are blank on this basis. They are published with the official lookup that would
+resolve each one on the `flagged.html` page.
