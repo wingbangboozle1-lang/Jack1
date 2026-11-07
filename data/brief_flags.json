@@ -1,0 +1,154 @@
+{
+  "retrieved": "2026-11-07",
+  "irregularities": [
+    {
+      "id": "IR-D1",
+      "title": "Unresolved merge conflict markers in COORDINATION.md",
+      "detail": "The shared board contained raw HEAD/separator/incoming markers from an earlier session. Both sides were preserved verbatim and the markers replaced with neutral HTML comments; no session's text was discarded.",
+      "links": [
+        "https://github.com/wingbangboozle1-lang/Jack1/blob/main/COORDINATION.md"
+      ]
+    },
+    {
+      "id": "IR-D2",
+      "title": "Prior builds labelled BEA's $818.5 billion figure as GDP",
+      "detail": "BEA 26-08 states the $818.5 billion 2024 figure is LA County PERSONAL INCOME. The last published real GDP point found is $802.0 billion for 2023 (BEA 24-57). BEA also discontinued metropolitan-area GDP and personal income statistics with the 2024 release, so MSA-level projections can no longer be sourced. This site publishes the two measures separately.",
+      "links": [
+        "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024",
+        "https://www.bea.gov/news/2024/gross-domestic-product-county-and-metropolitan-area-2023"
+      ]
+    },
+    {
+      "id": "IR-D3",
+      "title": "ULA thresholds were previously recorded as unverifiable",
+      "detail": "Earlier session notes said the annually indexed ULA dollar thresholds could not be confirmed on an official page. The LA Office of Finance FAQ now states $5,400,000 and $10,900,000 for transactions closing after June 30, 2026. Verified here and published; thresholds are indexed annually and must be re-checked at closing.",
+      "links": [
+        "https://finance.lacity.gov/faq/measure-ula"
+      ]
+    },
+    {
+      "id": "IR-D4",
+      "title": "Two official population products disagree",
+      "detail": "Census Vintage-2025 gives LA County 9,694,934 (July 1, 2025), a -3.2% change from the 2020 estimate base, and City of Los Angeles 3,869,089 (-0.8%); CA DOF E-1 gives 9,837,286 (county, -0.6% year over year) and 3,806,201 (city, -0.9%) as of January 1, 2026. Different reference dates, vintages and methods. Both are published separately and never blended.",
+      "links": [
+        "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
+        "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
+        "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf"
+      ]
+    },
+    {
+      "id": "IR-D5",
+      "title": "2025 city unemployment average excludes a month",
+      "detail": "BLS states the 2025 Los Angeles city rate of 5.8% is an 11-month average excluding October 2025, which was not collected during the appropriations lapse; it is not fully comparable with other annual averages. LA CPI-U for October 2025 is also unavailable.",
+      "links": [
+        "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
+        "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm"
+      ]
+    },
+    {
+      "id": "IR-D6",
+      "title": "EDD county profile substitutes other geographies",
+      "detail": "The official EDD Los Angeles County profile displays 'Data for Los Angeles County not available' for unemployment, labor force and employment by industry, and substitutes metro/state data for some economic indicators. Those series are not mixed with BLS metro data here.",
+      "links": [
+        "https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile"
+      ]
+    },
+    {
+      "id": "IR-D7",
+      "title": "Official projection windows end before the lease window",
+      "detail": "California's official occupational projections run 2023-2033 and BEA has discontinued MSA output/income statistics; neither extends through 2035. No employment or income value beyond 2033 is published or extrapolated.",
+      "links": [
+        "https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile",
+        "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024"
+      ]
+    },
+    {
+      "id": "IR-D8",
+      "title": "Two restaurant counts from different dates are not a contradiction",
+      "detail": "The FY2025 10-K reports 2,136 Jack in the Box restaurants as of September 28, 2025; the Q3 FY2026 earnings release reports 2,115 as of July 5, 2026. Both are official and are published with their dates. Earlier session notes flagged a 2,136 vs ~2,135 press-release discrepancy as unresolved; the dated filings reconcile it.",
+      "links": [
+        "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+        "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm"
+      ]
+    },
+    {
+      "id": "IR-D9",
+      "title": "No official publisher for net-lease cap rates or credit ratings",
+      "detail": "Neither capitalization rates, transaction comps nor tenant credit ratings are published by a government agency. All such cells are blank and flagged; no brokerage, rating-agency or aggregator figure is used.",
+      "links": [
+        "https://assessor.lacounty.gov/news-information/newsroom",
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10"
+      ]
+    },
+    {
+      "id": "IR-D10",
+      "title": "FEMA National Risk Index values are not readable as static official figures",
+      "detail": "The NRI is an interactive tool; no county score is published as a static figure on fema.gov in a form that could be verified line by line. The tool is linked for manual review and no score is asserted.",
+      "links": [
+        "https://hazards.fema.gov/nri/"
+      ]
+    },
+    {
+      "id": "IR-D11",
+      "title": "Parcel-level hazard, zoning, school and tax conclusions are impossible without an address",
+      "detail": "No address, APN or title document was supplied. All parcel-dependent cells are blank, flagged and paired with the official lookup tool that would close them. This is deliberate privacy protection, not missing research.",
+      "links": [
+        "https://zimas.lacity.org/",
+        "https://portal.assessor.lacounty.gov/",
+        "https://maps.conservation.ca.gov/cgs/EQZApp/app/",
+        "https://www.fema.gov/flood-maps/products-tools"
+      ]
+    },
+    {
+      "id": "IR-D12",
+      "title": "Multiple prior root-level site builds and duplicate deploy paths",
+      "detail": "The repository contains several complete prior dashboards (root pages, pages/, site/, archive/) and both a legacy branch Pages build and a GitHub Actions deployment. Prior pages are preserved, not deleted; the canonical dashboard is defined by this build's navigation.",
+      "links": [
+        "https://github.com/wingbangboozle1-lang/Jack1",
+        "https://github.com/wingbangboozle1-lang/Jack1/actions"
+      ]
+    },
+    {
+      "id": "IR-D13",
+      "title": "Census QuickFacts withholds city-level business fields",
+      "detail": "The Los Angeles city QuickFacts page shows [X] for employer establishments, total employment, payroll, building permits and firm ownership, while publishing them for the county. A city/county comparison would silently mix a missing with a present series. County business rows are labelled county only.",
+      "links": [
+        "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
+        "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225"
+      ]
+    },
+    {
+      "id": "IR-D14",
+      "title": "School enrollment universes differ across official products",
+      "detail": "CDE reports LAUSD enrollment of 497,105 for 2025-26. Earlier session notes cited an NCES CCD figure of 408,026 for a different universe. Only the CDE figure is published here; no school-level assignment is made.",
+      "links": [
+        "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+        "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp"
+      ]
+    },
+    {
+      "id": "IR-D15",
+      "title": "Open PRs from other sessions claim overlapping whole-repository scope",
+      "detail": "PRs #10 and #14 were open and unchanged for more than 60 minutes as of 2026-11-07. Their branches were left untouched; the handoff is logged on the coordination board. PRs #3, #5, #6, #8, #11 from prior sessions also remain open and were not closed by this session.",
+      "links": [
+        "https://github.com/wingbangboozle1-lang/Jack1/pulls"
+      ]
+    },
+    {
+      "id": "IR-D16",
+      "title": "Privacy scan",
+      "detail": "No owner name, street address, APN, ownership entity, lease document, personal financial figure, personal email or phone number was found in the canonical site, the dataset or the generated pages. Any personal information encountered during research is internal-only and is replaced with placeholders; it is not published.",
+      "links": [
+        "https://github.com/wingbangboozle1-lang/Jack1"
+      ]
+    },
+    {
+      "id": "IR-D17",
+      "title": "Unresolved merge conflict markers in archived prior-session HTML",
+      "detail": "Seven archived pages under archive/arena-ffc97e4e still contained raw HEAD/separator/incoming git conflict markers. The marker lines were converted into neutral HTML comments so both sides remain in the files verbatim and nothing from that session was discarded. The pages are also labelled superseded and noindex. The canonical dashboard has no conflict markers.",
+      "links": [
+        "https://github.com/wingbangboozle1-lang/Jack1"
+      ]
+    }
+  ]
+}

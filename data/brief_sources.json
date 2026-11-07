@@ -1,0 +1,418 @@
+{
+  "retrieved": "2026-11-07",
+  "sources": {
+    "CEN_CITY": {
+      "publisher": "U.S. Census Bureau",
+      "title": "QuickFacts \u2014 Los Angeles city, California (V2025)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CEN_CTY": {
+      "publisher": "U.S. Census Bureau",
+      "title": "QuickFacts \u2014 Los Angeles County, California (V2025)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CEN_ACS": {
+      "publisher": "U.S. Census Bureau",
+      "title": "2024 5-year ACS Comparison Guidance",
+      "url": "https://www.census.gov/programs-surveys/acs/guidance/comparing-acs-data/2024.html",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "BLS_EAG": {
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "Economy at a Glance \u2014 Los Angeles-Long Beach-Santa Ana, CA",
+      "url": "https://www.bls.gov/eag/eag.ca_losangeles_msa.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "BLS_CITY": {
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "Unemployment Rates for the 50 Largest Cities, 2021-2025",
+      "url": "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "BLS_CPI": {
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "Consumer Price Index, Los Angeles area \u2014 September 2026",
+      "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "BEA_2024": {
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "title": "Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)",
+      "url": "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "BEA_2023": {
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "title": "Gross Domestic Product by County and Metropolitan Area, 2023 (BEA 24-57)",
+      "url": "https://www.bea.gov/news/2024/gross-domestic-product-county-and-metropolitan-area-2023",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "DOF_E1": {
+      "publisher": "California Department of Finance",
+      "title": "2026 Estimates E-1 Press Release (Jan 1, 2025 and 2026 city/county population)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "DOF_EST": {
+      "publisher": "California Department of Finance",
+      "title": "Estimates E-1 \u2014 population and housing estimates",
+      "url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "SCAG_DEM": {
+      "publisher": "Southern California Association of Governments",
+      "title": "Connect SoCal 2024 Demographics & Growth Forecast Technical Report (adopted April 4, 2024)",
+      "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "SCAG_ADOPT": {
+      "publisher": "Southern California Association of Governments",
+      "title": "Connect SoCal 2024 adoption notice",
+      "url": "https://scag.ca.gov/news/scag-regional-council-approves-connect-socal-2024-southern-californias-regional-plan",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "EDD_LA": {
+      "publisher": "California Employment Development Department",
+      "title": "Labor Market Information \u2014 Los Angeles County Profile",
+      "url": "https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CDE_LAUSD": {
+      "publisher": "California Department of Education",
+      "title": "District Profile: Los Angeles Unified (2025-26)",
+      "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CDE_LARGE": {
+      "publisher": "California Department of Education",
+      "title": "Largest & Smallest Public School Districts, 2025-26",
+      "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CDE_ACCT": {
+      "publisher": "California Department of Education",
+      "title": "California Accountability Model & School Dashboard",
+      "url": "https://www.cde.ca.gov/ta/ac/cm/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "CASD_2025": {
+      "publisher": "California School Dashboard (CDE)",
+      "title": "Los Angeles Unified \u2014 2025 Academic Engagement / Graduation Rate",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "DIR_FF": {
+      "publisher": "California Department of Industrial Relations",
+      "title": "Fast Food Minimum Wage Frequently Asked Questions (AB 1228)",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "DIR_T8": {
+      "publisher": "California Department of Industrial Relations",
+      "title": "Title 8 \u00a711000.1 \u2014 Minimum Wage Order Supplement for Fast Food Restaurants",
+      "url": "https://www.dir.ca.gov/t8/11000_1.html",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "ULA_FAQ": {
+      "publisher": "Los Angeles Office of Finance",
+      "title": "Real Property Transfer Tax and Measure ULA FAQ",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "FRED_10": {
+      "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+      "title": "DGS10 \u2014 10-Year Treasury Constant Maturity Rate",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "FRED_30": {
+      "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+      "title": "DGS30 \u2014 30-Year Treasury Constant Maturity Rate",
+      "url": "https://fred.stlouisfed.org/series/DGS30",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "TREASURY": {
+      "publisher": "U.S. Department of the Treasury",
+      "title": "Daily Treasury Par Yield Curve Rates, 2026",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "SEC_10K": {
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "SEC_Q3FY26": {
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "SEC_Q4FY25": {
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "SEC_EDGAR": {
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. CIK 0000807882 \u2014 filings index",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=8-K&dateb=&owner=include&count=10",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "USGS_UCERF3": {
+      "publisher": "U.S. Geological Survey",
+      "title": "UCERF3 FAQ \u2014 30-year earthquake probabilities, Los Angeles area",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "USGS_NSHM": {
+      "publisher": "U.S. Geological Survey",
+      "title": "2023 50-State Long-term National Seismic Hazard Model (revised 2026)",
+      "url": "https://www.usgs.gov/programs/earthquake-hazards/science/2023-50-state-long-term-national-seismic-hazard-model-0",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "OSFM_FHSZ": {
+      "publisher": "CAL FIRE / Office of the State Fire Marshal",
+      "title": "Fire Hazard Severity Zones",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "FIRE_EATON": {
+      "publisher": "CAL FIRE",
+      "title": "Eaton Fire incident page (2025)",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "FIRE_PAL": {
+      "publisher": "CAL FIRE",
+      "title": "Palisades Fire incident page (2025)",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "LACO_FIRES": {
+      "publisher": "County of Los Angeles",
+      "title": "Key Facts About the Eaton and Palisades Fires (anniversary fact sheet)",
+      "url": "https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CDI_ORDER": {
+      "publisher": "California Department of Insurance",
+      "title": "Order No. 2025-1 \u2014 California FAIR Plan assessment",
+      "url": "https://www.insurance.ca.gov/0250-insurers/0500-legal-info/0700-commissioners-orders/upload/Order-No-2025-1-Approving-the-California-FAIR-Plan-Association-s-Request-to-Issue-Assessment.pdf",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "CDI_ALERT": {
+      "publisher": "California Department of Insurance",
+      "title": "Consumer alert \u2014 State Farm wildfire claims investigation (2025)",
+      "url": "https://www.insurance.ca.gov/0400-news/0102-alerts/2025/Commissioner-Lara-Launches-Investigation.cfm",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "ASSESSOR_NEWS": {
+      "publisher": "Los Angeles County Office of the Assessor",
+      "title": "Newsroom \u2014 2026 assessment roll announcements",
+      "url": "https://assessor.lacounty.gov/news-information/newsroom",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "ASSESSOR_ROLL": {
+      "publisher": "Los Angeles County Office of the Assessor",
+      "title": "Assessment Roll \u2014 2026 roll release memo (July 13, 2026)",
+      "url": "https://assessor.lacounty.gov/news-information/assessmentroll",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "ASSESSOR_P13": {
+      "publisher": "Los Angeles County Office of the Assessor",
+      "title": "Real Property Assessment / Proposition 13 overview",
+      "url": "https://assessor.lacounty.gov/homeowners/realproperty",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "ASSESSOR_PORTAL": {
+      "publisher": "Los Angeles County Office of the Assessor",
+      "title": "Assessor public portal (parcel lookup)",
+      "url": "https://portal.assessor.lacounty.gov/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "AUDITOR_TRA": {
+      "publisher": "Los Angeles County Auditor-Controller",
+      "title": "Tax Rate Area lookup",
+      "url": "https://auditor.lacounty.gov/tax-rate-area-lookup/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "TTC": {
+      "publisher": "Los Angeles County Treasurer and Tax Collector",
+      "title": "Property tax information",
+      "url": "https://ttc.lacounty.gov/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "METRO_DLINE": {
+      "publisher": "LA Metro",
+      "title": "D Line Subway Extension project",
+      "url": "https://www.metro.net/projects/westside/",
+      "kind": "statistics",
+      "retrieved": "2026-11-07"
+    },
+    "IRS_544": {
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 544 \u2014 Sales and Other Dispositions of Assets",
+      "url": "https://www.irs.gov/publications/p544",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "IRS_HOME": {
+      "publisher": "Internal Revenue Service",
+      "title": "IRS home / guidance",
+      "url": "https://www.irs.gov/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "FTB_GAINS": {
+      "publisher": "California Franchise Tax Board",
+      "title": "Capital gains and losses",
+      "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "kind": "rule",
+      "retrieved": "2026-11-07"
+    },
+    "ZIMAS": {
+      "publisher": "Los Angeles City Planning",
+      "title": "ZIMAS parcel / zoning lookup",
+      "url": "https://zimas.lacity.org/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "PLAN_ZONING": {
+      "publisher": "Los Angeles City Planning",
+      "title": "Zoning search",
+      "url": "https://planning.lacity.gov/zoning/zoning-search",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "PLAN_DTLA": {
+      "publisher": "Los Angeles City Planning",
+      "title": "Downtown Community Plan / new zoning code press release",
+      "url": "https://planning.lacity.gov/odocument/92b97b24-1978-4e0e-9eae-51f22eda9e4c/Press%20Release_%20DTLA%20New%20Zoning%20Code.pdf",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "FEMA_FLOOD": {
+      "publisher": "Federal Emergency Management Agency",
+      "title": "Flood Map Service Center / flood map products",
+      "url": "https://www.fema.gov/flood-maps/products-tools",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "FEMA_NRI": {
+      "publisher": "Federal Emergency Management Agency",
+      "title": "National Risk Index",
+      "url": "https://hazards.fema.gov/nri/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "CGS_EQZ": {
+      "publisher": "California Geological Survey",
+      "title": "Earthquake Fault Zone / seismic hazard zone viewer",
+      "url": "https://maps.conservation.ca.gov/cgs/EQZApp/app/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "LACO_FLOOD": {
+      "publisher": "Los Angeles County Public Works",
+      "title": "Flood zone map viewer",
+      "url": "https://apps.gis.lacounty.gov/dpw/m/?viewer=floodzone",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "LACO_FHSZ": {
+      "publisher": "Los Angeles County open data",
+      "title": "CAL FIRE Fire Hazard Severity Zones \u2014 LA County LRA",
+      "url": "https://data.lacounty.gov/datasets/bf87f4b1e6954f4697006ff41420c083_0/about",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "EPA_CLEANUP": {
+      "publisher": "U.S. Environmental Protection Agency",
+      "title": "Site-specific national cleanup databases",
+      "url": "https://www.epa.gov/cleanups/site-specific-national-cleanup-databases",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "GEOTRACKER": {
+      "publisher": "California State Water Resources Control Board",
+      "title": "GeoTracker",
+      "url": "https://geotracker.waterboards.ca.gov/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "LADWP": {
+      "publisher": "Los Angeles Department of Water and Power",
+      "title": "Water system overview",
+      "url": "https://www.ladwp.com/who-we-are/water-system",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "LAPD": {
+      "publisher": "Los Angeles Police Department",
+      "title": "Crime Mapping and COMPSTAT",
+      "url": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "PH_HEAT": {
+      "publisher": "Los Angeles County Department of Public Health",
+      "title": "Heat-related illness data brief",
+      "url": "https://publichealth.lacounty.gov/eh/docs/about/heat-related-illness-data_brief.pdf",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    },
+    "CLIMATE": {
+      "publisher": "NOAA / U.S. Climate.gov",
+      "title": "September 2024 Southern California heat wave event tracker",
+      "url": "https://www.climate.gov/news-features/event-tracker/heat-wave-southern-california-and-southwest-early-september-2024",
+      "kind": "lookup",
+      "retrieved": "2026-11-07"
+    }
+  }
+}

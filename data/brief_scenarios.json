@@ -1,0 +1,44 @@
+{
+  "retrieved": "2026-11-07",
+  "purpose": "Official anchors and decision scenarios for tools/projection.py. Every numeric anchor here is copied from a verified row in data/brief_rows.json; no property-specific value, assumption or probability is asserted.",
+  "privacy": "This file contains no owner, tenant, address, APN, rent, valuation or tax information. Private inputs are supplied by the owner at runtime and are never written into the published site.",
+  "anchors": [
+    {"row": "PJ-01", "key": "risk_free_10y", "value": 0.0484, "unit": "annual_rate", "label": "10-year Treasury constant maturity, 2026-11-05", "source": "FRED_10"},
+    {"row": "PJ-02", "key": "risk_free_30y", "value": 0.0525, "unit": "annual_rate", "label": "30-year Treasury constant maturity, 2026-11-05", "source": "FRED_30"},
+    {"row": "PJ-03", "key": "cpi_all_items", "value": 0.037, "unit": "annual_rate", "label": "LA area CPI-U, 12-month change, September 2026", "source": "BLS_CPI"},
+    {"row": "PJ-04", "key": "cpi_core", "value": 0.026, "unit": "annual_rate", "label": "LA area core CPI-U, 12-month change, September 2026", "source": "BLS_CPI"},
+    {"row": "PJ-05", "key": "job_growth", "value": 0.005, "unit": "annual_rate", "label": "MSA total nonfarm, 12-month change, September 2026 (preliminary)", "source": "BLS_EAG"},
+    {"row": "PJ-06", "key": "unemployment", "value": 0.044, "unit": "rate", "label": "MSA unemployment rate, September 2026 (preliminary)", "source": "BLS_EAG"},
+    {"row": "PJ-07", "key": "city_pop_change", "value": -0.008, "unit": "cumulative_rate", "label": "City population change, Apr 2020 to Jul 2025 (V2025)", "source": "CEN_CITY"},
+    {"row": "PJ-08", "key": "county_pop_change", "value": -0.006, "unit": "annual_rate", "label": "County population change, Jan 2025 to Jan 2026 (CA DOF)", "source": "DOF_E1"},
+    {"row": "PJ-09", "key": "county_personal_income_usd", "value": 818500000000, "unit": "usd", "label": "LA County personal income, 2024 (NOT GDP)", "source": "BEA_2024"},
+    {"row": "PJ-10", "key": "scag_horizon_year", "value": 2050, "unit": "year", "label": "Connect SoCal 2024 long-range forecast horizon", "source": "SCAG_DEM"},
+    {"row": "PJ-11", "key": "edd_horizon_year", "value": 2033, "unit": "year", "label": "Hard limit of official LA County occupational projections", "source": "EDD_LA"},
+    {"row": "PJ-12", "key": "ula_base_rate", "value": 0.0045, "unit": "transfer_tax_rate", "label": "City base real property transfer tax, 0.45%", "source": "ULA_FAQ"},
+    {"row": "PJ-12", "key": "ula_lower_rate", "value": 0.04, "unit": "transfer_tax_rate", "label": "ULA lower tier, 4%", "source": "ULA_FAQ"},
+    {"row": "PJ-12", "key": "ula_upper_rate", "value": 0.055, "unit": "transfer_tax_rate", "label": "ULA upper tier, 5.5%", "source": "ULA_FAQ"},
+    {"row": "PJ-12", "key": "ula_lower_threshold_usd", "value": 5400000, "unit": "usd", "label": "ULA lower threshold after June 30, 2026", "source": "ULA_FAQ"},
+    {"row": "PJ-12", "key": "ula_upper_threshold_usd", "value": 10900000, "unit": "usd", "label": "ULA upper threshold after June 30, 2026", "source": "ULA_FAQ"},
+    {"row": "PJ-13", "key": "fy2025_closures", "value": 86, "unit": "count", "label": "Jack in the Box closures in FY2025", "source": "SEC_Q4FY25"},
+    {"row": "PJ-14", "key": "q3_fy2026_restaurants", "value": 2115, "unit": "count", "label": "Jack in the Box system restaurants, end of Q3 FY2026", "source": "SEC_Q3FY26"}
+  ],
+  "scenarios": [
+    {"id": "S1", "name": "Sell immediately", "decision_row": "DC-01", "description": "Crystallize value before the reported 2030-2035 expiry; removes single-tenant exposure but sells a shortening term and forgoes land optionality.", "required_private_inputs": ["gross_sale_price_usd", "loan_payoff_usd", "owner_tax_rate", "professional_cost_rate"]},
+    {"id": "S2", "name": "Renew / extend early, then hold", "decision_row": "DC-02", "description": "Convert the ambiguous expiry window into a signed longer term; keeps income and land optionality while retaining tenant credit exposure.", "required_private_inputs": ["annual_base_rent_usd", "renewal_term_years", "rent_escalation_rate", "residual_value_usd"]},
+    {"id": "S3", "name": "Renew early, then sell with a long term", "decision_row": "DC-03", "description": "Sequence a documented renewal before marketing so a buyer underwrites firm term rather than expiry risk.", "required_private_inputs": ["annual_base_rent_usd", "renewal_term_years", "gross_sale_price_usd"]},
+    {"id": "S4", "name": "Hold to expiry, then re-tenant", "decision_row": "DC-04", "description": "Retain land but carry vacancy, capital expenditure and re-leasing risk at the weakest point of the term.", "required_private_inputs": ["annual_base_rent_usd", "remaining_term_years", "vacancy_months", "retenanting_cost_usd"]},
+    {"id": "S5", "name": "Hold to expiry, then sell vacant", "decision_row": "DC-05", "description": "Remove income before a sale; weakest wealth-preservation path unless land value dominates.", "required_private_inputs": ["gross_sale_price_usd", "remaining_term_years"]},
+    {"id": "S6", "name": "Refinance and hold", "decision_row": "DC-06", "description": "Leverage amplifies both return and loss on a concentrated, catastrophe-exposed, single-tenant asset.", "required_private_inputs": ["loan_amount_usd", "interest_rate", "annual_base_rent_usd"]},
+    {"id": "S7", "name": "Sell and defer tax via a like-kind exchange", "decision_row": "DC-07", "description": "Preserves after-tax capital and allows diversification, but adds strict identification and closing deadlines.", "required_private_inputs": ["gross_sale_price_usd", "owner_tax_rate", "replacement_price_usd"]},
+    {"id": "S8", "name": "Partial interest / ground-lease restructuring", "decision_row": "DC-08", "description": "Document-intensive structure; no recommendation without the executed title and lease documents.", "required_private_inputs": ["title_terms", "lease_terms"]},
+    {"id": "S9", "name": "Do nothing / defer", "decision_row": "DC-09", "description": "Passively letting the term decay is the highest-regret path; option notice deadlines are irreversible.", "required_private_inputs": ["remaining_term_years"]}
+  ],
+  "rules": [
+    "Use only the official anchors above plus owner-supplied private parameters. Never fetch data at runtime.",
+    "Any value not published by an official source is an owner-supplied sensitivity and must be labelled OWNER-SUPPLIED, never 'verified'.",
+    "Apply the ULA tier to the whole consideration once the price crosses a threshold; the thresholds are indexed annually and must be re-checked at closing.",
+    "Do not discount cash flows beyond the official EDD 2033 projection horizon by extrapolating employment or income series.",
+    "Report a break-even renewal probability, not a point estimate of value, because no official cap rate or comparable-sale series exists.",
+    "Model outputs are computations, not official statistics, and are never published on the website."
+  ]
+}

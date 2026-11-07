@@ -1,0 +1,4780 @@
+{
+  "retrieved": "2026-11-07",
+  "rows": [
+    {
+      "id": "EX-01",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "Los Angeles city population",
+      "value": "3,869,089",
+      "period": "July 1, 2025 (V2025), City of Los Angeles",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Large, dense consumer base; the estimate is citywide, not a trade-area count.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-02",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "City population change since 2020 estimate base",
+      "value": "-0.8%",
+      "period": "Apr 1, 2020 to Jul 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Slight contraction at city scale; no neighborhood direction is implied.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-03",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "City median household income",
+      "value": "$81,939",
+      "period": "2020-2024 ACS, 2024 dollars, City of Los Angeles",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Supports mass-market quick-service demand but is not a parcel catchment measure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-04",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "MSA unemployment rate",
+      "value": "4.4%",
+      "period": "September 2026 (preliminary), Los Angeles-Long Beach-Santa Ana MSA",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Labor market is not in a deep downturn; the figure is a metro average.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-05",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "MSA total nonfarm employment, 12-month change",
+      "value": "0.5%",
+      "period": "September 2026 (preliminary), MSA, thousands of jobs",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Job growth is positive but weak; sector mix matters more than the headline.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-06",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "Los Angeles area CPI-U, 12-month change",
+      "value": "3.7%",
+      "period": "September 2026, Los Angeles-Long Beach-Anaheim",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Ongoing cost inflation affects tenant margins and indexed lease escalations.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-07",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "Jack in the Box system restaurant count",
+      "value": "2,115",
+      "period": "End of Q3 FY2026, July 5, 2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "The brand is contracting: 17 closures and 4 openings in the quarter.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-08",
+      "page": "index",
+      "group": "Headline indicators",
+      "metric": "10-year Treasury constant maturity yield",
+      "value": "4.84%",
+      "period": "November 5, 2026 (daily, not seasonally adjusted)",
+      "sources": [
+        "FRED_10",
+        "TREASURY"
+      ],
+      "finding": "Official, reproducible discount-rate anchor. No cap rate is asserted.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EX-09",
+      "page": "index",
+      "group": "Decision guardrails",
+      "metric": "Subject property market value / net sale proceeds",
+      "value": "",
+      "period": "Parcel-specific; not published",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "No appraisal, comparable sale or rent roll is available. Do not price a sale from area statistics.",
+      "note": "Blank pending owner diligence.",
+      "status": "unverified",
+      "flag": "U-EX-09"
+    },
+    {
+      "id": "EX-10",
+      "page": "index",
+      "group": "Decision guardrails",
+      "metric": "Signed renewal / option terms",
+      "value": "",
+      "period": "Lease-specific; not published",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "The 2030-2035 expiry is reported only as a window; option language and notice dates are unknown.",
+      "note": "Blank pending executed lease.",
+      "status": "unverified",
+      "flag": "U-EX-10"
+    },
+    {
+      "id": "EX-11",
+      "page": "index",
+      "group": "Decision guardrails",
+      "metric": "Exact lease expiration date",
+      "value": "",
+      "period": "Reported window 2030-2035 only",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "A five-year ambiguity changes the sale-vs-renew ranking; resolve it before any binding commitment.",
+      "note": "Blank pending executed lease.",
+      "status": "unverified",
+      "flag": "U-EX-11"
+    },
+    {
+      "id": "MK-01",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "Los Angeles city population",
+      "value": "3,869,089",
+      "period": "July 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Citywide baseline.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-02",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "Los Angeles County population",
+      "value": "9,694,934",
+      "period": "July 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Census Vintage-2025 county estimate; differs from the CA DOF Jan 1, 2026 estimate (see flagged).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-03",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "County median household income",
+      "value": "$90,112",
+      "period": "2020-2024 ACS, 2024 dollars, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Above the city median; county geography is broader than the trade area.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-04",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "City persons in poverty",
+      "value": "16.5%",
+      "period": "2020-2024 / SAIPE as published in QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Price-sensitive demand cohort is material.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-05",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "City accommodation & food services sales",
+      "value": "$17,366,966 thousand",
+      "period": "2022 Economic Census, City of Los Angeles",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Sector scale indicator; 2022 is the latest published Economic Census year in this table.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-06",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "County accommodation & food services sales",
+      "value": "$44,000,801 thousand",
+      "period": "2022 Economic Census, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide food-service demand; not a restaurant-level sales figure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-07",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "City total retail sales per capita",
+      "value": "$21,281",
+      "period": "2022, City of Los Angeles",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Retail spending context; not commercial rent.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-08",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "MSA unemployment rate",
+      "value": "4.4%",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Metro labor-market condition.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-09",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "LA County personal income",
+      "value": "$818.5 billion",
+      "period": "2024, current dollars, LA County",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "BEA's largest-county personal income figure. It is NOT GDP (see flagged IR-D2).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-10",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "LA County real GDP",
+      "value": "$802.0 billion",
+      "period": "2023, chained 2017 dollars, LA County (BEA 24-57)",
+      "sources": [
+        "BEA_2023"
+      ],
+      "finding": "Older vintage and different measure than the 2024 personal income figure; do not combine.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-11",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "Los Angeles area CPI-U, 12-month change",
+      "value": "3.7%",
+      "period": "September 2026",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Cost and escalation context.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-12",
+      "page": "market",
+      "group": "Local market snapshot",
+      "metric": "10-year Treasury constant maturity yield",
+      "value": "4.84%",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_10"
+      ],
+      "finding": "Official discount-rate anchor; no property cap rate is published by any agency.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "MK-13",
+      "page": "market",
+      "group": "Lookup limits",
+      "metric": "Subject submarket / drive-time catchment",
+      "value": "",
+      "period": "Requires an address or APN",
+      "sources": [
+        "ZIMAS"
+      ],
+      "finding": "Citywide and countywide statistics cannot be assigned to a single parcel without a location match.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-MK-13"
+    },
+    {
+      "id": "MK-14",
+      "page": "market",
+      "group": "Lookup limits",
+      "metric": "Comparable net-lease transactions / cap rates",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "No government agency publishes net-lease cap rates. Left blank rather than quoted from brokerage commentary.",
+      "note": "Blank: no official source exists.",
+      "status": "unverified",
+      "flag": "U-MK-14"
+    },
+    {
+      "id": "PR-01",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Street address / parcel match",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "ZIMAS",
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "A location is required before any hazard, zoning, school or tax conclusion can be drawn.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-01"
+    },
+    {
+      "id": "PR-02",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Assessor parcel number (APN)",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Parcel identity must be confirmed from title and survey, not inferred from a nearby site.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-02"
+    },
+    {
+      "id": "PR-03",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Fee owner / title vesting / easements / liens",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Ownership entities and personal identifiers are intentionally not published.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-03"
+    },
+    {
+      "id": "PR-04",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Legal tenant and operating entity",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "The brand does not identify the lease obligor; it may be a franchisee.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-04"
+    },
+    {
+      "id": "PR-05",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Guarantor, guaranty scope and recourse",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "No parent guarantee is assumed from brand affiliation.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-05"
+    },
+    {
+      "id": "PR-06",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Current base rent, additional rent and escalations",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "IRS_544"
+      ],
+      "finding": "No rent, percentage rent or pass-through is inferred. A rent roll is required.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-06"
+    },
+    {
+      "id": "PR-07",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Exact lease expiration date",
+      "value": "",
+      "period": "Reported window 2030-2035",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "The exact date and any option exercise window are unresolved.",
+      "note": "Blank pending executed lease.",
+      "status": "unverified",
+      "flag": "U-PR-07"
+    },
+    {
+      "id": "PR-08",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Option rent, renewal term and notice date",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Do not assume an option exists or that the landlord may exercise it.",
+      "note": "Blank pending executed lease.",
+      "status": "unverified",
+      "flag": "U-PR-08"
+    },
+    {
+      "id": "PR-09",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "NNN expense allocation / landlord obligations",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "IRS_544"
+      ],
+      "finding": "Roof, structure, parking, tax and insurance responsibilities must be read from the executed lease.",
+      "note": "Blank pending executed lease.",
+      "status": "unverified",
+      "flag": "U-PR-09"
+    },
+    {
+      "id": "PR-10",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Building area, age, condition and seismic retrofit status",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "PLAN_ZONING"
+      ],
+      "finding": "Physical diligence is a prerequisite to any hold decision.",
+      "note": "Blank pending condition report.",
+      "status": "unverified",
+      "flag": "U-PR-10"
+    },
+    {
+      "id": "PR-11",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Loan payoff, debt terms and release costs",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "IRS_544"
+      ],
+      "finding": "No lender statement is available; no payoff figure is assumed.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-11"
+    },
+    {
+      "id": "PR-12",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Insurance carrier, limits, deductibles and premium",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "CDI_ORDER"
+      ],
+      "finding": "Wildfire and earthquake coverage terms materially change hold economics.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-12"
+    },
+    {
+      "id": "PR-13",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Owner basis, holding period and tax profile",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "IRS_544",
+        "FTB_GAINS"
+      ],
+      "finding": "Personal tax data is not collected or published on this site.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-13"
+    },
+    {
+      "id": "PR-14",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "As-is market value and net sale proceeds",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Assessed value is not market value; no appraisal or bid set is available.",
+      "note": "Blank pending appraisal.",
+      "status": "unverified",
+      "flag": "U-PR-14"
+    },
+    {
+      "id": "PR-15",
+      "page": "property",
+      "group": "Asset & lease \u2014 withheld fields",
+      "metric": "Site-level unit sales and rent coverage",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Consolidated issuer results do not substitute for unit-level underwriting.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-PR-15"
+    },
+    {
+      "id": "PR-16",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Jack in the Box restaurants at FY2025 year end",
+      "value": "2,136",
+      "period": "As of September 28, 2025",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Includes 2 in Guam and 3 in Mexico; issuer-wide scale, not a site fact.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PR-17",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Franchised share of Jack in the Box restaurants",
+      "value": "93% (1,986 of 2,136)",
+      "period": "As of September 28, 2025",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Most locations are operated by franchisees, so the legal tenant is usually not the public company.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PR-18",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Typical Jack in the Box franchise agreement term",
+      "value": "20 years",
+      "period": "Disclosed in FY2025 Form 10-K",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "A franchise agreement expiry can fall before or after a lease expiry; align the two before renewal.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PR-19",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Franchise royalty / marketing rate",
+      "value": "generally 5.0% of gross sales",
+      "period": "Disclosed in FY2025 Form 10-K",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Franchise economics affect a franchisee tenant's ability to pay rent.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PR-20",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Franchise-Level Margin fell partly due to lower rent and royalty revenue",
+      "value": "$60.3 million, or 37.4% (prior year $66.2 million, 39.3%)",
+      "period": "Q3 FY2026, 12 weeks ended July 5, 2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "The issuer attributes the fall partly to fewer restaurants under the closure programme \u2014 direct evidence that lease-linked revenue is shrinking.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PR-21",
+      "page": "property",
+      "group": "Issuer-wide lease context (not this property)",
+      "metric": "Typical new-prototype restaurant size",
+      "value": "approximately 1,372 square feet",
+      "period": "FY2025 Form 10-K, CRAVED prototype",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Small-footprint, drive-thru-oriented format; relevant to alternative-use feasibility, not a parcel fact.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-01",
+      "page": "tenant",
+      "group": "System scale",
+      "metric": "Jack in the Box system restaurants",
+      "value": "2,115",
+      "period": "End of Q3 FY2026 (July 5, 2026): 149 company + 1,966 franchise",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Down from 2,168 a year earlier in the same release.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-02",
+      "page": "tenant",
+      "group": "System scale",
+      "metric": "Jack in the Box restaurants one year earlier",
+      "value": "2,168",
+      "period": "End of Q3 FY2025 (July 6, 2025): 142 company + 2,026 franchise",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "-53 net restaurants year over year.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-03",
+      "page": "tenant",
+      "group": "System scale",
+      "metric": "Jack in the Box restaurants at FY2025 year end",
+      "value": "2,136",
+      "period": "As of September 28, 2025: 150 company + 1,986 franchise",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Consistent with the Q4 FY2025 release count.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-04",
+      "page": "tenant",
+      "group": "System scale",
+      "metric": "Franchised share at FY2025 year end",
+      "value": "93%",
+      "period": "As of September 28, 2025",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Counterparty credit is usually a franchisee, not the public issuer.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-05",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "System same-store sales",
+      "value": "-1.1%",
+      "period": "Q3 FY2026, 12 weeks ended July 5, 2026 (franchise -1.2%, company -0.9%)",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Issuer attributes the decline primarily to fewer transactions, partly offset by price.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-06",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Prior-year system same-store sales",
+      "value": "-7.1%",
+      "period": "Q3 FY2025, 12 weeks ended July 6, 2025",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "The rate of decline narrowed sharply year over year but remains negative.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-07",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Systemwide sales",
+      "value": "-1.4%",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "System contraction plus same-store softness.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-08",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Total revenues",
+      "value": "$257.7 million (down 1.8% from $262.4 million)",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Lower same-store sales and fewer restaurants.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-09",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Restaurant-Level Margin (non-GAAP)",
+      "value": "$17.0 million, or 17.6% (prior year 17.9%)",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Commodity inflation and mix pressure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-10",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Franchise-Level Margin (non-GAAP)",
+      "value": "$60.3 million, or 37.4% (prior year 39.3%)",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Lower rent and royalty revenue and fewer restaurants under the closure programme.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-11",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Franchisee bad-debt expense",
+      "value": "Higher versus the prior-year quarter",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "A direct credit signal about franchisees \u2014 the likely tenant class for a net-lease site.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-12",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Adjusted EBITDA (non-GAAP)",
+      "value": "$61.2 million (prior year $57.1 million)",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Profit measure improved even as sales contracted; credit stress is concentrated in franchisees.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-13",
+      "page": "tenant",
+      "group": "Operating trend",
+      "metric": "Net earnings from continuing operations",
+      "value": "$21.0 million (prior year $22.8 million)",
+      "period": "Q3 FY2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Issuer remains profitable overall.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-14",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "Q3 FY2026 restaurant activity",
+      "value": "4 openings and 17 closures; net -13 (-0.6%)",
+      "period": "12 weeks ended July 5, 2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "All closures in the quarter were franchise locations.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-15",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "Q4 FY2025 restaurant activity",
+      "value": "15 openings and 47 closures",
+      "period": "12 weeks ended September 28, 2025",
+      "sources": [
+        "SEC_Q4FY25"
+      ],
+      "finding": "38 of the 47 closures were part of the 'JACK on Track' block closure programme.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-16",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "Full-year FY2025 restaurant activity",
+      "value": "31 openings and 86 closures",
+      "period": "52 weeks ended September 28, 2025",
+      "sources": [
+        "SEC_Q4FY25"
+      ],
+      "finding": "Net system contraction is structural, not a single quarter.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-17",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "FY2025 system same-store sales",
+      "value": "-4.2%",
+      "period": "52 weeks ended September 28, 2025",
+      "sources": [
+        "SEC_Q4FY25"
+      ],
+      "finding": "Full-year demand decline across company and franchise stores.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-18",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "Q4 FY2025 system same-store sales",
+      "value": "-7.4%",
+      "period": "12 weeks ended September 28, 2025",
+      "sources": [
+        "SEC_Q4FY25"
+      ],
+      "finding": "The weak quarter immediately preceding the closure programme.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-19",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "'JACK on Track' plan includes a restaurant closure programme",
+      "value": "Yes (block closure programme)",
+      "period": "FY2025 Form 10-K, Business Strategy",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "The issuer lists the closure programme as one of three plan pillars, alongside Del Taco alternatives and cash-flow acceleration.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-20",
+      "page": "tenant",
+      "group": "Closure programme",
+      "metric": "Dividend policy change under 'JACK on Track'",
+      "value": "Discontinuing dividend",
+      "period": "FY2025 Form 10-K, Business Strategy",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "Capital is being redirected to debt paydown; a credit-positive but contraction-signalling measure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "TE-21",
+      "page": "tenant",
+      "group": "Withheld counterparty facts",
+      "metric": "Whether the subject site is on a closure list",
+      "value": "",
+      "period": "No public site-level disclosure located",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "This is the single highest-consequence unknown; resolve privately and early with the tenant.",
+      "note": "Blank: not publicly disclosed.",
+      "status": "unverified",
+      "flag": "U-TE-21"
+    },
+    {
+      "id": "TE-22",
+      "page": "tenant",
+      "group": "Withheld counterparty facts",
+      "metric": "Subject franchise agreement expiration date",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "SEC_10K"
+      ],
+      "finding": "A franchise agreement can end before the lease; align dates in any renewal.",
+      "note": "Blank pending lease/franchise documents.",
+      "status": "unverified",
+      "flag": "U-TE-22"
+    },
+    {
+      "id": "TE-23",
+      "page": "tenant",
+      "group": "Withheld counterparty facts",
+      "metric": "Tenant / guarantor credit rating",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Credit ratings are not published by a government agency; none is quoted here.",
+      "note": "Blank: no official source exists.",
+      "status": "unverified",
+      "flag": "U-TE-23"
+    },
+    {
+      "id": "TE-24",
+      "page": "tenant",
+      "group": "Withheld counterparty facts",
+      "metric": "FY2026 fourth-quarter results and updated closure guidance",
+      "value": "",
+      "period": "Not located on the official filings index at retrieval",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Monitor the issuer's EDGAR filings index rather than a third-party calendar.",
+      "note": "Blank pending next official filing.",
+      "status": "unverified",
+      "flag": "U-TE-24"
+    },
+    {
+      "id": "TE-25",
+      "page": "tenant",
+      "group": "Withheld counterparty facts",
+      "metric": "Del Taco divestiture completion",
+      "value": "Completed December 22, 2025",
+      "period": "Q3 FY2026 earnings release",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Portfolio simplification reduces diversification but focuses the issuer on the core brand.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-01",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "City of Los Angeles land area",
+      "value": "469.49 square miles",
+      "period": "2020 Census",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "The city is not a single trade area; 'central Los Angeles' is not an official statistical geography.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-02",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "City of Los Angeles population density",
+      "value": "8,304.2 people per square mile",
+      "period": "2020 Census",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Citywide average; large variation at corridor level.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-03",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "Los Angeles County land area",
+      "value": "4,059.28 square miles",
+      "period": "2020 Census",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "County includes islands and desert areas; not a restaurant catchment.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-04",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "Los Angeles County population density",
+      "value": "2,466.9 people per square mile",
+      "period": "2020 Census",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide average.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-05",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "City FIPS code",
+      "value": "0644000",
+      "period": "Census QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Use the correct geography code when pulling a series.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-06",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "County FIPS code",
+      "value": "06037",
+      "period": "Census QuickFacts",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Use the correct geography code when pulling a series.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-07",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "Mean travel time to work (city)",
+      "value": "30.7 minutes",
+      "period": "2020-2024 ACS, workers 16+",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Commute context for drive-thru and foot traffic.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-08",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "Mean travel time to work (county)",
+      "value": "30.4 minutes",
+      "period": "2020-2024 ACS, workers 16+",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide average.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-09",
+      "page": "geography",
+      "group": "Published geographies",
+      "metric": "LA County exceeds 4,000 square miles and includes San Clemente and Santa Catalina islands",
+      "value": "Yes",
+      "period": "Official EDD county profile description",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Geographic heterogeneity is a reason not to substitute county data for a site.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-10",
+      "page": "geography",
+      "group": "Infrastructure",
+      "metric": "Metro D Line Extension Section 1 opening",
+      "value": "May 8, 2026",
+      "period": "Three new stations: Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega",
+      "sources": [
+        "METRO_DLINE"
+      ],
+      "finding": "Transit investment improves central-corridor accessibility; only relevant if the parcel is inside the affected corridor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-11",
+      "page": "geography",
+      "group": "Infrastructure",
+      "metric": "D Line Extension Sections 2 and 3",
+      "value": "In construction",
+      "period": "Section 2 (Beverly Hills / Century City), Section 3 (Westwood)",
+      "sources": [
+        "METRO_DLINE"
+      ],
+      "finding": "Long-run accessibility upside, with construction disruption risk.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "GE-12",
+      "page": "geography",
+      "group": "Infrastructure",
+      "metric": "Water system / serving utility for the parcel",
+      "value": "",
+      "period": "Not mapped",
+      "sources": [
+        "LADWP"
+      ],
+      "finding": "Service reliability and drought restrictions are parcel-specific.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-GE-12"
+    },
+    {
+      "id": "GE-13",
+      "page": "geography",
+      "group": "Parcel-level lookups",
+      "metric": "Zoning, General Plan land use and overlays",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "ZIMAS",
+        "PLAN_ZONING"
+      ],
+      "finding": "Alternative-use value depends on the actual zoning designation.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-GE-13"
+    },
+    {
+      "id": "GE-14",
+      "page": "geography",
+      "group": "Parcel-level lookups",
+      "metric": "Downtown Community Plan boundary applicability",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "PLAN_DTLA"
+      ],
+      "finding": "Downtown planning expectations apply only inside the plan area.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-GE-14"
+    },
+    {
+      "id": "GE-15",
+      "page": "geography",
+      "group": "Parcel-level lookups",
+      "metric": "Traffic counts and walk-time catchment",
+      "value": "",
+      "period": "Not published here",
+      "sources": [
+        "ZIMAS"
+      ],
+      "finding": "No corridor traffic figure is asserted.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-GE-15"
+    },
+    {
+      "id": "GE-16",
+      "page": "geography",
+      "group": "Parcel-level lookups",
+      "metric": "Local crime statistics for the site",
+      "value": "",
+      "period": "Not published here",
+      "sources": [
+        "LAPD"
+      ],
+      "finding": "No crime figure is asserted; official COMPSTAT snapshots are not reliably machine-readable.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-GE-16"
+    },
+    {
+      "id": "DE-01",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "City population estimate",
+      "value": "3,869,089",
+      "period": "July 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Principal citywide baseline.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-02",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "City population estimates base",
+      "value": "3,899,342",
+      "period": "April 1, 2020 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Base for the V2025 percent-change series.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-03",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "City population change",
+      "value": "-0.8%",
+      "period": "Apr 1, 2020 to Jul 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Modest contraction over five years.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-04",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "City decennial population 2020",
+      "value": "3,898,747",
+      "period": "April 1, 2020 Census",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Different product from the V2025 estimate; do not mix vintages.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-05",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "City decennial population 2010",
+      "value": "3,792,621",
+      "period": "April 1, 2010 Census",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Long-run city growth context.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-06",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "County population estimate",
+      "value": "9,694,934",
+      "period": "July 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Census Vintage-2025 county estimate.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-07",
+      "page": "demographics",
+      "group": "Population \u2014 Census",
+      "metric": "County population change",
+      "value": "-3.2%",
+      "period": "Apr 1, 2020 to Jul 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "A materially larger decline than the city; compare with the CA DOF county series below (flagged IR-D4).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-08",
+      "page": "demographics",
+      "group": "Population \u2014 CA DOF",
+      "metric": "State population, January 1, 2026",
+      "value": "39,593,000",
+      "period": "Provisional, -0.14% year over year",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "DOF attributes the small decline largely to reduced legal international migration.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-09",
+      "page": "demographics",
+      "group": "Population \u2014 CA DOF",
+      "metric": "LA County population, January 1, 2026",
+      "value": "9,837,286",
+      "period": "Provisional; January 1, 2025 was 9,900,914 (-0.6%)",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "DOF reports LA County lost about 64,000 persons, citing wildfires, migration to the Inland Empire and deportations.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-10",
+      "page": "demographics",
+      "group": "Population \u2014 CA DOF",
+      "metric": "City of Los Angeles population, January 1, 2026",
+      "value": "3,806,201",
+      "period": "Provisional; January 1, 2025 was 3,839,536 (-0.9%)",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "Different reference date and method from the Census July 1, 2025 city estimate.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-11",
+      "page": "demographics",
+      "group": "Population \u2014 CA DOF",
+      "metric": "Statewide housing units, 2025",
+      "value": "15,064,131",
+      "period": "Net addition of 115,165 units in 2025",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "Includes 11,160 housing units lost to the Eaton and Palisades fires.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-12",
+      "page": "demographics",
+      "group": "Population \u2014 SCAG forecast",
+      "metric": "Connect SoCal 2024 forecast horizon",
+      "value": "2024-2050",
+      "period": "Adopted April 4, 2024",
+      "sources": [
+        "SCAG_DEM",
+        "SCAG_ADOPT"
+      ],
+      "finding": "A long-range planning forecast, not a site or a business-cycle projection.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-13",
+      "page": "demographics",
+      "group": "Population \u2014 SCAG forecast",
+      "metric": "SCAG region population peak used as baseline",
+      "value": "18,966,261",
+      "period": "January 2019 DOF estimate",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "The report notes the region's population has declined since this peak.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-14",
+      "page": "demographics",
+      "group": "Population \u2014 SCAG forecast",
+      "metric": "6th-cycle regional housing needs determination",
+      "value": "1,341,827 housing units",
+      "period": "Connect SoCal 2024 forecast assumption",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Forecast assumes household growth in excess of the RHNA.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-15",
+      "page": "demographics",
+      "group": "Population \u2014 SCAG forecast",
+      "metric": "SCAG region age 65+ share, 2019 to 2050",
+      "value": "14.4% to 21.7%",
+      "period": "2019 baseline to 2050 forecast",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Ageing population changes weekday daytime demand patterns.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-16",
+      "page": "demographics",
+      "group": "Population \u2014 SCAG forecast",
+      "metric": "SCAG region ages 0-17 share, 2019 to 2050",
+      "value": "22.5% to 18.1%",
+      "period": "2019 baseline to 2050 forecast",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Fewer children in the long-run consumer mix.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-17",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "City households",
+      "value": "1,439,097",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Household count, not population.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-18",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "City persons per household",
+      "value": "2.61",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Smaller households than the county average.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-19",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "County households",
+      "value": "3,416,449",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Large consumer base.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-20",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "County persons per household",
+      "value": "2.81",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "County average.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-21",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "City owner-occupied housing rate",
+      "value": "36.0%",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Majority renter city; tenure affects neighborhood stability.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-22",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "County owner-occupied housing rate",
+      "value": "45.9%",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide tenure mix.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-23",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "County housing units",
+      "value": "3,726,923",
+      "period": "July 1, 2025 (V2025)",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Housing stock scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-24",
+      "page": "demographics",
+      "group": "Households & housing",
+      "metric": "County building permits, 2025",
+      "value": "22,250",
+      "period": "2025, Census building permits series",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Supply response relevant to long-run residential density.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-25",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City persons under 18",
+      "value": "19.2%",
+      "period": "V2025 QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Family-oriented demand cohort.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-26",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City persons 65 and over",
+      "value": "14.2%",
+      "period": "V2025 QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Older cohort share.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-27",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City Hispanic or Latino",
+      "value": "47.2%",
+      "period": "V2025 QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Demographic composition; not a demand forecast.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-28",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City foreign-born persons",
+      "value": "35.7%",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Migration-linked consumer base.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-29",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City language other than English spoken at home",
+      "value": "56.4%",
+      "period": "2020-2024 ACS, age 5+",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Multilingual market context.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-30",
+      "page": "demographics",
+      "group": "Population composition",
+      "metric": "City lived in same house one year ago",
+      "value": "89.3%",
+      "period": "2020-2024 ACS, age 1+",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Residential stability indicator.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DE-31",
+      "page": "demographics",
+      "group": "Lookup limits",
+      "metric": "Trade-area population within a drive-time ring",
+      "value": "",
+      "period": "Requires an address",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "No ring analysis was performed; citywide figures are not a substitute.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-DE-31"
+    },
+    {
+      "id": "IN-01",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "City median household income",
+      "value": "$81,939",
+      "period": "2020-2024 ACS, 2024 dollars",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Primary purchasing-power measure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-02",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "City per capita income",
+      "value": "$47,685",
+      "period": "2020-2024 ACS, 2024 dollars",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Per-person measure; different denominator from household income.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-03",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "City persons in poverty",
+      "value": "16.5%",
+      "period": "As published in QuickFacts",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Value-oriented menu demand; also a labor-supply factor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-04",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "County median household income",
+      "value": "$90,112",
+      "period": "2020-2024 ACS, 2024 dollars",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Higher than the city median.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-05",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "County per capita income",
+      "value": "$45,792",
+      "period": "2020-2024 ACS, 2024 dollars",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-06",
+      "page": "income",
+      "group": "Income & poverty",
+      "metric": "County persons in poverty",
+      "value": "13.3%",
+      "period": "As published in QuickFacts",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Lower poverty share than the city.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-07",
+      "page": "income",
+      "group": "Housing costs",
+      "metric": "City median value of owner-occupied units",
+      "value": "$921,200",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "High land values support residual land value but raise replacement cost.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-08",
+      "page": "income",
+      "group": "Housing costs",
+      "metric": "County median value of owner-occupied units",
+      "value": "$834,200",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-09",
+      "page": "income",
+      "group": "Housing costs",
+      "metric": "City median gross rent",
+      "value": "$1,933 per month",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Residential rent, not commercial rent; no commercial figure is inferred.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-10",
+      "page": "income",
+      "group": "Housing costs",
+      "metric": "County median gross rent",
+      "value": "$1,954 per month",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Residential rent.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-11",
+      "page": "income",
+      "group": "Housing costs",
+      "metric": "City median owner costs with a mortgage",
+      "value": "$3,497 per month",
+      "period": "2020-2024 ACS",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Housing-cost burden constrains discretionary spend.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-12",
+      "page": "income",
+      "group": "Consumer prices",
+      "metric": "LA area CPI-U, all items, 12-month change",
+      "value": "3.7%",
+      "period": "September 2026",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Escalation and cost context.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-13",
+      "page": "income",
+      "group": "Consumer prices",
+      "metric": "LA area CPI-U, all items less food and energy",
+      "value": "2.6%",
+      "period": "September 2026, 12-month change",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Core inflation trend.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-14",
+      "page": "income",
+      "group": "Consumer prices",
+      "metric": "LA area food-away-from-home price change",
+      "value": "2.8%",
+      "period": "September 2026, 12-month change",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Menu pricing power and input cost pass-through.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-15",
+      "page": "income",
+      "group": "Consumer prices",
+      "metric": "LA area CPI-U index level",
+      "value": "358.725",
+      "period": "September 2026 (1982-84=100)",
+      "sources": [
+        "BLS_EAG",
+        "BLS_CPI"
+      ],
+      "finding": "Index level used for escalation clauses; local indexes are not seasonally adjusted.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-16",
+      "page": "income",
+      "group": "Consumer prices",
+      "metric": "October 2025 LA CPI-U data",
+      "value": "Not available",
+      "period": "2025 appropriations lapse",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "BLS explicitly marks the month unavailable; do not interpolate it.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-17",
+      "page": "income",
+      "group": "Regional output & income",
+      "metric": "LA County personal income",
+      "value": "$818.5 billion",
+      "period": "2024, current dollars",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "Personal income, not GDP. BEA's largest large-county figure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-18",
+      "page": "income",
+      "group": "Regional output & income",
+      "metric": "LA County real GDP",
+      "value": "$802.0 billion",
+      "period": "2023, chained 2017 dollars",
+      "sources": [
+        "BEA_2023"
+      ],
+      "finding": "Superseded vintage; retained to show measure and date differences.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-19",
+      "page": "income",
+      "group": "Regional output & income",
+      "metric": "BEA discontinued metropolitan-area GDP and personal income statistics",
+      "value": "Yes",
+      "period": "Effective with the 2024 county estimates (Feb 5, 2026)",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "MSA-level income projections can no longer be sourced from BEA (flagged IR-D2).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-20",
+      "page": "income",
+      "group": "Wages",
+      "metric": "California fast-food minimum wage",
+      "value": "$20.00 per hour",
+      "period": "Effective April 1, 2024 (AB 1228)",
+      "sources": [
+        "DIR_FF",
+        "DIR_T8"
+      ],
+      "finding": "Applies to covered chains of 60+ establishments, including franchisees; a direct tenant cost driver.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-21",
+      "page": "income",
+      "group": "Wages",
+      "metric": "Fast-food coverage threshold",
+      "value": "Chain of at least 60 establishments nationwide",
+      "period": "AB 1228 / DIR FAQ",
+      "sources": [
+        "DIR_FF"
+      ],
+      "finding": "Coverage is a structural fact, not a site determination; a later local general minimum wage may be higher.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-22",
+      "page": "income",
+      "group": "Wages",
+      "metric": "LA County restaurant cooks, projected employment change",
+      "value": "+32.7% (40,760 to 54,070)",
+      "period": "2023-2033 occupational projection, LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Official projection window ends 2033, before the far end of the 2030-2035 lease window (flagged).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "IN-23",
+      "page": "income",
+      "group": "Wages",
+      "metric": "Current city / county general minimum wage applicable to the site",
+      "value": "",
+      "period": "Not published here",
+      "sources": [
+        "DIR_FF"
+      ],
+      "finding": "A higher local general minimum wage can supersede $20.00; no figure is asserted without an official notice.",
+      "note": "Blank: no official rate confirmed here.",
+      "status": "unverified",
+      "flag": "U-IN-23"
+    },
+    {
+      "id": "IN-24",
+      "page": "income",
+      "group": "Lookup limits",
+      "metric": "Household income within the site trade area",
+      "value": "",
+      "period": "Requires an address",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "No trade-area income figure is inferred from city or county medians.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-IN-24"
+    },
+    {
+      "id": "EM-01",
+      "page": "employment",
+      "group": "Labor force (MSA)",
+      "metric": "Civilian labor force",
+      "value": "6,646.9 thousand",
+      "period": "September 2026 (preliminary), not seasonally adjusted",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Metro scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-02",
+      "page": "employment",
+      "group": "Labor force (MSA)",
+      "metric": "Employment",
+      "value": "6,352.9 thousand",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Metro scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-03",
+      "page": "employment",
+      "group": "Labor force (MSA)",
+      "metric": "Unemployed persons",
+      "value": "294.0 thousand",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Metro scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-04",
+      "page": "employment",
+      "group": "Labor force (MSA)",
+      "metric": "Unemployment rate",
+      "value": "4.4%",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Latest month on the official page at retrieval.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-05",
+      "page": "employment",
+      "group": "Labor force (MSA)",
+      "metric": "Unemployment rate, August 2026",
+      "value": "4.8%",
+      "period": "August 2026",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Prior month comparison.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-06",
+      "page": "employment",
+      "group": "Jobs (MSA)",
+      "metric": "Total nonfarm employment",
+      "value": "6,282.1 thousand",
+      "period": "September 2026 (preliminary), not seasonally adjusted",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Job counts, not persons.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-07",
+      "page": "employment",
+      "group": "Jobs (MSA)",
+      "metric": "Total nonfarm, 12-month percent change",
+      "value": "0.5%",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Weak positive growth.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-08",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Education and health services",
+      "value": "1,340.7 thousand (+3.8% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Fastest large-sector growth in the table; supports daytime demand.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-09",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Leisure and hospitality",
+      "value": "782.0 thousand (+1.5% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Direct peer sector for quick-service demand.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-10",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Trade, transportation and utilities",
+      "value": "1,047.9 thousand (+0.3% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Flat.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-11",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Professional and business services",
+      "value": "975.5 thousand (-0.5% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Office-linked weekday demand is soft.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-12",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Information",
+      "value": "187.0 thousand (-5.7% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Largest sector decline in the table; a structural headwind for some central-LA corridors.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-13",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Manufacturing",
+      "value": "444.8 thousand (-1.2% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Declining.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-14",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Construction",
+      "value": "251.5 thousand (0.0% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Flat.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-15",
+      "page": "employment",
+      "group": "Jobs by sector (MSA)",
+      "metric": "Government",
+      "value": "734.8 thousand (-1.1% y/y)",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Declining; relevant to Downtown lunch demand.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-16",
+      "page": "employment",
+      "group": "Unemployment (city)",
+      "metric": "Los Angeles city unemployment rate, 2025",
+      "value": "5.8%",
+      "period": "2025 11-month average excluding October (BLS footnote)",
+      "sources": [
+        "BLS_CITY"
+      ],
+      "finding": "Not fully comparable with other annual averages; October 2025 was not collected.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-17",
+      "page": "employment",
+      "group": "Unemployment (city)",
+      "metric": "Los Angeles city unemployment rate, 2024",
+      "value": "5.9%",
+      "period": "2024 annual average",
+      "sources": [
+        "BLS_CITY"
+      ],
+      "finding": "Slight improvement in 2025.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-18",
+      "page": "employment",
+      "group": "Unemployment (city)",
+      "metric": "Los Angeles city unemployment rate, 2021",
+      "value": "9.0%",
+      "period": "2021 annual average",
+      "sources": [
+        "BLS_CITY"
+      ],
+      "finding": "Pandemic-era comparison.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-19",
+      "page": "employment",
+      "group": "Business counts (county)",
+      "metric": "Total employer establishments",
+      "value": "304,988",
+      "period": "2023, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Business base.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-20",
+      "page": "employment",
+      "group": "Business counts (county)",
+      "metric": "Total employment in employer establishments",
+      "value": "3,987,736",
+      "period": "2023, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Different survey from BLS nonfarm jobs; do not add or compare directly.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-21",
+      "page": "employment",
+      "group": "Business counts (county)",
+      "metric": "Total employment percent change",
+      "value": "2.3%",
+      "period": "2022-2023, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "County Business Patterns series.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-22",
+      "page": "employment",
+      "group": "Business counts (county)",
+      "metric": "Total nonemployer establishments",
+      "value": "1,165,040",
+      "period": "2024, LA County",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Large small-business base.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-23",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "California occupational projection window",
+      "value": "2023-2033",
+      "period": "LA County, EDD projections",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "The official projection ends before the far end of the 2030-2035 lease window; no extrapolation is made.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-24",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Fastest-growing occupation: Nurse Practitioners",
+      "value": "+48.8% (4,490 to 6,680)",
+      "period": "2023-2033, LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Health-sector expansion.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-25",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Home health & personal care aides",
+      "value": "+34.8% (289,930 to 390,820)",
+      "period": "2023-2033, LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Largest absolute occupational gain in the EDD list.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-26",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Data scientists",
+      "value": "+33.7% (7,320 to 9,790)",
+      "period": "2023-2033, LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "High-wage growth.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-27",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Solar photovoltaic installers",
+      "value": "+36.4% (1,210 to 1,650)",
+      "period": "2023-2033, LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Small-base percentage growth.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-28",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Building permits, all types, LA County",
+      "value": "20,192 permits, $4,197,975,040 total cost",
+      "period": "2025 annual, EDD/Census building permit series",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Construction activity indicator; EDD notes some county series are unavailable on that page (flagged).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EM-29",
+      "page": "employment",
+      "group": "Official projections",
+      "metric": "Employment projection through 2035 for the site",
+      "value": "",
+      "period": "No official series extends to 2035",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Cannot be sourced; no projection beyond 2033 is published here.",
+      "note": "Blank: no official series.",
+      "status": "unverified",
+      "flag": "U-EM-29"
+    },
+    {
+      "id": "EM-30",
+      "page": "employment",
+      "group": "Lookup limits",
+      "metric": "County unemployment rate and employment by industry on the EDD county profile",
+      "value": "Data for Los Angeles County not available",
+      "period": "EDD county profile at retrieval",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "The official profile substitutes other geographies for some series; do not mix them.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-01",
+      "page": "schools",
+      "group": "District scale",
+      "metric": "LAUSD enrollment",
+      "value": "497,105",
+      "period": "School year 2025-26",
+      "sources": [
+        "CDE_LAUSD"
+      ],
+      "finding": "Largest district in California; district-wide, not a school assignment.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-02",
+      "page": "schools",
+      "group": "District scale",
+      "metric": "LAUSD English Language Learners",
+      "value": "81,328 (16.4%)",
+      "period": "School year 2025-26",
+      "sources": [
+        "CDE_LAUSD"
+      ],
+      "finding": "Program-need indicator.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-03",
+      "page": "schools",
+      "group": "District scale",
+      "metric": "California statewide enrollment",
+      "value": "5,731,260",
+      "period": "School year 2025-26",
+      "sources": [
+        "CDE_LARGE"
+      ],
+      "finding": "LAUSD is the largest district in the state.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-04",
+      "page": "schools",
+      "group": "District scale",
+      "metric": "LAUSD CDS code",
+      "value": "19 64733 0000000",
+      "period": "CDE district profile",
+      "sources": [
+        "CDE_LAUSD"
+      ],
+      "finding": "Use this code for official district reports.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-05",
+      "page": "schools",
+      "group": "Outcomes",
+      "metric": "LAUSD graduation rate, 2025",
+      "value": "86.5%",
+      "period": "2025 California School Dashboard",
+      "sources": [
+        "CASD_2025",
+        "CDE_ACCT"
+      ],
+      "finding": "All students; maintained -0.2% from prior year.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-06",
+      "page": "schools",
+      "group": "Outcomes",
+      "metric": "LAUSD graduation rate, 2024",
+      "value": "86.7%",
+      "period": "2024 California School Dashboard",
+      "sources": [
+        "CASD_2025"
+      ],
+      "finding": "Prior-year value shown in the 2025 dashboard trend table.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-07",
+      "page": "schools",
+      "group": "Outcomes",
+      "metric": "California statewide graduation rate, 2025",
+      "value": "87.8%",
+      "period": "2025 California School Dashboard",
+      "sources": [
+        "CASD_2025"
+      ],
+      "finding": "State comparison.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-08",
+      "page": "schools",
+      "group": "Labor-force quality",
+      "metric": "City bachelor's degree or higher",
+      "value": "38.5%",
+      "period": "2020-2024 ACS, age 25+",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Human-capital context for high-wage employment.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-09",
+      "page": "schools",
+      "group": "Labor-force quality",
+      "metric": "City high school graduate or higher",
+      "value": "79.6%",
+      "period": "2020-2024 ACS, age 25+",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Educational attainment.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-10",
+      "page": "schools",
+      "group": "Labor-force quality",
+      "metric": "County bachelor's degree or higher",
+      "value": "36.0%",
+      "period": "2020-2024 ACS, age 25+",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Countywide.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "SC-11",
+      "page": "schools",
+      "group": "Parcel-level lookups",
+      "metric": "Assigned schools for the subject parcel",
+      "value": "",
+      "period": "Requires an address",
+      "sources": [
+        "CDE_ACCT",
+        "ZIMAS"
+      ],
+      "finding": "No school is assigned or rated for this property; no school name is published.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-SC-11"
+    },
+    {
+      "id": "SC-12",
+      "page": "schools",
+      "group": "Parcel-level lookups",
+      "metric": "School-level performance for the subject catchment",
+      "value": "",
+      "period": "Requires an address",
+      "sources": [
+        "CDE_ACCT"
+      ],
+      "finding": "District-level statistics are not a school-level conclusion.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-SC-12"
+    },
+    {
+      "id": "EC-01",
+      "page": "economy",
+      "group": "Output & income",
+      "metric": "LA County personal income",
+      "value": "$818.5 billion",
+      "period": "2024, current dollars",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "BEA county measure.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-02",
+      "page": "economy",
+      "group": "Output & income",
+      "metric": "LA County real GDP",
+      "value": "$802.0 billion",
+      "period": "2023, chained 2017 dollars",
+      "sources": [
+        "BEA_2023"
+      ],
+      "finding": "Different measure and year; the two figures are never combined.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-03",
+      "page": "economy",
+      "group": "Output & income",
+      "metric": "BEA metropolitan-area statistics",
+      "value": "Discontinued",
+      "period": "Announced with the 2024 county estimates",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "MSA output/income projections cannot be sourced from BEA after this change.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-04",
+      "page": "economy",
+      "group": "Business activity",
+      "metric": "City total retail sales",
+      "value": "$81,351,523 thousand",
+      "period": "2022 Economic Census",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Retail scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-05",
+      "page": "economy",
+      "group": "Business activity",
+      "metric": "County total retail sales",
+      "value": "$213,932,785 thousand",
+      "period": "2022 Economic Census",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "County scale.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-06",
+      "page": "economy",
+      "group": "Business activity",
+      "metric": "County health care & social assistance receipts",
+      "value": "$113,488,435 thousand",
+      "period": "2022 Economic Census",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Largest published sector receipts in this table.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-07",
+      "page": "economy",
+      "group": "Business activity",
+      "metric": "County transportation & warehousing receipts",
+      "value": "$65,350,932 thousand",
+      "period": "2022 Economic Census",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Logistics base.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-08",
+      "page": "economy",
+      "group": "Business activity",
+      "metric": "County employer firms",
+      "value": "251,405",
+      "period": "Reference year 2023",
+      "sources": [
+        "CEN_CTY"
+      ],
+      "finding": "Firm count.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-09",
+      "page": "economy",
+      "group": "Prices & rates",
+      "metric": "LA area CPI-U, 12-month change",
+      "value": "3.7%",
+      "period": "September 2026",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Inflation context.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-10",
+      "page": "economy",
+      "group": "Prices & rates",
+      "metric": "10-year Treasury constant maturity",
+      "value": "4.84%",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_10"
+      ],
+      "finding": "Official discount-rate anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-11",
+      "page": "economy",
+      "group": "Prices & rates",
+      "metric": "30-year Treasury constant maturity",
+      "value": "5.25%",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_30"
+      ],
+      "finding": "Long-term anchor for a long-horizon hold.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-12",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "SCAG Connect SoCal 2024 horizon",
+      "value": "2050",
+      "period": "Adopted April 4, 2024",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Long-range planning forecast, not a 2030-2035 site forecast.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-13",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "SCAG child population, 2019 to 2050",
+      "value": "4.2 million to 3.8 million",
+      "period": "SCAG region forecast",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Absolute decline in the child population.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-14",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "SCAG population ages 65+, 2019 to 2050",
+      "value": "2.7 million to 4.5 million",
+      "period": "SCAG region forecast",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Ageing shifts daytime demand.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-15",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "SCAG region household formation rate, 2050",
+      "value": "44.8%",
+      "period": "Forecast, total headship rate",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Household growth is projected to outpace population growth.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-16",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "SCAG region employment matched 2019 pre-COVID peak",
+      "value": "By 2022",
+      "period": "Connect SoCal 2024 technical report",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "447,000 jobs above the 2016 base year of the prior plan.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-17",
+      "page": "economy",
+      "group": "Forecast horizon",
+      "metric": "Employment projection through 2035",
+      "value": "",
+      "period": "No official series",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Official EDD projections end in 2033; no extrapolation.",
+      "note": "Blank: no official series.",
+      "status": "unverified",
+      "flag": "U-EC-17"
+    },
+    {
+      "id": "EC-18",
+      "page": "economy",
+      "group": "Real estate & tax base",
+      "metric": "LA County 2026 net taxable assessment roll",
+      "value": "$2.272 trillion",
+      "period": "2026 roll, July 13, 2026; +4.42% over 2025",
+      "sources": [
+        "ASSESSOR_ROLL",
+        "ASSESSOR_NEWS"
+      ],
+      "finding": "The Assessor's roll memo reports a gross roll of $2.367 trillion and a net taxable roll of $2.272 trillion. Assessed value is not market value.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-19",
+      "page": "economy",
+      "group": "Real estate & tax base",
+      "metric": "Proposition 13 maximum base levy",
+      "value": "1% of assessed value (plus bonded indebtedness and direct assessments)",
+      "period": "LA County Assessor overview",
+      "sources": [
+        "ASSESSOR_P13"
+      ],
+      "finding": "Assessed-value growth is limited to 2% annually absent a change of ownership or new construction.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-20",
+      "page": "economy",
+      "group": "Infrastructure",
+      "metric": "D Line Extension Section 1 opening",
+      "value": "May 8, 2026",
+      "period": "Three new Wilshire stations",
+      "sources": [
+        "METRO_DLINE"
+      ],
+      "finding": "Transit-access improvement; corridor-specific.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "EC-21",
+      "page": "economy",
+      "group": "Real estate & tax base",
+      "metric": "Net-lease capitalization rates / transaction comps",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "No cap rate, comp or valuation multiple is asserted anywhere on this site.",
+      "note": "Blank: no official source exists.",
+      "status": "unverified",
+      "flag": "U-EC-21"
+    },
+    {
+      "id": "EC-22",
+      "page": "economy",
+      "group": "Real estate & tax base",
+      "metric": "Commercial rent for the subject property",
+      "value": "",
+      "period": "Not supplied",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Residential rent figures elsewhere on this site are not commercial rent.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-EC-22"
+    },
+    {
+      "id": "HZ-01",
+      "page": "hazards",
+      "group": "Earthquake",
+      "metric": "Probability of M6.7 in the Los Angeles region",
+      "value": "60% within 30 years",
+      "period": "UCERF3, as published by USGS",
+      "sources": [
+        "USGS_UCERF3"
+      ],
+      "finding": "Regional probability, not a building-level damage estimate.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-02",
+      "page": "hazards",
+      "group": "Earthquake",
+      "metric": "Probability of M7 in the Los Angeles region",
+      "value": "46% within 30 years",
+      "period": "UCERF3, as published by USGS",
+      "sources": [
+        "USGS_UCERF3"
+      ],
+      "finding": "Regional probability.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-03",
+      "page": "hazards",
+      "group": "Earthquake",
+      "metric": "Probability of M7.5 in the Los Angeles region",
+      "value": "31% within 30 years",
+      "period": "UCERF3, as published by USGS",
+      "sources": [
+        "USGS_UCERF3"
+      ],
+      "finding": "Regional probability.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-04",
+      "page": "hazards",
+      "group": "Earthquake",
+      "metric": "2023 50-State National Seismic Hazard Model revision",
+      "value": "Revised model adopted in the 2026 NEHRP provisions",
+      "period": "USGS, revised documentation (Powers et al. 2026)",
+      "sources": [
+        "USGS_NSHM"
+      ],
+      "finding": "USGS applies basin-specific amplification in the Los Angeles region; use current code in retrofit diligence.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-05",
+      "page": "hazards",
+      "group": "Earthquake",
+      "metric": "Parcel-level fault zone / liquefaction / retrofit requirement",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "CGS_EQZ",
+        "ZIMAS"
+      ],
+      "finding": "No site-level seismic conclusion is drawn.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-05"
+    },
+    {
+      "id": "HZ-06",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Fire Hazard Severity Zone classifications",
+      "value": "Moderate, High, Very High",
+      "period": "CAL FIRE / State Fire Marshal",
+      "sources": [
+        "OSFM_FHSZ"
+      ],
+      "finding": "FHSZ maps evaluate hazard over a 30 to 50-year period, not property-specific risk.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-07",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "SRA FHSZ maps effective date",
+      "value": "April 1, 2024",
+      "period": "State Responsibility Area",
+      "sources": [
+        "OSFM_FHSZ"
+      ],
+      "finding": "SRA mapping completed end-2023 and effective April 1, 2024.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-08",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "2025 LRA FHSZ rollout phases",
+      "value": "Feb 10, Feb 24, Mar 10, Mar 24, 2025",
+      "period": "Local Responsibility Area, all counties",
+      "sources": [
+        "OSFM_FHSZ"
+      ],
+      "finding": "Local maps were released in four phases; 2026 SRA update is in public comment.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-09",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Eaton Fire acreage / structures destroyed / fatalities",
+      "value": "14,021 acres; 9,414 destroyed; 19 fatalities",
+      "period": "January 2025, County of Los Angeles fact sheet",
+      "sources": [
+        "LACO_FIRES",
+        "FIRE_EATON"
+      ],
+      "finding": "A real, recent regional catastrophe \u2014 not a hypothetical.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-10",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Palisades Fire acreage / structures destroyed / fatalities",
+      "value": "23,448 acres; 6,837 destroyed; 12 fatalities",
+      "period": "January 2025, County of Los Angeles fact sheet",
+      "sources": [
+        "LACO_FIRES",
+        "FIRE_PAL"
+      ],
+      "finding": "County fact sheet also reports 973 structures damaged.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-11",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Economic output lost, Eaton + Palisades fires",
+      "value": "$5.2 billion to $10.1 billion",
+      "period": "County estimate range",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Range, not a point estimate; used only as a scenario severity anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-12",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Businesses impacted",
+      "value": "~6,800",
+      "period": "County fact sheet",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Shows that regional shocks reach operating businesses, not only homes.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-13",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Workers impacted",
+      "value": "~47,000",
+      "period": "County fact sheet",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Labor-supply and customer-base disruption channel.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-14",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Labor income lost",
+      "value": "$2.2 to $4.2 billion",
+      "period": "County fact sheet",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Income channel of a tail event.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-15",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Tax revenue losses",
+      "value": "$900 million to $1.6 billion",
+      "period": "County fact sheet",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Fiscal channel of a tail event.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-16",
+      "page": "hazards",
+      "group": "Wildfire",
+      "metric": "Structures damaged (both fires)",
+      "value": "1,074 (Eaton) and 973 (Palisades)",
+      "period": "County fact sheet",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "Damage, in addition to destruction counts.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-17",
+      "page": "hazards",
+      "group": "Insurance",
+      "metric": "FAIR Plan claims and payments",
+      "value": "3,469 Palisades + 1,325 Eaton claims; $914 million paid",
+      "period": "As of February 9, 2025, per Order No. 2025-1",
+      "sources": [
+        "CDI_ORDER"
+      ],
+      "finding": "Insurer-of-last-resort stress is a documented post-disaster condition; $3.251 billion was reserved for remaining claims.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-18",
+      "page": "hazards",
+      "group": "Insurance",
+      "metric": "FAIR Plan estimated total loss",
+      "value": "approximately $4 billion",
+      "period": "February 2025",
+      "sources": [
+        "CDI_ORDER"
+      ],
+      "finding": "Led to a $1 billion member-insurer assessment, the first in over 30 years.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-19",
+      "page": "hazards",
+      "group": "Insurance",
+      "metric": "FAIR Plan assessment approved",
+      "value": "$1 billion",
+      "period": "Order No. 2025-1",
+      "sources": [
+        "CDI_ORDER"
+      ],
+      "finding": "Insurance costs can be passed through to landlords and tenants under NNN terms; verify the lease.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-20",
+      "page": "hazards",
+      "group": "Insurance",
+      "metric": "Wildfire claims paid to residential and commercial policyholders",
+      "value": "Nearly $17 billion",
+      "period": "As of May 12, 2025",
+      "sources": [
+        "CDI_ALERT"
+      ],
+      "finding": "Scale of insured loss in the voluntary market.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-21",
+      "page": "hazards",
+      "group": "Insurance",
+      "metric": "Smoke-damage claims handling",
+      "value": "Formal investigation launched",
+      "period": "California Department of Insurance consumer alert, 2025",
+      "sources": [
+        "CDI_ALERT"
+      ],
+      "finding": "Smoke damage in urban settings is an unresolved coverage issue.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "HZ-22",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "Parcel FEMA flood zone designation",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "FEMA_FLOOD",
+        "LACO_FLOOD"
+      ],
+      "finding": "No flood-zone conclusion is drawn for the site.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-22"
+    },
+    {
+      "id": "HZ-23",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "FEMA National Risk Index county score",
+      "value": "",
+      "period": "Not readable as a static official figure",
+      "sources": [
+        "FEMA_NRI"
+      ],
+      "finding": "The tool is linked for manual review; no score is published here.",
+      "note": "Blank: no static official value.",
+      "status": "unverified",
+      "flag": "U-HZ-23"
+    },
+    {
+      "id": "HZ-24",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "Parcel fire hazard severity zone designation",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "OSFM_FHSZ",
+        "LACO_FHSZ"
+      ],
+      "finding": "No parcel-level FHSZ designation is asserted.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-24"
+    },
+    {
+      "id": "HZ-25",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "Site environmental / cleanup database screening",
+      "value": "",
+      "period": "Not performed",
+      "sources": [
+        "EPA_CLEANUP",
+        "GEOTRACKER"
+      ],
+      "finding": "Database screening is not a substitute for a Phase I assessment.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-25"
+    },
+    {
+      "id": "HZ-26",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "Extreme heat exposure at the site",
+      "value": "",
+      "period": "Regional event context only",
+      "sources": [
+        "PH_HEAT",
+        "CLIMATE"
+      ],
+      "finding": "Heat affects worker safety, refrigeration loads and operating hours; no site-level figure is asserted.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-26"
+    },
+    {
+      "id": "HZ-27",
+      "page": "hazards",
+      "group": "Flood, heat & environment",
+      "metric": "Water service reliability for the site",
+      "value": "",
+      "period": "Regional context only",
+      "sources": [
+        "LADWP"
+      ],
+      "finding": "Utility interruption is a business-continuity risk.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-HZ-27"
+    },
+    {
+      "id": "HZ-28",
+      "page": "hazards",
+      "group": "Black swan framing",
+      "metric": "Concurrent tenant failure and regional catastrophe",
+      "value": "",
+      "period": "Scenario, not an official statistic",
+      "sources": [
+        "LACO_FIRES",
+        "SEC_Q3FY26"
+      ],
+      "finding": "The two independent adverse channels can coincide; the decision framework therefore caps single-asset exposure.",
+      "note": "Blank: scenario, no official value.",
+      "status": "unverified",
+      "flag": "U-HZ-28"
+    },
+    {
+      "id": "RG-01",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "City base real property transfer tax rate",
+      "value": "0.45% ($2.25 per $500)",
+      "period": "City of Los Angeles",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Applies on all conveyances of real property in the City, in addition to ULA if applicable.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-02",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "ULA tax rate, lower tier",
+      "value": "4% (total applicable 4.45% with base)",
+      "period": "Transactions > $5,400,000 and < $10,900,000",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "The tax is on the whole consideration, creating a cliff at the threshold.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-03",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "ULA tax rate, upper tier",
+      "value": "5.5% (total applicable 5.95% with base)",
+      "period": "Transactions of $10,900,000 or more",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Material to net proceeds; verify the jurisdiction and thresholds at closing.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-04",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "ULA thresholds effective after June 30, 2026",
+      "value": "$5,400,000 and $10,900,000",
+      "period": "LA Office of Finance FAQ note",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Prior builds said these thresholds could not be confirmed on an official page; the official FAQ now publishes them (flagged IR-D3).",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-05",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "ULA effective date",
+      "value": "April 1, 2023",
+      "period": "City of Los Angeles",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Date of applicability.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-06",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "Threshold indexation",
+      "value": "Adjusted annually using the BLS Chained CPI",
+      "period": "Measure ULA",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Thresholds in force at closing must be re-checked, not projected from today.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-07",
+      "page": "regulatory",
+      "group": "Transfer tax / Measure ULA",
+      "metric": "ULA exemptions",
+      "value": "LAMC sections 21.9.14 and 21.9.15",
+      "period": "Qualified affordable-housing transferees",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Exemptions are transferee-specific; none is assumed for this asset.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-08",
+      "page": "regulatory",
+      "group": "Property tax",
+      "metric": "Proposition 13 maximum base levy",
+      "value": "1% of assessed value",
+      "period": "LA County Assessor",
+      "sources": [
+        "ASSESSOR_P13"
+      ],
+      "finding": "Plus bonded indebtedness and direct assessments.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-09",
+      "page": "regulatory",
+      "group": "Property tax",
+      "metric": "Annual assessed-value growth cap",
+      "value": "2%",
+      "period": "Absent change of ownership or new construction",
+      "sources": [
+        "ASSESSOR_P13"
+      ],
+      "finding": "A sale triggers reassessment; a hold preserves the existing base-year value.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-10",
+      "page": "regulatory",
+      "group": "Property tax",
+      "metric": "Subject parcel Tax Rate Area and total tax rate",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "AUDITOR_TRA",
+        "TTC"
+      ],
+      "finding": "Direct assessments and bond measures are parcel-specific.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RG-10"
+    },
+    {
+      "id": "RG-11",
+      "page": "regulatory",
+      "group": "Wage law",
+      "metric": "California fast-food minimum wage",
+      "value": "$20.00 per hour",
+      "period": "Effective April 1, 2024 (AB 1228)",
+      "sources": [
+        "DIR_FF",
+        "DIR_T8"
+      ],
+      "finding": "Applies regardless of whether the employer is the brand owner, a franchisee or a licensee.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-12",
+      "page": "regulatory",
+      "group": "Wage law",
+      "metric": "Exempt salary threshold for fast-food employees",
+      "value": "$83,200",
+      "period": "As of April 1, 2024, per DIR FAQ",
+      "sources": [
+        "DIR_FF"
+      ],
+      "finding": "Two times the applicable state minimum wage for 40 hours a week.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-13",
+      "page": "regulatory",
+      "group": "Wage law",
+      "metric": "Local higher minimum wage for the site",
+      "value": "",
+      "period": "Not confirmed here",
+      "sources": [
+        "DIR_FF"
+      ],
+      "finding": "A city or county general minimum wage could be higher; no figure is asserted.",
+      "note": "Blank: no official rate confirmed here.",
+      "status": "unverified",
+      "flag": "U-RG-13"
+    },
+    {
+      "id": "RG-14",
+      "page": "regulatory",
+      "group": "Land use & zoning",
+      "metric": "Subject parcel zoning and permitted alternative uses",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "ZIMAS",
+        "PLAN_ZONING"
+      ],
+      "finding": "Re-tenanting and redevelopment feasibility depend on the actual designation.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RG-14"
+    },
+    {
+      "id": "RG-15",
+      "page": "regulatory",
+      "group": "Land use & zoning",
+      "metric": "Entitlements, overlays and pending cases near the site",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "ZIMAS",
+        "PLAN_DTLA"
+      ],
+      "finding": "No planning-case conclusion is drawn.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RG-15"
+    },
+    {
+      "id": "RG-16",
+      "page": "regulatory",
+      "group": "Federal / state tax",
+      "metric": "Sale of property: official tax guidance",
+      "value": "IRS Publication 544",
+      "period": "General rule source",
+      "sources": [
+        "IRS_544"
+      ],
+      "finding": "Gain, basis and depreciation rules; no owner-specific tax result is computed.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-17",
+      "page": "regulatory",
+      "group": "Federal / state tax",
+      "metric": "California treatment of capital gains",
+      "value": "FTB capital gains and losses guidance",
+      "period": "General rule source",
+      "sources": [
+        "FTB_GAINS"
+      ],
+      "finding": "California conforms differently from federal rules in some respects; advisor review needed.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RG-18",
+      "page": "regulatory",
+      "group": "Federal / state tax",
+      "metric": "Like-kind exchange eligibility for this owner",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "IRS_HOME"
+      ],
+      "finding": "No \u00a71031 eligibility is assumed; no private tax profile is collected.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-RG-18"
+    },
+    {
+      "id": "RG-19",
+      "page": "regulatory",
+      "group": "Federal / state tax",
+      "metric": "Owner capital-gain and depreciation exposure",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "IRS_544",
+        "FTB_GAINS"
+      ],
+      "finding": "Private; intentionally not published.",
+      "note": "Withheld for privacy.",
+      "status": "unverified",
+      "flag": "U-RG-19"
+    },
+    {
+      "id": "RK-01",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Sell now \u2014 pricing risk",
+      "value": "",
+      "period": "No official value",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Selling before a renewal is signed means selling a shortening term into a thinner buyer pool; no cap-rate or price figure is asserted.",
+      "note": "Blank: no official publisher for cap rates.",
+      "status": "unverified",
+      "flag": "U-RK-01"
+    },
+    {
+      "id": "RK-02",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Sell now \u2014 transfer-tax cliff",
+      "value": "4% and 5.5% (plus 0.45% base)",
+      "period": "City of Los Angeles ULA rates",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "A price just above a threshold can net less than a price at the threshold; model net proceeds, not gross price.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-03",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Sell now \u2014 tax and reinvestment risk",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "IRS_544",
+        "FTB_GAINS"
+      ],
+      "finding": "Capital-gain tax, depreciation recapture and replacement-property risk are owner-specific and not published.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-RK-03"
+    },
+    {
+      "id": "RK-04",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Sell now \u2014 loss of land optionality",
+      "value": "",
+      "period": "Scenario, not an official statistic",
+      "sources": [
+        "PLAN_ZONING"
+      ],
+      "finding": "A sale permanently gives up future redevelopment or re-tenanting upside in a supply-constrained city.",
+      "note": "Blank: scenario.",
+      "status": "unverified",
+      "flag": "U-RK-04"
+    },
+    {
+      "id": "RK-05",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Renew early \u2014 tenant credit risk",
+      "value": "Higher bad-debt expense vs prior-year quarter",
+      "period": "Q3 FY2026 issuer disclosure",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "A longer term with the same obligor extends exposure; require guaranty, estoppel and unit-level performance evidence.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-06",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Renew early \u2014 concession risk",
+      "value": "",
+      "period": "Negotiation-specific",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "A renewal can require rent concessions; compare the risk-adjusted hold value with a sale, not the headline rent.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-RK-06"
+    },
+    {
+      "id": "RK-07",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Renew early \u2014 closure programme overlap",
+      "value": "86 closures in FY2025; 17 in Q3 FY2026",
+      "period": "Issuer disclosures",
+      "sources": [
+        "SEC_Q4FY25",
+        "SEC_Q3FY26"
+      ],
+      "finding": "A 2030-2035 expiry sits inside a period of active system contraction; confirm the site is not on a closure list.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-08",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Renew then sell \u2014 execution risk",
+      "value": "",
+      "period": "No official value",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "A signed long term can widen the buyer pool, but only if the renewal is documented, estoppeled and financeable.",
+      "note": "Blank: no official publisher for comps.",
+      "status": "unverified",
+      "flag": "U-RK-08"
+    },
+    {
+      "id": "RK-09",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Hold to expiry without renewal \u2014 vacancy risk",
+      "value": "",
+      "period": "No official value",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "The worst path: term decays to zero, the buyer pool shrinks, and the owner carries vacancy and re-leasing cost.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-RK-09"
+    },
+    {
+      "id": "RK-10",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Hold to expiry \u2014 re-tenanting / downtime / capital",
+      "value": "",
+      "period": "Parcel-specific",
+      "sources": [
+        "PLAN_ZONING",
+        "ZIMAS"
+      ],
+      "finding": "Alternative use, drive-thru configuration and permitting determine feasibility; no figure is assumed.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RK-10"
+    },
+    {
+      "id": "RK-11",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Refinance and hold \u2014 leverage risk",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "FRED_10"
+      ],
+      "finding": "A single-tenant asset with a long-term rate anchor of 4.84% (Nov 5, 2026) remains a concentrated, illiquid exposure; no loan terms are asserted.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-RK-11"
+    },
+    {
+      "id": "RK-12",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "1031 exchange into a diversified asset \u2014 timing risk",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "IRS_HOME"
+      ],
+      "finding": "Strict identification and closing deadlines; no eligibility is assumed.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-RK-12"
+    },
+    {
+      "id": "RK-13",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Do nothing / miss an option notice",
+      "value": "",
+      "period": "Lease-specific",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Notice deadlines are contractual and irreversible; calendar them from the executed lease, not from the reported 2030-2035 window.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-RK-13"
+    },
+    {
+      "id": "RK-14",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Cost inflation and wage floor",
+      "value": "3.7% CPI-U; $20.00/hour fast-food wage",
+      "period": "September 2026 CPI; wage effective April 1, 2024",
+      "sources": [
+        "BLS_CPI",
+        "DIR_FF"
+      ],
+      "finding": "Margin pressure can erode a franchisee tenant's rent coverage over a long hold.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-15",
+      "page": "risks",
+      "group": "Business-as-usual risks",
+      "metric": "Sector demand shift",
+      "value": "Information -5.7% y/y; Education & health +3.8% y/y",
+      "period": "September 2026 (preliminary), MSA",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Weekday central-corridor demand is mixed; a drive-thru site is less office-dependent but not immune.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-16",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Major earthquake",
+      "value": "60% probability of M6.7 within 30 years",
+      "period": "UCERF3, LA region",
+      "sources": [
+        "USGS_UCERF3"
+      ],
+      "finding": "Diversify, require adequate coverage and verify retrofit status; no parcel-level probability is asserted.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-17",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Catastrophic wildfire",
+      "value": "$5.2B-$10.1B output lost; ~6,800 businesses impacted",
+      "period": "2025 Eaton + Palisades fires, county estimate",
+      "sources": [
+        "LACO_FIRES"
+      ],
+      "finding": "A documented regional shock; direct damage, smoke closure, access interruption and insurance repricing all apply.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-18",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Insurance market failure / FAIR Plan stress",
+      "value": "$1 billion member assessment",
+      "period": "Order No. 2025-1, February 2025",
+      "sources": [
+        "CDI_ORDER"
+      ],
+      "finding": "Coverage availability and cost can change abruptly after a catastrophe; verify NNN pass-through language.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-19",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Flood / stormwater event",
+      "value": "",
+      "period": "Parcel lookup required",
+      "sources": [
+        "FEMA_FLOOD",
+        "LACO_FLOOD"
+      ],
+      "finding": "Flood zone, lender requirements and business interruption are site-specific.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RK-19"
+    },
+    {
+      "id": "RK-20",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Extreme heat / utility interruption",
+      "value": "",
+      "period": "Regional context only",
+      "sources": [
+        "PH_HEAT",
+        "LADWP"
+      ],
+      "finding": "Worker safety, refrigeration and operating hours; no site-level figure asserted.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-RK-20"
+    },
+    {
+      "id": "RK-21",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Population / migration shock",
+      "value": "-0.14% state population in 2025; LA County -64,000 persons",
+      "period": "CA DOF E-1, Jan 1, 2026",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "DOF attributes the county loss partly to wildfires and migration; a sustained demand-side shock degrades re-tenanting value.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "RK-22",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Pandemic / shutdown-style demand shock",
+      "value": "",
+      "period": "Scenario, not an official statistic",
+      "sources": [
+        "BLS_CITY"
+      ],
+      "finding": "The 2021 city unemployment rate of 9.0% shows the scale a shock can reach; no future probability is asserted.",
+      "note": "Blank: scenario.",
+      "status": "unverified",
+      "flag": "U-RK-22"
+    },
+    {
+      "id": "RK-23",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Concurrent shocks (tenant failure + catastrophe)",
+      "value": "",
+      "period": "Scenario, not an official statistic",
+      "sources": [
+        "SEC_Q3FY26",
+        "LACO_FIRES"
+      ],
+      "finding": "Correlation, not independence, is the tail risk for a single undiversified asset.",
+      "note": "Blank: scenario.",
+      "status": "unverified",
+      "flag": "U-RK-23"
+    },
+    {
+      "id": "RK-24",
+      "page": "risks",
+      "group": "Black-swan / tail risks",
+      "metric": "Regulatory / tax cliff change",
+      "value": "Thresholds indexed annually to Chained CPI",
+      "period": "Measure ULA",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Future thresholds and rates can change; re-check at closing rather than extrapolating.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DC-01",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Sell immediately, before expiry",
+      "value": "",
+      "period": "Requires appraisal, bids, payoff, tax review",
+      "sources": [
+        "ASSESSOR_PORTAL",
+        "ULA_FAQ",
+        "IRS_544"
+      ],
+      "finding": "Preserves liquidity and removes single-tenant exposure, but crystallizes a shortening-term discount and forgoes land optionality.",
+      "note": "Blank: property-specific values unavailable.",
+      "status": "unverified",
+      "flag": "U-DC-01"
+    },
+    {
+      "id": "DC-02",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Renew / extend early, then hold",
+      "value": "",
+      "period": "Requires executed option language and tenant credit evidence",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Converts an ambiguous 2030-2035 window into firm term; keeps income and land optionality while retaining tenant exposure.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-DC-02"
+    },
+    {
+      "id": "DC-03",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Renew early, then sell with a long term",
+      "value": "",
+      "period": "Requires a market check",
+      "sources": [
+        "SEC_EDGAR",
+        "ULA_FAQ"
+      ],
+      "finding": "A documented long term can widen the buyer pool; sequence the renewal before marketing.",
+      "note": "Blank: no official publisher for comps.",
+      "status": "unverified",
+      "flag": "U-DC-03"
+    },
+    {
+      "id": "DC-04",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Hold to expiry, then re-tenant",
+      "value": "",
+      "period": "Requires zoning, condition and funding diligence",
+      "sources": [
+        "PLAN_ZONING",
+        "ZIMAS"
+      ],
+      "finding": "Retains land value but carries vacancy, capital expenditure and re-leasing risk at the worst possible moment.",
+      "note": "Blank: no parcel supplied.",
+      "status": "unverified",
+      "flag": "U-DC-04"
+    },
+    {
+      "id": "DC-05",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Hold to expiry, then sell vacant / as land",
+      "value": "",
+      "period": "Requires a market check",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Removes income before sale; usually the weakest wealth-preservation path unless land value dominates.",
+      "note": "Blank: no official publisher for comps.",
+      "status": "unverified",
+      "flag": "U-DC-05"
+    },
+    {
+      "id": "DC-06",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Refinance / recapitalize and hold",
+      "value": "",
+      "period": "Owner-specific debt terms",
+      "sources": [
+        "FRED_10",
+        "FRED_30"
+      ],
+      "finding": "Leverage amplifies both return and loss on a single-tenant, catastrophe-exposed asset.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-DC-06"
+    },
+    {
+      "id": "DC-07",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Sell and defer tax via a like-kind exchange",
+      "value": "",
+      "period": "Owner-specific; strict deadlines",
+      "sources": [
+        "IRS_HOME",
+        "FTB_GAINS"
+      ],
+      "finding": "Can preserve after-tax capital and diversify, but adds identification and closing timing risk.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-DC-07"
+    },
+    {
+      "id": "DC-08",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Partial interest / ground-lease restructuring",
+      "value": "",
+      "period": "Requires title and lease review",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Possible but document-intensive; no structure is recommended without the executed documents.",
+      "note": "Blank: no documents supplied.",
+      "status": "unverified",
+      "flag": "U-DC-08"
+    },
+    {
+      "id": "DC-09",
+      "page": "decision",
+      "group": "Decision paths",
+      "metric": "Do nothing / defer the decision",
+      "value": "",
+      "period": "No official value",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Passively letting the term decay is the highest-regret path; notice deadlines are irreversible.",
+      "note": "Blank: scenario.",
+      "status": "unverified",
+      "flag": "U-DC-09"
+    },
+    {
+      "id": "DC-10",
+      "page": "decision",
+      "group": "Wealth preservation & growth",
+      "metric": "Primary binding risk identified",
+      "value": "Tenant-side contraction, not the LA economy",
+      "period": "Based on issuer disclosures and BLS data",
+      "sources": [
+        "SEC_Q4FY25",
+        "SEC_Q3FY26",
+        "BLS_EAG"
+      ],
+      "finding": "The regional economy is large and mixed but not collapsing; the tenant's closure programme is the dominant variable.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DC-11",
+      "page": "decision",
+      "group": "Wealth preservation & growth",
+      "metric": "Balanced recommendation",
+      "value": "Hold and secure term now; sell on a hard pre-committed trigger",
+      "period": "Decision rule, not an official statistic",
+      "sources": [
+        "SEC_Q3FY26",
+        "SEC_EDGAR",
+        "ULA_FAQ"
+      ],
+      "finding": "Dual-track: negotiate a longer signed renewal while preparing a sale; never ride to expiry unrenewed.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "DC-12",
+      "page": "decision",
+      "group": "Wealth preservation & growth",
+      "metric": "Sell triggers (pre-commit)",
+      "value": "",
+      "period": "Contractual and credit events",
+      "sources": [
+        "SEC_EDGAR",
+        "SEC_Q3FY26"
+      ],
+      "finding": "Trigger a sale if the tenant refuses an extension, discloses a franchise agreement ending at/before lease expiry, appears on a closure list, or credit support deteriorates.",
+      "note": "Blank: no lease supplied.",
+      "status": "unverified",
+      "flag": "U-DC-12"
+    },
+    {
+      "id": "DC-13",
+      "page": "decision",
+      "group": "Wealth preservation & growth",
+      "metric": "Risk-balance controls",
+      "value": "",
+      "period": "Portfolio decisions",
+      "sources": [
+        "LACO_FIRES",
+        "USGS_UCERF3",
+        "CDI_ORDER"
+      ],
+      "finding": "Cap single-asset concentration, verify insurance and retrofit, diversify sale proceeds, and keep a liquidity reserve.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-DC-13"
+    },
+    {
+      "id": "DC-14",
+      "page": "decision",
+      "group": "Wealth preservation & growth",
+      "metric": "Official rate anchors for any owner-run NPV",
+      "value": "4.84% (10-year) and 5.25% (30-year)",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_10",
+        "FRED_30"
+      ],
+      "finding": "Use official anchors plus a labelled, owner-chosen risk premium; no official cap rate exists.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-01",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "10-year Treasury constant maturity",
+      "value": "4.84%",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_10"
+      ],
+      "finding": "Risk-free anchor for discounting a medium-term hold.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-02",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "30-year Treasury constant maturity",
+      "value": "5.25%",
+      "period": "November 5, 2026",
+      "sources": [
+        "FRED_30"
+      ],
+      "finding": "Long-horizon anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-03",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "LA area CPI-U, 12-month change",
+      "value": "3.7%",
+      "period": "September 2026",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Official inflation anchor for escalation and cost scenarios.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-04",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "Core CPI-U (all items less food and energy)",
+      "value": "2.6%",
+      "period": "September 2026",
+      "sources": [
+        "BLS_CPI"
+      ],
+      "finding": "Second inflation anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-05",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "MSA total nonfarm 12-month change",
+      "value": "0.5%",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Employment-growth anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-06",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "MSA unemployment rate",
+      "value": "4.4%",
+      "period": "September 2026 (preliminary)",
+      "sources": [
+        "BLS_EAG"
+      ],
+      "finding": "Labor-market anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-07",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "City population change",
+      "value": "-0.8%",
+      "period": "Apr 2020 to Jul 2025 (V2025)",
+      "sources": [
+        "CEN_CITY"
+      ],
+      "finding": "Official demand-base trend.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-08",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "County population change (CA DOF)",
+      "value": "-0.6%",
+      "period": "Jan 1, 2025 to Jan 1, 2026",
+      "sources": [
+        "DOF_E1"
+      ],
+      "finding": "Second, independent official population trend.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-09",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "County personal income",
+      "value": "$818.5 billion",
+      "period": "2024",
+      "sources": [
+        "BEA_2024"
+      ],
+      "finding": "Scale anchor for the regional economy.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-10",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "SCAG forecast horizon",
+      "value": "2050",
+      "period": "Adopted April 4, 2024",
+      "sources": [
+        "SCAG_DEM"
+      ],
+      "finding": "Long-range planning horizon; the model never extrapolates beyond an official series.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-11",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "EDD occupational projection horizon",
+      "value": "2033",
+      "period": "LA County",
+      "sources": [
+        "EDD_LA"
+      ],
+      "finding": "Hard limit: no employment projection is stated beyond 2033.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-12",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "ULA tax rates and thresholds",
+      "value": "0.45% base; 4% / 5.5%; $5.4M / $10.9M",
+      "period": "Effective after June 30, 2026",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Exit-cost anchor with a cliff; verify at closing.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-13",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "FY2025 system closures",
+      "value": "86",
+      "period": "52 weeks ended September 28, 2025",
+      "sources": [
+        "SEC_Q4FY25"
+      ],
+      "finding": "Tenant-contraction anchor.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-14",
+      "page": "projection",
+      "group": "Official model anchors",
+      "metric": "Q3 FY2026 system restaurant count",
+      "value": "2,115",
+      "period": "July 5, 2026",
+      "sources": [
+        "SEC_Q3FY26"
+      ],
+      "finding": "Latest official tenant scale at retrieval.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    },
+    {
+      "id": "PJ-15",
+      "page": "projection",
+      "group": "Model inputs \u2014 no official publisher",
+      "metric": "Net-lease capitalization rate",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "ASSESSOR_PORTAL"
+      ],
+      "finding": "Entered by the owner in the local model as an explicitly labelled sensitivity, never as a published fact.",
+      "note": "Blank: no official publisher.",
+      "status": "unverified",
+      "flag": "U-PJ-15"
+    },
+    {
+      "id": "PJ-16",
+      "page": "projection",
+      "group": "Model inputs \u2014 no official publisher",
+      "metric": "Equity / illiquidity risk premium",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "FRED_10"
+      ],
+      "finding": "Owner-chosen premium over the official Treasury anchor.",
+      "note": "Blank: no official publisher.",
+      "status": "unverified",
+      "flag": "U-PJ-16"
+    },
+    {
+      "id": "PJ-17",
+      "page": "projection",
+      "group": "Model inputs \u2014 no official publisher",
+      "metric": "Probability of renewal at expiry",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "Scenario parameter, not a statistical estimate; no probability is published here.",
+      "note": "Blank: no official publisher.",
+      "status": "unverified",
+      "flag": "U-PJ-17"
+    },
+    {
+      "id": "PJ-18",
+      "page": "projection",
+      "group": "Model inputs \u2014 no official publisher",
+      "metric": "Exit transaction cost percentage",
+      "value": "",
+      "period": "No official publisher",
+      "sources": [
+        "ULA_FAQ"
+      ],
+      "finding": "Only the official transfer-tax component is published (row PJ-12); professional fees are owner-supplied.",
+      "note": "Blank: no official publisher.",
+      "status": "unverified",
+      "flag": "U-PJ-18"
+    },
+    {
+      "id": "PJ-19",
+      "page": "projection",
+      "group": "Scenario outputs \u2014 property-specific",
+      "metric": "Present value of remaining contractual rent",
+      "value": "",
+      "period": "Requires the rent roll and lease",
+      "sources": [
+        "IRS_544"
+      ],
+      "finding": "Computed only inside the owner's local model from private inputs; not published.",
+      "note": "Blank: private input required.",
+      "status": "unverified",
+      "flag": "U-PJ-19"
+    },
+    {
+      "id": "PJ-20",
+      "page": "projection",
+      "group": "Scenario outputs \u2014 property-specific",
+      "metric": "Residual / reversion value at expiry",
+      "value": "",
+      "period": "Requires appraisal and zoning",
+      "sources": [
+        "ASSESSOR_PORTAL",
+        "PLAN_ZONING"
+      ],
+      "finding": "No residual value is estimated here.",
+      "note": "Blank: private input required.",
+      "status": "unverified",
+      "flag": "U-PJ-20"
+    },
+    {
+      "id": "PJ-21",
+      "page": "projection",
+      "group": "Scenario outputs \u2014 property-specific",
+      "metric": "Net sale proceeds after tax and costs",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "ULA_FAQ",
+        "IRS_544",
+        "FTB_GAINS"
+      ],
+      "finding": "No net-proceeds figure is inferred.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-PJ-21"
+    },
+    {
+      "id": "PJ-22",
+      "page": "projection",
+      "group": "Scenario outputs \u2014 property-specific",
+      "metric": "Break-even renewal probability",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "SEC_EDGAR"
+      ],
+      "finding": "The model computes it from owner inputs; no value is published.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-PJ-22"
+    },
+    {
+      "id": "PJ-23",
+      "page": "projection",
+      "group": "Scenario outputs \u2014 property-specific",
+      "metric": "Black-swan stressed value",
+      "value": "",
+      "period": "Owner-specific",
+      "sources": [
+        "LACO_FIRES",
+        "USGS_UCERF3"
+      ],
+      "finding": "Stress uses the official county loss range and USGS probability as severity anchors, not as parcel losses.",
+      "note": "Blank: owner-specific.",
+      "status": "unverified",
+      "flag": "U-PJ-23"
+    },
+    {
+      "id": "PJ-24",
+      "page": "projection",
+      "group": "Reproducible method",
+      "metric": "Model implementation",
+      "value": "tools/projection.py",
+      "period": "Standard-library Python; no network calls",
+      "sources": [
+        "FRED_10",
+        "BLS_CPI",
+        "DOF_E1"
+      ],
+      "finding": "Deterministic NPV / break-even engine. It reads only the official anchors above plus owner-supplied private parameters; no external data is fetched at runtime.",
+      "note": "",
+      "status": "verified",
+      "flag": ""
+    }
+  ]
+}
