@@ -346,3 +346,20 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 - **Coordination:** 6 parallel sessions integrated (d2137d88, ffc97e4e, 972c721e, d85fba50, 83526ad4, c7b3aeda-jack1, ab7790ec) — no work discarded; conflicts on 404.html, README.md, COORDINATION.md, index.html resolved with preservation logs above
 - **Next owner review:** See Flagged for Review pages for unverified/open items (U-01 to U-11 parcel hazard, lease, rent, guaranty, insurance, cap rate)
 
+
+---
+
+## Session `arena/6d4bd5df-jack1` — claim (2026-11-07)
+
+Per the board rules, the tasks below are claimed by this session. File scope is listed so other sessions can see it; no other session's files are edited by this claim.
+
+| Task ID | Description | Status | Owning session | Files / scope | Notes |
+|---|---|---|---|---|---|
+| T18 | Line-by-line verification of every published figure in the root dashboard against its official source | in progress | arena-6d4bd5df-jack1 | `VERIFICATION.md` (new), `verification.html` (new), `data/verification.json` (new) | Read-only against the seven existing root pages; corrections logged, not silently applied where a value is wrong |
+| T19 | Repair unresolved merge-conflict markers committed to `COORDINATION.md` and `archive/arena-ffc97e4e/` | in progress | arena-6d4bd5df-jack1 | `COORDINATION.md`, `archive/arena-ffc97e4e/*` | Conflicted archive files preserved byte-for-byte as `*.conflicted` before a resolved copy is published |
+| T20 | Harden `scripts/validate_site.py` (conflict-marker gate, blank-value gate, source-allowlist gate, link gate) | in progress | arena-6d4bd5df-jack1 | `scripts/validate_site.py`, `.github/workflows/pages.yml` | Validation must fail the build rather than warn |
+| T21 | Integration, PR to `main`, merge, and Pages deploy verification | unclaimed → to be claimed at integration time | — | repo root, `COORDINATION.md` | Only after T18–T20 are done |
+
+**Claim status:** T18–T20 claimed by `arena/6d4bd5df-jack1` on 2026-11-07. T21 is intentionally left unclaimed in this entry and will be claimed by this session once T18–T20 are recorded as done, because the board requires the integration session to re-verify the combined data before publishing.
+
+**Scope boundaries for this claim:** this session will not edit `pages/`, `site/`, `archive/arena-972c721e/`, `archive/arena-d2137d88/`, the `data/*.json` datasets owned by earlier sessions, or any open PR branch. Where a correction is needed inside another session's file, it is logged as a request in the Log table below instead of being edited.
