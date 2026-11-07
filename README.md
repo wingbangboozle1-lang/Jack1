@@ -14,6 +14,8 @@ A privacy-first, source-linked GitHub Pages dashboard for assessing sale, renewa
 
 ## Evidence and privacy
 
+Line-by-line verification of the published figures, with the figures that could not be confirmed, is recorded in [`research/verification-audit-d18e3065.md`](research/verification-audit-d18e3065.md).
+
 No exact address, APN, executed lease, rent schedule, legal tenant or guarantor, debt payoff, appraisal, condition report, insurance quote, or owner-specific tax / liquidity details were available for independent verification. Asset-specific values are left blank and flagged. The brief does not make a parcel-level hazard conclusion, appraisal, or definitive sell / renew recommendation. Public statistics retain their published City of Los Angeles, Los Angeles County, SCAG, or planning geography.
 
 The website intentionally does not publish or collect owner names, exact property identifiers, ownership entities, lease documents, or personal financial information. Official links are provided for manual review; a link to an interactive lookup tool does not mean a property query was completed.
