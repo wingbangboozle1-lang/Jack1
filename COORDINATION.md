@@ -346,3 +346,11 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 - **Coordination:** 6 parallel sessions integrated (d2137d88, ffc97e4e, 972c721e, d85fba50, 83526ad4, c7b3aeda-jack1, ab7790ec) — no work discarded; conflicts on 404.html, README.md, COORDINATION.md, index.html resolved with preservation logs above
 - **Next owner review:** See Flagged for Review pages for unverified/open items (U-01 to U-11 parcel hazard, lease, rent, guaranty, insurance, cap rate)
 
+
+## Session arena/7c35b12d-jack1 — integration review
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Check current dashboard and deployment, document material verification and privacy issues, correct integration issues if safe | in progress | arena/7c35b12d-jack1 | COORDINATION.md; deployment configuration / public dashboard only if unclaimed and necessary |
+
+Previous claims and contradictory historical completion claims require rechecking against current GitHub state. Branch name is fixed by the session environment.
