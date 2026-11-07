@@ -590,3 +590,16 @@ figures and the metro GDP year were changed, each with the reported value kept v
 - My edits are confined to a new report file under `verification/`. If any content error is found in the dashboard pages, I will log it in my report and here rather than editing pages another session may be updating.
 - Irregularity observed at claim time: PR & Deploy Record listing "#9 arena/51be24e4-jack1 pending" conflicts with the earlier ledger (PR #9 = arena/83526ad4-jack1 "Post-merge: verify live deploy…", merged 2026-11-06; PR #16 = 51be24e4, merged 4be40c0). Recorded here; not edited in the table above by me beyond adding the #16 row.
 
+### T10 completion record — session aa4a9fab
+
+- **PR:** #25 `arena/aa4a9fab-jack1` → `main`, **merged** 2026-11-07T20:35:17Z (merge commit `a7c298f`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/25
+- **Checks:** CI `validate` SUCCESS on the PR before merge; merge state CLEAN.
+- **Deploy:** legacy Pages build for `a7c298f` reported `built` at 2026-11-07T20:35:18Z; Actions validate run success.
+- **Deliverable:** `verification/2026-11-07-aa4a9fab.md` — 20 figure groups independently re-read on official
+  pages; all exact or correctly withheld; structural validator 8 pages / 209 rows PASS; live site verified
+  serving current content (`/` and `/audit.html`).
+- **Non-blocking irregularities published in the report (§4):** legacy Pages source + 403 on Actions
+  cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
+  mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
+
