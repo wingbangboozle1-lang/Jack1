@@ -24,11 +24,23 @@ expiry somewhere in 2030–2035.
 
 [`VERIFICATION.md`](VERIFICATION.md) is the audit log. Its key results at the 2026-11-07 pass:
 
-- 29 published figures re-read at their official source: 27 matched exactly, 2 matched with a caveat.
-- 0 wrong values and 0 unverified values published.
+- 43 published figures re-read at their official source: **30 matched exactly**, 2 matched with a caveat,
+  **1 was wrong and has been corrected**, and **10 could not be reproduced and were withdrawn**.
 - 16 official links opened and confirmed; 14 official links **not** re-tested and listed as such rather
   than assumed to work.
-- 7 irregularities found, with 5 repaired or resolved and 2 left open and published.
+- 9 irregularities found: 4 repaired, 1 resolved, 1 reviewed, 1 withdrawn, 2 left open and published.
+
+The withdrawals matter more than the confirmations, because they are what a link-only check misses. A
+parallel session had merged FEMA National Risk Index scores, a county disaster-declaration count, two
+CAL FIRE expansion percentages and two BEA GDP levels. None could be reproduced at the cited official
+page: the NRI page now redirects to FEMA's RAPT tool, and both GDP rows cited a FRED **unemployment**
+series rather than GDP. They are blanked in the tables with an explicit "Unverified — withdrawn" badge
+and published in full on the Flagged for Review page, so the claims are preserved for the owner without
+being presented as facts.
+
+One published value was simply wrong: the Los Angeles County annual unemployment rate was shown as 5.6%
+against a BLS county figure of 5.7%, and has been corrected in the row itself rather than quietly
+overwritten.
 
 Two of those irregularities were defects committed to this repository and are worth naming:
 

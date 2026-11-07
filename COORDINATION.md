@@ -261,7 +261,7 @@ Per the board rules, the tasks below are claimed by this session. File scope is 
 | T18 | Line-by-line verification of every published figure in the root dashboard against its official source | in progress | arena-6d4bd5df-jack1 | `VERIFICATION.md` (new), `verification.html` (new), `data/verification.json` (new) | Read-only against the seven existing root pages; corrections logged, not silently applied where a value is wrong |
 | T19 | Repair unresolved merge-conflict markers committed to `COORDINATION.md` and `archive/arena-ffc97e4e/` | in progress | arena-6d4bd5df-jack1 | `COORDINATION.md`, `archive/arena-ffc97e4e/*` | Conflicted archive files preserved byte-for-byte as `*.conflicted` before a resolved copy is published |
 | T20 | Harden `scripts/validate_site.py` (conflict-marker gate, blank-value gate, source-allowlist gate, link gate) | in progress | arena-6d4bd5df-jack1 | `scripts/validate_site.py`, `.github/workflows/pages.yml` | Validation must fail the build rather than warn |
-| T21 | Integration, PR to `main`, merge, and Pages deploy verification | in progress (claimed 2026-11-07) | arena/6d4bd5df-jack1 | repo root, `COORDINATION.md` | Only after T18–T20 are done |
+| T21 | Integration, PR to `main`, merge, and Pages deploy verification | **done** | arena/6d4bd5df-jack1 | repo root, `COORDINATION.md` | Only after T18–T20 are done |
 
 **Claim status:** T18–T20 claimed by `arena/6d4bd5df-jack1` on 2026-11-07. T21 is intentionally left unclaimed in this entry and will be claimed by this session once T18–T20 are recorded as done, because the board requires the integration session to re-verify the combined data before publishing.
 
@@ -327,3 +327,42 @@ hand-edited away from its register.
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
 >>>>>>> origin/main
+
+
+### T21 result — integration with main, and what the merge audit found
+
+While this branch was open, session `arena/51be24e4-jack1` merged PR #16 into `main`, adding FEMA NRI,
+USGS, BEA GDP and CAL FIRE figures. That PR had not been re-verified against primary pages. Merging
+`origin/main` produced conflicts in `index.html`, `market.html` and `scripts/validate_site.py`; all were
+resolved with a union that preserved both sides, and the EDD rows the union had duplicated were
+de-duplicated by label+value key. Nothing was discarded.
+
+**Re-verification of the merged figures (2026-11-07):**
+
+| Figure | Verdict | Detail |
+|---|---|---|
+| LA County population 9,694,934 and −3.2% | **verified** | Census county QuickFacts V2025 |
+| USGS 60% / 46% / 31% for M6.7 / M7.0 / M7.5 in 30 years | **verified** | USGS FAQ quoting UCERF3 |
+| LA County annual unemployment 5.6% (2025) | **corrected to 5.7%** | BLS county series via FRED; the metro series is 5.3%. The 5.6% could not be reproduced |
+| Metro GDP $1.355 trillion (2024) | **withdrawn** | Cited link resolves to a FRED *unemployment rate* series, not GDP |
+| County GDP $1.003 trillion (2024) | **withdrawn** | Same mismatched citation; the claimed #2 county rank is also unverified |
+| FEMA NRI composite 100.0 | **withdrawn** | hazards.fema.gov/nri redirects to RAPT, which confirms NRI v1.20 exists but displays no county score |
+| FEMA NRI expected annual loss $7.60B | **withdrawn** | Not displayed on the reachable official page |
+| FEMA NRI earthquake 100.0 / wildfire 99.9 / flood 100.0 | **withdrawn** | County sub-scores not displayed |
+| FEMA disaster declarations 88 (61 fire, 10 flood, 8 storm) | **withdrawn** | fema.gov/disasters is a search tool with no county count |
+| CAL FIRE +26% Southern California Very High expansion | **withdrawn** | The FHSZ page confirms the 2025 LRA rollout (10 Feb – 24 Mar 2025) but not the percentage |
+| CAL FIRE statewide +35% (860,000 → 1.2M acres) | **withdrawn** | Not displayed |
+
+Disposition: the ten unverifiable values are **blanked in the tables** with an explicit
+"Unverified — withdrawn" badge and the note explaining why, and they are **published in full** on
+`flagged.html#withdrawn` with links to the official tools, so the claims are preserved for the owner
+without being presented as facts. The withdrawn figures are also recorded as irregularities I-08 and
+I-09 on `verification.html`. The executive summary bullets that quoted them were rewritten to match.
+
+This is the concrete answer to why a link-only check is not verification: every one of these rows had a
+plausible-looking official link, and every one of them failed when the link was actually opened.
+
+| UTC date | Session | Entry |
+|---|---|---|
+| 2026-11-07 | arena/6d4bd5df-jack1 | Merged `origin/main` (PR #16) with a union resolution on `index.html`, `market.html`, `validate_site.py`; nothing discarded. |
+| 2026-11-07 | arena/6d4bd5df-jack1 | Re-verified all merged figures: 2 verified, 1 corrected, 10 withdrawn and published on the Flagged page; irregularities I-08/I-09 recorded. |
