@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projection model for a Central Los Angeles Jack in the Box NNN decision: official SCAG and CPI growth anchors with auditable arithmetic and a local-only rent calculator. No property value is invented.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Projection model | Jack in the Box Property Brief</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
+      <p class="nav-label">Research dashboard</p>
+      <nav class="site-nav">
+        <a href="index.html"><span class="nav-dot">01</span>Executive summary</a>
+        <a href="market.html"><span class="nav-dot">02</span>Local market</a>
+        <a href="property.html"><span class="nav-dot">03</span>Lease &amp; asset</a>
+        <a href="decision.html"><span class="nav-dot">04</span>Sell / renew paths</a>
+        <a href="projection.html" aria-current="page"><span class="nav-dot">05</span>Projection model</a>
+        <a href="risks.html"><span class="nav-dot">06</span>Risk register</a>
+        <a href="flagged.html"><span class="nav-dot">07</span>Flagged for Review</a>
+        <a href="verification.html"><span class="nav-dot">08</span>Verification log</a>
+        <a href="sources.html"><span class="nav-dot">09</span>Sources &amp; method</a>
+      </nav>
+      <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Projection model</span></div><div class="snapshot">Evidence snapshot · 07 Nov 2026</div></header>
+      <main id="main-content" class="content">
+        <header class="page-intro">
+          <p class="eyebrow">Projection system · official growth anchors · auditable arithmetic</p>
+          <h1>A projection you can recompute by hand.</h1>
+          <p class="lead">This model is built the only way an area model can be built honestly without a parcel: every growth rate comes from a published official forecast, every derived rate is shown with the arithmetic that produced it, and the property-level inputs are left for you to type because they are not public.</p>
+        </header>
+
+        <div class="callout warning">
+          <h3>What this model refuses to do</h3>
+          <p class="small">It does not produce a sale price, a market rent, an appraisal, a cash-flow forecast or a recommendation for this asset. Those need the executed lease, the rent roll, the site, the condition report and the owner's tax position — none of which are public. A model that output a value anyway would be inventing it. What follows is the defensible part: official area growth, contractual rent arithmetic, and the explicit list of what is still missing.</p>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">Layer 1</p><h2>Official growth anchors</h2><p>Published endpoints on the left, the implied compound rate in the middle, and the arithmetic stated in full so it can be checked with a calculator.</p></div><span class="badge badge-limited">Rates re-read 2026-11-07</span></div>
+        <div class="table-tools"><span class="micro muted">Filter the anchors</span><input class="table-search" type="search" placeholder="Search growth anchors…" aria-label="Search growth anchors" data-table-search="growth-anchors"></div>
+        <div class="table-wrap">
+          <table id="growth-anchors">
+            <caption>Every rate this model uses, with its published endpoints and the derivation.</caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col">Published endpoints</th><th scope="col">Implied rate</th><th scope="col">Derivation and limit</th><th scope="col">Official source</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Los Angeles County population</strong></td><td class="no-wrap">10,046,000 (2019) → 10,793,000 (2050)</td><td class="no-wrap"><strong>+0.23% a year</strong></td><td>Compound annual rate over 31 years, computed here from the two published endpoints.<span class="row-note">Plan forecast; a county aggregate that says nothing about a corridor or a parcel.</span></td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024</a></td></tr>
+              <tr><td><strong>Los Angeles County employment</strong></td><td class="no-wrap">5,031,000 (2019) → 5,461,000 (2050)</td><td class="no-wrap"><strong>+0.26% a year</strong></td><td>Compound annual rate over 31 years from the published endpoints.<span class="row-note">Jobs, not sales. Restaurant demand is not implied.</span></td><td><a class="source-link" href="https://scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024</a></td></tr>
+              <tr><td><strong>Health care and social assistance jobs, SCAG region</strong></td><td class="no-wrap">1,498,000 (2022) → 1,914,000 (2050)</td><td class="no-wrap"><strong>+0.88% a year</strong></td><td>Compound annual rate over 28 years from SCAG Table 6.<span class="row-note">Regional sector total; the fastest-growing large sector in the forecast.</span></td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024</a></td></tr>
+              <tr><td><strong>Construction jobs, SCAG region</strong></td><td class="no-wrap">473,000 (2022) → 621,000 (2050)</td><td class="no-wrap"><strong>+0.98% a year</strong></td><td>Compound annual rate over 28 years from SCAG Table 6.<span class="row-note">Regional sector total; does not establish delivery of any nearby project.</span></td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024</a></td></tr>
+              <tr><td><strong>Accommodation and food services jobs, SCAG region</strong></td><td class="no-wrap">832,000 (2022) → 938,000 (2050)</td><td class="no-wrap"><strong>+0.43% a year</strong></td><td>Compound annual rate over 28 years from SCAG Table 6.<span class="row-note">The sector a quick-service site sits in — but a sector total is not a unit&#x27;s sales.</span></td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024</a></td></tr>
+              <tr><td><strong>Consumer price index, United States, annual averages</strong></td><td class="no-wrap">313.7 (2024) → 321.9 (2025)</td><td class="no-wrap"><strong>+2.6% a year</strong></td><td>Published annual averages; year-over-year change computed here.<span class="row-note">A national index. Rent escalation in a lease is contractual, not indexed automatically.</span></td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer">CA EDD (BLS CPI series)</a></td></tr>
+              <tr><td><strong>Consumer price index, California, annual averages</strong></td><td class="no-wrap">342.0 (2024) → 352.5 (2025)</td><td class="no-wrap"><strong>+3.1% a year</strong></td><td>Published annual averages; year-over-year change computed here.<span class="row-note">A state index; it is not a commercial rent index.</span></td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/file/lfmonth/2512pmsa.pdf" target="_blank" rel="noopener noreferrer">CA EDD (BLS / DIR CPI series)</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">Layer 2</p><h2>Contractual rent arithmetic</h2><p>The one part of the value case that is knowable from documents you already hold: what the lease says the rent does, and what that is worth in today's money. Type your own figures — nothing is stored, transmitted or published.</p></div></div>
+        <div class="two-column">
+          <section class="panel" aria-labelledby="calc-title">
+            <h3 id="calc-title">Run the arithmetic</h3>
+            <form data-projection-calc novalidate>
+              <p class="small"><label for="baseRent">Current annual base rent (your figure)</label><br>
+                <input id="baseRent" name="baseRent" type="number" min="0" step="1000" value="100000" inputmode="decimal" style="width:100%"></p>
+              <p class="small"><label for="escalation">Annual escalation stated in the lease (%)</label><br>
+                <input id="escalation" name="escalation" type="number" step="0.1" value="2" inputmode="decimal" style="width:100%"></p>
+              <p class="small"><label for="years">Years remaining / hold period</label><br>
+                <input id="years" name="years" type="number" min="1" max="60" step="1" value="8" inputmode="numeric" style="width:100%"></p>
+              <p class="small"><label for="discount">Discount rate (%)</label><br>
+                <input id="discount" name="discount" type="number" step="0.1" value="7" inputmode="decimal" style="width:100%"></p>
+              <p class="small"><label for="inflation">Inflation used to deflate to today's money (%)</label><br>
+                <input id="inflation" name="inflation" type="number" step="0.1" value="2.6" inputmode="decimal" style="width:100%"></p>
+              <p class="micro muted">The prefilled values are placeholders to show the arithmetic, not estimates for this asset. Replace them with your lease terms. This page runs entirely in your browser: no figure is sent, saved or logged.</p>
+            </form>
+          </section>
+          <section class="panel" aria-label="Model output">
+            <h3>Result</h3>
+            <div data-projection-output aria-live="polite"></div>
+            <a class="source-link" href="verification.html">How each rate above was verified</a>
+          </section>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">Layer 3</p><h2>Three scenarios, and what each one tests</h2><p>Scenarios are framed as questions to answer with documents, not as probabilities. No weighting is assigned, because a weighting would be a guess dressed as analysis.</p></div></div>
+        <div class="table-wrap">
+          <table>
+            <caption>Scenario frames anchored on the adopted forecast and its published alternate assumptions.</caption>
+            <thead><tr><th scope="col">Scenario</th><th scope="col">What the model does with it</th><th scope="col">Official anchor</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Downside</strong><span class="row-note">Sustained out-migration, weak job growth, insurance or rate shock</span></td><td>Hold the SCAG county rates but assume they are not achieved, and that exit cap rates widen. The test is whether contractual rent still covers debt service and carried costs after a wider exit yield.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024 low-growth assumptions</a></td></tr>
+              <tr><td><strong>Baseline</strong><span class="row-note">The adopted plan forecast is broadly achieved</span></td><td>County population +0.23%/yr and employment +0.26%/yr, with food-service sector jobs +0.43%/yr. Contractual rent growth is set by the lease, not by these rates.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024 adopted forecast</a></td></tr>
+              <tr><td><strong>Upside</strong><span class="row-note">Faster in-migration and job capture, as in the high scenario</span></td><td>Higher growth supports the trade area, but the same warning applies: a county-level upside case cannot be booked as this restaurant&#x27;s sales.</td><td><a class="source-link" href="https://scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf" target="_blank" rel="noopener noreferrer">SCAG Connect SoCal 2024 forecast assumptions, Table 8</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">Layer 4</p><h2>The inputs that decide the outcome are not in this model</h2><p>Because they are not public. Each one is a document request, not a research gap.</p></div></div>
+        <div class="three-column">
+          <article class="panel"><p class="kicker">Contract</p><h3>Lease and rent</h3><p class="small">Executed lease, all amendments, estoppels, rent ledger, options and notice windows. Without these the escalation input above is a placeholder, not a forecast.</p></article>
+          <article class="panel"><p class="kicker">Transfers</p><h3>Value and proceeds</h3><p class="small">Independent valuation or real bids, loan payoff, brokerage and closing costs, and — inside City of LA — the transfer tax measured at closing. <a href="https://finance.lacity.gov/faq/measure-ula">Current ULA rules</a>.</p></article>
+          <article class="panel"><p class="kicker">Resilience</p><h3>Hazard, coverage, condition</h3><p class="small">Parcel-level hazard overlays, insurance quotes and exclusions, roof and equipment condition, and seismic or retrofit obligations. See the <a href="risks.html">risk register</a>.</p></article>
+        </div>
+
+        <div class="note" style="margin-top:16px"><strong>Reproducible:</strong> this page is generated by <code>scripts/build_projection.py</code>. It recomputes every compound rate from the published endpoints at build time, so the page cannot silently drift from the official figures.</div>
+
+        <script>
+(function () {
+  var form = document.querySelector('[data-projection-calc]');
+  if (!form) return;
+  var out = document.querySelector('[data-projection-output]');
+  var money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+  function read(name) {
+    var el = form.elements[name];
+    var v = el ? parseFloat(el.value) : NaN;
+    return isFinite(v) ? v : NaN;
+  }
+
+  function compute() {
+    var rent = read('baseRent');
+    var esc = read('escalation') / 100;
+    var years = read('years');
+    var disc = read('discount') / 100;
+    var infl = read('inflation') / 100;
+    if (!isFinite(rent) || !isFinite(esc) || !isFinite(years) || !isFinite(disc) || !isFinite(infl) || years < 1) {
+      out.innerHTML = '<p class="small muted">Enter a rent figure, an escalation, a hold period and two rates to run the arithmetic.</p>';
+      return;
+    }
+    years = Math.min(Math.round(years), 60);
+    var pv = 0, nominal = rent, lastYearRent = rent;
+    for (var t = 1; t <= years; t++) {
+      nominal = rent * Math.pow(1 + esc, t - 1);
+      lastYearRent = nominal;
+      pv += nominal / Math.pow(1 + disc, t);
+    }
+    var realLast = lastYearRent / Math.pow(1 + infl, years);
+    var pvReal = pv / Math.pow(1 + infl, years);
+    var totalNominal = 0;
+    for (var y = 1; y <= years; y++) { totalNominal += rent * Math.pow(1 + esc, y - 1); }
+    out.innerHTML =
+      '<dl class="calc-results">' +
+      '<div><dt>Rent in final hold year</dt><dd>' + money.format(lastYearRent) + '</dd></div>' +
+      '<div><dt>Same rent, in today\'s purchasing power</dt><dd>' + money.format(realLast) + '</dd></div>' +
+      '<div><dt>Nominal rent collected over ' + years + ' years</dt><dd>' + money.format(totalNominal) + '</dd></div>' +
+      '<div><dt>Present value of that rent stream</dt><dd>' + money.format(pv) + '</dd></div>' +
+      '<div><dt>Present value, deflated to today\'s money</dt><dd>' + money.format(pvReal) + '</dd></div>' +
+      '</dl>' +
+      '<p class="small muted">Arithmetic only: rent compounded at the escalation you typed, discounted at the rate you typed. No sale price, no expenses, no taxes, no vacancy, no capital expenditure and no value conclusion are produced.</p>';
+  }
+
+  form.addEventListener('input', compute);
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+  compute();
+})();
+</script>
+
+      </main>
+      <footer class="site-footer"><div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Calculator inputs stay in your browser and are never stored.</div><div>Rates recomputed from official endpoints at build time</div></footer>
+    </div>
+  </div>
+</body>
+</html>

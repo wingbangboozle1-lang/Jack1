@@ -24,8 +24,18 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Validate site and source links
-        run: python scripts/validate_site.py
+      - name: Generated pages must match their register (no hand edits, no drift)
+        run: |
+          set -eu
+          python3 scripts/build_verification.py
+          python3 scripts/build_projection.py
+          if ! git diff --quiet; then
+            echo "::error::A generated page no longer matches its source register. Re-run scripts/build_verification.py and scripts/build_projection.py and commit the result."
+            git --no-pager diff --stat
+            exit 1
+          fi
+      - name: Validate site, table citations, blanks, navigation and links
+        run: python3 scripts/validate_site.py
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -47,7 +57,8 @@ jobs:
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html _site/
+          cp index.html market.html property.html decision.html projection.html \
+             risks.html flagged.html verification.html sources.html _site/
           cp assets/styles.css assets/site.js _site/assets/
           cp .nojekyll _site/.nojekyll
           echo "Assembled $(find _site -type f | wc -l) public files"
