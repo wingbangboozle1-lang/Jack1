@@ -561,7 +561,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #9 | arena/51be24e4-jack1 | pending |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
-**Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
+**Historical build note:** PR #16 claimed 131 verified rows; subsequent audits corrected or withheld some of its figures. The current canonical eight-page site includes PRs #19 and #17; recheck live state below.
 
 ### T18 completion record — session d18e3065
 
@@ -570,3 +570,16 @@ figures and the metro GDP year were changed, each with the reported value kept v
 - **Blocker, not resolved:** GitHub Pages build type is still `legacy` (source main /). Changing it to `workflow` returned HTTP 403 for this session's integration token. A repository admin must set Settings → Pages → Source = GitHub Actions. Until then the legacy build serves the site from main root.
 - **Merge note:** main advanced (PRs #16, #19, #20 by other sessions) during this task. T18 merged main into its branch and kept the other session's verified EDD/BLS county correction and audit.html. Conflicts resolved in favour of the verified versions; T18 rows re-added where not duplicated.
 - **Open items for owner:** verify-data.mjs stale gate; LA County heat-brief link; SCAG Table 12; ULA intro wording; PR #14 (arena/d3fdafdd-jack1) not reviewed.
+---
+
+## Current session board — 2026-11-07 UTC
+
+| Task ID | Description | Status | Owner | File scope | Sources / verification | Irregularities |
+|---|---|---|---|---|---|---|
+| T18 | Independently audit and repair the deployed public dashboard for official-source accuracy, privacy, decision logic, and Pages reliability; integrate and publish | in progress | arena/fb380225-jack1 | `COORDINATION.md` (append-only), `README.md`, `index.html`, `market.html`, `property.html`, `decision.html`, `risks.html`, `sources.html`, `assets/styles.css`, `assets/site.js`, `scripts/validate_site.py`, `.github/workflows/pages.yml`; `flagged.html` deferred pending PR #15 | Pending independent primary-source re-check and link/CI/deploy tests | Initial board had literal conflict markers and unsupported “all official” claims; status changes after other sessions' pushes. |
+
+**Handoff/branch rule:** The older `arena/ab7790ec-jack1` note listed the public pages as pending, but its PR #12 was merged on 2026-11-06T13:16:12Z. T18 is a post-merge audit; T9 was merged as PR #16 (2026-11-07T20:15:02Z). PR #15 (`flagged.html`, `COORDINATION.md`) is open at claim time: do not change `flagged.html` until its owner finishes or its claim becomes stale; any request is logged here. This Arena session must stay on its assigned branch `arena/fb380225-jack1` rather than create a `session-*/` branch (platform constraint). Other sessions' open PRs and archives are out of scope. Claim was committed/pushed before work began.
+
+**Conflict resolution:** `git pull --rebase origin main` after PR #16 merged conflicted on `COORDINATION.md`: PR #16 rewrote the historic board, while T18 appended a claim to its previous version. Resolved by retaining all lines in the newer main board **and** T18's claim, without overwriting main’s changes. Earlier verbose board remains accessible via Git history at `809f9e1:COORDINATION.md`. Reverification remains pending.
+
+**Rebase note (2026-11-07):** Main advanced through PR #22 while this session was auditing. The T18 completion record from d18e3065 and the separate `arena/fb380225-jack1` T18 claim were both retained; duplicate task IDs reflect parallel sessions, not the same owner.
