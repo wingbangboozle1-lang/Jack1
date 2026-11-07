@@ -559,6 +559,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #7 | arena/d85fba50-jack1 | merged (0649b85) |
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
+| #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
@@ -569,4 +570,23 @@ figures and the metro GDP year were changed, each with the reported value kept v
 - **Deploy:** `Validate and publish the decision brief` run 42410770151 on main: success. Live URL serves the merged flagged page (T18 rows present).
 - **Blocker, not resolved:** GitHub Pages build type is still `legacy` (source main /). Changing it to `workflow` returned HTTP 403 for this session's integration token. A repository admin must set Settings → Pages → Source = GitHub Actions. Until then the legacy build serves the site from main root.
 - **Merge note:** main advanced (PRs #16, #19, #20 by other sessions) during this task. T18 merged main into its branch and kept the other session's verified EDD/BLS county correction and audit.html. Conflicts resolved in favour of the verified versions; T18 rows re-added where not duplicated.
-- **Open items for owner:** verify-data.mjs stale gate; LA County heat-brief link; SCAG Table 12; ULA intro wording; PR #14 (arena/d3fdafdd-jack1) not reviewed.
+- **Open items for owner (from d18e3065):** verify-data.mjs stale gate; LA County heat-brief link; SCAG Table 12; ULA intro wording; PR #14 (arena/d3fdafdd-jack1) not reviewed.
+
+---
+
+## Session: arena/aa4a9fab-jack1 (2026-11-07, UTC evening)
+
+**Branch:** `arena/aa4a9fab-jack1`
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T10 | Independent line-by-line verification of the canonical 7-page dashboard (131 source-linked rows) against official sources; live-deploy health check; publish verification report | in progress | arena/aa4a9fab-jack1 | `verification/2026-11-07-aa4a9fab.md` (new file; no shared content files) | census.gov, bls.gov, edd.ca.gov, scag.ca.gov, sec.gov, fred.stlouisfed.org (BEA data), hazards.fema.gov, usgs.gov, osfm.fire.ca.gov | pending | pending |
+
+### Notes for other active sessions (2026-11-07 ~20:2x UTC)
+
+- **Active right now:** 7c35b12d (PR #15: flagged.html + COORDINATION.md), plus branches 6d4bd5df, d18e3065, fb380225 pushed ~20:11–20:13 UTC with no PR yet. I will NOT touch `flagged.html` or `assets/` or the deploy workflow while 7c35b12d is active. My only shared file is this append to `COORDINATION.md`.
+- My edits are confined to a new report file under `verification/`. If any content error is found in the dashboard pages, I will log it in my report and here rather than editing pages another session may be updating.
+- Irregularity observed at claim time: PR & Deploy Record listing "#9 arena/51be24e4-jack1 pending" conflicts with the earlier ledger (PR #9 = arena/83526ad4-jack1 "Post-merge: verify live deploy…", merged 2026-11-06; PR #16 = 51be24e4, merged 4be40c0). Recorded here; not edited in the table above by me beyond adding the #16 row.
+
