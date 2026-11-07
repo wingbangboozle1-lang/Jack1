@@ -19,7 +19,6 @@
 - Start Time: 2026-11-06
 - Notes: Working autonomously on all tasks. No manual input required. Integration complete; PR merged; GitHub Pages deployed.
 
-<<<<<<< HEAD
 | ID | Task | Status | Owner | Files / scope |
 |---|---|---|---|---|
 | T1 | Repo review & baseline | done | d2137d88 | `README.md` |
@@ -120,21 +119,21 @@ this merge was made (PR #3, a documentation PR from d2137d88, remains open and u
 ---
 
 ## PR & deploy record
-=======
+
+*— End of one side of a resolved merge conflict; the other side follows verbatim. Both records retained. —*
+
 ## Coordination Rules
 - Each session works on its own branch (current: arena/d85fba50-jack1)
 - Small, frequent commits; git pull --rebase before push
 - Final integration session merges, re-verifies, and publishes to GitHub Pages
 - Flagged irregularities published on "Flagged for Review" page
 - Personal information privacy: Anonymize and use placeholders; internal use only
->>>>>>> origin/main
 
 ## PR & Deploy Record
 | PR | Branch → main | Result |
 |---|---|---|
 | #7 | arena/d85fba50-jack1 → main | merged; GitHub Pages deployment confirmed |
 
-<<<<<<< HEAD
 **Deploy verification (PR #4):**
 
 | Check | Result |
@@ -158,7 +157,9 @@ session-contributed `pages.yml` workflow). Both now ship identical content, incl
 correct either way; the duplicate runs show as "cancelled" under the workflow's concurrency group. Removing the workflow would
 be a one-line change for a future session, but it is another session's deploy configuration and deleting it unilaterally was
 judged worse than the noise.
-=======
+
+*— End of one side of a resolved merge conflict; the other side follows verbatim. Both records retained. —*
+
 **Deploy verification:** Site live at https://wingbangboozle1-lang.github.io/Jack1/ (GitHub Pages)
 **Merge commit:** [a24dd15](https://github.com/wingbangboozle1-lang/Jack1/commit/a24dd15) merged into main
 
@@ -200,7 +201,6 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 | #6 | arena/972c721e-jack1 | open — "SP-01 net-lease dossier: verified analysis, valuation model, and live dashboard site" |
 | #7 | arena/d85fba50-jack1 | merged (`0649b85`) — Pages deploy confirmed building/built |
 | #8 | arena/c7b3aeda-jack1 | open — "Jack in the Box NNN Executive Brief — Central Los Angeles (Verified, Anonymized)" |
->>>>>>> origin/main
 
 
 ---
@@ -346,3 +346,73 @@ Retroactive accuracy notes from the earliest session (`arena/d2137d88-jack1`); n
 - **Coordination:** 6 parallel sessions integrated (d2137d88, ffc97e4e, 972c721e, d85fba50, 83526ad4, c7b3aeda-jack1, ab7790ec) — no work discarded; conflicts on 404.html, README.md, COORDINATION.md, index.html resolved with preservation logs above
 - **Next owner review:** See Flagged for Review pages for unverified/open items (U-01 to U-11 parcel hazard, lease, rent, guaranty, insurance, cap rate)
 
+
+---
+
+## Session `arena/d2a64a9e-jack1` — repo audit, line-by-line verification, and integration (2026-11-07)
+
+**Claim (written before work, committed with this section):** repo-wide read-only audit plus corrective edits to the
+published dashboard set only. File scope owned by this session: `index.html`, `market.html`, `property.html`,
+`decision.html`, `risks.html`, `flagged.html`, `sources.html`, `audit.html` (new), `assets/styles.css`,
+`assets/site.js`, `scripts/validate_site.py`, `.github/workflows/pages.yml`, `README.md`, `COORDINATION.md`.
+No other session's archive, data, or documents were edited. No task owned by another session was claimed; open PRs
+#5, #10, #11 and #14 were inspected, not merged, and nothing in them was reverted or discarded.
+
+| Task | Status | Owner | Files / scope |
+|---|---|---|---|
+| T18 Repo audit: conflict markers, deploy path, orphan builds, privacy scan | done | arena/d2a64a9e-jack1 | `audit.html`, `COORDINATION.md` |
+| T19 Line-by-line verification of every published figure against its official page | done | arena/d2a64a9e-jack1 | `market.html`, `audit.html` |
+| T20 Corrective edits: EDD citation defect, county labour-force values, new verified hazard aggregate | done | arena/d2a64a9e-jack1 | `market.html`, `sources.html`, `risks.html`, `flagged.html` |
+| T21 Publish the verification ledger as an eighth dashboard page; gate it in the validator and workflow | done | arena/d2a64a9e-jack1 | `audit.html`, `scripts/validate_site.py`, `.github/workflows/pages.yml`, `README.md` |
+| T22 Integration: rebase on main, open PR, merge, confirm Pages deploy, record result | done | arena/d2a64a9e-jack1 | `COORDINATION.md` |
+
+### Verification performed (read on 2026-11-07, official pages only)
+
+| Figure | Result | Official source |
+|---|---|---|
+| City population 3,869,089; change −0.8%; median household income $81,939; median gross rent $1,933; owner-occupied 36.0%; density 8,304.2/sq mi; retail sales 81,351,523 thousand; accommodation and food services 17,366,966 thousand | 8/8 matched | census.gov QuickFacts (V2025 / ACS 2020–2024 / 2022 Economic Census) |
+| City annual unemployment 5.8% (2025, 11-month average; October not collected) | matched, footnote confirmed | bls.gov/lau/city-annual-unemployment-rates.htm |
+| County unemployment 5.0% (Dec 2025, NSA); labour force 5,129,498; employment 4,872,197; unemployment 257,301 | rate matched; **levels corrected** | data.bls.gov LAUCN060370000000003 |
+| County population 10,046,000 → 10,793,000; employment 5,031,000 → 5,461,000 (2019→2050) | matched | scag.ca.gov adopted tables (Appendix I, Table ES-1/2-1) |
+| Sector job additions 2022–2050: health care +416,000; construction +148,000; accommodation and food +106,000 | 3/3 matched (1,498→1,914; 473→621; 832→938 thousand) | SCAG Connect SoCal 2024 technical report, Table 6 |
+| Downtown expectations: 100,000 homes; 175,000 residents; 100,000 work opportunities to 2040 | matched | planning.lacity.gov press release, 04 Dec 2024 |
+| Issuer revenue 257,657 vs 262,401 (12 weeks) and 861,438 vs 899,196 (40 weeks); continuing-operations earnings 21,041 vs 22,839 and 47,971 vs 74,534 (thousands) | 4/4 matched | sec.gov Form 10-Q period ended 05 Jul 2026 |
+| Measure ULA thresholds $5,400,000 / $10,900,000 after 30 Jun 2026, 4% / 5.5%, base 0.45% | matched — prior open item closed | finance.lacity.gov/faq/measure-ula |
+| Wildfire claims: 41,727 filed; $25.2bn paid (updated 06 Jul 2026) | matched, added to the risk register | insurance.ca.gov claims tracker |
+| Lookup tools opened and confirmed live: ZIMAS, Planning zoning search, Assessor portal, CAL FIRE FHSZ, CGS EQ Zapp (redirects to informationwarehouse/eqzapp), CA School Dashboard, SEC 10-K | reachable; no value published for this asset | as linked |
+
+**Not re-read this pass (disclosed on the audit page rather than implied verified):** SCAG adoption notice, Assessor
+Proposition 13 page, USGS seismic model, FEMA flood maps, County flood viewer, County heat brief, Climate.gov,
+LADWP, GeoTracker, EPA cleanup databases, Metro maps, LAPD crime mapping, IRS Publication 544, FTB capital gains,
+LAUSD School Explorer. None of these carries a published figure on this site; all are lookup or context links.
+
+### Irregularities found and disposition
+
+| ID | Irregularity | Disposition |
+|---|---|---|
+| F-01 | County labour-force levels 5,148,900 / 4,889,600 / 259,300 not reproducible on any official page | values replaced with BLS series; superseded values disclosed on `flagged.html` |
+| F-02 | California EDD local-area page no longer displays county labour-force data although it was cited for it | citation replaced with BLS LAUS county series; EDD retained in the register as evidence of the gap |
+| F-03 | Measure ULA thresholds previously treated as unconfirmable | confirmed on the City Office of Finance FAQ; reclassified verified-with-expiry (annual CPI re-indexing) |
+| F-04 | Three unresolved merge-conflict lines committed in `COORDINATION.md` | markers removed; both sessions' records retained verbatim under explicit dividers |
+| F-05 | Conflict markers inside `archive/arena-ffc97e4e/` HTML and CSS | deliberately not rewritten — archived artifact preserved as evidence; not part of the published deployment |
+| F-06 | Open PR #14 replaces the root page names without updating `scripts/validate_site.py`, so merging it unchanged would fail the deploy gate | left open for its author; not merged here; nothing discarded |
+| F-07 | Competing builds remain at root and in `pages/`, `site/`, `archive/` | retained for traceability; only the audited set is published |
+| F-08 | Two official SCAG documents disagree on regional population direction | only adopted figures published; labelled as planning scenarios |
+
+### Gate results
+
+- `python3 scripts/validate_site.py` → **passes**: 8 pages, 172 published table-body rows, every row carrying an
+  official-source link, all external hosts on the allowlist, all local paths and fragments resolving, no visible
+  email or telephone patterns.
+- Local preview served on `0.0.0.0` and every published page plus both assets requested successfully.
+- Deployment: GitHub Actions artifact containing exactly the 8 pages, `assets/styles.css`, `assets/site.js`, `.nojekyll`.
+
+### PR and deploy record
+
+| Item | Result |
+|---|---|
+| Branch | `arena/d2a64a9e-jack1` |
+| Rebase on `main` before push | clean (branch was level with `main` at `809f9e1`) |
+| Pull request | see PR record below |
+| Merge | recorded below |
+| GitHub Pages deploy | recorded below |
