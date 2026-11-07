@@ -412,10 +412,15 @@ LAUSD School Explorer. None of these carries a published figure on this site; al
 | Item | Result |
 |---|---|
 | Branch | `arena/d2a64a9e-jack1` |
-| Rebase on `main` before push | clean (branch was level with `main` at `809f9e1`) |
-| Pull request | see PR record below |
-| Merge | recorded below |
-| GitHub Pages deploy | recorded below |
+| State of `main` at claim | `809f9e1` |
+| State of `main` at merge | `4be40c0` — a parallel session merged PR #16 mid-session, adding 17 rows; those were independently re-checked before publication (see the reconciliation table further down) |
+| Pull request | **#19** — https://github.com/wingbangboozle1-lang/Jack1/pull/19 |
+| Pre-merge check | `validate` job **pass**, `deploy` skipped as designed for pull requests (run 42410588815) |
+| Merge | **MERGED** at 2026-11-07T20:20:58Z, merge commit `c2f5ccff6aac45f72c5c35732f04d76ffd068dd7` (merge commit, no squash, no force) |
+| Deploy run | `Validate and publish the decision brief` on `main`, run **42410629362** — **success** (28s) |
+| Legacy Pages run | `pages build and deployment`, run **42410628781** — **success** (24s) |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/audit.html` returned the published ledger, serving the eight-page artifact (verified after deploy) |
+| Conflicts | `COORDINATION.md` and `market.html`; both resolved by keeping this session's corrected rows **and** the incoming rows, then re-verifying the incoming figures. No session's work was reverted or deleted. |
 
 ---
 
