@@ -1,4 +1,9 @@
-name: Validate and publish the decision brief
+name: Validate the decision brief
+
+# GitHub Pages for this repository is published from the main branch, root
+# directory (legacy branch build). This workflow therefore validates only: it
+# must never publish an artifact, because an artifact deployment and a branch
+# build would race each other for the same URL.
 
 on:
   push:
@@ -11,7 +16,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: github-pages-${{ github.ref }}
+  group: validate-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -20,41 +25,21 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Validate site and source links
-        run: python scripts/validate_site.py
 
-  deploy:
-    if: github.event_name != 'pull_request'
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Prepare the public dashboard files only
+      - name: Rebuild the site from the dataset and compare
         run: |
           set -eu
-          mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html audit.html _site/
-          cp assets/styles.css assets/site.js _site/assets/
-          cp .nojekyll _site/.nojekyll
-          echo "Assembled $(find _site -type f | wc -l) public files"
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          cp index.html /tmp/index.before.html
+          python3 scripts/build_site.py
+          git diff --exit-code -- index.html demographics.html economy.html \
+            schools.html property.html tenant.html model.html decision.html \
+            risks.html flagged.html sources.html assets/styles.css \
+            assets/site.js assets/favicon.svg data/published-records.json
+
+      - name: Validate structure, links and the blank-value rule
+        run: python3 scripts/validate_site.py

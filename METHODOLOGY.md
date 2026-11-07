@@ -1,90 +1,85 @@
 # Methodology
 
-## The rule this project runs on
+## 1. Principle
 
-Every value is one of four things, and the site says which:
+Publish what an official page says, with the link; leave blank what no official page says; state the arithmetic when a
+number is computed. No value is inferred, interpolated, blended across geographies, or carried over from a prior build
+without being re-read.
 
-| Badge | Meaning |
+## 2. Status vocabulary
+
+| Status | Meaning | Rendered as |
+|---|---|---|
+| `verified` | Read directly from the linked official page on 2026-11-07 | Value + green badge |
+| `derived` | Arithmetic on verified values; formula stated in the row note | Value + blue badge |
+| `unverified` | No official source could confirm it in this session | Blank + amber badge |
+| `withheld` | Exists in the owner's file; excluded by the privacy policy | Blank + grey badge |
+
+A blank is never zero and never an estimate.
+
+## 3. Sources and what each was used for
+
+| Source | Used for |
 |---|---|
-| `verified` | Read from an official government, legislative or SEC page, with the URL recorded and the page's own as-of date noted |
-| `derived` | Arithmetic on verified figures, with the arithmetic shown |
-| `flagged` | Could not be confirmed. Published **blank**, with a note saying what would fill it |
-| `industry` | Non-government. Kept in a separate table, never mixed with verified rows. Currently empty. |
+| Census QuickFacts, Los Angeles city and county (V2025 / ACS 2020-2024) | Population, households, income, poverty, housing, density, education, travel time |
+| BLS Economy at a Glance, Los Angeles-Long Beach-Santa Ana MSA | Labour force, employment, unemployment rate, nonfarm and sector change |
+| BLS CPI, Los Angeles area, September 2026 | Headline, core, food, food away from home, shelter, energy, gasoline |
+| Federal Reserve H.15 via FRED, series DGS10 | 10-year Treasury yield (2026-11-05: 4.84%) |
+| SEC EDGAR, 8-K Ex-99.1, Q4/FY2025 earnings release | Tenant restaurant counts, same-store sales, closures, revenue, EBITDA, guidance, dividend |
+| City of Los Angeles Office of Finance, transfer tax and Measure ULA FAQ | 0.45% base tax; 4.0% above $5.4m; 5.5% at $10.9m; chained-CPI indexation |
+| LA County Assessor, decline-in-value | Proposition 13 2% cap; Proposition 8 relief; RP-87 filing window |
+| California DIR, Fast Food Council | $20.00/hour fast-food minimum wage from 2024-04-01 |
+| CAL FIRE, Palisades Fire | Acres, structures destroyed and damaged, fatalities, containment, cause |
+| CAL FIRE OSFM, Fire Hazard Severity Zones | Three hazard classes; SRA effective date; 2025 LRA rollout |
+| California Geological Survey, Alquist-Priolo | 50 ft setback rule; definition of an active fault; disclosure duties |
+| USGS, ShakeOut scenario | 1,800 deaths, 53,000 injuries, $191bn loss, ~1,600 fires |
+| NCES Common Core of Data, Los Angeles Unified | Schools, enrolment, teachers, ratio, revenue and spending per student |
+| California School Dashboard (CDE) | Official lookup for district performance (not opened; item left blank) |
+| California Department of Finance, population projections | Official county projections (workbook unreadable; items left blank) |
+| BEA GDP by metro area and by county (via FRED) | Metropolitan and county output |
+| USGS UCERF3 FAQ | 30-year regional earthquake probability |
+| IRS, Section 1031 fact sheet | 45-day identification, 180-day completion, real-property scope |
+| LA City Planning (ZIMAS), LA County Assessor lookup | Official parcel lookups (no query run without the address) |
 
-Nothing is estimated. Nothing is inferred from a similar property. A missing value stays missing —
-that is why 12 rows on this site are blank.
+## 4. Model
 
-## Collection
+The projection model is arithmetic, not forecasting.
 
-22 sources were opened and read on 2026-11-06. Each is in `data/sources.json` with:
+- Value: `V = NOI / c`
+- Net proceeds: `P - (0.0045 + u(P))·P - 0.02·P`, with `u(P) = 0` up to $5.4m, `0.04` above $5.4m, `0.055` at $10.9m+
+- Hold NPV: `Σ_{t=1..5} NOI·(1+g)^t/(1+d)^t + net proceeds(NOI·(1+g)^5 / c5)/(1+d)^5`
+- Break-even exit rate: bisection on the hold NPV
 
-* the exact URL,
-* the publisher,
-* the data as-of date as printed on the page,
-* a note recording what was actually seen — including qualifying language ("preliminary", "pending",
-  "archival", "most of which will be franchise restaurants").
+Assumptions are labelled as assumptions on the model page: NOI scenarios of $150k-$300k, cap rates 5.25%-7.25%, rent
+growth 2.5%, discount rate 7.5%, sale costs 2.0%. They are inputs chosen to show sensitivity, not observations.
 
-Where a page was paginated or split (the US Treasury par-yield table renders 25 rows at a time), the
-underlying official series was taken from its authoritative release (the Fed's H.15) rather than
-scraping a truncated view.
+## 5. Validation gate
 
-## Verification
+`python3 scripts/validate_site.py` performs 3,018 assertions and fails the build on:
 
-`research/` holds the working logs: every figure transcribed with its source and vintage. The
-machine-readable equivalent is `data/facts.json` — 121 rows, each with an ID, a source list and a status.
+1. a missing page, asset or dataset;
+2. a page missing its doctype, language, title, single `h1`, main landmark or navigation, or a navigation that does not
+   list all eleven pages;
+3. a broken internal link or an unresolved in-page anchor;
+4. a data-table row with no official source link (computed tables must instead carry an official basis in a footer row);
+5. an external link outside the official-domain allowlist (census.gov, bls.gov, fred.stlouisfed.org, sec.gov,
+   lacity.gov, lacounty.gov, ca.gov, usgs.gov, irs.gov, nces.ed.gov, caschooldashboard.org);
+6. an external link without `target="_blank"` and `rel="noopener"`;
+7. a value published on an `unverified` or `withheld` row, or a blank on a `verified` or `derived` row;
+8. a source URL that is not https or not allowlisted;
+9. an email-address or telephone-number pattern on any page.
 
-`tools/check.py` enforces, on every build:
+## 6. Reproduction
 
-1. every internal link resolves, including anchors;
-2. every verified or derived row carries at least one source ID, and every source ID exists in the ledger;
-3. every unverified row is blank or `[WITHHELD]`;
-4. no personal information patterns appear in any page, data file, asset or document;
-5. HTML structure is valid: exactly one `<h1>`, balanced tags, no external asset requests;
-6. no placeholder tokens;
-7. model sanity: all five strategies present in all nine scenarios, net proceeds never exceed gross price,
-   no negative tax.
+```
+python3 scripts/build_site.py     # regenerate all pages, CSS, JS, data/published-records.json
+python3 scripts/validate_site.py  # run the gate
+python3 -m http.server 4173 --bind 0.0.0.0   # preview
+```
 
-## Modelling
+## 7. Limits
 
-The model is deterministic — no randomness, no Monte Carlo, no black box. Run `python3 model/model.py`
-and every number on the Valuation page reproduces.
-
-Two structural choices matter:
-
-* **Cap rate is a function of lease term, not a constant.** 7.25% at ≤3 years, 6.50% at 5 years, 6.00% at
-  9+ years, linearly interpolated. This is what makes the "term is the price" finding visible rather than
-  asserted.
-* **The expiry window is treated as three assets, not one.** 2030, 2032 and 2035 are modelled separately,
-  because a five-year uncertainty in remaining term is a five-year uncertainty in value.
-
-Every assumption is published with a stated basis in `data/assumptions.json` and rendered on the
-Valuation page. Verified inputs (risk-free rate, inflation, transfer taxes, ULA tiers, Prop 13 cap) are
-separated from assumptions (`A1`–`A16`) in both the data and the display.
-
-**NPV** is measured against a sell-today baseline at a 7.40% required return, so zero means "no better or
-worse than selling now". **Wealth 2035** reinvests every dollar received at the moment it is received at
-the verified 4.90% Treasury yield, so strategies with different cash-flow timing are compared like for
-like. **IRR** is computed by bisection on the same flows.
-
-Strategy C is probability-weighted: 60% renewal, 40% vacancy, with the band (35–75%) published so the
-reader can re-price it. That weighting exists precisely so the "do nothing" path is not flattered by
-assuming the good outcome.
-
-## Privacy
-
-The subject property is `SP-01` everywhere. No address, parcel number, owner name, rent, NOI, tenant
-identity or contact detail exists in this repository or in any published page. The PII scanner in
-`tools/check.py` enforces that on every build across the site, the data, the assets and the documents.
-
-The published site requests nothing from third parties — no fonts, analytics, CDN or trackers. The
-valuation calculator is inline JavaScript; nothing typed into it leaves the browser.
-
-## Limitations
-
-* City-, county- and metro-level data cannot substitute for a trade-area analysis. The address would
-  change the granularity; it is withheld by requirement.
-* Cap rates, retail rents and property-specific credit are assumptions, not observations. No official
-  series exists for the first two, and the third is private.
-* The risk-weighting in the decision matrix is analyst judgement. The weights and every cell are
-  published so it can be challenged cell by cell.
-* This is analysis, not legal, tax or investment advice.
+Point-in-time (2026-11-07). Labour and price series are revised. The tenant's audited statements, credit rating,
+location-level performance and the executed lease were not reviewed. No parcel is identified. Official county population
+projections could not be read in this environment and are withheld rather than approximated. No probability is assigned to
+any hazard or black-swan event.

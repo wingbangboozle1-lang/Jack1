@@ -1,148 +1,97 @@
-# Decision memo — SP-01
+# Decision memo
 
-**To:** owner of SP-01 **From:** analysis desk **Date:** 2026-11-06
-**Subject:** sell before lease expiry, or renew and hold?
+**To:** Owner, and the owner's advisers (counsel, CPA, broker, insurer)
+**From:** Research and analysis, Jack1 repository
+**Date:** 2026-11-07
+**Subject:** Jack in the Box NNN property, central Los Angeles - renew or sell before the 2030-2035 expiry
+**Decision requested:** authorise a renewal negotiation now, with a sale mandate held in reserve
 
 ---
 
-## 1. The decision, stated plainly
+## 1. Recommendation
 
-Recommendation: **negotiate a long lease extension now, hold approximately five years, then sell
-with about five years of firm term remaining** (strategy **E**).
+**Renew on market terms. Hold. Sell only into a priced bid or on a trigger.**
 
-If the tenant will not extend: **sell within twelve months** (strategy **A**).
+The evidence does not support "hold at any cost" and it does not support "sell now". It supports an ordered
+sequence: prove the rent, sign a longer term, and keep the sale option open and priced.
 
-Never: **do nothing and let the lease run out** (strategy **B**). It is the worst risk-adjusted option
-in the model and destroys value outright in the 2032 and 2035 expiry cases.
+## 2. Situation
 
-## 2. Why the lease term dominates
+- A quick-service restaurant on a reported NNN lease, expiring 2030-2035 (owner statement; the contract has not been
+  reviewed).
+- No address, parcel, rent, escalation, option or guaranty was available, so no parcel-level conclusion is possible
+  and none is asserted. All such fields are blank and flagged.
+- What is verifiable: the tenant's credit from its own SEC filings, the area economy from Census and BLS, the
+  statutory cost of exiting from the City of Los Angeles, and the catastrophe record from state and federal agencies.
 
-Value = NOI ÷ cap rate. On this asset the NOI is not the variable — the cap rate is, and the cap rate is
-set mainly by how many years of rent a buyer can underwrite.
+## 3. Analysis
 
-| Remaining term | Cap rate (model) | Value per $100k NOI | vs 3-year term |
-|---|---|---|---|
-| 3 years | 7.25% | $1,379,310 | — |
-| 5 years | 6.50% | $1,538,462 | +11.5% |
-| 9 years | 6.00% | $1,666,667 | +20.8% |
+### 3.1 Tenant credit (the rent depends on it)
 
-A five-year extension is worth roughly **eleven and a half percent of the asset** at unchanged income.
-That is more than four years of rent. There is no operating improvement available to you that competes
-with simply having more term.
+Fiscal 2025: same-store sales -4.2% for the year and -7.4% in the fourth quarter (franchise -7.6%, company -5.3%),
+86 closures against 31 openings, Adjusted EBITDA $45.6m in Q4 versus $65.5m a year earlier, dividend discontinued.
+Fiscal 2026 guidance: 2,050-2,100 restaurants, same-store sales -1% to +1%, Adjusted EBITDA $225-240m, franchise-level
+margin $275-290m. **Reading:** a credit under pressure that still generates contractual royalty and rent income. This is
+a "negotiate now, monitor quarterly" credit.
 
-Cap rates here are **assumptions** built from the verified 10-year Treasury (4.90%) plus a stated spread.
-No official series publishes net-lease cap rates. The sensitivity band is ±75bp, published on the site.
+### 3.2 Area economy (the demand side)
 
-## 3. Why now, and not at expiry
+MSA unemployment 4.4% (September 2026, preliminary), nonfarm employment +0.5% year over year, with education and
+health +3.8% and information -5.7%. County population -3.2% since 2020; city -0.8%. Los Angeles CPI +3.7% with food
+away from home +2.8%. **Reading:** flat-to-mild demand growth, with a sector mix that favours dayparts supported by
+health, education and trade employment, not by office-using information jobs.
 
-Three reasons, in order of weight.
+### 3.3 Exit economics (the friction)
 
-**The tenant is shrinking.** Jack in the Box Inc. reported Q3 FY2026 system same-store sales of −1.1%,
-17 closures against 4 openings in the quarter, and guided to 50–60 closures for the fiscal year with "most
-of which will be franchise restaurants". Franchise-level margin fell from 39.3% to 37.4%, bad debt rose,
-the dividend was discontinued, Del Taco was sold, and the turnaround plan names "block closure" and
-"selling real estate". This is a counterparty choosing which sites to keep. A tenant choosing which sites
-to keep is a tenant you negotiate with while your site is on the keep list.
+City base real property transfer tax 0.45%. Measure ULA adds 4.0% on consideration above $5,400,000 and 5.5% at
+$10,900,000 or more, applied to the whole price, for closings after 30 June 2026. At $5,400,000 the city tax is
+$24,300; one dollar higher it is $240,300. Assuming 2.0% brokerage, legal and escrow, total friction ranges from about
+2.5% to about 8.0% of price.
 
-**Waiting is itself a position.** The probability-weighted hold-and-hope case (strategy C) carries a 60%
-renewal assumption. Even that generous weighting gives a lower risk-adjusted score than acting now,
-because 40% of the time the owner absorbs a vacant year, a re-tenanting bill and a sale into a market
-that just watched the box go dark.
+### 3.4 The hold-versus-sell test
 
-**Leverage decays.** At four years remaining you are one of several landlords in a shrinking system's
-footprint. At nine years you are a site the operator has not yet had to decide about. The conversation is
-cheaper earlier.
-
-## 4. Why not simply sell now
-
-Selling now is not a bad answer — it is the second-lowest-risk option and it deletes the concentration
-problem in a single transaction. It loses on two counts:
-
-* **It prices the short term.** Selling now locks in whatever term the market can see. If the expiry is in
-  fact 2035 you are selling a nine-year asset and would capture that; if it is 2030 you are selling a
-  four-year asset at a discount you did not need to accept. Either way, the price is set by the term
-  curve, and the extension is the only thing that moves you along it.
-* **It triggers a one-way tax event.** About 5.56% of price in brokerage, closing and city/county transfer
-  tax, plus federal and California capital-gains tax on a basis that is private to you, plus the
-  destruction of the Proposition 13 base — an assessed-value cap of +2% a year that only exists while you
-  hold. A 1031 can defer the federal gain, but it must be arranged before closing and completed inside the
-  IRS's 45-day identification and 180-day completion windows, and the proceeds cannot pass through your
-  hands.
-
-Selling now **is** the right answer if you need liquidity, want out of single-tenant risk entirely, or if
-the tenant refuses to extend. It is the wrong answer if the only reason is that expiry is approaching.
-
-## 5. Risks, by decision
-
-| Decision | Principal risks | Mitigation |
-|---|---|---|
-| A — sell now | Selling at a short-term cap; crystallising tax; losing the Prop 13 base | Get the extension first if you can; arrange a 1031 before closing; never market a short tail |
-| B — do nothing | Tenant leaves; 12-month vacancy; re-tenanting cost; worst sale pricing | Only acceptable if you have decided to redevelop; otherwise replace with A |
-| C — hold to expiry | Unsecured renewal (~40% failure), 4–9 years of franchisor contraction risk, rate and catastrophe exposure with no term hedge | Convert to E: negotiate now, then hold |
-| D — extend, sell 2028 | Gives up the rent stream the extension was meant to protect; negative NPV in two of three cases | Only when the tail is very short — this is the 2030-specific play |
-| **E — extend, hold, sell with term** | Execution risk on the negotiation; five more years of market and catastrophe exposure; concession cost ~$150k | Stage the sale so you are never a forced seller |
-
-Black-swan surface — wildfire, earthquake, insurance-market failure, tenant insolvency, rate shock — is
-documented on `/risks.html` with sources. Severity is reasoned from official data; **no probability is
-invented** for these events, because official statistics do not support parcel-level probability.
-
-## 6. The tax and wealth-preservation layer
-
-For an individual preserving wealth, the question is not only "which number is biggest" but "what happens
-to the capital". Three mechanisms matter, all verified:
-
-1. **Proposition 13 wedge.** Assessed value grows at most 2% a year (California Constitution, Article
-   XIII A). If market value grows at 3%, the taxable base falls about **8.4%** behind over nine years.
-   That benefit accrues only while you hold and is destroyed by a sale.
-2. **Measure ULA is a cliff, not a slope.** 4% of the *whole* price above $5,400,000; 5.5% at or above
-   $10,900,000; zero below. At the threshold that is about **$216,000** for one dollar of price. If your
-   value sits near the line, price the transaction with the cliff in view — but never structure falsely
-   around it.
-3. **Section 1031** defers, and does not eliminate, the federal gain: 45 days to identify, 180 days to
-   close, qualified intermediary required, and the source page is marked archival by the IRS, so confirm
-   with your CPA before executing.
-
-**Concentration is the largest unmanaged risk here.** One parcel, one tenant, one sub-market, one metro,
-in a state with a live insurance crisis and a material seismic exposure. The cheapest available fix is a
-1031 out of this asset into diversified net-lease positions at exit — which is another argument for
-taking the term premium and then rotating, rather than holding the single asset indefinitely.
-
-## 7. Conditions that would change this advice
-
-| Trigger | New answer |
+| Item | Value |
 |---|---|
-| Tenant refuses any extension | Sell within twelve months (A) |
-| Expiry confirmed as 2035 and tenant signals intent to renew | Renegotiate urgency down; E still positive but the clock is longer |
-| 10-year Treasury falls 100bp+ | Cap rates compress, holding dominates; C/E become clearly superior to selling |
-| 10-year Treasury rises 100bp+ | Sell sooner rather than later; the term premium is worth less than the rate damage |
-| Fire zone, flood zone or liquefaction found at parcel level | Re-price; consider selling inside the current insurance cycle |
-| You need liquidity, or want zero single-tenant exposure | Sell now and 1031 into diversified assets |
-| Tenant of record is a weak franchisee with no guaranty | Treat as A, not E |
+| Reference NOI | $200,000 (illustrative; lease supplies the real figure) |
+| Entry cap rate | 6.25% (illustrative) |
+| Value | $3.20m |
+| Net proceeds today | $3.12m |
+| Five-year hold, 2.5% rent growth, 7.5% discount rate | $3.33m if exit at 6.25% |
+| Break-even exit cap rate | **6.83%** |
 
-## 8. What was not available, and what it bounds
+**Reading:** holding wins unless cap rates widen by more than about 58 bp over five years, or unless liquidity is worth
+more than the difference. Both are legitimate reasons to sell; neither is the same as "the market is high, sell".
 
-No address, lease, rent, NOI, parcel number or tenant identity was supplied — by design, because none of
-it may appear in the published product. Consequences:
+### 3.5 Risks that could defeat the recommendation
 
-* Every dollar figure in the model is **illustrative model output on assumed inputs**, not the property's
-  numbers. The *structure* of the conclusion (term drives price; the tenant is contracting; passive holding
-  is the worst path) rests on verified official data. The *arithmetic* does not, until the lease is read.
-* Parcel-level fire, flood, seismic, zoning and school data are published blank and flagged rather than
-  inferred.
-* Retail rents and cap-rate comparables have no official source. None was laundered in.
+Tenant failure or mass closure; a cap-rate shock (moving the rate from 5.25% to 7.25% cuts value by about 28%); the ULA cliff at exit; a
+parcel-level hazard that is uninsurable or uninsured (wildfire, surface fault rupture, liquefaction); and a
+re-tenanting period longer than the reserve. Each has a trigger on the decision page.
 
-The full list is at `/flagged.html`. Estimate the time to resolve: one afternoon with the lease documents
-and the tenant's real-estate contact.
+## 4. Options considered
 
-## 9. Actions
+| Option | Why rejected / accepted |
+|---|---|
+| **A. Renew now, hold (recommended)** | Preserves income and optionality; raises the sale price later by adding term; requires a rent test against comps and a guaranty. |
+| **B. Sell now, ununderwritten** | Rejected: no verified capitalisation rate, rent or parcel data exists; selling without a bid surrenders the option and crystallises a price based on nothing. |
+| **C. Hold to expiry, then re-tenant** | Rejected as a plan: it converts a leased asset into a vacant building with no verified market rent; it is the default outcome if the renewal is not signed. |
+| **D. Sell now, but only into a bid at 6.25% or tighter** | Accepted as the conditional alternative: if the market pays inside the break-even band, take it. |
+| **E. 1031 exchange on sale** | Available, not automatic: 45 days to identify, 180 days to close (IRS). Requires an adviser and identified replacement property before closing. |
 
-1. Retrieve the lease; record expiry, notice window, renewal options, escalators, insurance and capital
-   allocation, tenant of record and guaranty.
-2. Contact the franchisor's real-estate group about an extension. Target 10 years firm, CPI or 2%+ bumps,
-   budget a concession.
-3. Enter actual NOI into the calculator at `/valuation.html`. Re-read the strategy table against your own
-   number.
-4. If the extension is refused, instruct a broker immediately. Twelve months of marketing is the minimum,
-   and you want years on the clock when the asset sells.
-5. Before any sale closes, brief a CPA and a qualified intermediary on a 1031 — the deadlines start at
-   closing, not after.
+## 5. Decisions requested
+
+1. **Authorise the renewal approach** and set a rent floor from two independent rent comparables before the first
+   conversation with the operator.
+2. **Commission a broker's opinion of value** with three closed net-lease comparables, so the sale option is priced
+   rather than hypothetical.
+3. **Resolve the insurance position** (fire, quake, business interruption, and what the lease makes the tenant carry)
+   before committing capital to a hold.
+4. **Confirm the tax position** on both a sale and a 1031 exchange, including how the City applies Measure ULA to this
+   transaction.
+5. **Adopt the trigger table** on `decision.html` as the written sell discipline.
+
+## 6. Limits of this memo
+
+No appraisal, no valuation, no tax advice, no legal advice. Property-specific inputs are blank by policy (privacy) or
+by absence (documents not provided). Every published number is linked to the official page it was read from on
+2026-11-07; 33 unverified and 8 withheld items are listed on `flagged.html`.
