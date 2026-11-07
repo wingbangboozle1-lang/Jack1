@@ -1,88 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economy, Jobs &amp; Prices · JACK NNN Central LA</title>
-<meta name="description" content="BLS employment, sector trends, CPI and Treasury data for the Los Angeles metro, with official source links.">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Economic &amp; property-value factors — anonymized, source-verified NNN lease decision brief. Every table row links to an official publisher; unverified values are blank and flagged.">
+<meta name="color-scheme" content="light">
+<title>Economic &amp; property-value factors · Jack in the Box NNN decision brief</title>
+<link rel="stylesheet" href="assets/brief.css">
+<script defer src="assets/brief.js"></script>
 </head>
-<body data-page="economy.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Economy &amp; Prices</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
-
-    <p class="eyebrow">Category 2 · how the metro is actually performing</p>
-    <h1>Jobs, sector momentum, consumer prices and the cost of money</h1>
-    <p class="lede">Three questions matter for this asset: are people earning, are prices letting a restaurant raise menu
-    prices, and what discount rate is the buyer of a net-lease asset applying to the income stream?</p>
-
-    <div class="grid g4">
-      <div class="kpi"><div class="k">Unemployment rate</div><div class="v warn">4.4%</div><div class="m">Sept 2026 (preliminary)</div></div>
-      <div class="kpi"><div class="k">Total nonfarm, 12-mo</div><div class="v">+0.5%</div><div class="m">Essentially flat</div></div>
-      <div class="kpi"><div class="k">CPI all items</div><div class="v down">+3.7%</div><div class="m">12 months to Sept 2026</div></div>
-      <div class="kpi"><div class="k">10-year Treasury</div><div class="v">4.90%</div><div class="m">4 November 2026</div></div>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a href="index.html"><span class="brand-title">NNN Lease Decision Brief</span>
+      <span class="brand-sub">Anonymized · Central Los Angeles</span></a>
+      <span class="brand-tag">Official-source verified · 2026-11-07</span>
     </div>
-
-    <h2>What the numbers say</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>Employment is flat, and the growth is in the wrong sector for a burger chain</h3>
-        <p>The metro added payrolls at +0.5% year on year. The only sector with real momentum is education and health services
-        (+3.8%), which is salaried, daytime and least exposed to discretionary food spend. Information &mdash; the entertainment
-        and tech base that drives lunch and late-night trade &mdash; is down 5.7%. Financial activities (&minus;1.7%) and
-        professional services (&minus;0.5%) are also negative.</p>
-        <p class="small">Implication: the daypart mix that a Jack in the Box depends on (breakfast, lunch, late night) is
-        exposed to the two weakest parts of the local economy.</p>
-      </div>
-      <div class="card">
-        <h3>Costs are rising faster than menu prices can follow</h3>
-        <p>All-items CPI is +3.7% but food away from home is only +2.8%, so restaurants are absorbing roughly 90bp of real
-        price compression before they touch input costs. Energy is +20.3% and gasoline +30.8% year on year &mdash; a direct
-        hit to drive-thru traffic and, through the NNN recovery, to the tenant's occupancy cost.</p>
-        <p class="small">Implication: margin pressure lands on the tenant first and on the landlord at renewal, because a
-        tenant with compressed margins cannot absorb a rent increase.</p>
-      </div>
-      <div class="card">
-        <h3>Money is expensive: 4.90% risk-free sets the floor</h3>
-        <p>The 10-year Treasury closed at 4.90% on 4 November 2026 and traded as high as 5.31% in early October. A buyer of a
-        single-tenant asset financed at that level needs either a long lease or a high cap rate. Both translate into a lower
-        bid for a lease with six years left than for one with sixteen.</p>
-        <p class="small">Implication: capital-markets conditions, not the neighbourhood, will set the sale price. That is an
-        argument for selling into term, not for holding through it.</p>
-      </div>
-      <div class="card">
-        <h3>The market is large, which is why the exit exists at all</h3>
-        <p>City-wide accommodation and food services sales were $17.37bn in the 2022 Economic Census; retail sales were
-        $81.35bn, or $21,281 per capita. A dense, high-turnover commercial market is what gives a dark store a second life and
-        what gives a buyer a reason to bid on land.</p>
-        <p class="small">Implication: the downside from vacancy is bounded by re-leasing and redevelopment prospects &mdash;
-        but only if the parcel's zoning supports it, which is unverified (U-04).</p>
-      </div>
-    </div>
-
-    <h2>Employment</h2>
-    <div data-table="economy"></div>
-
-    <h2>Consumer prices, Los Angeles area</h2>
-    <div data-table="prices"></div>
-
-    <h2>Capital-markets inputs</h2>
-    <div data-table="capital"></div>
-
-    <div class="callout bad">
-      <div class="h">The single most important number on this page is not on it</div>
-      <p>The cap rate a buyer will apply to this asset is not published by any government agency. Rather than invent one,
-      the <a href="model.html">projection model</a> treats it as an explicit, adjustable assumption and shows the break-even
-      at which holding stops making sense. That is recorded as open item <b>U-06</b>.</p>
-    </div>
-
-    <div class="foot"><p><a href="market.html">&larr; Market &amp; Demographics</a> · <a href="schools.html">Next: Schools &amp; Community &rarr;</a></p></div>
-  </main>
+    <nav aria-label="Site navigation">
+<div class="nav-group"><h3>Overview</h3>
+<a href="index.html"><span class="dot"></span>Executive summary</a>
+<a href="decision.html"><span class="dot"></span>Decision paths &amp; recommendation</a>
+<a href="projection.html"><span class="dot"></span>Projection system</a>
 </div>
-<script src="assets/app.js"></script>
+<div class="nav-group"><h3>Property &amp; tenant</h3>
+<a href="property.html"><span class="dot"></span>Property &amp; lease</a>
+<a href="tenant.html"><span class="dot"></span>Tenant &amp; brand</a>
+</div>
+<div class="nav-group"><h3>Area economy</h3>
+<a href="market.html"><span class="dot"></span>Local market</a>
+<a href="geography.html"><span class="dot"></span>Geography &amp; infrastructure</a>
+<a href="demographics.html"><span class="dot"></span>Population &amp; households</a>
+<a href="income.html"><span class="dot"></span>Income, prices &amp; wages</a>
+<a href="employment.html"><span class="dot"></span>Jobs &amp; employment</a>
+<a href="schools.html"><span class="dot"></span>School system</a>
+<a href="economy.html" aria-current="page"><span class="dot"></span>Economic &amp; property-value factors</a>
+</div>
+<div class="nav-group"><h3>Risk &amp; rules</h3>
+<a href="hazards.html"><span class="dot"></span>Natural hazards &amp; black swans</a>
+<a href="regulatory.html"><span class="dot"></span>Taxes, wages &amp; land use</a>
+<a href="risks.html"><span class="dot"></span>Risk register</a>
+</div>
+<div class="nav-group"><h3>Governance</h3>
+<a href="sources.html"><span class="dot"></span>Sources &amp; manual review</a>
+<a href="flagged.html"><span class="dot"></span>Flagged for Review <span class="nav-flag">review</span></a>
+<a href="privacy.html"><span class="dot"></span>Privacy &amp; data policy</a>
+<a href="scope.html"><span class="dot"></span>Scope &amp; requirements</a>
+</div>
+</nav>
+    <div class="sidebar-foot">No personal information is published. Blank cells mean no official value was confirmed; see <a href="flagged.html" style="color:#e4bd85">Flagged for Review</a>.</div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+      <span class="crumb">Decision brief / <strong>Economic &amp; property-value factors</strong></span>
+      <div class="top-actions">
+        <span class="pill">229 verified values</span>
+        <span class="pill pill--warn"><a href="flagged.html">86 flagged</a></span>
+        <input type="search" id="global-search" placeholder="Filter rows…" aria-label="Filter table rows">
+        <select id="status-filter" aria-label="Filter by verification status">
+          <option value="all">All statuses</option>
+          <option value="verified">Verified only</option>
+          <option value="unverified">Flagged only</option>
+        </select>
+        <button type="button" id="clear-filters" class="menu-btn" style="display:inline-block">Clear</button>
+        <span class="hint" id="result-count"></span>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <p class="kicker">Economic base</p>
+        <h1>Economic &amp; property-value factors</h1>
+        <p class="lede">Output, business activity, prices, interest-rate anchors, forecast horizons, the property tax base and infrastructure.</p>
+        <div class="meta-row">
+          <span class="meta-chip">Session arena/dac604b9-jack1</span>
+          <span class="meta-chip">Sources read 2026-11-07</span>
+          <span class="meta-chip">315 rows · 59 official sources</span>
+          <span class="meta-chip">Privacy-first · no personal data</span>
+        </div>
+      </div>
+      
+      
+<div class="note-panel">
+  <h2>Every economic and property-value factor with an official publisher</h2>
+  <p>Output and income, business activity, prices, interest-rate anchors, forecast horizons, the
+  assessment roll and infrastructure investment are listed with their measure and date. Factors with no
+  official publisher &mdash; capitalization rates, comparable sales, commercial rent for this parcel &mdash;
+  are blank and flagged rather than filled from brokerage or aggregator commentary.</p>
+</div>
+
+<section class="section" id="sec-economy-1">
+<div class="section-head"><h2>Sec Economy 1</h2><span class="count">3 rows · 3 verified · 0 flagged</span></div>
+<p class="section-desc">Output &amp; income</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-01 la county personal income $818.5 billion 2024, current dollars bea county measure.  bea_2024 u.s. bureau of economic analysis gross domestic product by county and personal income by county, 2024 (bea 26-08)" class=""><td class="col-id">EC-01</td><td class="col-metric">LA County personal income</td><td class="col-value">$818.5 billion</td><td class="col-period">2024, current dollars</td><td class="col-note">BEA county measure.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">BEA_2024</a></div></td></tr>
+<tr data-status="verified" data-search="ec-02 la county real gdp $802.0 billion 2023, chained 2017 dollars different measure and year; the two figures are never combined.  bea_2023 u.s. bureau of economic analysis gross domestic product by county and metropolitan area, 2023 (bea 24-57)" class=""><td class="col-id">EC-02</td><td class="col-metric">LA County real GDP</td><td class="col-value">$802.0 billion</td><td class="col-period">2023, chained 2017 dollars</td><td class="col-note">Different measure and year; the two figures are never combined.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2024/gross-domestic-product-county-and-metropolitan-area-2023" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Metropolitan Area, 2023 (BEA 24-57)">BEA_2023</a></div></td></tr>
+<tr data-status="verified" data-search="ec-03 bea metropolitan-area statistics discontinued announced with the 2024 county estimates msa output/income projections cannot be sourced from bea after this change.  bea_2024 u.s. bureau of economic analysis gross domestic product by county and personal income by county, 2024 (bea 26-08)" class=""><td class="col-id">EC-03</td><td class="col-metric">BEA metropolitan-area statistics</td><td class="col-value">Discontinued</td><td class="col-period">Announced with the 2024 county estimates</td><td class="col-note">MSA output/income projections cannot be sourced from BEA after this change.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">BEA_2024</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-economy-2">
+<div class="section-head"><h2>Sec Economy 2</h2><span class="count">5 rows · 5 verified · 0 flagged</span></div>
+<p class="section-desc">Business activity</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-04 city total retail sales $81,351,523 thousand 2022 economic census retail scale.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">EC-04</td><td class="col-metric">City total retail sales</td><td class="col-value">$81,351,523 thousand</td><td class="col-period">2022 Economic Census</td><td class="col-note">Retail scale.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="ec-05 county total retail sales $213,932,785 thousand 2022 economic census county scale.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">EC-05</td><td class="col-metric">County total retail sales</td><td class="col-value">$213,932,785 thousand</td><td class="col-period">2022 Economic Census</td><td class="col-note">County scale.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="ec-06 county health care &amp; social assistance receipts $113,488,435 thousand 2022 economic census largest published sector receipts in this table.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">EC-06</td><td class="col-metric">County health care &amp; social assistance receipts</td><td class="col-value">$113,488,435 thousand</td><td class="col-period">2022 Economic Census</td><td class="col-note">Largest published sector receipts in this table.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="ec-07 county transportation &amp; warehousing receipts $65,350,932 thousand 2022 economic census logistics base.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">EC-07</td><td class="col-metric">County transportation &amp; warehousing receipts</td><td class="col-value">$65,350,932 thousand</td><td class="col-period">2022 Economic Census</td><td class="col-note">Logistics base.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="ec-08 county employer firms 251,405 reference year 2023 firm count.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">EC-08</td><td class="col-metric">County employer firms</td><td class="col-value">251,405</td><td class="col-period">Reference year 2023</td><td class="col-note">Firm count.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-economy-3">
+<div class="section-head"><h2>Sec Economy 3</h2><span class="count">3 rows · 3 verified · 0 flagged</span></div>
+<p class="section-desc">Prices &amp; rates</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-09 la area cpi-u, 12-month change 3.7% september 2026 inflation context.  bls_cpi u.s. bureau of labor statistics consumer price index, los angeles area — september 2026" class=""><td class="col-id">EC-09</td><td class="col-metric">LA area CPI-U, 12-month change</td><td class="col-value">3.7%</td><td class="col-period">September 2026</td><td class="col-note">Inflation context.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a></div></td></tr>
+<tr data-status="verified" data-search="ec-10 10-year treasury constant maturity 4.84% november 5, 2026 official discount-rate anchor.  fred_10 federal reserve bank of st. louis (fred) dgs10 — 10-year treasury constant maturity rate" class=""><td class="col-id">EC-10</td><td class="col-metric">10-year Treasury constant maturity</td><td class="col-value">4.84%</td><td class="col-period">November 5, 2026</td><td class="col-note">Official discount-rate anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a></div></td></tr>
+<tr data-status="verified" data-search="ec-11 30-year treasury constant maturity 5.25% november 5, 2026 long-term anchor for a long-horizon hold.  fred_30 federal reserve bank of st. louis (fred) dgs30 — 30-year treasury constant maturity rate" class=""><td class="col-id">EC-11</td><td class="col-metric">30-year Treasury constant maturity</td><td class="col-value">5.25%</td><td class="col-period">November 5, 2026</td><td class="col-note">Long-term anchor for a long-horizon hold.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS30" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS30 — 30-Year Treasury Constant Maturity Rate">FRED_30</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-economy-4">
+<div class="section-head"><h2>Sec Economy 4</h2><span class="count">6 rows · 5 verified · 1 flagged</span></div>
+<p class="section-desc">Forecast horizon</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-12 scag connect socal 2024 horizon 2050 adopted april 4, 2024 long-range planning forecast, not a 2030-2035 site forecast.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">EC-12</td><td class="col-metric">SCAG Connect SoCal 2024 horizon</td><td class="col-value">2050</td><td class="col-period">Adopted April 4, 2024</td><td class="col-note">Long-range planning forecast, not a 2030-2035 site forecast.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="verified" data-search="ec-13 scag child population, 2019 to 2050 4.2 million to 3.8 million scag region forecast absolute decline in the child population.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">EC-13</td><td class="col-metric">SCAG child population, 2019 to 2050</td><td class="col-value">4.2 million to 3.8 million</td><td class="col-period">SCAG region forecast</td><td class="col-note">Absolute decline in the child population.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="verified" data-search="ec-14 scag population ages 65+, 2019 to 2050 2.7 million to 4.5 million scag region forecast ageing shifts daytime demand.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">EC-14</td><td class="col-metric">SCAG population ages 65+, 2019 to 2050</td><td class="col-value">2.7 million to 4.5 million</td><td class="col-period">SCAG region forecast</td><td class="col-note">Ageing shifts daytime demand.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="verified" data-search="ec-15 scag region household formation rate, 2050 44.8% forecast, total headship rate household growth is projected to outpace population growth.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">EC-15</td><td class="col-metric">SCAG region household formation rate, 2050</td><td class="col-value">44.8%</td><td class="col-period">Forecast, total headship rate</td><td class="col-note">Household growth is projected to outpace population growth.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="verified" data-search="ec-16 scag region employment matched 2019 pre-covid peak by 2022 connect socal 2024 technical report 447,000 jobs above the 2016 base year of the prior plan.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">EC-16</td><td class="col-metric">SCAG region employment matched 2019 pre-COVID peak</td><td class="col-value">By 2022</td><td class="col-period">Connect SoCal 2024 technical report</td><td class="col-note">447,000 jobs above the 2016 base year of the prior plan.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="unverified" data-search="ec-17 employment projection through 2035  no official series official edd projections end in 2033; no extrapolation. blank: no official series. edd_la california employment development department labor market information — los angeles county profile" class="is-flagged"><td class="col-id">EC-17</td><td class="col-metric">Employment projection through 2035</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official series</td><td class="col-note">Official EDD projections end in 2033; no extrapolation.<span class="row-note">Blank: no official series.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-EC-17</span></td><td class="col-src"><div class="src-links"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&amp;selectedindex=19&amp;state=true&amp;geogArea=0604000037&amp;submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer" title="California Employment Development Department — Labor Market Information — Los Angeles County Profile">EDD_LA</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-economy-5">
+<div class="section-head"><h2>Sec Economy 5</h2><span class="count">4 rows · 2 verified · 2 flagged</span></div>
+<p class="section-desc">Real estate &amp; tax base</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-18 la county 2026 net taxable assessment roll $2.272 trillion 2026 roll, july 13, 2026; +4.42% over 2025 the assessor&#x27;s roll memo reports a gross roll of $2.367 trillion and a net taxable roll of $2.272 trillion. assessed value is not market value.  assessor_roll assessor_news los angeles county office of the assessor los angeles county office of the assessor assessment roll — 2026 roll release memo (july 13, 2026) newsroom — 2026 assessment roll announcements" class=""><td class="col-id">EC-18</td><td class="col-metric">LA County 2026 net taxable assessment roll</td><td class="col-value">$2.272 trillion</td><td class="col-period">2026 roll, July 13, 2026; +4.42% over 2025</td><td class="col-note">The Assessor&#x27;s roll memo reports a gross roll of $2.367 trillion and a net taxable roll of $2.272 trillion. Assessed value is not market value.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://assessor.lacounty.gov/news-information/assessmentroll" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessment Roll — 2026 roll release memo (July 13, 2026)">ASSESSOR_ROLL</a><a href="https://assessor.lacounty.gov/news-information/newsroom" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Newsroom — 2026 assessment roll announcements">ASSESSOR_NEWS</a></div></td></tr>
+<tr data-status="verified" data-search="ec-19 proposition 13 maximum base levy 1% of assessed value (plus bonded indebtedness and direct assessments) la county assessor overview assessed-value growth is limited to 2% annually absent a change of ownership or new construction.  assessor_p13 los angeles county office of the assessor real property assessment / proposition 13 overview" class=""><td class="col-id">EC-19</td><td class="col-metric">Proposition 13 maximum base levy</td><td class="col-value">1% of assessed value (plus bonded indebtedness and direct assessments)</td><td class="col-period">LA County Assessor overview</td><td class="col-note">Assessed-value growth is limited to 2% annually absent a change of ownership or new construction.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://assessor.lacounty.gov/homeowners/realproperty" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Real Property Assessment / Proposition 13 overview">ASSESSOR_P13</a></div></td></tr>
+<tr data-status="unverified" data-search="ec-21 net-lease capitalization rates / transaction comps  no official publisher no cap rate, comp or valuation multiple is asserted anywhere on this site. blank: no official source exists. assessor_portal los angeles county office of the assessor assessor public portal (parcel lookup)" class="is-flagged"><td class="col-id">EC-21</td><td class="col-metric">Net-lease capitalization rates / transaction comps</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">No cap rate, comp or valuation multiple is asserted anywhere on this site.<span class="row-note">Blank: no official source exists.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-EC-21</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a></div></td></tr>
+<tr data-status="unverified" data-search="ec-22 commercial rent for the subject property  not supplied residential rent figures elsewhere on this site are not commercial rent. blank: no lease supplied. assessor_portal los angeles county office of the assessor assessor public portal (parcel lookup)" class="is-flagged"><td class="col-id">EC-22</td><td class="col-metric">Commercial rent for the subject property</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Not supplied</td><td class="col-note">Residential rent figures elsewhere on this site are not commercial rent.<span class="row-note">Blank: no lease supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-EC-22</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-economy-6">
+<div class="section-head"><h2>Sec Economy 6</h2><span class="count">1 rows · 1 verified · 0 flagged</span></div>
+<p class="section-desc">Infrastructure</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="ec-20 d line extension section 1 opening may 8, 2026 three new wilshire stations transit-access improvement; corridor-specific.  metro_dline la metro d line subway extension project" class=""><td class="col-id">EC-20</td><td class="col-metric">D Line Extension Section 1 opening</td><td class="col-value">May 8, 2026</td><td class="col-period">Three new Wilshire stations</td><td class="col-note">Transit-access improvement; corridor-specific.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.metro.net/projects/westside/" target="_blank" rel="noopener noreferrer" title="LA Metro — D Line Subway Extension project">METRO_DLINE</a></div></td></tr>
+</tbody></table></div></section>
+    </main>
+    <footer class="footer"><div class="footer-inner">
+      <strong>Reading rule:</strong> every table row links to an official publisher. An empty value cell is
+      an unverified value, flagged <code>U-&lt;row id&gt;</code> on <a href="flagged.html">Flagged for Review</a>;
+      nothing is inferred or filled. · <a href="sources.html">Sources &amp; manual review</a> ·
+      <a href="privacy.html">Privacy</a> · <a href="scope.html">Scope &amp; requirements</a> ·
+      <a href="index.html">Executive summary</a>
+    </div></footer>
+  </div>
+</div>
 </body>
 </html>

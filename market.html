@@ -1,106 +1,140 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official citywide and countywide population, income, employment, planning, and school context for the property decision brief.">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Local Market | Jack in the Box Property Brief</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/site.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Local market — anonymized, source-verified NNN lease decision brief. Every table row links to an official publisher; unverified values are blank and flagged.">
+<meta name="color-scheme" content="light">
+<title>Local market · Jack in the Box NNN decision brief</title>
+<link rel="stylesheet" href="assets/brief.css">
+<script defer src="assets/brief.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="app-shell">
-    <aside class="sidebar" id="site-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
-      <p class="nav-label">Research dashboard</p>
-      <nav class="site-nav">
-        <a href="index.html"><span class="nav-dot">01</span>Executive summary</a>
-        <a href="market.html" aria-current="page"><span class="nav-dot">02</span>Local market</a>
-        <a href="property.html"><span class="nav-dot">03</span>Lease &amp; asset</a>
-        <a href="decision.html"><span class="nav-dot">04</span>Sell / renew paths</a>
-        <a href="risks.html"><span class="nav-dot">05</span>Risk register</a>
-        <a href="flagged.html"><span class="nav-dot">06</span>Flagged for Review</a>
-        <a href="sources.html"><span class="nav-dot">07</span>Sources &amp; method</a>
-      </nav>
-      <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
-    </aside>
-    <div class="main-column">
-      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Local market</span></div><div class="snapshot">Evidence snapshot · 06 Nov 2026</div></header>
-      <main id="main-content" class="content">
-        <header class="page-intro">
-          <p class="eyebrow">Area economics · population · income · jobs · schools</p>
-          <h1>Use city and county context carefully.</h1>
-          <p class="lead">The property was described as near central Los Angeles, but no address or parcel was supplied. These measures are therefore reported at their official geography—not relabeled as a neighborhood, trade area, or site forecast.</p>
-        </header>
-
-        <div class="callout warning">
-          <h3>Geography limitation</h3>
-          <p class="small">“Central Los Angeles” is not a single geography for all statistics. Census QuickFacts covers the City of Los Angeles; the EDD figures below cover Los Angeles County; SCAG uses county and regional forecast areas; DTLA 2040 has a defined planning boundary. Without the parcel, no local school assignment, zoning, catchment, or plan-area match is asserted. <a href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS address / parcel search</a>.</p>
-        </div>
-
-        <div class="section-heading"><div><p class="eyebrow">Area economics and demographics</p><h2>Observed citywide indicators</h2><p>Current public indicators provide context, but do not establish restaurant sales, site footfall, customer income, or property rent.</p></div><span class="badge badge-limited">No parcel-level measurements</span></div>
-        <div class="table-tools"><span class="micro muted">Filter within this table</span><input class="table-search" type="search" placeholder="Search indicators…" aria-label="Search area indicators" data-table-search="market-indicators"></div>
-        <div class="table-wrap">
-          <table id="market-indicators">
-            <caption>Los Angeles city measures; each row links directly to the source table or official lookup.</caption>
-            <thead><tr><th scope="col">Indicator</th><th scope="col">Value</th><th scope="col">Period / geography</th><th scope="col">Interpretation limit</th><th scope="col">Official source</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Population</strong></td><td>3,869,089</td><td>July 1, 2025 estimate · City of Los Angeles</td><td>Citywide, not a site trade area or within-walkshed count.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Population change</strong></td><td>−0.8%</td><td>2020 estimate base to July 1, 2025 · City</td><td>Long-run citywide change; no neighborhood direction can be inferred.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Median household income</strong></td><td>$81,939</td><td>2020–2024 ACS · City · 2024 dollars</td><td>City median; household mix around this property is unknown.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Median gross rent</strong></td><td>$1,933 / month</td><td>2020–2024 ACS · City</td><td>Residential measure; not commercial rent or restaurant affordability.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Owner-occupied housing</strong></td><td>36.0%</td><td>2020–2024 ACS · City</td><td>Citywide tenure mix; not parcel-adjacent household composition.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Population density</strong></td><td>8,304.2 people / sq. mi.</td><td>2020 Census · City</td><td>Citywide average conceals substantial block- and corridor-level variation.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Retail sales</strong></td><td>$81.35 billion</td><td>2022 · City · nominal sales</td><td>All retail categories; not a forecast or proxy for this restaurant’s sales.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Accommodation and food-services sales</strong></td><td>$17.37 billion</td><td>2022 · City · nominal sales</td><td>Broad sector aggregate; does not isolate quick-service restaurants or the subject unit.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts</a></td></tr>
-              <tr><td><strong>Annual unemployment rate</strong></td><td>5.8%</td><td>2025 · Los Angeles city · 11-month average</td><td>BLS notes October was not collected during the federal shutdown; not directly comparable to the county monthly rate below.</td><td><a class="source-link" href="https://www.bls.gov/lau/city-annual-unemployment-rates.htm" target="_blank" rel="noopener noreferrer">BLS city rates</a></td></tr>
-              <tr><td><strong>Unemployment rate</strong></td><td>5.0%</td><td>December 2025 · Los Angeles County · not seasonally adjusted</td><td>Different geography, period, and series from the BLS city annual rate.</td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer">CA EDD county profile</a></td></tr>
-              <tr><td><strong>County labor force / employed / unemployed</strong></td><td>5,148,900 / 4,889,600 / 259,300</td><td>December 2025 · Los Angeles County · not seasonally adjusted</td><td>County aggregate only; not resident labor supply within a property catchment.</td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer">CA EDD county profile</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <section id="projections" class="section-heading"><div><p class="eyebrow">Long-range outlook</p><h2>Official projections are planning scenarios—not guarantees</h2><p>Use these as broad sensitivity context only. Neither projection set estimates this restaurant’s demand, corridor performance, or real-estate value.</p></div></section>
-        <div class="table-wrap">
-          <table>
-            <caption>Published planning forecasts and expectations relevant to the broader area.</caption>
-            <thead><tr><th scope="col">Geography / measure</th><th scope="col">Published figure</th><th scope="col">Horizon / basis</th><th scope="col">Limit</th><th scope="col">Official source</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Los Angeles County population</strong></td><td>10.046 million (2019) → 10.793 million (2050)</td><td>SCAG Connect SoCal 2024 adopted forecast</td><td>County-level forecast based on plan assumptions; not a site, city, or customer-base projection.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast PDF</a></td></tr>
-              <tr><td><strong>Los Angeles County employment</strong></td><td>5.031 million (2019) → 5.461 million (2050)</td><td>SCAG Connect SoCal 2024 adopted forecast</td><td>County total; no sector, commute, or parcel catchment match is provided here.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast PDF</a></td></tr>
-              <tr><td><strong>Regional job additions: health care / social assistance</strong></td><td>+416,000</td><td>Southern California region · 2022–2050 forecast</td><td>Regional employment addition across a broad sector; not restaurant demand or local hiring.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast PDF</a></td></tr>
-              <tr><td><strong>Regional job additions: construction</strong></td><td>+148,000</td><td>Southern California region · 2022–2050 forecast</td><td>Regional employment addition; does not establish nearby project delivery.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast PDF</a></td></tr>
-              <tr><td><strong>Regional job additions: accommodation / food services</strong></td><td>+106,000</td><td>Southern California region · 2022–2050 forecast</td><td>Forecast sector addition; no split for quick-service restaurants or the subject market.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast PDF</a></td></tr>
-              <tr><td><strong>Downtown Plan planning expectations</strong></td><td>100,000 homes; 175,000 additional residents; 100,000 work opportunities</td><td>DTLA 2040 · plan horizon to 2040</td><td>Plan expectations, not guaranteed outcomes. Relevant only if the parcel is inside the adopted Downtown Plan boundary; no match has been made.</td><td><a class="source-link" href="https://planning.lacity.gov/odocument/92b97b24-1978-4e0e-9eae-51f22eda9e4c/Press%20Release_%20DTLA%20New%20Zoning%20Code.pdf" target="_blank" rel="noopener noreferrer">LA City Planning · DTLA 2040</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <section class="section-heading"><div><p class="eyebrow">Schools and place-based measures</p><h2>Location-dependent facts remain blank</h2><p>These items require an address or parcel match. No school, route, block group, or traffic corridor has been guessed.</p></div></section>
-        <div class="table-wrap">
-          <table>
-            <caption>Unmapped place-specific measures and official tools for later verification.</caption>
-            <thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Status</th><th scope="col">Official lookup</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Subject submarket and drive-time / walk-time catchment</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not mapped</span><span class="row-note">No address or APN provided; do not use citywide averages as substitutes.</span></td><td><a class="source-link" href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS</a></td></tr>
-              <tr><td><strong>School attendance assignment</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not mapped</span><span class="row-note">Assignments depend on exact location and may change.</span></td><td><a class="source-link" href="https://explore.lausd.org/" target="_blank" rel="noopener noreferrer">LAUSD School Explorer</a></td></tr>
-              <tr><td><strong>School performance context</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not mapped</span><span class="row-note">No campus has been identified for this site.</span></td><td><a class="source-link" href="https://www.cde.ca.gov/ta/ac/cm/" target="_blank" rel="noopener noreferrer">California School Dashboard</a></td></tr>
-              <tr><td><strong>Nearby jobs, transit access, traffic counts, and crime trends</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not assessed</span><span class="row-note">Exact location and current, comparable datasets required.</span></td><td><a class="source-link" href="https://www.metro.net/riding/guide/system-maps/" target="_blank" rel="noopener noreferrer">LA Metro maps</a> · <a class="source-link" href="https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/" target="_blank" rel="noopener noreferrer">LAPD mapping notice</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="section-heading"><div><p class="eyebrow">How to use this page</p><h2>What area data can—and cannot—do</h2></div></div>
-        <div class="three-column">
-          <article class="panel"><p class="kicker">Can inform</p><h3>Macro downside and upside cases</h3><p class="small">Use the official population, labor, and planning series to build cautious regional scenarios and stress-test a hold period. Keep geography and forecast date attached to each assumption.</p></article>
-          <article class="panel"><p class="kicker">Cannot establish</p><h3>Restaurant unit economics</h3><p class="small">City sales and employment do not establish a specific unit’s sales, traffic, rent coverage, operator, customer profile, or renewal capacity.</p></article>
-          <article class="panel"><p class="kicker">Needs next</p><h3>Parcel-matched evidence</h3><p class="small">A verified parcel, current demographics at appropriate geographies, site access, permitted use, and tenant unit data are required. Missing fields are listed on <a href="flagged.html">Flagged for Review</a>.</p></article>
-        </div>
-      </main>
-      <footer class="site-footer"><div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div><div>Sources linked row-by-row · 06 Nov 2026</div></footer>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a href="index.html"><span class="brand-title">NNN Lease Decision Brief</span>
+      <span class="brand-sub">Anonymized · Central Los Angeles</span></a>
+      <span class="brand-tag">Official-source verified · 2026-11-07</span>
     </div>
+    <nav aria-label="Site navigation">
+<div class="nav-group"><h3>Overview</h3>
+<a href="index.html"><span class="dot"></span>Executive summary</a>
+<a href="decision.html"><span class="dot"></span>Decision paths &amp; recommendation</a>
+<a href="projection.html"><span class="dot"></span>Projection system</a>
+</div>
+<div class="nav-group"><h3>Property &amp; tenant</h3>
+<a href="property.html"><span class="dot"></span>Property &amp; lease</a>
+<a href="tenant.html"><span class="dot"></span>Tenant &amp; brand</a>
+</div>
+<div class="nav-group"><h3>Area economy</h3>
+<a href="market.html" aria-current="page"><span class="dot"></span>Local market</a>
+<a href="geography.html"><span class="dot"></span>Geography &amp; infrastructure</a>
+<a href="demographics.html"><span class="dot"></span>Population &amp; households</a>
+<a href="income.html"><span class="dot"></span>Income, prices &amp; wages</a>
+<a href="employment.html"><span class="dot"></span>Jobs &amp; employment</a>
+<a href="schools.html"><span class="dot"></span>School system</a>
+<a href="economy.html"><span class="dot"></span>Economic &amp; property-value factors</a>
+</div>
+<div class="nav-group"><h3>Risk &amp; rules</h3>
+<a href="hazards.html"><span class="dot"></span>Natural hazards &amp; black swans</a>
+<a href="regulatory.html"><span class="dot"></span>Taxes, wages &amp; land use</a>
+<a href="risks.html"><span class="dot"></span>Risk register</a>
+</div>
+<div class="nav-group"><h3>Governance</h3>
+<a href="sources.html"><span class="dot"></span>Sources &amp; manual review</a>
+<a href="flagged.html"><span class="dot"></span>Flagged for Review <span class="nav-flag">review</span></a>
+<a href="privacy.html"><span class="dot"></span>Privacy &amp; data policy</a>
+<a href="scope.html"><span class="dot"></span>Scope &amp; requirements</a>
+</div>
+</nav>
+    <div class="sidebar-foot">No personal information is published. Blank cells mean no official value was confirmed; see <a href="flagged.html" style="color:#e4bd85">Flagged for Review</a>.</div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+      <span class="crumb">Decision brief / <strong>Local market</strong></span>
+      <div class="top-actions">
+        <span class="pill">229 verified values</span>
+        <span class="pill pill--warn"><a href="flagged.html">86 flagged</a></span>
+        <input type="search" id="global-search" placeholder="Filter rows…" aria-label="Filter table rows">
+        <select id="status-filter" aria-label="Filter by verification status">
+          <option value="all">All statuses</option>
+          <option value="verified">Verified only</option>
+          <option value="unverified">Flagged only</option>
+        </select>
+        <button type="button" id="clear-filters" class="menu-btn" style="display:inline-block">Clear</button>
+        <span class="hint" id="result-count"></span>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <p class="kicker">Market overview</p>
+        <h1>Local market</h1>
+        <p class="lede">The city, county and metropolitan indicators that frame the decision, with explicit geography and vintage labels.</p>
+        <div class="meta-row">
+          <span class="meta-chip">Session arena/dac604b9-jack1</span>
+          <span class="meta-chip">Sources read 2026-11-07</span>
+          <span class="meta-chip">315 rows · 59 official sources</span>
+          <span class="meta-chip">Privacy-first · no personal data</span>
+        </div>
+      </div>
+      
+      
+<div class="note-panel">
+  <h2>Citywide and countywide indicators, not a trade area</h2>
+  <p>These are official city, county and metropolitan figures. They are deliberately not assigned to the
+  property's drive-time catchment, because no address was supplied. Use the category subpages to drill
+  into population, income, jobs, schools, the economic base, hazards and rules.</p>
+</div>
+
+<section class="section" id="sec-market-1">
+<div class="section-head"><h2>Sec Market 1</h2><span class="count">12 rows · 12 verified · 0 flagged</span></div>
+<p class="section-desc">Local market snapshot</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="mk-01 los angeles city population 3,869,089 july 1, 2025 (v2025) citywide baseline.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">MK-01</td><td class="col-metric">Los Angeles city population</td><td class="col-value">3,869,089</td><td class="col-period">July 1, 2025 (V2025)</td><td class="col-note">Citywide baseline.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-02 los angeles county population 9,694,934 july 1, 2025 (v2025) census vintage-2025 county estimate; differs from the ca dof jan 1, 2026 estimate (see flagged).  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">MK-02</td><td class="col-metric">Los Angeles County population</td><td class="col-value">9,694,934</td><td class="col-period">July 1, 2025 (V2025)</td><td class="col-note">Census Vintage-2025 county estimate; differs from the CA DOF Jan 1, 2026 estimate (see flagged).</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-03 county median household income $90,112 2020-2024 acs, 2024 dollars, la county above the city median; county geography is broader than the trade area.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">MK-03</td><td class="col-metric">County median household income</td><td class="col-value">$90,112</td><td class="col-period">2020-2024 ACS, 2024 dollars, LA County</td><td class="col-note">Above the city median; county geography is broader than the trade area.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-04 city persons in poverty 16.5% 2020-2024 / saipe as published in quickfacts price-sensitive demand cohort is material.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">MK-04</td><td class="col-metric">City persons in poverty</td><td class="col-value">16.5%</td><td class="col-period">2020-2024 / SAIPE as published in QuickFacts</td><td class="col-note">Price-sensitive demand cohort is material.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-05 city accommodation &amp; food services sales $17,366,966 thousand 2022 economic census, city of los angeles sector scale indicator; 2022 is the latest published economic census year in this table.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">MK-05</td><td class="col-metric">City accommodation &amp; food services sales</td><td class="col-value">$17,366,966 thousand</td><td class="col-period">2022 Economic Census, City of Los Angeles</td><td class="col-note">Sector scale indicator; 2022 is the latest published Economic Census year in this table.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-06 county accommodation &amp; food services sales $44,000,801 thousand 2022 economic census, la county countywide food-service demand; not a restaurant-level sales figure.  cen_cty u.s. census bureau quickfacts — los angeles county, california (v2025)" class=""><td class="col-id">MK-06</td><td class="col-metric">County accommodation &amp; food services sales</td><td class="col-value">$44,000,801 thousand</td><td class="col-period">2022 Economic Census, LA County</td><td class="col-note">Countywide food-service demand; not a restaurant-level sales figure.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles County, California (V2025)">CEN_CTY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-07 city total retail sales per capita $21,281 2022, city of los angeles retail spending context; not commercial rent.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">MK-07</td><td class="col-metric">City total retail sales per capita</td><td class="col-value">$21,281</td><td class="col-period">2022, City of Los Angeles</td><td class="col-note">Retail spending context; not commercial rent.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="mk-08 msa unemployment rate 4.4% september 2026 (preliminary) metro labor-market condition.  bls_eag u.s. bureau of labor statistics economy at a glance — los angeles-long beach-santa ana, ca" class=""><td class="col-id">MK-08</td><td class="col-metric">MSA unemployment rate</td><td class="col-value">4.4%</td><td class="col-period">September 2026 (preliminary)</td><td class="col-note">Metro labor-market condition.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA">BLS_EAG</a></div></td></tr>
+<tr data-status="verified" data-search="mk-09 la county personal income $818.5 billion 2024, current dollars, la county bea&#x27;s largest-county personal income figure. it is not gdp (see flagged ir-d2).  bea_2024 u.s. bureau of economic analysis gross domestic product by county and personal income by county, 2024 (bea 26-08)" class=""><td class="col-id">MK-09</td><td class="col-metric">LA County personal income</td><td class="col-value">$818.5 billion</td><td class="col-period">2024, current dollars, LA County</td><td class="col-note">BEA&#x27;s largest-county personal income figure. It is NOT GDP (see flagged IR-D2).</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">BEA_2024</a></div></td></tr>
+<tr data-status="verified" data-search="mk-10 la county real gdp $802.0 billion 2023, chained 2017 dollars, la county (bea 24-57) older vintage and different measure than the 2024 personal income figure; do not combine.  bea_2023 u.s. bureau of economic analysis gross domestic product by county and metropolitan area, 2023 (bea 24-57)" class=""><td class="col-id">MK-10</td><td class="col-metric">LA County real GDP</td><td class="col-value">$802.0 billion</td><td class="col-period">2023, chained 2017 dollars, LA County (BEA 24-57)</td><td class="col-note">Older vintage and different measure than the 2024 personal income figure; do not combine.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2024/gross-domestic-product-county-and-metropolitan-area-2023" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Metropolitan Area, 2023 (BEA 24-57)">BEA_2023</a></div></td></tr>
+<tr data-status="verified" data-search="mk-11 los angeles area cpi-u, 12-month change 3.7% september 2026 cost and escalation context.  bls_cpi u.s. bureau of labor statistics consumer price index, los angeles area — september 2026" class=""><td class="col-id">MK-11</td><td class="col-metric">Los Angeles area CPI-U, 12-month change</td><td class="col-value">3.7%</td><td class="col-period">September 2026</td><td class="col-note">Cost and escalation context.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a></div></td></tr>
+<tr data-status="verified" data-search="mk-12 10-year treasury constant maturity yield 4.84% november 5, 2026 official discount-rate anchor; no property cap rate is published by any agency.  fred_10 federal reserve bank of st. louis (fred) dgs10 — 10-year treasury constant maturity rate" class=""><td class="col-id">MK-12</td><td class="col-metric">10-year Treasury constant maturity yield</td><td class="col-value">4.84%</td><td class="col-period">November 5, 2026</td><td class="col-note">Official discount-rate anchor; no property cap rate is published by any agency.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-market-2">
+<div class="section-head"><h2>Sec Market 2</h2><span class="count">2 rows · 0 verified · 2 flagged</span></div>
+<p class="section-desc">Lookup limits</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="unverified" data-search="mk-13 subject submarket / drive-time catchment  requires an address or apn citywide and countywide statistics cannot be assigned to a single parcel without a location match. blank: no parcel supplied. zimas los angeles city planning zimas parcel / zoning lookup" class="is-flagged"><td class="col-id">MK-13</td><td class="col-metric">Subject submarket / drive-time catchment</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Requires an address or APN</td><td class="col-note">Citywide and countywide statistics cannot be assigned to a single parcel without a location match.<span class="row-note">Blank: no parcel supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-MK-13</span></td><td class="col-src"><div class="src-links"><a href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer" title="Los Angeles City Planning — ZIMAS parcel / zoning lookup">ZIMAS</a></div></td></tr>
+<tr data-status="unverified" data-search="mk-14 comparable net-lease transactions / cap rates  no official publisher no government agency publishes net-lease cap rates. left blank rather than quoted from brokerage commentary. blank: no official source exists. assessor_portal los angeles county office of the assessor assessor public portal (parcel lookup)" class="is-flagged"><td class="col-id">MK-14</td><td class="col-metric">Comparable net-lease transactions / cap rates</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">No government agency publishes net-lease cap rates. Left blank rather than quoted from brokerage commentary.<span class="row-note">Blank: no official source exists.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-MK-14</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a></div></td></tr>
+</tbody></table></div></section>
+
+<div class="callout callout--warn">
+  <h2>Do not mix measures</h2>
+  <p>Census Vintage-2025 estimates and California DOF January-1 estimates have different reference dates
+  and methods; BEA personal income is not GDP; BLS metro jobs are not Census employer establishment
+  employment. Each row states its own measure, date and geography. See
+  <a href="flagged.html">Flagged for Review</a> for the reconciliation notes.</p>
+</div>
+
+    </main>
+    <footer class="footer"><div class="footer-inner">
+      <strong>Reading rule:</strong> every table row links to an official publisher. An empty value cell is
+      an unverified value, flagged <code>U-&lt;row id&gt;</code> on <a href="flagged.html">Flagged for Review</a>;
+      nothing is inferred or filled. · <a href="sources.html">Sources &amp; manual review</a> ·
+      <a href="privacy.html">Privacy</a> · <a href="scope.html">Scope &amp; requirements</a> ·
+      <a href="index.html">Executive summary</a>
+    </div></footer>
   </div>
+</div>
 </body>
 </html>

@@ -1,97 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tenant Health &amp; Lease Terms · JACK NNN Central LA</title>
-<meta name="description" content="Jack in the Box FY2025 filings: store count, closures, same-store sales, guidance and lease mechanics, straight from SEC EDGAR.">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Tenant &amp; brand — anonymized, source-verified NNN lease decision brief. Every table row links to an official publisher; unverified values are blank and flagged.">
+<meta name="color-scheme" content="light">
+<title>Tenant &amp; brand · Jack in the Box NNN decision brief</title>
+<link rel="stylesheet" href="assets/brief.css">
+<script defer src="assets/brief.js"></script>
 </head>
-<body data-page="tenant.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Tenant &amp; Lease</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
-
-    <p class="eyebrow">Category 4 · the counterparty and the contract</p>
-    <h1>Tenant health and what the lease actually protects</h1>
-    <p class="lede">A single-tenant NNN asset is a bond with a building attached. Its value is the tenant's ability and
-    willingness to keep paying. This page is built from the company's own filings, not from press coverage.</p>
-
-    <div class="callout warn">
-      <div class="h">The counterparty on this specific lease is unknown</div>
-      <p>93% of the Jack in the Box system is franchised, so the operator of this unit is probably a franchisee and the
-      guarantor is probably not the public company. That distinction is the difference between an investment-grade credit and
-      a small business. It cannot be resolved without the lease, so it is open item <b>U-03</b> &mdash; and it is the first
-      document to pull.</p>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a href="index.html"><span class="brand-title">NNN Lease Decision Brief</span>
+      <span class="brand-sub">Anonymized · Central Los Angeles</span></a>
+      <span class="brand-tag">Official-source verified · 2026-11-07</span>
     </div>
-
-    <div class="grid g4">
-      <div class="kpi"><div class="k">System units, FY2025</div><div class="v down">2,136</div><div class="m">from 2,191 a year earlier</div></div>
-      <div class="kpi"><div class="k">Same-store sales, FY2025</div><div class="v down">&minus;4.2%</div><div class="m">Q4 alone: &minus;7.4%</div></div>
-      <div class="kpi"><div class="k">Closures, FY2025</div><div class="v down">86</div><div class="m">guided 50&ndash;100 more in FY2026</div></div>
-      <div class="kpi"><div class="k">Dividend</div><div class="v down">Discontinued</div><div class="m">cash preserved for debt</div></div>
-    </div>
-
-    <h2>What the filings say</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>The system is contracting on purpose</h3>
-        <p>The "JACK on Track" plan, unveiled in 2025, has three legs: a <b>restaurant closure programme</b>, the sale of Del
-        Taco, and cash acceleration (dividend discontinued, new company development cut back). In FY2025 the system opened 31
-        units and closed 86. FY2026 guidance is a count of 2,050&ndash;2,100 &mdash; roughly 20 openings against
-        <b>50&ndash;100 closures, "most of which will be franchise restaurants"</b>.</p>
-        <p class="small">Translation for a landlord: the tenant's own plan assumes it will have fewer restaurants next year,
-        and the closures are concentrated in the franchise base &mdash; the base most likely to be your counterparty.</p>
-      </div>
-      <div class="card">
-        <h3>Sales are falling at every level</h3>
-        <p>FY2025 system same-store sales &minus;4.2% (company &minus;3.7%, franchise &minus;4.3%). Q4 was materially worse:
-        &minus;7.4% system, &minus;7.6% franchise. Management attributes it to transaction declines and unfavourable mix,
-        partly offset by menu price &mdash; i.e. fewer customers, higher prices. That is the classic pre-renewal warning pattern.</p>
-        <p class="small">A franchisee with falling sales and a $20/hour statutory wage floor cannot easily absorb a rent reset
-        upward. Plan for a flat-to-modest renewal rent, not market-plus.</p>
-      </div>
-      <div class="card">
-        <h3>The balance sheet is being repaired by selling assets</h3>
-        <p>Del Taco was agreed to be sold (stock purchase agreement signed 15 October 2025) for an aggregate price of
-        <b>$115m</b> in cash, subject to adjustments; the dividend is gone; Q4 Adjusted EBITDA fell to $45.6m from $65.5m. FY2026 guidance is $225&ndash;240m of
-        Adjusted EBITDA &mdash; and explicitly includes "<b>selling real estate</b>" as a driver of franchise-level margin.</p>
-        <p class="small">A company that is monetising real estate is also a company that is deciding which leases to keep.
-        Ask directly, in writing, whether this unit is on the retention list.</p>
-      </div>
-      <div class="card">
-        <h3>Lease mechanics that matter more than the brand</h3>
-        <p>Standard franchise terms are 20 years with a $50,000 initial fee and royalties generally 5.0% of gross sales. The
-        current prototype is ~1,372 sq ft. A small building on a commercially-zoned parcel means a high <b>land-value share</b>
-        &mdash; good for residual value, but also the reason a buyer will underwrite the land, not the building, once the term
-        gets short.</p>
-        <p class="small">A 1,372 sq ft prototype on a corner in central Los Angeles is a redevelopment play dressed as a
-        restaurant. Price it as both.</p>
-      </div>
-    </div>
-
-    <h2>Tenant and lease data</h2>
-    <div data-table="tenant"></div>
-
-    <h2>Property-specific fields (withheld by design)</h2>
-    <p>Every row below is either private information that must not be published, or a value that requires a document this
-    session did not have. The site leaves them open rather than filling them with an estimate.</p>
-    <div data-table="property"></div>
-
-    <div class="callout bad">
-      <div class="h">Document requests that change the answer</div>
-      <p><b>1.</b> The lease and all amendments (term, expiry, options, escalations, recovery caps, co-tenancy, go-dark clause).
-      <b>2.</b> The guaranty, if any, and the tenant entity's financial statements. <b>3.</b> The estoppel certificate.
-      <b>4.</b> The insurance certificate and declaration pages. <b>5.</b> The current property tax bill and the assessed value.
-      Without these five, every number on the <a href="model.html">model page</a> is a placeholder in a correct formula.</p>
-    </div>
-
-    <div class="foot"><p><a href="schools.html">&larr; Schools &amp; Community</a> · <a href="risk.html">Next: Risk Register &rarr;</a></p></div>
-  </main>
+    <nav aria-label="Site navigation">
+<div class="nav-group"><h3>Overview</h3>
+<a href="index.html"><span class="dot"></span>Executive summary</a>
+<a href="decision.html"><span class="dot"></span>Decision paths &amp; recommendation</a>
+<a href="projection.html"><span class="dot"></span>Projection system</a>
 </div>
-<script src="assets/app.js"></script>
+<div class="nav-group"><h3>Property &amp; tenant</h3>
+<a href="property.html"><span class="dot"></span>Property &amp; lease</a>
+<a href="tenant.html" aria-current="page"><span class="dot"></span>Tenant &amp; brand</a>
+</div>
+<div class="nav-group"><h3>Area economy</h3>
+<a href="market.html"><span class="dot"></span>Local market</a>
+<a href="geography.html"><span class="dot"></span>Geography &amp; infrastructure</a>
+<a href="demographics.html"><span class="dot"></span>Population &amp; households</a>
+<a href="income.html"><span class="dot"></span>Income, prices &amp; wages</a>
+<a href="employment.html"><span class="dot"></span>Jobs &amp; employment</a>
+<a href="schools.html"><span class="dot"></span>School system</a>
+<a href="economy.html"><span class="dot"></span>Economic &amp; property-value factors</a>
+</div>
+<div class="nav-group"><h3>Risk &amp; rules</h3>
+<a href="hazards.html"><span class="dot"></span>Natural hazards &amp; black swans</a>
+<a href="regulatory.html"><span class="dot"></span>Taxes, wages &amp; land use</a>
+<a href="risks.html"><span class="dot"></span>Risk register</a>
+</div>
+<div class="nav-group"><h3>Governance</h3>
+<a href="sources.html"><span class="dot"></span>Sources &amp; manual review</a>
+<a href="flagged.html"><span class="dot"></span>Flagged for Review <span class="nav-flag">review</span></a>
+<a href="privacy.html"><span class="dot"></span>Privacy &amp; data policy</a>
+<a href="scope.html"><span class="dot"></span>Scope &amp; requirements</a>
+</div>
+</nav>
+    <div class="sidebar-foot">No personal information is published. Blank cells mean no official value was confirmed; see <a href="flagged.html" style="color:#e4bd85">Flagged for Review</a>.</div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+      <span class="crumb">Decision brief / <strong>Tenant &amp; brand</strong></span>
+      <div class="top-actions">
+        <span class="pill">229 verified values</span>
+        <span class="pill pill--warn"><a href="flagged.html">86 flagged</a></span>
+        <input type="search" id="global-search" placeholder="Filter rows…" aria-label="Filter table rows">
+        <select id="status-filter" aria-label="Filter by verification status">
+          <option value="all">All statuses</option>
+          <option value="verified">Verified only</option>
+          <option value="unverified">Flagged only</option>
+        </select>
+        <button type="button" id="clear-filters" class="menu-btn" style="display:inline-block">Clear</button>
+        <span class="hint" id="result-count"></span>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <p class="kicker">Counterparty</p>
+        <h1>Tenant &amp; brand</h1>
+        <p class="lede">Official issuer disclosures on the brand's scale, operating trend and closure programme, and the counterparty facts that are not publicly disclosed.</p>
+        <div class="meta-row">
+          <span class="meta-chip">Session arena/dac604b9-jack1</span>
+          <span class="meta-chip">Sources read 2026-11-07</span>
+          <span class="meta-chip">315 rows · 59 official sources</span>
+          <span class="meta-chip">Privacy-first · no personal data</span>
+        </div>
+      </div>
+      
+      
+<div class="note-panel">
+  <h2>The dominant variable</h2>
+  <p>Jack in the Box Inc. is contracting: <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">86 closures in FY2025</a>,
+  <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">17 more in Q3 FY2026</a>, and a system count down to 2,115. Its
+  <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">FY2025 10-K</a> names a restaurant closure programme as a core plan pillar. The
+  <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">Q3 FY2026 release</a> also reports higher franchisee bad-debt expense and
+  franchise-level margin pressure partly from lower rent and royalty revenue &mdash; a direct credit signal
+  for a net-lease landlord whose tenant may be a franchisee.</p>
+  <p>SEC filings are issuer-level. They do <strong>not</strong> identify this property, its legal tenant,
+  guarantor, rent, unit sales, franchise agreement expiry or closure-list membership. Those cells are blank.</p>
+</div>
+
+<section class="section" id="sec-tenant-1">
+<div class="section-head"><h2>Sec Tenant 1</h2><span class="count">4 rows · 4 verified · 0 flagged</span></div>
+<p class="section-desc">System scale</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="te-01 jack in the box system restaurants 2,115 end of q3 fy2026 (july 5, 2026): 149 company + 1,966 franchise down from 2,168 a year earlier in the same release.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-01</td><td class="col-metric">Jack in the Box system restaurants</td><td class="col-value">2,115</td><td class="col-period">End of Q3 FY2026 (July 5, 2026): 149 company + 1,966 franchise</td><td class="col-note">Down from 2,168 a year earlier in the same release.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-02 jack in the box restaurants one year earlier 2,168 end of q3 fy2025 (july 6, 2025): 142 company + 2,026 franchise -53 net restaurants year over year.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-02</td><td class="col-metric">Jack in the Box restaurants one year earlier</td><td class="col-value">2,168</td><td class="col-period">End of Q3 FY2025 (July 6, 2025): 142 company + 2,026 franchise</td><td class="col-note">-53 net restaurants year over year.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-03 jack in the box restaurants at fy2025 year end 2,136 as of september 28, 2025: 150 company + 1,986 franchise consistent with the q4 fy2025 release count.  sec_10k u.s. securities and exchange commission (edgar) jack in the box inc. fy2025 form 10-k, filed 2025 (period ended sept 28, 2025)" class=""><td class="col-id">TE-03</td><td class="col-metric">Jack in the Box restaurants at FY2025 year end</td><td class="col-value">2,136</td><td class="col-period">As of September 28, 2025: 150 company + 1,986 franchise</td><td class="col-note">Consistent with the Q4 FY2025 release count.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">SEC_10K</a></div></td></tr>
+<tr data-status="verified" data-search="te-04 franchised share at fy2025 year end 93% as of september 28, 2025 counterparty credit is usually a franchisee, not the public issuer.  sec_10k u.s. securities and exchange commission (edgar) jack in the box inc. fy2025 form 10-k, filed 2025 (period ended sept 28, 2025)" class=""><td class="col-id">TE-04</td><td class="col-metric">Franchised share at FY2025 year end</td><td class="col-value">93%</td><td class="col-period">As of September 28, 2025</td><td class="col-note">Counterparty credit is usually a franchisee, not the public issuer.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">SEC_10K</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-tenant-2">
+<div class="section-head"><h2>Sec Tenant 2</h2><span class="count">9 rows · 9 verified · 0 flagged</span></div>
+<p class="section-desc">Operating trend</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="te-05 system same-store sales -1.1% q3 fy2026, 12 weeks ended july 5, 2026 (franchise -1.2%, company -0.9%) issuer attributes the decline primarily to fewer transactions, partly offset by price.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-05</td><td class="col-metric">System same-store sales</td><td class="col-value">-1.1%</td><td class="col-period">Q3 FY2026, 12 weeks ended July 5, 2026 (franchise -1.2%, company -0.9%)</td><td class="col-note">Issuer attributes the decline primarily to fewer transactions, partly offset by price.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-06 prior-year system same-store sales -7.1% q3 fy2025, 12 weeks ended july 6, 2025 the rate of decline narrowed sharply year over year but remains negative.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-06</td><td class="col-metric">Prior-year system same-store sales</td><td class="col-value">-7.1%</td><td class="col-period">Q3 FY2025, 12 weeks ended July 6, 2025</td><td class="col-note">The rate of decline narrowed sharply year over year but remains negative.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-07 systemwide sales -1.4% q3 fy2026 system contraction plus same-store softness.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-07</td><td class="col-metric">Systemwide sales</td><td class="col-value">-1.4%</td><td class="col-period">Q3 FY2026</td><td class="col-note">System contraction plus same-store softness.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-08 total revenues $257.7 million (down 1.8% from $262.4 million) q3 fy2026 lower same-store sales and fewer restaurants.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-08</td><td class="col-metric">Total revenues</td><td class="col-value">$257.7 million (down 1.8% from $262.4 million)</td><td class="col-period">Q3 FY2026</td><td class="col-note">Lower same-store sales and fewer restaurants.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-09 restaurant-level margin (non-gaap) $17.0 million, or 17.6% (prior year 17.9%) q3 fy2026 commodity inflation and mix pressure.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-09</td><td class="col-metric">Restaurant-Level Margin (non-GAAP)</td><td class="col-value">$17.0 million, or 17.6% (prior year 17.9%)</td><td class="col-period">Q3 FY2026</td><td class="col-note">Commodity inflation and mix pressure.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-10 franchise-level margin (non-gaap) $60.3 million, or 37.4% (prior year 39.3%) q3 fy2026 lower rent and royalty revenue and fewer restaurants under the closure programme.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-10</td><td class="col-metric">Franchise-Level Margin (non-GAAP)</td><td class="col-value">$60.3 million, or 37.4% (prior year 39.3%)</td><td class="col-period">Q3 FY2026</td><td class="col-note">Lower rent and royalty revenue and fewer restaurants under the closure programme.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-11 franchisee bad-debt expense higher versus the prior-year quarter q3 fy2026 a direct credit signal about franchisees — the likely tenant class for a net-lease site.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-11</td><td class="col-metric">Franchisee bad-debt expense</td><td class="col-value">Higher versus the prior-year quarter</td><td class="col-period">Q3 FY2026</td><td class="col-note">A direct credit signal about franchisees — the likely tenant class for a net-lease site.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-12 adjusted ebitda (non-gaap) $61.2 million (prior year $57.1 million) q3 fy2026 profit measure improved even as sales contracted; credit stress is concentrated in franchisees.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-12</td><td class="col-metric">Adjusted EBITDA (non-GAAP)</td><td class="col-value">$61.2 million (prior year $57.1 million)</td><td class="col-period">Q3 FY2026</td><td class="col-note">Profit measure improved even as sales contracted; credit stress is concentrated in franchisees.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-13 net earnings from continuing operations $21.0 million (prior year $22.8 million) q3 fy2026 issuer remains profitable overall.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-13</td><td class="col-metric">Net earnings from continuing operations</td><td class="col-value">$21.0 million (prior year $22.8 million)</td><td class="col-period">Q3 FY2026</td><td class="col-note">Issuer remains profitable overall.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-tenant-3">
+<div class="section-head"><h2>Sec Tenant 3</h2><span class="count">7 rows · 7 verified · 0 flagged</span></div>
+<p class="section-desc">Closure programme</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="te-14 q3 fy2026 restaurant activity 4 openings and 17 closures; net -13 (-0.6%) 12 weeks ended july 5, 2026 all closures in the quarter were franchise locations.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-14</td><td class="col-metric">Q3 FY2026 restaurant activity</td><td class="col-value">4 openings and 17 closures; net -13 (-0.6%)</td><td class="col-period">12 weeks ended July 5, 2026</td><td class="col-note">All closures in the quarter were franchise locations.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="te-15 q4 fy2025 restaurant activity 15 openings and 47 closures 12 weeks ended september 28, 2025 38 of the 47 closures were part of the &#x27;jack on track&#x27; block closure programme.  sec_q4fy25 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025)" class=""><td class="col-id">TE-15</td><td class="col-metric">Q4 FY2025 restaurant activity</td><td class="col-value">15 openings and 47 closures</td><td class="col-period">12 weeks ended September 28, 2025</td><td class="col-note">38 of the 47 closures were part of the &#x27;JACK on Track&#x27; block closure programme.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a></div></td></tr>
+<tr data-status="verified" data-search="te-16 full-year fy2025 restaurant activity 31 openings and 86 closures 52 weeks ended september 28, 2025 net system contraction is structural, not a single quarter.  sec_q4fy25 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025)" class=""><td class="col-id">TE-16</td><td class="col-metric">Full-year FY2025 restaurant activity</td><td class="col-value">31 openings and 86 closures</td><td class="col-period">52 weeks ended September 28, 2025</td><td class="col-note">Net system contraction is structural, not a single quarter.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a></div></td></tr>
+<tr data-status="verified" data-search="te-17 fy2025 system same-store sales -4.2% 52 weeks ended september 28, 2025 full-year demand decline across company and franchise stores.  sec_q4fy25 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025)" class=""><td class="col-id">TE-17</td><td class="col-metric">FY2025 system same-store sales</td><td class="col-value">-4.2%</td><td class="col-period">52 weeks ended September 28, 2025</td><td class="col-note">Full-year demand decline across company and franchise stores.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a></div></td></tr>
+<tr data-status="verified" data-search="te-18 q4 fy2025 system same-store sales -7.4% 12 weeks ended september 28, 2025 the weak quarter immediately preceding the closure programme.  sec_q4fy25 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025)" class=""><td class="col-id">TE-18</td><td class="col-metric">Q4 FY2025 system same-store sales</td><td class="col-value">-7.4%</td><td class="col-period">12 weeks ended September 28, 2025</td><td class="col-note">The weak quarter immediately preceding the closure programme.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a></div></td></tr>
+<tr data-status="verified" data-search="te-19 &#x27;jack on track&#x27; plan includes a restaurant closure programme yes (block closure programme) fy2025 form 10-k, business strategy the issuer lists the closure programme as one of three plan pillars, alongside del taco alternatives and cash-flow acceleration.  sec_10k u.s. securities and exchange commission (edgar) jack in the box inc. fy2025 form 10-k, filed 2025 (period ended sept 28, 2025)" class=""><td class="col-id">TE-19</td><td class="col-metric">&#x27;JACK on Track&#x27; plan includes a restaurant closure programme</td><td class="col-value">Yes (block closure programme)</td><td class="col-period">FY2025 Form 10-K, Business Strategy</td><td class="col-note">The issuer lists the closure programme as one of three plan pillars, alongside Del Taco alternatives and cash-flow acceleration.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">SEC_10K</a></div></td></tr>
+<tr data-status="verified" data-search="te-20 dividend policy change under &#x27;jack on track&#x27; discontinuing dividend fy2025 form 10-k, business strategy capital is being redirected to debt paydown; a credit-positive but contraction-signalling measure.  sec_10k u.s. securities and exchange commission (edgar) jack in the box inc. fy2025 form 10-k, filed 2025 (period ended sept 28, 2025)" class=""><td class="col-id">TE-20</td><td class="col-metric">Dividend policy change under &#x27;JACK on Track&#x27;</td><td class="col-value">Discontinuing dividend</td><td class="col-period">FY2025 Form 10-K, Business Strategy</td><td class="col-note">Capital is being redirected to debt paydown; a credit-positive but contraction-signalling measure.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">SEC_10K</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-tenant-4">
+<div class="section-head"><h2>Sec Tenant 4</h2><span class="count">5 rows · 1 verified · 4 flagged</span></div>
+<p class="section-desc">Withheld counterparty facts</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="unverified" data-search="te-21 whether the subject site is on a closure list  no public site-level disclosure located this is the single highest-consequence unknown; resolve privately and early with the tenant. blank: not publicly disclosed. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">TE-21</td><td class="col-metric">Whether the subject site is on a closure list</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No public site-level disclosure located</td><td class="col-note">This is the single highest-consequence unknown; resolve privately and early with the tenant.<span class="row-note">Blank: not publicly disclosed.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-TE-21</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="unverified" data-search="te-22 subject franchise agreement expiration date  not supplied a franchise agreement can end before the lease; align dates in any renewal. blank pending lease/franchise documents. sec_10k u.s. securities and exchange commission (edgar) jack in the box inc. fy2025 form 10-k, filed 2025 (period ended sept 28, 2025)" class="is-flagged"><td class="col-id">TE-22</td><td class="col-metric">Subject franchise agreement expiration date</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Not supplied</td><td class="col-note">A franchise agreement can end before the lease; align dates in any renewal.<span class="row-note">Blank pending lease/franchise documents.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-TE-22</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. FY2025 Form 10-K, filed 2025 (period ended Sept 28, 2025)">SEC_10K</a></div></td></tr>
+<tr data-status="unverified" data-search="te-23 tenant / guarantor credit rating  no official publisher credit ratings are not published by a government agency; none is quoted here. blank: no official source exists. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">TE-23</td><td class="col-metric">Tenant / guarantor credit rating</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">Credit ratings are not published by a government agency; none is quoted here.<span class="row-note">Blank: no official source exists.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-TE-23</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="unverified" data-search="te-24 fy2026 fourth-quarter results and updated closure guidance  not located on the official filings index at retrieval monitor the issuer&#x27;s edgar filings index rather than a third-party calendar. blank pending next official filing. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">TE-24</td><td class="col-metric">FY2026 fourth-quarter results and updated closure guidance</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Not located on the official filings index at retrieval</td><td class="col-note">Monitor the issuer&#x27;s EDGAR filings index rather than a third-party calendar.<span class="row-note">Blank pending next official filing.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-TE-24</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="verified" data-search="te-25 del taco divestiture completion completed december 22, 2025 q3 fy2026 earnings release portfolio simplification reduces diversification but focuses the issuer on the core brand.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">TE-25</td><td class="col-metric">Del Taco divestiture completion</td><td class="col-value">Completed December 22, 2025</td><td class="col-period">Q3 FY2026 earnings release</td><td class="col-note">Portfolio simplification reduces diversification but focuses the issuer on the core brand.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+</tbody></table></div></section>
+
+<div class="callout callout--accent">
+  <h2>Monitor the official filing index, not a news calendar</h2>
+  <p>Use the issuer's EDGAR filings index for subsequent quarters and updated closure guidance; the next
+  official filing date is not asserted here because no official publisher was found for it.</p>
+</div>
+
+    </main>
+    <footer class="footer"><div class="footer-inner">
+      <strong>Reading rule:</strong> every table row links to an official publisher. An empty value cell is
+      an unverified value, flagged <code>U-&lt;row id&gt;</code> on <a href="flagged.html">Flagged for Review</a>;
+      nothing is inferred or filled. · <a href="sources.html">Sources &amp; manual review</a> ·
+      <a href="privacy.html">Privacy</a> · <a href="scope.html">Scope &amp; requirements</a> ·
+      <a href="index.html">Executive summary</a>
+    </div></footer>
+  </div>
+</div>
 </body>
 </html>

@@ -1,112 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Risk Register · JACK NNN Central LA</title>
-<meta name="description" content="Sixteen documented risks across tenant, lease, tax, catastrophe and concentration, with factual anchors and mitigations.">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Risk register — anonymized, source-verified NNN lease decision brief. Every table row links to an official publisher; unverified values are blank and flagged.">
+<meta name="color-scheme" content="light">
+<title>Risk register · Jack in the Box NNN decision brief</title>
+<link rel="stylesheet" href="assets/brief.css">
+<script defer src="assets/brief.js"></script>
 </head>
-<body data-page="risk.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Risk Register</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
-
-    <p class="eyebrow">Category 5 · what can go wrong, in both directions of the decision</p>
-    <h1>Risk register: business as usual and black swans</h1>
-    <p class="lede">Sixteen risks, each tied to a verifiable fact where one exists. The probability and impact columns are
-    <b>analyst assessments</b>, clearly labelled as such &mdash; they are not statistics and they are not sourced. The factual
-    anchor column is sourced.</p>
-
-    <div class="grid g4">
-      <div class="kpi"><div class="k">Risks registered</div><div class="v" data-stat="risks">—</div><div class="m">business-as-usual + black swan</div></div>
-      <div class="kpi"><div class="k">Highest-frequency threat</div><div class="v warn">Tenant</div><div class="m">credit + lease timing</div></div>
-      <div class="kpi"><div class="k">Largest single loss</div><div class="v down">Seismic</div><div class="m">USGS: $213bn regional</div></div>
-      <div class="kpi"><div class="k">Most certain cost</div><div class="v">Exit tax</div><div class="m">ULA 4.0% / 5.5%</div></div>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a href="index.html"><span class="brand-title">NNN Lease Decision Brief</span>
+      <span class="brand-sub">Anonymized · Central Los Angeles</span></a>
+      <span class="brand-tag">Official-source verified · 2026-11-07</span>
     </div>
-
-    <h2>The four risk buckets</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>1 · Income risk (the one that decides the outcome)</h3>
-        <p>Tenant credit, renewal timing and occupancy-cost capacity. A NNN lease transfers <i>expenses</i> to the tenant; it
-        does not transfer <i>vacancy</i>. If the operator fails or declines to renew, the owner holds an empty 1,372 sq ft
-        building on a commercial parcel. Everything else on this page is second-order compared with this.</p>
-      </div>
-      <div class="card">
-        <h3>2 · Exit-cost risk (certain, not contingent)</h3>
-        <p>Measure ULA applies 4.0% of the full price above $5m and 5.5% above $10m, paid by the seller, on top of documentary
-        transfer taxes and advisory fees. This is the only risk on the page that is <b>certain to occur if you sell</b>. It is
-        therefore a cost to be optimised, not a risk to be managed.</p>
-      </div>
-      <div class="card">
-        <h3>3 · Cost-pass-through risk</h3>
-        <p>Energy CPI +20.3% and insurance repricing in a state where the FAIR Plan is the insurer of last resort. In a NNN
-        structure these land on the tenant's occupancy-cost ratio, which is precisely the number that determines whether the
-        tenant can afford the rent at renewal.</p>
-      </div>
-      <div class="card">
-        <h3>4 · Catastrophe risk (low probability, severe)</h3>
-        <p>Earthquake and wildfire are regional events with parcel-level consequences. The honest position: the <b>parcel-level
-        designations for this property are unverified</b> (U-01, U-02), so the mitigation list below is a to-do list, not a
-        reassurance.</p>
-      </div>
-    </div>
-
-    <h2>Black-swan anchors</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>Seismic</h3>
-        <p>The USGS/CGS ShakeOut scenario models a magnitude 7.8 rupture on the southern San Andreas Fault producing about
-        <b>1,800 deaths and $213bn of economic losses</b>, That is a scenario, not a forecast &mdash; but it is the planning basis used by the state and it is the reason
-        earthquake cover and retrofit status are non-negotiable diligence items.</p>
-        <p class="small"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener">USGS ShakeOut Scenario ↗</a></p>
-      </div>
-      <div class="card">
-        <h3>Wildfire</h3>
-        <p>The January 2025 Palisades Fire burned <b>23,448 acres</b>, destroyed <b>6,845 structures</b>, damaged 975 and killed
-        12 people over 24 days; the cause is recorded as arson. Central Los Angeles was not in the burn area, but the
-        second-order effects &mdash; insurance repricing, utility costs, regional demand shock &mdash; were metro-wide.</p>
-        <p class="small"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener">CAL FIRE incident record ↗</a></p>
-      </div>
-    </div>
-
-    <h2>Register</h2>
-    <div id="risk-table"></div>
-
-    <h2>Catastrophe and hazard data</h2>
-    <div data-table="catastrophe"></div>
-
-    <div class="callout bad">
-      <div class="h">The two open hazard questions</div>
-      <p><b>U-01</b> — is the parcel in a CAL FIRE Fire Hazard Severity Zone, and at what tier? <b>U-02</b> — is it in an
-      Alquist-Priolo fault zone or a CGS seismic hazard zone, and does the building predate the retrofit ordinances?
-      Both require the address in the official viewers. Both change insurance cost, and therefore the tenant's NNN load.
-      Both are on the <a href="flagged.html">Flagged for Review</a> page with direct links.</p>
-    </div>
-
-    <h2>Risk-balance test</h2>
-    <p>For an individual whose wealth is concentrated in this asset, the correct question is not "which option has the highest
-    expected value" but "which option keeps me solvent under the bad branch". Ranked by that test:</p>
-    <div class="tablewrap">
-      <div class="tablecap"><div class="t">Survival ranking, worst-case branch</div><div class="c">analyst assessment</div></div>
-      <div class="tscroll"><table>
-        <thead><tr><th>Strategy</th><th>Worst case</th><th>Liquidity after</th><th>Survivable?</th></tr></thead>
-        <tbody>
-          <tr><td class="metric">Sell now, hold cash/1031</td><td class="note">Accept a lower price and pay ~6% exit cost</td><td class="note">High &mdash; proceeds are liquid</td><td><span class="pill lo">Yes</span></td></tr>
-          <tr><td class="metric">Renew early, then sell</td><td class="note">Concession reduces rent; tenant still fails later</td><td class="note">Medium-high &mdash; term sold into a better market</td><td><span class="pill lo">Yes</span></td></tr>
-          <tr><td class="metric">Hold to expiry, unhedged</td><td class="note">Tenant leaves; vacancy + carrying cost + forced sale into a land bid</td><td class="note">Low &mdash; illiquid at the worst moment</td><td><span class="pill hi">Marginal</span></td></tr>
-          <tr><td class="metric">Refinance and hold long-term</td><td class="note">Debt service against a single tenant in a seismic zone</td><td class="note">Low &mdash; leveraged, undiversified</td><td><span class="pill sev">No</span></td></tr>
-        </tbody>
-      </table></div>
-    </div>
-
-    <div class="foot"><p><a href="tenant.html">&larr; Tenant &amp; Lease</a> · <a href="model.html">Next: Projection Model &rarr;</a></p></div>
-  </main>
+    <nav aria-label="Site navigation">
+<div class="nav-group"><h3>Overview</h3>
+<a href="index.html"><span class="dot"></span>Executive summary</a>
+<a href="decision.html"><span class="dot"></span>Decision paths &amp; recommendation</a>
+<a href="projection.html"><span class="dot"></span>Projection system</a>
 </div>
-<script src="assets/app.js"></script>
+<div class="nav-group"><h3>Property &amp; tenant</h3>
+<a href="property.html"><span class="dot"></span>Property &amp; lease</a>
+<a href="tenant.html"><span class="dot"></span>Tenant &amp; brand</a>
+</div>
+<div class="nav-group"><h3>Area economy</h3>
+<a href="market.html"><span class="dot"></span>Local market</a>
+<a href="geography.html"><span class="dot"></span>Geography &amp; infrastructure</a>
+<a href="demographics.html"><span class="dot"></span>Population &amp; households</a>
+<a href="income.html"><span class="dot"></span>Income, prices &amp; wages</a>
+<a href="employment.html"><span class="dot"></span>Jobs &amp; employment</a>
+<a href="schools.html"><span class="dot"></span>School system</a>
+<a href="economy.html"><span class="dot"></span>Economic &amp; property-value factors</a>
+</div>
+<div class="nav-group"><h3>Risk &amp; rules</h3>
+<a href="hazards.html"><span class="dot"></span>Natural hazards &amp; black swans</a>
+<a href="regulatory.html"><span class="dot"></span>Taxes, wages &amp; land use</a>
+<a href="risks.html" aria-current="page"><span class="dot"></span>Risk register</a>
+</div>
+<div class="nav-group"><h3>Governance</h3>
+<a href="sources.html"><span class="dot"></span>Sources &amp; manual review</a>
+<a href="flagged.html"><span class="dot"></span>Flagged for Review <span class="nav-flag">review</span></a>
+<a href="privacy.html"><span class="dot"></span>Privacy &amp; data policy</a>
+<a href="scope.html"><span class="dot"></span>Scope &amp; requirements</a>
+</div>
+</nav>
+    <div class="sidebar-foot">No personal information is published. Blank cells mean no official value was confirmed; see <a href="flagged.html" style="color:#e4bd85">Flagged for Review</a>.</div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+      <span class="crumb">Decision brief / <strong>Risk register</strong></span>
+      <div class="top-actions">
+        <span class="pill">229 verified values</span>
+        <span class="pill pill--warn"><a href="flagged.html">86 flagged</a></span>
+        <input type="search" id="global-search" placeholder="Filter rows…" aria-label="Filter table rows">
+        <select id="status-filter" aria-label="Filter by verification status">
+          <option value="all">All statuses</option>
+          <option value="verified">Verified only</option>
+          <option value="unverified">Flagged only</option>
+        </select>
+        <button type="button" id="clear-filters" class="menu-btn" style="display:inline-block">Clear</button>
+        <span class="hint" id="result-count"></span>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <p class="kicker">Every decision path</p>
+        <h1>Risk register</h1>
+        <p class="lede">Business-as-usual and black-swan risks mapped to every decision path, with mitigations.</p>
+        <div class="meta-row">
+          <span class="meta-chip">Session arena/dac604b9-jack1</span>
+          <span class="meta-chip">Sources read 2026-11-07</span>
+          <span class="meta-chip">315 rows · 59 official sources</span>
+          <span class="meta-chip">Privacy-first · no personal data</span>
+        </div>
+      </div>
+      <div class="callout callout--warn"><h2>Alternate URL</h2><p>This filename is preserved from an earlier session. The canonical page is <a href="risks.html">Risk register</a>; the content below is identical and jointly verified.</p></div>
+      
+<div class="note-panel">
+  <h2>Every possible decision, with its risks</h2>
+  <p>Business-as-usual risks and economy-destroying tail risks are mapped to each decision path. Where
+  an official publisher provides an anchor (earthquake probability, wildfire losses, ULA rates, closure
+  counts), that anchor is shown with its source. Where no official value exists, the value cell is blank
+  and the row is flagged. Mitigations are analytical judgements, clearly separated from the data.</p>
+</div>
+
+<section class="section" id="sec-risks-1">
+<div class="section-head"><h2>Sec Risks 1</h2><span class="count">15 rows · 5 verified · 10 flagged</span></div>
+<p class="section-desc">Business-as-usual risks</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="unverified" data-search="rk-01 sell now — pricing risk  no official value selling before a renewal is signed means selling a shortening term into a thinner buyer pool; no cap-rate or price figure is asserted. blank: no official publisher for cap rates. assessor_portal los angeles county office of the assessor assessor public portal (parcel lookup)" class="is-flagged"><td class="col-id">RK-01</td><td class="col-metric">Sell now — pricing risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official value</td><td class="col-note">Selling before a renewal is signed means selling a shortening term into a thinner buyer pool; no cap-rate or price figure is asserted.<span class="row-note">Blank: no official publisher for cap rates.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-01</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a></div></td></tr>
+<tr data-status="verified" data-search="rk-02 sell now — transfer-tax cliff 4% and 5.5% (plus 0.45% base) city of los angeles ula rates a price just above a threshold can net less than a price at the threshold; model net proceeds, not gross price.  ula_faq los angeles office of finance real property transfer tax and measure ula faq" class=""><td class="col-id">RK-02</td><td class="col-metric">Sell now — transfer-tax cliff</td><td class="col-value">4% and 5.5% (plus 0.45% base)</td><td class="col-period">City of Los Angeles ULA rates</td><td class="col-note">A price just above a threshold can net less than a price at the threshold; model net proceeds, not gross price.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-03 sell now — tax and reinvestment risk  owner-specific capital-gain tax, depreciation recapture and replacement-property risk are owner-specific and not published. blank: owner-specific. irs_544 ftb_gains internal revenue service california franchise tax board publication 544 — sales and other dispositions of assets capital gains and losses" class="is-flagged"><td class="col-id">RK-03</td><td class="col-metric">Sell now — tax and reinvestment risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">Capital-gain tax, depreciation recapture and replacement-property risk are owner-specific and not published.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-03</span></td><td class="col-src"><div class="src-links"><a href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Publication 544 — Sales and Other Dispositions of Assets">IRS_544</a><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board — Capital gains and losses">FTB_GAINS</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-04 sell now — loss of land optionality  scenario, not an official statistic a sale permanently gives up future redevelopment or re-tenanting upside in a supply-constrained city. blank: scenario. plan_zoning los angeles city planning zoning search" class="is-flagged"><td class="col-id">RK-04</td><td class="col-metric">Sell now — loss of land optionality</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Scenario, not an official statistic</td><td class="col-note">A sale permanently gives up future redevelopment or re-tenanting upside in a supply-constrained city.<span class="row-note">Blank: scenario.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-04</span></td><td class="col-src"><div class="src-links"><a href="https://planning.lacity.gov/zoning/zoning-search" target="_blank" rel="noopener noreferrer" title="Los Angeles City Planning — Zoning search">PLAN_ZONING</a></div></td></tr>
+<tr data-status="verified" data-search="rk-05 renew early — tenant credit risk higher bad-debt expense vs prior-year quarter q3 fy2026 issuer disclosure a longer term with the same obligor extends exposure; require guaranty, estoppel and unit-level performance evidence.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">RK-05</td><td class="col-metric">Renew early — tenant credit risk</td><td class="col-value">Higher bad-debt expense vs prior-year quarter</td><td class="col-period">Q3 FY2026 issuer disclosure</td><td class="col-note">A longer term with the same obligor extends exposure; require guaranty, estoppel and unit-level performance evidence.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-06 renew early — concession risk  negotiation-specific a renewal can require rent concessions; compare the risk-adjusted hold value with a sale, not the headline rent. blank: no lease supplied. sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class="is-flagged"><td class="col-id">RK-06</td><td class="col-metric">Renew early — concession risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Negotiation-specific</td><td class="col-note">A renewal can require rent concessions; compare the risk-adjusted hold value with a sale, not the headline rent.<span class="row-note">Blank: no lease supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-06</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="verified" data-search="rk-07 renew early — closure programme overlap 86 closures in fy2025; 17 in q3 fy2026 issuer disclosures a 2030-2035 expiry sits inside a period of active system contraction; confirm the site is not on a closure list.  sec_q4fy25 sec_q3fy26 u.s. securities and exchange commission (edgar) u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">RK-07</td><td class="col-metric">Renew early — closure programme overlap</td><td class="col-value">86 closures in FY2025; 17 in Q3 FY2026</td><td class="col-period">Issuer disclosures</td><td class="col-note">A 2030-2035 expiry sits inside a period of active system contraction; confirm the site is not on a closure list.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-08 renew then sell — execution risk  no official value a signed long term can widen the buyer pool, but only if the renewal is documented, estoppeled and financeable. blank: no official publisher for comps. ula_faq los angeles office of finance real property transfer tax and measure ula faq" class="is-flagged"><td class="col-id">RK-08</td><td class="col-metric">Renew then sell — execution risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official value</td><td class="col-note">A signed long term can widen the buyer pool, but only if the renewal is documented, estoppeled and financeable.<span class="row-note">Blank: no official publisher for comps.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-08</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-09 hold to expiry without renewal — vacancy risk  no official value the worst path: term decays to zero, the buyer pool shrinks, and the owner carries vacancy and re-leasing cost. blank: no lease supplied. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">RK-09</td><td class="col-metric">Hold to expiry without renewal — vacancy risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official value</td><td class="col-note">The worst path: term decays to zero, the buyer pool shrinks, and the owner carries vacancy and re-leasing cost.<span class="row-note">Blank: no lease supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-09</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-10 hold to expiry — re-tenanting / downtime / capital  parcel-specific alternative use, drive-thru configuration and permitting determine feasibility; no figure is assumed. blank: no parcel supplied. plan_zoning zimas los angeles city planning los angeles city planning zoning search zimas parcel / zoning lookup" class="is-flagged"><td class="col-id">RK-10</td><td class="col-metric">Hold to expiry — re-tenanting / downtime / capital</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Parcel-specific</td><td class="col-note">Alternative use, drive-thru configuration and permitting determine feasibility; no figure is assumed.<span class="row-note">Blank: no parcel supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-10</span></td><td class="col-src"><div class="src-links"><a href="https://planning.lacity.gov/zoning/zoning-search" target="_blank" rel="noopener noreferrer" title="Los Angeles City Planning — Zoning search">PLAN_ZONING</a><a href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer" title="Los Angeles City Planning — ZIMAS parcel / zoning lookup">ZIMAS</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-11 refinance and hold — leverage risk  owner-specific a single-tenant asset with a long-term rate anchor of 4.84% (nov 5, 2026) remains a concentrated, illiquid exposure; no loan terms are asserted. blank: owner-specific. fred_10 federal reserve bank of st. louis (fred) dgs10 — 10-year treasury constant maturity rate" class="is-flagged"><td class="col-id">RK-11</td><td class="col-metric">Refinance and hold — leverage risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">A single-tenant asset with a long-term rate anchor of 4.84% (Nov 5, 2026) remains a concentrated, illiquid exposure; no loan terms are asserted.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-11</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-12 1031 exchange into a diversified asset — timing risk  owner-specific strict identification and closing deadlines; no eligibility is assumed. blank: owner-specific. irs_home internal revenue service irs home / guidance" class="is-flagged"><td class="col-id">RK-12</td><td class="col-metric">1031 exchange into a diversified asset — timing risk</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">Strict identification and closing deadlines; no eligibility is assumed.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-12</span></td><td class="col-src"><div class="src-links"><a href="https://www.irs.gov/" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — IRS home / guidance">IRS_HOME</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-13 do nothing / miss an option notice  lease-specific notice deadlines are contractual and irreversible; calendar them from the executed lease, not from the reported 2030-2035 window. blank: no lease supplied. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">RK-13</td><td class="col-metric">Do nothing / miss an option notice</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Lease-specific</td><td class="col-note">Notice deadlines are contractual and irreversible; calendar them from the executed lease, not from the reported 2030-2035 window.<span class="row-note">Blank: no lease supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-13</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="verified" data-search="rk-14 cost inflation and wage floor 3.7% cpi-u; $20.00/hour fast-food wage september 2026 cpi; wage effective april 1, 2024 margin pressure can erode a franchisee tenant&#x27;s rent coverage over a long hold.  bls_cpi dir_ff u.s. bureau of labor statistics california department of industrial relations consumer price index, los angeles area — september 2026 fast food minimum wage frequently asked questions (ab 1228)" class=""><td class="col-id">RK-14</td><td class="col-metric">Cost inflation and wage floor</td><td class="col-value">3.7% CPI-U; $20.00/hour fast-food wage</td><td class="col-period">September 2026 CPI; wage effective April 1, 2024</td><td class="col-note">Margin pressure can erode a franchisee tenant&#x27;s rent coverage over a long hold.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a><a href="https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm" target="_blank" rel="noopener noreferrer" title="California Department of Industrial Relations — Fast Food Minimum Wage Frequently Asked Questions (AB 1228)">DIR_FF</a></div></td></tr>
+<tr data-status="verified" data-search="rk-15 sector demand shift information -5.7% y/y; education &amp; health +3.8% y/y september 2026 (preliminary), msa weekday central-corridor demand is mixed; a drive-thru site is less office-dependent but not immune.  bls_eag u.s. bureau of labor statistics economy at a glance — los angeles-long beach-santa ana, ca" class=""><td class="col-id">RK-15</td><td class="col-metric">Sector demand shift</td><td class="col-value">Information -5.7% y/y; Education &amp; health +3.8% y/y</td><td class="col-period">September 2026 (preliminary), MSA</td><td class="col-note">Weekday central-corridor demand is mixed; a drive-thru site is less office-dependent but not immune.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA">BLS_EAG</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-risks-2">
+<div class="section-head"><h2>Sec Risks 2</h2><span class="count">9 rows · 5 verified · 4 flagged</span></div>
+<p class="section-desc">Black-swan / tail risks</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="rk-16 major earthquake 60% probability of m6.7 within 30 years ucerf3, la region diversify, require adequate coverage and verify retrofit status; no parcel-level probability is asserted.  usgs_ucerf3 u.s. geological survey ucerf3 faq — 30-year earthquake probabilities, los angeles area" class=""><td class="col-id">RK-16</td><td class="col-metric">Major earthquake</td><td class="col-value">60% probability of M6.7 within 30 years</td><td class="col-period">UCERF3, LA region</td><td class="col-note">Diversify, require adequate coverage and verify retrofit status; no parcel-level probability is asserted.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey — UCERF3 FAQ — 30-year earthquake probabilities, Los Angeles area">USGS_UCERF3</a></div></td></tr>
+<tr data-status="verified" data-search="rk-17 catastrophic wildfire $5.2b-$10.1b output lost; ~6,800 businesses impacted 2025 eaton + palisades fires, county estimate a documented regional shock; direct damage, smoke closure, access interruption and insurance repricing all apply.  laco_fires county of los angeles key facts about the eaton and palisades fires (anniversary fact sheet)" class=""><td class="col-id">RK-17</td><td class="col-metric">Catastrophic wildfire</td><td class="col-value">$5.2B-$10.1B output lost; ~6,800 businesses impacted</td><td class="col-period">2025 Eaton + Palisades fires, county estimate</td><td class="col-note">A documented regional shock; direct damage, smoke closure, access interruption and insurance repricing all apply.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer" title="County of Los Angeles — Key Facts About the Eaton and Palisades Fires (anniversary fact sheet)">LACO_FIRES</a></div></td></tr>
+<tr data-status="verified" data-search="rk-18 insurance market failure / fair plan stress $1 billion member assessment order no. 2025-1, february 2025 coverage availability and cost can change abruptly after a catastrophe; verify nnn pass-through language.  cdi_order california department of insurance order no. 2025-1 — california fair plan assessment" class=""><td class="col-id">RK-18</td><td class="col-metric">Insurance market failure / FAIR Plan stress</td><td class="col-value">$1 billion member assessment</td><td class="col-period">Order No. 2025-1, February 2025</td><td class="col-note">Coverage availability and cost can change abruptly after a catastrophe; verify NNN pass-through language.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.insurance.ca.gov/0250-insurers/0500-legal-info/0700-commissioners-orders/upload/Order-No-2025-1-Approving-the-California-FAIR-Plan-Association-s-Request-to-Issue-Assessment.pdf" target="_blank" rel="noopener noreferrer" title="California Department of Insurance — Order No. 2025-1 — California FAIR Plan assessment">CDI_ORDER</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-19 flood / stormwater event  parcel lookup required flood zone, lender requirements and business interruption are site-specific. blank: no parcel supplied. fema_flood laco_flood federal emergency management agency los angeles county public works flood map service center / flood map products flood zone map viewer" class="is-flagged"><td class="col-id">RK-19</td><td class="col-metric">Flood / stormwater event</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Parcel lookup required</td><td class="col-note">Flood zone, lender requirements and business interruption are site-specific.<span class="row-note">Blank: no parcel supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-19</span></td><td class="col-src"><div class="src-links"><a href="https://www.fema.gov/flood-maps/products-tools" target="_blank" rel="noopener noreferrer" title="Federal Emergency Management Agency — Flood Map Service Center / flood map products">FEMA_FLOOD</a><a href="https://apps.gis.lacounty.gov/dpw/m/?viewer=floodzone" target="_blank" rel="noopener noreferrer" title="Los Angeles County Public Works — Flood zone map viewer">LACO_FLOOD</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-20 extreme heat / utility interruption  regional context only worker safety, refrigeration and operating hours; no site-level figure asserted. blank: no parcel supplied. ph_heat ladwp los angeles county department of public health los angeles department of water and power heat-related illness data brief water system overview" class="is-flagged"><td class="col-id">RK-20</td><td class="col-metric">Extreme heat / utility interruption</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Regional context only</td><td class="col-note">Worker safety, refrigeration and operating hours; no site-level figure asserted.<span class="row-note">Blank: no parcel supplied.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-20</span></td><td class="col-src"><div class="src-links"><a href="https://publichealth.lacounty.gov/eh/docs/about/heat-related-illness-data_brief.pdf" target="_blank" rel="noopener noreferrer" title="Los Angeles County Department of Public Health — Heat-related illness data brief">PH_HEAT</a><a href="https://www.ladwp.com/who-we-are/water-system" target="_blank" rel="noopener noreferrer" title="Los Angeles Department of Water and Power — Water system overview">LADWP</a></div></td></tr>
+<tr data-status="verified" data-search="rk-21 population / migration shock -0.14% state population in 2025; la county -64,000 persons ca dof e-1, jan 1, 2026 dof attributes the county loss partly to wildfires and migration; a sustained demand-side shock degrades re-tenanting value.  dof_e1 california department of finance 2026 estimates e-1 press release (jan 1, 2025 and 2026 city/county population)" class=""><td class="col-id">RK-21</td><td class="col-metric">Population / migration shock</td><td class="col-value">-0.14% state population in 2025; LA County -64,000 persons</td><td class="col-period">CA DOF E-1, Jan 1, 2026</td><td class="col-note">DOF attributes the county loss partly to wildfires and migration; a sustained demand-side shock degrades re-tenanting value.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance — 2026 Estimates E-1 Press Release (Jan 1, 2025 and 2026 city/county population)">DOF_E1</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-22 pandemic / shutdown-style demand shock  scenario, not an official statistic the 2021 city unemployment rate of 9.0% shows the scale a shock can reach; no future probability is asserted. blank: scenario. bls_city u.s. bureau of labor statistics unemployment rates for the 50 largest cities, 2021-2025" class="is-flagged"><td class="col-id">RK-22</td><td class="col-metric">Pandemic / shutdown-style demand shock</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Scenario, not an official statistic</td><td class="col-note">The 2021 city unemployment rate of 9.0% shows the scale a shock can reach; no future probability is asserted.<span class="row-note">Blank: scenario.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-22</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/lau/city-annual-unemployment-rates.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Unemployment Rates for the 50 Largest Cities, 2021-2025">BLS_CITY</a></div></td></tr>
+<tr data-status="unverified" data-search="rk-23 concurrent shocks (tenant failure + catastrophe)  scenario, not an official statistic correlation, not independence, is the tail risk for a single undiversified asset. blank: scenario. sec_q3fy26 laco_fires u.s. securities and exchange commission (edgar) county of los angeles jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026) key facts about the eaton and palisades fires (anniversary fact sheet)" class="is-flagged"><td class="col-id">RK-23</td><td class="col-metric">Concurrent shocks (tenant failure + catastrophe)</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Scenario, not an official statistic</td><td class="col-note">Correlation, not independence, is the tail risk for a single undiversified asset.<span class="row-note">Blank: scenario.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-RK-23</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer" title="County of Los Angeles — Key Facts About the Eaton and Palisades Fires (anniversary fact sheet)">LACO_FIRES</a></div></td></tr>
+<tr data-status="verified" data-search="rk-24 regulatory / tax cliff change thresholds indexed annually to chained cpi measure ula future thresholds and rates can change; re-check at closing rather than extrapolating.  ula_faq los angeles office of finance real property transfer tax and measure ula faq" class=""><td class="col-id">RK-24</td><td class="col-metric">Regulatory / tax cliff change</td><td class="col-value">Thresholds indexed annually to Chained CPI</td><td class="col-period">Measure ULA</td><td class="col-note">Future thresholds and rates can change; re-check at closing rather than extrapolating.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a></div></td></tr>
+</tbody></table></div></section>
+
+<div class="callout callout--accent">
+  <h2>The highest-regret path</h2>
+  <p>Passively letting the term decay to expiry without a signed renewal compresses the buyer pool and
+  transfers all re-tenanting, vacancy and capital risk to the owner at the worst possible moment.</p>
+</div>
+
+    </main>
+    <footer class="footer"><div class="footer-inner">
+      <strong>Reading rule:</strong> every table row links to an official publisher. An empty value cell is
+      an unverified value, flagged <code>U-&lt;row id&gt;</code> on <a href="flagged.html">Flagged for Review</a>;
+      nothing is inferred or filled. · <a href="sources.html">Sources &amp; manual review</a> ·
+      <a href="privacy.html">Privacy</a> · <a href="scope.html">Scope &amp; requirements</a> ·
+      <a href="index.html">Executive summary</a>
+    </div></footer>
+  </div>
+</div>
 </body>
 </html>

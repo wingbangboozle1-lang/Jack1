@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /$
+Allow: /index.html
+Disallow: /archive/
+Disallow: /pages/
+Disallow: /site/
+Disallow: /research/
+Disallow: /analysis/
+Disallow: /risks/
+Disallow: /model/
+Disallow: /tools/
+Disallow: /scripts/
+Disallow: /data/
+Sitemap: https://wingbangboozle1-lang.github.io/Jack1/sitemap.xml

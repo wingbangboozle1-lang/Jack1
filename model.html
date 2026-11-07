@@ -1,89 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projection Model · JACK NNN Central LA</title>
-<meta name="description" content="A transparent hold-versus-sell projection engine expressed as multiples of annual rent, with break-even renewal probability and a sensitivity grid.">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Projection system — anonymized, source-verified NNN lease decision brief. Every table row links to an official publisher; unverified values are blank and flagged.">
+<meta name="color-scheme" content="light">
+<title>Projection system · Jack in the Box NNN decision brief</title>
+<link rel="stylesheet" href="assets/brief.css">
+<script defer src="assets/brief.js"></script>
 </head>
-<body data-page="model.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Projection Model</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
-
-    <p class="eyebrow">Category 6 · the projection system</p>
-    <h1>A projection model that refuses to invent the property</h1>
-    <p class="lede">The rent, the price, the assessed value and the cap rate are all unknown or private. So the model is built
-    in <b>units of one year of current base rent</b>. Every output is a multiple. Multiply by the real rent when you have it
-    &mdash; the structure of the answer does not change.</p>
-
-    <div class="callout">
-      <div class="h">Why this design</div>
-      <p>It is easy to produce a confident-looking dollar valuation from invented inputs. That is what most property
-      "analyses" do. This one separates the two things cleanly: verified facts (Treasury yield, ULA rate, tenant trajectory,
-      population projection) and transparent assumptions (cap rates, renewal probability, dark value). Only the second group is
-      adjustable, and every one of them is listed with its reason.</p>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a href="index.html"><span class="brand-title">NNN Lease Decision Brief</span>
+      <span class="brand-sub">Anonymized · Central Los Angeles</span></a>
+      <span class="brand-tag">Official-source verified · 2026-11-07</span>
     </div>
-
-    <h2>The three strategies</h2>
-    <div class="grid g3">
-      <div class="card"><h3>A · Sell now (2027)</h3>
-        <p>Capitalise current rent at a <b>wider</b> cap rate, because a buyer is taking a lease with about six years left.
-        Net of exit cost (~6%: ULA 4.0% verified plus assumptions).</p></div>
-      <div class="card"><h3>B · Hold to expiry</h3>
-        <p>Collect contractual rent to expiry, then face the branch: the tenant renews (probability <i>p</i>) and the asset is
-        sold on a fresh lease, or the tenant leaves and the asset is worth vacant/redevelopment value.</p></div>
-      <div class="card"><h3>C · Renew early, then sell</h3>
-        <p>Convert uncertainty into term in 2028 by signing a long renewal at a market reset, then sell in ~2032 with
-        double-digit years remaining &mdash; a bigger buyer pool and a tighter cap.</p></div>
-    </div>
-
-    <h2>Run it</h2>
-    <div id="model-app"></div>
-
-    <h2>Calibration of the assumptions</h2>
-    <div class="tablewrap">
-      <div class="tablecap"><div class="t">Where each input comes from</div><div class="c">verified vs. assumption</div></div>
-      <div class="tscroll"><table>
-        <thead><tr><th>Input</th><th>Default</th><th>Status</th><th>Basis</th></tr></thead>
-        <tbody>
-          <tr><td class="metric">Discount-rate anchor</td><td class="val">4.90%</td><td><span class="pill ok">verified</span></td>
-            <td class="note">10-year Treasury constant maturity, 4 Nov 2026. <a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">FRED ↗</a></td></tr>
-          <tr><td class="metric">Exit cost &mdash; ULA component</td><td class="val">4.00%</td><td><span class="pill ok">verified</span></td>
-            <td class="note">Measure ULA on sales above $5m in the City of Los Angeles. <a href="https://cityattorney.lacity.gov/homelessness" target="_blank" rel="noopener">City Attorney ↗</a></td></tr>
-          <tr><td class="metric">Equity / illiquidity premium</td><td class="val">3.00%</td><td><span class="pill der">assumption</span></td>
-            <td class="note">Added to the Treasury to set the discount rate. No official series exists.</td></tr>
-          <tr><td class="metric">Exit cap, short lease</td><td class="val">7.00%</td><td><span class="pill der">assumption</span></td>
-            <td class="note">Wider cap for &lt;5 years of term. Not published by any agency (U-06).</td></tr>
-          <tr><td class="metric">Exit cap, fresh long lease</td><td class="val">6.00%</td><td><span class="pill der">assumption</span></td>
-            <td class="note">Credit-tenant QSR NNN pricing. Not published by any agency (U-06).</td></tr>
-          <tr><td class="metric">P(renewal at expiry)</td><td class="val">55%</td><td><span class="pill der">assessment</span></td>
-            <td class="note">Informed by five negative tenant indicators. Not a statistical estimate.</td></tr>
-          <tr><td class="metric">Vacant / alternative-use value</td><td class="val">8.0&times;</td><td><span class="pill der">assumption</span></td>
-            <td class="note">Land plus building if the unit goes dark. Requires the appraisal (U-06).</td></tr>
-          <tr><td class="metric">Rent escalation</td><td class="val">2.00%</td><td><span class="pill der">assumption</span></td>
-            <td class="note">Typical fixed NNN bumps; below the verified LA CPI of 3.7%.</td></tr>
-        </tbody>
-      </table></div>
-    </div>
-
-    <h2>What the model is not</h2>
-    <ul class="clean tight">
-      <li>It is not an appraisal and does not produce a price. A licensed appraiser and a broker opinion of value do that.</li>
-      <li>It does not model local rent comparables, because none were verified for this parcel.</li>
-      <li>It does not model tax on sale (federal/state capital gains, depreciation recapture) &mdash; that requires the owner's
-        basis, which is private. ULA is included because it is a per-transaction statutory cost.</li>
-      <li>It does not assume the tenant's credit improves. That would be an inference, not a fact.</li>
-    </ul>
-
-    <div class="foot"><p><a href="risk.html">&larr; Risk Register</a> · <a href="decision.html">Next: Decision &amp; Recommendation &rarr;</a></p></div>
-  </main>
+    <nav aria-label="Site navigation">
+<div class="nav-group"><h3>Overview</h3>
+<a href="index.html"><span class="dot"></span>Executive summary</a>
+<a href="decision.html"><span class="dot"></span>Decision paths &amp; recommendation</a>
+<a href="projection.html" aria-current="page"><span class="dot"></span>Projection system</a>
 </div>
-<script src="assets/app.js"></script>
-<script src="assets/model.js"></script>
+<div class="nav-group"><h3>Property &amp; tenant</h3>
+<a href="property.html"><span class="dot"></span>Property &amp; lease</a>
+<a href="tenant.html"><span class="dot"></span>Tenant &amp; brand</a>
+</div>
+<div class="nav-group"><h3>Area economy</h3>
+<a href="market.html"><span class="dot"></span>Local market</a>
+<a href="geography.html"><span class="dot"></span>Geography &amp; infrastructure</a>
+<a href="demographics.html"><span class="dot"></span>Population &amp; households</a>
+<a href="income.html"><span class="dot"></span>Income, prices &amp; wages</a>
+<a href="employment.html"><span class="dot"></span>Jobs &amp; employment</a>
+<a href="schools.html"><span class="dot"></span>School system</a>
+<a href="economy.html"><span class="dot"></span>Economic &amp; property-value factors</a>
+</div>
+<div class="nav-group"><h3>Risk &amp; rules</h3>
+<a href="hazards.html"><span class="dot"></span>Natural hazards &amp; black swans</a>
+<a href="regulatory.html"><span class="dot"></span>Taxes, wages &amp; land use</a>
+<a href="risks.html"><span class="dot"></span>Risk register</a>
+</div>
+<div class="nav-group"><h3>Governance</h3>
+<a href="sources.html"><span class="dot"></span>Sources &amp; manual review</a>
+<a href="flagged.html"><span class="dot"></span>Flagged for Review <span class="nav-flag">review</span></a>
+<a href="privacy.html"><span class="dot"></span>Privacy &amp; data policy</a>
+<a href="scope.html"><span class="dot"></span>Scope &amp; requirements</a>
+</div>
+</nav>
+    <div class="sidebar-foot">No personal information is published. Blank cells mean no official value was confirmed; see <a href="flagged.html" style="color:#e4bd85">Flagged for Review</a>.</div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+      <span class="crumb">Decision brief / <strong>Projection system</strong></span>
+      <div class="top-actions">
+        <span class="pill">229 verified values</span>
+        <span class="pill pill--warn"><a href="flagged.html">86 flagged</a></span>
+        <input type="search" id="global-search" placeholder="Filter rows…" aria-label="Filter table rows">
+        <select id="status-filter" aria-label="Filter by verification status">
+          <option value="all">All statuses</option>
+          <option value="verified">Verified only</option>
+          <option value="unverified">Flagged only</option>
+        </select>
+        <button type="button" id="clear-filters" class="menu-btn" style="display:inline-block">Clear</button>
+        <span class="hint" id="result-count"></span>
+      </div>
+    </header>
+    <main id="main">
+      <div class="page-head">
+        <p class="kicker">Model &amp; method</p>
+        <h1>Projection system</h1>
+        <p class="lede">A deterministic, reproducible projection system built on official anchors only. Private inputs stay private; model outputs are never published as facts.</p>
+        <div class="meta-row">
+          <span class="meta-chip">Session arena/dac604b9-jack1</span>
+          <span class="meta-chip">Sources read 2026-11-07</span>
+          <span class="meta-chip">315 rows · 59 official sources</span>
+          <span class="meta-chip">Privacy-first · no personal data</span>
+        </div>
+      </div>
+      <div class="callout callout--warn"><h2>Alternate URL</h2><p>This filename is preserved from an earlier session. The canonical page is <a href="projection.html">Projection system</a>; the content below is identical and jointly verified.</p></div>
+      
+<div class="note-panel">
+  <h2>A projection system without invented numbers</h2>
+  <p>The engine is deterministic and offline. It reads only the <a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">official Treasury</a>,
+  <a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">CPI</a>, <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">population</a>, <a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance — 2026 Estimates E-1 Press Release (Jan 1, 2025 and 2026 city/county population)">DOF</a>,
+  <a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">BEA</a> and <a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA</a> anchors published below, plus private parameters the
+  owner supplies locally. It produces a <strong>break-even renewal probability</strong>, not a valuation,
+  because no government agency publishes net-lease capitalization rates or comparable sales.</p>
+  <pre class="code">PV(hold, no renewal)  =  SUM[ rent * (1+g)^(t-1) / (1+r)^t , t = 1..n ]  +  residual / (1+r)^n
+PV(hold, renewed)    =  SUM[ rent * (1+g)^(t-1) / (1+r)^t , t = 1..n+m ] +  residual / (1+r)^(n+m)
+net sale proceeds    =  price - price * (official transfer tax + owner cost rate) - loan payoff - owner tax
+break-even p         =  (net sale proceeds - stressed hold PV) / (renewed hold PV - stressed hold PV)
+
+r  = OFFICIAL 10-year Treasury anchor + OWNER-SUPPLIED equity/illiquidity premium
+g  = OWNER-SUPPLIED rent escalation;  n = remaining years;  m = renewal years
+Every OWNER-SUPPLIED value and every MODEL OUTPUT is private and is NOT published on this site.</pre>
+  <p><strong>Hard limits.</strong> Official employment projections end in <a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&amp;selectedindex=19&amp;state=true&amp;geogArea=0604000037&amp;submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer" title="California Employment Development Department — Labor Market Information — Los Angeles County Profile">2033</a> and BEA
+  has <a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">discontinued metropolitan-area output and income statistics</a>. No series is
+  extrapolated to 2035. The <a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG 2050 plan</a> is a long-range planning forecast, not a
+  site or business-cycle forecast.</p>
+</div>
+
+<section class="section" id="sec-projection-1">
+<div class="section-head"><h2>Sec Projection 1</h2><span class="count">14 rows · 14 verified · 0 flagged</span></div>
+<p class="section-desc">Official model anchors</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="pj-01 10-year treasury constant maturity 4.84% november 5, 2026 risk-free anchor for discounting a medium-term hold.  fred_10 federal reserve bank of st. louis (fred) dgs10 — 10-year treasury constant maturity rate" class=""><td class="col-id">PJ-01</td><td class="col-metric">10-year Treasury constant maturity</td><td class="col-value">4.84%</td><td class="col-period">November 5, 2026</td><td class="col-note">Risk-free anchor for discounting a medium-term hold.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a></div></td></tr>
+<tr data-status="verified" data-search="pj-02 30-year treasury constant maturity 5.25% november 5, 2026 long-horizon anchor.  fred_30 federal reserve bank of st. louis (fred) dgs30 — 30-year treasury constant maturity rate" class=""><td class="col-id">PJ-02</td><td class="col-metric">30-year Treasury constant maturity</td><td class="col-value">5.25%</td><td class="col-period">November 5, 2026</td><td class="col-note">Long-horizon anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS30" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS30 — 30-Year Treasury Constant Maturity Rate">FRED_30</a></div></td></tr>
+<tr data-status="verified" data-search="pj-03 la area cpi-u, 12-month change 3.7% september 2026 official inflation anchor for escalation and cost scenarios.  bls_cpi u.s. bureau of labor statistics consumer price index, los angeles area — september 2026" class=""><td class="col-id">PJ-03</td><td class="col-metric">LA area CPI-U, 12-month change</td><td class="col-value">3.7%</td><td class="col-period">September 2026</td><td class="col-note">Official inflation anchor for escalation and cost scenarios.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a></div></td></tr>
+<tr data-status="verified" data-search="pj-04 core cpi-u (all items less food and energy) 2.6% september 2026 second inflation anchor.  bls_cpi u.s. bureau of labor statistics consumer price index, los angeles area — september 2026" class=""><td class="col-id">PJ-04</td><td class="col-metric">Core CPI-U (all items less food and energy)</td><td class="col-value">2.6%</td><td class="col-period">September 2026</td><td class="col-note">Second inflation anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a></div></td></tr>
+<tr data-status="verified" data-search="pj-05 msa total nonfarm 12-month change 0.5% september 2026 (preliminary) employment-growth anchor.  bls_eag u.s. bureau of labor statistics economy at a glance — los angeles-long beach-santa ana, ca" class=""><td class="col-id">PJ-05</td><td class="col-metric">MSA total nonfarm 12-month change</td><td class="col-value">0.5%</td><td class="col-period">September 2026 (preliminary)</td><td class="col-note">Employment-growth anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA">BLS_EAG</a></div></td></tr>
+<tr data-status="verified" data-search="pj-06 msa unemployment rate 4.4% september 2026 (preliminary) labor-market anchor.  bls_eag u.s. bureau of labor statistics economy at a glance — los angeles-long beach-santa ana, ca" class=""><td class="col-id">PJ-06</td><td class="col-metric">MSA unemployment rate</td><td class="col-value">4.4%</td><td class="col-period">September 2026 (preliminary)</td><td class="col-note">Labor-market anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA">BLS_EAG</a></div></td></tr>
+<tr data-status="verified" data-search="pj-07 city population change -0.8% apr 2020 to jul 2025 (v2025) official demand-base trend.  cen_city u.s. census bureau quickfacts — los angeles city, california (v2025)" class=""><td class="col-id">PJ-07</td><td class="col-metric">City population change</td><td class="col-value">-0.8%</td><td class="col-period">Apr 2020 to Jul 2025 (V2025)</td><td class="col-note">Official demand-base trend.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — QuickFacts — Los Angeles city, California (V2025)">CEN_CITY</a></div></td></tr>
+<tr data-status="verified" data-search="pj-08 county population change (ca dof) -0.6% jan 1, 2025 to jan 1, 2026 second, independent official population trend.  dof_e1 california department of finance 2026 estimates e-1 press release (jan 1, 2025 and 2026 city/county population)" class=""><td class="col-id">PJ-08</td><td class="col-metric">County population change (CA DOF)</td><td class="col-value">-0.6%</td><td class="col-period">Jan 1, 2025 to Jan 1, 2026</td><td class="col-note">Second, independent official population trend.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance — 2026 Estimates E-1 Press Release (Jan 1, 2025 and 2026 city/county population)">DOF_E1</a></div></td></tr>
+<tr data-status="verified" data-search="pj-09 county personal income $818.5 billion 2024 scale anchor for the regional economy.  bea_2024 u.s. bureau of economic analysis gross domestic product by county and personal income by county, 2024 (bea 26-08)" class=""><td class="col-id">PJ-09</td><td class="col-metric">County personal income</td><td class="col-value">$818.5 billion</td><td class="col-period">2024</td><td class="col-note">Scale anchor for the regional economy.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Economic Analysis — Gross Domestic Product by County and Personal Income by County, 2024 (BEA 26-08)">BEA_2024</a></div></td></tr>
+<tr data-status="verified" data-search="pj-10 scag forecast horizon 2050 adopted april 4, 2024 long-range planning horizon; the model never extrapolates beyond an official series.  scag_dem southern california association of governments connect socal 2024 demographics &amp; growth forecast technical report (adopted april 4, 2024)" class=""><td class="col-id">PJ-10</td><td class="col-metric">SCAG forecast horizon</td><td class="col-value">2050</td><td class="col-period">Adopted April 4, 2024</td><td class="col-note">Long-range planning horizon; the model never extrapolates beyond an official series.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer" title="Southern California Association of Governments — Connect SoCal 2024 Demographics &amp; Growth Forecast Technical Report (adopted April 4, 2024)">SCAG_DEM</a></div></td></tr>
+<tr data-status="verified" data-search="pj-11 edd occupational projection horizon 2033 la county hard limit: no employment projection is stated beyond 2033.  edd_la california employment development department labor market information — los angeles county profile" class=""><td class="col-id">PJ-11</td><td class="col-metric">EDD occupational projection horizon</td><td class="col-value">2033</td><td class="col-period">LA County</td><td class="col-note">Hard limit: no employment projection is stated beyond 2033.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&amp;selectedindex=19&amp;state=true&amp;geogArea=0604000037&amp;submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer" title="California Employment Development Department — Labor Market Information — Los Angeles County Profile">EDD_LA</a></div></td></tr>
+<tr data-status="verified" data-search="pj-12 ula tax rates and thresholds 0.45% base; 4% / 5.5%; $5.4m / $10.9m effective after june 30, 2026 exit-cost anchor with a cliff; verify at closing.  ula_faq los angeles office of finance real property transfer tax and measure ula faq" class=""><td class="col-id">PJ-12</td><td class="col-metric">ULA tax rates and thresholds</td><td class="col-value">0.45% base; 4% / 5.5%; $5.4M / $10.9M</td><td class="col-period">Effective after June 30, 2026</td><td class="col-note">Exit-cost anchor with a cliff; verify at closing.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a></div></td></tr>
+<tr data-status="verified" data-search="pj-13 fy2025 system closures 86 52 weeks ended september 28, 2025 tenant-contraction anchor.  sec_q4fy25 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q4/fy2025 earnings release (nov 19, 2025)" class=""><td class="col-id">PJ-13</td><td class="col-metric">FY2025 system closures</td><td class="col-value">86</td><td class="col-period">52 weeks ended September 28, 2025</td><td class="col-note">Tenant-contraction anchor.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q4/FY2025 earnings release (Nov 19, 2025)">SEC_Q4FY25</a></div></td></tr>
+<tr data-status="verified" data-search="pj-14 q3 fy2026 system restaurant count 2,115 july 5, 2026 latest official tenant scale at retrieval.  sec_q3fy26 u.s. securities and exchange commission (edgar) jack in the box inc. form 8-k ex-99.1, q3 fy2026 earnings release (aug 12, 2026)" class=""><td class="col-id">PJ-14</td><td class="col-metric">Q3 FY2026 system restaurant count</td><td class="col-value">2,115</td><td class="col-period">July 5, 2026</td><td class="col-note">Latest official tenant scale at retrieval.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. Form 8-K Ex-99.1, Q3 FY2026 earnings release (Aug 12, 2026)">SEC_Q3FY26</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-projection-2">
+<div class="section-head"><h2>Sec Projection 2</h2><span class="count">4 rows · 0 verified · 4 flagged</span></div>
+<p class="section-desc">Model inputs — no official publisher</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="unverified" data-search="pj-15 net-lease capitalization rate  no official publisher entered by the owner in the local model as an explicitly labelled sensitivity, never as a published fact. blank: no official publisher. assessor_portal los angeles county office of the assessor assessor public portal (parcel lookup)" class="is-flagged"><td class="col-id">PJ-15</td><td class="col-metric">Net-lease capitalization rate</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">Entered by the owner in the local model as an explicitly labelled sensitivity, never as a published fact.<span class="row-note">Blank: no official publisher.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-15</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-16 equity / illiquidity risk premium  no official publisher owner-chosen premium over the official treasury anchor. blank: no official publisher. fred_10 federal reserve bank of st. louis (fred) dgs10 — 10-year treasury constant maturity rate" class="is-flagged"><td class="col-id">PJ-16</td><td class="col-metric">Equity / illiquidity risk premium</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">Owner-chosen premium over the official Treasury anchor.<span class="row-note">Blank: no official publisher.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-16</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-17 probability of renewal at expiry  no official publisher scenario parameter, not a statistical estimate; no probability is published here. blank: no official publisher. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">PJ-17</td><td class="col-metric">Probability of renewal at expiry</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">Scenario parameter, not a statistical estimate; no probability is published here.<span class="row-note">Blank: no official publisher.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-17</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-18 exit transaction cost percentage  no official publisher only the official transfer-tax component is published (row pj-12); professional fees are owner-supplied. blank: no official publisher. ula_faq los angeles office of finance real property transfer tax and measure ula faq" class="is-flagged"><td class="col-id">PJ-18</td><td class="col-metric">Exit transaction cost percentage</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">No official publisher</td><td class="col-note">Only the official transfer-tax component is published (row PJ-12); professional fees are owner-supplied.<span class="row-note">Blank: no official publisher.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-18</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-projection-3">
+<div class="section-head"><h2>Sec Projection 3</h2><span class="count">5 rows · 0 verified · 5 flagged</span></div>
+<p class="section-desc">Scenario outputs — property-specific</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="unverified" data-search="pj-19 present value of remaining contractual rent  requires the rent roll and lease computed only inside the owner&#x27;s local model from private inputs; not published. blank: private input required. irs_544 internal revenue service publication 544 — sales and other dispositions of assets" class="is-flagged"><td class="col-id">PJ-19</td><td class="col-metric">Present value of remaining contractual rent</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Requires the rent roll and lease</td><td class="col-note">Computed only inside the owner&#x27;s local model from private inputs; not published.<span class="row-note">Blank: private input required.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-19</span></td><td class="col-src"><div class="src-links"><a href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Publication 544 — Sales and Other Dispositions of Assets">IRS_544</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-20 residual / reversion value at expiry  requires appraisal and zoning no residual value is estimated here. blank: private input required. assessor_portal plan_zoning los angeles county office of the assessor los angeles city planning assessor public portal (parcel lookup) zoning search" class="is-flagged"><td class="col-id">PJ-20</td><td class="col-metric">Residual / reversion value at expiry</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Requires appraisal and zoning</td><td class="col-note">No residual value is estimated here.<span class="row-note">Blank: private input required.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-20</span></td><td class="col-src"><div class="src-links"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Los Angeles County Office of the Assessor — Assessor public portal (parcel lookup)">ASSESSOR_PORTAL</a><a href="https://planning.lacity.gov/zoning/zoning-search" target="_blank" rel="noopener noreferrer" title="Los Angeles City Planning — Zoning search">PLAN_ZONING</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-21 net sale proceeds after tax and costs  owner-specific no net-proceeds figure is inferred. blank: owner-specific. ula_faq irs_544 ftb_gains los angeles office of finance internal revenue service california franchise tax board real property transfer tax and measure ula faq publication 544 — sales and other dispositions of assets capital gains and losses" class="is-flagged"><td class="col-id">PJ-21</td><td class="col-metric">Net sale proceeds after tax and costs</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">No net-proceeds figure is inferred.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-21</span></td><td class="col-src"><div class="src-links"><a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="Los Angeles Office of Finance — Real Property Transfer Tax and Measure ULA FAQ">ULA_FAQ</a><a href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service — Publication 544 — Sales and Other Dispositions of Assets">IRS_544</a><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board — Capital gains and losses">FTB_GAINS</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-22 break-even renewal probability  owner-specific the model computes it from owner inputs; no value is published. blank: owner-specific. sec_edgar u.s. securities and exchange commission (edgar) jack in the box inc. cik 0000807882 — filings index" class="is-flagged"><td class="col-id">PJ-22</td><td class="col-metric">Break-even renewal probability</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">The model computes it from owner inputs; no value is published.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-22</span></td><td class="col-src"><div class="src-links"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882&amp;type=8-K&amp;dateb=&amp;owner=include&amp;count=10" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (EDGAR) — Jack in the Box Inc. CIK 0000807882 — filings index">SEC_EDGAR</a></div></td></tr>
+<tr data-status="unverified" data-search="pj-23 black-swan stressed value  owner-specific stress uses the official county loss range and usgs probability as severity anchors, not as parcel losses. blank: owner-specific. laco_fires usgs_ucerf3 county of los angeles u.s. geological survey key facts about the eaton and palisades fires (anniversary fact sheet) ucerf3 faq — 30-year earthquake probabilities, los angeles area" class="is-flagged"><td class="col-id">PJ-23</td><td class="col-metric">Black-swan stressed value</td><td class="col-value col-value--blank" aria-label="Left blank: no official value confirmed"></td><td class="col-period">Owner-specific</td><td class="col-note">Stress uses the official county loss range and USGS probability as severity anchors, not as parcel losses.<span class="row-note">Blank: owner-specific.</span></td><td class="col-status"><span class="badge badge--flagged">Unverified · blank</span><span class="flag-id">U-PJ-23</span></td><td class="col-src"><div class="src-links"><a href="https://file.lacounty.gov/SDSInter/lac/1199046_Eaton_Palisades_Fires_Anniversary_Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer" title="County of Los Angeles — Key Facts About the Eaton and Palisades Fires (anniversary fact sheet)">LACO_FIRES</a><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey — UCERF3 FAQ — 30-year earthquake probabilities, Los Angeles area">USGS_UCERF3</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="sec-projection-4">
+<div class="section-head"><h2>Sec Projection 4</h2><span class="count">1 rows · 1 verified · 0 flagged</span></div>
+<p class="section-desc">Reproducible method</p>
+<div class="table-wrap"><table class="data-table" data-table>
+<thead><tr><th scope="col">ID</th><th scope="col">Indicator / question</th><th scope="col">Official value</th><th scope="col">Period &amp; scope</th><th scope="col">Finding &amp; analysis</th><th scope="col">Status</th><th scope="col">Official source</th></tr></thead>
+<tbody>
+<tr data-status="verified" data-search="pj-24 model implementation tools/projection.py standard-library python; no network calls deterministic npv / break-even engine. it reads only the official anchors above plus owner-supplied private parameters; no external data is fetched at runtime.  fred_10 bls_cpi dof_e1 federal reserve bank of st. louis (fred) u.s. bureau of labor statistics california department of finance dgs10 — 10-year treasury constant maturity rate consumer price index, los angeles area — september 2026 2026 estimates e-1 press release (jan 1, 2025 and 2026 city/county population)" class=""><td class="col-id">PJ-24</td><td class="col-metric">Model implementation</td><td class="col-value">tools/projection.py</td><td class="col-period">Standard-library Python; no network calls</td><td class="col-note">Deterministic NPV / break-even engine. It reads only the official anchors above plus owner-supplied private parameters; no external data is fetched at runtime.</td><td class="col-status"><span class="badge badge--verified">Verified</span></td><td class="col-src"><div class="src-links"><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer" title="Federal Reserve Bank of St. Louis (FRED) — DGS10 — 10-Year Treasury Constant Maturity Rate">FRED_10</a><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics — Consumer Price Index, Los Angeles area — September 2026">BLS_CPI</a><a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance — 2026 Estimates E-1 Press Release (Jan 1, 2025 and 2026 city/county population)">DOF_E1</a></div></td></tr>
+</tbody></table></div></section>
+<section class="section" id="engine-source"><div class="section-head"><h2>Engine source, reproduced for review</h2></div><details class="accordion"><summary>Show tools/projection.py (standard library only, no network calls)</summary><pre class="code">#!/usr/bin/env python3
+&quot;&quot;&quot;Deterministic, privacy-preserving projection engine for the anonymized NNN decision.
+
+WHAT THIS IS
+  A reproducible net-present-value / break-even calculator. It combines
+  (a) official macro anchors read from data/brief_scenarios.json, each of which is
+      copied from a verified row in data/brief_rows.json and linked to an official
+      publisher, with
+  (b) private, owner-supplied parameters supplied on the command line.
+
+WHAT THIS IS NOT
+  It is not an appraisal, a forecast, a cap-rate source, or a recommendation. It never
+  fetches data, never contains owner/tenant/address/APN/rent/valuation information, never
+  infers a missing value, and never writes a result into the published website. Every
+  number it prints is labelled OFFICIAL ANCHOR, OWNER-SUPPLIED, or MODEL OUTPUT.
+  Model outputs are computations, NOT official statistics, and are deliberately not
+  published on the site (see projection.html and flagged.html).
+
+USAGE
+  python3 tools/projection.py --self-test
+  python3 tools/projection.py --annual-rent 240000 --remaining-years 6 \
+      --renewal-years 10 --gross-sale-price 6200000 --residual-value 5200000 \
+      --rent-escalation 0.02 --risk-premium 0.02 --professional-cost-rate 0.015 \
+      --stress-loss-rate 0.15 [--output /tmp/my-private-result.json]
+
+No manual input is required from any reader of the website; this tool exists only so the
+owner can reproduce the arithmetic locally with their own private numbers.
+&quot;&quot;&quot;
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+ANCHOR_FILE = ROOT / &quot;data/brief_scenarios.json&quot;
+ROW_FILE = ROOT / &quot;data/brief_rows.json&quot;
+SOURCE_FILE = ROOT / &quot;data/brief_sources.json&quot;
+
+
+def load_inputs():
+    scen = json.loads(ANCHOR_FILE.read_text(encoding=&quot;utf-8&quot;))
+    rows = json.loads(ROW_FILE.read_text(encoding=&quot;utf-8&quot;))[&quot;rows&quot;]
+    sources = json.loads(SOURCE_FILE.read_text(encoding=&quot;utf-8&quot;))[&quot;sources&quot;]
+    row_by_id = {r[&quot;id&quot;]: r for r in rows}
+    anchors = {}
+    provenance = []
+    for a in scen[&quot;anchors&quot;]:
+        rid = a[&quot;row&quot;]
+        if rid not in row_by_id:
+            raise SystemExit(f&quot;anchor {a[&#x27;key&#x27;]} references missing row {rid}&quot;)
+        row = row_by_id[rid]
+        if row[&quot;status&quot;] != &quot;verified&quot; or a[&quot;source&quot;] not in row[&quot;sources&quot;]:
+            raise SystemExit(f&quot;anchor {a[&#x27;key&#x27;]} is not backed by a verified official row&quot;)
+        src = sources[a[&quot;source&quot;]]
+        anchors[a[&quot;key&quot;]] = a[&quot;value&quot;]
+        provenance.append({
+            &quot;key&quot;: a[&quot;key&quot;], &quot;value&quot;: a[&quot;value&quot;], &quot;unit&quot;: a[&quot;unit&quot;],
+            &quot;label&quot;: a[&quot;label&quot;], &quot;row&quot;: rid,
+            &quot;official_publisher&quot;: src[&quot;publisher&quot;], &quot;official_url&quot;: src[&quot;url&quot;],
+        })
+    return scen, anchors, provenance
+
+
+def pv_annuity(annual_rent: float, years: int, rate: float, escalation: float) -&gt; float:
+    &quot;&quot;&quot;PV of rent received at each year end, growing at `escalation`, discounted at `rate`.&quot;&quot;&quot;
+    if years &lt;= 0:
+        return 0.0
+    total = 0.0
+    for t in range(1, years + 1):
+        total += annual_rent * ((1.0 + escalation) ** (t - 1)) / ((1.0 + rate) ** t)
+    return total
+
+
+def ula_rate(price: float, a: dict, exempt: bool) -&gt; float:
+    &quot;&quot;&quot;Official City of LA transfer tax: base 0.45% + ULA tier on the whole consideration.
+
+    Thresholds ($5.4M / $10.9M) apply to conveyances after June 30, 2026 and are indexed
+    annually; the owner must re-check the figures in force at closing (see ULA_FAQ).
+    &quot;&quot;&quot;
+    base = a[&quot;ula_base_rate&quot;]
+    if exempt or price &lt;= a[&quot;ula_lower_threshold_usd&quot;]:
+        return base
+    if price &lt; a[&quot;ula_upper_threshold_usd&quot;]:
+        return base + a[&quot;ula_lower_rate&quot;]
+    return base + a[&quot;ula_upper_rate&quot;]
+
+
+def compute(args, scen, anchors, provenance):
+    a = anchors
+    private = {
+        &quot;annual_rent_usd&quot;: args.annual_rent,
+        &quot;remaining_term_years&quot;: args.remaining_years,
+        &quot;renewal_term_years&quot;: args.renewal_years,
+        &quot;gross_sale_price_usd&quot;: args.gross_sale_price,
+        &quot;residual_value_usd&quot;: args.residual_value,
+        &quot;rent_escalation_rate&quot;: args.rent_escalation,
+        &quot;equity_illiquidity_premium&quot;: args.risk_premium,
+        &quot;professional_cost_rate&quot;: args.professional_cost_rate,
+        &quot;loan_payoff_usd&quot;: args.loan_payoff,
+        &quot;owner_tax_usd&quot;: args.owner_tax,
+        &quot;stress_loss_rate&quot;: args.stress_loss_rate,
+        &quot;ula_exempt&quot;: args.ula_exempt,
+        &quot;renewal_probability&quot;: args.renewal_probability,
+    }
+    for key, value in private.items():
+        if isinstance(value, float) and (math.isnan(value) or math.isinf(value)):
+            raise SystemExit(f&quot;invalid owner-supplied value for {key}&quot;)
+
+    discount_rate = a[&quot;risk_free_10y&quot;] + args.risk_premium
+    if discount_rate &lt;= -1.0:
+        raise SystemExit(&quot;discount rate must be greater than -100%&quot;)
+
+    n = int(args.remaining_years)
+    m = int(args.renewal_years)
+
+    pv_rent_remaining = pv_annuity(args.annual_rent, n, discount_rate, args.rent_escalation)
+    pv_rent_extended = pv_annuity(args.annual_rent, n + m, discount_rate, args.rent_escalation)
+    pv_residual_no_renew = args.residual_value / ((1.0 + discount_rate) ** n)
+    pv_residual_renew = args.residual_value / ((1.0 + discount_rate) ** (n + m))
+
+    hold_no_renew = pv_rent_remaining + pv_residual_no_renew
+    hold_renew = pv_rent_extended + pv_residual_renew
+    stressed_hold = hold_no_renew * (1.0 - args.stress_loss_rate)
+
+    transfer_rate = ula_rate(args.gross_sale_price, a, args.ula_exempt)
+    transfer_tax = args.gross_sale_price * transfer_rate
+    professional_costs = args.gross_sale_price * args.professional_cost_rate
+    net_sale = args.gross_sale_price - transfer_tax - professional_costs - args.loan_payoff - args.owner_tax
+
+    denom = hold_renew - stressed_hold
+    if abs(denom) &lt; 1e-9:
+        break_even_p = None
+        break_even_note = &quot;No renewal probability changes the ranking under these inputs (denominator ~ 0).&quot;
+    else:
+        raw = (net_sale - stressed_hold) / denom
+        break_even_p = max(0.0, min(1.0, raw))
+        break_even_note = (
+            &quot;Renew-and-hold is preferred when the owner&#x27;s renewal probability exceeds this value; &quot;
+            &quot;selling is preferred below it. Raw value clipped to [0, 1].&quot;
+            if 0.0 &lt;= raw &lt;= 1.0 else
+            &quot;Raw break-even probability fell outside [0, 1]; one path dominates for all probabilities.&quot;
+        )
+
+    expected_hold = None
+    if args.renewal_probability is not None:
+        p = args.renewal_probability
+        expected_hold = p * hold_renew + (1.0 - p) * stressed_hold
+
+    warnings = []
+    if args.gross_sale_price &gt; a[&quot;ula_lower_threshold_usd&quot;] and not args.ula_exempt:
+        at_threshold = a[&quot;ula_lower_threshold_usd&quot;] * (1.0 - a[&quot;ula_base_rate&quot;] - args.professional_cost_rate)
+        above = args.gross_sale_price * (1.0 - transfer_rate - args.professional_cost_rate)
+        if above &lt; at_threshold:
+            warnings.append(
+                &quot;ULA cliff: a price just above the official threshold can net less than a price at &quot;
+                &quot;the threshold because the ULA tier applies to the whole consideration.&quot;
+            )
+    if n + m &gt; a[&quot;edd_horizon_year&quot;] - 2026:
+        warnings.append(
+            &quot;The modeled hold extends beyond 2033, the last year of the official EDD occupational &quot;
+            &quot;projections. No employment or income series is extrapolated; treat the tail as scenario only.&quot;
+        )
+    if args.risk_premium == 0.0:
+        warnings.append(
+            &quot;No owner-supplied equity/illiquidity premium was provided, so the discount rate equals &quot;
+            &quot;the official 10-year Treasury anchor. This is a lower bound, not a market cap rate.&quot;
+        )
+    warnings.append(
+        &quot;All owner-supplied numbers and every MODEL OUTPUT below are private computations. &quot;
+        &quot;They are not official statistics and must not be published on the website.&quot;
+    )
+
+    return {
+        &quot;engine&quot;: &quot;tools/projection.py&quot;,
+        &quot;classification&quot;: &quot;PRIVATE / OWNER-RUN — NOT PUBLISHED&quot;,
+        &quot;official_anchors&quot;: provenance,
+        &quot;owner_supplied_inputs&quot;: {k: v for k, v in private.items() if v is not None},
+        &quot;model_parameters&quot;: {
+            &quot;discount_rate&quot;: discount_rate,
+            &quot;discount_rate_basis&quot;: &quot;OFFICIAL ANCHOR risk_free_10y + OWNER-SUPPLIED equity_illiquidity_premium&quot;,
+            &quot;transfer_tax_rate_applied&quot;: transfer_rate,
+            &quot;transfer_tax_rate_basis&quot;: &quot;OFFICIAL ANCHOR (0.45% base + ULA tier)&quot;,
+        },
+        &quot;model_outputs_not_official_statistics&quot;: {
+            &quot;pv_contractual_rent_remaining_term&quot;: pv_rent_remaining,
+            &quot;pv_residual_no_renew&quot;: pv_residual_no_renew,
+            &quot;hold_value_no_renew&quot;: hold_no_renew,
+            &quot;pv_contractual_rent_with_renewal&quot;: pv_rent_extended,
+            &quot;pv_residual_with_renewal&quot;: pv_residual_renew,
+            &quot;hold_value_with_renewal&quot;: hold_renew,
+            &quot;stressed_hold_value&quot;: stressed_hold,
+            &quot;transfer_tax_usd&quot;: transfer_tax,
+            &quot;professional_costs_usd&quot;: professional_costs,
+            &quot;net_sale_proceeds&quot;: net_sale,
+            &quot;sell_minus_no_renew_hold&quot;: net_sale - hold_no_renew,
+            &quot;break_even_renewal_probability&quot;: break_even_p,
+            &quot;break_even_renewal_probability_note&quot;: break_even_note,
+            &quot;expected_hold_value_at_owner_probability&quot;: expected_hold,
+        },
+        &quot;warnings&quot;: warnings,
+        &quot;scenarios_considered&quot;: [{&quot;id&quot;: s[&quot;id&quot;], &quot;name&quot;: s[&quot;name&quot;], &quot;decision_row&quot;: s[&quot;decision_row&quot;]} for s in scen[&quot;scenarios&quot;]],
+        &quot;rule&quot;: &quot;If a value is not published by an official source, it is blank in the dataset and flagged on flagged.html. Nothing is inferred here.&quot;,
+    }
+
+
+def fmt(v):
+    if v is None:
+        return &quot;n/a&quot;
+    if isinstance(v, float) and abs(v) &lt; 1:
+        return f&quot;{v:.4f}&quot;
+    if isinstance(v, float):
+        return f&quot;{v:,.2f}&quot;
+    return str(v)
+
+
+def self_test():
+    scen, anchors, _ = load_inputs()
+    base = argparse.Namespace(
+        annual_rent=240000.0, remaining_years=6, renewal_years=10,
+        gross_sale_price=6200000.0, residual_value=5200000.0,
+        rent_escalation=0.02, risk_premium=0.02, professional_cost_rate=0.015,
+        loan_payoff=0.0, owner_tax=0.0, stress_loss_rate=0.15,
+        ula_exempt=False, renewal_probability=None,
+    )
+    r1 = compute(base, scen, anchors, [])
+    r2 = compute(base, scen, anchors, [])
+    assert json.dumps(r1[&quot;model_outputs_not_official_statistics&quot;], sort_keys=True) == json.dumps(
+        r2[&quot;model_outputs_not_official_statistics&quot;], sort_keys=True), &quot;non-deterministic output&quot;
+    o = r1[&quot;model_outputs_not_official_statistics&quot;]
+    for k, v in o.items():
+        if isinstance(v, float):
+            assert math.isfinite(v), f&quot;non-finite model output: {k}&quot;
+    assert o[&quot;hold_value_with_renewal&quot;] &gt; 0, &quot;hold PV must be positive&quot;
+    assert o[&quot;net_sale_proceeds&quot;] &lt; base.gross_sale_price, &quot;costs must reduce proceeds&quot;
+    # Official ULA cliff behaviour: a price just above the threshold nets less than the threshold.
+    just_below = ula_rate(anchors[&quot;ula_lower_threshold_usd&quot;], anchors, False)
+    just_above = ula_rate(anchors[&quot;ula_lower_threshold_usd&quot;] + 1, anchors, False)
+    assert just_above &gt; just_below, &quot;ULA tier must apply above the official threshold&quot;
+    print(&quot;SELF-TEST OK (synthetic private inputs, not a projection, not published)&quot;)
+    print(&quot;  official anchors loaded:&quot;, len(anchors))
+    print(&quot;  ULA rate at threshold:&quot;, fmt(just_below), &quot;/ just above:&quot;, fmt(just_above))
+    print(&quot;  sample MODEL OUTPUT hold-with-renewal:&quot;, fmt(o[&quot;hold_value_with_renewal&quot;]))
+    return 0
+
+
+def main(argv=None) -&gt; int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument(&quot;--self-test&quot;, action=&quot;store_true&quot;, help=&quot;Run deterministic checks with clearly labelled synthetic inputs.&quot;)
+    ap.add_argument(&quot;--annual-rent&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED annual base rent (USD).&quot;)
+    ap.add_argument(&quot;--remaining-years&quot;, type=int, default=0, help=&quot;OWNER-SUPPLIED years to the exact lease expiry.&quot;)
+    ap.add_argument(&quot;--renewal-years&quot;, type=int, default=0, help=&quot;OWNER-SUPPLIED additional years if renewed.&quot;)
+    ap.add_argument(&quot;--gross-sale-price&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED gross sale price (USD).&quot;)
+    ap.add_argument(&quot;--residual-value&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED residual value at expiry (USD).&quot;)
+    ap.add_argument(&quot;--rent-escalation&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED annual rent escalation rate.&quot;)
+    ap.add_argument(&quot;--risk-premium&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED equity/illiquidity premium over the official Treasury anchor.&quot;)
+    ap.add_argument(&quot;--professional-cost-rate&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED professional/closing cost rate.&quot;)
+    ap.add_argument(&quot;--loan-payoff&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED loan payoff (USD).&quot;)
+    ap.add_argument(&quot;--owner-tax&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED tax on sale (USD).&quot;)
+    ap.add_argument(&quot;--stress-loss-rate&quot;, type=float, default=0.0, help=&quot;OWNER-SUPPLIED tail-event value haircut.&quot;)
+    ap.add_argument(&quot;--renewal-probability&quot;, type=float, default=None, help=&quot;OWNER-SUPPLIED scenario probability (not an estimate).&quot;)
+    ap.add_argument(&quot;--ula-exempt&quot;, action=&quot;store_true&quot;, help=&quot;OWNER-SUPPLIED claim that an official ULA exemption applies.&quot;)
+    ap.add_argument(&quot;--output&quot;, type=str, default=None, help=&quot;Optional PRIVATE output path for the JSON (never an .html file).&quot;)
+    args = ap.parse_args(argv)
+
+    if args.self_test:
+        return self_test()
+    if args.output and Path(args.output).suffix.lower() in {&quot;.html&quot;, &quot;.htm&quot;}:
+        raise SystemExit(&quot;Refusing to write a model result into an HTML page. Use a private JSON path.&quot;)
+    if args.annual_rent &lt;= 0 or args.remaining_years &lt;= 0 or args.gross_sale_price &lt;= 0:
+        ap.error(&quot;provide positive --annual-rent, --remaining-years and --gross-sale-price (or use --self-test)&quot;)
+
+    scen, anchors, provenance = load_inputs()
+    result = compute(args, scen, anchors, provenance)
+    text = json.dumps(result, indent=2) + &quot;\n&quot;
+    if args.output:
+        Path(args.output).write_text(text, encoding=&quot;utf-8&quot;)
+        print(f&quot;Private model result written to {args.output} — do not publish it.&quot;)
+    else:
+        sys.stdout.write(text)
+    return 0
+
+
+if __name__ == &quot;__main__&quot;:
+    raise SystemExit(main())
+</pre></details><details class="accordion"><summary>Show official anchors and scenarios (data/brief_scenarios.json)</summary><pre class="code">{
+  &quot;retrieved&quot;: &quot;2026-11-07&quot;,
+  &quot;purpose&quot;: &quot;Official anchors and decision scenarios for tools/projection.py. Every numeric anchor here is copied from a verified row in data/brief_rows.json; no property-specific value, assumption or probability is asserted.&quot;,
+  &quot;privacy&quot;: &quot;This file contains no owner, tenant, address, APN, rent, valuation or tax information. Private inputs are supplied by the owner at runtime and are never written into the published site.&quot;,
+  &quot;anchors&quot;: [
+    {&quot;row&quot;: &quot;PJ-01&quot;, &quot;key&quot;: &quot;risk_free_10y&quot;, &quot;value&quot;: 0.0484, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;10-year Treasury constant maturity, 2026-11-05&quot;, &quot;source&quot;: &quot;FRED_10&quot;},
+    {&quot;row&quot;: &quot;PJ-02&quot;, &quot;key&quot;: &quot;risk_free_30y&quot;, &quot;value&quot;: 0.0525, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;30-year Treasury constant maturity, 2026-11-05&quot;, &quot;source&quot;: &quot;FRED_30&quot;},
+    {&quot;row&quot;: &quot;PJ-03&quot;, &quot;key&quot;: &quot;cpi_all_items&quot;, &quot;value&quot;: 0.037, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;LA area CPI-U, 12-month change, September 2026&quot;, &quot;source&quot;: &quot;BLS_CPI&quot;},
+    {&quot;row&quot;: &quot;PJ-04&quot;, &quot;key&quot;: &quot;cpi_core&quot;, &quot;value&quot;: 0.026, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;LA area core CPI-U, 12-month change, September 2026&quot;, &quot;source&quot;: &quot;BLS_CPI&quot;},
+    {&quot;row&quot;: &quot;PJ-05&quot;, &quot;key&quot;: &quot;job_growth&quot;, &quot;value&quot;: 0.005, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;MSA total nonfarm, 12-month change, September 2026 (preliminary)&quot;, &quot;source&quot;: &quot;BLS_EAG&quot;},
+    {&quot;row&quot;: &quot;PJ-06&quot;, &quot;key&quot;: &quot;unemployment&quot;, &quot;value&quot;: 0.044, &quot;unit&quot;: &quot;rate&quot;, &quot;label&quot;: &quot;MSA unemployment rate, September 2026 (preliminary)&quot;, &quot;source&quot;: &quot;BLS_EAG&quot;},
+    {&quot;row&quot;: &quot;PJ-07&quot;, &quot;key&quot;: &quot;city_pop_change&quot;, &quot;value&quot;: -0.008, &quot;unit&quot;: &quot;cumulative_rate&quot;, &quot;label&quot;: &quot;City population change, Apr 2020 to Jul 2025 (V2025)&quot;, &quot;source&quot;: &quot;CEN_CITY&quot;},
+    {&quot;row&quot;: &quot;PJ-08&quot;, &quot;key&quot;: &quot;county_pop_change&quot;, &quot;value&quot;: -0.006, &quot;unit&quot;: &quot;annual_rate&quot;, &quot;label&quot;: &quot;County population change, Jan 2025 to Jan 2026 (CA DOF)&quot;, &quot;source&quot;: &quot;DOF_E1&quot;},
+    {&quot;row&quot;: &quot;PJ-09&quot;, &quot;key&quot;: &quot;county_personal_income_usd&quot;, &quot;value&quot;: 818500000000, &quot;unit&quot;: &quot;usd&quot;, &quot;label&quot;: &quot;LA County personal income, 2024 (NOT GDP)&quot;, &quot;source&quot;: &quot;BEA_2024&quot;},
+    {&quot;row&quot;: &quot;PJ-10&quot;, &quot;key&quot;: &quot;scag_horizon_year&quot;, &quot;value&quot;: 2050, &quot;unit&quot;: &quot;year&quot;, &quot;label&quot;: &quot;Connect SoCal 2024 long-range forecast horizon&quot;, &quot;source&quot;: &quot;SCAG_DEM&quot;},
+    {&quot;row&quot;: &quot;PJ-11&quot;, &quot;key&quot;: &quot;edd_horizon_year&quot;, &quot;value&quot;: 2033, &quot;unit&quot;: &quot;year&quot;, &quot;label&quot;: &quot;Hard limit of official LA County occupational projections&quot;, &quot;source&quot;: &quot;EDD_LA&quot;},
+    {&quot;row&quot;: &quot;PJ-12&quot;, &quot;key&quot;: &quot;ula_base_rate&quot;, &quot;value&quot;: 0.0045, &quot;unit&quot;: &quot;transfer_tax_rate&quot;, &quot;label&quot;: &quot;City base real property transfer tax, 0.45%&quot;, &quot;source&quot;: &quot;ULA_FAQ&quot;},
+    {&quot;row&quot;: &quot;PJ-12&quot;, &quot;key&quot;: &quot;ula_lower_rate&quot;, &quot;value&quot;: 0.04, &quot;unit&quot;: &quot;transfer_tax_rate&quot;, &quot;label&quot;: &quot;ULA lower tier, 4%&quot;, &quot;source&quot;: &quot;ULA_FAQ&quot;},
+    {&quot;row&quot;: &quot;PJ-12&quot;, &quot;key&quot;: &quot;ula_upper_rate&quot;, &quot;value&quot;: 0.055, &quot;unit&quot;: &quot;transfer_tax_rate&quot;, &quot;label&quot;: &quot;ULA upper tier, 5.5%&quot;, &quot;source&quot;: &quot;ULA_FAQ&quot;},
+    {&quot;row&quot;: &quot;PJ-12&quot;, &quot;key&quot;: &quot;ula_lower_threshold_usd&quot;, &quot;value&quot;: 5400000, &quot;unit&quot;: &quot;usd&quot;, &quot;label&quot;: &quot;ULA lower threshold after June 30, 2026&quot;, &quot;source&quot;: &quot;ULA_FAQ&quot;},
+    {&quot;row&quot;: &quot;PJ-12&quot;, &quot;key&quot;: &quot;ula_upper_threshold_usd&quot;, &quot;value&quot;: 10900000, &quot;unit&quot;: &quot;usd&quot;, &quot;label&quot;: &quot;ULA upper threshold after June 30, 2026&quot;, &quot;source&quot;: &quot;ULA_FAQ&quot;},
+    {&quot;row&quot;: &quot;PJ-13&quot;, &quot;key&quot;: &quot;fy2025_closures&quot;, &quot;value&quot;: 86, &quot;unit&quot;: &quot;count&quot;, &quot;label&quot;: &quot;Jack in the Box closures in FY2025&quot;, &quot;source&quot;: &quot;SEC_Q4FY25&quot;},
+    {&quot;row&quot;: &quot;PJ-14&quot;, &quot;key&quot;: &quot;q3_fy2026_restaurants&quot;, &quot;value&quot;: 2115, &quot;unit&quot;: &quot;count&quot;, &quot;label&quot;: &quot;Jack in the Box system restaurants, end of Q3 FY2026&quot;, &quot;source&quot;: &quot;SEC_Q3FY26&quot;}
+  ],
+  &quot;scenarios&quot;: [
+    {&quot;id&quot;: &quot;S1&quot;, &quot;name&quot;: &quot;Sell immediately&quot;, &quot;decision_row&quot;: &quot;DC-01&quot;, &quot;description&quot;: &quot;Crystallize value before the reported 2030-2035 expiry; removes single-tenant exposure but sells a shortening term and forgoes land optionality.&quot;, &quot;required_private_inputs&quot;: [&quot;gross_sale_price_usd&quot;, &quot;loan_payoff_usd&quot;, &quot;owner_tax_rate&quot;, &quot;professional_cost_rate&quot;]},
+    {&quot;id&quot;: &quot;S2&quot;, &quot;name&quot;: &quot;Renew / extend early, then hold&quot;, &quot;decision_row&quot;: &quot;DC-02&quot;, &quot;description&quot;: &quot;Convert the ambiguous expiry window into a signed longer term; keeps income and land optionality while retaining tenant credit exposure.&quot;, &quot;required_private_inputs&quot;: [&quot;annual_base_rent_usd&quot;, &quot;renewal_term_years&quot;, &quot;rent_escalation_rate&quot;, &quot;residual_value_usd&quot;]},
+    {&quot;id&quot;: &quot;S3&quot;, &quot;name&quot;: &quot;Renew early, then sell with a long term&quot;, &quot;decision_row&quot;: &quot;DC-03&quot;, &quot;description&quot;: &quot;Sequence a documented renewal before marketing so a buyer underwrites firm term rather than expiry risk.&quot;, &quot;required_private_inputs&quot;: [&quot;annual_base_rent_usd&quot;, &quot;renewal_term_years&quot;, &quot;gross_sale_price_usd&quot;]},
+    {&quot;id&quot;: &quot;S4&quot;, &quot;name&quot;: &quot;Hold to expiry, then re-tenant&quot;, &quot;decision_row&quot;: &quot;DC-04&quot;, &quot;description&quot;: &quot;Retain land but carry vacancy, capital expenditure and re-leasing risk at the weakest point of the term.&quot;, &quot;required_private_inputs&quot;: [&quot;annual_base_rent_usd&quot;, &quot;remaining_term_years&quot;, &quot;vacancy_months&quot;, &quot;retenanting_cost_usd&quot;]},
+    {&quot;id&quot;: &quot;S5&quot;, &quot;name&quot;: &quot;Hold to expiry, then sell vacant&quot;, &quot;decision_row&quot;: &quot;DC-05&quot;, &quot;description&quot;: &quot;Remove income before a sale; weakest wealth-preservation path unless land value dominates.&quot;, &quot;required_private_inputs&quot;: [&quot;gross_sale_price_usd&quot;, &quot;remaining_term_years&quot;]},
+    {&quot;id&quot;: &quot;S6&quot;, &quot;name&quot;: &quot;Refinance and hold&quot;, &quot;decision_row&quot;: &quot;DC-06&quot;, &quot;description&quot;: &quot;Leverage amplifies both return and loss on a concentrated, catastrophe-exposed, single-tenant asset.&quot;, &quot;required_private_inputs&quot;: [&quot;loan_amount_usd&quot;, &quot;interest_rate&quot;, &quot;annual_base_rent_usd&quot;]},
+    {&quot;id&quot;: &quot;S7&quot;, &quot;name&quot;: &quot;Sell and defer tax via a like-kind exchange&quot;, &quot;decision_row&quot;: &quot;DC-07&quot;, &quot;description&quot;: &quot;Preserves after-tax capital and allows diversification, but adds strict identification and closing deadlines.&quot;, &quot;required_private_inputs&quot;: [&quot;gross_sale_price_usd&quot;, &quot;owner_tax_rate&quot;, &quot;replacement_price_usd&quot;]},
+    {&quot;id&quot;: &quot;S8&quot;, &quot;name&quot;: &quot;Partial interest / ground-lease restructuring&quot;, &quot;decision_row&quot;: &quot;DC-08&quot;, &quot;description&quot;: &quot;Document-intensive structure; no recommendation without the executed title and lease documents.&quot;, &quot;required_private_inputs&quot;: [&quot;title_terms&quot;, &quot;lease_terms&quot;]},
+    {&quot;id&quot;: &quot;S9&quot;, &quot;name&quot;: &quot;Do nothing / defer&quot;, &quot;decision_row&quot;: &quot;DC-09&quot;, &quot;description&quot;: &quot;Passively letting the term decay is the highest-regret path; option notice deadlines are irreversible.&quot;, &quot;required_private_inputs&quot;: [&quot;remaining_term_years&quot;]}
+  ],
+  &quot;rules&quot;: [
+    &quot;Use only the official anchors above plus owner-supplied private parameters. Never fetch data at runtime.&quot;,
+    &quot;Any value not published by an official source is an owner-supplied sensitivity and must be labelled OWNER-SUPPLIED, never &#x27;verified&#x27;.&quot;,
+    &quot;Apply the ULA tier to the whole consideration once the price crosses a threshold; the thresholds are indexed annually and must be re-checked at closing.&quot;,
+    &quot;Do not discount cash flows beyond the official EDD 2033 projection horizon by extrapolating employment or income series.&quot;,
+    &quot;Report a break-even renewal probability, not a point estimate of value, because no official cap rate or comparable-sale series exists.&quot;,
+    &quot;Model outputs are computations, not official statistics, and are never published on the website.&quot;
+  ]
+}
+</pre></details></section>
+
+<div class="callout callout--warn">
+  <h2>Reproduce it yourself, privately</h2>
+  <p>The executable engine is <code>tools/projection.py</code> in this repository. It makes no network
+  calls, contains no owner information, writes nothing into the website by default, and labels every
+  number as an official anchor, an owner-supplied sensitivity, or a model output. Its complete source is
+  reproduced below for line-by-line review; the official anchors it uses are listed in
+  <code>data/brief_scenarios.json</code> and traced to their rows in
+  <code>data/brief_rows.json</code>.</p>
+</div>
+
+    </main>
+    <footer class="footer"><div class="footer-inner">
+      <strong>Reading rule:</strong> every table row links to an official publisher. An empty value cell is
+      an unverified value, flagged <code>U-&lt;row id&gt;</code> on <a href="flagged.html">Flagged for Review</a>;
+      nothing is inferred or filled. · <a href="sources.html">Sources &amp; manual review</a> ·
+      <a href="privacy.html">Privacy</a> · <a href="scope.html">Scope &amp; requirements</a> ·
+      <a href="index.html">Executive summary</a>
+    </div></footer>
+  </div>
+</div>
 </body>
 </html>
