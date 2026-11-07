@@ -24,8 +24,21 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Validate site and source links
-        run: python scripts/validate_site.py
+      - name: Regenerate the site from the verified dataset
+        run: |
+          set -eu
+          python tools/build_dataset.py
+          python tools/build_brief.py
+      - name: Confirm generated pages match the committed build
+        run: |
+          set -eu
+          git diff --exit-code -- '*.html' 'data/brief_*.json' robots.txt sitemap.xml
+      - name: Verify sources, links, table citations, flags and privacy
+        run: |
+          set -eu
+          python tools/verify_brief.py
+          python scripts/validate_site.py
+          python tools/projection.py --self-test
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -47,9 +60,15 @@ jobs:
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html _site/
-          cp assets/styles.css assets/site.js _site/assets/
+          cp index.html decision.html projection.html property.html tenant.html \
+             market.html geography.html demographics.html income.html employment.html \
+             schools.html economy.html hazards.html regulatory.html risks.html \
+             sources.html flagged.html privacy.html scope.html \
+             model.html risk.html 404.html _site/
+          cp assets/brief.css assets/brief.js assets/styles.css assets/site.js _site/assets/
           cp .nojekyll _site/.nojekyll
+          cp robots.txt _site/robots.txt
+          cp sitemap.xml _site/sitemap.xml
           echo "Assembled $(find _site -type f | wc -l) public files"
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
