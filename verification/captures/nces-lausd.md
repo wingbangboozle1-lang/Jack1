@@ -28,3 +28,9 @@ Scope limit recorded on the site: these are **district-wide** figures for a 784-
 district. They say nothing about the campus that serves the subject parcel, and no campus has been
 identified. District graduation rate and test scores are **not published on this page**, so those rows are
 blank on the site rather than filled from a third party.
+
+## Additional LAUSD rows read on the same page
+
+All present in the capture above: total revenue $14,773,154,000 ($34,533 per student), total expenditures
+$11,493,204,000 ($26,866 per student), total current expenditures $9,670,917,000 ($22,606 per student),
+instructional $5,274,794,000 (55% of current expenditure), state revenue $8,119,978,000 (55% of total revenue).

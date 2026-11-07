@@ -30,3 +30,18 @@
 Cross-check note: the county ACS 2020-2024 5-year median household income is $90,112; the Census SAIPE
 single-year estimate for 2024 published through FRED is $90,757. Both are official, they are different
 series and different periods, and they are recorded as separate rows rather than blended.
+
+## Additional county rows read on the same page
+
+| QuickFacts row | Value |
+|---|---|
+| Owner-occupied housing unit rate, 2020-2024 | 45.9% |
+| Median value of owner-occupied housing units, 2020-2024 | $834,200 |
+| Persons without health insurance, under age 65 years, percent | 8.3% |
+| In civilian labor force, total, percent of population age 16 years+, 2020-2024 | 64.7% |
+| Total employer establishments, 2023 | 304,988 |
+| Total employment, 2023 | 3,987,736 |
+| Total annual payroll, 2023 ($1,000) | 299,616,607 |
+| Total nonemployer establishments, 2024 | 1,165,040 |
+
+| Persons in poverty, percent | 13.3% |

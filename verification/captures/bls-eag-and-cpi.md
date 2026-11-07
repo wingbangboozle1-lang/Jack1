@@ -46,3 +46,16 @@ Arithmetic cross-check performed: 6,646.9 − 6,352.9 = 294.0 unemployed; 294.0 
 
 Note: BLS states area indexes are volatile and "do not measure differences in the level of prices between cities".
 The October 2025 values are absent because of the 2025 lapse in appropriations; October 2026 CPI is due 2026-11-10.
+
+## Annual city unemployment rates (BLS LAUS, 50 largest cities)
+
+- URL: https://www.bls.gov/lau/city-annual-unemployment-rates.htm
+- Retrieved 2026-11-07. Page last modified 2026-05-19.
+
+| City | 2021 | 2022 | 2023 | 2024 | 2025* |
+|---|---|---|---|---|---|
+| Los Angeles city, CA | 9.0 | 5.1 | 5.3 | 5.9 | **5.8** |
+
+\* BLS footnote: "Estimates for 2025 are 11-month averages that exclude October. Data for October 2025
+were not collected due to the federal government shutdown. Therefore, estimates are not fully comparable
+to annual averages for other years."

@@ -119,3 +119,29 @@ Finance page, which does. The earlier citation is retained in this capture only 
 **Correction recorded:** an earlier build cited this DIR page for a "City of Los Angeles minimum wage (2026)"
 row. The DIR page is about the *state* fast-food wage under AB 1228; it does not publish a City of Los Angeles
 minimum wage. That row was blanked (it was already blank) and re-pointed to an LA-specific official source.
+
+## Additional regulatory rows read on the same pages
+
+| Row | Published wording | Recorded value |
+|---|---|---|
+| Proposition 13 growth cap (Assessor) | "caps the growth of a property's assessed value at no more than **two percent** a year" | 2 |
+| Proposition 8 relief (Assessor) | "allows a **temporary** reduction in assessed value when a property suffers a 'Decline-in-Value'" | Available (temporary) |
+| California fast-food minimum wage (DIR) | "raises the hourly minimum wage rate for certain fast food workers to **$20** effective April 1, 2024" | 20 |
+| IRC §1031 scope (IRS) | "Under the Tax Cuts and Jobs Act, Section 1031 now applies **only to exchanges of real property** and not to exchanges of personal or intangible property." | Real property only |
+| FHSZ classifications (OSFM) | "Fire Hazard Severity Zones fall into one of the following classifications: Moderate, High, Very High" | Moderate / High / Very High |
+
+## State EDD Los Angeles County local area profile
+
+- URL: https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile
+- Retrieved 2026-11-07. The page labels each figure with its producer; the two used here are marked below.
+
+| Item | Value | Producer stated on the page |
+|---|---|---|
+| Per Capita Personal Income | $83,888 (2024, annual) | BEA |
+| Total Personal Income | $818,509,319 (2024, annual) | BEA |
+| Population | 9,898,257 (2024, annual) | California Dept of Finance |
+| Building Permits — Multi-Family 2025 | 10,809 permits, $1,566,847,409 total cost | US Census Bureau |
+| Building Permits — Single Family 2025 | 9,383 permits, $2,631,127,631 total cost | US Census Bureau |
+| Building Permits — Total all types construction permits 2025 | **20,192** permits, $4,197,975,040 total cost | US Census Bureau |
+| Occupations with fastest job growth | Nurse Practitioners 2023-2033, +2,190, +48.8% | EDD |
+| County-to-county commute, residence LA County to workplace LA County (2020) | 4,429,523 workers | US Census Bureau |

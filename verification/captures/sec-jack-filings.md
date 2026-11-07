@@ -69,3 +69,12 @@ monetising its property. That is a negotiation fact, not a prediction about this
 - URL: https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm
 - Retrieved 2026-11-07; confirms Del Taco is reported in discontinued operations after a December 22, 2025
   disposal date and that the remaining business is the Jack in the Box brand.
+
+## Additional guidance items read on the same release
+
+| Item | Published wording | Recorded value |
+|---|---|---|
+| FY2026 same-store sales guidance | "Same Store Sales of -1% to +1% vs. Fiscal Year 2025" | -1 to +1 |
+| FY2026 Adjusted EBITDA guidance | "Adjusted EBITDA of $225 to $240 million" | 225 to 240 |
+| Dividend | "the company has discontinued its dividend"; Q4 cash dividends declared $— | Discontinued |
+| Real-estate strategy | "'Jack on Track' plan, which includes a block closure program and selling real estate" | Includes selling real estate |

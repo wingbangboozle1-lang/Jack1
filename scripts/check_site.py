@@ -351,6 +351,42 @@ for r in ds.ROWS:
 ok()
 
 
+# --------------------------------------------------------------- 8a. capture fidelity
+CAPTURES = {
+    "censusCity": "census-quickfacts-city.md", "censusCounty": "census-quickfacts-county.md",
+    "censusPovertyNote": "census-quickfacts-city.md", "blsEag": "bls-eag-and-cpi.md",
+    "blsCpi": "bls-eag-and-cpi.md", "blsCity": "bls-eag-and-cpi.md",
+    "dofP2A": "dof-population-projections.md", "scag": "dof-population-projections.md",
+    "nces": "nces-lausd.md", "sec10K": "sec-jack-filings.md", "secER": "sec-jack-filings.md",
+    "sec10Q": "sec-jack-filings.md", "calfire": "hazards-tax-regulatory.md",
+    "osfm": "hazards-tax-regulatory.md", "cgs": "hazards-tax-regulatory.md",
+    "usgs": "hazards-tax-regulatory.md", "cdi": "hazards-tax-regulatory.md",
+    "assessorDiv": "hazards-tax-regulatory.md", "lafinanceUla": "hazards-tax-regulatory.md",
+    "dirAb1228": "hazards-tax-regulatory.md", "eddProfile": "hazards-tax-regulatory.md",
+    "fredDgs10": "fred-series.md", "fredUnemp": "fred-series.md", "fredIncome": "fred-series.md",
+    "irs1031": "hazards-tax-regulatory.md", "irsP544": "hazards-tax-regulatory.md",
+    "ftbGains": "hazards-tax-regulatory.md",
+}
+captures = {}
+for key, fname in CAPTURES.items():
+    cap_path = ROOT / "verification/captures" / fname
+    if not cap_path.exists():
+        fail(f"capture file missing for source {key}: {fname}")
+        continue
+    captures[key] = cap_path.read_text(encoding="utf-8")
+for r in ds.ROWS:
+    rid, cat, metric, value, unit, period, geo, src, status, note = r
+    if status != "verified":
+        continue
+    cap = captures.get(src)
+    if cap is None:
+        fail(f"{rid}: no reproduced capture for its source ({src})")
+        continue
+    v = str(value)
+    if v not in cap and v.replace(",", "") not in cap.replace(",", ""):
+        fail(f"{rid}: value {v!r} does not appear in its capture {CAPTURES[src]}")
+ok()
+
 # --------------------------------------------------------------- 8b. dataset coverage
 rendered_ids: set[str] = set()
 for page, au in audits.items():
