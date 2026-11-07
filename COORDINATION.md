@@ -103,6 +103,14 @@ R-08 restaurant count 2,136 (table) vs "approximately 2,135" (boilerplate in the
 R-09 ULA thresholds previously unverified - now verified at the Office of Finance. R-10 no official cap rate or market
 rent - not published. R-11 no probability assigned to any hazard - documented limitation.
 
+## Merge-conflict record
+
+`origin/main` advanced twice while this branch was being built (PR #16, #19 then #20 from `d2a64a9e`). Both were
+merged in. Conflicts were limited to this file, the shared pages, `README.md`, `scripts/validate_site.py` and the
+workflow; each was resolved in favour of this branch's regenerated output, with the other branch's build archived
+intact under `archive/legacy-2026-11-07/main-d2a64a9e/` and its three re-verifiable findings absorbed into the
+dataset. No other session's content was discarded.
+
 ## PR and deploy record
 
 | Item | Value |
