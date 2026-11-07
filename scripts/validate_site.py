@@ -43,7 +43,7 @@ OFFICIAL_DOMAINS = (
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
-    "ladwp.com", "ftb.ca.gov", "noaa.gov",
+    "ladwp.com", "ftb.ca.gov", "noaa.gov", "stlouisfed.org", "bea.gov",
 )
 # Repository artefacts (a file or commit in this repo) may be cited as evidence for an audit
 # row on the verification page only. They are never accepted as a data source anywhere else.

@@ -40,6 +40,13 @@ CDI = "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Cla
 IRS544 = "https://www.irs.gov/publications/p544"
 LAUSD = "https://explore.lausd.org/"
 CDE = "https://www.cde.ca.gov/ta/ac/cm/"
+CENSUS_CO = "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225"
+USGS_FAQ = ("https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-"
+            "los-angeles-area-san-francisco-bay-area")
+NRI = "https://hazards.fema.gov/nri/"
+BEA = "https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas"
+FRED_CNTY = "https://fred.stlouisfed.org/series/LAUCN060370000000003A"
+FRED_MSA = "https://fred.stlouisfed.org/series/LAUMT063108000000003A"
 
 # (id, page(s), item, value_published, source label, source url, what_the_source_shows, status, note)
 CLAIMS = [
@@ -164,6 +171,58 @@ CLAIMS = [
      "Amounts in thousands", "SEC 10-Q", TENQ,
      "Balance sheet and earnings statements are headed “(In thousands, except share and per share data)”.",
      "verified", ""),
+    ("V-30", "market", "Los Angeles County population, July 1 2025", "9,694,934",
+     "Census QuickFacts (county)", CENSUS_CO,
+     "County QuickFacts row “Population estimates, July 1, 2025, (V2025)” displays 9,694,934.",
+     "verified", "Added to the site by another session and re-checked here before publication."),
+    ("V-31", "market", "Los Angeles County population change, 2020 base to 2025", "−3.2%",
+     "Census QuickFacts (county)", CENSUS_CO,
+     "County QuickFacts row “Population, percent change - April 1, 2020 (estimates base) to July 1, 2025” displays -3.2% (base 10,017,414).",
+     "verified", ""),
+    ("V-32", "risks", "Los Angeles region earthquake probability, 30 years",
+     "60% M6.7; 46% M7.0; 31% M7.5", "USGS earthquake FAQ", USGS_FAQ,
+     "USGS FAQ, citing UCERF3: “Within the next 30 years the probability is: 60% that an earthquake measuring magnitude 6.7 … 46% … magnitude 7 … 31% … magnitude 7.5 will occur in the Los Angeles region.”",
+     "verified", "Regional probability; it is not a parcel ground-motion or loss estimate."),
+    ("V-33", "market", "Los Angeles–Long Beach–Anaheim MSA GDP, 2024", "$1.355 trillion",
+     "BEA county / metro GDP tables", BEA,
+     "The cited link (FRED LAUMT063108000000003A) resolves to “Unemployment Rate in Los Angeles-Long Beach-Anaheim, CA (MSA)”, 5.3% for 2025 — a labour series, not GDP. No BEA table was identified that displays $1.355 trillion for 2024 during this pass.",
+     "withdrawn", "Value removed from the market table and flagged; the citation did not support it."),
+    ("V-34", "market", "Los Angeles County GDP, 2024", "$1.003 trillion",
+     "BEA county / metro GDP tables", BEA,
+     "Both GDP rows cited the same FRED unemployment series, so neither the level nor the claimed rank against New York County could be reproduced.",
+     "withdrawn", "Value removed and flagged pending a direct BEA CAGDP2 read."),
+    ("V-35", "market", "Los Angeles County annual unemployment rate, 2025", "published 5.6% → corrected to 5.7%",
+     "BLS county annual series (via FRED)", FRED_CNTY,
+     "FRED series LAUCN060370000000003A, sourced from BLS LAUS, shows 2025 = 5.7 (not seasonally adjusted annual average). The metro-area series shows 5.3%.",
+     "corrected", "A published value was wrong. Corrected to 5.7% and the discrepancy recorded rather than quietly overwritten."),
+    ("V-36", "risks", "FEMA National Risk Index composite score", "published 100.0 / 100 (Very High)",
+     "FEMA National Risk Index", NRI,
+     "hazards.fema.gov/nri resolves to FEMA's Resilience Analysis and Planning Tool page, which states the NRI v1.20 dataset exists but displays no county score. The score could not be reproduced.",
+     "withdrawn", "Blank and flagged; query the NRI tool directly."),
+    ("V-37", "risks", "FEMA NRI expected annual loss", "published $7.60 billion", "FEMA National Risk Index", NRI,
+     "No county expected-annual-loss figure was displayed on the reachable official page.",
+     "withdrawn", ""),
+    ("V-38", "risks", "FEMA NRI earthquake score", "published 100.0 (Very High)", "FEMA National Risk Index", NRI,
+     "No county hazard sub-score was displayed on the reachable official page.",
+     "withdrawn", ""),
+    ("V-39", "risks", "FEMA NRI wildfire score", "published 99.9 (Very High)", "FEMA National Risk Index", NRI,
+     "No county hazard sub-score was displayed on the reachable official page.",
+     "withdrawn", ""),
+    ("V-40", "risks", "FEMA NRI flood score", "published 100.0 (Very High)", "FEMA National Risk Index", NRI,
+     "No county hazard sub-score was displayed on the reachable official page.",
+     "withdrawn", ""),
+    ("V-41", "risks", "FEMA disaster declarations, Los Angeles County", "published 88 since 1969 (61 fire, 10 flood, 8 severe storm)",
+     "FEMA disaster declarations", "https://www.fema.gov/disasters",
+     "The cited page is a national declarations search tool and does not display a county count or an incident-type breakdown.",
+     "withdrawn", ""),
+    ("V-42", "risks", "CAL FIRE 2025 FHSZ Very High zone expansion, Southern California", "published 26% vs 2011",
+     "CAL FIRE / OSFM FHSZ", CALFIRE,
+     "The FHSZ page confirms a 2025 LRA rollout (phases released 10 Feb, 24 Feb, 10 Mar and 24 Mar 2025) but does not display a 26% expansion figure or the quoted county acreage.",
+     "withdrawn", "The rollout itself is verified; the percentage is not."),
+    ("V-43", "risks", "CAL FIRE statewide Very High zone acreage change", "published +35% (860,000 → 1.2 million acres)",
+     "CAL FIRE / OSFM FHSZ", CALFIRE,
+     "No statewide acreage comparison was displayed on the reachable official page.",
+     "withdrawn", ""),
 ]
 
 LINKS = [
@@ -238,6 +297,14 @@ IRREGULARITIES = [
      "The 2030–2035 expiry range and the NNN structure come from the owner’s description. No public record confirms either, and no parcel has been identified.",
      "Shown as a working premise on every page and left blank in the asset tables.",
      "open", "Lookup that would settle it", ZIMAS),
+    ("I-08", "Ten figures merged from another session could not be reproduced and were withdrawn",
+     "A parallel session had added FEMA National Risk Index scores, an expected annual loss, a county disaster-declaration count, two CAL FIRE expansion percentages and two BEA GDP levels. Re-checking each at its cited official page on 2026-11-07 reproduced none of them; the NRI page now redirects to FEMA's RAPT tool, and both GDP rows cited a FRED unemployment series rather than GDP.",
+     "All ten values are blanked in the tables with an explicit ‘Unverified — withdrawn’ badge and a note. The claims are preserved here rather than deleted, and the official tools remain linked for the owner to query directly.",
+     "withdrawn", "FEMA National Risk Index", NRI),
+    ("I-09", "One published figure was wrong",
+     "The Los Angeles County annual unemployment rate was published as 5.6%. The BLS annual county series shows 5.7% for 2025, and its metro-area counterpart shows 5.3%.",
+     "Corrected to 5.7% with the county series linked, and the correction is stated in the row itself rather than silently overwritten.",
+     "repaired", "BLS county annual rate (via FRED)", FRED_CNTY),
 ]
 
 
@@ -279,7 +346,9 @@ This file and `verification.html` are generated by `scripts/build_verification.p
 register, so the published page and this log cannot drift apart.
 
 **Result of this pass:** {len(CLAIMS)} published items re-checked — {sum(1 for c in CLAIMS if c[7] == 'verified')} verified exactly,
-{sum(1 for c in CLAIMS if c[7] == 'verified-with-caveat')} verified with a caveat, 0 wrong values, 0 unverified values published.
+{sum(1 for c in CLAIMS if c[7] == 'verified-with-caveat')} verified with a caveat,
+{sum(1 for c in CLAIMS if c[7] == 'corrected')} corrected (a published value was wrong),
+{sum(1 for c in CLAIMS if c[7] == 'withdrawn')} withdrawn (could not be reproduced, now blank and flagged).
 {len(LINKS)} official links were fetched; {len(NOT_RETESTED)} links were not re-tested and are listed rather than assumed.
 
 ## 1. Published figures, re-checked line by line
@@ -317,6 +386,10 @@ def badge(status: str) -> str:
         return '<span class="badge badge-verified">Verified</span>'
     if status == "verified-with-caveat":
         return '<span class="badge badge-limited">Verified · caveat</span>'
+    if status == "corrected":
+        return '<span class="badge badge-limited">Corrected</span>'
+    if status == "withdrawn":
+        return '<span class="badge badge-review">Withdrawn</span>'
     return '<span class="badge badge-review">Flagged</span>'
 
 
@@ -380,6 +453,8 @@ def page_shell(title: str, description: str, current: str, crumb: str, body: str
 def write_html() -> None:
     n_verified = sum(1 for c in CLAIMS if c[7] == "verified")
     n_caveat = sum(1 for c in CLAIMS if c[7] == "verified-with-caveat")
+    n_corrected = sum(1 for c in CLAIMS if c[7] == "corrected")
+    n_withdrawn = sum(1 for c in CLAIMS if c[7] == "withdrawn")
 
     rows = []
     for (vid, pages, item, value, label, url, shows, status, note) in CLAIMS:
@@ -452,9 +527,14 @@ def write_html() -> None:
             <div class="metric-meta">Correct, but the cited page no longer shows it</div>
           </article>
           <article class="metric-card">
-            <div class="metric-label">Wrong or unverifiable values published</div>
-            <div class="metric-value">0</div>
-            <div class="metric-meta">No value was found to be incorrect or unsourced</div>
+            <div class="metric-label">Corrected</div>
+            <div class="metric-value">{n_corrected}</div>
+            <div class="metric-meta">A published value was wrong and has been fixed</div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">Withdrawn</div>
+            <div class="metric-value">{n_withdrawn}</div>
+            <div class="metric-meta">Could not be reproduced at the official source; blanked and flagged</div>
           </article>
         </section>
 
