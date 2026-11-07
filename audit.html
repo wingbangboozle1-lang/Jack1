@@ -45,7 +45,7 @@
           <p class="eyebrow">Line-by-line verification ledger</p>
           <span class="status-pill">Every published figure re-read on its official page</span>
           <h1 id="page-title">What was checked, what changed, what is still open.</h1>
-          <p>An independent session re-read each figure printed in this brief against the official publisher's page on 07 November 2026. Twenty-two figures were re-checked: twenty-one matched the official page exactly, one set of county labour-force levels could not be reproduced and was replaced. Nothing on this page is an estimate: where a value could not be confirmed it is left blank, corrected, or moved to the review list.</p>
+          <p>An independent session re-read each figure printed in this brief against the official publisher's page on 07 November 2026. Thirty-three checks were run: twenty-four matched an official page exactly, two had to be corrected, one is disclosed as an arithmetic average of published months, and six could not be confirmed anywhere official and were withheld. Nothing on this page is an estimate: where a value could not be confirmed it is blanked, corrected, or moved to the review list — including values that arrived from a parallel session minutes before publication.</p>
           <div class="hero-actions">
             <a class="button" href="#ledger">Open the verification ledger <span aria-hidden="true">→</span></a>
             <a class="button button-secondary" href="flagged.html">Flagged for Review</a>
@@ -53,26 +53,26 @@
         </section>
 
         <div class="section-heading">
-          <div><p class="eyebrow">Audit at a glance</p><h2>Twenty-two figures, thirty-one official links</h2></div>
+          <div><p class="eyebrow">Audit at a glance</p><h2>Thirty-three checks, thirty-four official links</h2></div>
           <span class="badge badge-verified">Run completed 07 Nov 2026</span>
         </div>
         <section class="card-grid" aria-label="Audit counts">
           <article class="metric-card">
             <div class="metric-label">Figures re-checked</div>
-            <div class="metric-value">22</div>
+            <div class="metric-value">33</div>
             <div class="metric-meta">Every numeric cell in the market, property, risk and decision tables</div>
             <a class="metric-source" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Example source: U.S. Census Bureau</a>
           </article>
           <article class="metric-card">
-            <div class="metric-label">Matched the official page</div>
-            <div class="metric-value">21</div>
+            <div class="metric-label">Matched an official page</div>
+            <div class="metric-value">24</div>
             <div class="metric-meta">Exact match on value, period, and series definition</div>
             <a class="metric-source" href="https://data.bls.gov/timeseries/LAUCN060370000000003?amp%3bdata_tool=XGtable&amp;output_view=data&amp;include_graphs=true" target="_blank" rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a>
           </article>
           <article class="metric-card">
-            <div class="metric-label">Corrected this pass</div>
-            <div class="metric-value">1</div>
-            <div class="metric-meta">County labour force / employment / unemployment levels, with the prior values disclosed</div>
+            <div class="metric-label">Corrected or withheld</div>
+            <div class="metric-value">9</div>
+            <div class="metric-meta">Two corrected values, one disclosed computed average, six figures withheld for want of an official page</div>
             <a class="metric-source" href="flagged.html">See the disclosed prior values</a>
           </article>
           <article class="metric-card">
@@ -115,6 +115,15 @@
               <tr><td><strong>Issuer earnings from continuing operations, 40 weeks</strong></td><td>$47,971 thousand vs $74,534 thousand prior year</td><td><span class="badge badge-verified">Verified · year-to-date column</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC · Form 10-Q</a></td></tr>
               <tr><td><strong>Measure ULA transfer-tax thresholds</strong></td><td>$5,400,000 and $10,900,000 for closings after 30 Jun 2026; 4% / 5.5% plus a 0.45% base rate</td><td><span class="badge badge-verified">Verified · re-indexed annually, so dated</span></td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA City Office of Finance</a></td></tr>
               <tr><td><strong>Realised wildfire-claim scale, Los Angeles County</strong></td><td>41,727 claims filed; $25.2 billion paid to date (tracker updated 06 Jul 2026)</td><td><span class="badge badge-verified">Verified · county-wide aggregate, not this site</span></td><td><a class="source-link" href="https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm" target="_blank" rel="noopener noreferrer">California Department of Insurance</a></td></tr>
+              <tr><td><strong>Los Angeles County population</strong></td><td>9,694,934; −3.2% against the 2020 estimates base (July 1, 2025 estimate)</td><td><span class="badge badge-verified">Verified · county QuickFacts</span></td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · county</a></td></tr>
+              <tr><td><strong>Los Angeles County GDP</strong></td><td>$1.003 trillion (2024, published as 1,002,965,029 thousand)</td><td><span class="badge badge-verified">Verified · value correct, citation corrected</span><span class="row-note">The row had been cited to a labour-force series identifier; it now links the county GDP series itself.</span></td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA county GDP via FRED</a></td></tr>
+              <tr><td><strong>Metro GDP</strong></td><td>$1.295 trillion (2023)</td><td><span class="badge badge-review">Corrected · a 2024 figure was not published</span><span class="row-note">A parallel draft printed $1.355 trillion for 2024. The official series is marked discontinued with 2023 as its final observation, so the verified 2023 value is shown and the 2024 claim is disclosed on Flagged for Review.</span></td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA metro GDP via FRED</a></td></tr>
+              <tr><td><strong>Annual county unemployment rate</strong></td><td>5.6% (2025)</td><td><span class="badge badge-neutral">Disclosed as computed, not published</span><span class="row-note">Arithmetic average of the eleven published 2025 months. Because October 2025 was not collected, no annual average is published, and the row now says so rather than presenting the figure as an official annual average.</span></td><td><a class="source-link" href="https://data.bls.gov/timeseries/LAUCN060370000000003?amp%3bdata_tool=XGtable&amp;output_view=data&amp;include_graphs=true" target="_blank" rel="noopener noreferrer">BLS LAUS county series</a></td></tr>
+              <tr><td><strong>Regional earthquake probabilities</strong></td><td>60% M ≥ 6.7; 46% M ≥ 7.0; 31% M ≥ 7.5 within 30 years</td><td><span class="badge badge-verified">Verified verbatim · USGS FAQ quoting UCERF3</span></td><td><a class="source-link" href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer">USGS earthquake FAQ</a></td></tr>
+              <tr><td><strong>County FEMA National Risk Index composite</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Withheld · not readable officially</span><span class="row-note">A parallel draft reported 100.0/100. The cited NRI entry point resolves to a tool landing page with no county values, and no official federal page displaying the county score was located on 07 Nov 2026.</span></td><td><a class="source-link" href="https://www.fema.gov/flood-maps/products-tools/national-risk-index" target="_blank" rel="noopener noreferrer">FEMA National Risk Index</a></td></tr>
+              <tr><td><strong>County FEMA expected annual loss and hazard sub-scores</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Withheld · not readable officially</span><span class="row-note">A parallel draft reported $7.6 billion expected annual loss with earthquake, wildfire and flood sub-scores. None could be read from an official page during this audit; all are disclosed on Flagged for Review instead of being published as figures.</span></td><td><a class="source-link" href="https://www.fema.gov/flood-maps/products-tools/national-risk-index" target="_blank" rel="noopener noreferrer">FEMA National Risk Index</a></td></tr>
+              <tr><td><strong>FEMA disaster declaration count</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Withheld · not counted officially</span><span class="row-note">A parallel draft reported 88 declarations since 1969. No declaration count for the county was verified on an official FEMA page in this audit.</span></td><td><a class="source-link" href="https://www.fema.gov/disasters" target="_blank" rel="noopener noreferrer">FEMA disaster declarations</a></td></tr>
+              <tr><td><strong>CAL FIRE Very High hazard acreage change</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Withheld · not on the cited page</span><span class="row-note">A parallel draft reported 26% growth in Southern California and 35% statewide. The cited State Fire Marshal page documents the classes, the statutory basis, and the 2025 local-responsibility rollout, but not those percentages.</span></td><td><a class="source-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer">CAL FIRE FHSZ</a></td></tr>
             </tbody>
           </table>
         </div>
@@ -145,6 +154,10 @@
               <tr><td><strong>U.S. Securities and Exchange Commission · Form 10-K</strong></td><td>Issuer-wide lease and operating disclosures used only as context</td><td><span class="badge badge-neutral">Located; financial detail not re-read this pass</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC 10-K</a></td></tr>
               <tr><td><strong>CAL FIRE / Office of the State Fire Marshal</strong></td><td>Fire Hazard Severity Zone classification and 2025 local-responsibility mapping</td><td><span class="badge badge-verified">Opened, lookup tool with no value published</span></td><td><a class="source-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer">Fire Hazard Severity Zones</a></td></tr>
               <tr><td><strong>California Geological Survey · EQ Zapp</strong></td><td>Alquist-Priolo fault-zone lookup for an unidentified parcel</td><td><span class="badge badge-verified">Opened, redirects to the current EQ Zapp; no value published</span></td><td><a class="source-link" href="https://maps.conservation.ca.gov/cgs/EQZApp/app/" target="_blank" rel="noopener noreferrer">CGS EQ Zapp</a></td></tr>
+              <tr><td><strong>U.S. Geological Survey · earthquake probability FAQ</strong></td><td>Los Angeles region probabilities for M 6.7, 7.0 and 7.5 within 30 years</td><td><span class="badge badge-verified">Opened, values matched verbatim</span></td><td><a class="source-link" href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer">USGS FAQ</a></td></tr>
+              <tr><td><strong>Federal Reserve Bank of St. Louis · FRED, republishing BEA</strong></td><td>County GDP series and metro GDP series</td><td><span class="badge badge-verified">Opened, values matched; metro series marked discontinued at 2023</span></td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">County GDP series</a></td></tr>
+              <tr><td><strong>U.S. Census Bureau · county QuickFacts</strong></td><td>County population and its change against the 2020 base</td><td><span class="badge badge-verified">Opened, values matched</span></td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">County QuickFacts</a></td></tr>
+              <tr><td><strong>Federal Emergency Management Agency · National Risk Index</strong></td><td>County risk scores, expected annual loss, hazard sub-scores</td><td><span class="badge badge-review">Opened: landing page only, no county values displayed</span><span class="row-note">Values reported elsewhere in the repository are quarantined, not published, because they cannot be read from this page.</span></td><td><a class="source-link" href="https://www.fema.gov/flood-maps/products-tools/national-risk-index" target="_blank" rel="noopener noreferrer">National Risk Index</a></td></tr>
               <tr><td><strong>U.S. Geological Survey · seismic hazard model</strong></td><td>Regional earthquake-hazard context</td><td><span class="badge badge-neutral">Not re-read this pass</span></td><td><a class="source-link" href="https://www.usgs.gov/programs/earthquake-hazards/science/2023-50-state-long-term-national-seismic-hazard-model-0" target="_blank" rel="noopener noreferrer">USGS hazard model</a></td></tr>
               <tr><td><strong>Federal Emergency Management Agency · flood maps</strong></td><td>Flood-zone products for a parcel not yet identified</td><td><span class="badge badge-neutral">Not re-read this pass</span></td><td><a class="source-link" href="https://www.fema.gov/flood-maps/products-tools" target="_blank" rel="noopener noreferrer">FEMA flood maps</a></td></tr>
               <tr><td><strong>Los Angeles County Public Works · flood-zone viewer</strong></td><td>County flood-zone lookup</td><td><span class="badge badge-neutral">Not re-read this pass</span></td><td><a class="source-link" href="https://apps.gis.lacounty.gov/dpw/m/?viewer=floodzone" target="_blank" rel="noopener noreferrer">County flood viewer</a></td></tr>
@@ -197,6 +210,18 @@
             <div class="callout">
               <h3>F-07 · Several competing builds remain in the repository</h3>
               <p class="small">Root pages, a <em>pages</em> directory, a <em>site</em> directory, and three archive directories hold different generations of this same analysis. Only the audited set is published. <strong>Action taken:</strong> retained for traceability; readers should treat any unpublished copy as superseded.</p>
+            </div>
+            <div class="callout">
+              <h3>F-09 · A GDP figure cited to an unemployment series</h3>
+              <p class="small">Two GDP rows linked a labour-force identifier instead of a GDP series, so a reader following the link would have landed on county unemployment data. <strong>Action taken:</strong> both rows now link the county GDP series and the metro GDP series, whose published values are 1,002,965,029 thousand dollars for the county in 2024 and 1,295,361.4 million dollars for the metro area in 2023.</p>
+            </div>
+            <div class="callout">
+              <h3>F-10 · A metro GDP year that was never published</h3>
+              <p class="small">A parallel session published a 2024 metro GDP figure. The official metro series is marked discontinued and stops at 2023. <strong>Action taken:</strong> the verified 2023 value is published, the 2024 claim is disclosed on Flagged for Review, and the “second largest metro economy” comparison is dropped because the ranking was not verified either.</p>
+            </div>
+            <div class="callout">
+              <h3>F-11 · Hazard scores that exist but could not be read</h3>
+              <p class="small">Six county-level hazard figures arrived from a parallel session minutes before publication: the risk-index composite, expected annual loss, three hazard sub-scores, a disaster declaration count, and two CAL FIRE acreage percentages. Each cites an official programme, but none of those numbers appeared on the cited page during this audit, and the risk-index landing page carries no county values at all. <strong>Action taken:</strong> the values are withheld, the rows are blanked with the reported numbers disclosed in the notes, and the USGS earthquake probabilities — which were confirmed verbatim — are published as verified.</p>
             </div>
             <div class="callout">
               <h3>F-08 · Two official SCAG documents disagree about the region's future</h3>

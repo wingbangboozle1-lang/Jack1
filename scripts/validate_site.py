@@ -19,7 +19,7 @@ OFFICIAL_DOMAINS = (
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
-    "ladwp.com", "ftb.ca.gov",
+    "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
 )
 
 class PageAudit(HTMLParser):
