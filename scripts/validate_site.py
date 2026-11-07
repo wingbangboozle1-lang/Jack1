@@ -19,7 +19,16 @@ OFFICIAL_DOMAINS = (
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
-    "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
+    "ladwp.com", "ftb.ca.gov", "stlouisfed.org", "bea.gov",
+)
+# The FEMA National Risk Index is published through FEMA's ArcGIS account. Do not
+# allowlist the entire third-party host: permit only the audited LA County query.
+FEMA_COUNTY_SOURCE = (
+    "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/"
+    "National_Risk_Index_Counties/FeatureServer/0/query?"
+    "where=STCOFIPS%3D%2706037%27&outFields=STCOFIPS%2CCOUNTY%2CRISK_SCORE%2C"
+    "RISK_RATNG%2CEAL_VALT%2CERQK_RISKS%2CIFLD_RISKS%2CWFIR_RISKS&"
+    "returnGeometry=false&f=pjson"
 )
 
 class PageAudit(HTMLParser):
@@ -49,7 +58,9 @@ class PageAudit(HTMLParser):
             parsed = urlparse(href)
             if parsed.scheme in ("http", "https"):
                 host = (parsed.hostname or "").lower()
-                if not any(host == domain or host.endswith("." + domain) for domain in OFFICIAL_DOMAINS):
+                if href != FEMA_COUNTY_SOURCE and not any(
+                    host == domain or host.endswith("." + domain) for domain in OFFICIAL_DOMAINS
+                ):
                     self.errors.append(f"External link is not on the official-source allowlist: {href}")
                 if attrs_map.get("target") == "_blank" and not {"noopener", "noreferrer"}.issubset(set((attrs_map.get("rel") or "").split())):
                     self.errors.append(f"External new-tab link lacks noopener/noreferrer: {href}")

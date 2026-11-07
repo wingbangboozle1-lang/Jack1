@@ -83,27 +83,27 @@
           </article>
           <article class="metric-card">
             <div class="metric-label">Metro GDP</div>
-            <div class="metric-value">$1.29T</div>
-            <div class="metric-meta">LA–Long Beach–Anaheim MSA GDP · 2023 nominal · the official series is marked discontinued and publishes no 2024 value</div>
+            <div class="metric-value">$1.295T</div>
+            <div class="metric-meta">LA–Long Beach–Anaheim MSA · 2023 nominal GDP (series discontinued; no official 2024 metro figure)</div>
             <a class="metric-source" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA via FRED</a>
           </article>
           <article class="metric-card">
-            <div class="metric-label">FEMA disaster risk</div>
-            <div class="metric-value">Flagged</div>
-            <div class="metric-meta">County NRI scores and expected annual loss were not readable from an official federal page on 07 Nov 2026, so no value is published here</div>
-            <a class="metric-source" href="https://hazards.fema.gov/nri/" target="_blank" rel="noopener noreferrer">FEMA National Risk Index</a>
+            <div class="metric-label">FEMA county risk index</div>
+            <div class="metric-value">100 / 100</div>
+            <div class="metric-meta">Los Angeles County · Dec 2025 NRI v1.20 · relative composite score, Very High; modeled county EAL ~$7.60B. Neither applies to this unidentified parcel.</div>
+            <a class="metric-source" href="https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&amp;outFields=STCOFIPS%2CCOUNTY%2CRISK_SCORE%2CRISK_RATNG%2CEAL_VALT%2CERQK_RISKS%2CIFLD_RISKS%2CWFIR_RISKS&amp;returnGeometry=false&amp;f=pjson" target="_blank" rel="noopener noreferrer">FEMA county record · FIPS 06037</a> · <a class="metric-source" href="https://www.fema.gov/about/openfema/data-sets/national-risk-index-data" target="_blank" rel="noopener noreferrer">FEMA method</a>
           </article>
           <article class="metric-card">
             <div class="metric-label">Earthquake probability</div>
             <div class="metric-value">60%</div>
-            <div class="metric-meta">M ≥ 6.7 in 30 years · LA region · USGS UCERF3 · verified verbatim 07 Nov 2026</div>
+            <div class="metric-meta">LA region · M ≥ 6.7 over UCERF3’s original 30-year horizon (published 2015); not a rolling 2026 forecast or property probability</div>
             <a class="metric-source" href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer">USGS</a>
           </article>
           <article class="metric-card">
-            <div class="metric-label">CAL FIRE 2025 update</div>
-            <div class="metric-value">Flagged</div>
-            <div class="metric-meta">A reported 26% expansion of Very High zones was not located on the cited CAL FIRE page on 07 Nov 2026; withheld from the headline figures</div>
-            <a class="metric-source" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer">CAL FIRE FHSZ</a>
+            <div class="metric-label">County GDP</div>
+            <div class="metric-value">$1.003T</div>
+            <div class="metric-meta">Los Angeles County · 2024 nominal GDP (BEA); distinct from the 2023 MSA figure and not site revenue.</div>
+            <a class="metric-source" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED · county GDP</a>
           </article>
         </section>
 
@@ -116,8 +116,8 @@
               <li><strong>Do not treat “Central Los Angeles” as one market.</strong> The Census, SCAG regional forecast, and Downtown Community Plan use different geographies. None can be assigned to this restaurant without a parcel location. <a href="market.html">See scope and indicators</a>.</li>
               <li><strong>Long-run regional growth is positive in the official baseline, but not a site forecast.</strong> SCAG’s adopted 2024 plan projects Los Angeles County population and employment through 2050. Downtown planning expectations apply only inside the Downtown Plan boundary and are not guaranteed outcomes. <a href="market.html#projections">Read the projection table</a>.</li>
               <li><strong>The brand does not identify the lease guarantor.</strong> Jack in the Box’s latest reviewed quarterly filing reports both company-operated and franchise-operated restaurants. The specific landlord counterparty and any parent guarantee remain unknown. <a href="property.html#tenant-context">See tenant context</a>.</li>
-              <li><strong>Tail hazards are material to the decision, and only some of the county-scale numbers survive an official read.</strong> USGS/UCERF3 states a 60% probability of M ≥ 6.7 within 30 years in the Los Angeles region, verified on the USGS page on 07 Nov 2026. County-level FEMA risk-index scores, expected annual loss, and the reported 26% expansion of CAL FIRE Very High zones could not be read from an official page in that audit and are withheld rather than published as fact. All of these require parcel-level verification in any case. <a href="risks.html">Open the risk register</a>.</li>
-              <li><strong>The regional economy is large and diverse, but parcel-level demand is unverified.</strong> LA metro GDP is $1.355 trillion (2024, BEA) and LA County GDP is $1.003 trillion — the #2 county economy in the U.S. City population has declined 0.8% since 2020 while the county unemployment rate averaged 5.6% in 2025. These provide macro context but do not establish restaurant demand at this site. <a href="market.html">See area indicators</a>.</li>
+              <li><strong>County hazard context is real, not a parcel rating.</strong> FEMA’s December 2025 National Risk Index reports Los Angeles County composite risk-index score 100/100 (Very High) and modeled county expected annual loss of about $7.60 billion. The earthquake, inland-flood and wildfire scores are relative indices, not event probabilities; USGS’s 60% LA-region magnitude-6.7 estimate belongs to the original UCERF3 30-year model published in 2015, not a fresh 2026–2056 forecast. CAL FIRE’s updated maps require an address for a site finding. <a href="risks.html">Open the risk register</a>.</li>
+              <li><strong>Broad economic output is not restaurant demand.</strong> BEA reports $1.003 trillion in 2024 GDP for Los Angeles <em>County</em>; its discontinued MSA series last reports $1.295 trillion for <em>2023</em>. The city’s 2025 population estimate is 0.8% below its 2020 estimates base, while revised EDD data put county unemployment at 5.7% for 2025. These different geographies and vintages do not establish site sales or value. <a href="market.html">See area indicators</a>.</li>
             </ol>
           </section>
 
