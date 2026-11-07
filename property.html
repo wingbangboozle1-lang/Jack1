@@ -1,95 +1,339 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Lease, property identity, and Jack in the Box corporate context. Unconfirmed asset-specific terms are intentionally left blank.">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Lease &amp; Asset | Jack in the Box Property Brief</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/site.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Lease and parcel fields for the subject property, withheld where private and blank where unverified, plus hazard severity references.">
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Property &amp;amp; hazards | Jack in the Box NNN decision brief</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#14181f; --muted:#5c6673; --line:#dfe3e9;
+  --brand:#12263f; --accent:#b3282d; --ok:#1d6b45; --okbg:#e6f2ec;
+  --bad:#8c2f19; --badbg:#fbeae4; --calc:#2f4d7a; --calcbg:#e8eef7;
+  --held:#5b4a8a; --heldbg:#eeeaf7; --warnbg:#fff8e6; --warnline:#e6cf87;
+  --radius:10px; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.06);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:#1a4f8a;text-underline-offset:2px}
+a:hover{color:var(--accent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:99;background:#fff;padding:8px 12px;border:2px solid var(--brand)}
+.shell{display:flex;min-height:100vh}
+.sidebar{width:264px;flex:0 0 264px;background:var(--brand);color:#e9eef5;padding:18px 16px 28px;
+  position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:#fff;margin-bottom:18px}
+.brand .mark{width:34px;height:34px;border-radius:8px;background:var(--accent);display:grid;place-items:center;
+  font-weight:700;font-size:14px;letter-spacing:.5px;flex:0 0 34px}
+.brand b{display:block;font-size:14px;line-height:1.25}
+.brand span{display:block;font-size:11px;color:#a9b8ca;line-height:1.3}
+.navlabel{font-size:10.5px;letter-spacing:.10em;text-transform:uppercase;color:#8ea3bb;margin:16px 0 8px}
+.sidebar nav a{display:flex;gap:10px;align-items:baseline;padding:8px 10px;border-radius:8px;
+  color:#dae3ee;text-decoration:none;font-size:13.5px;line-height:1.3}
+.sidebar nav a .n{font-variant-numeric:tabular-nums;color:#7e94ae;font-size:11px;flex:0 0 16px}
+.sidebar nav a:hover{background:#1c3350;color:#fff}
+.sidebar nav a[aria-current=page]{background:#fff;color:var(--brand);font-weight:600}
+.sidebar nav a[aria-current=page] .n{color:var(--accent)}
+.sidebar .note{margin-top:18px;padding:10px 12px;border:1px solid #2b4763;border-radius:8px;
+  font-size:11.5px;color:#b9c7d6;line-height:1.45}
+.main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 28px;
+  background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.crumb{font-size:12.5px;color:var(--muted)}
+.crumb b{color:var(--ink)}
+.snap{font-size:11.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);
+  border-radius:999px;padding:4px 10px;white-space:nowrap}
+.navtoggle{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
+main{padding:26px 28px 64px;max-width:1200px;width:100%}
+h1{font-size:28px;line-height:1.2;letter-spacing:-.01em;margin:6px 0 10px}
+h2{font-size:19px;line-height:1.3;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:15px;margin:0 0 6px}
+.eyebrow{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0}
+.lede{font-size:15.5px;color:#333c48;max-width:74ch}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.hero{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow);margin-bottom:22px}
+.hero h1{margin-top:8px}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--okbg);color:var(--ok)}
+.pill.bad{background:var(--badbg);color:var(--bad)}
+.pill.calc{background:var(--calcbg);color:var(--calc)}
+.pill.held{background:var(--heldbg);color:var(--held)}
+.pill.neutral{background:#eef1f5;color:#46505d}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.card .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card .v{font-size:24px;font-weight:650;letter-spacing:-.02em;line-height:1.15}
+.card .v small{font-size:13px;font-weight:500;color:var(--muted)}
+.card .m{font-size:12px;color:var(--muted);margin-top:6px}
+.card a.src{display:inline-block;margin-top:8px;font-size:11.5px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+  box-shadow:var(--shadow);margin:18px 0}
+.panel > .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.verdict{background:linear-gradient(180deg,#fffdf7,#fff8e6);border:1px solid var(--warnline);
+  border-radius:var(--radius);padding:18px 20px}
+.verdict h2{margin-bottom:8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;
+  border-radius:8px;font-size:13.5px;font-weight:600}
+.btn:hover{background:#1c3350;color:#fff}
+.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}
+.btn.ghost:hover{background:#f0f3f7;color:var(--brand)}
+ol.steps{margin:8px 0 0;padding-left:20px}
+ol.steps li{margin-bottom:10px}
+ul.clean{margin:8px 0 0;padding-left:18px}
+ul.clean li{margin-bottom:7px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13px}
+caption{caption-side:top;text-align:left;font-size:12px;color:var(--muted);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#f0f3f7;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:#46505d;position:sticky;top:0;white-space:nowrap;z-index:1}
+tbody tr:hover{background:#fafbfd}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+td.id{font-variant-numeric:tabular-nums;color:var(--muted);font-size:11.5px;white-space:nowrap}
+td .blank{color:#9aa4b1;font-weight:500}
+td.src{font-size:11.5px;min-width:150px}
+td.note{font-size:11.5px;color:var(--muted);max-width:340px}
+.search{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.search input{font:inherit;font-size:13px;padding:7px 11px;border:1px solid var(--line);border-radius:8px;
+  min-width:240px;background:#fff}
+.search .count{font-size:12px;color:var(--muted)}
+.callout{border-radius:8px;padding:12px 14px;font-size:13px;border:1px solid var(--line);background:#f8fafc}
+.callout.warn{background:var(--warnbg);border-color:var(--warnline)}
+.callout.bad{background:var(--badbg);border-color:#e7bfae}
+.callout.ok{background:var(--okbg);border-color:#bcdccb}
+.callout b{display:block;margin-bottom:4px}
+.tag{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:5px;background:#eef1f5;color:#46505d;margin:0 4px 4px 0}
+.tag.ba{background:#e8eef7;color:#2f4d7a}
+.tag.bs{background:#fbeae4;color:#8c2f19}
+.tag.personal{background:#eeeaf7;color:#5b4a8a}
+footer{border-top:1px solid var(--line);padding:18px 28px;color:var(--muted);font-size:12px;background:#fff}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;font-size:13px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#fff;margin:10px 0}
+summary{cursor:pointer;font-weight:600;font-size:13.5px}
+@media(max-width:1080px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){
+  .shell{display:block}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);
+    transition:transform .18s ease;height:100vh}
+  .sidebar.open{transform:none;box-shadow:0 0 0 100vmax rgba(10,18,28,.45)}
+  .navtoggle{display:inline-flex;gap:6px;align-items:center}
+  main{padding:20px 16px 56px}
+  .topbar{padding:10px 16px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+  h1{font-size:23px}
+}
+@media print{.sidebar,.topbar,.navtoggle{display:none}main{padding:0}}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="app-shell">
-    <aside class="sidebar" id="site-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
-      <p class="nav-label">Research dashboard</p>
-      <nav class="site-nav">
-        <a href="index.html"><span class="nav-dot">01</span>Executive summary</a>
-        <a href="market.html"><span class="nav-dot">02</span>Local market</a>
-        <a href="property.html" aria-current="page"><span class="nav-dot">03</span>Lease &amp; asset</a>
-        <a href="decision.html"><span class="nav-dot">04</span>Sell / renew paths</a>
-        <a href="risks.html"><span class="nav-dot">05</span>Risk register</a>
-        <a href="flagged.html"><span class="nav-dot">06</span>Flagged for Review</a>
-        <a href="sources.html"><span class="nav-dot">07</span>Sources &amp; method</a>
-      </nav>
-      <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
-    </aside>
-    <div class="main-column">
-      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Lease &amp; asset</span></div><div class="snapshot">Evidence snapshot · 06 Nov 2026</div></header>
-      <main id="main-content" class="content">
-        <header class="page-intro">
-          <p class="eyebrow">Asset identity · lease economics · tenant context</p>
-          <h1>The lease—not the logo—determines the credit.</h1>
-          <p class="lead">A Jack in the Box brand and an asserted NNN structure do not establish the legal tenant, guarantor, rent, landlord obligations, or sale value. Those fields remain blank until the executed lease and parcel are matched.</p>
-        </header>
-
-        <div class="callout warning">
-          <h3>Working premise only</h3>
-          <p class="small">The brief describes a Jack in the Box NNN-leased property in the central Los Angeles area with an approximate 2030–2035 expiry range. That description has not been independently matched to a public parcel or contract. The SEC materials below are issuer-wide disclosures and do not confirm this asset, its operator, or its lease.</p>
-        </div>
-
-        <div class="section-heading"><div><p class="eyebrow">Asset and contract facts</p><h2>Unverified property-level fields</h2><p>Values are intentionally blank where no official asset-specific evidence was available. The linked records are official lookup or issuer resources, not substitutes for the private lease, title, or inspection file.</p></div><span class="badge badge-review">Review required</span></div>
-        <div class="table-tools"><span class="micro muted">Filter within this table</span><input class="table-search" type="search" placeholder="Search lease / asset fields…" aria-label="Search lease and asset fields" data-table-search="asset-fields"></div>
-        <div class="table-wrap">
-          <table id="asset-fields">
-            <caption>All asset-specific cells shown blank are unconfirmed; status and source columns explain what must be checked.</caption>
-            <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">Status / diligence needed</th><th scope="col">Official reference</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Street address / parcel match</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not supplied / not matched</span><span class="row-note">Do not identify a nearby assessor parcel by inference.</span></td><td><a class="source-link" href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS</a> · <a class="source-link" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor</a></td></tr>
-              <tr><td><strong>Assessor parcel number (APN)</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Not verified</span><span class="row-note">Parcel identity and situs must be checked against title / survey.</span></td><td><a class="source-link" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor parcel search</a></td></tr>
-              <tr><td><strong>Fee owner, title vesting, easements, and lender liens</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Title report needed</span><span class="row-note">No ownership entity or personal identifiers are published.</span></td><td><a class="source-link" href="https://assessor.lacounty.gov/real-estate-toolkit/proposition-13" target="_blank" rel="noopener noreferrer">LA County Assessor · property overview</a></td></tr>
-              <tr><td><strong>Legal tenant and operating entity</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Lease / amendment needed</span><span class="row-note">The brand may be operated by a corporate unit or franchisee; the public company filing does not identify this location.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC · Jack in the Box 10-Q</a></td></tr>
-              <tr><td><strong>Guarantor, guaranty scope, and recourse</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Guaranty / amendments needed</span><span class="row-note">No parent support or continuing liability is assumed.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC · Jack in the Box 10-Q</a></td></tr>
-              <tr><td><strong>Current base rent, additional rent, and annual rent steps</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Rent roll / lease needed</span><span class="row-note">No rent, percentage rent, tax / insurance pass-through, or escalation is inferred.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC · company lease disclosures</a></td></tr>
-              <tr><td><strong>Lease commencement and exact expiration date</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Reported range only</span><span class="row-note">The brief’s 2030–2035 range is not contract-verified; exact dates affect sale value and notice deadlines.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC · company lease disclosures</a></td></tr>
-              <tr><td><strong>Renewal options, option rent, and notice windows</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Lease / amendments needed</span><span class="row-note">Calendar all exercise and lender-consent dates from the executed documents.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC · company lease disclosures</a></td></tr>
-              <tr><td><strong>NNN expense allocation and landlord obligations</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Lease / expense history needed</span><span class="row-note">“NNN” is not treated as proof that every operating or capital item is reimbursed.</span></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC · company lease disclosures</a></td></tr>
-              <tr><td><strong>Building area, site area, parking, and access rights</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Survey / parcel record needed</span><span class="row-note">No dimensions or site plan have been identified.</span></td><td><a class="source-link" href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS property search</a></td></tr>
-              <tr><td><strong>Zoning, overlays, legal use, and entitlement status</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Parcel match needed</span><span class="row-note">A general City rule cannot be assigned to an unidentified site.</span></td><td><a class="source-link" href="https://planning.lacity.gov/zoning/zoning-search" target="_blank" rel="noopener noreferrer">LA City Planning · zoning search</a></td></tr>
-              <tr><td><strong>Assessed value and current market value</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">No appraisal / comps</span><span class="row-note">County assessed value, if found, is not an appraisal or sale-price opinion.</span></td><td><a class="source-link" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor lookup</a></td></tr>
-              <tr><td><strong>Physical condition, deferred maintenance, and capital plan</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Inspection needed</span><span class="row-note">Public permit history cannot replace a property-condition assessment.</span></td><td><a class="source-link" href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS · permit history</a></td></tr>
-              <tr><td><strong>Insurance limits, exclusions, premium, and renewal availability</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td><span class="badge badge-review">Current quotes / policy needed</span><span class="row-note">No premium, coverage, or insurability claim is made.</span></td><td><a class="source-link" href="https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm" target="_blank" rel="noopener noreferrer">California Department of Insurance</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <section id="tenant-context" class="section-heading"><div><p class="eyebrow">Public-company context—not property credit underwriting</p><h2>Jack in the Box issuer data</h2><p>Figures below come from the company’s quarter ended July 5, 2026 filing. They are consolidated corporate disclosures; none establishes the subject unit’s sales, rent coverage, legal tenant, guarantor, or payment history.</p></div><span class="badge badge-limited">Company-wide only</span></section>
-        <div class="table-wrap">
-          <table>
-            <caption>Continuing-operations statement figures; amounts are in thousands of U.S. dollars unless noted. The filing reports 12-week and 40-week comparison periods.</caption>
-            <thead><tr><th scope="col">Reported item</th><th scope="col">Current period</th><th scope="col">Comparison period</th><th scope="col">Meaning / limitation</th><th scope="col">Official source</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Revenue, 12 weeks ended July 5, 2026</strong></td><td>$257,657</td><td>$262,401 · 12 weeks ended July 6, 2025</td><td>Consolidated continuing operations; not the subject restaurant’s sales.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · statements</a></td></tr>
-              <tr><td><strong>Earnings from continuing operations, 12-week period</strong></td><td>$21,041</td><td>$22,839 · prior-year 12-week period</td><td>Company-wide result; not rent coverage or a default likelihood for an unidentified tenant.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · statements</a></td></tr>
-              <tr><td><strong>Revenue, 40 weeks ended July 5, 2026</strong></td><td>$861,438</td><td>$899,196 · prior-year 40-week period</td><td>Consolidated continuing operations; year-to-date period is not a full fiscal year.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · statements</a></td></tr>
-              <tr><td><strong>Earnings from continuing operations, 40-week period</strong></td><td>$47,971</td><td>$74,534 · prior-year 40-week period</td><td>Company-wide result; review with the complete filing and entity-specific credit support.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · statements</a></td></tr>
-              <tr><td><strong>Current maturities of debt</strong></td><td>$44,160</td><td>As of July 5, 2026</td><td>Consolidated balance-sheet item; not the franchisee’s or guarantor’s balance sheet.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · balance sheet</a></td></tr>
-              <tr><td><strong>Long-term debt</strong></td><td>$1,428,667</td><td>As of July 5, 2026</td><td>Consolidated balance-sheet item; interpret with the filing’s debt notes and covenant terms.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · balance sheet</a></td></tr>
-              <tr><td><strong>Jack in the Box restaurants by operating model</strong></td><td>149 company-operated; 1,966 franchise-operated</td><td>As of July 5, 2026</td><td>Portfolio-wide count shows the brand alone does not identify this unit’s operator or credit support.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · restaurant counts</a></td></tr>
-              <tr><td><strong>Del Taco presentation</strong></td><td>Reported as discontinued operations after December 2025 sale</td><td>As described in the 2026 10-Q</td><td>Use the filing’s continuing-operations presentation when comparing the periods shown above.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · notes</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="callout" style="margin-top:16px">
-          <h3>Credit conclusion remains open</h3>
-          <p class="small">The public-company results warrant review as corporate context, but a site-level credit conclusion depends on the legal tenant, lease remedies, guaranty, unit operating data, and current financial statements of the actual obligor. Obtain consented, appropriately protected tenant diligence outside this public site. Do not infer an obligation from the restaurant sign.</p>
-          <a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC · FY2025 10-K lease discussion</a>
-        </div>
-      </main>
-      <footer class="site-footer"><div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div><div>Issuer values reflect linked SEC filings · 06 Nov 2026</div></footer>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="nav" aria-label="Section navigation">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">JB</span>
+      <span><b>NNN decision brief</b><span>Central Los Angeles · public data</span></span>
+    </a>
+    <p class="navlabel">Dashboard</p>
+    <nav>
+        <a href="index.html"><span class="n">01</span><span>Overview</span></a>
+        <a href="market.html"><span class="n">02</span><span>Market &amp; area</span></a>
+        <a href="projections.html"><span class="n">03</span><span>Projections &amp; model</span></a>
+        <a href="tenant.html"><span class="n">04</span><span>Tenant credit</span></a>
+        <a href="property.html" aria-current="page"><span class="n">05</span><span>Property &amp; hazards</span></a>
+        <a href="decision.html"><span class="n">06</span><span>Decision paths</span></a>
+        <a href="risks.html"><span class="n">07</span><span>Risk register</span></a>
+        <a href="flagged.html"><span class="n">08</span><span>Flagged for review</span></a>
+        <a href="sources.html"><span class="n">09</span><span>Sources &amp; method</span></a>
+    </nav>
+    <p class="note"><b>Privacy first.</b> No owner name, street address, parcel number, lease document or
+    personal financial detail is published. Those fields are marked <em>withheld</em>.</p>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="navtoggle" type="button" data-nav aria-expanded="false" aria-controls="nav">☰ Sections</button>
+        <span class="crumb">Decision brief <span aria-hidden="true">/</span> <b>Property &amp; hazards</b></span>
+      </div>
+      <span class="snap">Evidence cut-off 7 November 2026</span>
     </div>
+    <main id="content">
+
+<section class="hero">
+  <p class="eyebrow">Property &amp; hazards</p>
+  <h1>Eleven private facts are doing all the work.</h1>
+  <p class="lede">The recommendation on this site depends on facts that are not public and were not supplied:
+  the lease, the counterparty, the rent, the options, the basis and the parcel. Those fields are marked
+  <em>[WITHHELD]</em> or left blank. This page sets out exactly what is needed and why each item changes the
+  answer, so the owner can assemble it in one pass.</p>
+</section>
+
+<div class="grid g3">
+  <div class="callout"><b>What the box actually is</b>A 1,372 sq ft prototype with a Y-lane drive-thru on a
+  commercially zoned parcel. The building is not the value; the land and the conditional-use entitlement for a
+  drive-thru are.</div>
+  <div class="callout"><b>What the lease actually is</b>An absolute-net lease shifts tax, insurance and
+  maintenance to the tenant while the term runs. It does not shift them forever; after expiry they come back.</div>
+  <div class="callout"><b>What the parcel actually is</b>Unknown for hazard purposes. The Fire Hazard Severity
+  Zone, the Alquist-Priolo status and the flood zone are all parcel-level queries that require an address.</div>
+</div>
+
+<section class="panel" id="property-rows">
+  <div class="hd"><div><p class="eyebrow">Asset-specific fields</p><h2>Lease and parcel</h2></div>
+  <span class="pill held">Withheld or unverified</span></div>
+  <p class="small muted" style="margin-top:0">Nothing in this table is estimated. <em>[WITHHELD]</em> means the
+  information exists but is private and deliberately not published. An em dash means the value could not be
+  confirmed from an official source.</p>
+  <div class="search"><label class="small" for="property-table-q">Filter rows</label><input id="property-table-q" type="search" placeholder="Type a metric, geography or status…" data-filter="property-table" aria-controls="property-table"><span class="count" data-count-for="property-table"></span></div>
+<div class="tablewrap">
+<table id="property-table">
+<caption>Property and lease fields. Private values are withheld; unverified values are blank and flagged.</caption>
+<thead><tr><th scope="col">Ref</th><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Unit</th><th scope="col">Period</th><th scope="col">Geography</th><th scope="col">Status</th><th scope="col">Official source</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr id="pr-01"><td class="id">PR-01</td><td>Street address</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Anonymised by instruction. Privacy: never published.</td></tr>
+<tr id="pr-02"><td class="id">PR-02</td><td>Assessor parcel number (AIN/APN)</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Anonymised by instruction.</td></tr>
+<tr id="pr-03"><td class="id">PR-03</td><td>Owner name or ownership entity</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Anonymised by instruction. Personal information is internal-use only.</td></tr>
+<tr id="pr-04"><td class="id">PR-04</td><td>Lease type</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Owner states it is a triple-net lease. Not independently verifiable without the document, so it is not asserted as verified.</td></tr>
+<tr id="pr-05"><td class="id">PR-05</td><td>Lease commencement date</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Private. Needed to compute the exact remaining term and the lease&#x27;s age for depreciation purposes.</td></tr>
+<tr id="pr-06"><td class="id">PR-06</td><td>Lease expiry</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small">owner-stated window 2030 to 2035</td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Owner states the lease expires between 2030 and 2035. The exact date is not published and was not provided for verification.</td></tr>
+<tr id="pr-07"><td class="id">PR-07</td><td>Remaining base term</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small">years</td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Depends on the exact expiry date and any unexercised options. Flagged as F-13.</td></tr>
+<tr id="pr-08"><td class="id">PR-08</td><td>Current annual base rent</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Private. The model therefore runs in index units rather than dollars.</td></tr>
+<tr id="pr-09"><td class="id">PR-09</td><td>Rent escalation structure</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Fixed bumps, CPI-linked, or percentage rent changes the inflation-hedge answer completely. Flagged as F-14.</td></tr>
+<tr id="pr-10"><td class="id">PR-10</td><td>Renewal or extension options held by the tenant</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">If the tenant already holds options below market, the landlord&#x27;s renewal leverage is pre-committed away. Flagged as F-15.</td></tr>
+<tr id="pr-11"><td class="id">PR-11</td><td>Land area</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small">sq ft</td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Flagged as F-16.</td></tr>
+<tr id="pr-12"><td class="id">PR-12</td><td>Building area</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small">sq ft</td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Flagged as F-17.</td></tr>
+<tr id="pr-13"><td class="id">PR-13</td><td>Year built</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Sets the remaining roof, HVAC and ADA capital cycle. Flagged as F-18.</td></tr>
+<tr id="pr-14"><td class="id">PR-14</td><td>Assessed value (Proposition 13 base year value)</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Needed to compute property-tax step-up on sale and the Prop 8 downside.</td></tr>
+<tr id="pr-15"><td class="id">PR-15</td><td>Zoning and community plan designation</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer" title="ZIMAS — Zoning Information and Map Access System (parcel lookup)">City of Los Angeles</a></td><td class="note">Determines whether a drive-thru can be re-let or re-permitted after vacancy. Flagged as F-19.</td></tr>
+<tr id="pr-16"><td class="id">PR-16</td><td>Fire Hazard Severity Zone rating</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="Fire Hazard Severity Zones (SRA and LRA programme, 2026 update)">CAL FIRE — Office of the State Fire Marshal</a></td><td class="note">Inside a city the parcel is in a Local Responsibility Area; OSFM directs owners to the local jurisdiction. Flagged as F-20.</td></tr>
+<tr id="pr-17"><td class="id">PR-17</td><td>Alquist-Priolo fault zone status</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.conservation.ca.gov/cgs/alquist-priolo" target="_blank" rel="noopener noreferrer" title="Alquist-Priolo Earthquake Fault Zones">California Geological Survey</a></td><td class="note">Flagged as F-21.</td></tr>
+<tr id="pr-18"><td class="id">PR-18</td><td>Seismic hazard zone (liquefaction or landslide) status</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.conservation.ca.gov/cgs/alquist-priolo" target="_blank" rel="noopener noreferrer" title="Alquist-Priolo Earthquake Fault Zones">California Geological Survey</a></td><td class="note">Flagged as F-22.</td></tr>
+<tr id="pr-19"><td class="id">PR-19</td><td>Current property insurance premium and availability</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2024/release031-2024.cfm" target="_blank" rel="noopener noreferrer" title="Release 031-2024 — FAIR Plan modernisation agreement">California Department of Insurance</a></td><td class="note">Under an NNN lease the tenant usually pays, but uninsurability still breaks the deal and the exit. Flagged as F-23.</td></tr>
+<tr id="pr-20"><td class="id">PR-20</td><td>Roof, HVAC and parking-lot condition</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Flagged as F-24.</td></tr>
+<tr id="pr-21"><td class="id">PR-21</td><td>Loan balance and prepayment or defeasance cost</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Private financial information. Needed for net-proceeds arithmetic only.</td></tr>
+<tr id="pr-22"><td class="id">PR-22</td><td>Owner cost basis</td><td class="num"><span class="blank">[WITHHELD]</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill held">Withheld</span></td><td class="src"><a href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer" title="Publication 544 — Sales and Other Dispositions of Assets">Internal Revenue Service</a></td><td class="note">Private tax information. Determines whether a sale is largely return of capital or largely taxable gain.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="panel" id="hazards">
+  <div class="hd"><div><p class="eyebrow">Catastrophe</p><h2>Realised severity, not assigned probability</h2></div>
+  <a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener noreferrer" title="The ShakeOut Scenario: a hypothetical Mw7.8 earthquake on the southern San Andreas Fault">USGS ShakeOut ↗</a></div>
+  <p class="small" style="margin-top:0">This brief assigns <strong>no probability</strong> to any hazard for this
+  parcel. Doing so would require data that does not exist at parcel level, and any number would be fabricated.
+  What is published is what a realised event looked like, so the owner can size the tail without being sold a
+  false precision.</p>
+  <div class="grid g3" style="margin-bottom:16px">
+    <div class="card"><div class="k">Palisades Fire, structures destroyed</div><div class="v">6,845</div>
+      <div class="m">+975 damaged · 12 fatalities · 23,448 acres</div></div>
+    <div class="card"><div class="k">ShakeOut scenario, total loss</div><div class="v">$191bn</div>
+      <div class="m">Mw 7.8 southern San Andreas · modelled</div></div>
+    <div class="card"><div class="k">FAIR Plan commercial limit</div><div class="v">$20m</div>
+      <div class="m">Per building · insurer of last resort</div></div>
   </div>
+  <div class="search"><label class="small" for="hazard-table-q">Filter rows</label><input id="hazard-table-q" type="search" placeholder="Type a metric, geography or status…" data-filter="hazard-table" aria-controls="hazard-table"><span class="count" data-count-for="hazard-table"></span></div>
+<div class="tablewrap">
+<table id="hazard-table">
+<caption>Hazard rows: published event and scenario figures, plus the parcel checks that remain open.</caption>
+<thead><tr><th scope="col">Ref</th><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Unit</th><th scope="col">Period</th><th scope="col">Geography</th><th scope="col">Status</th><th scope="col">Official source</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr id="z-01"><td class="id">Z-01</td><td>Palisades Fire — area burned</td><td class="num"><span class="num">23,448</span></td><td class="small">acres</td><td class="small">January 2025</td><td class="small">Los Angeles County</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener noreferrer" title="Palisades Fire incident record (LA-69 Bravo), Los Angeles County">CAL FIRE</a></td><td class="note"></td></tr>
+<tr id="z-02"><td class="id">Z-02</td><td>Palisades Fire — structures destroyed</td><td class="num"><span class="num">6,845</span></td><td class="small">structures</td><td class="small">January 2025</td><td class="small">Los Angeles County</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener noreferrer" title="Palisades Fire incident record (LA-69 Bravo), Los Angeles County">CAL FIRE</a></td><td class="note">Residential, commercial and other, with 100% of structures in the footprint inspected.</td></tr>
+<tr id="z-03"><td class="id">Z-03</td><td>Palisades Fire — structures damaged</td><td class="num"><span class="num">975</span></td><td class="small">structures</td><td class="small">January 2025</td><td class="small">Los Angeles County</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener noreferrer" title="Palisades Fire incident record (LA-69 Bravo), Los Angeles County">CAL FIRE</a></td><td class="note"></td></tr>
+<tr id="z-04"><td class="id">Z-04</td><td>Palisades Fire — confirmed civilian fatalities</td><td class="num"><span class="num">12</span></td><td class="small">persons</td><td class="small">January 2025</td><td class="small">Los Angeles County</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener noreferrer" title="Palisades Fire incident record (LA-69 Bravo), Los Angeles County">CAL FIRE</a></td><td class="note"></td></tr>
+<tr id="z-05"><td class="id">Z-05</td><td>Palisades Fire — cause</td><td class="num"><span class="num">Arson</span></td><td class="small"></td><td class="small">January 2025</td><td class="small">Los Angeles County</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/" target="_blank" rel="noopener noreferrer" title="Palisades Fire incident record (LA-69 Bravo), Los Angeles County">CAL FIRE</a></td><td class="note"></td></tr>
+<tr id="z-06"><td class="id">Z-06</td><td>Fire Hazard Severity Zone classifications</td><td class="num"><span class="num">Moderate / High / Very High</span></td><td class="small"></td><td class="small">current maps</td><td class="small">California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="Fire Hazard Severity Zones (SRA and LRA programme, 2026 update)">CAL FIRE — Office of the State Fire Marshal</a></td><td class="note"></td></tr>
+<tr id="z-07"><td class="id">Z-07</td><td>Fire Hazard Severity Zone model horizon</td><td class="num"><span class="num">30 to 50</span></td><td class="small">years</td><td class="small">current model</td><td class="small">California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="Fire Hazard Severity Zones (SRA and LRA programme, 2026 update)">CAL FIRE — Office of the State Fire Marshal</a></td><td class="note">OSFM states maps evaluate hazard, not risk, without considering mitigation.</td></tr>
+<tr id="z-08"><td class="id">Z-08</td><td>Alquist-Priolo minimum setback from an active fault trace</td><td class="num"><span class="num">50</span></td><td class="small">feet (generally)</td><td class="small">in force</td><td class="small">California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.conservation.ca.gov/cgs/alquist-priolo" target="_blank" rel="noopener noreferrer" title="Alquist-Priolo Earthquake Fault Zones">California Geological Survey</a></td><td class="note">A structure for human occupancy cannot be placed over a fault trace.</td></tr>
+<tr id="z-09"><td class="id">Z-09</td><td>ShakeOut scenario — modelled deaths</td><td class="num"><span class="num">1,800</span></td><td class="small">persons</td><td class="small">Mw 7.8 scenario</td><td class="small">Southern California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener noreferrer" title="The ShakeOut Scenario: a hypothetical Mw7.8 earthquake on the southern San Andreas Fault">U.S. Geological Survey</a></td><td class="note"></td></tr>
+<tr id="z-10"><td class="id">Z-10</td><td>ShakeOut scenario — modelled total economic loss</td><td class="num"><span class="num">191</span></td><td class="small">USD billions</td><td class="small">Mw 7.8 scenario</td><td class="small">Southern California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener noreferrer" title="The ShakeOut Scenario: a hypothetical Mw7.8 earthquake on the southern San Andreas Fault">U.S. Geological Survey</a></td><td class="note"></td></tr>
+<tr id="z-11"><td class="id">Z-11</td><td>ShakeOut scenario — fire-related property and business-interruption loss</td><td class="num"><span class="num">87</span></td><td class="small">USD billions</td><td class="small">Mw 7.8 scenario</td><td class="small">Southern California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener noreferrer" title="The ShakeOut Scenario: a hypothetical Mw7.8 earthquake on the southern San Andreas Fault">U.S. Geological Survey</a></td><td class="note"></td></tr>
+<tr id="z-12"><td class="id">Z-12</td><td>ShakeOut scenario — business interruption from water outages</td><td class="num"><span class="num">24</span></td><td class="small">USD billions</td><td class="small">Mw 7.8 scenario</td><td class="small">Southern California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault" target="_blank" rel="noopener noreferrer" title="The ShakeOut Scenario: a hypothetical Mw7.8 earthquake on the southern San Andreas Fault">U.S. Geological Survey</a></td><td class="note"></td></tr>
+<tr id="z-13"><td class="id">Z-13</td><td>FAIR Plan commercial coverage limit</td><td class="num"><span class="num">20</span></td><td class="small">USD millions per building</td><td class="small">2024 agreement</td><td class="small">California</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2024/release031-2024.cfm" target="_blank" rel="noopener noreferrer" title="Release 031-2024 — FAIR Plan modernisation agreement">California Department of Insurance</a></td><td class="note">The FAIR Plan is the state&#x27;s insurer of last resort; a growing FAIR Plan is described by the Department as contributing to insurer withdrawal.</td></tr>
+<tr id="z-14"><td class="id">Z-14</td><td>Fire Hazard Severity Zone rating of the subject parcel</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="Fire Hazard Severity Zones (SRA and LRA programme, 2026 update)">CAL FIRE — Office of the State Fire Marshal</a></td><td class="note">Requires an address and the local jurisdiction&#x27;s adopted map. Flagged as F-20.</td></tr>
+<tr id="z-15"><td class="id">Z-15</td><td>Fault zone and liquefaction status of the subject parcel</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.conservation.ca.gov/cgs/alquist-priolo" target="_blank" rel="noopener noreferrer" title="Alquist-Priolo Earthquake Fault Zones">California Geological Survey</a></td><td class="note">Requires the CGS EQ Zapp parcel query. Flagged as F-21.</td></tr>
+<tr id="z-16"><td class="id">Z-16</td><td>Flood zone status of the subject parcel</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer" title="Assessor Portal — parcel and assessed-value lookup">Los Angeles County Assessor</a></td><td class="note">Requires the FEMA flood map for the parcel. Flagged as F-28.</td></tr>
+<tr id="z-17"><td class="id">Z-17</td><td>Insurance cost and availability at the subject property</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2024/release031-2024.cfm" target="_blank" rel="noopener noreferrer" title="Release 031-2024 — FAIR Plan modernisation agreement">California Department of Insurance</a></td><td class="note">Requires a current quote or the existing policy declarations. Flagged as F-23.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="panel" id="hazard-logic">
+  <div class="hd"><div><p class="eyebrow">How to read the tail</p><h2>Three channels, three different answers</h2></div></div>
+  <ol class="steps">
+    <li><strong>Direct physical damage.</strong> A single-storey, 1,372 sq ft box on a surface parking field is
+    at the resilient end of building stock. Shaking damage is real but unlikely to be structural
+    collapse. The mitigation is the tenant's insurance and the lease's casualty clause.</li>
+    <li><strong>Business interruption.</strong> A closed store stops generating sales, and a sales-based
+    percentage-rent clause (if any) stops paying. Under a true NNN lease, base rent normally continues, and the
+    tenant — not the landlord — carries the interruption cover. Confirm this in the lease.</li>
+    <li><strong>Insurance-market contagion.</strong> This is the channel that actually threatens value. The
+    Palisades Fire did not touch central Los Angeles, but a regional event reprices cover across the region,
+    and the Department of Insurance itself describes insurers withdrawing as FAIR Plan enrolment grows. A parcel
+    that cannot be insured cannot easily be sold or financed.</li>
+  </ol>
+  <div class="callout warn" style="margin-top:12px"><b>The check that costs the least and tells you the most</b>
+  Get a current commercial property insurance quote for the parcel this month. Under an NNN lease the tenant pays
+  it, so the quote is diagnostic rather than a cost to the owner — and it is the fastest way to find out whether
+  this asset is in a market at all.</div>
+</section>
+
+    </main>
+    <footer>
+      Public-data decision brief. Every figure is linked to the official page it was read from; anything that
+      could not be confirmed is blank and listed on <a href="flagged.html">Flagged for review</a>.
+      Not an appraisal, not tax advice, and not a personal financial recommendation.
+    </footer>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.querySelector('[data-nav]');
+  var sb=document.querySelector('.sidebar');
+  if(b&&sb){
+    b.addEventListener('click',function(){
+      var open=sb.classList.toggle('open');
+      b.setAttribute('aria-expanded',String(open));
+    });
+    sb.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){sb.classList.remove('open');});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){sb.classList.remove('open');}});
+  }
+  document.querySelectorAll('[data-filter]').forEach(function(input){
+    var table=document.getElementById(input.getAttribute('data-filter'));
+    if(!table)return;
+    var rows=Array.prototype.slice.call(table.querySelectorAll('tbody tr'));
+    var count=document.querySelector('[data-count-for="'+table.id+'"]');
+    function apply(){
+      var q=input.value.trim().toLowerCase();
+      var shown=0;
+      rows.forEach(function(r){
+        var hit=!q||r.textContent.toLowerCase().indexOf(q)>-1;
+        r.hidden=!hit;
+        if(hit)shown++;
+      });
+      if(count)count.textContent=shown+' of '+rows.length+' rows';
+    }
+    input.addEventListener('input',apply);
+    apply();
+  });
+})();
+</script>
 </body>
 </html>

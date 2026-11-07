@@ -1,4 +1,4 @@
-name: Validate and publish the decision brief
+name: Verify and publish the dashboard
 
 on:
   push:
@@ -7,54 +7,63 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Pages is published from ONE place only. The repository's Pages source is "GitHub Actions"
+# (build_type: workflow), so this workflow is the sole deploy path. A legacy branch-based
+# build running alongside it is what previously made the Pages API report "errored".
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: github-pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  validate:
+  verify:
+    name: Verify data, links and privacy
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Validate site and source links
-        run: python scripts/validate_site.py
+      - name: Rebuild the site from the dataset (must be reproducible)
+        run: python3 scripts/build_site.py
+      - name: Fail if the committed pages differ from a clean rebuild
+        run: |
+          set -eu
+          if ! git diff --quiet; then
+            echo "::error::Generated pages or data do not match scripts/build_site.py output."
+            git diff --stat
+            exit 1
+          fi
+      - name: Run the verification gate
+        run: python3 scripts/check_site.py
 
   deploy:
-    if: github.event_name != 'pull_request'
-    needs: validate
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: verify
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Prepare the public dashboard files only
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Assemble the public site
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html _site/
-          cp assets/styles.css assets/site.js _site/assets/
+          cp index.html market.html projections.html tenant.html \
+             property.html decision.html risks.html flagged.html sources.html 404.html _site/
+          cp data/dataset.json _site/data/ 2>/dev/null || { mkdir -p _site/data && cp data/dataset.json _site/data/; }
+          cp assets/favicon.svg _site/assets/
           cp .nojekyll _site/.nojekyll
-          echo "Assembled $(find _site -type f | wc -l) public files"
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
+          echo "Assembled $(find _site -type f | wc -l) public files:" && find _site -type f | sort
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4

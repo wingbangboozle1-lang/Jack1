@@ -1,97 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tenant Health &amp; Lease Terms · JACK NNN Central LA</title>
-<meta name="description" content="Jack in the Box FY2025 filings: store count, closures, same-store sales, guidance and lease mechanics, straight from SEC EDGAR.">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Jack in the Box Inc. SEC disclosures: restaurant counts, same-store sales, closures, guidance and real-estate strategy.">
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Tenant credit | Jack in the Box NNN decision brief</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#14181f; --muted:#5c6673; --line:#dfe3e9;
+  --brand:#12263f; --accent:#b3282d; --ok:#1d6b45; --okbg:#e6f2ec;
+  --bad:#8c2f19; --badbg:#fbeae4; --calc:#2f4d7a; --calcbg:#e8eef7;
+  --held:#5b4a8a; --heldbg:#eeeaf7; --warnbg:#fff8e6; --warnline:#e6cf87;
+  --radius:10px; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.06);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:#1a4f8a;text-underline-offset:2px}
+a:hover{color:var(--accent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:99;background:#fff;padding:8px 12px;border:2px solid var(--brand)}
+.shell{display:flex;min-height:100vh}
+.sidebar{width:264px;flex:0 0 264px;background:var(--brand);color:#e9eef5;padding:18px 16px 28px;
+  position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:#fff;margin-bottom:18px}
+.brand .mark{width:34px;height:34px;border-radius:8px;background:var(--accent);display:grid;place-items:center;
+  font-weight:700;font-size:14px;letter-spacing:.5px;flex:0 0 34px}
+.brand b{display:block;font-size:14px;line-height:1.25}
+.brand span{display:block;font-size:11px;color:#a9b8ca;line-height:1.3}
+.navlabel{font-size:10.5px;letter-spacing:.10em;text-transform:uppercase;color:#8ea3bb;margin:16px 0 8px}
+.sidebar nav a{display:flex;gap:10px;align-items:baseline;padding:8px 10px;border-radius:8px;
+  color:#dae3ee;text-decoration:none;font-size:13.5px;line-height:1.3}
+.sidebar nav a .n{font-variant-numeric:tabular-nums;color:#7e94ae;font-size:11px;flex:0 0 16px}
+.sidebar nav a:hover{background:#1c3350;color:#fff}
+.sidebar nav a[aria-current=page]{background:#fff;color:var(--brand);font-weight:600}
+.sidebar nav a[aria-current=page] .n{color:var(--accent)}
+.sidebar .note{margin-top:18px;padding:10px 12px;border:1px solid #2b4763;border-radius:8px;
+  font-size:11.5px;color:#b9c7d6;line-height:1.45}
+.main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 28px;
+  background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.crumb{font-size:12.5px;color:var(--muted)}
+.crumb b{color:var(--ink)}
+.snap{font-size:11.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);
+  border-radius:999px;padding:4px 10px;white-space:nowrap}
+.navtoggle{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
+main{padding:26px 28px 64px;max-width:1200px;width:100%}
+h1{font-size:28px;line-height:1.2;letter-spacing:-.01em;margin:6px 0 10px}
+h2{font-size:19px;line-height:1.3;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:15px;margin:0 0 6px}
+.eyebrow{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0}
+.lede{font-size:15.5px;color:#333c48;max-width:74ch}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.hero{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow);margin-bottom:22px}
+.hero h1{margin-top:8px}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--okbg);color:var(--ok)}
+.pill.bad{background:var(--badbg);color:var(--bad)}
+.pill.calc{background:var(--calcbg);color:var(--calc)}
+.pill.held{background:var(--heldbg);color:var(--held)}
+.pill.neutral{background:#eef1f5;color:#46505d}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.card .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card .v{font-size:24px;font-weight:650;letter-spacing:-.02em;line-height:1.15}
+.card .v small{font-size:13px;font-weight:500;color:var(--muted)}
+.card .m{font-size:12px;color:var(--muted);margin-top:6px}
+.card a.src{display:inline-block;margin-top:8px;font-size:11.5px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+  box-shadow:var(--shadow);margin:18px 0}
+.panel > .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.verdict{background:linear-gradient(180deg,#fffdf7,#fff8e6);border:1px solid var(--warnline);
+  border-radius:var(--radius);padding:18px 20px}
+.verdict h2{margin-bottom:8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;
+  border-radius:8px;font-size:13.5px;font-weight:600}
+.btn:hover{background:#1c3350;color:#fff}
+.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}
+.btn.ghost:hover{background:#f0f3f7;color:var(--brand)}
+ol.steps{margin:8px 0 0;padding-left:20px}
+ol.steps li{margin-bottom:10px}
+ul.clean{margin:8px 0 0;padding-left:18px}
+ul.clean li{margin-bottom:7px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13px}
+caption{caption-side:top;text-align:left;font-size:12px;color:var(--muted);padding:0 0 8px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#f0f3f7;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:#46505d;position:sticky;top:0;white-space:nowrap;z-index:1}
+tbody tr:hover{background:#fafbfd}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+td.id{font-variant-numeric:tabular-nums;color:var(--muted);font-size:11.5px;white-space:nowrap}
+td .blank{color:#9aa4b1;font-weight:500}
+td.src{font-size:11.5px;min-width:150px}
+td.note{font-size:11.5px;color:var(--muted);max-width:340px}
+.search{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.search input{font:inherit;font-size:13px;padding:7px 11px;border:1px solid var(--line);border-radius:8px;
+  min-width:240px;background:#fff}
+.search .count{font-size:12px;color:var(--muted)}
+.callout{border-radius:8px;padding:12px 14px;font-size:13px;border:1px solid var(--line);background:#f8fafc}
+.callout.warn{background:var(--warnbg);border-color:var(--warnline)}
+.callout.bad{background:var(--badbg);border-color:#e7bfae}
+.callout.ok{background:var(--okbg);border-color:#bcdccb}
+.callout b{display:block;margin-bottom:4px}
+.tag{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:5px;background:#eef1f5;color:#46505d;margin:0 4px 4px 0}
+.tag.ba{background:#e8eef7;color:#2f4d7a}
+.tag.bs{background:#fbeae4;color:#8c2f19}
+.tag.personal{background:#eeeaf7;color:#5b4a8a}
+footer{border-top:1px solid var(--line);padding:18px 28px;color:var(--muted);font-size:12px;background:#fff}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;font-size:13px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#fff;margin:10px 0}
+summary{cursor:pointer;font-weight:600;font-size:13.5px}
+@media(max-width:1080px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){
+  .shell{display:block}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);
+    transition:transform .18s ease;height:100vh}
+  .sidebar.open{transform:none;box-shadow:0 0 0 100vmax rgba(10,18,28,.45)}
+  .navtoggle{display:inline-flex;gap:6px;align-items:center}
+  main{padding:20px 16px 56px}
+  .topbar{padding:10px 16px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+  h1{font-size:23px}
+}
+@media print{.sidebar,.topbar,.navtoggle{display:none}main{padding:0}}
+</style>
 </head>
-<body data-page="tenant.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Tenant &amp; Lease</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
-
-    <p class="eyebrow">Category 4 · the counterparty and the contract</p>
-    <h1>Tenant health and what the lease actually protects</h1>
-    <p class="lede">A single-tenant NNN asset is a bond with a building attached. Its value is the tenant's ability and
-    willingness to keep paying. This page is built from the company's own filings, not from press coverage.</p>
-
-    <div class="callout warn">
-      <div class="h">The counterparty on this specific lease is unknown</div>
-      <p>93% of the Jack in the Box system is franchised, so the operator of this unit is probably a franchisee and the
-      guarantor is probably not the public company. That distinction is the difference between an investment-grade credit and
-      a small business. It cannot be resolved without the lease, so it is open item <b>U-03</b> &mdash; and it is the first
-      document to pull.</p>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" id="nav" aria-label="Section navigation">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">JB</span>
+      <span><b>NNN decision brief</b><span>Central Los Angeles · public data</span></span>
+    </a>
+    <p class="navlabel">Dashboard</p>
+    <nav>
+        <a href="index.html"><span class="n">01</span><span>Overview</span></a>
+        <a href="market.html"><span class="n">02</span><span>Market &amp; area</span></a>
+        <a href="projections.html"><span class="n">03</span><span>Projections &amp; model</span></a>
+        <a href="tenant.html" aria-current="page"><span class="n">04</span><span>Tenant credit</span></a>
+        <a href="property.html"><span class="n">05</span><span>Property &amp; hazards</span></a>
+        <a href="decision.html"><span class="n">06</span><span>Decision paths</span></a>
+        <a href="risks.html"><span class="n">07</span><span>Risk register</span></a>
+        <a href="flagged.html"><span class="n">08</span><span>Flagged for review</span></a>
+        <a href="sources.html"><span class="n">09</span><span>Sources &amp; method</span></a>
+    </nav>
+    <p class="note"><b>Privacy first.</b> No owner name, street address, parcel number, lease document or
+    personal financial detail is published. Those fields are marked <em>withheld</em>.</p>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="navtoggle" type="button" data-nav aria-expanded="false" aria-controls="nav">☰ Sections</button>
+        <span class="crumb">Decision brief <span aria-hidden="true">/</span> <b>Tenant credit</b></span>
+      </div>
+      <span class="snap">Evidence cut-off 7 November 2026</span>
     </div>
+    <main id="content">
 
-    <div class="grid g4">
-      <div class="kpi"><div class="k">System units, FY2025</div><div class="v down">2,136</div><div class="m">from 2,191 a year earlier</div></div>
-      <div class="kpi"><div class="k">Same-store sales, FY2025</div><div class="v down">&minus;4.2%</div><div class="m">Q4 alone: &minus;7.4%</div></div>
-      <div class="kpi"><div class="k">Closures, FY2025</div><div class="v down">86</div><div class="m">guided 50&ndash;100 more in FY2026</div></div>
-      <div class="kpi"><div class="k">Dividend</div><div class="v down">Discontinued</div><div class="m">cash preserved for debt</div></div>
+<section class="hero">
+  <p class="eyebrow">Tenant credit</p>
+  <h1>The logo is not the obligor.</h1>
+  <p class="lede">A Jack in the Box sign over the door tells you the brand, not who owes the rent. The company's
+  own 10-K states that for a majority of franchised sites it leases or subleases the real property
+  <em>to the franchisee</em>. So the landlord's counterparty could be the brand, a franchisee, or a brand
+  affiliate that subleases. Which one it is here is the largest unverified input in this brief — and it changes
+  the credit quality of the rent more than any market statistic on this site.</p>
+  <div class="grid g4" style="margin-top:16px">
+    <div class="card"><div class="k">System restaurants</div><div class="v">2,136</div>
+      <div class="m">September 28, 2025 · 93% franchised</div></div>
+    <div class="card"><div class="k">FY2025 same-store sales</div><div class="v" style="color:#8c2f19">−4.2%</div>
+      <div class="m">Q4 alone was −7.4%</div></div>
+    <div class="card"><div class="k">FY2025 net unit change</div><div class="v">−55</div>
+      <div class="m">31 opened against 86 closed</div></div>
+    <div class="card"><div class="k">Guided FY2026 closures</div><div class="v">50–100</div>
+      <div class="m">Most expected to be franchise units</div></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="hd"><div><p class="eyebrow">Credit assessment in one paragraph</p><h2>What the filings add up to</h2></div></div>
+  <div class="grid g2">
+    <div class="callout ok">
+      <b>Arguments that the rent is safe</b>
+      <ul class="clean" style="margin-bottom:0">
+        <li>A national brand with 2,136 restaurants across 21 states and a 75-year operating history.</li>
+        <li>The prototype box is small and cheap to operate, and the drive-thru entitlement is scarce in built-out Los Angeles.</li>
+        <li>Rent is typically a modest share of restaurant sales for quick-service units, so a unit can stay profitable through a sales decline.</li>
+        <li>Guide-level Adjusted EBITDA of $225–240m for FY2026 is a solvent enterprise.</li>
+      </ul>
     </div>
-
-    <h2>What the filings say</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>The system is contracting on purpose</h3>
-        <p>The "JACK on Track" plan, unveiled in 2025, has three legs: a <b>restaurant closure programme</b>, the sale of Del
-        Taco, and cash acceleration (dividend discontinued, new company development cut back). In FY2025 the system opened 31
-        units and closed 86. FY2026 guidance is a count of 2,050&ndash;2,100 &mdash; roughly 20 openings against
-        <b>50&ndash;100 closures, "most of which will be franchise restaurants"</b>.</p>
-        <p class="small">Translation for a landlord: the tenant's own plan assumes it will have fewer restaurants next year,
-        and the closures are concentrated in the franchise base &mdash; the base most likely to be your counterparty.</p>
-      </div>
-      <div class="card">
-        <h3>Sales are falling at every level</h3>
-        <p>FY2025 system same-store sales &minus;4.2% (company &minus;3.7%, franchise &minus;4.3%). Q4 was materially worse:
-        &minus;7.4% system, &minus;7.6% franchise. Management attributes it to transaction declines and unfavourable mix,
-        partly offset by menu price &mdash; i.e. fewer customers, higher prices. That is the classic pre-renewal warning pattern.</p>
-        <p class="small">A franchisee with falling sales and a $20/hour statutory wage floor cannot easily absorb a rent reset
-        upward. Plan for a flat-to-modest renewal rent, not market-plus.</p>
-      </div>
-      <div class="card">
-        <h3>The balance sheet is being repaired by selling assets</h3>
-        <p>Del Taco was agreed to be sold (stock purchase agreement signed 15 October 2025) for an aggregate price of
-        <b>$115m</b> in cash, subject to adjustments; the dividend is gone; Q4 Adjusted EBITDA fell to $45.6m from $65.5m. FY2026 guidance is $225&ndash;240m of
-        Adjusted EBITDA &mdash; and explicitly includes "<b>selling real estate</b>" as a driver of franchise-level margin.</p>
-        <p class="small">A company that is monetising real estate is also a company that is deciding which leases to keep.
-        Ask directly, in writing, whether this unit is on the retention list.</p>
-      </div>
-      <div class="card">
-        <h3>Lease mechanics that matter more than the brand</h3>
-        <p>Standard franchise terms are 20 years with a $50,000 initial fee and royalties generally 5.0% of gross sales. The
-        current prototype is ~1,372 sq ft. A small building on a commercially-zoned parcel means a high <b>land-value share</b>
-        &mdash; good for residual value, but also the reason a buyer will underwrite the land, not the building, once the term
-        gets short.</p>
-        <p class="small">A 1,372 sq ft prototype on a corner in central Los Angeles is a redevelopment play dressed as a
-        restaurant. Price it as both.</p>
-      </div>
-    </div>
-
-    <h2>Tenant and lease data</h2>
-    <div data-table="tenant"></div>
-
-    <h2>Property-specific fields (withheld by design)</h2>
-    <p>Every row below is either private information that must not be published, or a value that requires a document this
-    session did not have. The site leaves them open rather than filling them with an estimate.</p>
-    <div data-table="property"></div>
-
     <div class="callout bad">
-      <div class="h">Document requests that change the answer</div>
-      <p><b>1.</b> The lease and all amendments (term, expiry, options, escalations, recovery caps, co-tenancy, go-dark clause).
-      <b>2.</b> The guaranty, if any, and the tenant entity's financial statements. <b>3.</b> The estoppel certificate.
-      <b>4.</b> The insurance certificate and declaration pages. <b>5.</b> The current property tax bill and the assessed value.
-      Without these five, every number on the <a href="model.html">model page</a> is a placeholder in a correct formula.</p>
+      <b>Arguments that the rent is at risk</b>
+      <ul class="clean" style="margin-bottom:0">
+        <li>Same-store sales deteriorating into the fourth quarter of FY2025 (−7.4%).</li>
+        <li>Net closures of 55 units in one year, with 50–100 more guided.</li>
+        <li>The dividend was discontinued — cash is being conserved.</li>
+        <li>Management states its plan includes <strong>selling real estate</strong>: the counterparty is monetising property, not adding it.</li>
+        <li>An active proxy contest with an activist shareholder, disclosed in the 10-K.</li>
+        <li>~70% of the system sits in California and Texas, which the company itself flags as a concentration.</li>
+      </ul>
     </div>
+  </div>
+  <p class="small" style="margin-top:14px;margin-bottom:0"><strong>Balance:</strong> the enterprise is solvent;
+  the <em>site</em> is not guaranteed. A brand can be healthy and still close a specific underperforming unit —
+  and a closure list of 50–100 sites a year is exactly the mechanism by which that happens. Underwriting the
+  site means underwriting the operator's unit-level economics, which are not public.</p>
+</section>
 
-    <div class="foot"><p><a href="schools.html">&larr; Schools &amp; Community</a> · <a href="risk.html">Next: Risk Register &rarr;</a></p></div>
-  </main>
+<section class="panel">
+  <div class="hd"><div><p class="eyebrow">Franchise terms</p><h2>Why a 20-year franchise term is not a 20-year lease</h2></div></div>
+  <p class="small" style="margin-top:0">The company's standard <em>franchise</em> agreement runs 20 years with a
+  $50,000 initial fee and a 5.0% royalty. A landlord reading "20-year term" could wrongly assume a 20-year rent
+  obligation. The franchise agreement is between the brand and the operator. The <em>lease</em> is a separate
+  contract with separate dates, and its term may be shorter, longer, or renewed on different cycles. The
+  owner's stated 2030–2035 expiry window is the lease, not the franchise agreement.</p>
+</section>
+
+<section class="panel">
+  <div class="hd"><div><p class="eyebrow">Source data</p><h2>Every tenant row, with the filing it came from</h2></div></div>
+  <div class="search"><label class="small" for="tenant-table-q">Filter rows</label><input id="tenant-table-q" type="search" placeholder="Type a metric, geography or status…" data-filter="tenant-table" aria-controls="tenant-table"><span class="count" data-count-for="tenant-table"></span></div>
+<div class="tablewrap">
+<table id="tenant-table">
+<caption>Tenant and brand rows. Values are as filed with the SEC; guidance is management's own forward-looking statement.</caption>
+<thead><tr><th scope="col">Ref</th><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Unit</th><th scope="col">Period</th><th scope="col">Geography</th><th scope="col">Status</th><th scope="col">Official source</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr id="t-01"><td class="id">T-01</td><td>System restaurants (Jack in the Box)</td><td class="num"><span class="num">2,136</span></td><td class="small">restaurants</td><td class="small">September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-02"><td class="id">T-02</td><td>Franchised restaurants</td><td class="num"><span class="num">1,986</span></td><td class="small">restaurants</td><td class="small">September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-03"><td class="id">T-03</td><td>Company-operated restaurants</td><td class="num"><span class="num">150</span></td><td class="small">restaurants</td><td class="small">September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-04"><td class="id">T-04</td><td>Franchised share of system</td><td class="num"><span class="num">93</span></td><td class="small">%</td><td class="small">September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">The 10-K states \u201c1,986, or 93%, were franchised\u201d. For a majority of franchised sites the company leases or subleases the real property to the franchisee.</td></tr>
+<tr id="t-05"><td class="id">T-05</td><td>System restaurants, prior year</td><td class="num"><span class="num">2,191</span></td><td class="small">restaurants</td><td class="small">September 29, 2024</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-06"><td class="id">T-06</td><td>System same-store sales, FY2025</td><td class="num"><span class="num">-4.2</span></td><td class="small">%</td><td class="small">fiscal 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-07"><td class="id">T-07</td><td>System same-store sales, Q4 FY2025</td><td class="num"><span class="num">-7.4</span></td><td class="small">%</td><td class="small">quarter ended September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Deterioration accelerated into the final quarter of the fiscal year.</td></tr>
+<tr id="t-08"><td class="id">T-08</td><td>Restaurant openings, FY2025</td><td class="num"><span class="num">31</span></td><td class="small">restaurants</td><td class="small">fiscal 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-09"><td class="id">T-09</td><td>Restaurant closures, FY2025</td><td class="num"><span class="num">86</span></td><td class="small">restaurants</td><td class="small">fiscal 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Net decline of 55 units. Closures are a direct measure of the tenant&#x27;s willingness to walk away from sites.</td></tr>
+<tr id="t-10"><td class="id">T-10</td><td>Guided restaurant count, FY2026</td><td class="num"><span class="num">2,050 to 2,100</span></td><td class="small">restaurants</td><td class="small">fiscal 2026 guidance</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-11"><td class="id">T-11</td><td>Guided closures, FY2026</td><td class="num"><span class="num">50 to 100</span></td><td class="small">restaurants</td><td class="small">fiscal 2026 guidance</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Most of the guided closures are expected to be franchise restaurants.</td></tr>
+<tr id="t-12"><td class="id">T-12</td><td>Guided same-store sales, FY2026</td><td class="num"><span class="num">-1 to +1</span></td><td class="small">%</td><td class="small">fiscal 2026 guidance</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-13"><td class="id">T-13</td><td>Revenue, Q4 FY2025</td><td class="num"><span class="num">326.2</span></td><td class="small">USD millions</td><td class="small">quarter ended September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Prior-year quarter was $349.3 million, a 6.6% decrease.</td></tr>
+<tr id="t-14"><td class="id">T-14</td><td>Adjusted EBITDA, Q4 FY2025</td><td class="num"><span class="num">45.6</span></td><td class="small">USD millions</td><td class="small">quarter ended September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Prior-year quarter was $65.5 million.</td></tr>
+<tr id="t-15"><td class="id">T-15</td><td>Guided Adjusted EBITDA, FY2026</td><td class="num"><span class="num">225 to 240</span></td><td class="small">USD millions</td><td class="small">fiscal 2026 guidance</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-16"><td class="id">T-16</td><td>Dividend</td><td class="num"><span class="num">Discontinued</span></td><td class="small"></td><td class="small">fiscal 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">The release states the dividend and share repurchase programme were discontinued. Cash-preservation behaviour.</td></tr>
+<tr id="t-17"><td class="id">T-17</td><td>Standard franchise term</td><td class="num"><span class="num">20</span></td><td class="small">years</td><td class="small">current programme</td><td class="small">Jack in the Box brand</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-18"><td class="id">T-18</td><td>Initial franchise fee</td><td class="num"><span class="num">50,000</span></td><td class="small">USD</td><td class="small">current programme</td><td class="small">Jack in the Box brand</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-19"><td class="id">T-19</td><td>Royalty rate</td><td class="num"><span class="num">5.0</span></td><td class="small">% of gross sales</td><td class="small">current programme</td><td class="small">Jack in the Box brand</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Some legacy agreements carry higher rates.</td></tr>
+<tr id="t-20"><td class="id">T-20</td><td>Prototype building size</td><td class="num"><span class="num">1,372</span></td><td class="small">sq ft</td><td class="small">current prototype</td><td class="small">Jack in the Box brand</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">A small box on a drive-thru parcel: the building is not the value, the land and the use permit are.</td></tr>
+<tr id="t-21"><td class="id">T-21</td><td>Combined-brand employees</td><td class="num"><span class="num">5,046</span></td><td class="small">employees</td><td class="small">September 28, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-22"><td class="id">T-22</td><td>Part-time share of restaurant employees</td><td class="num"><span class="num">84</span></td><td class="small">%</td><td class="small">end of fiscal 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note"></td></tr>
+<tr id="t-23"><td class="id">T-23</td><td>Share of system restaurants in California and Texas</td><td class="num"><span class="num">70</span></td><td class="small">%</td><td class="small">as disclosed</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">The 10-K warns that economic conditions or regulation in these two states disproportionately affect results. This property is in one of them.</td></tr>
+<tr id="t-24"><td class="id">T-24</td><td>Del Taco divestiture price</td><td class="num"><span class="num">115</span></td><td class="small">USD millions</td><td class="small">agreement dated October 15, 2025</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Subject to customary adjustments; buyer Yadav Enterprises, Inc.</td></tr>
+<tr id="t-25"><td class="id">T-25</td><td>Real-estate strategy disclosed in guidance</td><td class="num"><span class="num">Includes selling real estate</span></td><td class="small"></td><td class="small">fiscal 2026 guidance</td><td class="small">Company-wide</td><td><span class="pill ok">Verified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Verbatim from the release: the \u201cJack on Track\u201d plan \u201cincludes a block closure program and selling real estate\u201d. The counterparty is actively monetising property.</td></tr>
+<tr id="t-26"><td class="id">T-26</td><td>Operator of the subject unit (company or franchisee)</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Decides who the landlord can actually enforce against. Flagged as F-10.</td></tr>
+<tr id="t-27"><td class="id">T-27</td><td>Guarantor structure on the subject lease</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer" title="Form 10-K, fiscal year ended September 28, 2025 (accession 0000807882-25-000072)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">Whether Jack in the Box Inc. guarantees the lease, or only the franchisee entity does, is not public. This is the largest single unverified input. Flagged as F-11.</td></tr>
+<tr id="t-28"><td class="id">T-28</td><td>Subject-unit sales and rent-to-sales ratio</td><td class="num"><span class="blank" title="Not confirmed from an official source">—</span></td><td class="small"></td><td class="small"></td><td class="small">Subject property</td><td><span class="pill bad">Unverified</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="Q4 and FY2025 earnings release, Exhibit 99.1 (filed 2025-11-19)">Jack in the Box Inc. (SEC registrant)</a></td><td class="note">No unit-level sales are disclosed by the registrant. Flagged as F-12.</td></tr>
+</tbody>
+</table>
 </div>
-<script src="assets/app.js"></script>
+</section>
+
+    </main>
+    <footer>
+      Public-data decision brief. Every figure is linked to the official page it was read from; anything that
+      could not be confirmed is blank and listed on <a href="flagged.html">Flagged for review</a>.
+      Not an appraisal, not tax advice, and not a personal financial recommendation.
+    </footer>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.querySelector('[data-nav]');
+  var sb=document.querySelector('.sidebar');
+  if(b&&sb){
+    b.addEventListener('click',function(){
+      var open=sb.classList.toggle('open');
+      b.setAttribute('aria-expanded',String(open));
+    });
+    sb.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){sb.classList.remove('open');});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){sb.classList.remove('open');}});
+  }
+  document.querySelectorAll('[data-filter]').forEach(function(input){
+    var table=document.getElementById(input.getAttribute('data-filter'));
+    if(!table)return;
+    var rows=Array.prototype.slice.call(table.querySelectorAll('tbody tr'));
+    var count=document.querySelector('[data-count-for="'+table.id+'"]');
+    function apply(){
+      var q=input.value.trim().toLowerCase();
+      var shown=0;
+      rows.forEach(function(r){
+        var hit=!q||r.textContent.toLowerCase().indexOf(q)>-1;
+        r.hidden=!hit;
+        if(hit)shown++;
+      });
+      if(count)count.textContent=shown+' of '+rows.length+' rows';
+    }
+    input.addEventListener('input',apply);
+    apply();
+  });
+})();
+</script>
 </body>
 </html>
