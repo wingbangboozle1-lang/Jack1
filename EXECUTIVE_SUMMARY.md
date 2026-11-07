@@ -1,154 +1,66 @@
-# Executive summary — SP-01
+# Executive summary
 
-**Asset:** single-tenant Jack in the Box building on a net (NNN) lease, Central Los Angeles.
-**Lease expiry:** somewhere in 2030–2035. **Question:** sell before expiry, or renew and hold?
-**Built:** 2026-11-06. **Live site:** https://wingbangboozle1-lang.github.io/Jack1/
+**Subject:** Jack in the Box quick-service restaurant on a reported triple-net (NNN) lease, described as near
+central Los Angeles, with an expiry window the owner puts at 2030-2035.
+**Question:** sell before expiry, or renew?
+**Answer:** **renew on market terms, hold, and sell only into a priced bid or on a stated trigger.**
+**Evidence date:** 2026-11-07. **Published rows:** 154 (109 verified, 4 derived, 33 unverified/blank, 8 withheld/blank).
 
----
+## 1. The recommendation in one paragraph
 
-## The answer
+Secure a five-year extension or a new term now, at rent supported by independent comparables, with documented
+escalations, tenant-funded roof and structure, and a guaranty. Hold the asset. Refuse to sell until a bid implies a
+capitalisation rate inside the break-even band shown on the model page, or until one of the named triggers fires
+(two more quarters of same-store sales below -5%, a guidance cut, a unit-count guide below 2,050, or a coverage
+exclusion at insurance renewal). The failure mode to avoid is not selling too late or too early - it is arriving at
+2030 with two years of term, a vacant building and no comparable sale.
 
-**Renew — but renew now, and do not sell into the expiry.**
+## 2. Why - the five verified facts that decide it
 
-The most valuable thing in this file is not the rent. It is **time**. On unchanged net operating
-income, a buyer pays roughly **20.8% more** for this asset with nine years of lease term than with
-three. That single relationship is worth more than several years of rent, and it is entirely within
-your control — which is more than can be said for interest rates, the neighbourhood, or the tenant.
-
-The recommended sequence:
-
-1. **Find the notice date.** The expiry window is five years wide; the lease has one date, and the
-   notice window that precedes it (typically 6–12 months) is the real decision deadline. Confirm it
-   first. It costs nothing and everything downstream depends on it.
-2. **Open the extension conversation now.** Not in 2030. The tenant's own SEC filings show a system
-   closing 50–60 units a year, mostly franchisee units. Your leverage peaks while the site is still
-   one the operator wants.
-3. **If the extension is signed, hold about five years.** Collect the rent and keep the Proposition 13
-   wedge — assessed value is capped at +2% a year while the market is assumed to grow at 3%.
-4. **Sell with about five years of firm term remaining** — the deepest part of the buyer pool.
-
-**If the tenant will not extend, the answer flips: sell within twelve months**, while the lease still
-has years on it. Doing nothing and letting the lease run out is the worst risk-adjusted option in the
-model, and it is the only option that requires no decision.
-
----
-
-## Why, in five findings
-
-**1. Term is the price.** Cap rates are a function of how many years a buyer can count on. The model
-prices 3 years at 7.25%, 5 years at 6.50%, 9 years at 6.00% — a **+11.5%** step from three to five
-years and **+20.8%** from three to nine, on identical income.
-
-**2. The tenant is contracting.** Q3 FY2026 (quarter ended 5 July 2026, filed 12 August 2026): system
-same-store sales **−1.1%**, franchise same-store sales −1.2%, **17 closures against 4 openings** in the
-quarter, FY2026 guidance of **50–60 closures, "most of which will be franchise restaurants"**, franchise
-margin down from 39.3% to 37.4%, **bad debt higher**, dividend discontinued, Del Taco sold. The
-turnaround plan explicitly includes "block closure" and "selling real estate". A renewal is a negotiation,
-not an assumption.
-
-**3. The area is full, but not growing.** LA metro unemployment **4.4%** (Sep 2026) — effectively full
-employment — while total nonfarm employment grew **0.5%** year over year. City population **−0.8%** since
-2020; county **−3.2%**. Deep demand, static growth. Median household income $81,939 against 16.5%
-poverty: a polarised market that suits a value QSR, but does not expand it.
-
-**4. The wage floor is a statutory ratchet.** California fast-food minimum wage **$20.00/hr** (above the
-$16.90 state rate), with a Fast Food Council empowered to raise it, and the state rate indexed to CPI-W
-capped at +3.5%/yr and not reducible. Meanwhile limited-service menu prices rose **3.2%** year over year —
-so a lease escalating at 2% is getting *cheaper* for the tenant in real terms, which is the strongest
-argument that a renewal request will be received seriously.
-
-**5. Exit costs are asymmetric and dated.** Selling costs about **5.56%** before any Measure ULA. ULA is a
-cliff, not a slope: a sale at $5,399,000 pays **$0**; a sale at $5,400,001 pays about **$216,000**, because
-the 4% rate applies to the whole price. The Prop 13 base is destroyed by a sale and only accrues while you
-hold; a 1031 exchange can defer the federal gain but must be arranged before closing and completed inside
-**45 days to identify / 180 days to close**.
-
----
-
-## The numbers
-
-Model output on three illustrative NOI cases ($140k / $180k / $240k) against the full 2030–2035 expiry
-window. NPV is measured against selling today at a 7.40% required return, so **0 = no better or worse than
-selling now**.
-
-At the central $180,000 NOI case:
-
-| Strategy | Expiry 2030 | Expiry 2032 | Expiry 2035 |
+| # | Fact | Value | Source |
 |---|---|---|---|
-| A Sell now | baseline 0 | baseline 0 | baseline 0 |
-| B Hold, tenant leaves | +$233,084 | −$23,504 | −$96,533 |
-| C Hold, renew at expiry (60% weighting) | +$519,183 | +$306,983 | +$203,712 |
-| D Extend now, sell 2028 | +$116,900 | −$77,030 | −$243,689 |
-| **E Extend now, hold 5 yrs, sell with term** | **+$494,888** | **+$300,958** | **+$134,299** |
+| 1 | Remaining term is the asset's value driver; a signed extension raises both rent coverage and sale price | 5-9 years (owner-stated window, not contract-verified) | Owner statement; see `property.html` |
+| 2 | The tenant's credit is weakening but intact | Systemwide same-store sales -7.4% Q4 FY2025 and -4.2% FY2025; 86 closures vs 31 openings; dividend discontinued; FY2026 guidance 2,050-2,100 restaurants, franchise-level margin $275-290m, Adjusted EBITDA $225-240m | SEC 8-K Ex-99.1 (Q4 FY2025) |
+| 3 | The area economy is mild, not collapsing | MSA unemployment 4.4% (Sep 2026, preliminary); nonfarm +0.5% y/y; county population -3.2% since 2020; city -0.8% | BLS Economy at a Glance; Census QuickFacts |
+| 4 | Exit friction is high and has a cliff | City base transfer tax 0.45%; Measure ULA 4.0% above $5,400,000 and 5.5% at $10,900,000, on the whole price; one dollar over the line costs about $216,000 | LA Office of Finance |
+| 5 | Money is not cheap, and value is rate-sensitive | 10-year Treasury 4.84% (2026-11-05); the same income stream is worth 38% more at a 5.25% rate than at 7.25% | Federal Reserve H.15 via FRED; model page |
 
-**E is the only strategy that is positive in every expiry case.** C scores higher in two of three cases,
-but its number assumes the renewal happens; with no term secured the owner carries roughly a 40% chance of
-a vacant year plus a re-tenanting bill, four to nine years of exposure to a contracting franchisor, and no
-leverage at the moment it matters.
+## 3. The decision rule (from the model)
 
-Risk-weighted scores (weights: risk 30%, value 25%, liquidity 15%, tax 15%, growth 10%, simplicity 5%):
+- At a 6.25% entry capitalisation rate with $200,000 of annual NOI, the asset is worth $3.20m. Net proceeds today
+  would be about $3.12m after transfer tax and assumed 2.0% costs.
+- Holding five years, with 2.5% annual rent growth and a 7.5% discount rate, beats selling today unless the exit
+  capitalisation rate is wider than **6.83%**.
+- Read the other way: selling now is a bet that cap rates widen more than about 58 basis points, or a decision that
+  liquidity is worth more than the arithmetic.
+- A bid that implies 6.25% or tighter should be taken seriously; that is the "sell into strength" condition.
 
-| Rank | Strategy | Score / 5 |
+## 4. What is risk, and how it is bounded
+
+| Risk | Verified evidence | Bound |
 |---|---|---|
-| 1 | E — extend now, hold, sell with term | **4.20** |
-| 2 | C — hold and renew at expiry | 3.55 |
-| 3 | A — sell now | 3.25 |
-| 4 | D — extend then sell almost immediately | 2.80 |
-| 5 | B — do nothing | 2.35 |
+| Tenant credit | Same-store sales -7.4% Q4, 86 closures, no dividend | Quarterly watch; guaranty and covenants at renewal; sell trigger at two more quarters below -5% |
+| Rate / cap-rate expansion | 10-year Treasury 4.84% | Fixed-rate debt if any; sell on a bid, never on a forecast |
+| Transfer tax | 0.45% base + 0.0/4.0/5.5% ULA | Price the tier before listing; written opinion on the transaction |
+| Operating-cost shock | California fast-food minimum wage $20.00/hour | Rent coverage tested against flat unit sales, not rising ones |
+| Hazard | Palisades Fire 2025: 6,845 structures destroyed; ShakeOut Mw 7.8 scenario: $191bn regional loss | Parcel not mapped; confirm FHSZ, fault zone, insurance and lease restoration |
+| Vacancy / re-tenanting | No verified market rent for the parcel | Reserve sized to a realistic downtime; renew rather than ride to expiry |
 
----
+Black-swan events are named, sourced and left unquantified. No probability is invented for this parcel.
 
-## Risk, including the tail
+## 5. What the owner must supply (all flagged on the site)
 
-| Risk | Judgement | Note |
-|---|---|---|
-| Tenant non-renewal | high likelihood, high severity | Franchisor is closing units and names real-estate sales in its turnaround |
-| Lease tail | high / high | The 3→9 year term premium is 20.8%; marketing a short tail is expensive |
-| Rate shock | medium / high | 10-year at **4.90%** vs a 3.75–4.00% funds rate; ±75bp is worth ~18 months of rent |
-| Insurance repricing | high / medium | FAIR Plan commercial policies **21,717** (from 7,315 in 2022), **$724bn** exposure |
-| Wildfire | medium / high (indirect) | Parcel FHSZ cannot be determined without the address — flagged, not assumed |
-| Earthquake | low / very high | LA basin; site class and liquefaction not determinable without the parcel |
-| Concentration | high / high | One parcel, one tenant, one metro — usually the largest unmanaged risk for an individual |
+Executed lease and amendments; rent ledger and NNN reconciliations; title, survey and parcel record; insurance
+policy and quotes; three closed net-lease comparables and two rent comparables; the tenant's or franchisee's
+financials; the owner's tax basis and liquidity needs. Until those arrive, every property-specific conclusion is
+conditional - which is why the brief publishes ranges and rules instead of a valuation.
 
-No probabilities are invented for the black-swan events. Severity is reasoned from official data;
-probability is not asserted.
+## 6. Deliverables
 
----
+Live dashboard with eleven pages (`index.html`, `demographics.html`, `economy.html`, `schools.html`,
+`property.html`, `tenant.html`, `model.html`, `decision.html`, `risks.html`, `flagged.html`, `sources.html`),
+a machine-readable dataset (`data/published-records.json`), a deterministic generator (`scripts/build_site.py`),
+a 2,952-assertion validation gate (`scripts/validate_site.py`), this summary, `DECISION_MEMO.md`,
+`RISK_REGISTER.md`, `METHODOLOGY.md`, and the shared task board (`COORDINATION.md`).
 
-## What could not be verified
-
-**121 data rows: 106 verified against official sources, 3 derived by arithmetic, 12 left blank and flagged.**
-The gaps that bound the answer:
-
-* **No address** — so no parcel-level fire zone, flood zone, seismic class, zoning or school assignment.
-* **No lease** — so the exact expiry, notice window, escalators, renewal options and NNN scope are unknown.
-* **No rent or NOI** — so every dollar figure is a labelled assumption band, not the property's numbers.
-* **No tenant-of-record identity** — corporate unit and franchisee are different credits.
-* **No official cap-rate or retail-rent series exists** — so cap rates are built from the verified
-  risk-free rate plus a stated spread, with a sensitivity band, rather than laundered from a broker estimate.
-
-Two further irregularities are documented on the site: the California Geological Survey Alquist-Priolo page
-returned a 404, and two Los Angeles County Assessor pages redirected to their homepage (Prop 13's 2% cap was
-therefore verified against the California Constitution itself instead).
-
-All of it is published at `/flagged.html` with source links.
-
----
-
-## Privacy
-
-No address, parcel number, owner name, rent, NOI or contact detail appears in this repository or on the
-site. The property is referred to only as **SP-01**. Anything knowable only from private documents is
-rendered `[WITHHELD]`. The published site makes **zero third-party requests** — no fonts, analytics, CDNs or
-trackers — and the valuation calculator runs entirely in the browser, transmitting nothing.
-
----
-
-## What to do this week
-
-1. Pull the lease. Write down: expiry date, notice window, renewal options, escalation clause, insurance
-   and capital-repair allocation, and who the tenant of record is.
-2. Call the franchisor's real-estate group about an extension — before you do anything else.
-3. Put your actual NOI into the calculator on the Valuation page; the engine will give you your numbers.
-4. If the extension is refused, instruct a broker. Twelve months of marketing is the minimum for a
-   single-tenant asset, and you want the lease to still have years on it when it sells.
+*Analysis for the owner. Not appraisal, legal, tax or investment advice.*
