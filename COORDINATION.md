@@ -92,7 +92,9 @@
 | #4 | arena/83526ad4-jack1 | merged (0fa29e5) |
 | #7 | arena/d85fba50-jack1 | merged (0649b85) |
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
-| #9 | arena/51be24e4-jack1 | pending |
+| #16 | arena/51be24e4-jack1 | **merged** · GitHub Pages deployed successfully |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
-**Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
+**Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows  
+**Deploy verified:** workflow run 42410139870 — validate ✓ (6s), deploy ✓ (15s)  
+**PR link:** https://github.com/wingbangboozle1-lang/Jack1/pull/16
