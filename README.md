@@ -11,6 +11,7 @@ A privacy-first, source-linked GitHub Pages dashboard for assessing sale, renewa
 - [`risks.html`](risks.html) — parcel-dependent hazard, operational, regulatory, and tail-risk register
 - [`flagged.html`](flagged.html) — explicit review list for every material unverified input
 - [`sources.html`](sources.html) — official-source register, method, and limitations
+- [`audit.html`](audit.html) — verification ledger: every published figure re-read against its official page on 07 Nov 2026, with corrections, source-by-source status, and repository findings
 
 ## Evidence and privacy
 
@@ -27,10 +28,10 @@ python3 -m http.server 4173 --bind 0.0.0.0
 python3 scripts/validate_site.py
 ```
 
-The validator checks the seven public pages, required local paths and fragments, unique IDs, official-source links in each table-body row, external-source host allowlisting, new-tab link protections, and visible email / phone patterns.
+The validator checks the eight public pages, required local paths and fragments, unique IDs, official-source links in each table-body row, external-source host allowlisting, new-tab link protections, and visible email / phone patterns.
 
 ## GitHub Pages deployment
 
-`.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after changes reach `main` (or on manual workflow dispatch). The workflow explicitly assembles only the seven pages above plus `assets/styles.css`, `assets/site.js`, and `.nojekyll`. Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, and other root pages remains in the repository for traceability but is not part of this dashboard’s deployment artifact.
+`.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after changes reach `main` (or on manual workflow dispatch). The workflow explicitly assembles only the eight pages above plus `assets/styles.css`, `assets/site.js`, and `.nojekyll`. Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, and other root pages remains in the repository for traceability but is not part of this dashboard’s deployment artifact.
 
 Repository Pages settings must use **GitHub Actions** as the build source. The deployment URL is reported by the Pages workflow after a successful run.
