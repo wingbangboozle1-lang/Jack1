@@ -47,7 +47,7 @@ jobs:
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html _site/
+          cp index.html market.html property.html decision.html risks.html flagged.html sources.html audit.html _site/
           cp assets/styles.css assets/site.js _site/assets/
           cp .nojekyll _site/.nojekyll
           echo "Assembled $(find _site -type f | wc -l) public files"

@@ -9,7 +9,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_PAGES = {"index.html", "market.html", "property.html", "decision.html", "risks.html", "flagged.html", "sources.html"}
+REQUIRED_PAGES = {"index.html", "market.html", "property.html", "decision.html", "risks.html", "flagged.html", "sources.html", "audit.html"}
 PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", ".nojekyll"}
 OFFICIAL_DOMAINS = (
     "census.gov", "bls.gov", "scag.ca.gov", "lacity.gov", "lacity.org",
