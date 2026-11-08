@@ -45,6 +45,7 @@ def badge(status: str) -> str:
         "partial": ("badge-review", "Partial / open"),
         "covered": ("badge-verified", "Covered"),
         "blocked": ("badge-review", "Blocked — inputs missing"),
+        "analysis": ("badge-limited", "Analysis / judgment"),
     }
     cls, label = labels.get(status, ("badge-limited", status.replace("_", " ").title()))
     return f'<span class="badge {cls}">{e(label)}</span>'
@@ -182,7 +183,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
 <div class="callout warning"><h3>Working premise, not a verified asset</h3><p>{e(data['meta']['premise'])}</p></div>
 <section class="card-grid" aria-label="Key findings">{cards}</section>
 {table("executive-snapshot", "Executive evidence snapshot.", ["Finding", "Value", "Status", "Decision meaning", "Official source"], [
-    ["Course of action", "<strong>Dual-track sale + renewal</strong>", badge("verified"), "Preserve optionality until verified lease, value, tax, and risk evidence supports a choice.", source_links(data, ["sec_10k", "irs_544", "treasury"])],
+    ["Course of action", "<strong>Dual-track sale + renewal</strong>", badge("analysis"), "Preserve optionality until verified lease, value, tax, and risk evidence supports a choice.", source_links(data, ["sec_10k", "irs_544", "treasury"])],
     ["Property-specific inputs", value_cell(None, "unverified"), badge("unverified"), "Parcel, lease, rent, value, debt, condition, insurance, and tax basis remain blank.", source_links(data, ["assessor", "zimas"])],
     ["Official population paths", "DOF declines; SCAG grows", badge("derived"), "Planning divergence is material; do not blend or assign to the parcel.", source_links(data, ["dof_p2a", "scag_appendix"])],
     ["County hazard context", "FEMA NRI Very High", badge("verified"), "County model context only; parcel exposure and insurance remain unverified.", source_links(data, ["fema_county_query", "cdi_claims"])],

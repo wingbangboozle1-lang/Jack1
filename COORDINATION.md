@@ -966,7 +966,7 @@ The fixed Arena session branch is `arena/0e369d53-jack1`; platform policy prohib
 | T24 | Independent official-source research and projection-method review | done | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `research/0e369d53/` | Census, BLS, EDD, BEA/FRED, DOF, SCAG, CDE, SEC, FEMA, USGS, CAL FIRE, CDI, LA Finance/Planning, DIR, IRS, FTB, Treasury | Official values persisted with geography/period/units; corrections and open flags recorded | Property identity, lease, rent, finances unavailable; no inference permitted |
 | T25 | Final integration: privacy-safe category dashboard, executive decision brief, reproducible gated projections | done | 0e369d53 | Canonical root pages (`index`, `market`, `property`, `projections`, `decision`, `risks`, `requirements`, `flagged`, `sources`, `audit`); `assets/`; `data/verified-2026-11-08.json`; `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`; `tests/`; `.github/workflows/pages.yml`; `_config.yml`; legacy `.nojekyll` preservation; `README.md`; this board | T23/T24 done | Research persisted; integration starting | Do not publish archives, research notes or owner/parcel identifiers |
 | T26 | Line-by-line combined verification, build/link/privacy gates | done | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `tests/`, generated-page review; content fixes only if gates fail | T25 done | Build/tests/validator passing locally; combined review starting | Unverified observations must remain blank and publicly flagged |
-| T27 | PR to main, merge, deploy confirmation, publication record | in progress | 0e369d53 | This board; GitHub PR/Pages | T26 done | Combined gates pass; publication starting | No merge until gates pass; failed checks must be fixed |
+| T27 | PR to main, merge, deploy confirmation, publication record | done | 0e369d53 | This board; GitHub PR/Pages | T26 done | Combined gates pass; publication starting | No merge until gates pass; failed checks must be fixed |
 
 Requests to change any newly claimed file from another session must be appended here instead of editing it. Re-check remote claims before integration; if main advances, preserve and re-verify incoming work. Historical files remain intact and excluded from the public artifact. Personal information, if found, must not enter the website or public reports; record only a redacted irregularity.
 
@@ -977,3 +977,13 @@ Requests to change any newly claimed file from another session must be appended 
 - Conflicts were resolved by keeping the verified data-driven 10-page canonical integration (`data/verified-2026-11-08.json` + `scripts/build_public.py`) and by excluding historical/competing root pages from both the workflow artifact and the legacy Jekyll fallback. Incoming non-conflicting research/verification/archive files are retained.
 - Open PRs #33 and #27 were DIRTY at merge time and were not merged or discarded. Their branches remain available. No active main-board claim was edited; historical `in progress` entries are preserved as records.
 - T26 combined gates: build check, 11 unit tests, canonical validator, curated artifact validator, and local HTTP smoke passed before this merge note. Post-merge re-verification and T27 publication follow.
+
+
+### T27 completion record — session 0e369d53
+
+- **PR:** #44 `arena/0e369d53-jack1` → `main`, merged 2026-11-08T23:34:27Z (merge commit `bf567803cd37d0f2f6502b4764c67523c8b5f2ca`). https://github.com/wingbangboozle1-lang/Jack1/pull/44
+- **Checks:** PR `validate` PASS (run 42535784230). Main `Validate and publish the decision brief` run 42535821817 SUCCESS; legacy `pages build and deployment` run 42535821358 SUCCESS.
+- **Pages:** API `status: built`, HTTPS enforced. `build_type` remains `legacy` (`main /`); workflow source switch unavailable. Legacy Jekyll fallback serves only curated canonical pages; historical/internal paths return 404.
+- **Live verification:** root and all 10 canonical pages plus `assets/projections.json` fetched successfully. Boundary paths (`geography.html`, `COORDINATION.md`, archive/pages/data) return 404.
+- **Preservation:** incoming main PRs #28–#42 retained; exact prior public artifact saved under `archive/arena-main-3da3b70/`. Open dirty PRs #33/#27 left untouched.
+- **Final public record update:** publication requirement covered; audit/flagged pages record the verified serving path and live checks.

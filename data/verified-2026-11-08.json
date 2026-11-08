@@ -1620,7 +1620,7 @@
       "id": "sell_before_expiry",
       "path": "Sell before expiry",
       "when": "Best when verified after-tax net proceeds exceed risk-adjusted hold value, remaining term is short, buyer pricing is executable, or concentration/liquidity risk is unacceptable.",
-      "tradeoffs": " crystallizes value and reduces single-tenant/hazard exposure; may trigger tax, transfer costs, and loss of future upside.",
+      "tradeoffs": "crystallizes value and reduces single-tenant/hazard exposure; may trigger tax, transfer costs, and loss of future upside.",
       "required": "Executed lease, obligor/guaranty, rent roll, title, debt payoff, tax basis, appraisal/BOV, insurance, and closing-cost estimate.",
       "verdict": "Prepare now; do not commit without verified net proceeds and hold comparison.",
       "sources": [
@@ -2155,9 +2155,9 @@
     {
       "id": "req_publish",
       "requirement": "PR, merge, and live deployment verification",
-      "coverage": "Workflow validates and deploys curated artifact; legacy fallback excludes uncurated files; live check recorded after merge.",
-      "evidence": "GitHub Actions/Pages and verification log.",
-      "status": "partial",
+      "coverage": "PR #44 merged to main (bf56780). Workflow validate/deploy and legacy Pages build succeeded. Live root, projections, flagged, and all canonical pages fetched; historical/internal paths return 404.",
+      "evidence": "GitHub Actions runs 42535821817 / 42535821358; live URL and sentinel checks recorded in verification log.",
+      "status": "covered",
       "sources": [
         "repo",
         "live"
@@ -2336,8 +2336,8 @@
     {
       "id": "flag_pages_source",
       "item": "GitHub Pages serving path",
-      "reason": "Pages was legacy main /; local token could not switch to workflow; prior Actions success did not prove live artifact.",
-      "action": "Workflow attempts source switch; legacy fallback excludes uncurated files; verify live sentinel after merge.",
+      "reason": "Pages source remains legacy main /; workflow token source switch unavailable. Prior Actions success alone did not prove serving path.",
+      "action": "Resolved for curated publication: legacy Jekyll exclusion config serves only canonical pages; live root and sentinel pages verified after PR #44. Workflow artifact remains preferred if source is later switched.",
       "sources": [
         "repo",
         "live"
@@ -2453,8 +2453,8 @@
     {
       "id": "audit_deploy",
       "check": "Deployment verification",
-      "result": "Post-merge live check recorded in verification log and coordination board.",
-      "detail": "A successful Actions upload alone is not publication proof; fetch live root and sentinel page.",
+      "result": "PR #44 merged 2026-11-08T23:34:27Z (bf56780). Runs 42535821817 and 42535821358 success. Pages API built; live curated dashboard verified.",
+      "detail": "Pages source remains legacy main /; workflow source switch unavailable, but legacy Jekyll fallback serves only curated root files. Live root/projections/flagged/assets/projections.json fetched; geography.html, COORDINATION.md, archive, pages, and data paths return 404.",
       "sources": [
         "repo",
         "live"
