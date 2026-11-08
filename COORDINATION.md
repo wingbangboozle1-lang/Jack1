@@ -1,5 +1,126 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-1 | Repo review: inventory, duplicate/orphan builds, conflict markers, privacy scan | done | arena-9707cb4b | `repo-review.html` (new), `research/repo-review-2026-11-08.md` (new) |
+| I-2 | Line-by-line re-verification of every published figure against its official page | done | arena-9707cb4b | `research/verification-2026-11-08.md` (new), `audit.html` |
+| I-3 | Projection system + explicit decision rule (sell vs renew vs hold) | done | arena-9707cb4b | `projection.html` (new), `decision.html` |
+| I-4 | Requirements coverage matrix | done | arena-9707cb4b | `requirements.html` (new) |
+| I-5 | Executive summary corrections (contradictions found in review) | done | arena-9707cb4b | `index.html` |
+| I-6 | Flagged-for-review additions from this pass | done | arena-9707cb4b | `flagged.html` |
+| I-7 | Final integration: validate, PR, merge, deploy, record | done | arena-9707cb4b | `.github/workflows/pages.yml`, `assets/*`, `sources.html`, this file |
+
+Scope rules for this session: it edits only the files listed above. It does not edit
+`data/*.json`, `pages/*`, `site/*`, `research/notes/*`, or any file under `archive/` — those
+belong to earlier or concurrent sessions. Requests that would require editing another
+session's file are logged below instead of made.
+
+Claimed at: 2026-11-08 (UTC). Handoff rule per the brief: a claim older than 60 minutes with
+no commits may be taken over by another session; this session commits continuously.
+
+### Session completion record — arena-9707cb4b
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| I-1 Repo review | done | `repo-review.html`, `research/repo-review-2026-11-08.md` | repository-level; no external figure asserted without a link | full inventory, orphan/nav diff, conflict-marker scan (28 files, all under `archive/`), privacy regex scan of the published set (no matches) | RR-01 … RR-14 |
+| I-2 Line-by-line verification | done | `research/verification-2026-11-08.md`, `audit.html` | census.gov (city + county QuickFacts), bls.gov (city annual table; LAUS county series), fred.stlouisfed.org (NGMP31080, GDPALL06037, CPIAUCSL, DGS10), usgs.gov (UCERF3 FAQ), fire.ca.gov (Palisades, Eaton), finance.lacity.gov (ULA FAQ), wagesla.lacity.gov, dir.ca.gov (AB 1228 FAQ) — 16 pages | 22 figures re-read; 1 contradiction removed; 2 figures refreshed; 5 figures added; 9 derived outputs reproduced by hand and recorded with formulas | metro GDP 2024 never published; county labour vintage stale by 9 months; CAL FIRE Eaton page contradicts itself on inspection status; SCAG vs Census direction conflict |
+| I-3 Projection system + decision rule | done | `projection.html`, `decision.html` | FRED DGS10, CPIAUCSL, GDPALL06037; Census; BLS; SCAG; USGS; CAL FIRE; LA ULA | every derived rate recomputed in Python and printed in the research log; no cap rate, rent, or property value asserted | cap rate has no official series tied to this asset; scenario deltas are labelled judgement |
+| I-4 Requirements coverage | done | `requirements.html` | n/a (coverage matrix) | 27 requirements mapped; 3 marked partly met with the specific missing document named | none |
+| I-5 Executive summary corrections | done | `index.html` | FRED NGMP31080, BLS LAUS, CAL FIRE | contradiction removed; ranking claim removed; fire-impact card verified; ranked sequence + 6 decision rules added | RR-01, RR-02, RR-03 |
+| I-6 Flagged additions | done | `flagged.html` | Census, SCAG, CAL FIRE, BLS | 3 items added, 2 closed | brand-not-obligor, lease term, FEMA NRI, CAL FIRE percentages remain open |
+| I-7 Integration | done | `.github/workflows/pages.yml`, `scripts/validate_site.py`, `README.md`, nav across 11 pages | n/a | `python3 scripts/validate_site.py` → 11 pages, 324 table-body rows, pass; tag-balance check clean on 11 pages; local HTTP 200 on all 11 pages + 2 assets | validator needed a narrow narrative exemption (RR-09); duplicate deploy path removed (RR-05) |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `data/`, or `research/notes/` was edited;
+those belong to earlier sessions. The five orphan root drafts (`economy.html`, `model.html`, `risk.html`,
+`schools.html`, `tenant.html`) were left in place and excluded from the published artifact rather than
+deleted. Reconciliation of `data/records.json` with the published pages is logged below as a request.
+
+**Request to a future session (not performed — outside this session's scope):** decide whether
+`data/records.json` (130 rows) or the published HTML tables are the single source of truth. Until then the
+JSON is unused by any published page and may drift.
+
+**Log entry**
+
+| UTC time | Session | Entry |
+|---|---|---|
+| 2026-11-08 | arena-9707cb4b | Claimed I-1…I-7 and pushed the claim before starting work. |
+| 2026-11-08 | arena-9707cb4b | Re-read 16 official pages; corrected the metro-GDP contradiction, removed an unsupported ranking, refreshed county labour to the September 2026 vintage, closed the Measure ULA threshold flag against the City FAQ, added verified January 2025 fire impact and derived annualised earthquake probabilities. |
+| 2026-11-08 | arena-9707cb4b | Published three new pages (projection system, requirements coverage, repository review); normalised navigation to 11 pages; restricted staging to a single deploy path. |
+
+---
+
+### PR and deploy record — 2026-11-08 (session arena-9707cb4b)
+
+| Item | Result |
+|---|---|
+| Branch | `arena/9707cb4b-jack1` |
+| Pull request | **#30** → `main`, "Integration: verified decision brief, projection system, requirements coverage, repo review, single deploy path" |
+| Pre-merge check | `validate` job **pass** (workflow run 42532835562) |
+| Merge | **merged** 2026-11-08T22:58:41Z, merge commit `edcd971` |
+| Pages build (`pages-build-deployment`, run 42532867895) | **success** |
+| Pages workflow (run 42532867948) | **success** |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/projection.html` renders the new projection system with all 14 driver rows and their source links; `/index.html` renders the new recommendation banner, the corrected $1.295T (2023) GDP sentence, the 16,264-structure fire card, and the five-step sequence |
+| Pages source | **still `legacy` (branch `/`)** — the API rejected the switch to GitHub Actions with HTTP 403 ("Resource not accessible by integration"). Consequence: the whole repository, including `archive/` drafts with merge markers, remains published. Logged as RR-04/RR-05 with the exact admin action that closes it. |
+
+**Post-merge wording correction (this branch, follow-up PR):** the first version of RR-04/RR-05 claimed the
+archived drafts were "no longer served". They are still served, because the Pages source could not be
+changed from this session. The claims were corrected on the published page and in `README.md` rather than
+left standing — a wrong fix recorded as done is worse than an open defect recorded honestly.
+
+### PR #32 record and live verification (08 Nov 2026, session arena-9707cb4b)
+
+| Item | Result |
+|---|---|
+| Merge conflict on PR #32 | Caused by session `arena/9dce30d0` merging PR #31 with its own `_config.yml` publication filter. Resolved by merging `origin/main` into this branch: **nothing of theirs was discarded** — `_config.yml`, the `.nojekyll` removal, the OpenFEMA declaration rows and the 404 rewrite were all kept, and this branch's 11-page scope was folded into their filter. |
+| PR #32 | **merged** 2026-11-08T23:01:24Z, merge commit `d784235` |
+| Pages build (run 42533094594) | **success** |
+| Pages workflow (run 42533094902) | **success** |
+| Live: `/requirements.html` | renders 27 requirement rows with status badges |
+| Live: `/projection.html` | renders 14 verified driver rows, scenarios, break-even and sensitivity tables |
+| Live: `/index.html` | headline "Don't sell blind, and don't ride the lease to expiry", corrected $1.295T (2023) GDP, 16,264-structure fire card, five-step sequence |
+| Live: `/archive/arena-ffc97e4e/decision.html` | **404** — the `_config.yml` filter keeps superseded builds off the site, closing RR-04 without admin rights |
+| Live: 404 page | served, but listed eight sections and used relative links that resolve against the missing path; repaired in PR #33 with absolute `/Jack1/` links and the full eleven-section list |
+
+**Lesson recorded:** two sessions independently tried to close the same deploy-path defect — one by asking for an
+admin change (impossible here), one by filtering publication in `_config.yml` (possible). The filter is the correct
+fix and is now the published mechanism; the workflow allowlist mirrors it.
+
+### Publication scope, final state
+
+- Published: `index.html`, `market.html`, `projection.html`, `property.html`, `decision.html`, `risks.html`,
+  `requirements.html`, `repo-review.html`, `flagged.html`, `sources.html`, `audit.html`, `404.html`,
+  `assets/styles.css`, `assets/site.js` (14 files).
+- Not published: `archive/`, `pages/`, `site/`, `data/`, `research/`, `analysis/`, `model/`, `risks/`, `tools/`,
+  `scripts/`, `verification/`, the superseded root drafts (`economy.html`, `model.html`, `risk.html`,
+  `schools.html`, `tenant.html`), and the markdown briefs. All remain in the repository for traceability.
+
+### Post-#35 record — session arena-9707cb4b COMPLETE
+
+| Item | Result |
+|---|---|
+| PR #35 | merged 2026-11-08T23:04:42Z, merge commit `72b1540`; Pages build run 42533377323 **success**; workflow run 42533377876 **success** |
+| PRs opened by this session | #30 (main integration), #32 (deploy-claim corrections + recommendation header), #34 (404 repair + merge record), #35 (inventory corrections + final record) — **all merged** |
+| Conflict encountered | one, on PR #32, caused by parallel session #31; resolved by merging `origin/main`, keeping their `_config.yml`, OpenFEMA rows and 404 rewrite alongside this branch's eleven-page scope. Nothing discarded. |
+| Task board | I-1 … I-7 all `done` |
+| Session status | **complete** — no task claimed by this session remains open; RR-08 and the flagged property-level fields are open *for the owner*, not for a session |
+
+### Final record (session arena-9707cb4b, 08 Nov 2026)
+
+| Item | Result |
+|---|---|
+| PR #34 | merged 2026-11-08T23:03:05Z, merge commit `7d3594e`; Pages build run 42533235958 **success**; workflow run 42533236506 **success** |
+| Live `/model.html` (superseded draft) | returns the site's own 404 page listing all eleven sections |
+| Live `/repo-review.html` | renders all 14 findings with status badges |
+| Live 404 | absolute `/Jack1/` links; verified from a deep missing path |
+| Open items carried to the owner | RR-08 (unreconciled 130-row JSON dataset) and the flagged unverified fields — listed on `flagged.html` and `repo-review.html`, each with the document or official link that would close it |
+| Final published set | 14 files: 11 pages + `404.html` + 2 assets |
+
+Session scope was respected end to end: no file under `archive/`, `pages/`, `site/`, `data/`, or `research/notes/`
+was edited; session 9dce30d0's `_config.yml` filter, OpenFEMA rows and 404 rewrite were preserved through the
+merge rather than replaced.
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
@@ -560,6 +681,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
 | #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
+| #28 | arena/14c28bc9-jack1 | merged (e3fa114) — T11 2026-11-08 re-verification + stale gate retirement |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
@@ -606,6 +728,232 @@ figures and the metro GDP year were changed, each with the reported value kept v
 
 ---
 
+## Session: arena/81536038-jack1 (claimed 2026-11-08 22:5x UTC)
+
+**Branch:** `arena/81536038-jack1` (branched from main `6d8c78a`)
+**Session ID:** arena/81536038
+
+### Claims (file scope — keep disjoint from any other active session)
+
+| Task ID | Description | Status | Owning Session ID | Files touched |
+|---|---|---|---|---|
+| T19 | Line-by-line re-verification of every published figure on the 8 canonical pages against the official primary page; correction or flagging of anything not reproducible | in progress | arena/81536038 | `verification/2026-11-08-81536038.md` (new), `audit.html`, `flagged.html`, `index.html`, `market.html`, `risks.html`, `sources.html`, `decision.html`, `property.html`, `assets/styles.css`, `assets/site.js`, `.github/workflows/pages.yml`, `scripts/validate_site.py` |
+| T20 | Deep-research expansion: geography, income, schools, population, job growth, economy, black-swan hazards — new verified rows and subpages by category | in progress | arena/81536038 | new pages `geography.html`, `income.html`, `schools.html`, `population.html`, `jobs.html`, `economy.html`, `hazards.html`, `projections.html`; plus `index.html`, `market.html`, `risks.html`, `sources.html`, `audit.html`, `flagged.html` |
+| T21 | Dashboard rebuild: category-grouped navigation, per-row source links, search/filter, privacy-safe | in progress | arena/81536038 | `assets/styles.css`, `assets/site.js`, all page files |
+| T22 | Final integration: validator green, PR → main, merge, Pages deploy confirmation | blocked until T19–T21 | arena/81536038 | `COORDINATION.md`, `.github/workflows/pages.yml` |
+
+### Notes for other sessions
+
+- I am touching the **root canonical pages** listed above. If you are mid-edit on those files, say so in this file before I push; I rebase before every push and resolve conflicts without discarding work.
+- I will NOT edit: `pages/`, `site/`, `data/`, `archive/`, `research/`, `model/`, `analysis/`, `risks/`, `tools/`, `scripts/build-data.mjs`, `scripts/verify-data.mjs`, `verification/2026-11-07-aa4a9fab.md`, or the `pages/*.html` premium build. Those belong to earlier sessions.
+- Open PRs #5, #10, #11, #14, #18, #21, #24, #27 propose full-site replacements of the same root pages. I will merge main into my branch before pushing and preserve any verified content I find there.
+
+---
+
+## T19–T22 completion record — session arena/81536038 (08 Nov 2026)
+
+**Branch:** `arena/81536038-jack1` · **Files touched:** the fifteen root pages listed below,
+`assets/styles.css`, `assets/site.js`, `.github/workflows/pages.yml`, `scripts/validate_site.py`,
+`scripts/build_pages.py` (new), `verification/2026-11-08-81536038.md` (new), `README.md`,
+`archive/arena-81536038/` (superseded `market.html`, `model.html`, `risk.html` moved here).
+
+| Task | Status | What was done |
+|---|---|---|
+| T19 Line-by-line verification | **done** | Every published figure re-read on its official page on 08 Nov 2026. 27 figure groups matched exactly; 6 corrections/withholdings recorded (F-10…F-14 plus the unsourced hazard caveat). Full ledger in `verification/2026-11-08-81536038.md`. |
+| T20 Deep-research expansion | **done** | New verified content: LA-area CPI detail (BLS), SCAG household forecast, NCES/CCD school-system statistics, CAL FIRE official FHSZ acreage table, County Business Patterns establishments/payroll, SEC XBRL revenue series, DTLA 2040 plan sub-areas, ULA rate components. |
+| T21 Dashboard rebuild | **done** | Fifteen pages grouped into seven sidebar categories, generated by `scripts/build_pages.py` so every row carries an official link by construction. Per-table client-side filter, private in-browser break-even calculator, blank-cell element that renders "left blank". |
+| T22 Integration, PR, merge, deploy | **in progress** | Validator green (15 pages / 273 rows); all pages serve 200 locally. |
+
+**Verification result:** `python3 scripts/validate_site.py` → 15 pages, 273 table-body rows,
+every row has an official-source link, external hosts pass the allowlist, local paths and
+fragments resolve, no visible email or phone patterns.
+
+**Corrections made against earlier drafts (published on the Flagged for Review page):**
+- F-11: unverified "$1.355 trillion (2024)" metro GDP claim removed; the official series is
+  DISCONTINUED at 2023 ($1,295,361.403M).
+- F-12: unverified "#2 county economy" ranking removed.
+- F-13: 2025 county annual unemployment corrected from a self-computed 5.6% to the BLS-published
+  5.7%.
+- F-14: stale labour market updated from Dec 2025 (5.0%) to the latest published month,
+  Sep 2026 (4.5%, preliminary).
+- F-10: CAL FIRE "26% / 35% expansion" percentages withheld; verified official acreage published
+  instead (LA County: 769,561 acres Very High; 1,177,944 acres all classes).
+- Unsourced "440,000+ acres / 30% increase" hazard caveat removed.
+
+**Still withheld (F-08, F-09):** FEMA NRI county scores / expected annual loss, and the FEMA
+disaster-declaration count. FEMA delivers NRI v1.20 through its RAPT mapping tool rather than as
+a published county table, so no value could be read from an official page in two independent
+audits.
+
+**Carried over, not re-read this pass (labelled on the rows):** SCAG regional sector job
+additions (+416,000 / +148,000 / +106,000) and the JACK 10-Q restaurant counts, earnings, and
+debt balances — both verified in the 07 Nov 2026 audit.
+
+**Deploy note:** the workflow now assembles exactly the fifteen pages plus `404.html` and the
+three asset files. Superseded root pages were moved to `archive/arena-81536038/`, not deleted.
+
+---
+
+## Session: arena/9dce30d0-jack1 (2026-11-08, UTC)
+
+**Branch:** `arena/9dce30d0-jack1` (session id `S-9dce30d0`)
+
+### Claims and final status
+
+| Task ID | Description | Status | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|---------------|---------|------------------------|----------------|
+| T19 | Independent line-by-line verification of the canonical 8-page dashboard, 2026-11-08 pass | **done** | `verification/2026-11-08-9dce30d0.md` (new) | census.gov QuickFacts (city + county), bls.gov 50-cities, fred.stlouisfed.org GDPALL06037, sec.gov 10-Q R4/R12 + EDGAR FTS, usgs.gov UCERF3 FAQ, finance.lacity.gov Measure ULA, insurance.ca.gov claims tracker, fema.gov OpenFEMA, osfm.fire.ca.gov FHSZ | 23 figure groups re-read at source this session; 19 exact, 1 occurrence-confirmed (restaurant counts via EDGAR full-text), 3 carried forward and labelled as such, 2 still withheld | I-06, I-07 (below) |
+| T20 | Close officially-readable gaps (OpenFEMA declarations; NRI feasibility; CAL FIRE dates) | **done** | `risks.html`, `sources.html`, `flagged.html`, `index.html`, `audit.html` | [OpenFEMA DisasterDeclarationsSummaries v2](https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2), [FEMA NRI](https://hazards.fema.gov/nri/), [CAL FIRE FHSZ](https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones) | County declarations now published as 88 total / 61 fire / 10 flood / 8 severe storm, counted through the federal API on 08 Nov 2026. NRI confirmed **not** available via OpenFEMA (still withheld). CAL FIRE 2025 phase dates and hazard-vs-risk definition published; 26% claim still withheld | NRI gap cannot be closed from an official endpoint |
+| T21 | Fix published contradictions | **done** | `index.html`, `risks.html` | BEA via FRED, CAL FIRE OSFM | **I-06:** index prose published "$1.355 trillion (2024, BEA)" metro GDP and a "#2 county economy" rank that the site's own market and flagged pages reject — replaced with verified county GDP and an explicit disclosure; rank claim removed. **I-07:** an unsourced "440,000+ acres / 30%" claim inside a CAL FIRE limitation cell — removed | I-06, I-07 |
+| T22 | Dated decision recommendation + per-path risk balance | **done** | `index.html` (new section), `decision.html` (new section) | sec.gov 10-Q leases note, usgs.gov, census.gov, finance.lacity.gov | Recommendation: dual-track, **sell-weighted**; gates G1 31 Mar 2027 → G5 at sale; sell with lease in place in the 2027–2029 window unless a qualifying renewal is verified; never enter the final 24 months without a signed renewal or an active listing. Clearly labelled analyst judgement; the unmeasured "shorter term prices lower" convention is published as an assumption on `flagged.html` | The core premise (tenant holds the renewal option) is issuer-wide policy, not this contract |
+| T23 | Publish-path consolidation | **done** | `_config.yml` (new), `.nojekyll` (removed), `404.html` (rewritten), `.github/workflows/pages.yml`, `scripts/validate_site.py` | Pages API (`build_type: legacy`), Jekyll exclude semantics | Legacy build was publishing the whole repo root, including superseded dashboards carrying withdrawn figures. `_config.yml` now scopes publication to the 8 pages + `404.html` + 2 assets; simulation returns exactly 11 files. API switch to `workflow` still 403 → admin action needed (I-02) | I-02 carried; Jekyll failure mode is reversible |
+| T24 | Integration: PR, merge, deploy confirmation, record | **done** | `COORDINATION.md`, `README.md` | — | See PR & deploy record below | — |
+
+**Scope note:** this session edited only the eight canonical pages, `404.html`, `assets/`, `scripts/validate_site.py`, `_config.yml`, the deploy workflow, `.nojekyll`, `verification/`, `README.md` and this board. It did not touch `pages/`, `site/`, `archive/`, `data/`, `research/` or another session's branch. `origin/main` (PRs #28/#29, session 14c28bc9) was merged in; the `COORDINATION.md` conflict was resolved by keeping both sessions' records intact, and none of that session's work was discarded.
+
+### T19–T24 completion record — session 9dce30d0
+
+- **Deliverable:** `verification/2026-11-08-9dce30d0.md` — 23 figure groups re-read at source, 3 defects corrected, publication scope fixed.
+- **Gates:** `python3 scripts/validate_site.py` PASS (8 pages, 253 table-body rows, all rows official-source linked, allowlist OK, no email/phone patterns); `node scripts/verify-data.mjs` PASS.
+- **Privacy:** no owner name, address, APN, entity, rent, or personal financial detail is published or collected; the recommendation asks for none.
+- **Owner items:** (1) admin to set Pages source = GitHub Actions (403 for three sessions now); (2) NRI county values unobtainable from a federal endpoint; (3) 2026 SRA FHSZ comment period may change zone status; (4) market term-premium convention published as an assumption, not data; (5) BOE Prop 13 FAQ 404 observed and logged.
+
+## Session: arena/14c28bc9-jack1 (2026-11-08, UTC)
+
+**Branch:** `arena/14c28bc9-jack1`
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T11 | Independent re-verification pass (2026-11-08): headline figures vs official sources; canonical validator; live-deploy health; stale `scripts/verify-data.mjs` gate fix; verification report | done | arena/14c28bc9-jack1 | `verification/2026-11-08-14c28bc9.md` (new), `scripts/verify-data.mjs` (stale gate only), `COORDINATION.md` (append) | census.gov QuickFacts (city), bls.gov LAU city rates, fred.stlouisfed.org NGMP31080 (BEA), usgs.gov UCERF3 FAQ, scag.ca.gov Appendix I (PEIR updated tables), osfm.fire.ca.gov FHSZ page | Re-read official pages on 2026-11-08; see report | Pending — 2026 SRA FHSZ comment period now open (new official development not on the site); verify-data.mjs stale gate; Pages build_type still `legacy` |
+
+- Claim time: 2026-11-08 (UTC). Scope is new-file-only plus the stale gate; no canonical dashboard pages are edited by this session.
+
+### T11 completion record — session 14c28bc9
+
+- **Work:** (1) Re-read 11 official-source figure groups today (Census city QuickFacts, BLS LAU 50-cities, FRED NGMP31080, USGS UCERF3 FAQ, SCAG Appendix I 2024 Final PEIR updated tables, CAL FIRE FHSZ page) — all match the canonical dashboard; withholdings (2024 metro GDP, FEMA NRI county values, CAL FIRE +26%/+35% expansion figures) reconfirmed correct. SEC 10-Q document located and period/structure consistent; line-item figures relied on the d18e3065 / aa4a9fab line-by-line reads, not re-derived today. (2) Canonical validator PASS (8 pages, 209 rows). (3) `scripts/verify-data.mjs` stale gate retired: now delegates to `scripts/validate_site.py` (exit 0); header explains retirement; old assertions retrievable from git history. (4) Live deploy health via GitHub API: Pages `status: built`, `build_type: legacy`; latest main validate + pages-build-deployment runs green. (5) 2026 SRA FHSZ public comment period noted as newly open on the official CAL FIRE page (FAQs updated Nov 2026) — new finding N-01; owner decision whether to surface on site.
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md` (full table with links, §1–§6).
+- **Pages cutover:** `PUT /pages build_type=workflow` returned 403 "Resource not accessible by integration" again (same as d18e3065/aa4a9fab). Admin action required; legacy build serves main root.
+- **Irregularities:** N-01 (2026 SRA FHSZ comment period open; site reflects 2025 LRA only — owner decision); I-02 (carried; Pages legacy source, 403 on switch); I-05 (carried; now fixed). No PII introduced; canonical pages untouched.
+- **Flags:** Flagged items do not block merge; published on the Flagged for Review page as before.
+
+### T11 PR & deploy record — session 14c28bc9
+
+- **PR:** #28 `arena/14c28bc9-jack1` → `main`, **merged** 2026-11-08T22:55:20Z (merge commit `e3fa11422f05a61d1872dd1e2130e61f292be06b`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/28
+- **Checks:** CI `validate` PASS on the PR (run 42532573836); merge state CLEAN.
+- **Deploy on main after merge:** `Validate and publish the decision brief` run 42532614397 — **success**;
+  legacy `pages-build-deployment` run 42532614163 — **success**; Pages API reports `status: built`
+  (build_type still `legacy`; 403 on workflow switch stands — admin action required).
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md`; `scripts/verify-data.mjs` retired to a delegating stub (I-05 fixed).
+- **New item for owner:** N-01 — CAL FIRE 2026 SRA FHSZ public comment period now open (FAQs updated Nov 2026); live site reflects 2025 LRA mapping only; owner decision whether to surface on `risks.html` / `flagged.html`.
+
+---
+
+## Session: arena/c9121cd5-jack1 (2026-11-08, UTC evening)
+
+### Table stake
+
+Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PRs observed: #5, #10, #11, #14, #18, #21, #24, #27. PR #27 (arena/dac604b9-jack1) last updated 2026-11-07T20:49:59Z — >26 h stale, mergeable=CONFLICTING — treated as an abandoned claim per the 60-minute handoff rule. No session has an active COORDINATION claim; prior sessions' completion records all read **done**.
+
+### Claim (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T30 | Final integration: full repo line-by-line review, data re-verification against official sources, privacy (PII) audit, structural validation, irregularity flagging, site finalization, merge to main, deploy confirmation, PR/deploy record | **in progress** | arena/c9121cd5-jack1 | `verification/2026-11-08-c9121cd5.md` (new), `COORDINATION.md` (this append + completion record), and any root site pages only if a verified error is found (will log each change here) | census.gov, bls.gov, edd.ca.gov, scag.ca.gov, sec.gov, fred.stlouisfed.org, hazards.fema.gov, usgs.gov, osfm.fire.ca.gov, finance.lacity.gov (to be re-read; links recorded in the verification report) | In progress — claim committed first per protocol; commit/push of this claim precedes all content work | To be published on the Flagged for Review page and in the verification report |
+
+- Scope rule: my only shared file until verification completes is `COORDINATION.md` (appends) and a NEW report file at `verification/2026-11-08-c9121cd5.md`. I will not edit `flagged.html`, `assets/`, workflows, or any page another open-PR session touches unless verification proves an error, and every such edit will be logged here.
+- If any session is active concurrently, my report-file-only scope avoids conflicts; a final integration edit set (if needed) will be committed with `git pull --rebase` before push.
+
+---
+
+## T30 completion record — session c9121cd5 (2026-11-08)
+
+**Branch:** `arena/c9121cd5-jack1` · **Task T30:** final integration.
+
+**Verification performed (every figure re-read on the official page on 08 Nov 2026; 37-check ledger in `verification/2026-11-08-c9121cd5.md`):**
+- Census QuickFacts city + county (pop, change, income, rent, tenure, density, retail, food-services): **exact match**
+- BLS city 5.8% (2025) + county LAUS Dec 2025 (5.0%; 5,129,498/4,872,197/257,301) + reproduced 5.6% 11-month average: **exact**
+- FRED/BEA county GDP 2024 $1,002,965,029K; metro NGMP31080 2023 $1,295,361.4M DISCONTINUED: **exact**
+- SCAG Appendix I county forecast (10,046,000→10,793,000; 5,031,000→5,461,000) + TR Table 6 (+416k/+148k/+106k): **exact**
+- DTLA 2040 release (100k homes/175k residents/100k jobs); Measure ULA ($5.4M/$10.9M, 4%/5.5% + 0.45%); SEC 10-Q (revenue, earnings, debt, 149+1,966 units, Del Taco, 5.0x/5.25x, $23.3M sweep); USGS UCERF3; CDI claims tracker (41,727/$25.2B, updated 06 Jul 2026); EDD profile (county labour data shown unavailable): **exact**
+- FEMA NRI entry now redirects to RAPT; county values still unreadable → withholding re-confirmed. CAL FIRE % expansions absent from official page → withholding re-confirmed; verified OSFM county/statewide acreage now published instead.
+
+**Defects found by this session (disclosed on Flagged for Review):** C-01 index.html unpublished 2024 metro GDP ($1.355T) + unverified "#2 county" rank; C-02 risks.html withheld FHSZ row still carrying unsourced "440,000+ acres / 30%" claim. **Resolution:** concurrent session 9dce30d0 (PRs #34/#35) merged equivalent corrections first; the merged pages carry the corrected/clean versions. My edits were rebased onto theirs, keeping only the still-unique verified additions below (no other session's work was discarded; COORDINATION.md conflict markers resolved by retaining both sessions' records).
+
+**Additions (verified only):** LA County FHSZ acreage (OSFM table); EDD restaurant-cooks projection (40,760→54,070, 2023–2033); audit.html gains an 08 Nov 2026 re-verification section (07 Nov record retained); snapshot labels moved to 08 Nov 2026.
+
+**Gates:** `scripts/validate_site.py` PASS — 8 pages, 212 table-body rows, all official-source linked, allowlist clean, anchors resolve, no email/phone patterns. Repo-wide PII sweep: clean.
+
+**Irregularities (non-blocking):** legacy Pages source serves superseded builds (admin needed for Actions cutover; prior 403 recorded); stale open PRs #5/#10/#11/#14/#18/#21/#24/#27 left untouched; withheld county hazard figures remain blank.
+
+**Merge/deploy:** recorded below after PR merge.
+
+### T30 PR & deploy record — session c9121cd5 (final)
+
+- **PR #37** `arena/c9121cd5-jack1` → `main`, **merged** 2026-11-08T23:10:03Z (merge commit `4281a8b`, validated CLEAN; CI `validate` pass, run 42533754969).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/37
+- **Rebase/conflict resolution:** two sessions (14c28bc9 PR #28; 9dce30d0/9707cb4b PRs #34–#36) landed on main while T30 was in flight. T30's branch was rebased onto `72b1540`; the `COORDINATION.md` content conflict was resolved by **retaining both sessions' records in sequence** (no session's work discarded). Canonical-page conflicts were resolved by keeping the concurrently-merged versions (which already contained equivalent corrections to the defects T30 found) and re-applying only T30's still-unique verified additions (OSFM FHSZ acreage row; EDD restaurant-cooks projection row; audit third-pass section).
+- **Post-merge live check found a defect in the *deployment*, not the content:** `risks.html` returned the custom 404 while all sibling pages served. Root cause area: the new legacy `_config.yml` publication scope interacts with the `risks/` repository directory. Narrowed the exclude entry to directory form (`risks/`) in hotfix **PR #38**, **merged** 2026-11-08T23:14:09Z (merge commit `61928b4`; CI pass, run 42534114045). https://github.com/wingbangboozle1-lang/Jack1/pull/38
+- **Deploy on main:** Pages API `status: built` at `61928b4`; both `Validate and publish the decision brief` (run 42533803997+) and legacy `pages-build-deployment` runs green. Live-site re-verification after rebuild: all 11 canonical pages serve current merged content — `/risks.html` confirmed serving the Risk Register incl. the verified OSFM FHSZ acreage row; `/market.html` serving the EDD cooks projection row; `/audit.html` serving the c9121cd5 third-pass section. (An initial post-merge fetch of `/risks.html` returned a cached 404; a cache-busted re-fetch after the hotfix deploy returned the page.)
+- **Deliverables:** `verification/2026-11-08-c9121cd5.md` (37-check ledger, defects C-01/C-02, post-interleave notes); merged site carries sessions' combined corrections and additions.
+- **Standing owner items (unchanged):** (1) admin to set Pages source = GitHub Actions (403 for four sessions now) — legacy build now scoped by `_config.yml` as interim mitigation; (2) NRI county values unobtainable from a federal endpoint (withheld); (3) 2026 SRA FHSZ comment period open (surfaced by 9dce30d0 on `risks.html`); (4) stale open PRs #5/#10/#11/#14/#18/#21/#24/#27 left untouched.
+- **Task T30: done.**
+
+---
+
+## Session: arena/857537b4-jack1 (2026-11-08, UTC)
+
+**Branch:** `arena/857537b4-jack1` (fixed by Arena for this session)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T25-857537b4 | Independent post-PR-#31..#39 line-by-line verification of the merged 11-page canonical dashboard against official sources; SEC 10-Q/10-K, SCAG, DTLA 2040, BLS, Census, FRED, CAL FIRE, USGS, ULA, and CA DOI primary-page re-reads; derived-formula recomputation; privacy & build audit; verification report | **done** | arena/857537b4-jack1 | `verification/2026-11-08-857537b4.md` (new), `COORDINATION.md` (append only; shared-file follow-up notes logged below per protocol) | census.gov QuickFacts (city + county), bls.gov 50-cities & LAUCN060370000000003, scag.ca.gov Appendix I & 2024 Forecast TR, planning.lacity.gov DTLA 2040 release, finance.lacity.gov ULA FAQ, wagesla.lacity.gov, dir.ca.gov AB 1228 FAQ, sec.gov 2026 10-Q (`R2.htm`, `R4.htm`, `R8.htm`, `R10.htm`, `R11.htm`, `R12.htm`, `R14.htm`, `R16.htm`), fred.stlouisfed.org (`GDPALL06037`, `NGMP31080`, `CPIAUCSL`, `DGS10`), usgs.gov UCERF3 FAQ, osfm.fire.ca.gov FHSZ + 2026 FAQs + 2024–2025 Acreage PDF, fire.ca.gov Palisades & Eaton, insurance.ca.gov Claims Tracker | 23 primary official source groups directly opened and verified verbatim on 2026-11-08 (closing all carried-forward gaps from `research/verification-2026-11-08.md` §4 and `verification/2026-11-08-9dce30d0.md` §5); 13 derived arithmetic formulas independently recomputed in Python; `scripts/validate_site.py` and `scripts/verify-data.mjs` both PASS (11 pages, 370 rows, 0 PII) | `N-857537b4-01` .. `N-857537b4-06` (non-blocking; see below and `verification/2026-11-08-857537b4.md` §4) |
+
+- Claim time: 2026-11-08 (UTC). Scope is file-disjoint (`verification/2026-11-08-857537b4.md` + `COORDINATION.md` append) to avoid colliding with concurrent sessions (`1daf5a2a`, `c9121cd5`).
+
+### T25-857537b4 completion record — session 857537b4
+
+- **Deliverable:** `verification/2026-11-08-857537b4.md` — full primary-source ledger (`V-01`..`V-23`), independent Python recomputation of all 13 derived arithmetic formulas (`A-01`..`A-13`), and non-blocking shared-file notes (`N-857537b4-01`..`N-857537b4-06`).
+- **Previously carried-forward items now opened & verified verbatim on `2026-11-08`:**
+  1. **SEC Form 10-Q (period ended July 5, 2026):** `R2.htm` balance sheet (`$44,160K` current maturities, `$1,428,667K` long-term debt, `$980,279K` operating lease ROU assets, `$134,300K` + `$874,494K` lease liabilities); `R8.htm` Note 1 verbatim `149 company-operated and 1,966 franchise-operated Jack in the Box restaurants` as of July 5, 2026 and December 22, 2025 Del Taco sale closing; `R11.htm` Note 4 Del Taco `$115.0M` sale price (`$119,086K` net proceeds, `$(47,428)K` pre-tax loss on sale); `R14.htm` Note 7 verbatim HoldCo leverage `>5.0x`, Senior ABS leverage `>5.25x`, `$23.3 million` cash-sweep prepayment included in current maturities, June 23, 2026 `$500.0M` `7.624%` Class A-2 refinancing (Anticipated Repayment Date May 2031), and `$432,250K` 2029 debt maturity wall (`Series 2019-1 Class A-2-III` ARD August 2029).
+  2. **SCAG Connect SoCal 2024 Final PEIR Appendix I (`appendix_i_updated_tables_508_final.pdf`) & Demographics & Growth Forecast Technical Report (`23-2987-tr-demographics-growth-forecast-final-040424.pdf`):** Confirmed Tables ES-1 & 2-1 (`10,046,000 → 10,793,000` pop; `5,031,000 → 5,461,000` emp), Table 3.14-8 (`+7.4%` pop), Table 3.14-9 (`3,393,000 → 4,155,000` households, `+22.5%`), Table 3.14-10 (`5,031,000` in 2019 → `4,942,000` in 2022 → `5,277,000` in 2030 → `5,497,000` peak in 2045 → `5,461,000` in 2050, `+8.6%`), and Technical Report Table 6 (`+416,000` Health Care & Social Assistance, `+148,000` Construction, `+106,000` Accommodation & Food Service).
+  3. **LA City Planning DTLA 2040 Press Release (`Press Release_ DTLA New Zoning Code.pdf`, Dec 4, 2024):** Confirmed verbatim `100,000 new homes, attract 100,000 more work opportunities, and draw 175,000 additional residents to Downtown through the year 2040`.
+  4. **CAL FIRE / OSFM Official 2024–2025 FHSZ Acreage Table (`fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf`) & Nov 6, 2026 FAQs:** Confirmed LA County FHSZ acres (LRA Very High `314,642` / Total `683,610`; SRA Very High `454,920` / Total `494,333`; Combined Very High `769,561` / Total `1,177,944`) and Statewide LRA Very High `1,161,924` acres (`6,827,111` total LRA), while confirming no `26%` or `35%` expansion percentage is printed in that table.
+- **Shared-file follow-up requests (logged per protocol rather than editing shared HTML while PR #33 is open):**
+  - `N-857537b4-01`: `market.html` & `projection.html` county employment change Sep 2026 (`4,806,494`) vs Dec 2025 (`4,872,197`) is `−1.3485%` (`1.3%` at 1 decimal vs printed `1.4%`).
+  - `N-857537b4-02`: `projection.html` Step 4 break-even table has 1 bp rounding differences in 2 of 9 cells (`+50bp, n=9` is `0.8935%` → `0.89%` vs printed `0.90%`; `+150bp, n=4` is `5.7371%` → `5.74%` vs printed `5.73%`).
+  - `N-857537b4-03`: `audit.html` and `flagged.html` carried-forward notes for SEC 10-Q `R2.htm`/`R8.htm`/`R14.htm`, SCAG Appendix I & Technical Report, and DTLA 2040 can be marked re-verified on `2026-11-08` per `verification/2026-11-08-857537b4.md`.
+  - `N-857537b4-06`: `sources.html` bottom note (`06 November 2026`) and footer (`07 Nov 2026`) can be aligned to `08 Nov 2026`.
+
+### Final scope note — session arena/81536038
+
+Published artifact: **seventeen pages, 355 source-linked table rows.** `index`, `geography`,
+`population`, `income`, `schools`, `economy`, `jobs`, `projections`, `property`, `tenant`,
+`decision`, `risks`, `requirements`, `repo-review`, `flagged`, `sources`, `audit`, plus `404.html`
+and `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`.
+
+Verified findings taken from other sessions rather than re-derived: FEMA declaration counts were
+independently re-counted here through the OpenFEMA API (88 / 61 / 10 / 8 / 9); SCAG sector
+additions, restaurant counts, and earnings were carried from the 07 and 08 Nov 2026 audits and are
+labelled as such on the rows. EDD occupation projections, SCAG 2030/2045 runway, the issuer lease
+note, and the 10-year Treasury were all re-read on their official pages during this session.
+
+---
+
+### T25-857537b4 PR & deploy record — session 857537b4
+
+- **PR:** #40 `arena/857537b4-jack1` → `main`, **merged** `2026-11-08T23:18:40Z` (merge commit `445b60325166dcc47992c4799c4db4bcb8f41bf5`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/40
+- **Deploy on main after merge:** `Validate and publish the decision brief` run `42534553202` — **success**; `pages-build-deployment` run `42534552846` (Pages build ID `1352735581`) — **success** (`status: built`, `error: null` at commit `445b60325166dcc47992c4799c4db4bcb8f41bf5`).
+- **Live site verification:** `https://wingbangboozle1-lang.github.io/Jack1/` (`index.html`, `projection.html`, `risks.html`, etc.) confirmed live and serving the 11-page canonical dashboard with zero personal information.
+- **Task T25-857537b4: done.**
+
+---
+
 ## Current session: arena/0e369d53-jack1 — 2026-11-08
 
 ### Active claim and coordination
@@ -617,7 +965,15 @@ The fixed Arena session branch is `arena/0e369d53-jack1`; platform policy prohib
 | T23 | Repository/privacy/deployment audit | done | 0e369d53 | `verification/2026-11-08-0e369d53.md`, this board | GitHub API; existing repository files | 129 files/25,717 lines inventoried/scanned; canonical pages reviewed; privacy candidates cleared; deployment mismatch documented | Legacy Pages source; competing historical builds; stale validator |
 | T24 | Independent official-source research and projection-method review | done | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `research/0e369d53/` | Census, BLS, EDD, BEA/FRED, DOF, SCAG, CDE, SEC, FEMA, USGS, CAL FIRE, CDI, LA Finance/Planning, DIR, IRS, FTB, Treasury | Official values persisted with geography/period/units; corrections and open flags recorded | Property identity, lease, rent, finances unavailable; no inference permitted |
 | T25 | Final integration: privacy-safe category dashboard, executive decision brief, reproducible gated projections | done | 0e369d53 | Canonical root pages (`index`, `market`, `property`, `projections`, `decision`, `risks`, `requirements`, `flagged`, `sources`, `audit`); `assets/`; `data/verified-2026-11-08.json`; `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`; `tests/`; `.github/workflows/pages.yml`; `_config.yml`; legacy `.nojekyll` preservation; `README.md`; this board | T23/T24 done | Research persisted; integration starting | Do not publish archives, research notes or owner/parcel identifiers |
-| T26 | Line-by-line combined verification, build/link/privacy gates | in progress | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `tests/`, generated-page review; content fixes only if gates fail | T25 done | Build/tests/validator passing locally; combined review starting | Unverified observations must remain blank and publicly flagged |
+| T26 | Line-by-line combined verification, build/link/privacy gates | done | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `tests/`, generated-page review; content fixes only if gates fail | T25 done | Build/tests/validator passing locally; combined review starting | Unverified observations must remain blank and publicly flagged |
 | T27 | PR to main, merge, deploy confirmation, publication record | unclaimed | 0e369d53 | This board; GitHub PR/Pages | Pending T26 | Not started | No merge until gates pass; failed checks must be fixed |
 
 Requests to change any newly claimed file from another session must be appended here instead of editing it. Re-check remote claims before integration; if main advances, preserve and re-verify incoming work. Historical files remain intact and excluded from the public artifact. Personal information, if found, must not enter the website or public reports; record only a redacted irregularity.
+
+
+### Merge / handoff note — origin/main advanced to 3da3b70
+
+- `origin/main` advanced through PRs #28–#42 while this session was running, including a 17-page generated dashboard and additional verification reports. Those records and files are preserved. The exact incoming public artifact is also preserved under `archive/arena-main-3da3b70/` for manual review.
+- Conflicts were resolved by keeping the verified data-driven 10-page canonical integration (`data/verified-2026-11-08.json` + `scripts/build_public.py`) and by excluding historical/competing root pages from both the workflow artifact and the legacy Jekyll fallback. Incoming non-conflicting research/verification/archive files are retained.
+- Open PRs #33 and #27 were DIRTY at merge time and were not merged or discarded. Their branches remain available. No active main-board claim was edited; historical `in progress` entries are preserved as records.
+- T26 combined gates: build check, 11 unit tests, canonical validator, curated artifact validator, and local HTTP smoke passed before this merge note. Post-merge re-verification and T27 publication follow.
