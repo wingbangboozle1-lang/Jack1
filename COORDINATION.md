@@ -560,6 +560,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
 | #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
+| #17 | arena/14c28bc9-jack1 | pending (this session) — T11 re-verification + stale gate retirement |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
@@ -614,6 +615,14 @@ figures and the metro GDP year were changed, each with the reported value kept v
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
 |---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
-| T11 | Independent re-verification pass (2026-11-08): headline figures vs official sources; canonical validator; live-deploy health; stale `scripts/verify-data.mjs` gate fix; verification report | in progress | arena/14c28bc9-jack1 | `verification/2026-11-08-14c28bc9.md` (new), `scripts/verify-data.mjs` (stale gate only), `COORDINATION.md` (append) | census.gov QuickFacts (city), bls.gov LAU city rates, fred.stlouisfed.org NGMP31080 (BEA), usgs.gov UCERF3 FAQ, scag.ca.gov Appendix I (PEIR updated tables), osfm.fire.ca.gov FHSZ page | Re-read official pages on 2026-11-08; see report | Pending — 2026 SRA FHSZ comment period now open (new official development not on the site); verify-data.mjs stale gate; Pages build_type still `legacy` |
+| T11 | Independent re-verification pass (2026-11-08): headline figures vs official sources; canonical validator; live-deploy health; stale `scripts/verify-data.mjs` gate fix; verification report | done | arena/14c28bc9-jack1 | `verification/2026-11-08-14c28bc9.md` (new), `scripts/verify-data.mjs` (stale gate only), `COORDINATION.md` (append) | census.gov QuickFacts (city), bls.gov LAU city rates, fred.stlouisfed.org NGMP31080 (BEA), usgs.gov UCERF3 FAQ, scag.ca.gov Appendix I (PEIR updated tables), osfm.fire.ca.gov FHSZ page | Re-read official pages on 2026-11-08; see report | Pending — 2026 SRA FHSZ comment period now open (new official development not on the site); verify-data.mjs stale gate; Pages build_type still `legacy` |
 
 - Claim time: 2026-11-08 (UTC). Scope is new-file-only plus the stale gate; no canonical dashboard pages are edited by this session.
+
+### T11 completion record — session 14c28bc9
+
+- **Work:** (1) Re-read 11 official-source figure groups today (Census city QuickFacts, BLS LAU 50-cities, FRED NGMP31080, USGS UCERF3 FAQ, SCAG Appendix I 2024 Final PEIR updated tables, CAL FIRE FHSZ page) — all match the canonical dashboard; withholdings (2024 metro GDP, FEMA NRI county values, CAL FIRE +26%/+35% expansion figures) reconfirmed correct. SEC 10-Q document located and period/structure consistent; line-item figures relied on the d18e3065 / aa4a9fab line-by-line reads, not re-derived today. (2) Canonical validator PASS (8 pages, 209 rows). (3) `scripts/verify-data.mjs` stale gate retired: now delegates to `scripts/validate_site.py` (exit 0); header explains retirement; old assertions retrievable from git history. (4) Live deploy health via GitHub API: Pages `status: built`, `build_type: legacy`; latest main validate + pages-build-deployment runs green. (5) 2026 SRA FHSZ public comment period noted as newly open on the official CAL FIRE page (FAQs updated Nov 2026) — new finding N-01; owner decision whether to surface on site.
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md` (full table with links, §1–§6).
+- **Pages cutover:** `PUT /pages build_type=workflow` returned 403 "Resource not accessible by integration" again (same as d18e3065/aa4a9fab). Admin action required; legacy build serves main root.
+- **Irregularities:** N-01 (2026 SRA FHSZ comment period open; site reflects 2025 LRA only — owner decision); I-02 (carried; Pages legacy source, 403 on switch); I-05 (carried; now fixed). No PII introduced; canonical pages untouched.
+- **Flags:** Flagged items do not block merge; published on the Flagged for Review page as before.
