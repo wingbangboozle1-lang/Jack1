@@ -49,9 +49,9 @@ jobs:
           mkdir -p _site/assets
           cp index.html geography.html population.html income.html schools.html \
              economy.html jobs.html projections.html property.html tenant.html \
-             decision.html risks.html flagged.html sources.html audit.html 404.html _site/
+             decision.html risks.html requirements.html repo-review.html \
+             flagged.html sources.html audit.html 404.html _site/
           cp assets/styles.css assets/site.js assets/favicon.svg _site/assets/
-          cp .nojekyll _site/.nojekyll
           echo "Assembled $(find _site -type f | wc -l) public files"
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3

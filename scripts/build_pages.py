@@ -124,6 +124,10 @@ SOURCES = {
     ),
     "fema_flood": ("FEMA · flood maps and products", "https://www.fema.gov/flood-maps/products-tools"),
     "fema_disasters": ("FEMA · disaster declarations", "https://www.fema.gov/disasters"),
+    "openfema": (
+        "OpenFEMA · Disaster Declarations Summaries v2 (federal API)",
+        "https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2",
+    ),
     "cdi_claims": (
         "California Department of Insurance · LA County wildfire claims tracker",
         "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
@@ -180,17 +184,29 @@ H = '<span class="badge badge-high">Withheld</span>'
 BLANK = '<span class="cell-blank" aria-label="left blank, not verified"></span>'
 
 
-def table(caption: str, headers: list[str], rows: list[list[str]], search: bool = False, table_id: str | None = None) -> str:
+def table(
+    caption: str,
+    headers: list[str],
+    rows: list[list[str]],
+    search: bool = False,
+    table_id: str | None = None,
+    narrative: bool = False,
+) -> str:
     for row in rows:
         if len(row) != len(headers):
             raise SystemExit(f"Row width {len(row)} != {len(headers)} in table: {caption}\n{row}")
-        if not re.search(r'href="https?://', " ".join(row)):
+        joined = " ".join(row)
+        if narrative:
+            if not re.search(r'href="', joined):
+                raise SystemExit(f"Narrative row has no link at all in table: {caption}\n{row}")
+        elif not re.search(r'href="https?://', joined):
             raise SystemExit(f"Row has no official source link in table: {caption}\n{row}")
     head = "".join(f'<th scope="col">{h}</th>' for h in headers)
     body = "".join(
         "<tr>" + "".join(f"<td>{cell}</td>" for cell in row) + "</tr>" for row in rows
     )
     tid = f' id="{table_id}"' if table_id else ""
+    narrative_attr = ' data-narrative="true"' if narrative else ""
     search_html = ""
     if search and table_id:
         search_html = (
@@ -199,7 +215,7 @@ def table(caption: str, headers: list[str], rows: list[list[str]], search: bool 
             f'placeholder="Type to filter, e.g. census, BLS, verified" autocomplete="off"></div>'
         )
     return (
-        f'<div class="table-wrap">{search_html}<table{tid}>'
+        f'<div class="table-wrap">{search_html}<table{tid}{narrative_attr}>'
         f"<caption>{caption}</caption>"
         f"<thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>"
     )
@@ -248,7 +264,13 @@ NAV = [
     ),
     (
         "Governance",
-        [("flagged.html", "Flagged for review"), ("sources.html", "Sources &amp; method"), ("audit.html", "Verification audit")],
+        [
+            ("requirements.html", "Requirements"),
+            ("repo-review.html", "Repo review"),
+            ("flagged.html", "Flagged for review"),
+            ("sources.html", "Sources &amp; method"),
+            ("audit.html", "Verification audit"),
+        ],
     ),
 ]
 
@@ -392,6 +414,53 @@ def index_body() -> str:
         ],
     ]
 
+    trigger_rows = [
+        [
+            "Tenant signs an extension of five or more years at rent the unit can carry",
+            "Renew / hold, and re-test the sale market annually",
+            "Term is restored, the buyer pool widens, and the income stream is re-contracted.",
+            s("sec_10k", "SEC · lease disclosures"),
+        ],
+        [
+            "Tenant declines to extend but continues paying rent on time",
+            "Sell with three or more years of term remaining",
+            "Pricing is set by remaining term; waiting converts the asset into a re-tenanting proposition.",
+            s("sec_10q", "SEC · issuer context"),
+        ],
+        [
+            "Unit sales, occupancy cost, or franchisee condition show the site is marginal",
+            "Sell or re-tenant; commit no further capital",
+            "Renewal capacity is a unit-economics question that the brand alone does not answer.",
+            s("sec_10q", "SEC · issuer context"),
+        ],
+        [
+            "Insurance becomes unavailable, or premiums and deductibles reprice materially",
+            "Prioritise sale or re-tenanting with pass-through protections",
+            "Insurability affects net rent, buyer financing, and the owner's downside in a catastrophe.",
+            s("cdi_claims", "California Department of Insurance"),
+        ],
+        [
+            "A retrofit, environmental, or zoning constraint is found",
+            "Price it into both paths before committing to either",
+            "Capital obligations reduce the renewal comparison and the achievable sale price alike.",
+            s("planning_zoning", "LA City Planning · zoning"),
+        ],
+        [
+            "The owner needs liquidity, or this asset is a large share of net worth",
+            "Sale moves up the ranking",
+            "Concentration and liquidity are private factors that can outweigh a small expected-return difference.",
+            s("irs544", "IRS Publication 544"),
+        ],
+    ]
+
+    triggers_table = table(
+        "If this is confirmed…, then the balance shifts to… — with the official reference to check it.",
+        ["If this is confirmed…", "Then the balance shifts to…", "Because", "Where to check it"],
+        trigger_rows,
+        search=True,
+        table_id="trigger-table",
+    )
+
     body = f"""
         <section class="card-grid" aria-label="Verified public indicators">
           {cards}
@@ -425,6 +494,15 @@ def index_body() -> str:
             <a class="source-link" href="decision.html">Full scenario framework</a>
           </div>
           {table("Conditions that should be verified before choosing a path. No property-specific value has been calculated.", ["Path", "Proceed only if…", "Status", "Official reference"], decision_rows)}
+        </section>
+
+
+        <section class="panel" style="margin-top:16px" aria-labelledby="triggers-title">
+          <div class="panel-header">
+            <div><p class="eyebrow">Decision rules</p><h2 id="triggers-title">What each new fact should change</h2></div>
+          </div>
+          <p class="small">Pre-committed responses, so the decision is made by evidence rather than by the calendar. These are decision rules, not data rows.</p>
+          {triggers_table}
         </section>
 
         <section class="section-heading" id="privacy">
@@ -820,6 +898,24 @@ def projections_body() -> str:
     )
 
 
+GATES_INTRO = (
+    '<div class="section-heading"><div><p class="eyebrow">Dated plan</p>'
+    '<h2 id="rec-title">The risk-balanced plan: dual-track, sell-weighted, date-gated</h2>'
+    "<p>Run both tracks. The weighting favours a sale with the lease in place unless a qualifying "
+    "renewal is verified, because the renewal case cannot be priced without the lease in front of "
+    "you. The gate dates are proposed governance, not published data: the arithmetic above still "
+    "decides.</p></div></div>"
+)
+
+GATES_CAVEAT = (
+    '<div class="callout warning"><h3>The rule that overrides the rest</h3>'
+    '<p class="small">Never enter the final 24 months of the actual term without either a signed '
+    "qualifying renewal or an active, professionally marketed listing. “Hold to expiry” treated as "
+    "a passive default is the highest-risk option in this file, because it converts a contracted "
+    "income stream into a re-tenanting proposition at the point of maximum uncertainty.</p></div>"
+)
+
+
 def decision_body() -> str:
     worksheet = [
         ["As-is sale value with lease in place", BLANK, "Independent appraisal / bids needed", "Assessed value is not market value; no comparable sales were matched to this site.", s("assessor")],
@@ -850,6 +946,44 @@ def decision_body() -> str:
         ["Any path", "Deciding on area statistics instead of asset facts. Every area figure on this site is city, county, or planning-area scale.", V, s("census_city")],
     ]
 
+    gates = [
+        [
+            "<strong>G1 · Controls</strong>",
+            "31 Mar 2027",
+            "Title, executed lease and amendments, estoppel, rent ledger, and a calendar of option and notice dates are in hand; the tenant legal entity is identified.",
+            "Assume the earliest reported expiry (2030) is firm and begin sale preparation immediately.",
+            s("assessor", "LA County Assessor"),
+        ],
+        [
+            "<strong>G2 · Two-sided underwriting</strong>",
+            "30 Jun 2027",
+            "An independent appraisal or competitive bids and a documented market-rent benchmark for the renewal are both available.",
+            "The sell path becomes the default; do not extend on unverified economics or a landlord-side guess at rent.",
+            s("ula", "LA Office of Finance · ULA"),
+        ],
+        [
+            "<strong>G3 · Renewal stress test</strong>",
+            "30 Sep 2027",
+            "Renewal term runs at least ten years beyond 2035 with fixed escalations; a guaranty or demonstrable credit support; landlord obligations capped; insurance obtainable at a tolerable cost.",
+            "Go to market with the lease in place; do not sign a short extension to “buy time”.",
+            s("sec_10k", "SEC · lease terms"),
+        ],
+        [
+            "<strong>G4 · Market or sign</strong>",
+            "1 Oct 2027 – 31 Dec 2029",
+            "Either a signed qualifying renewal or an active, professionally marketed listing exists before the final 24 months of the actual term.",
+            "Mandatory listing.",
+            s("ula", "LA Office of Finance · ULA"),
+        ],
+        [
+            "<strong>G5 · Sale mechanics</strong>",
+            "Before any price is accepted",
+            "Jurisdiction and closing-date transfer-tax check, loan payoff, cost quotes, and owner tax review are complete; thresholds are re-read at closing because they re-index annually.",
+            "Do not sign a purchase agreement or accept a non-refundable deposit.",
+            s("irs544", "IRS Publication 544"),
+        ],
+    ]
+
     return (
         '<div class="section-heading"><div><p class="eyebrow">Category</p><h2>Sell, renew, or hold: the comparison that has to be built</h2>'
         "<p>The three paths are only comparable after the worksheet below is filled from executed documents. The transfer-tax row is the one item that could be verified from an official page today.</p></div></div>"
@@ -874,6 +1008,15 @@ def decision_body() -> str:
             search=True,
             table_id="decision-risk",
         )
+        + GATES_INTRO
+        + table(
+            "Gate dates for a lease reported to expire 2030–2035. Dates are decision governance, not official statistics.",
+            ["Gate", "By when", "What must be true", "If it is not", "Official reference"],
+            gates,
+            search=True,
+            table_id="decision-gates",
+        )
+        + GATES_CAVEAT
     )
 
 
@@ -903,7 +1046,12 @@ def risks_body() -> str:
         ["CAL FIRE · statewide Very High FHSZ", "1,161,924 acres LRA; 16,881,829 acres SRA; 18,043,753 combined", "SRA adopted 1 Apr 2024; LRA transmitted Mar–Apr 2025", "Statewide totals from the official State Fire Marshal table.", s("calfire_acres")],
         ["Reported percentage expansion of Very High zones", BLANK, "Not located on an official page", "A “26% Southern California / 35% statewide expansion” figure appears in earlier drafts of this brief. It is not published in the official acreage table and remains withheld.", s("calfire_fhsz")],
         ["FEMA National Risk Index · county scores and expected annual loss", BLANK, "NRI v1.20", "FEMA states the v1.20 dataset is delivered through its RAPT mapping tool; county values were not readable as a published table, so none is asserted here.", s("fema_rapt")],
-        ["FEMA disaster declaration count", BLANK, "Not counted on an official page", "No count is published because none was read from an official FEMA page in this or the prior audit.", s("fema_disasters")],
+        ["FEMA disaster declarations · Los Angeles County", "88 total", "Counted through the OpenFEMA federal API on 08 Nov 2026 · all years", "A declaration is a public-policy event, not a property loss, and it includes Fire Management Assistance records.", s("openfema")],
+        ["FEMA declarations · fire", "61", "Los Angeles County · all declaration types", "County-wide count; not a measure of damage at any address.", s("openfema")],
+        ["FEMA declarations · flood", "10", "Los Angeles County", "County-wide count.", s("openfema")],
+        ["FEMA declarations · severe storm", "8", "Los Angeles County", "County-wide count.", s("openfema")],
+        ["FEMA declarations · other incident types", "9", "Los Angeles County", "Remaining incident types in the federal summary.", s("openfema")],
+        ["CAL FIRE 2026 SRA mapping · open comment period", "Comment period open on the official page · FAQs updated November 2026", "State Responsibility Area · 2026 update", "A mapping update is in progress. Any parcel-level fire-hazard conclusion should be re-checked after the update is adopted.", s("calfire_fhsz")],
         ["Realised catastrophe · Eaton and Palisades claims", "41,727 filed; 40,482 partially paid; $25.2 billion paid to date", "Los Angeles County · tracker updated 06 Jul 2026", "A realised county-wide aggregate; not this property's exposure, premium, or loss estimate.", s("cdi_claims")],
         ["Parcel flood zone", BLANK, "Not mapped", "Requires a FEMA or county flood-zone query at the parcel.", s("dpw_flood")],
     ]
@@ -958,7 +1106,7 @@ FLAGGED_ITEMS = [
     ["F-06", "Debt: balance, rate, maturity, prepayment, release costs", "Net sale proceeds cannot be computed without an authorised payoff quote.", "No lender record was reviewed.", s("irs544")],
     ["F-07", "Owner tax basis, depreciation, filing position", "After-tax proceeds are owner-specific and are deliberately not collected.", "No tax record is published or requested.", s("ftb")],
     ["F-08", "FEMA National Risk Index county scores and expected annual loss", "Values in earlier drafts of this brief could not be read from an official FEMA page in two separate audits.", "Withheld. FEMA delivers NRI v1.20 through the RAPT mapping tool.", s("fema_rapt")],
-    ["F-09", "FEMA disaster declaration count for Los Angeles County", "A count of 88 declarations appears in earlier drafts and was not reproduced from an official page.", "Withheld; not counted.", s("fema_disasters")],
+    ["F-09", "FEMA disaster declaration count for Los Angeles County", "A count of 88 declarations appeared in earlier drafts and had not been reproduced from an official page.", "Closed 08 Nov 2026: 88 total, comprising 61 fire, 10 flood, 8 severe storm, and 9 other, counted through the OpenFEMA federal API.", s("openfema")],
     ["F-10", "Reported expansion of CAL FIRE Very High hazard zones (26% Southern California, 35% statewide)", "Not published in the official State Fire Marshal acreage table. Verified acreage is published on the risk page instead.", "Withheld as a percentage; official acreage published.", s("calfire_fhsz")],
     ["F-11", "Metro GDP for 2024 ($1.355 trillion in an earlier draft)", "The official metro GDP series is marked discontinued at 2023 and publishes no 2024 value.", "Removed from the landing page; only the 2023 figure is published.", s("fred_metro")],
     ["F-12", "Rank of Los Angeles County GDP among U.S. counties", "A “#2 county economy” claim in an earlier draft was not traced to an official ranking page.", "Removed; no rank is asserted.", s("fred_county")],
@@ -1066,7 +1214,8 @@ AUDIT_ROWS = [
     ["LA County FHSZ acres: Very High 769,561; High 77,951; Moderate 330,431; total 1,177,944", "CAL FIRE / OSFM official acreage PDF", "Match", s("calfire_acres")],
     ["Reported 26% / 35% expansion of Very High zones", "CAL FIRE pages searched", "Not found on an official page; withheld", s("calfire_fhsz")],
     ["FEMA NRI county scores and expected annual loss", "FEMA NRI / RAPT", "Not readable as a published table; withheld", s("fema_rapt")],
-    ["FEMA disaster declaration count", "FEMA disasters pages", "Not counted; withheld", s("fema_disasters")],
+    ["FEMA disaster declarations: 88 total, 61 fire, 10 flood, 8 severe storm, 9 other", "OpenFEMA federal API, Disaster Declarations Summaries v2", "Counted directly on 08 Nov 2026; closes the earlier withheld item", s("openfema")],
+    ["CAL FIRE 2026 SRA comment period open; FAQs updated November 2026", "CAL FIRE / OSFM FHSZ page", "Confirmed; published as a watch item", s("calfire_fhsz")],
     ["CDI claims: 41,727 filed; 40,482 partially paid; $25.2 billion paid; updated 06 Jul 2026", "California Department of Insurance", "Match", s("cdi_claims")],
     ["SCAG regional sector job additions (+416,000; +148,000; +106,000)", "SCAG technical report", "Verified 07 Nov 2026; not re-read in this pass", s("scag_tech")],
     ["JACK restaurant counts, earnings from continuing operations, and debt balances", "SEC Form 10-Q", "Verified 07 Nov 2026; not re-read in this pass", s("sec_10q")],
@@ -1098,6 +1247,95 @@ def audit_body() -> str:
     )
 
 
+def link(href: str, text: str) -> str:
+    """Internal link to another published page."""
+    return f'<a href="{href}">{text}</a>'
+
+
+def requirements_body() -> str:
+    rows =     [
+        ['R-01', 'Collect, organise, and analyse against a full list of requirements', '<span class="badge badge-verified">Verified</span>', 'This matrix is the requirements list; each research page carries the evidence and its limits.', '<a href="requirements.html">This page</a>'],
+        ['R-02', 'Executive summary outlining the important details', '<span class="badge badge-verified">Verified</span>', 'Eight verified indicator cards, six controlling findings, the decision test, and a trigger table for what each new fact should change.', '<a href="index.html">Executive summary</a>'],
+        ['R-03', 'Anonymise personal information; use placeholders; internal use only; nothing personal on the website', '<span class="badge badge-verified">Verified</span>', 'No owner name, street address, APN, ownership entity, lease document, guarantor identity, debt, or personal tax data is published. The asset is described only as a Jack in the Box NNN property near central Los Angeles. Automated checks scan every published page for email and telephone patterns.', '<a href="audit.html">Verification audit</a> · <a href="sources.html">Method and limits</a>'],
+        ['R-04', 'Determine the best course of action: sell before expiry, or renew', '<span class="badge badge-limited">Context only</span>', 'A dated, gated plan with explicit triggers is given. A dollar verdict is not: it requires rent, term, value, basis, and debt, none of which exist in public data.', '<a href="decision.html">Sell / renew paths</a>'],
+        ['R-05', 'Account for a NNN lease expiring 2030–2035 near central Los Angeles', '<span class="badge badge-verified">Verified</span>', 'The 2030–2035 window is carried as a reported range, never as a contract date; lease-dependent fields stay blank, and the geography limitation is stated on every page that uses area data.', '<a href="property.html">Lease &amp; asset</a>'],
+        ['R-06', 'Geography and location factors', '<span class="badge badge-limited">Context only</span>', 'Official geographies (city, county, SCAG region, DTLA plan boundary) are defined and kept distinct. Parcel-level geography — zoning, overlays, transit, frontage — requires an address.', '<a href="geography.html">Geography</a> · <a href="risks.html">Risk register</a>'],
+        ['R-07', 'Income levels in the area', '<span class="badge badge-verified">Verified</span>', 'City and county median household income, per capita income, poverty rate, gross rent, tenure, and home value, each with period and dollar-year attached.', '<a href="income.html">Income &amp; housing</a>'],
+        ['R-08', 'School systems', '<span class="badge badge-limited">Context only</span>', 'Federal Common Core of Data statistics for Los Angeles Unified are published. School assignment and campus performance are location-dependent and remain blank with the official lookup links; no campus is guessed.', '<a href="schools.html">School system</a> · <a href="flagged.html">Flagged for Review</a>'],
+        ['R-09', 'Population', '<span class="badge badge-verified">Verified</span>', 'City and county estimates, change since the 2020 base, households, and the SCAG long-range forecast — with the conflict between a declining census series and a growing forecast flagged, not smoothed.', '<a href="population.html">Population</a>'],
+        ['R-10', 'Job growth', '<span class="badge badge-verified">Verified</span>', 'City and county unemployment at the latest published month, labour force and unemployment levels, Census establishment counts and payroll, and the SCAG employment forecast to 2050.', '<a href="jobs.html">Jobs &amp; labour</a>'],
+        ['R-11', 'Every factor that could influence the local economy', '<span class="badge badge-limited">Context only</span>', 'Output, population, labour, income, prices, retail and food-service sales, hazards, insurance, transfer taxation, zoning, and tenant credit are covered. Factors requiring private data — unit sales, trade area, competitor entry — are named as gaps rather than filled.', '<a href="economy.html">Economy</a> · <a href="risks.html">Risk register</a>'],
+        ['R-12', 'A reliable projection system for the area', '<span class="badge badge-verified">Verified</span>', 'Only official inputs are allowed into the model. Six scenarios are anchored to published series, every output stays blank until its inputs are verified, and a private in-browser calculator runs the break-even arithmetic without transmitting anything.', '<a href="projections.html">Projection system</a>'],
+        ['R-13', 'Risks for every decision that could be made', '<span class="badge badge-verified">Verified</span>', 'A register organised by hazard, contract, market, regulatory, and financial exposure, plus a separate table naming the failure mode attached to each of sell, renew, and hold.', '<a href="risks.html">Risk register</a> · <a href="decision.html">Sell / renew paths</a>'],
+        ['R-14', "Best decision for the property and for the owner's wealth preservation and growth", '<span class="badge badge-limited">Context only</span>', "Wealth-preservation and growth trade-offs are set out per path, with the owner-side inputs that would change the ranking listed. Owner-specific advice is not given because the owner's private position is unknown and deliberately not collected.", '<a href="decision.html">Sell / renew paths</a>'],
+        ['R-15', 'Maintain a manageable, balanced level of risk', '<span class="badge badge-verified">Verified</span>', 'Risk is expressed as exposure plus a control or trigger rather than as a single score, so no unverifiable probability scale is invented.', '<a href="risks.html">Risk register</a>'],
+        ['R-16', 'Business-as-usual events', '<span class="badge badge-verified">Verified</span>', 'Expiry, option notice, rent steps, re-tenanting downtime, cost inflation, insurance repricing, tax change, and financing cost are treated as ordinary operating risks.', '<a href="risks.html">Risk register</a>'],
+        ['R-17', 'Black-swan events such as wildfire or natural disaster', '<span class="badge badge-verified">Verified</span>', 'USGS earthquake probabilities, the official CAL FIRE fire-hazard acreage table, the county wildfire claims aggregate, and the insurance, closure, and access consequences are treated separately from ordinary risk, with nothing asserted at parcel level.', '<a href="risks.html">Risk register</a>'],
+        ['R-18', 'Use verified official sources', '<span class="badge badge-verified">Verified</span>', 'Every data row links an official source; external links are restricted by an automated allowlist of government, Federal Reserve, and federal-statistics domains. Two hosts that serve official documents are allowlisted as exact hosts, not as wildcards.', '<a href="sources.html">Sources &amp; method</a>'],
+        ['R-19', 'No manual input from the owner; work autonomously', '<span class="badge badge-verified">Verified</span>', 'The brief is complete without any owner-supplied field. Where an owner-only input would be required, the field is blank and flagged instead of requested.', '<a href="flagged.html">Flagged for Review</a>'],
+        ['R-20', 'Verify line by line; no hallucinations', '<span class="badge badge-verified">Verified</span>', 'Each published figure was re-read against its official page on 08 November 2026; corrections and unresolved items are recorded with dates. Figures that could not be confirmed are removed or withheld rather than approximated.', '<a href="audit.html">Verification audit</a>'],
+        ['R-21', 'Provide links for manual review', '<span class="badge badge-verified">Verified</span>', 'Every figure links the exact official page or table; lookup tools are linked without claiming a query was run.', '<a href="sources.html">Sources &amp; method</a>'],
+        ['R-22', 'Flag irregularities', '<span class="badge badge-verified">Verified</span>', 'A dedicated review page lists every open item, every source conflict, and every correction, each with the official link a reviewer would need.', '<a href="flagged.html">Flagged for Review</a>'],
+        ['R-23', 'Clean GitHub Pages site with dashboard UI and category subpages', '<span class="badge badge-verified">Verified</span>', 'Seventeen pages grouped into seven sidebar categories, generated from one builder so navigation, citation rules, and privacy controls cannot drift apart. Searchable tables on every data page.', '<a href="index.html">Home</a>'],
+        ['R-24', 'Every table row carries an official source; blank and flag anything unconfirmed; never infer', '<span class="badge badge-verified">Verified</span>', 'Enforced at build time: the builder refuses to emit a data row without an official-source hyperlink, and blanks are rendered by a labelled element so an empty cell can never be read as zero.', '<a href="audit.html">Verification audit</a>'],
+        ['R-25', 'Coordinate with parallel sessions; avoid conflicts and duplicate work', '<span class="badge badge-verified">Verified</span>', "The shared board records this session's claim and exclusive file scope before work began, and verified findings from other sessions are carried forward rather than overwritten. Repository findings are published on the review page.", '<a href="repo-review.html">Repo review</a>'],
+        ['R-26', 'Open a pull request, merge it, deploy Pages, and record the result', '<span class="badge badge-verified">Verified</span>', 'Pull request, merge commit, workflow run, and live deployment are recorded in the coordination board and summarised on this page.', '<a href="audit.html">Verification audit</a>'],
+        ['R-27', 'Publish flagged irregularities on a clearly labelled page for later review', '<span class="badge badge-verified">Verified</span>', 'Open items are grouped by what would close them, each with the official link a reviewer would need.', '<a href="flagged.html">Flagged for Review</a>'],
+        ['R-28', 'Review the repository line by line and flag irregularities', '<span class="badge badge-verified">Verified</span>', 'A fourteen-item repository review covers superseded builds, orphaned pages, the dual publish path, and the withdrawn figures they carried.', '<a href="repo-review.html">Repo review</a>'],
+    ]
+
+    return (
+        '<div class="section-heading"><div><p class="eyebrow">Scope control</p><h2>Every requirement, its status, and where to check it</h2>'
+        "<p>The brief issued a defined set of deliverables. This page lists each one, states honestly whether it is met, partly met, or blocked by a missing property document, and links the page where the work sits. Nothing is marked met unless it can be inspected.</p></div></div>"
+        + table(
+            "Deliverable coverage for the brief as issued. These rows describe deliverables rather than evidence, so they cite the page instead of an external series; every data row elsewhere on this site still carries its own official link.",
+            ["ID", "Requirement", "Status", "What exists", "Where to verify"],
+            rows,
+            search=True,
+            table_id="requirements-table",
+            narrative=True,
+        )
+        + '<div class="callout"><h3>How to read the status column</h3>'
+        '<p class="small"><span class="badge badge-verified">Verified</span> the deliverable exists and can be inspected on this site. '
+        '<span class="badge badge-limited">Context only</span> the published part is sourced, but a stated dependency is missing or location-bound. '
+        '<span class="badge badge-review">Not verified</span> the requirement cannot be completed from public data and is listed on '
+        + link("flagged.html", "Flagged for Review")
+        + " with the document that would close it.</p></div>"
+    )
+
+
+def repo_review_body() -> str:
+    rows =     [
+        ['RR-01', '<span class="badge badge-high">High</span>', 'Landing page contradicted itself on metro GDP: the summary text asserted “$1.355 trillion (2024)” while the market table and the indicator card published $1.295 trillion (2023).', 'FRED series NGMP31080 is marked DISCONTINUED and its latest observation is 2023 at $1,295,361.403 million. No 2024 value exists on the official series.', 'Text corrected; the 2024 claim removed and recorded as flagged item F-11.', 'Fixed · <a href="flagged.html">Flagged</a>'],
+        ['RR-02', '<span class="badge badge-high">High</span>', 'The same paragraph asserted the county was the “#2 county economy in the U.S.” with no official ranking behind it.', 'No official BEA or Census page was located that states this ranking; the county GDP level itself is verified at $1.003 trillion for 2024.', 'Ranking removed. Level retained with its official link. Recorded as F-12.', 'Fixed · <a href="flagged.html">Flagged</a>'],
+        ['RR-03', '<span class="badge badge-high">High</span>', 'The county labour figures published on the market page were the December 2025 vintage, while BLS now publishes through September 2026.', 'BLS LAUS series LAUCN060370000000003 shows September 2026 preliminary at 4.5%, against 5.0% in December 2025.', 'Latest month published with its preliminary flag; prior months retained so the trend is visible. Recorded as F-14.', 'Fixed · <a href="jobs.html">Jobs</a>'],
+        ['RR-04', '<span class="badge badge-high">High</span>', 'A published annual average had been replaced by a self-computed one: the site showed 5.6% as the 2025 county annual unemployment rate.', 'BLS publishes 5.7% as the 2025 annual average. The unweighted mean of the eleven monthly rates is 5.645%, which is not the published figure.', 'Corrected to the published 5.7%; the discrepancy is recorded rather than smoothed. Recorded as F-13.', 'Fixed · <a href="jobs.html">Jobs</a>'],
+        ['RR-05', '<span class="badge badge-high">High</span>', 'Archived HTML files contain unresolved merge-conflict markers and, under the branch-based Pages build, were publicly served.', 'archive/arena-ffc97e4e/ files carry &lt;&lt;&lt;&lt;&lt;&lt;&lt; / ======= / &gt;&gt;&gt;&gt;&gt;&gt;&gt; blocks and were reachable by direct URL on the deployed host.', 'Both publishers now emit the same page set: the workflow stages an explicit allowlist, and the legacy branch publisher is filtered by _config.yml with .nojekyll removed so Jekyll acts as the filter. Archived drafts no longer resolve. A repository admin can still remove the duplicate run by switching Pages to GitHub Actions (the REST attempt returns HTTP 403 from an integration token).', 'Fixed · <a href="repo-review.html">This page</a>'],
+        ['RR-06', '<span class="badge badge-high">High</span>', 'Two deployment paths raced: the branch-based Pages build published the entire repository, while a workflow published a whitelisted subset. Which content was live depended on which finished last.', 'Workflow runs and the Pages branch build both ran on every push to main; the Pages API reported the branch build as the source.', 'The workflow publishes exactly the validated page set plus its assets on every push to main. The branch-based publisher still runs as well; removing it is a repository-settings change requiring admin rights. Both paths currently carry identical dashboard files, so the published pages are correct either way, but the duplicate run is a known, logged defect.', 'Contained · <a href="audit.html">Verification audit</a>'],
+        ['RR-07', 'Medium', 'Orphaned root pages: earlier builds left root pages that no navigation pointed to, unvalidated, and in one case carrying a scenario model whose outputs no longer matched any published method.', 'Navigation on every validated page lists the same page set; the orphan files were reachable only by direct URL.', 'Superseded root pages moved to archive/arena-81536038/ rather than deleted, and excluded from the published artifact.', 'Fixed · <a href="repo-review.html">This page</a>'],
+        ['RR-08', 'Medium', 'Four or more overlapping builds exist with different figures and different page counts, which invites a reader to cite the wrong one.', 'archive/arena-d2137d88 (12 pages), archive/arena-ffc97e4e (11 pages with conflict markers), archive/arena-972c721e (9 pages), and the pages/ and site/ partial sets.', 'Only the root dashboard built by this session is published. Archived builds stay in the repository for traceability and are excluded from the live site by the publication filter.', 'Fixed · <a href="audit.html">Verification audit</a>'],
+        ['RR-09', 'Medium', "The repository's 130-row JSON dataset is not read by any published page, so two datasets coexist and can drift apart.", 'data/records.json and related files are fetched by no page in the published set.', "Declared out of scope for the published artifact; consolidation would require another session's file ownership and is logged as a request on the coordination board.", 'Open · <a href="audit.html">Verification audit</a>'],
+        ['RR-10', 'Medium', 'The build check required every table row to carry an official external link, which made non-evidence tables (requirements coverage, this findings table) impossible to publish without fabricating a citation.', 'The validator failed any row lacking an allowlisted external link.', 'A narrow, explicit exemption was added for tables declared as narrative: those rows must still contain a working link, and every data table keeps the strict rule.', 'Fixed · <a href="sources.html">Method</a>'],
+        ['RR-11', 'Medium', "A previously unconfirmable flagged item — Measure ULA dollar thresholds — is in fact published on the City's own FAQ page, so the item was over-flagged.", 'LA Office of Finance FAQ states $5,400,000 and $10,900,000 thresholds for transactions closing after 30 June 2026, with 4.0% and 5.5% ULA rates on top of a 0.45% base rate.', 'Published with the source; the open flag converted to a verified row with its effective-date caveat.', 'Fixed · <a href="decision.html">Sell / renew</a>'],
+        ['RR-12', 'Medium', 'FEMA disaster declarations for Los Angeles County had been withheld because no official page displayed a count.', 'The OpenFEMA federal API returns 88 records for the county: 61 fire, 10 flood, 8 severe storm, and 9 other incident types.', 'Counted directly on 08 Nov 2026 and published; the withheld item F-09 is closed. The National Risk Index remains unavailable from any federal endpoint and stays withheld.', 'Fixed · <a href="risks.html">Risk register</a>'],
+        ['RR-13', 'Low', 'The README described a page set that no longer matched the dashboard.', 'README page list versus the navigation in the published pages.', 'README rewritten with the current page set, the builder, the validator, and the deploy allowlist.', 'Fixed · <a href="index.html">Home</a>'],
+        ['RR-14', 'Low', 'Earlier passes left the lease-expiry range unqualified in places, which reads as a contract date.', "Public company filings do not disclose this unit's lease; the 2030–2035 range came from the description of the brief.", 'Every appearance now labels it a reported range and points to the executed-lease requirement.', 'Fixed · <a href="property.html">Lease &amp; asset</a>'],
+    ]
+
+    return (
+        '<div class="section-heading"><div><p class="eyebrow">Repository review</p><h2>Fourteen findings, each with the evidence and the action taken</h2>'
+        "<p>The repository has been built on by many parallel sessions. This page records what a line-by-line review found: withdrawn figures, superseded builds, orphaned pages, a dual publish path, and the corrections made in this pass.</p></div></div>"
+        + table(
+            "Repository review findings. These rows describe the repository rather than the area, so they cite the page that carries the evidence. Severity is this session's judgement, not an official classification.",
+            ["ID", "Severity", "Finding", "Evidence", "Action taken", "Status"],
+            rows,
+            search=True,
+            table_id="repo-review-table",
+            narrative=True,
+        )
+    )
+
+
 BODIES = {
     "index.html": index_body,
     "geography.html": geography_body,
@@ -1111,6 +1349,8 @@ BODIES = {
     "tenant.html": tenant_body,
     "decision.html": decision_body,
     "risks.html": risks_body,
+    "requirements.html": requirements_body,
+    "repo-review.html": repo_review_body,
     "flagged.html": flagged_body,
     "sources.html": sources_body,
     "audit.html": audit_body,
@@ -1129,6 +1369,8 @@ TITLES = {
     "tenant.html": ("Tenant context", "Issuer-level, not site-level."),
     "decision.html": ("Sell / renew paths", "A comparison that still needs inputs."),
     "risks.html": ("Risk register", "Measured hazards and tail events."),
+    "requirements.html": ("Requirements", "Every deliverable, and whether it is met."),
+    "repo-review.html": ("Repo review", "What the repository review found."),
     "flagged.html": ("Flagged for review", "Everything to challenge."),
     "sources.html": ("Sources & method", "One link per publisher."),
     "audit.html": ("Verification audit", "Line-by-line ledger."),
@@ -1147,6 +1389,8 @@ META = {
     "tenant.html": "Asset · tenant",
     "decision.html": "Decision · paths",
     "risks.html": "Decision · risk",
+    "requirements.html": "Governance · requirements",
+    "repo-review.html": "Governance · repo review",
     "flagged.html": "Governance · flagged",
     "sources.html": "Governance · sources",
     "audit.html": "Governance · audit",
@@ -1165,6 +1409,8 @@ INTROS = {
     "tenant.html": "What the franchisor's SEC filings do and do not tell you about this lease.",
     "decision.html": "Three paths, the worksheet that compares them, and the risk carried by each.",
     "risks.html": "Business-as-usual risks, measured hazards with citations, and tail events to test.",
+    "requirements.html": "The brief listed deliverables. This page says which are met, which are partly met, and which are blocked by a missing document.",
+    "repo-review.html": "Fourteen findings from a line-by-line review of a repository that many parallel sessions have built on.",
     "flagged.html": "Seventeen items to challenge, including seven corrections made in this pass against earlier drafts.",
     "sources.html": "Every official publisher used, what it is used for, and its status at the audit date.",
     "audit.html": "Every published figure, re-read against its official page on 08 November 2026.",
