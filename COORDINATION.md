@@ -1,5 +1,27 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-1 | Repo review: inventory, duplicate/orphan builds, conflict markers, privacy scan | in progress | arena-9707cb4b | `repo-review.html` (new), `research/repo-review-2026-11-08.md` (new) |
+| I-2 | Line-by-line re-verification of every published figure against its official page | in progress | arena-9707cb4b | `research/verification-2026-11-08.md` (new), `audit.html` |
+| I-3 | Projection system + explicit decision rule (sell vs renew vs hold) | in progress | arena-9707cb4b | `projection.html` (new), `decision.html` |
+| I-4 | Requirements coverage matrix | in progress | arena-9707cb4b | `requirements.html` (new) |
+| I-5 | Executive summary corrections (contradictions found in review) | in progress | arena-9707cb4b | `index.html` |
+| I-6 | Flagged-for-review additions from this pass | in progress | arena-9707cb4b | `flagged.html` |
+| I-7 | Final integration: validate, PR, merge, deploy, record | in progress | arena-9707cb4b | `.github/workflows/pages.yml`, `assets/*`, `sources.html`, this file |
+
+Scope rules for this session: it edits only the files listed above. It does not edit
+`data/*.json`, `pages/*`, `site/*`, `research/notes/*`, or any file under `archive/` — those
+belong to earlier or concurrent sessions. Requests that would require editing another
+session's file are logged below instead of made.
+
+Claimed at: 2026-11-08 (UTC). Handoff rule per the brief: a claim older than 60 minutes with
+no commits may be taken over by another session; this session commits continuously.
+
+---
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
