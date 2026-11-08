@@ -117,6 +117,8 @@ def main() -> int:
 
     for page, links in page_links.items():
         for href, _target, _rel in links:
+            if href.startswith("/Jack1/"):
+                href = href[len("/Jack1/"):]
             parsed = urlparse(href)
             if parsed.scheme or href.startswith("mailto:") or href.startswith("tel:"):
                 continue
