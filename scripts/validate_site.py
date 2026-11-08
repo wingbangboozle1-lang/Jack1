@@ -9,14 +9,23 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_PAGES = {"index.html", "market.html", "property.html", "decision.html", "risks.html", "flagged.html", "sources.html", "audit.html"}
-PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", ".nojekyll"}
+REQUIRED_PAGES = {
+    "index.html", "geography.html", "population.html", "income.html", "schools.html",
+    "economy.html", "jobs.html", "projections.html", "property.html", "tenant.html",
+    "decision.html", "risks.html", "flagged.html", "sources.html", "audit.html",
+}
+PUBLIC_FILES = REQUIRED_PAGES | {"404.html", "assets/styles.css", "assets/site.js", ".nojekyll"}
 OFFICIAL_DOMAINS = (
     "census.gov", "bls.gov", "scag.ca.gov", "lacity.gov", "lacity.org",
     "zimas.lacity.org", "assessor.lacounty.gov", "lacounty.gov",
     "propertytax.lacounty.gov", "sec.gov", "fema.gov", "fire.ca.gov",
     "insurance.ca.gov", "metro.net", "lausd.org", "cde.ca.gov", "irs.gov",
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
+    "nces.ed.gov", "ed.gov", "data.sec.gov", "data.bls.gov", "hazards.fema.gov",
+    # Official CAL FIRE / Office of the State Fire Marshal documents are served from
+    # the State Fire Marshal's own content-delivery host. Allowlisted as an exact
+    # host, not as a wildcard for the CDN.
+    "34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
     "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
