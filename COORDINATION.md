@@ -987,3 +987,32 @@ Requests to change any newly claimed file from another session must be appended 
 - **Live verification:** root and all 10 canonical pages plus `assets/projections.json` fetched successfully. Boundary paths (`geography.html`, `COORDINATION.md`, archive/pages/data) return 404.
 - **Preservation:** incoming main PRs #28–#42 retained; exact prior public artifact saved under `archive/arena-main-3da3b70/`. Open dirty PRs #33/#27 left untouched.
 - **Final public record update:** publication requirement covered; audit/flagged pages record the verified serving path and live checks.
+
+---
+
+## Session: arena/b8188ee0-jack1 (2026-11-08 UTC)
+
+**Session ID:** `arena/b8188ee0-jack1` (Arena-assigned branch; per platform policy this session cannot create `session-<id>/<task>` branches — the assigned branch is used, as prior sessions did.)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T19 | Fresh independent re-verification (2026-11-08) of the canonical 8-page dashboard against official sources; close confirmable open items; correct any errors; new audit report | **done** | arena/b8188ee0-jack1 | `research/verification-audit-b8188ee0.md` (new), `audit.html`, `index.html`, `market.html`, `property.html`, `decision.html`, `risks.html`, `flagged.html`, `sources.html`, `scripts/validate_site.py` (exact-prefix FEMA ArcGIS exception), `README.md`, `COORDINATION.md` | census.gov (city+county QuickFacts), bls.gov (city rates + LAUCN060370000000003), fred.stlouisfed.org (NGMP31080/GDPALL06037), scag.ca.gov + sustain.scag.ca.gov (TR Tables 2/6 + adopted Appendix I), planning.lacity.gov (DTLA release), sec.gov (10-Q XBRL R2/R4/R14/R36, EDGAR list, 8-K 2026-09-21), finance.lacity.gov (ULA), usgs.gov (UCERF3), insurance.ca.gov (CDI tracker), osfm.fire.ca.gov (FHSZ + official acreage PDF), services.arcgis.com/XG15cJAlne2vxtgt (FEMA NRI county service), fema.gov OpenFEMA API, labormarketinfo.edd.ca.gov | All 20 figure groups re-read 08 Nov 2026 — exact; 6 previously withheld FEMA figures verified via official data services and published; CAL FIRE official acreage published; BLS Sep 2026 prelim row added; SEC 8-K context row added; validator PASS (8 pages, 221 rows) | **Fixed:** index.html summary bullet 5 ($1.355T "2024" metro GDP + "#2 county" rank) contradicted KPI card/market/flagged — rewritten to verified 2023 metro/2024 county, rank dropped (PR #23 had been closed unmerged). Still flagged: CAL FIRE 26%/35% percentages, heat-brief 404, EDD gap, SCAG press-release discrepancy, ULA intro wording |
+| T20 | Integration health check: validator run, live-site check, Pages deploy path review, PR → main, merge, deploy confirmation, record | in progress | arena/b8188ee0-jack1 | `COORDINATION.md`, gh operations | n/a | PR #43 opened; main found advanced by concurrent sessions (PRs #37–#42, 17-page rebuild); merging origin/main without discarding any session work, then re-applying this session's unique verified additions (NRI county values, SEC 8-K row) onto the 17-page canonical build; Pages build_type=workflow switch attempted once → HTTP 403, legacy retained | I-02 persists; T19/T20 task IDs were independently reused by session 81536038 on main — records kept in sequence, no overwrite |
+
+### Stale-claim handoff note
+
+At claim time (2026-11-08 ~22:55 UTC) the newest activity on any other session branch/PR is PR #27 (`arena/dac604b9-jack1`, created 2026-11-07T20:49:58Z, no commits since) — more than 24 hours old, exceeding the 60-minute staleness rule. All other open PRs (#5, #10, #11, #14, #18, #21, #24) are older. Per the takeover rule, this session takes over the canonical root-page scope; **no other session's work is discarded** — open PRs are left open for the owner, archives untouched. If another session resumes, coordinate here before editing the canonical pages.
+
+### Interleave note (2026-11-08 ~23:35 UTC)
+
+While this session's source verification was in flight, sessions 14c28bc9, 9dce30d0/9707cb4b, c9121cd5, 857537b4, and 81536038 merged PRs #28–#42 to main and rebuilt the canonical dashboard as **17 pages** (market/model/risk archived under `archive/arena-81536038/`). Their merged build already contains equivalents of this session's GDP-bullet fix, OSFM acreage rows, OpenFEMA declaration counts, and BLS Sep-2026 update. Conflict resolution: **keep the merged 17-page canonical versions** of all shared pages and re-apply only this session's still-unique verified additions on top:
+1. **FEMA NRI county values** (composite 100/100 Very High; EAL $7,601,846,373; earthquake 100; wildfire 99.9; inland flooding 100 / coastal 90) — read directly from FEMA's official ArcGIS county feature service (owner FEMA_NationalRiskIndex), resolving the item main still withholds as F-08.
+2. **SEC 8-K (2026-09-21)** issuer-governance context row (roles only, no personal names).
+3. Validator exact-prefix exception for FEMA's ArcGIS org (already auto-merged).
+This session's 8-page edits are preserved in git history (commits `a5dff00`, `54c6c93`) and in `research/verification-audit-b8188ee0.md`; nothing from any other session is discarded.
+
+### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
+
+`origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
