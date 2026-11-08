@@ -772,3 +772,20 @@ figures and the metro GDP year were changed, each with the reported value kept v
   (build_type still `legacy`; 403 on workflow switch stands — admin action required).
 - **Deliverable:** `verification/2026-11-08-14c28bc9.md`; `scripts/verify-data.mjs` retired to a delegating stub (I-05 fixed).
 - **New item for owner:** N-01 — CAL FIRE 2026 SRA FHSZ public comment period now open (FAQs updated Nov 2026); live site reflects 2025 LRA mapping only; owner decision whether to surface on `risks.html` / `flagged.html`.
+
+---
+
+## Session: arena/c9121cd5-jack1 (2026-11-08, UTC evening)
+
+### Table stake
+
+Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PRs observed: #5, #10, #11, #14, #18, #21, #24, #27. PR #27 (arena/dac604b9-jack1) last updated 2026-11-07T20:49:59Z — >26 h stale, mergeable=CONFLICTING — treated as an abandoned claim per the 60-minute handoff rule. No session has an active COORDINATION claim; prior sessions' completion records all read **done**.
+
+### Claim (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T30 | Final integration: full repo line-by-line review, data re-verification against official sources, privacy (PII) audit, structural validation, irregularity flagging, site finalization, merge to main, deploy confirmation, PR/deploy record | **in progress** | arena/c9121cd5-jack1 | `verification/2026-11-08-c9121cd5.md` (new), `COORDINATION.md` (this append + completion record), and any root site pages only if a verified error is found (will log each change here) | census.gov, bls.gov, edd.ca.gov, scag.ca.gov, sec.gov, fred.stlouisfed.org, hazards.fema.gov, usgs.gov, osfm.fire.ca.gov, finance.lacity.gov (to be re-read; links recorded in the verification report) | In progress — claim committed first per protocol; commit/push of this claim precedes all content work | To be published on the Flagged for Review page and in the verification report |
+
+- Scope rule: my only shared file until verification completes is `COORDINATION.md` (appends) and a NEW report file at `verification/2026-11-08-c9121cd5.md`. I will not edit `flagged.html`, `assets/`, workflows, or any page another open-PR session touches unless verification proves an error, and every such edit will be logged here.
+- If any session is active concurrently, my report-file-only scope avoids conflicts; a final integration edit set (if needed) will be committed with `git pull --rebase` before push.
