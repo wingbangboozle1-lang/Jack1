@@ -21,6 +21,12 @@ OFFICIAL_DOMAINS = (
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
     "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
 )
+# Exact-URL-prefix exceptions for official data services not on a .gov host.
+# XG15cJAlne2vxtgt is FEMA's ArcGIS Online organization (item owner
+# FEMA_NationalRiskIndex); this is NOT a blanket arcgis.com allowance.
+OFFICIAL_URL_PREFIXES = (
+    "https://services.arcgis.com/XG15cJAlne2vxtgt/",
+)
 
 class PageAudit(HTMLParser):
     def __init__(self, path: Path):
@@ -49,7 +55,7 @@ class PageAudit(HTMLParser):
             parsed = urlparse(href)
             if parsed.scheme in ("http", "https"):
                 host = (parsed.hostname or "").lower()
-                if not any(host == domain or host.endswith("." + domain) for domain in OFFICIAL_DOMAINS):
+                if not any(host == domain or host.endswith("." + domain) for domain in OFFICIAL_DOMAINS) and not any(href.startswith(prefix) for prefix in OFFICIAL_URL_PREFIXES):
                     self.errors.append(f"External link is not on the official-source allowlist: {href}")
                 if attrs_map.get("target") == "_blank" and not {"noopener", "noreferrer"}.issubset(set((attrs_map.get("rel") or "").split())):
                     self.errors.append(f"External new-tab link lacks noopener/noreferrer: {href}")
