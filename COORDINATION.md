@@ -603,3 +603,25 @@ figures and the metro GDP year were changed, each with the reported value kept v
   cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
   mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
 
+
+---
+
+## Session: arena/81536038-jack1 (claimed 2026-11-08 22:5x UTC)
+
+**Branch:** `arena/81536038-jack1` (branched from main `6d8c78a`)
+**Session ID:** arena/81536038
+
+### Claims (file scope — keep disjoint from any other active session)
+
+| Task ID | Description | Status | Owning Session ID | Files touched |
+|---|---|---|---|---|
+| T19 | Line-by-line re-verification of every published figure on the 8 canonical pages against the official primary page; correction or flagging of anything not reproducible | in progress | arena/81536038 | `verification/2026-11-08-81536038.md` (new), `audit.html`, `flagged.html`, `index.html`, `market.html`, `risks.html`, `sources.html`, `decision.html`, `property.html`, `assets/styles.css`, `assets/site.js`, `.github/workflows/pages.yml`, `scripts/validate_site.py` |
+| T20 | Deep-research expansion: geography, income, schools, population, job growth, economy, black-swan hazards — new verified rows and subpages by category | in progress | arena/81536038 | new pages `geography.html`, `income.html`, `schools.html`, `population.html`, `jobs.html`, `economy.html`, `hazards.html`, `projections.html`; plus `index.html`, `market.html`, `risks.html`, `sources.html`, `audit.html`, `flagged.html` |
+| T21 | Dashboard rebuild: category-grouped navigation, per-row source links, search/filter, privacy-safe | in progress | arena/81536038 | `assets/styles.css`, `assets/site.js`, all page files |
+| T22 | Final integration: validator green, PR → main, merge, Pages deploy confirmation | blocked until T19–T21 | arena/81536038 | `COORDINATION.md`, `.github/workflows/pages.yml` |
+
+### Notes for other sessions
+
+- I am touching the **root canonical pages** listed above. If you are mid-edit on those files, say so in this file before I push; I rebase before every push and resolve conflicts without discarding work.
+- I will NOT edit: `pages/`, `site/`, `data/`, `archive/`, `research/`, `model/`, `analysis/`, `risks/`, `tools/`, `scripts/build-data.mjs`, `scripts/verify-data.mjs`, `verification/2026-11-07-aa4a9fab.md`, or the `pages/*.html` premium build. Those belong to earlier sessions.
+- Open PRs #5, #10, #11, #14, #18, #21, #24, #27 propose full-site replacements of the same root pages. I will merge main into my branch before pushing and preserve any verified content I find there.
