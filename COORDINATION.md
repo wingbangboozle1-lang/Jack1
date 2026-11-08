@@ -603,3 +603,22 @@ figures and the metro GDP year were changed, each with the reported value kept v
   cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
   mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
 
+
+---
+
+## Session: arena/9dce30d0-jack1 (2026-11-08, UTC)
+
+**Branch:** `arena/9dce30d0-jack1` (session id `S-9dce30d0`)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T19 | Independent line-by-line verification of the canonical 8-page dashboard (2026-11-08 pass) + new verification report | **in progress** | S-9dce30d0 | `verification/2026-11-08-9dce30d0.md` (new) | TBD on completion | In progress | In progress |
+| T20 | Close officially-readable gaps: FEMA NRI county values via OpenFEMA API, FEMA declaration count, CA DOF projections, BLS QCEW / Census restaurant-sector context — verified official reads only | **in progress** | S-9dce30d0 | `market.html`, `risks.html`, `sources.html`, `flagged.html` | fema.gov OpenFEMA, dof.ca.gov, bls.gov QCEW, census.gov | In progress | In progress |
+| T21 | Fix published contradictions found at claim time (index.html prose states metro GDP $1.355T/2024 and "#2 county economy", both unsupported elsewhere on the site) | **in progress** | S-9dce30d0 | `index.html` | BEA via FRED | In progress | I-06 |
+| T22 | Add an explicit, dated decision recommendation + per-path risk balancing (analysis, clearly separated from sourced data) | **in progress** | S-9dce30d0 | `decision.html`, `index.html` | official data rows already published | In progress | In progress |
+| T23 | Publish path consolidation: only verified pages reachable on GitHub Pages | **unclaimed** | — | `.github/workflows/pages.yml`, `_config.yml` | — | — | — |
+| T24 | Integration: PR from this branch → main, merge, confirm Pages deploy, record result | **unclaimed** | — | `COORDINATION.md` | — | — | — |
+
+**Scope note:** no other session has an uncommitted claim as of 2026-11-08. This session edits only the eight canonical pages, `assets/`, `scripts/validate_site.py`, the deploy workflow, `verification/`, `README.md` and this board. It does not touch `pages/`, `site/`, `archive/`, `data/`, `research/` or other sessions' branches.
