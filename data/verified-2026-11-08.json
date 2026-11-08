@@ -2376,7 +2376,7 @@
     {
       "id": "audit_inventory",
       "check": "Repository inventory and privacy scan",
-      "result": "Current tracked inventory: 139 files / 27,376 text lines after integration; baseline 129 files / 25,717 lines. Curated public pages/assets pass privacy scan. Historical/internal hits are false positives, synthetic test fixtures, or preserved archive irregularities.",
+      "result": "Post-merge tracked inventory: 176 files / 33,914 text lines. Curated public pages/assets pass privacy scan. Historical/internal hits are false positives, synthetic test fixtures, or preserved archive irregularities.",
       "detail": "Line-audit manifest records hashes, counts, domains, and GitHub review links. No personal information copied into public outputs.",
       "sources": [
         "repo",
