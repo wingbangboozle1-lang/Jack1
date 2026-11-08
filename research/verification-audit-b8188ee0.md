@@ -83,3 +83,22 @@ The 07 Nov audit withheld six FEMA figures and two CAL FIRE percentages because 
 ## 6. Privacy
 
 No owner names, addresses, APNs, lease parties, rents, or personal financial details were collected, stored, or published. The new SEC 8-K row describes roles only (no officer names). Validator email/phone scans pass on all eight pages.
+
+---
+
+## 7. Post-merge addendum (same session, ~23:40 UTC)
+
+While this audit's source reads were in flight, five other sessions merged PRs #28–#42 to main and rebuilt the canonical dashboard as **17 pages** (the former market/model/risk pages were archived under `archive/arena-81536038/`). Their merged build already contained equivalents of this session's index GDP fix, OSFM acreage rows, OpenFEMA declaration counts (88/61/10/8/9), and the BLS Sep-2026 preliminary update.
+
+Conflict resolution followed the coordination protocol — **no session's work discarded**:
+- Merged `origin/main` into `arena/b8188ee0-jack1`; kept the merged 17-page versions of all shared canonical pages, README, and the 17-page validator (this session's exact-prefix FEMA ArcGIS exception auto-merged into it).
+- `COORDINATION.md`: all merged sessions' records retained in sequence; this session's record appended after them.
+- Re-applied only this session's still-unique verified additions onto the 17-page build:
+  1. **FEMA NRI county values** on `risks.html` (composite 100/100 Very High; EAL $7,601,846,373; earthquake 100; wildfire 99.9; inland flooding 100 / coastal 90), closing flagged item **F-08**, with the exact official query link; `sources.html` and `audit.html` updated to match.
+  2. **SEC 8-K (2026-09-21)** issuer-governance row on `tenant.html` (roles only, no personal names).
+  3. Audit rows recording this session's independent re-reads (SEC XBRL R2/R4/R14/R36 exact; all 20 figure groups matched).
+- The earlier 8-page edits from this session remain in git history (`a5dff00`, `54c6c93`).
+
+Final validator state after re-application: **17 pages, 362 table-body rows, PASS** (official-source link on every row; allowlist + FEMA-org prefix; local links/anchors; no email/phone patterns).
+
+Note on the merged build's 2025 county annual average (5.7%): the labor-force-weighted average of the eleven published 2025 months recomputes to 5.65% → 5.7%, consistent with the merged page; the simple average of the rounded monthly rates is 5.6%. Both are disclosed on the merged site's flagged register (F-13). No change made.
