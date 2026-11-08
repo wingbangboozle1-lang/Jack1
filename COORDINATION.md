@@ -560,7 +560,6 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
 | #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
-| #17 | arena/14c28bc9-jack1 | pending (this session) — T11 re-verification + stale gate retirement |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
