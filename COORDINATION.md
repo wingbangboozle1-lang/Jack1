@@ -823,3 +823,14 @@ Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PR
 **Irregularities (non-blocking):** legacy Pages source serves superseded builds (admin needed for Actions cutover; prior 403 recorded); stale open PRs #5/#10/#11/#14/#18/#21/#24/#27 left untouched; withheld county hazard figures remain blank.
 
 **Merge/deploy:** recorded below after PR merge.
+
+### T30 PR & deploy record — session c9121cd5 (final)
+
+- **PR #37** `arena/c9121cd5-jack1` → `main`, **merged** 2026-11-08T23:10:03Z (merge commit `4281a8b`, validated CLEAN; CI `validate` pass, run 42533754969).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/37
+- **Rebase/conflict resolution:** two sessions (14c28bc9 PR #28; 9dce30d0/9707cb4b PRs #34–#36) landed on main while T30 was in flight. T30's branch was rebased onto `72b1540`; the `COORDINATION.md` content conflict was resolved by **retaining both sessions' records in sequence** (no session's work discarded). Canonical-page conflicts were resolved by keeping the concurrently-merged versions (which already contained equivalent corrections to the defects T30 found) and re-applying only T30's still-unique verified additions (OSFM FHSZ acreage row; EDD restaurant-cooks projection row; audit third-pass section).
+- **Post-merge live check found a defect in the *deployment*, not the content:** `risks.html` returned the custom 404 while all sibling pages served. Root cause area: the new legacy `_config.yml` publication scope interacts with the `risks/` repository directory. Narrowed the exclude entry to directory form (`risks/`) in hotfix **PR #38**, **merged** 2026-11-08T23:14:09Z (merge commit `61928b4`; CI pass, run 42534114045). https://github.com/wingbangboozle1-lang/Jack1/pull/38
+- **Deploy on main:** Pages API `status: built` at `61928b4`; both `Validate and publish the decision brief` (run 42533803997+) and legacy `pages-build-deployment` runs green. Live-site re-verification after rebuild: all 11 canonical pages serve current merged content — `/risks.html` confirmed serving the Risk Register incl. the verified OSFM FHSZ acreage row; `/market.html` serving the EDD cooks projection row; `/audit.html` serving the c9121cd5 third-pass section. (An initial post-merge fetch of `/risks.html` returned a cached 404; a cache-busted re-fetch after the hotfix deploy returned the page.)
+- **Deliverables:** `verification/2026-11-08-c9121cd5.md` (37-check ledger, defects C-01/C-02, post-interleave notes); merged site carries sessions' combined corrections and additions.
+- **Standing owner items (unchanged):** (1) admin to set Pages source = GitHub Actions (403 for four sessions now) — legacy build now scoped by `_config.yml` as interim mitigation; (2) NRI county values unobtainable from a federal endpoint (withheld); (3) 2026 SRA FHSZ comment period open (surfaced by 9dce30d0 on `risks.html`); (4) stale open PRs #5/#10/#11/#14/#18/#21/#24/#27 left untouched.
+- **Task T30: done.**
