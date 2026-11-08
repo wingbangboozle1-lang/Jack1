@@ -96,6 +96,16 @@ fix and is now the published mechanism; the workflow allowlist mirrors it.
   `scripts/`, `verification/`, the superseded root drafts (`economy.html`, `model.html`, `risk.html`,
   `schools.html`, `tenant.html`), and the markdown briefs. All remain in the repository for traceability.
 
+### Post-#35 record — session arena-9707cb4b COMPLETE
+
+| Item | Result |
+|---|---|
+| PR #35 | merged 2026-11-08T23:04:42Z, merge commit `72b1540`; Pages build run 42533377323 **success**; workflow run 42533377876 **success** |
+| PRs opened by this session | #30 (main integration), #32 (deploy-claim corrections + recommendation header), #34 (404 repair + merge record), #35 (inventory corrections + final record) — **all merged** |
+| Conflict encountered | one, on PR #32, caused by parallel session #31; resolved by merging `origin/main`, keeping their `_config.yml`, OpenFEMA rows and 404 rewrite alongside this branch's eleven-page scope. Nothing discarded. |
+| Task board | I-1 … I-7 all `done` |
+| Session status | **complete** — no task claimed by this session remains open; RR-08 and the flagged property-level fields are open *for the owner*, not for a session |
+
 ### Final record (session arena-9707cb4b, 08 Nov 2026)
 
 | Item | Result |
