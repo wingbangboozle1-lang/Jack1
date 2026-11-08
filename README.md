@@ -47,11 +47,15 @@ The validator checks the eleven published pages, required local paths and fragme
 
 There are two publishers, and they now emit the same set:
 
+Publishing uses two mechanisms that now emit the same file set:
+
 1. `.github/workflows/pages.yml` — validates every push and pull request, and on `main` uploads an artifact containing the eleven pages, `404.html`, `assets/styles.css`, and `assets/site.js`.
-2. The repository's legacy branch build (`build_type: legacy`, source `main` `/`) — which otherwise serves **every** file in the root. `_config.yml` scopes it to the same set, and `.nojekyll` was removed so Jekyll actually runs as the filter. The nine published HTML pages carry no YAML front matter, so they are copied byte-for-byte.
+2. The repository's legacy branch build (`build_type: legacy`, source `main` `/`) — which would otherwise serve **every** file in the root. `_config.yml` scopes it to the same set, and `.nojekyll` was removed so Jekyll actually runs as the filter. The eleven published HTML pages carry no YAML front matter, so they are copied byte-for-byte.
+
+A local simulation of the exclude rules returns the same file set the workflow stages: the eleven pages, `404.html`, `assets/styles.css`, and `assets/site.js`.
 
 A local simulation of the exclude rules returns exactly 14 files: the eleven pages, `404.html`, `assets/styles.css`, `assets/site.js`.
 
 Material outside the published set (`archive/`, `pages/`, `site/`, `data/`, `research/`, `analysis/`, `verification/`, `tools/`, `scripts/`, and the older root drafts that still carry withdrawn figures) remains in the repository for traceability and is deliberately not published.
 
-**Admin note:** switching Pages → Source to **GitHub Actions** would make the workflow the only publisher; the REST attempt from an integration token returns HTTP 403, so an admin must make that change. Until then `_config.yml` is what keeps superseded dashboards off the live site.
+**Admin note:** switching Pages → Source to **GitHub Actions** would make the workflow the only publisher and remove the duplicate run; the REST attempt from an integration token returns HTTP 403, so an admin must make that change. Until then `_config.yml` is what keeps superseded dashboards off the live site — a configuration filter, not a deletion, so the audit trail stays in the repository.
