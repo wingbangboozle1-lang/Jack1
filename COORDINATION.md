@@ -900,3 +900,32 @@ Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PR
 - **Deliverables:** `verification/2026-11-08-c9121cd5.md` (37-check ledger, defects C-01/C-02, post-interleave notes); merged site carries sessions' combined corrections and additions.
 - **Standing owner items (unchanged):** (1) admin to set Pages source = GitHub Actions (403 for four sessions now) — legacy build now scoped by `_config.yml` as interim mitigation; (2) NRI county values unobtainable from a federal endpoint (withheld); (3) 2026 SRA FHSZ comment period open (surfaced by 9dce30d0 on `risks.html`); (4) stale open PRs #5/#10/#11/#14/#18/#21/#24/#27 left untouched.
 - **Task T30: done.**
+
+---
+
+## Session: arena/857537b4-jack1 (2026-11-08, UTC)
+
+**Branch:** `arena/857537b4-jack1` (fixed by Arena for this session)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T25-857537b4 | Independent post-PR-#31..#39 line-by-line verification of the merged 11-page canonical dashboard against official sources; SEC 10-Q/10-K, SCAG, DTLA 2040, BLS, Census, FRED, CAL FIRE, USGS, ULA, and CA DOI primary-page re-reads; derived-formula recomputation; privacy & build audit; verification report | **done** | arena/857537b4-jack1 | `verification/2026-11-08-857537b4.md` (new), `COORDINATION.md` (append only; shared-file follow-up notes logged below per protocol) | census.gov QuickFacts (city + county), bls.gov 50-cities & LAUCN060370000000003, scag.ca.gov Appendix I & 2024 Forecast TR, planning.lacity.gov DTLA 2040 release, finance.lacity.gov ULA FAQ, wagesla.lacity.gov, dir.ca.gov AB 1228 FAQ, sec.gov 2026 10-Q (`R2.htm`, `R4.htm`, `R8.htm`, `R10.htm`, `R11.htm`, `R12.htm`, `R14.htm`, `R16.htm`), fred.stlouisfed.org (`GDPALL06037`, `NGMP31080`, `CPIAUCSL`, `DGS10`), usgs.gov UCERF3 FAQ, osfm.fire.ca.gov FHSZ + 2026 FAQs + 2024–2025 Acreage PDF, fire.ca.gov Palisades & Eaton, insurance.ca.gov Claims Tracker | 23 primary official source groups directly opened and verified verbatim on 2026-11-08 (closing all carried-forward gaps from `research/verification-2026-11-08.md` §4 and `verification/2026-11-08-9dce30d0.md` §5); 13 derived arithmetic formulas independently recomputed in Python; `scripts/validate_site.py` and `scripts/verify-data.mjs` both PASS (11 pages, 370 rows, 0 PII) | `N-857537b4-01` .. `N-857537b4-06` (non-blocking; see below and `verification/2026-11-08-857537b4.md` §4) |
+
+- Claim time: 2026-11-08 (UTC). Scope is file-disjoint (`verification/2026-11-08-857537b4.md` + `COORDINATION.md` append) to avoid colliding with concurrent sessions (`1daf5a2a`, `c9121cd5`).
+
+### T25-857537b4 completion record — session 857537b4
+
+- **Deliverable:** `verification/2026-11-08-857537b4.md` — full primary-source ledger (`V-01`..`V-23`), independent Python recomputation of all 13 derived arithmetic formulas (`A-01`..`A-13`), and non-blocking shared-file notes (`N-857537b4-01`..`N-857537b4-06`).
+- **Previously carried-forward items now opened & verified verbatim on `2026-11-08`:**
+  1. **SEC Form 10-Q (period ended July 5, 2026):** `R2.htm` balance sheet (`$44,160K` current maturities, `$1,428,667K` long-term debt, `$980,279K` operating lease ROU assets, `$134,300K` + `$874,494K` lease liabilities); `R8.htm` Note 1 verbatim `149 company-operated and 1,966 franchise-operated Jack in the Box restaurants` as of July 5, 2026 and December 22, 2025 Del Taco sale closing; `R11.htm` Note 4 Del Taco `$115.0M` sale price (`$119,086K` net proceeds, `$(47,428)K` pre-tax loss on sale); `R14.htm` Note 7 verbatim HoldCo leverage `>5.0x`, Senior ABS leverage `>5.25x`, `$23.3 million` cash-sweep prepayment included in current maturities, June 23, 2026 `$500.0M` `7.624%` Class A-2 refinancing (Anticipated Repayment Date May 2031), and `$432,250K` 2029 debt maturity wall (`Series 2019-1 Class A-2-III` ARD August 2029).
+  2. **SCAG Connect SoCal 2024 Final PEIR Appendix I (`appendix_i_updated_tables_508_final.pdf`) & Demographics & Growth Forecast Technical Report (`23-2987-tr-demographics-growth-forecast-final-040424.pdf`):** Confirmed Tables ES-1 & 2-1 (`10,046,000 → 10,793,000` pop; `5,031,000 → 5,461,000` emp), Table 3.14-8 (`+7.4%` pop), Table 3.14-9 (`3,393,000 → 4,155,000` households, `+22.5%`), Table 3.14-10 (`5,031,000` in 2019 → `4,942,000` in 2022 → `5,277,000` in 2030 → `5,497,000` peak in 2045 → `5,461,000` in 2050, `+8.6%`), and Technical Report Table 6 (`+416,000` Health Care & Social Assistance, `+148,000` Construction, `+106,000` Accommodation & Food Service).
+  3. **LA City Planning DTLA 2040 Press Release (`Press Release_ DTLA New Zoning Code.pdf`, Dec 4, 2024):** Confirmed verbatim `100,000 new homes, attract 100,000 more work opportunities, and draw 175,000 additional residents to Downtown through the year 2040`.
+  4. **CAL FIRE / OSFM Official 2024–2025 FHSZ Acreage Table (`fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf`) & Nov 6, 2026 FAQs:** Confirmed LA County FHSZ acres (LRA Very High `314,642` / Total `683,610`; SRA Very High `454,920` / Total `494,333`; Combined Very High `769,561` / Total `1,177,944`) and Statewide LRA Very High `1,161,924` acres (`6,827,111` total LRA), while confirming no `26%` or `35%` expansion percentage is printed in that table.
+- **Shared-file follow-up requests (logged per protocol rather than editing shared HTML while PR #33 is open):**
+  - `N-857537b4-01`: `market.html` & `projection.html` county employment change Sep 2026 (`4,806,494`) vs Dec 2025 (`4,872,197`) is `−1.3485%` (`1.3%` at 1 decimal vs printed `1.4%`).
+  - `N-857537b4-02`: `projection.html` Step 4 break-even table has 1 bp rounding differences in 2 of 9 cells (`+50bp, n=9` is `0.8935%` → `0.89%` vs printed `0.90%`; `+150bp, n=4` is `5.7371%` → `5.74%` vs printed `5.73%`).
+  - `N-857537b4-03`: `audit.html` and `flagged.html` carried-forward notes for SEC 10-Q `R2.htm`/`R8.htm`/`R14.htm`, SCAG Appendix I & Technical Report, and DTLA 2040 can be marked re-verified on `2026-11-08` per `verification/2026-11-08-857537b4.md`.
+  - `N-857537b4-06`: `sources.html` bottom note (`06 November 2026`) and footer (`07 Nov 2026`) can be aligned to `08 Nov 2026`.
+
