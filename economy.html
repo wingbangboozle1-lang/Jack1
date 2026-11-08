@@ -1,88 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economy, Jobs &amp; Prices · JACK NNN Central LA</title>
-<meta name="description" content="BLS employment, sector trends, CPI and Treasury data for the Los Angeles metro, with official source links.">
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Economy — source-linked, privacy-first decision brief for a Jack in the Box NNN-leased property near central Los Angeles.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Economy | Jack in the Box Property Brief</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/site.js" defer></script>
 </head>
-<body data-page="economy.html">
-<div class="wrap">
-  <aside class="sidebar" id="sidebar"></aside>
-  <main>
-    <div class="top"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:#4da3ff"></span>
-      <span class="t">Economy &amp; Prices</span><button id="navbtn">Menu</button></div>
-    <nav class="mnav" id="mnav"></nav>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Jack in the Box property decision brief home">
+        <span class="brand-mark" aria-hidden="true">JB</span>
+        <span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span>
+      </a>
+      <p class="nav-label">Overview</p><nav class="site-nav"><a href="index.html"><span class="nav-dot">EX</span>Executive summary</a></nav><p class="nav-label">Area profile</p><nav class="site-nav"><a href="geography.html"><span class="nav-dot">GE</span>Geography &amp; land use</a><a href="population.html"><span class="nav-dot">PO</span>Population</a><a href="income.html"><span class="nav-dot">IN</span>Income &amp; housing</a></nav><p class="nav-label">Community</p><nav class="site-nav"><a href="schools.html"><span class="nav-dot">SC</span>School system</a></nav><p class="nav-label">Economy &amp; jobs</p><nav class="site-nav"><a href="economy.html" aria-current="page"><span class="nav-dot">EC</span>Economy</a><a href="jobs.html"><span class="nav-dot">JO</span>Jobs &amp; labour</a><a href="projections.html"><span class="nav-dot">PR</span>Projection system</a></nav><p class="nav-label">Asset &amp; tenant</p><nav class="site-nav"><a href="property.html"><span class="nav-dot">LE</span>Lease &amp; asset</a><a href="tenant.html"><span class="nav-dot">TE</span>Tenant (issuer) context</a></nav><p class="nav-label">Decision &amp; risk</p><nav class="site-nav"><a href="decision.html"><span class="nav-dot">SE</span>Sell / renew paths</a><a href="risks.html"><span class="nav-dot">RI</span>Risk register</a></nav><p class="nav-label">Governance</p><nav class="site-nav"><a href="requirements.html"><span class="nav-dot">RE</span>Requirements</a><a href="repo-review.html"><span class="nav-dot">RE</span>Repo review</a><a href="flagged.html"><span class="nav-dot">FL</span>Flagged for review</a><a href="sources.html"><span class="nav-dot">SO</span>Sources &amp; method</a><a href="audit.html"><span class="nav-dot">VE</span>Verification audit</a></nav>
+      <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
+    </aside>
 
-    <p class="eyebrow">Category 2 · how the metro is actually performing</p>
-    <h1>Jobs, sector momentum, consumer prices and the cost of money</h1>
-    <p class="lede">Three questions matter for this asset: are people earning, are prices letting a restaurant raise menu
-    prices, and what discount rate is the buyer of a net-lease asset applying to the income stream?</p>
+    <div class="main-column">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button>
+          <span class="crumb">Decision support <span aria-hidden="true">/</span> Economy &amp;amp; jobs</span>
+        </div>
+        <div class="snapshot">Evidence snapshot · 08 Nov 2026</div>
+      </header>
 
-    <div class="grid g4">
-      <div class="kpi"><div class="k">Unemployment rate</div><div class="v warn">4.4%</div><div class="m">Sept 2026 (preliminary)</div></div>
-      <div class="kpi"><div class="k">Total nonfarm, 12-mo</div><div class="v">+0.5%</div><div class="m">Essentially flat</div></div>
-      <div class="kpi"><div class="k">CPI all items</div><div class="v down">+3.7%</div><div class="m">12 months to Sept 2026</div></div>
-      <div class="kpi"><div class="k">10-year Treasury</div><div class="v">4.90%</div><div class="m">4 November 2026</div></div>
+      <main id="main-content" class="content">
+        <section class="page-intro" aria-labelledby="page-title">
+          <p class="eyebrow">Economy · output and prices</p><h1 id="page-title">Output, prices, and sales.</h1><p class="lead">County output, the discontinued metro series, and the inflation numbers that drive escalations.</p>
+        </section>
+        <div class="section-heading"><div><p class="eyebrow">Category</p><h2>Output, prices, and sales</h2><p>Output and price statistics at regional scale, plus the inflation series that drives most NNN rent escalations. The discontinued metro series and the 2024 metro figure are both called out explicitly rather than smoothed over.</p></div></div><div class="table-wrap"><div class="table-search"><label for="q-economy-table">Filter rows</label><input id="q-economy-table" type="search" data-table-search="economy-table" placeholder="Type to filter, e.g. census, BLS, verified" autocomplete="off"></div><table id="economy-table"><caption>Economic evidence. The blank rows are deliberate.</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Period / basis</th><th scope="col">Limitation</th><th scope="col">Official source</th></tr></thead><tbody><tr><td>County GDP</td><td>$1.003 trillion</td><td>2024 · BEA GDP by county · nominal</td><td>Output produced in the county; not resident income and not property value.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED · GDP, Los Angeles County (GDPALL06037)</a></td></tr><tr><td>County GDP · prior year</td><td>$956.2 billion</td><td>2023 · BEA GDP by county</td><td>Prior-year comparison as published in the same series.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED · GDP, Los Angeles County (GDPALL06037)</a></td></tr><tr><td>County GDP · two years prior</td><td>$909.3 billion</td><td>2022 · BEA GDP by county</td><td>Published series history.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED · GDP, Los Angeles County (GDPALL06037)</a></td></tr><tr><td>Metro GDP</td><td>$1.295 trillion</td><td>2023 · LA–Long Beach–Anaheim MSA · nominal</td><td>The metro GDP series is marked discontinued on its official page and publishes no later year; the most recent published value is used.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA via FRED · GDP, LA–Long Beach–Anaheim MSA (NGMP31080)</a></td></tr><tr><td>Metro GDP · 2024 value</td><td><span class="cell-blank" aria-label="left blank, not verified"></span></td><td>Not published</td><td>No 2024 metro value could be read from the official series. An earlier draft of this brief carried a $1.355 trillion 2024 metro figure that could not be confirmed and has been removed.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA via FRED · GDP, LA–Long Beach–Anaheim MSA (NGMP31080)</a></td></tr><tr><td>CPI-U, all items · LA area</td><td>+3.7% over 12 months</td><td>September 2026 · not seasonally adjusted</td><td>Regional inflation; this is the reference rate for a CPI-linked rent step.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>CPI-U index level · LA area</td><td>358.725</td><td>September 2026 · 1982–84 = 100</td><td>Index level, not a price level comparison between cities.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>CPI-U, all items less food and energy</td><td>+2.6% over 12 months</td><td>September 2026</td><td>Core measure; shelter rose 3.7% over the year.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>Food away from home</td><td>+2.8% over 12 months</td><td>September 2026</td><td>Closest published proxy for menu-price inflation in this area.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>Energy</td><td>+20.3% over 12 months; gasoline +30.8%</td><td>September 2026</td><td>A direct operating-cost and customer-discretionary-income pressure.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>CPI data gap</td><td>October 2025 not available</td><td>Lapse in appropriations</td><td>The published series has a documented hole at October 2025.</td><td><a class="source-link" href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" target="_blank" rel="noopener noreferrer">BLS · CPI, Los Angeles area — September 2026</a></td></tr><tr><td>Retail sales · City</td><td>$81.35 billion</td><td>2022 Economic Census · nominal</td><td>All retail categories.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · LA city</a></td></tr><tr><td>Accommodation and food-services sales · City</td><td>$17.37 billion</td><td>2022 Economic Census</td><td>Sector aggregate; no quick-service split is published here.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · LA city</a></td></tr><tr><td>Employer establishments · County</td><td>304,988</td><td>2023 · County Business Patterns</td><td>Establishment count, not employment at this site.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · LA County</a></td></tr><tr><td>Total annual payroll · County</td><td>$299.6 billion</td><td>2023 · County Business Patterns</td><td>County-wide payroll.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · LA County</a></td></tr><tr><td>Building permits · County</td><td>20,192 permits · $4,197,975,040 total costs</td><td>2025 annual · Census building-permits data republished on the EDD county profile</td><td>County-wide construction activity; a development indicator, not a project near this site.</td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&amp;selectedindex=19&amp;state=true&amp;geogArea=0604000037&amp;submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer">CA EDD · Los Angeles County profile (official projections and permits)</a></td></tr><tr><td>Building permits · multi-family vs single-family</td><td>10,809 multi-family ($1.57B) · 9,383 single-family ($2.63B)</td><td>2025 annual</td><td>County-wide mix; housing supply affects the eventual customer base only at a very coarse level.</td><td><a class="source-link" href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&amp;selectedindex=19&amp;state=true&amp;geogArea=0604000037&amp;submit1=View+Local+Area+Profile" target="_blank" rel="noopener noreferrer">CA EDD · Los Angeles County profile (official projections and permits)</a></td></tr><tr><td>Subject property revenue or sales</td><td><span class="cell-blank" aria-label="left blank, not verified"></span></td><td>Not available</td><td>No tenant sales report for this unit was located in any official source.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC · Jack in the Box Form 10-Q (12 and 40 weeks ended 05 Jul 2026)</a></td></tr></tbody></table></div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div>
+        <div>Every table row links to its official publisher · checked 08 Nov 2026</div>
+      </footer>
     </div>
-
-    <h2>What the numbers say</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>Employment is flat, and the growth is in the wrong sector for a burger chain</h3>
-        <p>The metro added payrolls at +0.5% year on year. The only sector with real momentum is education and health services
-        (+3.8%), which is salaried, daytime and least exposed to discretionary food spend. Information &mdash; the entertainment
-        and tech base that drives lunch and late-night trade &mdash; is down 5.7%. Financial activities (&minus;1.7%) and
-        professional services (&minus;0.5%) are also negative.</p>
-        <p class="small">Implication: the daypart mix that a Jack in the Box depends on (breakfast, lunch, late night) is
-        exposed to the two weakest parts of the local economy.</p>
-      </div>
-      <div class="card">
-        <h3>Costs are rising faster than menu prices can follow</h3>
-        <p>All-items CPI is +3.7% but food away from home is only +2.8%, so restaurants are absorbing roughly 90bp of real
-        price compression before they touch input costs. Energy is +20.3% and gasoline +30.8% year on year &mdash; a direct
-        hit to drive-thru traffic and, through the NNN recovery, to the tenant's occupancy cost.</p>
-        <p class="small">Implication: margin pressure lands on the tenant first and on the landlord at renewal, because a
-        tenant with compressed margins cannot absorb a rent increase.</p>
-      </div>
-      <div class="card">
-        <h3>Money is expensive: 4.90% risk-free sets the floor</h3>
-        <p>The 10-year Treasury closed at 4.90% on 4 November 2026 and traded as high as 5.31% in early October. A buyer of a
-        single-tenant asset financed at that level needs either a long lease or a high cap rate. Both translate into a lower
-        bid for a lease with six years left than for one with sixteen.</p>
-        <p class="small">Implication: capital-markets conditions, not the neighbourhood, will set the sale price. That is an
-        argument for selling into term, not for holding through it.</p>
-      </div>
-      <div class="card">
-        <h3>The market is large, which is why the exit exists at all</h3>
-        <p>City-wide accommodation and food services sales were $17.37bn in the 2022 Economic Census; retail sales were
-        $81.35bn, or $21,281 per capita. A dense, high-turnover commercial market is what gives a dark store a second life and
-        what gives a buyer a reason to bid on land.</p>
-        <p class="small">Implication: the downside from vacancy is bounded by re-leasing and redevelopment prospects &mdash;
-        but only if the parcel's zoning supports it, which is unverified (U-04).</p>
-      </div>
-    </div>
-
-    <h2>Employment</h2>
-    <div data-table="economy"></div>
-
-    <h2>Consumer prices, Los Angeles area</h2>
-    <div data-table="prices"></div>
-
-    <h2>Capital-markets inputs</h2>
-    <div data-table="capital"></div>
-
-    <div class="callout bad">
-      <div class="h">The single most important number on this page is not on it</div>
-      <p>The cap rate a buyer will apply to this asset is not published by any government agency. Rather than invent one,
-      the <a href="model.html">projection model</a> treats it as an explicit, adjustable assumption and shows the break-even
-      at which holding stops making sense. That is recorded as open item <b>U-06</b>.</p>
-    </div>
-
-    <div class="foot"><p><a href="market.html">&larr; Market &amp; Demographics</a> · <a href="schools.html">Next: Schools &amp; Community &rarr;</a></p></div>
-  </main>
-</div>
-<script src="assets/app.js"></script>
+  </div>
 </body>
 </html>

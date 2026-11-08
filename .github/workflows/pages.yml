@@ -47,13 +47,11 @@ jobs:
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html projection.html property.html decision.html risks.html \
-             requirements.html repo-review.html flagged.html sources.html audit.html 404.html _site/
-          cp assets/styles.css assets/site.js _site/assets/
-          # The published set is mirrored by _config.yml, because the repository's
-          # Pages source is still the legacy branch build, which otherwise serves
-          # every file in the root - including superseded dashboards kept only for
-          # traceability. Both publishers now emit these pages and two assets.
+          cp index.html geography.html population.html income.html schools.html \
+             economy.html jobs.html projections.html property.html tenant.html \
+             decision.html risks.html requirements.html repo-review.html \
+             flagged.html sources.html audit.html 404.html _site/
+          cp assets/styles.css assets/site.js assets/favicon.svg _site/assets/
           echo "Assembled $(find _site -type f | wc -l) public files"
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3

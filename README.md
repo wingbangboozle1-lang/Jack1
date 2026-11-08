@@ -1,61 +1,85 @@
-# Jack in the Box NNN Property Decision Brief
+# Jack in the Box Property Decision Brief
 
-A privacy-first, source-linked GitHub Pages dashboard for deciding whether to sell, renew, or hold a Jack in the Box NNN-leased property described as being near central Los Angeles, with a reported lease expiry between 2030 and 2035.
+A privacy-first, source-linked GitHub Pages dashboard for assessing sale, renewal, or hold
+scenarios for a Jack in the Box NNN-leased property described as being near central Los Angeles.
 
-**Live site:** https://wingbangboozle1-lang.github.io/Jack1/
+Every table row links to the official publisher of the figure on that row. Where a value could
+not be read from an official page, the cell is left blank and the item is listed on the
+**Flagged for Review** page. Nothing is inferred, estimated, or filled in.
 
-## Published dashboard (11 pages)
+## The published dashboard
 
-| # | Page | What it answers |
-|---|---|---|
-| 01 | [`index.html`](index.html) | Executive summary, verified indicators, the recommended course of action, the sequence to run, the decision rules, and the gate dates |
-| 02 | [`market.html`](market.html) | Population, income, housing, labour, output, official forecasts, and school-lookup limits |
-| 03 | [`projection.html`](projection.html) | The projection system: verified drivers, derived growth rates, scenarios, break-even and sensitivity arithmetic |
-| 04 | [`property.html`](property.html) | Blank, flagged property and lease fields; issuer-wide SEC lease-structure and financial context |
-| 05 | [`decision.html`](decision.html) | Sell, renew, and hold paths; the risk-balanced recommendation; risk by decision; after-tax worksheet |
-| 06 | [`risks.html`](risks.html) | Hazard, contract, market, regulatory, and tail-risk register, with county-level official hazard statistics |
-| 07 | [`requirements.html`](requirements.html) | Requirement-by-requirement coverage matrix for the brief as issued |
-| 08 | [`repo-review.html`](repo-review.html) | Repository findings: competing builds, orphan pages, conflict markers, stale data, deploy-path fixes, privacy scan |
-| 09 | [`flagged.html`](flagged.html) | Every material unverified input, with what would close it |
-| 10 | [`sources.html`](sources.html) | Official source register, verification rules, and limitations |
-| 11 | [`audit.html`](audit.html) | Verification ledger: each figure against its official page, corrections, and irregularities |
+Seventeen pages, grouped by category in the sidebar. Each page's tables have a client-side
+filter box.
 
-## What the brief recommends
+| Page | Contents |
+|---|---|
+| [`index.html`](index.html) | Executive summary, eight verified indicator cards, decision guardrails |
+| [`geography.html`](geography.html) | Land area, density, DTLA 2040 plan expectations, parcel-mismatch caveats |
+| [`population.html`](population.html) | Census city and county estimates, households, SCAG population forecast |
+| [`income.html`](income.html) | Income, poverty, rent, tenure, home value, retail and food-services sales |
+| [`schools.html`](schools.html) | Federal Common Core of Data statistics for Los Angeles Unified |
+| [`economy.html`](economy.html) | County GDP, the discontinued metro GDP series, LA-area CPI detail |
+| [`jobs.html`](jobs.html) | BLS unemployment rates, Census establishment counts, SCAG employment baseline |
+| [`projections.html`](projections.html) | Model inputs, six scenarios, blank outputs, private in-browser calculator |
+| [`property.html`](property.html) | Lease and asset diligence checklist — every value blank |
+| [`tenant.html`](tenant.html) | Issuer-level SEC figures and what they do not establish |
+| [`decision.html`](decision.html) | Sell / renew / hold worksheet, trade-offs, and the risk carried by each path |
+| [`risks.html`](risks.html) | Risk register, measured hazards with citations, tail-event scenarios |
+| [`requirements.html`](requirements.html) | Requirement-by-requirement coverage matrix: met, partly met, or blocked |
+| [`repo-review.html`](repo-review.html) | Fourteen repository findings with evidence and the action taken |
+| [`flagged.html`](flagged.html) | Seventeen flagged items, including seven corrections made on 08 Nov 2026 |
+| [`sources.html`](sources.html) | Every official publisher, what it is used for, and its audit status |
+| [`audit.html`](audit.html) | Line-by-line verification ledger and repository findings |
 
-Dual-track and evidence-first, with a date attached: obtain the contract and a price while term remains, ask the tenant for an extension at acceptable rent, and compare after-tax net proceeds with risk-adjusted hold value. If no qualifying extension is signed — market rent, ten-plus years beyond 2035, fixed escalations, creditworthy obligor or guaranty, capped landlord obligations, obtainable insurance — the default is to **sell with the lease in place inside the 2027–2029 window**, and never to enter the final 24 months of term with neither a signed renewal nor an active listing.
+## Evidence and privacy
 
-The reasoning is labelled analyst judgement and kept separate from sourced data: the renewal option belongs to the tenant, and roughly 93% of the brand's restaurants are franchise-operated, so the paying obligor may not be the public company.
+The full verification ledger for 08 November 2026 is in
+[`verification/2026-11-08-81536038.md`](verification/2026-11-08-81536038.md). A prior
+independent audit is in `verification/2026-11-07-aa4a9fab.md`.
 
-## Evidence, verification and privacy
+No exact address, APN, executed lease, rent schedule, legal tenant or guarantor, debt payoff,
+appraisal, condition report, insurance quote, or owner-specific tax or liquidity detail was
+available for independent verification. Asset-specific values are left blank and flagged. The
+brief does not make a parcel-level hazard conclusion, an appraisal, or a definitive sell/renew
+recommendation. Public statistics retain their published City of Los Angeles, Los Angeles
+County, SCAG, or planning geography.
 
-- [`verification/2026-11-08-9dce30d0.md`](verification/2026-11-08-9dce30d0.md) — 23 figure groups re-read at source on 08 Nov 2026; two published contradictions corrected; the FEMA county-declaration gap closed through OpenFEMA.
-- [`verification/2026-11-08-14c28bc9.md`](verification/2026-11-08-14c28bc9.md) and [`research/verification-2026-11-08.md`](research/verification-2026-11-08.md) — independent re-verification passes by other sessions.
-- [`verification/2026-11-07-aa4a9fab.md`](verification/2026-11-07-aa4a9fab.md) and [`research/verification-audit-d18e3065.md`](research/verification-audit-d18e3065.md) — earlier line-by-line audits.
+The website intentionally does not publish or collect owner names, exact property identifiers,
+ownership entities, lease documents, or personal financial information. The calculator on the
+projection page runs entirely in the browser: no network request, no storage, no logging.
+A link to an interactive lookup tool does not mean a property query was completed.
 
-Every table row in the published pages links an official source. Values that cannot be confirmed are left blank and listed on **Flagged for Review**; nothing is inferred or filled in. No exact address, APN, executed lease, rent schedule, legal tenant or guarantor, debt payoff, appraisal, condition report, insurance quote, or owner-specific tax / liquidity detail is published, collected, or requested.
-
-## Local preview and checks
+## Building and checking
 
 ```sh
-python3 -m http.server 4173 --bind 0.0.0.0
-python3 scripts/validate_site.py
+python3 scripts/build_pages.py   # regenerate all seventeen pages
+python3 scripts/validate_site.py # structural, citation, and privacy checks
+python3 -m http.server 4173      # local preview
 ```
 
-The validator checks the eleven published pages, required local paths and fragments, unique IDs, an official-source link in every evidence row, external-source host allowlisting, new-tab link protections, and visible email / phone patterns.
+`scripts/build_pages.py` is the single source of truth for page content. It refuses to emit a
+table row that does not carry an official-source hyperlink, and it renders blanks through a
+dedicated `cell-blank` element so an empty cell can never be read as zero.
 
-## Publication scope
+`scripts/validate_site.py` checks the fifteen public pages, required local paths and fragments,
+unique IDs, an official-source link in every table-body row, an external-host allowlist,
+new-tab link protections, and visible email or phone-number patterns.
 
-There are two publishers, and they now emit the same set:
+## GitHub Pages deployment
 
-Publishing uses two mechanisms that now emit the same file set:
+`.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after
+changes reach `main` (or on manual dispatch). It assembles only the seventeen pages above plus
+`404.html`, `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`, and `.nojekyll`.
+Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, `archive/`, and other
+root documents remains in the repository for traceability but is not part of this dashboard's
+deployment artifact.
 
-1. `.github/workflows/pages.yml` — validates every push and pull request, and on `main` uploads an artifact containing the eleven pages, `404.html`, `assets/styles.css`, and `assets/site.js`.
-2. The repository's legacy branch build (`build_type: legacy`, source `main` `/`) — which would otherwise serve **every** file in the root. `_config.yml` scopes it to the same set, and `.nojekyll` was removed so Jekyll actually runs as the filter. The eleven published HTML pages carry no YAML front matter, so they are copied byte-for-byte.
+Superseded root pages from earlier builds were moved to `archive/arena-81536038/` rather than
+deleted.
 
-A local simulation of the exclude rules returns the same file set the workflow stages: the eleven pages, `404.html`, `assets/styles.css`, and `assets/site.js`.
+## Repository note
 
-A local simulation of the exclude rules returns exactly 14 files: the eleven pages, `404.html`, `assets/styles.css`, `assets/site.js`.
-
-Material outside the published set (`archive/`, `pages/`, `site/`, `data/`, `research/`, `analysis/`, `verification/`, `tools/`, `scripts/`, and the older root drafts that still carry withdrawn figures) remains in the repository for traceability and is deliberately not published.
-
-**Admin note:** switching Pages → Source to **GitHub Actions** would make the workflow the only publisher and remove the duplicate run; the REST attempt from an integration token returns HTTP 403, so an admin must make that change. Until then `_config.yml` is what keeps superseded dashboards off the live site — a configuration filter, not a deletion, so the audit trail stays in the repository.
+This repository has been built on by many parallel sessions and contains several complete,
+overlapping site builds under `pages/`, `site/`, and `archive/`. Only the fifteen root pages
+described here are deployed. See `COORDINATION.md` for the session task board.
