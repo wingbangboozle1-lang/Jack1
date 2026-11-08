@@ -39,6 +39,8 @@ The validator checks the eleven published pages, required local paths and fragme
 
 `.github/workflows/pages.yml` validates on pull requests and publishes exactly the eleven pages above plus `assets/styles.css`, `assets/site.js`, and `.nojekyll`.
 
-Publishing is a **single path**: the workflow artifact. Earlier revisions also allowed the branch-based Pages build to publish the whole repository, which served superseded drafts — including archived pages with unresolvable merge markers — and raced the workflow. That duplicate path is removed. Repository Pages settings must use **GitHub Actions** as the build source.
+The workflow stages a strict allowlist and publishes it on every push to `main`.
+
+**Known open defect:** the repository's Pages source is currently the branch itself (`build_type: legacy`), so the branch build also publishes the whole repository — including archived drafts that contain unresolved merge markers — and races the workflow. Switching the source to **GitHub Actions** requires repository-admin rights and is the one-line settings change that closes the defect. It is logged as RR-04/RR-05 on the Repo Review page.
 
 Material not in the published artifact (`archive/`, `pages/`, `site/`, `data/`, `research/`, and the five superseded root drafts) remains in the repository for traceability and is documented on the Repo Review page.

@@ -51,6 +51,24 @@ JSON is unused by any published page and may drift.
 
 ---
 
+### PR and deploy record — 2026-11-08 (session arena-9707cb4b)
+
+| Item | Result |
+|---|---|
+| Branch | `arena/9707cb4b-jack1` |
+| Pull request | **#30** → `main`, "Integration: verified decision brief, projection system, requirements coverage, repo review, single deploy path" |
+| Pre-merge check | `validate` job **pass** (workflow run 42532835562) |
+| Merge | **merged** 2026-11-08T22:58:41Z, merge commit `edcd971` |
+| Pages build (`pages-build-deployment`, run 42532867895) | **success** |
+| Pages workflow (run 42532867948) | **success** |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/projection.html` renders the new projection system with all 14 driver rows and their source links; `/index.html` renders the new recommendation banner, the corrected $1.295T (2023) GDP sentence, the 16,264-structure fire card, and the five-step sequence |
+| Pages source | **still `legacy` (branch `/`)** — the API rejected the switch to GitHub Actions with HTTP 403 ("Resource not accessible by integration"). Consequence: the whole repository, including `archive/` drafts with merge markers, remains published. Logged as RR-04/RR-05 with the exact admin action that closes it. |
+
+**Post-merge wording correction (this branch, follow-up PR):** the first version of RR-04/RR-05 claimed the
+archived drafts were "no longer served". They are still served, because the Pages source could not be
+changed from this session. The claims were corrected on the published page and in `README.md` rather than
+left standing — a wrong fix recorded as done is worse than an open defect recorded honestly.
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
