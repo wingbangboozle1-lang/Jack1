@@ -50,6 +50,14 @@ SOURCES = {
         "BEA via FRED · GDP, Los Angeles County (GDPALL06037)",
         "https://fred.stlouisfed.org/series/GDPALL06037",
     ),
+    "sec_leases": (
+        "SEC · Jack in the Box 10-Q, Note 5 — Leases",
+        "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm",
+    ),
+    "fred_dgs10": (
+        "Federal Reserve H.15 via FRED · 10-year Treasury constant maturity (DGS10)",
+        "https://fred.stlouisfed.org/series/DGS10",
+    ),
     "fred_metro": (
         "BEA via FRED · GDP, LA–Long Beach–Anaheim MSA (NGMP31080)",
         "https://fred.stlouisfed.org/series/NGMP31080",
@@ -699,6 +707,7 @@ def jobs_body() -> str:
         ["SCAG forecast · regional job additions, health care and social assistance", "+416,000", "SCAG region · 2022–2050", "Regional sector addition; verified against the SCAG technical report in the 07 Nov 2026 audit and not re-read in this pass.", s("scag_tech")],
         ["SCAG forecast · regional job additions, construction", "+148,000", "SCAG region · 2022–2050", "Regional sector addition; verified in the 07 Nov 2026 audit.", s("scag_tech")],
         ["SCAG forecast · regional job additions, accommodation and food services", "+106,000", "SCAG region · 2022–2050", "Regional sector addition; no quick-service split is published.", s("scag_tech")],
+        ["County employment level", "4,806,494", "September 2026 · preliminary · BLS LAUS", "Equals the published labour force less the published unemployment level for the same month.", s("bls_laus")],
         ["Occupation projection · Cooks, Restaurant", "40,760 (2023) → 54,070 (2033)", "Los Angeles County · EDD projections · +13,310 jobs, +32.7%", "The closest officially published occupation to this asset's staffing need. It is a county labour-supply projection, not demand at this restaurant.", s("edd_profile")],
         ["Employment within the subject catchment", BLANK, "Not mapped", "Daytime employment near the site cannot be derived from county totals.", s("zimas")],
     ]
@@ -758,6 +767,10 @@ def tenant_body() -> str:
         ["Current maturities of debt", "$44,160,000", "As of 5 Jul 2026", "Consolidated balance-sheet item, not the operator's balance sheet.", s("sec_10q")],
         ["Long-term debt", "$1,428,667,000", "As of 5 Jul 2026", "Interpret with the filing's debt notes and covenant terms.", s("sec_10q")],
         ["Del Taco presentation", "Reported as discontinued operations after the December 2025 sale", "As described in the 2026 10-Q", "Continuing-operations presentation is used for the comparisons above.", s("sec_10q")],
+        ["Issuer lease policy · initial term", "Generally 20 years, exclusive of options to renew", "Note 5, Leases · 10-Q for the 40 weeks ended 5 Jul 2026", "Issuer-wide policy read verbatim from the filing. It is not this lease, and it does not confirm the term actually signed at this site.", s("sec_leases")],
+        ["Issuer lease policy · renewal options", "Generally exercisable at the company's sole discretion for 1 to 20 years", "Note 5, Leases · same filing", "The most decision-relevant sentence in the filing: the renewal choice sits with the tenant, not the landlord. Treat a renewal as something the landlord cannot compel.", s("sec_leases")],
+        ["Issuer lease policy · escalations and pass-throughs", "Many restaurants have rent escalation clauses and pay property taxes, insurance, and maintenance costs", "Note 5, Leases · same filing", "Consistent with a net-lease structure at issuer level, but the executed document governs this site.", s("sec_leases")],
+        ["Franchise rental revenues (issuer as lessor)", "$73,017,000 quarter; $242,526,000 year to date", "Quarter and 40 weeks ended 5 Jul 2026", "The issuer's income from leasing to franchisees; not rent paid under this lease.", s("sec_leases")],
         ["Subject-site operator, guarantor, and rent history", BLANK, "Not identified", "Issuer-level filings cannot establish who signed this lease or whether it is guaranteed.", s("sec_10q")],
     ]
     return (
@@ -783,6 +796,10 @@ def projections_body() -> str:
         ["Food-away-from-home inflation", "+2.8% over 12 months to Sep 2026", "BLS CPI-U, Los Angeles area", "Menu-price proxy used in the sales-sensitive scenario.", s("bls_cpi")],
         ["Labour-market starting point", "4.5% county unemployment, Sep 2026 (preliminary)", "BLS LAUS", "Starting condition for the demand scenarios.", s("bls_laus")],
         ["Output base", "$1.003 trillion county GDP, 2024", "BEA GDP by county", "Scale reference only; not used to size a single restaurant.", s("fred_county")],
+        ["County population runway", "10,046,000 (2019) → 10,214,000 (2030) → 10,757,000 (2045) → 10,793,000 (2050)", "SCAG Connect SoCal 2024, Appendix I Table 3.14-8", "The 2030 and 2045 columns bracket the reported 2030–2035 expiry window. Note the tension: Census estimates show the county shrinking now, while the adopted forecast grows it.", s("scag_appendix")],
+        ["County household runway", "3,393,000 (2019) → 3,784,000 (2030) → 4,120,000 (2045) → 4,155,000 (2050)", "SCAG Connect SoCal 2024, Appendix I Table 3.14-9", "Households grow faster than population, which matters more than headcount for a neighbourhood restaurant.", s("scag_appendix")],
+        ["County employment runway", "5,031,000 (2019) → 5,277,000 (2030) → 5,497,000 (2045) → 5,461,000 (2050)", "SCAG Connect SoCal 2024, Appendix I Table 3.14-10", "The adopted forecast peaks around 2045 and eases slightly by 2050. A flat-to-slightly-down long run changes a hold case more than it changes a sale case.", s("scag_appendix")],
+        ["Risk-free discount benchmark", "4.84%", "10-year U.S. Treasury constant maturity · 5 Nov 2026 · Federal Reserve H.15", "A published benchmark for discounting future rent. It is not a cap rate, a required return, or a financing quote.", s("fred_dgs10")],
         ["Transfer-cost rule", "ULA 4% above $5,400,000 and 5.5% at or above $10,900,000", "City of LA, for transactions closing after 30 Jun 2026", "Applies only inside the City and only at the actual closing date.", s("ula")],
     ]
 
@@ -947,6 +964,7 @@ def decision_body() -> str:
         ["Sell", "Selling before the value drivers are known; paying ULA unnecessarily; triggering a taxable gain in a single year; losing a contractual option you did not know you held.", R, s("ula")],
         ["Sell", "Mis-pricing the asset because cap-rate evidence and rent comparables were never gathered.", R, s("sec_10k")],
         ["Renew", "Renewing at a rent below market because no comparable was checked; extending a weak obligor; absorbing capital items the NNN label does not actually transfer.", R, s("bls_cpi")],
+        ["Renew", "Assuming the landlord can force a renewal. The issuer's own lease note says renewal options are generally exercisable at the company's sole discretion, so a renewal is a tenant decision the landlord cannot compel.", V, s("sec_leases")],
         ["Renew", "Locking in a long term just before a land-use change that raises alternative-use value.", L, s("dtla")],
         ["Hold to expiry", "Vacancy, downtime, re-leasing capital, and an insurance market that may not offer terms at renewal.", R, s("cdi_claims")],
         ["Hold to expiry", "Doing nothing while notice deadlines quietly pass — the single most common and most avoidable loss.", V, s("sec_10k")],
@@ -1157,6 +1175,8 @@ SOURCE_ROWS = [
     ["LAUSD · school explorer", "Attendance-area lookup for an unidentified address", "Lookup tool; no value published", s("lausd_explore")],
     ["California Department of Education · School Dashboard", "School and district performance lookup", "Lookup tool; no value published", s("cde_dashboard")],
     ["U.S. SEC · Jack in the Box 10-Q", "Continuing-operations figures, debt, restaurant counts", "Restaurant counts, earnings, and debt verified in the 07 Nov 2026 audit", s("sec_10q")],
+    ["U.S. SEC · 10-Q Note 5, Leases", "Issuer lease-term and renewal-option policy, and franchise rental revenue", "Re-read 08 Nov 2026 · matched verbatim", s("sec_leases")],
+    ["Federal Reserve H.15 via FRED", "10-year Treasury constant maturity, used as a discount benchmark", "Re-read 08 Nov 2026 · match", s("fred_dgs10")],
     ["U.S. SEC · XBRL company facts", "Revenue facts for the 12 and 40 weeks ended 5 Jul 2026 and fiscal years 2024–2025", "Re-read 08 Nov 2026 · values matched to the cent", s("sec_xbrl")],
     ["USGS · earthquake probability FAQ", "Los Angeles region 30-year probabilities for M 6.7, 7.0, 7.5", "Re-read 08 Nov 2026 · matched verbatim", s("usgs_eq")],
     ["CAL FIRE / Office of the State Fire Marshal", "FHSZ programme and the official SRA/LRA acreage table", "Re-read 08 Nov 2026 · acreage matched", s("calfire_fhsz")],
@@ -1227,6 +1247,10 @@ AUDIT_ROWS = [
     ["CDI claims: 41,727 filed; 40,482 partially paid; $25.2 billion paid; updated 06 Jul 2026", "California Department of Insurance", "Match", s("cdi_claims")],
     ["EDD occupation projection, Cooks, Restaurant: 40,760 (2023) → 54,070 (2033), +13,310, +32.7%", "CA EDD Los Angeles County profile", "Re-read 08 Nov 2026 · match", s("edd_profile")],
     ["Building permits 2025: 20,192 permits, $4,197,975,040 total costs", "CA EDD profile, republishing Census building-permit data", "Re-read 08 Nov 2026 · match", s("edd_profile")],
+    ["Issuer lease policy: initial terms generally 20 years; renewal options generally exercisable at the company's sole discretion for 1 to 20 years", "SEC 10-Q, Note 5 — Leases (R12.htm)", "Read verbatim 08 Nov 2026 · match", s("sec_leases")],
+    ["SCAG county runway to 2030 / 2045: population 10,214,000 / 10,757,000; households 3,784,000 / 4,120,000; employment 5,277,000 / 5,497,000", "SCAG Appendix I, Tables 3.14-8, 3.14-9, 3.14-10", "Re-read 08 Nov 2026 · match", s("scag_appendix")],
+    ["10-year Treasury constant maturity 4.84% (5 Nov 2026)", "Federal Reserve H.15 via FRED DGS10", "Re-read 08 Nov 2026 · match", s("fred_dgs10")],
+    ["County employment level 4,806,494 (Sep 2026, preliminary)", "BLS LAUS county series", "Labour force less unemployment level, both published in the same series", s("bls_laus")],
     ["EDD county profile no longer displays county labour-force data", "CA EDD Los Angeles County profile", "Re-read 08 Nov 2026 · the statement still holds", s("edd_profile")],
     ["SCAG regional sector job additions (+416,000; +148,000; +106,000)", "SCAG technical report", "Verified 07 Nov 2026 and 08 Nov 2026 by another session; not re-read here", s("scag_tech")],
     ["JACK restaurant counts, earnings from continuing operations, and debt balances", "SEC Form 10-Q", "Verified 07 Nov 2026; not re-read in this pass", s("sec_10q")],

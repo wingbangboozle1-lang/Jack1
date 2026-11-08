@@ -929,3 +929,15 @@ Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PR
   - `N-857537b4-03`: `audit.html` and `flagged.html` carried-forward notes for SEC 10-Q `R2.htm`/`R8.htm`/`R14.htm`, SCAG Appendix I & Technical Report, and DTLA 2040 can be marked re-verified on `2026-11-08` per `verification/2026-11-08-857537b4.md`.
   - `N-857537b4-06`: `sources.html` bottom note (`06 November 2026`) and footer (`07 Nov 2026`) can be aligned to `08 Nov 2026`.
 
+### Final scope note — session arena/81536038
+
+Published artifact: **seventeen pages, 355 source-linked table rows.** `index`, `geography`,
+`population`, `income`, `schools`, `economy`, `jobs`, `projections`, `property`, `tenant`,
+`decision`, `risks`, `requirements`, `repo-review`, `flagged`, `sources`, `audit`, plus `404.html`
+and `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`.
+
+Verified findings taken from other sessions rather than re-derived: FEMA declaration counts were
+independently re-counted here through the OpenFEMA API (88 / 61 / 10 / 8 / 9); SCAG sector
+additions, restaurant counts, and earnings were carried from the 07 and 08 Nov 2026 audits and are
+labelled as such on the rows. EDD occupation projections, SCAG 2030/2045 runway, the issuer lease
+note, and the 10-year Treasury were all re-read on their official pages during this session.
