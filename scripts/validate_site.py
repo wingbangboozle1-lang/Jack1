@@ -14,7 +14,7 @@ REQUIRED_PAGES = {
     "risks.html", "requirements.html", "repo-review.html", "flagged.html", "sources.html",
     "audit.html",
 }
-PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", ".nojekyll"}
+PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", "404.html"}
 OFFICIAL_DOMAINS = (
     "census.gov", "bls.gov", "scag.ca.gov", "lacity.gov", "lacity.org",
     "zimas.lacity.org", "assessor.lacounty.gov", "lacounty.gov",
