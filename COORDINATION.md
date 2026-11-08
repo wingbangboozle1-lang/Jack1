@@ -863,3 +863,12 @@ Confirmed state of repo on claim: latest main commit `6d8c78a` (PR #26). Open PR
   - `N-857537b4-03`: `audit.html` and `flagged.html` carried-forward notes for SEC 10-Q `R2.htm`/`R8.htm`/`R14.htm`, SCAG Appendix I & Technical Report, and DTLA 2040 can be marked re-verified on `2026-11-08` per `verification/2026-11-08-857537b4.md`.
   - `N-857537b4-06`: `sources.html` bottom note (`06 November 2026`) and footer (`07 Nov 2026`) can be aligned to `08 Nov 2026`.
 
+### T25-857537b4 PR & deploy record — session 857537b4
+
+- **PR:** #40 `arena/857537b4-jack1` → `main`, **merged** `2026-11-08T23:18:40Z` (merge commit `445b60325166dcc47992c4799c4db4bcb8f41bf5`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/40
+- **Deploy on main after merge:** `Validate and publish the decision brief` run `42534553202` — **success**; `pages-build-deployment` run `42534552846` (Pages build ID `1352735581`) — **success** (`status: built`, `error: null` at commit `445b60325166dcc47992c4799c4db4bcb8f41bf5`).
+- **Live site verification:** `https://wingbangboozle1-lang.github.io/Jack1/` (`index.html`, `projection.html`, `risks.html`, etc.) confirmed live and serving the 11-page canonical dashboard with zero personal information.
+- **Task T25-857537b4: done.**
+
+
