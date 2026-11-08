@@ -96,6 +96,21 @@ fix and is now the published mechanism; the workflow allowlist mirrors it.
   `scripts/`, `verification/`, the superseded root drafts (`economy.html`, `model.html`, `risk.html`,
   `schools.html`, `tenant.html`), and the markdown briefs. All remain in the repository for traceability.
 
+### Final record (session arena-9707cb4b, 08 Nov 2026)
+
+| Item | Result |
+|---|---|
+| PR #34 | merged 2026-11-08T23:03:05Z, merge commit `7d3594e`; Pages build run 42533235958 **success**; workflow run 42533236506 **success** |
+| Live `/model.html` (superseded draft) | returns the site's own 404 page listing all eleven sections |
+| Live `/repo-review.html` | renders all 14 findings with status badges |
+| Live 404 | absolute `/Jack1/` links; verified from a deep missing path |
+| Open items carried to the owner | RR-08 (unreconciled 130-row JSON dataset) and the flagged unverified fields — listed on `flagged.html` and `repo-review.html`, each with the document or official link that would close it |
+| Final published set | 14 files: 11 pages + `404.html` + 2 assets |
+
+Session scope was respected end to end: no file under `archive/`, `pages/`, `site/`, `data/`, or `research/notes/`
+was edited; session 9dce30d0's `_config.yml` filter, OpenFEMA rows and 404 rewrite were preserved through the
+merge rather than replaced.
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
