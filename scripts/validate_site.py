@@ -9,14 +9,24 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_PAGES = {"index.html", "market.html", "property.html", "decision.html", "risks.html", "flagged.html", "sources.html", "audit.html"}
-PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", ".nojekyll"}
+REQUIRED_PAGES = {
+    "index.html", "geography.html", "population.html", "income.html", "schools.html",
+    "economy.html", "jobs.html", "projections.html", "property.html", "tenant.html",
+    "decision.html", "risks.html", "requirements.html", "repo-review.html",
+    "flagged.html", "sources.html", "audit.html",
+}
+PUBLIC_FILES = REQUIRED_PAGES | {"404.html", "assets/styles.css", "assets/site.js", ".nojekyll"}
 OFFICIAL_DOMAINS = (
     "census.gov", "bls.gov", "scag.ca.gov", "lacity.gov", "lacity.org",
     "zimas.lacity.org", "assessor.lacounty.gov", "lacounty.gov",
     "propertytax.lacounty.gov", "sec.gov", "fema.gov", "fire.ca.gov",
     "insurance.ca.gov", "metro.net", "lausd.org", "cde.ca.gov", "irs.gov",
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
+    "nces.ed.gov", "ed.gov", "data.sec.gov", "data.bls.gov", "hazards.fema.gov",
+    # Official CAL FIRE / Office of the State Fire Marshal documents are served from
+    # the State Fire Marshal's own content-delivery host. Allowlisted as an exact
+    # host, not as a wildcard for the CDN.
+    "34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
     "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
@@ -37,6 +47,7 @@ class PageAudit(HTMLParser):
         self.errors: list[str] = []
         self._in_tbody = False
         self._row: dict[str, bool] | None = None
+        self._narrative_table = False
         self.text_parts: list[str] = []
         self.table_body_rows = 0
 
@@ -44,14 +55,18 @@ class PageAudit(HTMLParser):
         attrs_map = dict(attrs)
         if attrs_map.get("id"):
             self.ids.append(attrs_map["id"] or "")
+        if tag == "table":
+            self._narrative_table = attrs_map.get("data-narrative") == "true"
         if tag == "tbody":
             self._in_tbody = True
         if tag == "tr" and self._in_tbody:
-            self._row = {"official_source": False}
+            self._row = {"official_source": False, "any_link": False}
             self.table_body_rows += 1
         if tag == "a" and attrs_map.get("href"):
             href = attrs_map["href"] or ""
             self.links.append((href, attrs_map.get("target") or "", attrs_map.get("rel") or ""))
+            if self._row is not None:
+                self._row["any_link"] = True
             parsed = urlparse(href)
             if parsed.scheme in ("http", "https"):
                 host = (parsed.hostname or "").lower()
@@ -64,7 +79,13 @@ class PageAudit(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "tr" and self._row is not None:
-            if not self._row["official_source"]:
+            if self._narrative_table:
+                # Narrative rows (requirements coverage, repository findings) describe
+                # deliverables rather than evidence, so a citation would be fabricated.
+                # They must still link somewhere a reviewer can check.
+                if not self._row["any_link"]:
+                    self.errors.append("A narrative table row has no link at all")
+            elif not self._row["official_source"]:
                 self.errors.append("A data row in a table body has no official source link")
             self._row = None
         if tag == "tbody":
