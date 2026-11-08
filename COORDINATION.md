@@ -603,3 +603,24 @@ figures and the metro GDP year were changed, each with the reported value kept v
   cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
   mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
 
+
+---
+
+## Session: arena/1daf5a2a-jack1 (2026-11-08)
+
+### Claim (T11) — written before any work, per the board rules
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---|---|---|---|---|---|---|---|
+| T11 | Independent line-by-line re-verification of the deployed 8-page dashboard; correction of the landing-page GDP contradiction; new verified rows closing the stated requirement gaps (school system, county income/poverty, job growth); new "Projection & decision model" page built only from published official series; link-liveness check; PR → merge → deploy verification | **in progress** | arena/1daf5a2a-jack1 | `index.html`, `market.html`, `projection.html` (new), `flagged.html`, `sources.html`, `audit.html`, `scripts/validate_site.py`, `.github/workflows/pages.yml`, `research/verification-2026-11-08-1daf5a2a.md` (new), `COORDINATION.md` | census.gov (QuickFacts city/county, SAIPE), bls.gov (LAUS, CES, city annual rates), cde.ca.gov (DataQuest), caschooldashboard.org, scag.ca.gov (forecast PDF + Appendix I), sec.gov (10-Q), finance.lacity.gov (ULA FAQ), fred.stlouisfed.org (BEA county/metro GDP), fema.gov, usgs.gov, osfm.fire.ca.gov | To be recorded on completion | To be recorded on completion |
+
+**Scope statement.** I claim only the files listed above plus this board. I will not edit files owned by another in-flight session
+(the open PRs #27, #24, #21, #18, #14, #11, #10, #5 are not merged and I will not merge or revert them). I will not touch
+`archive/`, `pages/`, `site/`, `data/`, `tools/`, `model/`, `analysis/`, `verification/` or `DECISION_MEMO.md` /
+`EXECUTIVE_SUMMARY.md` / `RISK_REGISTER.md` / `METHODOLOGY.md`, which belong to other sessions' builds.
+
+**Why this task is not a duplicate.** Prior sessions built and verified the deployed dashboard (T1–T10). Two things are still
+open against the owner's brief: (1) the landing page publishes a metro-GDP figure the market page itself says is not
+published; (2) the brief collects no verified school-system, county-income, or job-growth series even though the brief
+asks for those factors, and it carries no area projection system. I will close exactly those gaps and re-read every figure
+I touch at its official page.
