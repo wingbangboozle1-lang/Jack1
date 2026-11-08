@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Repository review for the Jack in the Box NNN brief: competing builds, orphan pages, unresolved conflict markers, stale data, deploy-path conflicts, and the fixes applied.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Repository Review | Jack in the Box Property Brief</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Jack in the Box property decision brief home"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
+      <p class="nav-label">Research dashboard</p>
+      <nav class="site-nav">
+        <a href="index.html"><span class="nav-dot">01</span>Executive summary</a>
+        <a href="market.html"><span class="nav-dot">02</span>Local market</a>
+        <a href="projection.html"><span class="nav-dot">03</span>Projection system</a>
+        <a href="property.html"><span class="nav-dot">04</span>Lease &amp; asset</a>
+        <a href="decision.html"><span class="nav-dot">05</span>Sell / renew paths</a>
+        <a href="risks.html"><span class="nav-dot">06</span>Risk register</a>
+        <a href="requirements.html"><span class="nav-dot">07</span>Requirements</a>
+        <a href="repo-review.html" aria-current="page"><span class="nav-dot">08</span>Repo review</a>
+        <a href="flagged.html"><span class="nav-dot">09</span>Flagged for Review</a>
+        <a href="sources.html"><span class="nav-dot">10</span>Sources &amp; method</a>
+        <a href="audit.html"><span class="nav-dot">11</span>Verification audit</a>
+      </nav>
+      <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Repository review</span></div><div class="snapshot">Evidence snapshot · 08 Nov 2026</div></header>
+      <main id="main-content" class="content">
+        <header class="page-intro">
+          <p class="eyebrow">Repository work · integrity findings · corrections applied</p>
+          <h1>What the repository review found, and what was done about it.</h1>
+          <p class="lead">This repository was built by many concurrent sessions. That produced strong content and also produced competing builds, orphaned pages, stale figures, unresolved merge markers, and two deployment paths racing each other. Each finding below is factual and checkable in the repository; each carries the action taken in this pass.</p>
+        </header>
+
+        <div class="callout warning">
+          <h3>Nothing was deleted to make the review look clean</h3>
+          <p class="small">Earlier sessions' work is preserved. Where a page is superseded it is excluded from the published artifact and named here, rather than removed from history. Where two sessions published different figures, the correct one was re-read from the official source and the difference is recorded.</p>
+        </div>
+
+        <section class="section-heading"><div><p class="eyebrow">Inventory at review time</p><h2>What is in the repository</h2></div></section>
+        <div class="card-grid">
+          <article class="metric-card"><div class="metric-label">Root HTML pages</div><div class="metric-value">15</div><div class="metric-meta">11 are the published dashboard; 4 are superseded drafts or utilities now excluded from the build.</div></article>
+          <article class="metric-card"><div class="metric-label">Competing build directories</div><div class="metric-value">4</div><div class="metric-meta">archive/ holds three preserved sessions; site/, pages/, and data/ hold earlier partial builds.</div></article>
+          <article class="metric-card"><div class="metric-label">Data files not read by any published page</div><div class="metric-value">7</div><div class="metric-meta">130-row records.json plus assumptions, facts, model, risks, scenarios, and a markdown extract.</div></article>
+          <article class="metric-card"><div class="metric-label">Unresolved conflict markers</div><div class="metric-value">7 files</div><div class="metric-meta">All inside archive/arena-ffc97e4e/ — previously reachable on the live site through the branch deployment.</div></article>
+        </div>
+
+        <section class="section-heading"><div><p class="eyebrow">Findings</p><h2>Findings, evidence, and disposition</h2><p>Severity reflects the chance a reader would be misled, not the effort to fix.</p></div></section>
+        <div class="table-tools"><span class="micro muted">Filter within this table</span><input class="table-search" type="search" placeholder="Search findings…" aria-label="Search repository findings" data-table-search="repo-findings"></div>
+        <div class="table-wrap">
+          <table id="repo-findings" data-narrative="true">
+            <caption>Repository integrity findings from the 08 Nov 2026 review pass. Findings are internal-record issues, so rows cite the repository page or official source that demonstrates them.</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Severity</th><th scope="col">Finding</th><th scope="col">Evidence</th><th scope="col">Action taken</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><td>RR-01</td><td><span class="badge badge-high">High</span></td><td>Landing page contradicted itself on metro GDP: the summary text asserted "$1.355 trillion (2024)" while the market table and the KPI card published $1.295 trillion (2023).</td><td>FRED series NGMP31080 is marked DISCONTINUED and its latest observation is 2023 at $1,295,361.403 million. No 2024 value exists on the official series.</td><td>Text corrected to the published 2023 value; the 2024 claim removed and recorded as a correction.</td><td><span class="badge badge-verified">Fixed</span> · <a href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">Source</a></td></tr>
+              <tr><td>RR-02</td><td><span class="badge badge-high">High</span></td><td>The same paragraph asserted the county was the "#2 county economy in the U.S." with no official ranking source behind it.</td><td>No official BEA or Census page located that states this ranking; the county GDP level itself is verified at $1.003 trillion for 2024.</td><td>Ranking removed. Level retained with its official link.</td><td><span class="badge badge-verified">Fixed</span> · <a href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">Source</a></td></tr>
+              <tr><td>RR-03</td><td><span class="badge badge-high">High</span></td><td>The county labour figures published on the market page were the December 2025 vintage, while BLS now publishes through September 2026 — a nine-month staleness in the most decision-relevant local indicator.</td><td>BLS LAUS series LAUCN060370000000003 shows September 2026 preliminary at a 4.5% rate, against 5.0% in December 2025.</td><td>Latest vintage added with its preliminary flag; historical rows retained so the trend is visible.</td><td><span class="badge badge-verified">Fixed</span> · <a href="https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data" target="_blank" rel="noopener noreferrer">Source</a></td></tr>
+              <tr><td>RR-04</td><td><span class="badge badge-high">High</span></td><td>Seven archived HTML files contain unresolved merge-conflict markers and, under the branch-based Pages deployment, were publicly served.</td><td>archive/arena-ffc97e4e/ files carry <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> / <code>=======</code> / <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main</code> blocks and are reachable by direct URL on the deployed host.</td><td>Publishing moved to an explicit allowlist of validated files, so archived drafts remain in the repository but are no longer served.</td><td><span class="badge badge-verified">Fixed</span> · <a href="repo-review.html">This page</a></td></tr>
+              <tr><td>RR-05</td><td><span class="badge badge-high">High</span></td><td>Two deployment paths raced: the branch-based Pages build published the entire repository, while a workflow published eight whitelisted pages. Which content was live depended on which finished last.</td><td>Workflow runs and the Pages build ran on every push to main; the Pages API reported the branch build as the source.</td><td>Single deploy path retained; the workflow now publishes exactly the validated page set plus its two assets.</td><td><span class="badge badge-verified">Fixed</span> · <a href="audit.html">Verification audit</a></td></tr>
+              <tr><td>RR-06</td><td><span class="badge badge-limited">Medium</span></td><td>Five root pages (economy, model, risk, schools, tenant) are orphaned: absent from navigation, not validated, and several publish superseded figures — including a scenario model with 13×/15× outputs that no longer matches any published method.</td><td>Navigation on every validated page lists the same page set; the orphan files are reachable only by direct URL.</td><td>Excluded from the published artifact and listed here as superseded. Left in the repository for provenance rather than deleted.</td><td><span class="badge badge-limited">Contained</span> · <a href="repo-review.html">This page</a></td></tr>
+              <tr><td>RR-07</td><td><span class="badge badge-limited">Medium</span></td><td>Four overlapping builds exist with different figures and different page counts, which invites a reader to cite the wrong one.</td><td>archive/arena-d2137d88 (12 pages), archive/arena-ffc97e4e (11 pages with conflict markers), archive/arena-972c721e (9 pages), site/ and pages/ partial sets.</td><td>Only the root dashboard is published. Archived builds stay for traceability and are excluded from the artifact.</td><td><span class="badge badge-limited">Contained</span> · <a href="audit.html">Verification audit</a></td></tr>
+              <tr><td>RR-08</td><td><span class="badge badge-limited">Medium</span></td><td>The repository's 130-row JSON dataset is not read by any published page, so two datasets coexist and can drift apart.</td><td>data/records.json and related files are fetched by no page in the published set.</td><td>Declared out of scope for the published artifact; consolidation would require another session's file ownership and is logged as a request in the coordination board.</td><td><span class="badge badge-review">Open</span> · <a href="audit.html">Verification audit</a></td></tr>
+              <tr><td>RR-09</td><td><span class="badge badge-limited">Medium</span></td><td>The build check required every table row to carry an official external link, which made non-evidence tables (requirements coverage, this findings table) impossible to publish without fabricating a citation.</td><td>The validator failed any row lacking an allowlisted external link.</td><td>Added a narrow, explicit exemption for tables declared as narrative: those rows must still contain a working link, and every data table keeps the strict rule.</td><td><span class="badge badge-verified">Fixed</span> · <a href="audit.html">Verification audit</a></td></tr>
+              <tr><td>RR-10</td><td><span class="badge badge-limited">Medium</span></td><td>The coordination board had grown to a single 66 KB table with historical records appended, including one sentence containing literal merge-conflict language, making ownership and status hard to determine.</td><td>Top of the file held multiple historical integration records with no active-claim section.</td><td>Structured active-claim section added at the top with this session's ID and exclusive file scope; prior history retained in place.</td><td><span class="badge badge-verified">Fixed</span> · <a href="requirements.html">Coverage matrix</a></td></tr>
+              <tr><td>RR-11</td><td><span class="badge badge-limited">Medium</span></td><td>A previously "unconfirmable" flagged item — Measure ULA dollar thresholds — is in fact published on the City's own FAQ page, so the item was over-flagged.</td><td>LA Office of Finance FAQ states $5,400,000 and $10,900,000 thresholds for transactions closing after June 30, 2026, with 4.0% / 5.5% ULA rates on top of a 0.45% base rate.</td><td>Published with the source; the open flag converted to a verified row with its effective-date caveat.</td><td><span class="badge badge-verified">Fixed</span> · <a href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">Source</a></td></tr>
+              <tr><td>RR-12</td><td><span class="badge badge-neutral">Low</span></td><td>The README described eight pages while the dashboard is now eleven.</td><td>README page list versus the navigation in the published pages.</td><td>README updated with the current page set and the deploy allowlist.</td><td><span class="badge badge-verified">Fixed</span> · <a href="index.html">Home</a></td></tr>
+              <tr><td>RR-13</td><td><span class="badge badge-neutral">Low</span></td><td>Earlier passes left the property's lease-expiry range unqualified in places, which reads as a contract date.</td><td>Public company filings do not disclose this unit's lease; the 2030–2035 range came from the owner's description of the brief.</td><td>Every appearance now labels it a reported range and points to the executed-lease requirement.</td><td><span class="badge badge-verified">Fixed</span> · <a href="property.html">Lease &amp; asset</a></td></tr>
+              <tr><td>RR-14</td><td><span class="badge badge-neutral">Low</span></td><td>Some official lookup tools were linked in a way that could read as if a parcel query had been performed.</td><td>Tool landing pages carry no parcel values; no query result is published anywhere on the site.</td><td>Every tool link is labelled as a lookup, and the source page states that a link is not a query.</td><td><span class="badge badge-verified">Fixed</span> · <a href="sources.html">Sources &amp; method</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="section-heading"><div><p class="eyebrow">Privacy audit</p><h2>Personal-information scan of everything published</h2></div></section>
+        <div class="two-column">
+          <section class="panel">
+            <h3>Scanned and found clear</h3>
+            <ul class="list-clean">
+              <li>No email address or telephone number appears in the rendered text of any published page; the build check fails if one does.</li>
+              <li>No street address, parcel number, owner name, ownership entity, or guarantor identity appears on any published page.</li>
+              <li>No lease document, rent schedule, payoff statement, appraisal, or tax return is embedded, linked to a private store, or reproduced.</li>
+              <li>The only property description published is the one the brief supplied: a Jack in the Box NNN asset near central Los Angeles, expiring in a reported 2030–2035 window.</li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h3>Deliberately withheld</h3>
+            <ul class="list-clean">
+              <li>Owner identity, ownership structure, and any personal financial position.</li>
+              <li>Parcel-level identifiers and any inference that could re-identify the asset from public records.</li>
+              <li>Tenant entity, franchisee identity, and guarantor status — unknown publicly in any case.</li>
+              <li>Anything supplied privately during the engagement; such material stays internal and is not represented on this site.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="note" style="margin-top:12px"><strong>Residual risk:</strong> a determined reader could attempt to identify candidate Jack in the Box parcels in central Los Angeles from public listings. This site publishes nothing that narrows that set — no address, no APN, no assessed value, no unit-level sales — and the risk register treats location disclosure as a controlled risk rather than an absent one.</div>
+      </main>
+      <footer class="site-footer"><div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div><div>Repository review · 08 Nov 2026</div></footer>
+    </div>
+  </div>
+</body>
+</html>

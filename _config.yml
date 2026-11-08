@@ -15,9 +15,9 @@ title: Jack in the Box property decision brief
 description: Source-linked, privacy-first decision brief for a Jack in the Box NNN property described as near central Los Angeles.
 
 # Published (everything not listed under exclude is copied as-is):
-#   index.html market.html property.html decision.html risks.html
-#   flagged.html sources.html audit.html 404.html
-#   assets/styles.css assets/site.js
+#   index.html market.html projection.html property.html decision.html risks.html
+#   requirements.html repo-review.html flagged.html sources.html audit.html
+#   404.html assets/styles.css assets/site.js
 
 exclude:
   - archive
