@@ -560,6 +560,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
 | #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
+| #28 | arena/14c28bc9-jack1 | merged (e3fa114) — T11 2026-11-08 re-verification + stale gate retirement |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
@@ -625,3 +626,14 @@ figures and the metro GDP year were changed, each with the reported value kept v
 - **Pages cutover:** `PUT /pages build_type=workflow` returned 403 "Resource not accessible by integration" again (same as d18e3065/aa4a9fab). Admin action required; legacy build serves main root.
 - **Irregularities:** N-01 (2026 SRA FHSZ comment period open; site reflects 2025 LRA only — owner decision); I-02 (carried; Pages legacy source, 403 on switch); I-05 (carried; now fixed). No PII introduced; canonical pages untouched.
 - **Flags:** Flagged items do not block merge; published on the Flagged for Review page as before.
+
+### T11 PR & deploy record — session 14c28bc9
+
+- **PR:** #28 `arena/14c28bc9-jack1` → `main`, **merged** 2026-11-08T22:55:20Z (merge commit `e3fa11422f05a61d1872dd1e2130e61f292be06b`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/28
+- **Checks:** CI `validate` PASS on the PR (run 42532573836); merge state CLEAN.
+- **Deploy on main after merge:** `Validate and publish the decision brief` run 42532614397 — **success**;
+  legacy `pages-build-deployment` run 42532614163 — **success**; Pages API reports `status: built`
+  (build_type still `legacy`; 403 on workflow switch stands — admin action required).
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md`; `scripts/verify-data.mjs` retired to a delegating stub (I-05 fixed).
+- **New item for owner:** N-01 — CAL FIRE 2026 SRA FHSZ public comment period now open (FAQs updated Nov 2026); live site reflects 2025 LRA mapping only; owner decision whether to surface on `risks.html` / `flagged.html`.
