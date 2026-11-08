@@ -1,85 +1,58 @@
-# Jack in the Box Property Decision Brief
+# Jack in the Box NNN decision brief — central Los Angeles area
 
-A privacy-first, source-linked GitHub Pages dashboard for assessing sale, renewal, or hold
-scenarios for a Jack in the Box NNN-leased property described as being near central Los Angeles.
+A privacy-safe, official-source decision dashboard for a **reported** Jack in the Box NNN-leased property near central Los Angeles with an approximate **2030–2035** lease expiry. The exact parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are **not verified** and remain blank/flagged.
 
-Every table row links to the official publisher of the figure on that row. Where a value could
-not be read from an official page, the cell is left blank and the item is listed on the
-**Flagged for Review** page. Nothing is inferred, estimated, or filled in.
+**Live dashboard:** https://wingbangboozle1-lang.github.io/Jack1/  
+**Repository:** https://github.com/wingbangboozle1-lang/Jack1
 
-## The published dashboard
+## Recommendation
 
-Seventeen pages, grouped by category in the sidebar. Each page's tables have a client-side
-filter box.
+Prepare sale and renewal cases in parallel. Preserve notice/option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.
 
-| Page | Contents |
-|---|---|
-| [`index.html`](index.html) | Executive summary, eight verified indicator cards, decision guardrails |
-| [`geography.html`](geography.html) | Land area, density, DTLA 2040 plan expectations, parcel-mismatch caveats |
-| [`population.html`](population.html) | Census city and county estimates, households, SCAG population forecast |
-| [`income.html`](income.html) | Income, poverty, rent, tenure, home value, retail and food-services sales |
-| [`schools.html`](schools.html) | Federal Common Core of Data statistics for Los Angeles Unified |
-| [`economy.html`](economy.html) | County GDP, the discontinued metro GDP series, LA-area CPI detail |
-| [`jobs.html`](jobs.html) | BLS unemployment rates, Census establishment counts, SCAG employment baseline |
-| [`projections.html`](projections.html) | Model inputs, six scenarios, blank outputs, private in-browser calculator |
-| [`property.html`](property.html) | Lease and asset diligence checklist — every value blank |
-| [`tenant.html`](tenant.html) | Issuer-level SEC figures and what they do not establish |
-| [`decision.html`](decision.html) | Sell / renew / hold worksheet, trade-offs, and the risk carried by each path |
-| [`risks.html`](risks.html) | Risk register, measured hazards with citations, tail-event scenarios |
-| [`requirements.html`](requirements.html) | Requirement-by-requirement coverage matrix: met, partly met, or blocked |
-| [`repo-review.html`](repo-review.html) | Fourteen repository findings with evidence and the action taken |
-| [`flagged.html`](flagged.html) | Seventeen flagged items, including seven corrections made on 08 Nov 2026 |
-| [`sources.html`](sources.html) | Every official publisher, what it is used for, and its audit status |
-| [`audit.html`](audit.html) | Line-by-line verification ledger and repository findings |
+This is decision support, not legal, tax, appraisal, or brokerage advice.
 
-## Evidence and privacy
+## Canonical public pages
 
-The full verification ledger for 08 November 2026 is in
-[`verification/2026-11-08-81536038.md`](verification/2026-11-08-81536038.md). A prior
-independent audit is in `verification/2026-11-07-aa4a9fab.md`.
+- `index.html` — landing page and executive decision
+- `market.html` — geography, population, income, jobs, schools, drivers
+- `property.html` — blank asset fields, tenant/issuer context, taxes, gates
+- `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
+- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths
+- `risks.html` — ordinary, rare high-impact, and black-swan risks
+- `requirements.html` — coverage checklist
+- `flagged.html` — unconfirmed values and irregularities
+- `sources.html` — official source registry
+- `audit.html` — verification, privacy, deployment, and method
 
-No exact address, APN, executed lease, rent schedule, legal tenant or guarantor, debt payoff,
-appraisal, condition report, insurance quote, or owner-specific tax or liquidity detail was
-available for independent verification. Asset-specific values are left blank and flagged. The
-brief does not make a parcel-level hazard conclusion, an appraisal, or a definitive sell/renew
-recommendation. Public statistics retain their published City of Los Angeles, Los Angeles
-County, SCAG, or planning geography.
+Historical `pages/`, `site/`, `archive/`, extra root pages, old data/model/tools, and research notes are preserved in Git but are **not** part of the curated public artifact.
 
-The website intentionally does not publish or collect owner names, exact property identifiers,
-ownership entities, lease documents, or personal financial information. The calculator on the
-projection page runs entirely in the browser: no network request, no storage, no logging.
-A link to an interactive lookup tool does not mean a property query was completed.
+## Reproduce and verify
 
-## Building and checking
+Python 3.11+; no third-party runtime dependencies.
 
-```sh
-python3 scripts/build_pages.py   # regenerate all seventeen pages
-python3 scripts/validate_site.py # structural, citation, and privacy checks
-python3 -m http.server 4173      # local preview
+```bash
+python3 scripts/build_public.py           # generate canonical pages + assets/projections.json
+python3 scripts/build_public.py --check   # fail if committed pages differ from dataset
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 scripts/validate_site.py          # structure, row sources, allowlist, links, blanks, privacy
+python3 scripts/build_public.py --out _site
+python3 scripts/validate_site.py --site _site --artifact
 ```
 
-`scripts/build_pages.py` is the single source of truth for page content. It refuses to emit a
-table row that does not carry an official-source hyperlink, and it renders blanks through a
-dedicated `cell-blank` element so an empty cell can never be read as zero.
+The verified dataset is `data/verified-2026-11-08.json`. Projection arithmetic is in `scripts/projection_model.py`. Missing property inputs produce `None`/blank outputs, never zero or invented assumptions.
 
-`scripts/validate_site.py` checks the fifteen public pages, required local paths and fragments,
-unique IDs, an official-source link in every table-body row, an external-host allowlist,
-new-tab link protections, and visible email or phone-number patterns.
+## Privacy and source policy
 
-## GitHub Pages deployment
+- No owner, parcel, lease-party, or personal financial identifiers are published.
+- Every published table row links to an official source or repository provenance record.
+- Unconfirmed values are blank and appear on `flagged.html`.
+- Derived values are labeled as calculations from cited official inputs.
+- Official DOF and SCAG projections are kept separate; no interpolation, blending, or parcel extrapolation.
 
-`.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after
-changes reach `main` (or on manual dispatch). It assembles only the seventeen pages above plus
-`404.html`, `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`, and `.nojekyll`.
-Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, `archive/`, and other
-root documents remains in the repository for traceability but is not part of this dashboard's
-deployment artifact.
+## Deployment
 
-Superseded root pages from earlier builds were moved to `archive/arena-81536038/` rather than
-deleted.
+`.github/workflows/pages.yml` validates on PRs and, on `main`, builds a curated `_site` artifact containing only the canonical pages/assets/generated projection data. It attempts to set GitHub Pages to workflow-built source using the workflow token.
 
-## Repository note
+If Pages remains in legacy `main /` mode, `_config.yml` excludes historical/internal files so the legacy fallback serves only the curated root dashboard. The former root `.nojekyll` marker is preserved under `archive/arena-0e369d53-legacy/` and is regenerated inside the workflow artifact. A successful Actions upload alone is not publication proof; the live URL and a sentinel page must be fetched after merge.
 
-This repository has been built on by many parallel sessions and contains several complete,
-overlapping site builds under `pages/`, `site/`, and `archive/`. Only the fifteen root pages
-described here are deployed. See `COORDINATION.md` for the session task board.
+Coordination and verification records: `COORDINATION.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
