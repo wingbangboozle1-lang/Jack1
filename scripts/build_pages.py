@@ -38,6 +38,10 @@ SOURCES = {
         "BLS · LAUS county series (LAUCN060370000000003)",
         "https://data.bls.gov/timeseries/LAUCN060370000000003?amp%3bdata_tool=XGtable&output_view=data&include_graphs=true",
     ),
+    "edd_profile": (
+        "CA EDD · Los Angeles County profile (official projections and permits)",
+        "https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&state=true&geogArea=0604000037&submit1=View+Local+Area+Profile",
+    ),
     "bls_cpi": (
         "BLS · CPI, Los Angeles area — September 2026",
         "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
@@ -660,6 +664,8 @@ def economy_body() -> str:
         ["Accommodation and food-services sales · City", "$17.37 billion", "2022 Economic Census", "Sector aggregate; no quick-service split is published here.", s("census_city")],
         ["Employer establishments · County", "304,988", "2023 · County Business Patterns", "Establishment count, not employment at this site.", s("census_county")],
         ["Total annual payroll · County", "$299.6 billion", "2023 · County Business Patterns", "County-wide payroll.", s("census_county")],
+        ["Building permits · County", "20,192 permits · $4,197,975,040 total costs", "2025 annual · Census building-permits data republished on the EDD county profile", "County-wide construction activity; a development indicator, not a project near this site.", s("edd_profile")],
+        ["Building permits · multi-family vs single-family", "10,809 multi-family ($1.57B) · 9,383 single-family ($2.63B)", "2025 annual", "County-wide mix; housing supply affects the eventual customer base only at a very coarse level.", s("edd_profile")],
         ["Subject property revenue or sales", BLANK, "Not available", "No tenant sales report for this unit was located in any official source.", s("sec_10q")],
     ]
     return (
@@ -693,6 +699,7 @@ def jobs_body() -> str:
         ["SCAG forecast · regional job additions, health care and social assistance", "+416,000", "SCAG region · 2022–2050", "Regional sector addition; verified against the SCAG technical report in the 07 Nov 2026 audit and not re-read in this pass.", s("scag_tech")],
         ["SCAG forecast · regional job additions, construction", "+148,000", "SCAG region · 2022–2050", "Regional sector addition; verified in the 07 Nov 2026 audit.", s("scag_tech")],
         ["SCAG forecast · regional job additions, accommodation and food services", "+106,000", "SCAG region · 2022–2050", "Regional sector addition; no quick-service split is published.", s("scag_tech")],
+        ["Occupation projection · Cooks, Restaurant", "40,760 (2023) → 54,070 (2033)", "Los Angeles County · EDD projections · +13,310 jobs, +32.7%", "The closest officially published occupation to this asset's staffing need. It is a county labour-supply projection, not demand at this restaurant.", s("edd_profile")],
         ["Employment within the subject catchment", BLANK, "Not mapped", "Daytime employment near the site cannot be derived from county totals.", s("zimas")],
     ]
     return (
@@ -1140,6 +1147,7 @@ SOURCE_ROWS = [
     ["U.S. Bureau of Labor Statistics · CPI Los Angeles area", "Area CPI-U, core, food away from home, energy; index level", "Re-read 08 Nov 2026 · values matched", s("bls_cpi")],
     ["U.S. Bureau of Economic Analysis via FRED", "County GDP (2022–2024) and metro GDP (2023, discontinued)", "Re-read 08 Nov 2026 · values matched", s("fred_county")],
     ["Southern California Association of Governments", "Adopted Connect SoCal 2024 population, household, and employment control totals to 2050", "Re-read 08 Nov 2026 · values matched", s("scag_appendix")],
+    ["California EDD · Los Angeles County profile", "Occupation projections, building-permit activity, and confirmation that county labour-force data is no longer displayed there", "Re-read 08 Nov 2026 · values matched", s("edd_profile")],
     ["SCAG · demographics and growth forecast technical report", "Regional sector job additions, 2022–2050", "Verified in the 07 Nov 2026 audit; not re-read in this pass", s("scag_tech")],
     ["LA City Planning · DTLA 2040 press release", "Downtown plan expectations to 2040 and the plan's sub-areas", "Re-read 08 Nov 2026 · values matched", s("dtla")],
     ["LA City · ZIMAS", "Parcel, zoning, overlay, and permit lookup (no value published)", "Lookup tool; used for parcel-dependent rows", s("zimas")],
@@ -1217,7 +1225,10 @@ AUDIT_ROWS = [
     ["FEMA disaster declarations: 88 total, 61 fire, 10 flood, 8 severe storm, 9 other", "OpenFEMA federal API, Disaster Declarations Summaries v2", "Counted directly on 08 Nov 2026; closes the earlier withheld item", s("openfema")],
     ["CAL FIRE 2026 SRA comment period open; FAQs updated November 2026", "CAL FIRE / OSFM FHSZ page", "Confirmed; published as a watch item", s("calfire_fhsz")],
     ["CDI claims: 41,727 filed; 40,482 partially paid; $25.2 billion paid; updated 06 Jul 2026", "California Department of Insurance", "Match", s("cdi_claims")],
-    ["SCAG regional sector job additions (+416,000; +148,000; +106,000)", "SCAG technical report", "Verified 07 Nov 2026; not re-read in this pass", s("scag_tech")],
+    ["EDD occupation projection, Cooks, Restaurant: 40,760 (2023) → 54,070 (2033), +13,310, +32.7%", "CA EDD Los Angeles County profile", "Re-read 08 Nov 2026 · match", s("edd_profile")],
+    ["Building permits 2025: 20,192 permits, $4,197,975,040 total costs", "CA EDD profile, republishing Census building-permit data", "Re-read 08 Nov 2026 · match", s("edd_profile")],
+    ["EDD county profile no longer displays county labour-force data", "CA EDD Los Angeles County profile", "Re-read 08 Nov 2026 · the statement still holds", s("edd_profile")],
+    ["SCAG regional sector job additions (+416,000; +148,000; +106,000)", "SCAG technical report", "Verified 07 Nov 2026 and 08 Nov 2026 by another session; not re-read here", s("scag_tech")],
     ["JACK restaurant counts, earnings from continuing operations, and debt balances", "SEC Form 10-Q", "Verified 07 Nov 2026; not re-read in this pass", s("sec_10q")],
 ]
 
