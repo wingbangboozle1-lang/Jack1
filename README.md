@@ -9,7 +9,7 @@ not be read from an official page, the cell is left blank and the item is listed
 
 ## The published dashboard
 
-Fifteen pages, grouped by category in the sidebar. Each page's tables have a client-side
+Seventeen pages, grouped by category in the sidebar. Each page's tables have a client-side
 filter box.
 
 | Page | Contents |
@@ -26,6 +26,8 @@ filter box.
 | [`tenant.html`](tenant.html) | Issuer-level SEC figures and what they do not establish |
 | [`decision.html`](decision.html) | Sell / renew / hold worksheet, trade-offs, and the risk carried by each path |
 | [`risks.html`](risks.html) | Risk register, measured hazards with citations, tail-event scenarios |
+| [`requirements.html`](requirements.html) | Requirement-by-requirement coverage matrix: met, partly met, or blocked |
+| [`repo-review.html`](repo-review.html) | Fourteen repository findings with evidence and the action taken |
 | [`flagged.html`](flagged.html) | Seventeen flagged items, including seven corrections made on 08 Nov 2026 |
 | [`sources.html`](sources.html) | Every official publisher, what it is used for, and its audit status |
 | [`audit.html`](audit.html) | Line-by-line verification ledger and repository findings |
@@ -51,7 +53,7 @@ A link to an interactive lookup tool does not mean a property query was complete
 ## Building and checking
 
 ```sh
-python3 scripts/build_pages.py   # regenerate all fifteen pages
+python3 scripts/build_pages.py   # regenerate all seventeen pages
 python3 scripts/validate_site.py # structural, citation, and privacy checks
 python3 -m http.server 4173      # local preview
 ```
@@ -67,7 +69,7 @@ new-tab link protections, and visible email or phone-number patterns.
 ## GitHub Pages deployment
 
 `.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after
-changes reach `main` (or on manual dispatch). It assembles only the fifteen pages above plus
+changes reach `main` (or on manual dispatch). It assembles only the seventeen pages above plus
 `404.html`, `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`, and `.nojekyll`.
 Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, `archive/`, and other
 root documents remains in the repository for traceability but is not part of this dashboard's
