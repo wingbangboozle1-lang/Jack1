@@ -1,5 +1,56 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-1 | Repo review: inventory, duplicate/orphan builds, conflict markers, privacy scan | done | arena-9707cb4b | `repo-review.html` (new), `research/repo-review-2026-11-08.md` (new) |
+| I-2 | Line-by-line re-verification of every published figure against its official page | done | arena-9707cb4b | `research/verification-2026-11-08.md` (new), `audit.html` |
+| I-3 | Projection system + explicit decision rule (sell vs renew vs hold) | done | arena-9707cb4b | `projection.html` (new), `decision.html` |
+| I-4 | Requirements coverage matrix | done | arena-9707cb4b | `requirements.html` (new) |
+| I-5 | Executive summary corrections (contradictions found in review) | done | arena-9707cb4b | `index.html` |
+| I-6 | Flagged-for-review additions from this pass | done | arena-9707cb4b | `flagged.html` |
+| I-7 | Final integration: validate, PR, merge, deploy, record | done | arena-9707cb4b | `.github/workflows/pages.yml`, `assets/*`, `sources.html`, this file |
+
+Scope rules for this session: it edits only the files listed above. It does not edit
+`data/*.json`, `pages/*`, `site/*`, `research/notes/*`, or any file under `archive/` — those
+belong to earlier or concurrent sessions. Requests that would require editing another
+session's file are logged below instead of made.
+
+Claimed at: 2026-11-08 (UTC). Handoff rule per the brief: a claim older than 60 minutes with
+no commits may be taken over by another session; this session commits continuously.
+
+### Session completion record — arena-9707cb4b
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| I-1 Repo review | done | `repo-review.html`, `research/repo-review-2026-11-08.md` | repository-level; no external figure asserted without a link | full inventory, orphan/nav diff, conflict-marker scan (28 files, all under `archive/`), privacy regex scan of the published set (no matches) | RR-01 … RR-14 |
+| I-2 Line-by-line verification | done | `research/verification-2026-11-08.md`, `audit.html` | census.gov (city + county QuickFacts), bls.gov (city annual table; LAUS county series), fred.stlouisfed.org (NGMP31080, GDPALL06037, CPIAUCSL, DGS10), usgs.gov (UCERF3 FAQ), fire.ca.gov (Palisades, Eaton), finance.lacity.gov (ULA FAQ), wagesla.lacity.gov, dir.ca.gov (AB 1228 FAQ) — 16 pages | 22 figures re-read; 1 contradiction removed; 2 figures refreshed; 5 figures added; 9 derived outputs reproduced by hand and recorded with formulas | metro GDP 2024 never published; county labour vintage stale by 9 months; CAL FIRE Eaton page contradicts itself on inspection status; SCAG vs Census direction conflict |
+| I-3 Projection system + decision rule | done | `projection.html`, `decision.html` | FRED DGS10, CPIAUCSL, GDPALL06037; Census; BLS; SCAG; USGS; CAL FIRE; LA ULA | every derived rate recomputed in Python and printed in the research log; no cap rate, rent, or property value asserted | cap rate has no official series tied to this asset; scenario deltas are labelled judgement |
+| I-4 Requirements coverage | done | `requirements.html` | n/a (coverage matrix) | 27 requirements mapped; 3 marked partly met with the specific missing document named | none |
+| I-5 Executive summary corrections | done | `index.html` | FRED NGMP31080, BLS LAUS, CAL FIRE | contradiction removed; ranking claim removed; fire-impact card verified; ranked sequence + 6 decision rules added | RR-01, RR-02, RR-03 |
+| I-6 Flagged additions | done | `flagged.html` | Census, SCAG, CAL FIRE, BLS | 3 items added, 2 closed | brand-not-obligor, lease term, FEMA NRI, CAL FIRE percentages remain open |
+| I-7 Integration | done | `.github/workflows/pages.yml`, `scripts/validate_site.py`, `README.md`, nav across 11 pages | n/a | `python3 scripts/validate_site.py` → 11 pages, 324 table-body rows, pass; tag-balance check clean on 11 pages; local HTTP 200 on all 11 pages + 2 assets | validator needed a narrow narrative exemption (RR-09); duplicate deploy path removed (RR-05) |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `data/`, or `research/notes/` was edited;
+those belong to earlier sessions. The five orphan root drafts (`economy.html`, `model.html`, `risk.html`,
+`schools.html`, `tenant.html`) were left in place and excluded from the published artifact rather than
+deleted. Reconciliation of `data/records.json` with the published pages is logged below as a request.
+
+**Request to a future session (not performed — outside this session's scope):** decide whether
+`data/records.json` (130 rows) or the published HTML tables are the single source of truth. Until then the
+JSON is unused by any published page and may drift.
+
+**Log entry**
+
+| UTC time | Session | Entry |
+|---|---|---|
+| 2026-11-08 | arena-9707cb4b | Claimed I-1…I-7 and pushed the claim before starting work. |
+| 2026-11-08 | arena-9707cb4b | Re-read 16 official pages; corrected the metro-GDP contradiction, removed an unsupported ranking, refreshed county labour to the September 2026 vintage, closed the Measure ULA threshold flag against the City FAQ, added verified January 2025 fire impact and derived annualised earthquake probabilities. |
+| 2026-11-08 | arena-9707cb4b | Published three new pages (projection system, requirements coverage, repository review); normalised navigation to 11 pages; restricted staging to a single deploy path. |
+
+---
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
@@ -560,6 +611,7 @@ figures and the metro GDP year were changed, each with the reported value kept v
 | #8 | arena/c7b3aeda-jack1 | merged (cf73d71) |
 | #9 | arena/51be24e4-jack1 | pending |
 | #16 | arena/51be24e4-jack1 | merged (4be40c0) — T9 data update, 131 rows |
+| #28 | arena/14c28bc9-jack1 | merged (e3fa114) — T11 2026-11-08 re-verification + stale gate retirement |
 
 **Site live at:** https://wingbangboozle1-lang.github.io/Jack1/  
 **Canonical build:** ab7790ec's 7-page dashboard, enhanced by 51be24e4 with 131 verified rows
@@ -606,21 +658,109 @@ figures and the metro GDP year were changed, each with the reported value kept v
 
 ---
 
-## Session: arena/1daf5a2a-jack1 (2026-11-08)
+## Session: arena/14c28bc9-jack1 (2026-11-08, UTC)
 
-### Claim (T11) — written before any work, per the board rules
+**Branch:** `arena/14c28bc9-jack1`
+
+### Claims (task board addendum)
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
-|---|---|---|---|---|---|---|---|
-| T11 | Independent line-by-line re-verification of the deployed 8-page dashboard; correction of the landing-page GDP contradiction; new verified rows closing the stated requirement gaps (school system, county income/poverty, job growth); new "Projection & decision model" page built only from published official series; link-liveness check; PR → merge → deploy verification | **in progress** | arena/1daf5a2a-jack1 | `index.html`, `market.html`, `projection.html` (new), `flagged.html`, `sources.html`, `audit.html`, `scripts/validate_site.py`, `.github/workflows/pages.yml`, `research/verification-2026-11-08-1daf5a2a.md` (new), `COORDINATION.md` | census.gov (QuickFacts city/county, SAIPE), bls.gov (LAUS, CES, city annual rates), cde.ca.gov (DataQuest), caschooldashboard.org, scag.ca.gov (forecast PDF + Appendix I), sec.gov (10-Q), finance.lacity.gov (ULA FAQ), fred.stlouisfed.org (BEA county/metro GDP), fema.gov, usgs.gov, osfm.fire.ca.gov | To be recorded on completion | To be recorded on completion |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T11 | Independent re-verification pass (2026-11-08): headline figures vs official sources; canonical validator; live-deploy health; stale `scripts/verify-data.mjs` gate fix; verification report | done | arena/14c28bc9-jack1 | `verification/2026-11-08-14c28bc9.md` (new), `scripts/verify-data.mjs` (stale gate only), `COORDINATION.md` (append) | census.gov QuickFacts (city), bls.gov LAU city rates, fred.stlouisfed.org NGMP31080 (BEA), usgs.gov UCERF3 FAQ, scag.ca.gov Appendix I (PEIR updated tables), osfm.fire.ca.gov FHSZ page | Re-read official pages on 2026-11-08; see report | Pending — 2026 SRA FHSZ comment period now open (new official development not on the site); verify-data.mjs stale gate; Pages build_type still `legacy` |
 
-**Scope statement.** I claim only the files listed above plus this board. I will not edit files owned by another in-flight session
-(the open PRs #27, #24, #21, #18, #14, #11, #10, #5 are not merged and I will not merge or revert them). I will not touch
-`archive/`, `pages/`, `site/`, `data/`, `tools/`, `model/`, `analysis/`, `verification/` or `DECISION_MEMO.md` /
-`EXECUTIVE_SUMMARY.md` / `RISK_REGISTER.md` / `METHODOLOGY.md`, which belong to other sessions' builds.
+- Claim time: 2026-11-08 (UTC). Scope is new-file-only plus the stale gate; no canonical dashboard pages are edited by this session.
 
-**Why this task is not a duplicate.** Prior sessions built and verified the deployed dashboard (T1–T10). Two things are still
-open against the owner's brief: (1) the landing page publishes a metro-GDP figure the market page itself says is not
-published; (2) the brief collects no verified school-system, county-income, or job-growth series even though the brief
-asks for those factors, and it carries no area projection system. I will close exactly those gaps and re-read every figure
-I touch at its official page.
+### T11 completion record — session 14c28bc9
+
+- **Work:** (1) Re-read 11 official-source figure groups today (Census city QuickFacts, BLS LAU 50-cities, FRED NGMP31080, USGS UCERF3 FAQ, SCAG Appendix I 2024 Final PEIR updated tables, CAL FIRE FHSZ page) — all match the canonical dashboard; withholdings (2024 metro GDP, FEMA NRI county values, CAL FIRE +26%/+35% expansion figures) reconfirmed correct. SEC 10-Q document located and period/structure consistent; line-item figures relied on the d18e3065 / aa4a9fab line-by-line reads, not re-derived today. (2) Canonical validator PASS (8 pages, 209 rows). (3) `scripts/verify-data.mjs` stale gate retired: now delegates to `scripts/validate_site.py` (exit 0); header explains retirement; old assertions retrievable from git history. (4) Live deploy health via GitHub API: Pages `status: built`, `build_type: legacy`; latest main validate + pages-build-deployment runs green. (5) 2026 SRA FHSZ public comment period noted as newly open on the official CAL FIRE page (FAQs updated Nov 2026) — new finding N-01; owner decision whether to surface on site.
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md` (full table with links, §1–§6).
+- **Pages cutover:** `PUT /pages build_type=workflow` returned 403 "Resource not accessible by integration" again (same as d18e3065/aa4a9fab). Admin action required; legacy build serves main root.
+- **Irregularities:** N-01 (2026 SRA FHSZ comment period open; site reflects 2025 LRA only — owner decision); I-02 (carried; Pages legacy source, 403 on switch); I-05 (carried; now fixed). No PII introduced; canonical pages untouched.
+- **Flags:** Flagged items do not block merge; published on the Flagged for Review page as before.
+
+### T11 PR & deploy record — session 14c28bc9
+
+- **PR:** #28 `arena/14c28bc9-jack1` → `main`, **merged** 2026-11-08T22:55:20Z (merge commit `e3fa11422f05a61d1872dd1e2130e61f292be06b`).
+  https://github.com/wingbangboozle1-lang/Jack1/pull/28
+- **Checks:** CI `validate` PASS on the PR (run 42532573836); merge state CLEAN.
+- **Deploy on main after merge:** `Validate and publish the decision brief` run 42532614397 — **success**;
+  legacy `pages-build-deployment` run 42532614163 — **success**; Pages API reports `status: built`
+  (build_type still `legacy`; 403 on workflow switch stands — admin action required).
+- **Deliverable:** `verification/2026-11-08-14c28bc9.md`; `scripts/verify-data.mjs` retired to a delegating stub (I-05 fixed).
+- **New item for owner:** N-01 — CAL FIRE 2026 SRA FHSZ public comment period now open (FAQs updated Nov 2026); live site reflects 2025 LRA mapping only; owner decision whether to surface on `risks.html` / `flagged.html`.
+
+---
+
+## Session: arena/1daf5a2a-jack1 (2026-11-08, UTC) — T11, second verification pass
+
+**Branch:** `arena/1daf5a2a-jack1`
+
+### Claim (written and pushed before any work, commit `6aa09bb`)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched |
+|---|---|---|---|---|
+| T11 | Independent second verification pass: re-read load-bearing figures, correct the displayed county annual unemployment rate, fill the school / county-income / job-growth gaps, add the regional scenario bands and decision thresholds, PR → merge → deploy | **done** | arena/1daf5a2a-jack1 | `projection.html`, `market.html`, `index.html`, `flagged.html`, `sources.html`, `audit.html`, `scripts/validate_site.py`, `research/verification-2026-11-08-1daf5a2a.md`, `COORDINATION.md` |
+
+### Collision with a parallel session — how it was handled
+
+While this session was working, **PR #28 (`arena/14c28bc9-jack1`, a different T11 claim)** and **PR #30
+(`arena/9707cb4b-jack1`)** merged to `main`. PR #30 added its own `projection.html`, `requirements.html` and
+`repo-review.html`, and corrected the same landing-page GDP contradiction this session had found. Two sessions
+independently claimed "T11" because the claim rows were written in parallel and neither had been merged when the other
+claimed.
+
+**Nothing was discarded.** This session:
+
+1. Merged `origin/main` into its branch and **took main's versions of the overlapping pages** — the 11-page structure,
+   `requirements.html`, `repo-review.html`, and `main`'s `projection.html` are the published base.
+2. **Grafted only its own verified additions** onto that base rather than replacing it (list below).
+3. Kept `main`'s corrected landing-page wording and added two bullets rather than re-writing the corrected paragraph.
+4. Did **not** merge or alter any other open PR (#27, #24, #21, #18, #14, #11, #10, #5).
+
+Board lesson recorded for later sessions: T11 was claimed twice in the same hour. Task IDs need to be allocated per
+session (e.g. `T11-<session-id>`), or claim commits must be pushed and re-read from `origin/main` before work starts.
+This session's claim commit *was* pushed first; the other claim had already merged before this branch fetched.
+
+### What this session added on top of main
+
+| Area | Addition | Verification |
+|---|---|---|
+| County annual unemployment, 2025 | Displayed **5.6%** (the brief's own eleven-month tabulation) replaced with the **published 5.7%** annual average; the 5.65% hand calculation is shown and reconciles | [BLS LAUS annual series](https://fred.stlouisfed.org/series/LAUCN060370000000003A) read 08 Nov 2026 |
+| Projection page | SCAG **Figure 2** scenario bands for 2025/2030/2035/2040/2050 (low · point · high, with the band as a percentage of the point forecast) | [SCAG technical report](https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf) read 08 Nov 2026 |
+| Projection page | SCAG **Table 6** regional employment 8,937 → 10,276 thousand (0.50%/yr printed, against 0.79%/yr printed for 2000–2022) and sector rows (food services 832→938, retail 842→844, health 1,498→1,914) | same, Table 6 |
+| Projection page | Decision-threshold table calibrated on the 36-year county unemployment series: median 6.75%, 26/36 years ≥ 5.7%, 14/36 years ≥ 7.7%, metro output −2.8% in 2020 | BLS LAUS annual series; [BEA metro GDP](https://fred.stlouisfed.org/series/NGMP31080) |
+| Local market | County median household income $90,112, per-capita income $45,792, poverty 13.3%, employer jobs 3,987,736 with +2.3% year-over-year (2023) | [Census QuickFacts · county](https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225) |
+| Local market | City per-capita income $47,685 and poverty 16.5% | [Census QuickFacts · city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) |
+| Local market · `#schools` | Los Angeles Unified district-wide 2025 dashboard values: ELA 17.8 points below standard, mathematics 48.9, chronic absenteeism 21.9%, cohort graduation 86.5%, with campus assignment left blank | [CA School Dashboard · LAUSD](https://www.caschooldashboard.org/reports/19647330000000/2025/academic-performance) and [engagement](https://www.caschooldashboard.org/reports/19647330000000/2025/academic-engagement) |
+| Landing page | Two bullets: what the published scenario bands imply for a 2030–2035 window; that school context exists only at district scale | as above |
+| Flagged for Review | Four rows: the 5.6→5.7 correction; district figures are not a campus proxy; regional bands are not a site projection; the two county job measures do not reconcile | as above |
+| Sources & method | County QuickFacts row, BLS LAUS annual-series row, LAUSD dashboard link added to the schools row | as above |
+| Verification audit | "Second audit pass · 08 Nov 2026" section: twelve figure groups re-read, with an explicit list of what was **not** re-read | as above |
+| Validator | `caschooldashboard.org` added to the official-host allowlist | `python3 scripts/validate_site.py` → 11 pages, 368 rows, PASS |
+
+### Verification performed
+
+* Independent re-read on 08 Nov 2026 of: metro GDP (2023, 2019, 2020), county and city QuickFacts blocks, BLS 50-city
+  annual rates, BLS LAUS annual county series (all 36 years), USGS UCERF3 FAQ, LA Office of Finance Measure ULA FAQ,
+  SCAG technical report Figure 2 and Table 6, and the CDE School Dashboard for LAUSD.
+* Arithmetic double-checked in Python before publication: 14.98% total regional job growth, 0.50%/yr CAGR, 10.34%
+  regional population growth, 0.329%/yr, ±1.3% at 2030, −2.5%/+2.0% at 2035, median 6.75, 26/36 and 14/36 counts,
+  −2.8% metro contraction.
+* Structural validator: 11 pages, 368 table-body rows, every row carrying an official-source link, allowlist pass,
+  no broken local paths or fragments, no visible email or phone patterns.
+* **Not re-read** (disclosed on the audit page and in `research/verification-2026-11-08-1daf5a2a.md` §5): SEC 10-Q/10-K
+  issuer figures, the CDI claims aggregate, and the SCAG county control totals.
+
+### Irregularities (non-blocking, published on Flagged for Review)
+
+* **N-02** — duplicate T11 claims by two sessions in the same hour (process, not data).
+* **N-03** — county annual unemployment displayed 5.6% where the published series says 5.7%; corrected, old value disclosed.
+* **N-04** — the county control-total table inside the SCAG technical report could not be located in this pass either
+  (a limitation already recorded by an earlier session); the new regional figures come only from the readable tables.
+* **I-02 (carried)** — Pages `build_type` remains `legacy`; the workflow switch still returns 403 for session tokens.
+
+### Privacy
+
+No personal information was collected, stored, or published. No owner name, address, APN, ownership entity, lease
+document, rent figure, or individual financial detail appears in any file this session touched; the validator's
+email/telephone screen passes.

@@ -1,26 +1,30 @@
-# Jack in the Box Property Decision Brief
+# Jack in the Box NNN Property Decision Brief
 
-A privacy-first, source-linked GitHub Pages dashboard for assessing sale, renewal, or hold scenarios for a Jack in the Box NNN-leased property described as being near central Los Angeles.
+A privacy-first, source-linked GitHub Pages dashboard for deciding whether to sell, renew, or hold a Jack in the Box NNN-leased property described as being near central Los Angeles, with a reported lease expiry between 2030 and 2035.
 
-## Current public dashboard
+## Published dashboard (11 pages)
 
-- [`index.html`](index.html) — executive summary and conditional recommendation
-- [`market.html`](market.html) — city / county economics, population, income, jobs, forecasts, and school lookup limits
-- [`projection.html`](projection.html) — projection system: published SCAG scenario bands, observed BLS/BEA history, derived arithmetic, and explicit decision thresholds
-- [`property.html`](property.html) — blank property and lease fields; issuer-wide SEC context
-- [`decision.html`](decision.html) — sell, renew, and hold paths; after-tax worksheet and wealth-preservation tradeoffs
-- [`risks.html`](risks.html) — parcel-dependent hazard, operational, regulatory, and tail-risk register
-- [`flagged.html`](flagged.html) — explicit review list for every material unverified input
-- [`sources.html`](sources.html) — official-source register, method, and limitations
-- [`audit.html`](audit.html) — verification ledger: every published figure re-read against its official page on 07 Nov 2026, with corrections, source-by-source status, and repository findings
+| # | Page | What it answers |
+|---|---|---|
+| 01 | [`index.html`](index.html) | Executive summary, the recommended course of action, the sequence to run, and the decision rules |
+| 02 | [`market.html`](market.html) | Population, income, housing, labour, output, prices, rates, wage floors, and planning context |
+| 03 | [`projection.html`](projection.html) | The projection system: verified drivers, derived growth rates, three scenarios, break-even and sensitivity arithmetic |
+| 04 | [`property.html`](property.html) | Blank, flagged property and lease fields; issuer-wide SEC context |
+| 05 | [`decision.html`](decision.html) | Sell, renew, and hold paths; ranked action; risk by decision; after-tax worksheet |
+| 06 | [`risks.html`](risks.html) | Hazard, contract, market, regulatory, and tail-risk register, including the January 2025 fire record |
+| 07 | [`requirements.html`](requirements.html) | Requirement-by-requirement coverage matrix for the brief as issued |
+| 08 | [`repo-review.html`](repo-review.html) | Repository findings: competing builds, orphan pages, conflict markers, stale data, deploy-path fixes, privacy scan |
+| 09 | [`flagged.html`](flagged.html) | Every material unverified input, with the document or official link that would close it |
+| 10 | [`sources.html`](sources.html) | Official source register, verification rules, and limitations |
+| 11 | [`audit.html`](audit.html) | Verification ledger: each figure against its official page, corrections, and irregularities |
 
 ## Evidence and privacy
 
-Line-by-line verification of the published figures, with the figures that could not be confirmed, is recorded in [`research/verification-audit-d18e3065.md`](research/verification-audit-d18e3065.md).
+Line-by-line verification records live in [`research/verification-2026-11-08.md`](research/verification-2026-11-08.md) (current pass) and [`research/verification-audit-d18e3065.md`](research/verification-audit-d18e3065.md) (07 Nov 2026 pass). Repository integrity findings are recorded in [`research/repo-review-2026-11-08.md`](research/repo-review-2026-11-08.md).
 
-No exact address, APN, executed lease, rent schedule, legal tenant or guarantor, debt payoff, appraisal, condition report, insurance quote, or owner-specific tax / liquidity details were available for independent verification. Asset-specific values are left blank and flagged. The brief does not make a parcel-level hazard conclusion, appraisal, or definitive sell / renew recommendation. Public statistics retain their published City of Los Angeles, Los Angeles County, SCAG, or planning geography.
+No exact address, APN, executed lease, rent schedule, legal tenant or guarantor identity, debt payoff, appraisal, condition report, insurance quote, or owner-specific tax or liquidity detail was available for independent verification. Asset-specific values are blank and flagged. The brief does not make a parcel-level hazard conclusion, an appraisal, or a dollar-value sell/renew verdict; it does give a ranked course of action with explicit triggers.
 
-The website intentionally does not publish or collect owner names, exact property identifiers, ownership entities, lease documents, or personal financial information. Official links are provided for manual review; a link to an interactive lookup tool does not mean a property query was completed.
+The website does not publish or collect owner names, exact property identifiers, ownership entities, lease documents, or personal financial information. Official links are provided for manual review; a link to an interactive lookup tool does not mean a property query was completed.
 
 ## Local preview and checks
 
@@ -29,10 +33,12 @@ python3 -m http.server 4173 --bind 0.0.0.0
 python3 scripts/validate_site.py
 ```
 
-The validator checks the nine public pages, required local paths and fragments, unique IDs, official-source links in each table-body row, external-source host allowlisting, new-tab link protections, and visible email / phone patterns.
+The validator checks the eleven published pages, required local paths and fragments, unique IDs, an official-source link in every evidence-row of a table body, a working link in every narrative-table row, external-host allowlisting, new-tab link protections, and visible email / phone patterns.
 
 ## GitHub Pages deployment
 
-`.github/workflows/pages.yml` runs the validator for pull requests and publishes the site after changes reach `main` (or on manual workflow dispatch). The workflow explicitly assembles only the nine pages above plus `assets/styles.css`, `assets/site.js`, and `.nojekyll`. Earlier integrated material in `pages/`, `site/`, `data/`, `research/`, and other root pages remains in the repository for traceability but is not part of this dashboard’s deployment artifact.
+`.github/workflows/pages.yml` validates on pull requests and publishes exactly the eleven pages above plus `assets/styles.css`, `assets/site.js`, and `.nojekyll`.
 
-Repository Pages settings must use **GitHub Actions** as the build source. The deployment URL is reported by the Pages workflow after a successful run.
+Publishing is a **single path**: the workflow artifact. Earlier revisions also allowed the branch-based Pages build to publish the whole repository, which served superseded drafts — including archived pages with unresolvable merge markers — and raced the workflow. That duplicate path is removed. Repository Pages settings must use **GitHub Actions** as the build source.
+
+Material not in the published artifact (`archive/`, `pages/`, `site/`, `data/`, `research/`, and the five superseded root drafts) remains in the repository for traceability and is documented on the Repo Review page.

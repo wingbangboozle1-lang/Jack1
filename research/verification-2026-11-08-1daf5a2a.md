@@ -1,7 +1,12 @@
 # Verification report — session `arena/1daf5a2a-jack1` (08 Nov 2026)
 
-Scope: an independent second pass over the deployed nine-page dashboard, the correction of one landing-page
-contradiction, and the addition of published school, income, job-growth and projection material. Every figure this
+Scope: an independent second pass over the deployed dashboard, the correction of the displayed county annual
+unemployment rate, and the addition of published school, income, job-growth and regional-projection material.
+
+> **Reconciliation note.** `main` advanced while this pass ran: PR #28 and PR #30 (other sessions) merged a parallel
+> projection / requirements / repo-review build and had already corrected the landing-page metro-GDP sentence. This
+> branch therefore **merges `main` and keeps its 11-page structure as the published base**, then grafts only the
+> verified additions listed in §4 onto it. Nothing from the other sessions was reverted. Every figure this
 report claims was **read on the official page named beside it on 08 November 2026**. Figures this session did not
 re-read are named in §5 and remain inherited from the 07 November 2026 pass.
 
@@ -67,9 +72,9 @@ Every derived value on `projection.html` is printed with its inputs so it can be
 |---|---|---|
 | Population, income, job growth | `market.html` city + county rows | verified |
 | School systems | `market.html#schools` (district scale only) | verified at district scale; campus blank |
-| Projection system for the area | `projection.html` (published bands + derived arithmetic) | verified inputs, derived outputs labelled |
+| Projection system for the area | `projection.html` (other session's model + this session's SCAG bands, Table 6 regional/sector rows and decision thresholds) | verified inputs, derived outputs labelled |
 | Decision and its risks | `decision.html`, `risks.html`, plus trigger table on `projection.html` | framework; property values blank |
-| Every row links an official source | enforced by `scripts/validate_site.py` | passing |
+| Every row links an official source | enforced by `scripts/validate_site.py` | passing — 11 pages, 368 rows |
 | No personal information | no name, address, APN, or financial detail anywhere in the published set | passing |
 
 ## 5. Not re-read this session (inherited, disclosed)

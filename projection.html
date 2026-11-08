@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Area projection system for the property decision brief: published SCAG scenario bands, observed BLS and BEA history, derived arithmetic, and explicit decision triggers.">
+  <meta name="description" content="A reproducible projection system for the Central Los Angeles area: verified official drivers, derived growth rates, three scenarios, and value break-even arithmetic for a NNN asset.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Projection &amp; scenarios | Jack in the Box Property Brief</title>
+  <title>Projection System | Jack in the Box Property Brief</title>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -13,173 +13,200 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="app-shell">
     <aside class="sidebar" id="site-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
+      <a class="brand" href="index.html" aria-label="Jack in the Box property decision brief home"><span class="brand-mark" aria-hidden="true">JB</span><span class="brand-copy"><strong>Property decision brief</strong><span>Central Los Angeles · public-data review</span></span></a>
       <p class="nav-label">Research dashboard</p>
       <nav class="site-nav">
         <a href="index.html"><span class="nav-dot">01</span>Executive summary</a>
         <a href="market.html"><span class="nav-dot">02</span>Local market</a>
-        <a href="projection.html" aria-current="page"><span class="nav-dot">03</span>Projection &amp; scenarios</a>
+        <a href="projection.html" aria-current="page"><span class="nav-dot">03</span>Projection system</a>
         <a href="property.html"><span class="nav-dot">04</span>Lease &amp; asset</a>
         <a href="decision.html"><span class="nav-dot">05</span>Sell / renew paths</a>
         <a href="risks.html"><span class="nav-dot">06</span>Risk register</a>
-        <a href="flagged.html"><span class="nav-dot">07</span>Flagged for Review</a>
-        <a href="sources.html"><span class="nav-dot">08</span>Sources &amp; method</a>
-        <a href="audit.html"><span class="nav-dot">09</span>Verification audit</a>
+        <a href="requirements.html"><span class="nav-dot">07</span>Requirements</a>
+        <a href="repo-review.html"><span class="nav-dot">08</span>Repo review</a>
+        <a href="flagged.html"><span class="nav-dot">09</span>Flagged for Review</a>
+        <a href="sources.html"><span class="nav-dot">10</span>Sources &amp; method</a>
+        <a href="audit.html"><span class="nav-dot">11</span>Verification audit</a>
       </nav>
       <div class="sidebar-note"><strong>Privacy-first publication</strong>No owner name, property address, APN, lease document, or individual financial details are published or collected by this site.</div>
     </aside>
     <div class="main-column">
-      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Projection &amp; scenarios</span></div><div class="snapshot">Evidence snapshot · 08 Nov 2026</div></header>
+      <header class="topbar"><div class="topbar-left"><button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button><span class="crumb">Decision support <span aria-hidden="true">/</span> Projection system</span></div><div class="snapshot">Evidence snapshot · 08 Nov 2026</div></header>
       <main id="main-content" class="content">
         <header class="page-intro">
-          <p class="eyebrow">Area projection · scenario bands · decision triggers</p>
-          <h1>Project the area, then test the lease against it.</h1>
-          <p class="lead">No parcel, lease, or rent was supplied, so this page cannot project this property. What it can do is project the <em>area</em> from published official series, show the uncertainty band those agencies publish themselves, and state the thresholds at which the sale-versus-renew balance should change.</p>
+          <p class="eyebrow">Reproducible model · verified drivers · break-even arithmetic</p>
+          <h1>Project the area from official series; project the asset only from its own lease.</h1>
+          <p class="lead">This page separates two questions that are often merged into one. Question one: what do published official series say about population, employment, income, prices, and rates in Los Angeles County through the lease-expiry window? Question two: how would any given property value respond to those drivers? Question one is answered with cited numbers. Question two is answered as arithmetic on stated parameters — never as an invented property value.</p>
         </header>
 
         <div class="callout warning">
-          <h3>What this projection system will and will not produce</h3>
-          <p class="small">Four rules govern every number below. <strong>1.</strong> Only published official series are used: the SCAG adopted forecast, BLS local-area unemployment, BEA output, and Census estimates. <strong>2.</strong> Every calculated value is labelled <em>derived</em> and shows the published inputs it came from, so it can be re-done by hand. <strong>3.</strong> The uncertainty band is the one the forecasting agency publishes for its own low and high scenarios — it is not invented here. <strong>4.</strong> No property value, rent, cap rate, or probability of a loss is produced. Those cells stay blank until property documents arrive.</p>
+          <h3>Model boundary</h3>
+          <p class="small">No rent, cap rate, building area, parcel, lease document, or owner tax position for the subject property has been verified. Nothing on this page is an appraisal, a forecast of this asset's value, or a projection of the tenant's store-level sales. Every "derived" figure below is arithmetic on the cited official number, and the formula is shown so it can be recomputed by hand.</p>
         </div>
 
-        <section class="section-heading" id="published">
-          <div>
-            <p class="eyebrow">Published projection inputs</p>
-            <h2>The bands are official; they are also plan scenarios</h2>
-            <p>SCAG publishes a point forecast and its own low and high alternatives. The lease is reported to expire between 2030 and 2035, so the 2030 and 2035 columns are the ones that bound the decision window.</p>
-          </div>
-          <span class="badge badge-limited">Regional forecast · not a site forecast</span>
-        </section>
-        <div class="table-tools"><span class="micro muted">Filter within this table</span><input class="table-search" type="search" placeholder="Search projection rows…" aria-label="Search projection rows" data-table-search="projection-published"></div>
+        <div class="section-heading"><div><p class="eyebrow">Step 1 · official inputs</p><h2>Verified drivers, as published</h2><p>Re-read against the official page on 07–08 Nov 2026. Where two official products disagree, both are shown and the conflict is flagged rather than averaged.</p></div><span class="badge badge-verified">Every row links its source</span></div>
+        <div class="table-tools"><span class="micro muted">Filter within this table</span><input class="table-search" type="search" placeholder="Search drivers…" aria-label="Search projection drivers" data-table-search="projection-drivers"></div>
         <div class="table-wrap">
-          <table id="projection-published">
-            <caption>Published series relevant to a 2030–2035 lease decision; each row links the page the figure was read from on 08 Nov 2026.</caption>
-            <thead><tr><th scope="col">Geography / measure</th><th scope="col">Published value</th><th scope="col">Basis</th><th scope="col">Limit on use</th><th scope="col">Official source</th></tr></thead>
+          <table id="projection-drivers">
+            <caption>Official driver series used by the projection system. Derived rates are arithmetic on these published values.</caption>
+            <thead><tr><th scope="col">Driver</th><th scope="col">Published value</th><th scope="col">Period / geography</th><th scope="col">Derived rate or note</th><th scope="col">Official source</th></tr></thead>
             <tbody>
-              <tr><td><strong>SCAG-region population · point forecast</strong></td><td>18.85 million (2020) → 19.7 million (2030) → 20.1 million (2035) → 20.8 million (2050)</td><td>Connect SoCal 2024 adopted technical report, Figure 2</td><td>Six-county region, plan scenario. Not the city, not a trade area, not this parcel.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report</a></td></tr>
-              <tr><td><strong>SCAG-region population · low scenario</strong></td><td>19.1 million (2025) → 19.45 million (2030) → 19.6 million (2035) → 20.0 million (2050)</td><td>Connect SoCal 2024 low scenario, Figure 2</td><td>“Secular stagnation” input set; a scenario, not a probability.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report</a></td></tr>
-              <tr><td><strong>SCAG-region population · high scenario</strong></td><td>19.3 million (2025) → 19.95 million (2030) → 20.5 million (2035) → 21.9 million (2050)</td><td>Connect SoCal 2024 high scenario, Figure 2</td><td>Requires supportive policy and technology assumptions; a scenario, not a probability.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report</a></td></tr>
-              <tr><td><strong>SCAG-region total employment</strong></td><td>8,937 thousand (2022) → 10,276 thousand (2050)</td><td>Connect SoCal 2024, Table 6 (total, all industries)</td><td>Regional total across all industries; no sector, commute, or parcel match.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report, Table 6</a></td></tr>
-              <tr><td><strong>Accommodation and food services jobs</strong></td><td>832 thousand (2022) → 938 thousand (2050); +12.8% published</td><td>Connect SoCal 2024, Table 6 (NAICS 72)</td><td>Whole sector, including full-service hotels and restaurants; says nothing about one quick-service unit.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report, Table 6</a></td></tr>
-              <tr><td><strong>Retail trade jobs</strong></td><td>842 thousand (2022) → 844 thousand (2050); +0.1% published</td><td>Connect SoCal 2024, Table 6 (NAICS 44)</td><td>Regional sector projection; retail job stagnation is not measured restaurant demand.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report, Table 6</a></td></tr>
-              <tr><td><strong>Health care and social assistance jobs</strong></td><td>1,498 thousand (2022) → 1,914 thousand (2050); +27.8% published</td><td>Connect SoCal 2024, Table 6 (NAICS 62)</td><td>Fastest-growing large sector; relevant to daytime population, not to this unit’s sales.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report, Table 6</a></td></tr>
-              <tr><td><strong>Los Angeles County unemployment rate · annual</strong></td><td>5.7% (2025)</td><td>BLS Local Area Unemployment Statistics, annual average, not seasonally adjusted</td><td>County residence-based measure; October 2025 was not collected, so BLS notes 2025 estimates are 11-month averages.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series (via FRED)</a></td></tr>
-              <tr><td><strong>Los Angeles County unemployment rate · observed range</strong></td><td>4.5% (2019 low) → 12.6% (2010 high), 1990–2025</td><td>Same BLS annual series, all 36 published years</td><td>Historical envelope of the local cycle; it does not date the next one.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series (via FRED)</a></td></tr>
-              <tr><td><strong>Metro-area output · observed contraction</strong></td><td>$1,065,709.665 million (2019) → $1,035,818.839 million (2020)</td><td>BEA GDP for the Los Angeles–Long Beach–Anaheim MSA, nominal dollars</td><td>The metro series is marked discontinued and ends at 2023; used here only to size an observed one-year shock.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA metro GDP (via FRED)</a></td></tr>
+              <tr><td><strong>Los Angeles County population</strong></td><td>9,694,934</td><td>July 1, 2025 · Census Vintage 2025 estimate</td><td>−3.2% versus the April 1, 2020 estimates base (published).</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · county</a></td></tr>
+              <tr><td><strong>City of Los Angeles population</strong></td><td>3,869,089</td><td>July 1, 2025 · Census Vintage 2025 estimate</td><td>−0.8% versus the 2020 estimates base (published); computed −0.78%.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · city</a></td></tr>
+              <tr><td><strong>SCAG county population forecast</strong></td><td>10.046M (2019) → 10.793M (2050)</td><td>Connect SoCal 2024 adopted forecast · county</td><td>+7.4% over 31 years = <strong>0.23%/yr</strong> CAGR. Conflicts in direction with the Census decline above; flagged, not blended.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG growth forecast</a></td></tr>
+              <tr><td><strong>SCAG county employment forecast</strong></td><td>5.031M (2019) → 5.461M (2050)</td><td>Connect SoCal 2024 adopted forecast · county</td><td>+8.5% over 31 years = <strong>0.26%/yr</strong> CAGR.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG growth forecast</a></td></tr>
+              <tr><td><strong>County unemployment rate</strong></td><td>5.7% (2025, published annual average); 4.5% (Sep 2026, preliminary); 5.0% (Dec 2025)</td><td>BLS LAUS · annual average and latest months, not seasonally adjusted</td><td><strong>Corrected 08 Nov 2026:</strong> the published annual average for 2025 is <strong>5.7%</strong>. The eleven published 2025 months sum to 62.1, which divides to 5.65% and rounds to the same value; earlier revisions displayed 5.6%. October 2025 was not collected, so BLS notes 2025 estimates are eleven-month averages.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series</a> · <a class="source-link" href="https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data" target="_blank" rel="noopener noreferrer">BLS LAUS county series</a></td></tr>
+              <tr><td><strong>County labour force / employment</strong></td><td>5,031,013 / 4,806,494 (Sep 2026, preliminary)</td><td>BLS LAUS · county</td><td>Unemployed 224,519. Labour force is 1.9% below the December 2025 level of 5,129,498 while employment is 1.4% lower — a smaller, tighter workforce, not a growing one.</td><td><a class="source-link" href="https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data" target="_blank" rel="noopener noreferrer">BLS LAUS county series</a></td></tr>
+              <tr><td><strong>Los Angeles County GDP</strong></td><td>$1.003 trillion (2024, nominal)</td><td>BEA GDP by county, via FRED</td><td>2020 $765.99B → 2024 $1,002.97B = <strong>6.97%/yr</strong> nominal. Inflation is not removed.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED · county GDP</a></td></tr>
+              <tr><td><strong>Metro GDP</strong></td><td>$1.295 trillion (2023, nominal)</td><td>LA–Long Beach–Anaheim MSA; series marked DISCONTINUED</td><td>No 2024 value exists on the official series, so none is published here. A $1.355 trillion "2024" figure used in an earlier draft of this site could not be confirmed and was removed.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA via FRED · metro GDP</a></td></tr>
+              <tr><td><strong>Consumer prices, U.S. city average</strong></td><td>336.298 (Sep 2026); 324.245 (Sep 2025)</td><td>CPI-U, all items, seasonally adjusted · BLS via FRED</td><td>Year-over-year <strong>+3.72%</strong>; September 2021 273.910 to September 2026 = <strong>4.19%/yr</strong> over five years.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">BLS via FRED · CPI-U</a></td></tr>
+              <tr><td><strong>10-year Treasury constant maturity</strong></td><td>4.84% (05 Nov 2026)</td><td>Federal Reserve H.15 via FRED · daily</td><td>Risk-free reference for discounting. It is not a capitalisation rate and is not used as one here.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">Federal Reserve via FRED · DGS10</a></td></tr>
+              <tr><td><strong>City retail and food-service sales</strong></td><td>$81.35B retail; $17.37B accommodation and food services (2022)</td><td>Economic Census via Census QuickFacts · city</td><td>Retail $21,281 per capita (published). Broad sector totals; not quick-service demand at a site.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · city</a></td></tr>
+              <tr><td><strong>Median household income</strong></td><td>$81,939 (2024 dollars)</td><td>2020–2024 ACS 5-year · city</td><td>Per capita income $47,685; poverty rate 16.5%. Citywide medians, not a trade-area profile.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census QuickFacts · city</a></td></tr>
+              <tr><td><strong>Los Angeles city minimum wage</strong></td><td>$18.42/hour (effective July 1, 2026)</td><td>City of Los Angeles Office of Wage Standards</td><td>Indexed annually to CPI-W for the Los Angeles metropolitan area. Applies to employees working in the City.</td><td><a class="source-link" href="https://wagesla.lacity.gov/" target="_blank" rel="noopener noreferrer">LA Office of Wage Standards</a></td></tr>
+              <tr><td><strong>California fast-food minimum wage</strong></td><td>$20.00/hour (from April 1, 2024)</td><td>AB 1228 · statewide, covered limited-service chains of 60+ units</td><td>Local general minimum wage applies where higher. A franchisee employer is covered, not only the brand owner.</td><td><a class="source-link" href="https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm" target="_blank" rel="noopener noreferrer">CA DIR · AB 1228 FAQ</a></td></tr>
             </tbody>
           </table>
         </div>
 
-        <section class="section-heading" id="derived">
-          <div>
-            <p class="eyebrow">Derived arithmetic</p>
-            <h2>What the published numbers imply once combined</h2>
-            <p>Each row below is simple arithmetic on the published values above. Nothing is estimated, smoothed, or forecast by this brief; the inputs are printed so the calculation can be repeated.</p>
-          </div>
-          <span class="badge badge-verified">Derived from published inputs</span>
+        <section class="section-heading" id="regional">
+          <div><p class="eyebrow">Step 1b · regional detail</p><h2>The agency's own bands, and the sectors inside them</h2><p>SCAG publishes a point forecast and its own low and high alternatives, plus an industry breakdown. The reported lease expiry sits inside the period those bands bracket, so the 2030 and 2035 values are the ones that matter.</p></div>
+          <span class="badge badge-limited">Six-county region · not a site forecast</span>
         </section>
         <div class="table-wrap">
-          <table>
-            <caption>Derived values; inputs are published figures cited on this page.</caption>
-            <thead><tr><th scope="col">Derived measure</th><th scope="col">Result</th><th scope="col">Inputs and arithmetic</th><th scope="col">What it means for a 2030–2035 decision</th><th scope="col">Source of inputs</th></tr></thead>
+          <table id="projection-bands">
+            <caption>SCAG-region population scenarios, Figure 2 of the adopted technical report, read 08 Nov 2026.</caption>
+            <thead><tr><th scope="col">Horizon</th><th scope="col">Low scenario</th><th scope="col">Point forecast</th><th scope="col">High scenario</th><th scope="col">Band around the point forecast</th><th scope="col">Official source</th></tr></thead>
             <tbody>
-              <tr><td><strong>Regional job growth, 2022–2050</strong></td><td>+15.0% total · +0.50% a year</td><td>(10,276 − 8,937) ÷ 8,937 = +15.0%; 28 years; SCAG itself prints 0.50% annual growth.</td><td>SCAG’s own baseline is slower than the region’s 2000–2022 average of 0.79% a year. Modest, not collapsing.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Table 6</a></td></tr>
-              <tr><td><strong>Regional population growth, 2020–2050</strong></td><td>+10.3% total · +0.33% a year</td><td>(20.8 ÷ 18.85) − 1 = +10.3%; 30 years.</td><td>Inside the same plan, population growth (0.33% a year) runs slower than job growth (0.50% a year); neither is a site-level demand measure.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Figure 2</a></td></tr>
-              <tr><td><strong>Forecast band around the 2030 baseline</strong></td><td>−1.3% / +1.3%</td><td>19.45 and 19.95 against a 19.7 point forecast.</td><td>At the earliest plausible expiry, even the agency’s low case is within about 1 percent of its baseline.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Figure 2</a></td></tr>
-              <tr><td><strong>Forecast band around the 2035 baseline</strong></td><td>−2.5% / +2.0%</td><td>19.6 and 20.5 against a 20.1 point forecast.</td><td>By the latest plausible expiry the scenarios have separated, but the gap is still a few percent, not a collapse.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG Figure 2</a></td></tr>
-              <tr><td><strong>County unemployment, position in its own history</strong></td><td>5.7% against a 1990–2025 median of 6.75%</td><td>36 annual values; median of the series = 6.75%; 26 of 36 years (72%) were at or above 5.7%.</td><td>The latest year is below the long-run median: the local labour market is currently on the strong side of its own record.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series (via FRED)</a></td></tr>
-              <tr><td><strong>County unemployment, historical stress level</strong></td><td>7.7% or higher in 14 of 36 years</td><td>Years at or above 7.7%: 1991–1996, 2009–2014, 2020–2021 — 14 of 36 (39%).</td><td>This is the level history says a real local downturn reaches, and it has happened in three separate episodes since 1990.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series (via FRED)</a></td></tr>
-              <tr><td><strong>Observed one-year output shock</strong></td><td>−2.8%</td><td>(1,035,818.839 ÷ 1,065,709.665) − 1 = −2.8% for the metro area, 2019 to 2020.</td><td>A real, recent, local contraction of that size is the right order of magnitude to stress a hold case against.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA metro GDP (via FRED)</a></td></tr>
+              <tr><td><strong>2025</strong></td><td>19.1 million</td><td>19.2 million</td><td>19.3 million</td><td>−0.5% / +0.5%</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Figure 2</a></td></tr>
+              <tr><td><strong>2030 · earliest reported expiry</strong></td><td>19.45 million</td><td>19.7 million</td><td>19.95 million</td><td>−1.3% / +1.3%</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Figure 2</a></td></tr>
+              <tr><td><strong>2035 · latest reported expiry</strong></td><td>19.6 million</td><td>20.1 million</td><td>20.5 million</td><td>−2.5% / +2.0%</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Figure 2</a></td></tr>
+              <tr><td><strong>2040</strong></td><td>19.8 million</td><td>20.55 million</td><td>21.2 million</td><td>−3.6% / +3.2%</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Figure 2</a></td></tr>
+              <tr><td><strong>2050</strong></td><td>20.0 million</td><td>20.8 million</td><td>21.9 million</td><td>−3.8% / +5.3%</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Figure 2</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table id="projection-sectors">
+            <caption>SCAG-region employment by sector, Table 6 of the adopted technical report; the growth column is the report's own printed figure.</caption>
+            <thead><tr><th scope="col">Sector</th><th scope="col">2022</th><th scope="col">2050</th><th scope="col">Printed change</th><th scope="col">Why it matters here</th><th scope="col">Official source</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Total, all industries</strong></td><td>8,937 thousand</td><td>10,276 thousand</td><td>+15.0% total · 0.50% a year</td><td>Compared with the report's own 0.79% a year for 2000–2022, the adopted plan assumes job growth roughly a third slower than the region's recent record.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Table 6</a></td></tr>
+              <tr><td><strong>Accommodation and food services</strong></td><td>832 thousand</td><td>938 thousand</td><td>+12.8%</td><td>The sector containing quick-service restaurants grows, but the table gives no split by format; it establishes sector direction only.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Table 6</a></td></tr>
+              <tr><td><strong>Retail trade</strong></td><td>842 thousand</td><td>844 thousand</td><td>+0.1%</td><td>Essentially flat over 28 years; a caution against assuming broad consumer-sector growth lifts every site.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Table 6</a></td></tr>
+              <tr><td><strong>Health care and social assistance</strong></td><td>1,498 thousand</td><td>1,914 thousand</td><td>+27.8%</td><td>Fastest-growing large sector in the plan; supports daytime-population arguments but not unit sales.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG technical report · Table 6</a></td></tr>
             </tbody>
           </table>
         </div>
 
-        <section class="section-heading" id="scenarios">
-          <div>
-            <p class="eyebrow">Three area scenarios</p>
-            <h2>Slow, baseline, faster — and what each would change</h2>
-            <p>These are the forecasting agency’s own scenarios, restated in decision terms. They describe the area, never this unit’s sales, rent, or resale price.</p>
-          </div>
+        <section class="section-heading" id="thresholds">
+          <div><p class="eyebrow">Step 1c · decision thresholds</p><h2>When the published history says the balance should move</h2><p>The county unemployment series has 36 published years. Its own record gives an objective way to say when the area is doing better or worse than usual — which is what a hold-or-sell rule needs, rather than a feeling about the neighbourhood.</p></div>
+          <span class="badge badge-review">Thresholds are this brief's parameters, not forecasts</span>
         </section>
-        <div class="card-grid">
-          <article class="scenario-card">
-            <h3>Slow · SCAG low case</h3>
-            <p><strong>Published band:</strong> 19.45 million regionally in 2030 and 19.6 in 2035.</p>
-            <p><strong>What would have to be true:</strong> housing supply and affordability keep suppressing in-migration, so the region cannot fill its own job demand — the mechanism SCAG describes for its low scenario.</p>
-            <p><strong>Decision implication:</strong> weaker rent growth and a thinner buyer pool at expiry argue for converting the asset earlier rather than later; the lease term becomes the main thing being paid for.</p>
-            <p><strong>What would falsify it:</strong> county unemployment holding below its long-run median while permits and population rise.</p>
-            <a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG low scenario</a>
-          </article>
-          <article class="scenario-card">
-            <h3>Baseline · SCAG point forecast</h3>
-            <p><strong>Published band:</strong> 19.7 million in 2030, 20.1 in 2035, 20.8 in 2050; regional jobs 8.937 million (2022) to 10.276 million (2050).</p>
-            <p><strong>What would have to be true:</strong> births, deaths, migration, participation, household formation and employment evolve near the expert panel’s central assumptions.</p>
-            <p><strong>Decision implication:</strong> a slow, steady area does not by itself justify either an immediate sale or an unconditional renewal; the lease economics and the tenant’s credit decide it.</p>
-            <p><strong>What would falsify it:</strong> a sustained move of county unemployment well above the historical median, or a published output contraction of the 2020 magnitude.</p>
-            <a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG point forecast</a>
-          </article>
-          <article class="scenario-card">
-            <h3>Faster · SCAG high case</h3>
-            <p><strong>Published band:</strong> 19.95 million in 2030 and 20.5 in 2035.</p>
-            <p><strong>What would have to be true:</strong> childcare, healthcare, technology and infrastructure investment lift participation and migration, as SCAG’s high scenario assumes.</p>
-            <p><strong>Decision implication:</strong> holding with a signed longer term captures more of the upside, and a sale now would transfer that growth to the buyer.</p>
-            <p><strong>What would falsify it:</strong> population and employment revisions that keep undershooting the adopted forecast.</p>
-            <a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG high scenario</a>
-          </article>
+        <div class="table-wrap">
+          <table id="projection-thresholds">
+            <caption>Thresholds calibrated against the published record; each anchor cell is a published figure, each threshold is a stated policy parameter.</caption>
+            <thead><tr><th scope="col">Trigger</th><th scope="col">Threshold used</th><th scope="col">Anchor in the published record</th><th scope="col">Action it justifies</th><th scope="col">Official source</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Renewal case strengthens</strong></td><td>County annual unemployment below 6.75% and a signed renewal available with contracted steps</td><td>Median of all 36 published annual values, 1990–2025, is 6.75%; 2025 at 5.7% is below it, and 26 of the 36 years were at or above 5.7%.</td><td>Convert the reported 2030–2035 window into a signed longer term now, keeping a pre-agreed sale option and notice rights.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series</a></td></tr>
+              <tr><td><strong>Sale review triggered</strong></td><td>At or above 7.7% in two consecutive published years</td><td>7.7% was reached in 14 of the 36 years, in three episodes: 1991–1996, 2009–2014, 2020–2021.</td><td>Commission an appraisal and market bids; compare net proceeds with a stressed hold value rather than a baseline one.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series</a></td></tr>
+              <tr><td><strong>Hold case re-underwritten</strong></td><td>A published metro output contraction of roughly 3% or more in a year</td><td>The metro area fell 2.8% in 2020 ($1,065,709.665 million to $1,035,818.839 million).</td><td>Re-run the break-even and sensitivity arithmetic on stressed rent before extending term or declining a bid.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA metro GDP via FRED</a></td></tr>
+              <tr><td><strong>No-renewal deadline</strong></td><td>No signed renewal and 24 months or fewer to the earliest documented expiry</td><td>The expiry window is reported by the owner as 2030–2035 and is not contract-verified; the earliest date governs notice rights.</td><td>List the asset with the tenant in place rather than riding an expiring lease to maturity.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q · issuer lease context</a></td></tr>
+              <tr><td><strong>Insurance shock</strong></td><td>Coverage withdrawn, or premium and deductible make NNN recovery uneconomic</td><td>County-wide claims for the Eaton and Palisades fires show how quickly insurance capacity and buyer appetite move after a local catastrophe.</td><td>Treat as a sale trigger independent of the economic cycle, and price it into any extension.</td><td><a class="source-link" href="https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm" target="_blank" rel="noopener noreferrer">California Department of Insurance</a></td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <section class="section-heading" id="triggers">
-          <div>
-            <p class="eyebrow">Decision rule</p>
-            <h2>Thresholds that move the sale-versus-renew balance</h2>
-            <p>The thresholds below are <em>decision parameters chosen for this brief</em> — not forecasts, not probabilities, and not advice tailored to any individual. Each is anchored to a published history so it can be checked and argued with.</p>
-          </div>
-          <span class="badge badge-review">Policy parameters, not predictions</span>
-        </section>
+        <section class="section-heading" id="scenarios"><div><p class="eyebrow">Step 2 · scenario framework</p><h2>Three area paths to 2035, each anchored to a published series</h2><p>Scenarios change only the direction and pace of drivers that official products already publish. They are not probabilities and they do not price the asset.</p></div></section>
         <div class="table-wrap">
           <table>
-            <caption>Explicit triggers; the anchor column is the published series each threshold is calibrated against.</caption>
-            <thead><tr><th scope="col">Trigger</th><th scope="col">Threshold</th><th scope="col">Anchor in published data</th><th scope="col">Action it justifies</th><th scope="col">Official source</th></tr></thead>
+            <caption>Area scenarios through the 2030–2035 lease-expiry window. "Anchor" cells are official; "judgement" cells are this brief's stated assumption and are not data.</caption>
+            <thead><tr><th scope="col">Scenario</th><th scope="col">Population / labour</th><th scope="col">Income and prices</th><th scope="col">Rate environment</th><th scope="col">What it would mean for the property question</th><th scope="col">Anchor source</th></tr></thead>
             <tbody>
-              <tr><td><strong>Renewal case strengthens</strong></td><td>County annual unemployment below 6.75% and a signed renewal available with rent steps</td><td>6.75% is the 1990–2025 median of the county series; 5.7% in 2025 is below it.</td><td>Negotiate and sign the longer term now, retaining a pre-agreed sale option and notice rights.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series</a></td></tr>
-              <tr><td><strong>Sale review triggered</strong></td><td>County annual unemployment at or above 7.7% in two consecutive published years</td><td>7.7% was reached in 14 of 36 years across three separate episodes (1991–1996, 2009–2014, 2020–2021).</td><td>Commission an appraisal and market bids; compare net proceeds against a stressed hold value rather than a baseline one.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/LAUCN060370000000003A" target="_blank" rel="noopener noreferrer">BLS LAUS annual series</a></td></tr>
-              <tr><td><strong>Hold case re-underwritten</strong></td><td>A published metro output contraction of roughly 3% or more in a year</td><td>2019 to 2020 was −2.8% for the metro area.</td><td>Re-run the hold model on the stressed rent and exit assumptions before extending term or declining a bid.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA metro GDP (via FRED)</a></td></tr>
-              <tr><td><strong>No-renewal deadline</strong></td><td>No signed renewal and 24 months or fewer to the earliest documented expiry date</td><td>The expiry window is reported by the owner as 2030–2035 and is not contract-verified; the earliest date governs notice rights and any renewal notice period.</td><td>List the asset with tenants in place rather than riding an expiring lease to maturity.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q (issuer lease context)</a></td></tr>
-              <tr><td><strong>Insurance shock</strong></td><td>Coverage withdrawn, or the quoted premium or deductible makes NNN recovery uneconomic</td><td>County-wide fire claims for the Eaton and Palisades fires show how quickly insurance and buyer appetite move after a local catastrophe.</td><td>Treat as a sale trigger independent of the economic cycle; price the risk into any extension.</td><td><a class="source-link" href="https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm" target="_blank" rel="noopener noreferrer">California Department of Insurance</a></td></tr>
-              <tr><td><strong>Black-swan stress test</strong></td><td>No probability assigned</td><td>Earthquake, wildfire, flood, utility interruption, tenant failure and regulatory change are screened on the risk register; USGS puts a 60% chance of M ≥ 6.7 in the Los Angeles region within 30 years.</td><td>Hold only if insurance, reserves and lease allocation can absorb an uninsured event; otherwise the sale case dominates.</td><td><a class="source-link" href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer">USGS earthquake probability</a></td></tr>
+              <tr><td><strong>A · Continued attrition<br><span class="badge badge-high">Downside</span></strong></td><td><span class="badge badge-verified">Anchor</span> Census county decline of −3.2% since 2020 continues at roughly the 2020–2025 pace; labour force keeps shrinking.</td><td><span class="badge badge-verified">Anchor</span> CPI near its current +3.72% with soft real income growth; judgement: restaurant traffic per capita flat to lower.</td><td><span class="badge badge-verified">Anchor</span> 10-year Treasury near 4.84% with no relief; judgement: exit cap rates wider than entry.</td><td>Renewal term becomes the only defence: without a signed extension, exit pricing is set by re-tenanting risk rather than by income.</td><td><a class="source-link" href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" target="_blank" rel="noopener noreferrer">Census · county</a> · <a class="source-link" href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">FRED · DGS10</a></td></tr>
+              <tr><td><strong>B · SCAG baseline<br><span class="badge badge-neutral">Central</span></strong></td><td><span class="badge badge-verified">Anchor</span> SCAG adopts +0.23%/yr county population and +0.26%/yr employment through 2050.</td><td><span class="badge badge-verified">Anchor</span> CPI escalators near the five-year 4.19%/yr pace; judgement: rent grows with the escalator.</td><td><span class="badge badge-verified">Anchor</span> Long rates stay in the recent 4–5% band; judgement: exit cap unchanged from entry.</td><td>Slow, steady area growth. Value is carried by contract term and escalators, not by market rent growth.</td><td><a class="source-link" href="https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf" target="_blank" rel="noopener noreferrer">SCAG forecast</a> · <a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+              <tr><td><strong>C · Plan-led growth<br><span class="badge badge-limited">Upside</span></strong></td><td><span class="badge badge-verified">Anchor</span> DTLA 2040 planning expectations: 100,000 homes, 175,000 additional residents, 100,000 work opportunities to 2040 — only if the parcel is inside the plan boundary.</td><td><span class="badge badge-verified">Anchor</span> Income growth outpaces CPI; judgement: market rent growth above the escalator at renewal.</td><td><span class="badge badge-verified">Anchor</span> Long rates fall back toward the 2020–2021 range; judgement: exit cap tighter than entry.</td><td>Land and redevelopment optionality matter more than the current building; the sale-versus-renew gap narrows.</td><td><a class="source-link" href="https://planning.lacity.gov/odocument/92b97b24-1978-4e0e-9eae-51f22eda9e4c/Press%20Release_%20DTLA%20New%20Zoning%20Code.pdf" target="_blank" rel="noopener noreferrer">LA City Planning · DTLA 2040</a></td></tr>
             </tbody>
           </table>
         </div>
+        <div class="note" style="margin-top:12px"><strong>Read this before using the scenarios:</strong> none of the three is a forecast of this restaurant's sales or of this building's rent. The only inputs that can convert an area scenario into a property outcome are the executed lease (rent, escalators, options, obligations), the parcel (zoning, access, hazards, insurance), and the tenant's own unit performance — all currently unverified and listed on <a href="flagged.html">Flagged for Review</a>.</div>
 
-        <section class="section-heading" id="blank">
-          <div>
-            <p class="eyebrow">Property-level projection</p>
-            <h2>The part that stays blank</h2>
-            <p>A property projection needs private inputs. None of them is public, and none has been assumed. The official links are the rules and records that will govern the numbers once they are supplied.</p>
-          </div>
-          <span class="badge badge-review">Intentionally blank</span>
-        </section>
+        <section class="section-heading" id="chain"><div><p class="eyebrow">Step 3 · transmission</p><h2>How area drivers reach a NNN asset — and where the chain breaks</h2></div></section>
+        <div class="three-column">
+          <article class="panel"><p class="kicker">Link 1 · verified</p><h3>Area population and income → potential demand</h3><p class="small">Census and SCAG publish population, income, and employment. What they establish is the size and direction of the local customer base, at county or city scale.</p></article>
+          <article class="panel"><p class="kicker">Link 2 · not verified</p><h3>Demand → this restaurant's sales</h3><p class="small">Trade area, drive-time, competitors, daypart mix, and unit-level sales are private. No published series substitutes for them. This link is the largest single gap in the chain.</p></article>
+          <article class="panel"><p class="kicker">Link 3 · not verified</p><h3>Sales → rent coverage and renewal capacity</h3><p class="small">Occupancy cost as a share of sales determines whether the operator can absorb an escalated renewal rent. Wage floors of $18.42/hour locally and $20.00/hour statewide raise the operating-cost baseline that coverage must clear.</p></article>
+          <article class="panel"><p class="kicker">Link 4 · arithmetic</p><h3>Rent and expenses → net operating income</h3><p class="small">Under a true NNN structure most operating costs are the tenant's. Landlord exposure is then concentrated in structure, roof, parking, capital items, vacancy, and uncollectible rent — all lease-defined.</p></article>
+          <article class="panel"><p class="kicker">Link 5 · arithmetic</p><h3>NOI and cap rate → value</h3><p class="small">Value = NOI ÷ cap rate. Because NOI is unknown here, the model below works in <em>ratios</em>: how much value changes for a given rent growth and cap-rate change, independent of the dollar amount.</p></article>
+          <article class="panel"><p class="kicker">Link 6 · contract</p><h3>Lease term → buyer pool and price</h3><p class="small">A single-tenant asset with only a few years of remaining term is priced and financed as a re-tenanting proposition. This is the central reason remaining term, not area growth, drives the sell-versus-renew decision.</p></article>
+        </div>
+
+        <section class="section-heading" id="breakeven"><div><p class="eyebrow">Step 4 · break-even arithmetic</p><h2>What rent growth is needed just to stand still?</h2><p>If NOI grows at <em>g</em> per year for <em>n</em> years and the exit cap rate is <em>c₁</em> against an entry cap of <em>c₀</em>, then the value ratio is (1+<em>g</em>)<sup>n</sup> × (<em>c₀</em> ÷ <em>c₁</em>). Holding value flat requires <em>g</em> = (<em>c₁</em> ÷ <em>c₀</em>)<sup>1/n</sup> − 1.</p></div></section>
         <div class="table-wrap">
           <table>
-            <caption>Inputs required before a property-level projection can be published; every value cell is blank on purpose.</caption>
-            <thead><tr><th scope="col">Projection input</th><th scope="col">Value</th><th scope="col">Why it is blank</th><th scope="col">Official context / lookup</th></tr></thead>
+            <caption>Required annual NOI growth to hold value flat when the exit cap rate is wider than the entry cap rate. Entry cap of 6.00% is an illustrative parameter, not this property's cap rate.</caption>
+            <thead><tr><th scope="col">Exit cap vs entry cap</th><th scope="col">n = 4 years</th><th scope="col">n = 6 years</th><th scope="col">n = 9 years</th><th scope="col">Reading</th><th scope="col">Parameter anchor</th></tr></thead>
             <tbody>
-              <tr><td><strong>Net operating income through expiry</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>Rent, reimbursements and landlord-paid costs are in the private lease and ledger.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC 10-K (issuer lease context only)</a></td></tr>
-              <tr><td><strong>Contracted rent steps and option rent</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>Unknown without the executed lease and amendments.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm" target="_blank" rel="noopener noreferrer">SEC 10-Q (issuer lease context only)</a></td></tr>
-              <tr><td><strong>Capital expenditure and deferred maintenance</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>Requires an inspection and permit history at the parcel.</td><td><a class="source-link" href="https://zimas.lacity.org/" target="_blank" rel="noopener noreferrer">LA City ZIMAS</a></td></tr>
-              <tr><td><strong>Exit cap rate and resale value at expiry</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>No comparable transaction has been matched to this asset.</td><td><a class="source-link" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor</a></td></tr>
-              <tr><td><strong>Discount rate and owner’s cost of capital</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>Depends on the owner’s private alternatives and risk tolerance.</td><td><a class="source-link" href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer">IRS Publication 544</a></td></tr>
-              <tr><td><strong>Transfer tax at a future sale</strong></td><td class="blank-value" aria-label="Unconfirmed value intentionally blank"></td><td>Depends on jurisdiction, price and closing date; City thresholds are re-indexed annually.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance · Measure ULA</a></td></tr>
+              <tr><td><strong>+50 bp</strong> (6.00% → 6.50%)</td><td>2.02%/yr</td><td>1.34%/yr</td><td>0.90%/yr</td><td>A CPI-linked escalator of about 3.7% clears this comfortably.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+              <tr><td><strong>+100 bp</strong> (6.00% → 7.00%)</td><td>3.93%/yr</td><td>2.60%/yr</td><td>1.73%/yr</td><td>Current CPI-level escalation roughly covers this; a flat rent does not.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+              <tr><td><strong>+150 bp</strong> (6.00% → 7.50%)</td><td>5.73%/yr</td><td>3.79%/yr</td><td>2.51%/yr</td><td>Exceeds current CPI; only contractual bumps well above inflation, or real rent growth, preserve value.</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">FRED · 10-yr Treasury</a></td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="callout">
-          <h3>How to read this page against the rest of the brief</h3>
-          <p class="small">The <a href="market.html">local market</a> page holds the observed indicators; this page holds the forward view built from published planning scenarios and the historical envelope. The <a href="decision.html">sell / renew</a> page holds the after-tax comparison; the <a href="risks.html">risk register</a> holds the parcel-dependent and tail exposures; anything this brief could not verify is listed on <a href="flagged.html">Flagged for Review</a>, and every figure on this page is logged on the <a href="audit.html">verification audit</a>.</p>
+        <div class="section-heading"><div><p class="eyebrow">Step 5 · sensitivity</p><h2>Value ratio after holding: rent growth against exit cap rate</h2><p>Cell = (1+g)<sup>n</sup> × (6.00% ÷ exit cap). 1.00 means the asset is worth the same on exit as at entry, before sale costs and taxes. Values above 1.00 are nominal value gains; they are not inflation-adjusted.</p></div></div>
+        <div class="table-wrap">
+          <table>
+            <caption>Holding period n = 6 years. All cells are derived arithmetic; none is a forecast.</caption>
+            <thead><tr><th scope="col">NOI growth (g)</th><th scope="col">Exit 6.00%</th><th scope="col">Exit 6.50%</th><th scope="col">Exit 7.00%</th><th scope="col">Exit 7.50%</th><th scope="col">Escalation anchor</th></tr></thead>
+            <tbody>
+              <tr><td><strong>2.0%/yr</strong> (below CPI)</td><td>1.126</td><td>1.040</td><td>0.965</td><td>0.901</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+              <tr><td><strong>3.0%/yr</strong> (near CPI)</td><td>1.194</td><td>1.102</td><td>1.023</td><td>0.955</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+              <tr><td><strong>4.0%/yr</strong> (above CPI)</td><td>1.265</td><td>1.168</td><td>1.085</td><td>1.012</td><td><a class="source-link" href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener noreferrer">FRED · CPI-U</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="section-heading"><div><p class="eyebrow">Step 6 · transaction arithmetic</p><h2>Transfer tax depends on price and closing date, not on the decision</h2><p>If the parcel is inside the City of Los Angeles, the City transfer tax is 0.45% of consideration, plus Measure ULA of 4.0% above $5,400,000 and 5.5% at or above $10,900,000 for transactions closing after June 30, 2026. Thresholds are indexed annually to chained CPI, so a future sale must use the thresholds in force on that date.</p></div></section>
+        <div class="table-wrap">
+          <table>
+            <caption>Illustrative tax arithmetic only. The prices shown are round examples, not this property's value, and professional fees, escrow, title, and owner income tax are excluded.</caption>
+            <thead><tr><th scope="col">Illustrative consideration</th><th scope="col">Applicable combined rate</th><th scope="col">City transfer tax</th><th scope="col">Why this row exists</th><th scope="col">Official source</th></tr></thead>
+            <tbody>
+              <tr><td><strong>$5,000,000</strong></td><td>0.45%</td><td>$22,500</td><td>Below the first ULA threshold; only the base City rate applies.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance</a></td></tr>
+              <tr><td><strong>$8,000,000</strong></td><td>4.45%</td><td>$356,000</td><td>Inside the ULA band: the 4.0% ULA rate is charged on the full consideration, not only the excess over the threshold.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance</a></td></tr>
+              <tr><td><strong>$12,000,000</strong></td><td>5.95%</td><td>$714,000</td><td>At or above $10,900,000 the 5.5% ULA rate applies to the full consideration.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="section-heading"><div><p class="eyebrow">Step 7 · model integrity</p><h2>What would change the projection</h2></div></section>
+        <div class="two-column">
+          <section class="panel">
+            <h3>Inputs that would move the answer most</h3>
+            <ol class="list-clean">
+              <li><strong>Actual remaining lease term and option rent.</strong> Term drives the buyer pool; option rent drives renewal economics. Neither is verified.</li>
+              <li><strong>Unit-level sales and occupancy cost.</strong> Determines whether the tenant can absorb an escalated rent and whether it will exercise any option.</li>
+              <li><strong>The parcel.</strong> Zoning, access, lot size, hazard zone, and insurance terms change the re-tenanting and redevelopment case.</li>
+              <li><strong>Owner basis and financing.</strong> After-tax proceeds and debt payoff can reverse a pre-tax conclusion.</li>
+            </ol>
+          </section>
+          <section class="panel">
+            <h3>Deliberate modelling choices</h3>
+            <ul class="list-clean">
+              <li>No cap rate is asserted for this property or for the submarket: no official county-level net-lease cap-rate series exists that can be tied to this asset.</li>
+              <li>No probability is assigned to any scenario: the official sources publish estimates and forecasts, not probabilities of area outcomes.</li>
+              <li>No inflation adjustment is applied to the sensitivity cells: they are nominal ratios, and the CPI series is shown separately.</li>
+              <li>Forecast conflict is preserved: the Census decline and the SCAG forecast both appear, and neither is averaged into the other.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="callout" style="margin-top:16px">
+          <h3>Reproducibility</h3>
+          <p class="small">Every derived number on this page can be recomputed from the linked values: CAGRs use (end ÷ start)<sup>1/years</sup> − 1; annualised hazard probability uses 1 − (1 − p)<sup>1/30</sup>; break-even growth uses (c₁ ÷ c₀)<sup>1/n</sup> − 1; the sensitivity cells use (1+g)<sup>n</sup> × (c₀ ÷ c₁). The same formulas, with the same inputs and the results, are recorded in the repository verification log for this pass.</p>
         </div>
       </main>
-      <footer class="site-footer"><p class="footer-privacy">Privacy-first: no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</p><p class="micro muted">Projection built only from published official series · 08 Nov 2026</p></footer>
+      <footer class="site-footer"><div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div><div>Derived arithmetic from cited official series · 08 Nov 2026</div></footer>
     </div>
   </div>
 </body>
