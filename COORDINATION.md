@@ -603,3 +603,21 @@ figures and the metro GDP year were changed, each with the reported value kept v
   cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
   mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
 
+
+---
+
+## Current session: arena/0e369d53-jack1 — 2026-11-08
+
+### Active claim and coordination
+
+The fixed Arena session branch is `arena/0e369d53-jack1`; platform policy prohibits creating or switching to the user-suggested `session-*` branches. Work remains on this branch. At claim time, `origin/main` and this branch were both `6d8c78a`; only `origin/main` existed after a fresh fetch/prune. Open PRs #5, #10, #11, #14, #18, #21, #24, #27 were last updated on 06–07 November; none is treated as an active file lock. Their work is preserved, not discarded or merged without verification. Historical `in progress` entries are records, not current locks. No other active session was identified. Shared outputs are reserved for this session's final integration task below, after its research and verification tasks finish.
+
+| Task ID | Description | Status | Owning session ID | File scope | Sources | Verification performed | Irregularities |
+|---|---|---|---|---|---|---|---|
+| T23 | Repository/privacy/deployment audit | in progress | 0e369d53 | `verification/2026-11-08-0e369d53.md`, this board | GitHub API; existing repository files | Pending; no content marked verified yet | Legacy Pages source; competing historical builds; stale validator |
+| T24 | Independent official-source research and projection-method review | in progress | 0e369d53 | `verification/2026-11-08-0e369d53.md`, `research/0e369d53/` | To be recorded per observation | Pending | Property identity, lease, rent, finances unavailable; no inference permitted |
+| T25 | Final integration: privacy-safe category dashboard, executive decision brief, reproducible gated projections | unclaimed | 0e369d53 | Canonical root eight pages; `assets/styles.css`, `assets/site.js`; `scripts/validate_site.py`, `scripts/build_public.py`; `.github/workflows/pages.yml`, `README.md`, this board | Pending T23/T24 | Not started; awaits research completion | Do not publish archives, research notes or owner/parcel identifiers |
+| T26 | Line-by-line combined verification, build/link/privacy gates | unclaimed | 0e369d53 | New verification reports and tests only; requests for content changes logged here | Pending T25 | Not started | Unverified observations must remain blank and publicly flagged |
+| T27 | PR to main, merge, deploy confirmation, publication record | unclaimed | 0e369d53 | This board; GitHub PR/Pages | Pending T26 | Not started | No merge until gates pass; failed checks must be fixed |
+
+Requests to change any newly claimed file from another session must be appended here instead of editing it. Re-check remote claims before integration; if main advances, preserve and re-verify incoming work. Historical files remain intact and excluded from the public artifact. Personal information, if found, must not enter the website or public reports; record only a redacted irregularity.
