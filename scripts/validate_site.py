@@ -9,7 +9,11 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_PAGES = {"index.html", "market.html", "property.html", "decision.html", "risks.html", "flagged.html", "sources.html", "audit.html"}
+REQUIRED_PAGES = {
+    "index.html", "market.html", "projection.html", "property.html", "decision.html",
+    "risks.html", "requirements.html", "repo-review.html", "flagged.html", "sources.html",
+    "audit.html",
+}
 PUBLIC_FILES = REQUIRED_PAGES | {"assets/styles.css", "assets/site.js", ".nojekyll"}
 OFFICIAL_DOMAINS = (
     "census.gov", "bls.gov", "scag.ca.gov", "lacity.gov", "lacity.org",
@@ -19,7 +23,7 @@ OFFICIAL_DOMAINS = (
     "usgs.gov", "conservation.ca.gov", "ladbs.org", "waterboards.ca.gov",
     "epa.gov", "lapdonline.org", "publichealth.lacounty.gov", "dpw.lacounty.gov",
     "ttc.lacounty.gov", "emergency.lacity.gov", "climate.gov", "edd.ca.gov",
-    "ladwp.com", "ftb.ca.gov", "stlouisfed.org",
+    "ladwp.com", "ftb.ca.gov", "stlouisfed.org", "dir.ca.gov", "wagesla.lacity.gov",
 )
 
 class PageAudit(HTMLParser):
@@ -33,15 +37,18 @@ class PageAudit(HTMLParser):
         self._row: dict[str, bool] | None = None
         self.text_parts: list[str] = []
         self.table_body_rows = 0
+        self.narrative_depth: list[bool] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attrs_map = dict(attrs)
         if attrs_map.get("id"):
             self.ids.append(attrs_map["id"] or "")
+        if tag == "table":
+            self.narrative_depth.append(attrs_map.get("data-narrative") == "true")
         if tag == "tbody":
             self._in_tbody = True
         if tag == "tr" and self._in_tbody:
-            self._row = {"official_source": False}
+            self._row = {"official_source": False, "any_link": False}
             self.table_body_rows += 1
         if tag == "a" and attrs_map.get("href"):
             href = attrs_map["href"] or ""
@@ -55,14 +62,23 @@ class PageAudit(HTMLParser):
                     self.errors.append(f"External new-tab link lacks noopener/noreferrer: {href}")
                 if self._row is not None:
                     self._row["official_source"] = True
+                    self._row["any_link"] = True
+            elif self._row is not None and (parsed.scheme in ("", "http", "https") or href.startswith(("mailto:", "tel:"))):
+                if parsed.scheme == "":
+                    self._row["any_link"] = True
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "tr" and self._row is not None:
-            if not self._row["official_source"]:
+            narrative = bool(self.narrative_depth) and self.narrative_depth[-1]
+            if narrative and not self._row["any_link"]:
+                self.errors.append("A narrative-table row has no working link")
+            elif not narrative and not self._row["official_source"]:
                 self.errors.append("A data row in a table body has no official source link")
             self._row = None
         if tag == "tbody":
             self._in_tbody = False
+        if tag == "table" and self.narrative_depth:
+            self.narrative_depth.pop()
 
     def handle_data(self, data: str) -> None:
         self.text_parts.append(data)
@@ -130,7 +146,7 @@ def main() -> int:
         parser = PageAudit(path)
         parser.feed(path.read_text(encoding="utf-8"))
         table_rows += parser.table_body_rows
-    print(f"Validated {len(html_files)} pages and {table_rows} table-body rows. Every row has an official-source link; external links pass the allowlist; local paths and fragments resolve; no visible email/phone patterns found.")
+    print(f"Validated {len(html_files)} pages and {table_rows} table-body rows. Every evidence row carries an official-source link and every narrative row carries a working link; external links pass the allowlist; local paths and fragments resolve; no visible email/phone patterns found.")
     return 0
 
 if __name__ == "__main__":

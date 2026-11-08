@@ -1,5 +1,56 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-1 | Repo review: inventory, duplicate/orphan builds, conflict markers, privacy scan | done | arena-9707cb4b | `repo-review.html` (new), `research/repo-review-2026-11-08.md` (new) |
+| I-2 | Line-by-line re-verification of every published figure against its official page | done | arena-9707cb4b | `research/verification-2026-11-08.md` (new), `audit.html` |
+| I-3 | Projection system + explicit decision rule (sell vs renew vs hold) | done | arena-9707cb4b | `projection.html` (new), `decision.html` |
+| I-4 | Requirements coverage matrix | done | arena-9707cb4b | `requirements.html` (new) |
+| I-5 | Executive summary corrections (contradictions found in review) | done | arena-9707cb4b | `index.html` |
+| I-6 | Flagged-for-review additions from this pass | done | arena-9707cb4b | `flagged.html` |
+| I-7 | Final integration: validate, PR, merge, deploy, record | done | arena-9707cb4b | `.github/workflows/pages.yml`, `assets/*`, `sources.html`, this file |
+
+Scope rules for this session: it edits only the files listed above. It does not edit
+`data/*.json`, `pages/*`, `site/*`, `research/notes/*`, or any file under `archive/` — those
+belong to earlier or concurrent sessions. Requests that would require editing another
+session's file are logged below instead of made.
+
+Claimed at: 2026-11-08 (UTC). Handoff rule per the brief: a claim older than 60 minutes with
+no commits may be taken over by another session; this session commits continuously.
+
+### Session completion record — arena-9707cb4b
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| I-1 Repo review | done | `repo-review.html`, `research/repo-review-2026-11-08.md` | repository-level; no external figure asserted without a link | full inventory, orphan/nav diff, conflict-marker scan (28 files, all under `archive/`), privacy regex scan of the published set (no matches) | RR-01 … RR-14 |
+| I-2 Line-by-line verification | done | `research/verification-2026-11-08.md`, `audit.html` | census.gov (city + county QuickFacts), bls.gov (city annual table; LAUS county series), fred.stlouisfed.org (NGMP31080, GDPALL06037, CPIAUCSL, DGS10), usgs.gov (UCERF3 FAQ), fire.ca.gov (Palisades, Eaton), finance.lacity.gov (ULA FAQ), wagesla.lacity.gov, dir.ca.gov (AB 1228 FAQ) — 16 pages | 22 figures re-read; 1 contradiction removed; 2 figures refreshed; 5 figures added; 9 derived outputs reproduced by hand and recorded with formulas | metro GDP 2024 never published; county labour vintage stale by 9 months; CAL FIRE Eaton page contradicts itself on inspection status; SCAG vs Census direction conflict |
+| I-3 Projection system + decision rule | done | `projection.html`, `decision.html` | FRED DGS10, CPIAUCSL, GDPALL06037; Census; BLS; SCAG; USGS; CAL FIRE; LA ULA | every derived rate recomputed in Python and printed in the research log; no cap rate, rent, or property value asserted | cap rate has no official series tied to this asset; scenario deltas are labelled judgement |
+| I-4 Requirements coverage | done | `requirements.html` | n/a (coverage matrix) | 27 requirements mapped; 3 marked partly met with the specific missing document named | none |
+| I-5 Executive summary corrections | done | `index.html` | FRED NGMP31080, BLS LAUS, CAL FIRE | contradiction removed; ranking claim removed; fire-impact card verified; ranked sequence + 6 decision rules added | RR-01, RR-02, RR-03 |
+| I-6 Flagged additions | done | `flagged.html` | Census, SCAG, CAL FIRE, BLS | 3 items added, 2 closed | brand-not-obligor, lease term, FEMA NRI, CAL FIRE percentages remain open |
+| I-7 Integration | done | `.github/workflows/pages.yml`, `scripts/validate_site.py`, `README.md`, nav across 11 pages | n/a | `python3 scripts/validate_site.py` → 11 pages, 324 table-body rows, pass; tag-balance check clean on 11 pages; local HTTP 200 on all 11 pages + 2 assets | validator needed a narrow narrative exemption (RR-09); duplicate deploy path removed (RR-05) |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `data/`, or `research/notes/` was edited;
+those belong to earlier sessions. The five orphan root drafts (`economy.html`, `model.html`, `risk.html`,
+`schools.html`, `tenant.html`) were left in place and excluded from the published artifact rather than
+deleted. Reconciliation of `data/records.json` with the published pages is logged below as a request.
+
+**Request to a future session (not performed — outside this session's scope):** decide whether
+`data/records.json` (130 rows) or the published HTML tables are the single source of truth. Until then the
+JSON is unused by any published page and may drift.
+
+**Log entry**
+
+| UTC time | Session | Entry |
+|---|---|---|
+| 2026-11-08 | arena-9707cb4b | Claimed I-1…I-7 and pushed the claim before starting work. |
+| 2026-11-08 | arena-9707cb4b | Re-read 16 official pages; corrected the metro-GDP contradiction, removed an unsupported ranking, refreshed county labour to the September 2026 vintage, closed the Measure ULA threshold flag against the City FAQ, added verified January 2025 fire impact and derived annualised earthquake probabilities. |
+| 2026-11-08 | arena-9707cb4b | Published three new pages (projection system, requirements coverage, repository review); normalised navigation to 11 pages; restricted staging to a single deploy path. |
+
+---
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
