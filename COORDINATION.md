@@ -603,3 +603,20 @@ figures and the metro GDP year were changed, each with the reported value kept v
   cutover (admin setting), superseded historical root pages reachable under legacy deploys, PR #9 ledger
   mislabel, stale/conflicting open PRs (#5, #10, #11, #14, #15), stale `verify-data.mjs` gate.
 
+
+---
+
+## Session: arena/b8188ee0-jack1 (2026-11-08 UTC)
+
+**Session ID:** `arena/b8188ee0-jack1` (Arena-assigned branch; per platform policy this session cannot create `session-<id>/<task>` branches — the assigned branch is used, as prior sessions did.)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T19 | Fresh independent re-verification (2026-11-08) of the canonical 8-page dashboard against official sources; close confirmable open items; correct any errors; new audit report | in progress | arena/b8188ee0-jack1 | `research/verification-audit-b8188ee0.md` (new), `audit.html`, `index.html`, `market.html`, `property.html`, `decision.html`, `risks.html`, `flagged.html`, `sources.html`, `COORDINATION.md` | to be recorded per row | pending | pending |
+| T20 | Integration health check: validator run, live-site check, Pages deploy path review, PR → main, merge, deploy confirmation, record | in progress | arena/b8188ee0-jack1 | `COORDINATION.md`, gh operations | n/a | pending | pending |
+
+### Stale-claim handoff note
+
+At claim time (2026-11-08 ~22:55 UTC) the newest activity on any other session branch/PR is PR #27 (`arena/dac604b9-jack1`, created 2026-11-07T20:49:58Z, no commits since) — more than 24 hours old, exceeding the 60-minute staleness rule. All other open PRs (#5, #10, #11, #14, #18, #21, #24) are older. Per the takeover rule, this session takes over the canonical root-page scope; **no other session's work is discarded** — open PRs are left open for the owner, archives untouched. If another session resumes, coordinate here before editing the canonical pages.
