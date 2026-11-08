@@ -69,6 +69,33 @@ archived drafts were "no longer served". They are still served, because the Page
 changed from this session. The claims were corrected on the published page and in `README.md` rather than
 left standing — a wrong fix recorded as done is worse than an open defect recorded honestly.
 
+### PR #32 record and live verification (08 Nov 2026, session arena-9707cb4b)
+
+| Item | Result |
+|---|---|
+| Merge conflict on PR #32 | Caused by session `arena/9dce30d0` merging PR #31 with its own `_config.yml` publication filter. Resolved by merging `origin/main` into this branch: **nothing of theirs was discarded** — `_config.yml`, the `.nojekyll` removal, the OpenFEMA declaration rows and the 404 rewrite were all kept, and this branch's 11-page scope was folded into their filter. |
+| PR #32 | **merged** 2026-11-08T23:01:24Z, merge commit `d784235` |
+| Pages build (run 42533094594) | **success** |
+| Pages workflow (run 42533094902) | **success** |
+| Live: `/requirements.html` | renders 27 requirement rows with status badges |
+| Live: `/projection.html` | renders 14 verified driver rows, scenarios, break-even and sensitivity tables |
+| Live: `/index.html` | headline "Don't sell blind, and don't ride the lease to expiry", corrected $1.295T (2023) GDP, 16,264-structure fire card, five-step sequence |
+| Live: `/archive/arena-ffc97e4e/decision.html` | **404** — the `_config.yml` filter keeps superseded builds off the site, closing RR-04 without admin rights |
+| Live: 404 page | served, but listed eight sections and used relative links that resolve against the missing path; repaired in PR #33 with absolute `/Jack1/` links and the full eleven-section list |
+
+**Lesson recorded:** two sessions independently tried to close the same deploy-path defect — one by asking for an
+admin change (impossible here), one by filtering publication in `_config.yml` (possible). The filter is the correct
+fix and is now the published mechanism; the workflow allowlist mirrors it.
+
+### Publication scope, final state
+
+- Published: `index.html`, `market.html`, `projection.html`, `property.html`, `decision.html`, `risks.html`,
+  `requirements.html`, `repo-review.html`, `flagged.html`, `sources.html`, `audit.html`, `404.html`,
+  `assets/styles.css`, `assets/site.js` (14 files).
+- Not published: `archive/`, `pages/`, `site/`, `data/`, `research/`, `analysis/`, `model/`, `risks/`, `tools/`,
+  `scripts/`, `verification/`, the superseded root drafts (`economy.html`, `model.html`, `risk.html`,
+  `schools.html`, `tenant.html`), and the markdown briefs. All remain in the repository for traceability.
+
 ## Shared Task Board
 
 | Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
