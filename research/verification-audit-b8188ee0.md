@@ -102,3 +102,14 @@ Conflict resolution followed the coordination protocol — **no session's work d
 Final validator state after re-application: **17 pages, 362 table-body rows, PASS** (official-source link on every row; allowlist + FEMA-org prefix; local links/anchors; no email/phone patterns).
 
 Note on the merged build's 2025 county annual average (5.7%): the labor-force-weighted average of the eleven published 2025 months recomputes to 5.65% → 5.7%, consistent with the merged page; the simple average of the rounded monthly rates is 5.6%. Both are disclosed on the merged site's flagged register (F-13). No change made.
+
+## 8. Final integration state (second interleave)
+
+`origin/main` advanced again through PRs #44–#45 (session 0e369d53) to a **10-page data-driven canonical build** (`data/verified-2026-11-08.json` → `scripts/build_public.py`), which independently verified and published the same FEMA NRI county values this session read (plus social vulnerability, resilience, and per-hazard EAL detail). The 17-page build is preserved under `archive/arena-main-3da3b70/`.
+
+This session merged that build without discarding any session's work and re-applied its remaining unique verified contributions **through the dataset** (the correct path for the generated build):
+- `sec_8k_sept2026` source + `tenant_governance` observation (issuer leadership transition; roles only, no personal names);
+- `nri_coastal_flood` observation (score 90, Relatively High — complements the published inland score of 100);
+- `audit_b8188ee0_pass` audit entry recording this session's independent re-reads.
+
+Final gates on the merged + updated tree: `build_public.py --check` PASS (11 generated files match the dataset); `scripts/validate_site.py` PASS (**10 pages, 268 sourced table rows**); 11 unit tests PASS. All prior coordination records retained in sequence in COORDINATION.md.

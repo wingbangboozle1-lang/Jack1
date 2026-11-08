@@ -336,6 +336,13 @@
       "url": "https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-0e369d53.tsv",
       "accessed": "2026-11-08",
       "kind": "repository provenance"
+    },
+    "sec_8k_sept2026": {
+      "title": "Jack in the Box Inc. Form 8-K, Exhibit 99.1 (board refreshment; CEO transition; cooperation agreement extension)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
+      "accessed": "2026-11-08",
+      "kind": "issuer filing"
     }
   },
   "observations": [
@@ -926,6 +933,19 @@
       ]
     },
     {
+      "id": "tenant_governance",
+      "category": "Tenant",
+      "measure": "Issuer leadership transition (Form 8-K)",
+      "value": "CEO transition expected within 12 months; Executive Chairman serving as interim CEO; board refreshment; investor cooperation agreement extended",
+      "geography": "Jack in the Box Inc.",
+      "period": "8-K dated Sep 17, 2026, filed Sep 21, 2026",
+      "status": "verified",
+      "note": "Issuer-level governance context only; does not identify this unit's tenant or guarantor. Roles described without personal names. Read 08 Nov 2026 (session b8188ee0).",
+      "sources": [
+        "sec_8k_sept2026"
+      ]
+    },
+    {
       "id": "tenant_ca_2025",
       "category": "Tenant",
       "measure": "California Jack in the Box restaurants, FY2025",
@@ -1121,6 +1141,19 @@
       "sources": [
         "fema_county_query",
         "fema_nri"
+      ]
+    },
+    {
+      "id": "nri_coastal_flood",
+      "category": "Hazards",
+      "measure": "FEMA NRI coastal flooding risk",
+      "value": "Score 90; Relatively High",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "v1.20 splits inland and coastal flooding; complements the inland score of 100. Parcel flood zone still requires a FIRM lookup. Read 08 Nov 2026 (session b8188ee0).",
+      "sources": [
+        "fema_county_query"
       ]
     },
     {
@@ -2458,6 +2491,17 @@
       "sources": [
         "repo",
         "live"
+      ]
+    },
+    {
+      "id": "audit_b8188ee0_pass",
+      "check": "Independent re-verification pass (session b8188ee0, 08 Nov 2026)",
+      "result": "All 20 figure groups re-read on their official pages matched: Census city/county QuickFacts, BLS city rate + LAUS county series (incl. Sep 2026 prelim 4.5%), FRED metro (discontinued at 2023) and county GDP, SCAG adopted tables, DTLA 2040, SEC 10-Q XBRL statements, ULA thresholds, USGS UCERF3, CDI tracker, OSFM FHSZ acreage. FEMA NRI county values and OpenFEMA declarations independently confirmed via the same official data services.",
+      "detail": "Full trail in research/verification-audit-b8188ee0.md. Unique additions re-applied after two concurrent main advances: SEC 8-K governance observation and NRI coastal-flooding sub-score; no other session's work discarded.",
+      "sources": [
+        "census_city",
+        "sec_10q",
+        "fema_county_query"
       ]
     }
   ]
