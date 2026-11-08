@@ -346,10 +346,10 @@
     },
     "FEMA_NRI": {
       "publisher": "Federal Emergency Management Agency",
-      "title": "National Risk Index",
-      "url": "https://hazards.fema.gov/nri/",
+      "title": "National Risk Index for Natural Hazards",
+      "url": "https://www.fema.gov/flood-maps/products-tools/national-risk-index",
       "kind": "lookup",
-      "retrieved": "2026-11-07"
+      "retrieved": "2026-11-08"
     },
     "CGS_EQZ": {
       "publisher": "California Geological Survey",
@@ -403,9 +403,9 @@
     "PH_HEAT": {
       "publisher": "Los Angeles County Department of Public Health",
       "title": "Heat-related illness data brief",
-      "url": "https://publichealth.lacounty.gov/eh/docs/about/heat-related-illness-data_brief.pdf",
+      "url": "https://admin.publichealth.lacounty.gov/oejch/docs/about/heat-related-illness-data_brief.pdf",
       "kind": "lookup",
-      "retrieved": "2026-11-07"
+      "retrieved": "2026-11-08"
     },
     "CLIMATE": {
       "publisher": "NOAA / U.S. Climate.gov",

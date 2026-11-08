@@ -83,9 +83,9 @@
     {
       "id": "IR-D10",
       "title": "FEMA National Risk Index values are not readable as static official figures",
-      "detail": "The NRI is an interactive tool; no county score is published as a static figure on fema.gov in a form that could be verified line by line. The tool is linked for manual review and no score is asserted.",
+      "detail": "The NRI is an interactive tool; no county score is published as a static figure on fema.gov in a form that could be verified line by line. The tool is linked for manual review and no score is asserted. The legacy hazards.fema.gov/nri/ entry point now redirects to FEMA's Resilience Analysis and Planning Tool (RAPT), which hosts NRI v1.20; the source link was updated to the canonical NRI page on 2026-11-08.",
       "links": [
-        "https://hazards.fema.gov/nri/"
+        "https://www.fema.gov/flood-maps/products-tools/national-risk-index"
       ]
     },
     {
@@ -148,6 +148,15 @@
       "detail": "Seven archived pages under archive/arena-ffc97e4e still contained raw HEAD/separator/incoming git conflict markers. The marker lines were converted into neutral HTML comments so both sides remain in the files verbatim and nothing from that session was discarded. The pages are also labelled superseded and noindex. The canonical dashboard has no conflict markers.",
       "links": [
         "https://github.com/wingbangboozle1-lang/Jack1"
+      ]
+    },
+    {
+      "id": "IR-D18",
+      "title": "Two source links re-pointed to canonical official pages on 2026-11-08",
+      "detail": "In the final integration pass all 59 source URLs were re-fetched. The LAC DPH heat-illness data brief moved from publichealth.lacounty.gov/eh/docs/about/ to admin.publichealth.lacounty.gov/oejch/docs/about/ (the old path now returns the DPH 404 page) and was re-pointed to its current location. The FEMA NRI entry point hazards.fema.gov/nri/ redirects to FEMA's Resilience Analysis and Planning Tool; it was re-pointed to the canonical National Risk Index page on fema.gov. Both replacements were verified to resolve to official pages on 2026-11-08; no published figure changed.",
+      "links": [
+        "https://admin.publichealth.lacounty.gov/oejch/docs/about/heat-related-illness-data_brief.pdf",
+        "https://www.fema.gov/flood-maps/products-tools/national-risk-index"
       ]
     }
   ]
