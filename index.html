@@ -37,7 +37,7 @@
           <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button>
           <span class="crumb">Decision support <span aria-hidden="true">/</span> Executive summary</span>
         </div>
-        <div class="snapshot">Evidence snapshot · 07 Nov 2026</div>
+        <div class="snapshot">Evidence snapshot · 08 Nov 2026</div>
       </header>
 
       <main id="main-content" class="content">
@@ -88,9 +88,21 @@
             <a class="metric-source" href="https://fred.stlouisfed.org/series/NGMP31080" target="_blank" rel="noopener noreferrer">BEA via FRED</a>
           </article>
           <article class="metric-card">
-            <div class="metric-label">FEMA disaster risk</div>
+            <div class="metric-label">Federal disaster declarations</div>
+            <div class="metric-value">88</div>
+            <div class="metric-meta">Los Angeles County designations since 1969 · 61 fire, 10 flood, 8 severe storm · counted on FEMA's OpenFEMA API 08 Nov 2026</div>
+            <a class="metric-source" href="https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2" target="_blank" rel="noopener noreferrer">OpenFEMA declaration summaries</a>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">County GDP</div>
+            <div class="metric-value">$1.003T</div>
+            <div class="metric-meta">Los Angeles County · 2024 nominal · up from $956.2B in 2023 in current dollars · re-read 08 Nov 2026</div>
+            <a class="metric-source" href="https://fred.stlouisfed.org/series/GDPALL06037" target="_blank" rel="noopener noreferrer">BEA via FRED</a>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">FEMA risk-index scores</div>
             <div class="metric-value">Flagged</div>
-            <div class="metric-meta">County NRI scores and expected annual loss were not readable from an official federal page on 07 Nov 2026, so no value is published here</div>
+            <div class="metric-meta">County NRI composite, expected annual loss, and hazard sub-scores are published only inside FEMA's interactive tools and are not available through OpenFEMA; still withheld on 08 Nov 2026</div>
             <a class="metric-source" href="https://hazards.fema.gov/nri/" target="_blank" rel="noopener noreferrer">FEMA National Risk Index</a>
           </article>
           <article class="metric-card">
@@ -116,8 +128,8 @@
               <li><strong>Do not treat “Central Los Angeles” as one market.</strong> The Census, SCAG regional forecast, and Downtown Community Plan use different geographies. None can be assigned to this restaurant without a parcel location. <a href="market.html">See scope and indicators</a>.</li>
               <li><strong>Long-run regional growth is positive in the official baseline, but not a site forecast.</strong> SCAG’s adopted 2024 plan projects Los Angeles County population and employment through 2050. Downtown planning expectations apply only inside the Downtown Plan boundary and are not guaranteed outcomes. <a href="market.html#projections">Read the projection table</a>.</li>
               <li><strong>The brand does not identify the lease guarantor.</strong> Jack in the Box’s latest reviewed quarterly filing reports both company-operated and franchise-operated restaurants. The specific landlord counterparty and any parent guarantee remain unknown. <a href="property.html#tenant-context">See tenant context</a>.</li>
-              <li><strong>Tail hazards are material to the decision, and only some of the county-scale numbers survive an official read.</strong> USGS/UCERF3 states a 60% probability of M ≥ 6.7 within 30 years in the Los Angeles region, verified on the USGS page on 07 Nov 2026. County-level FEMA risk-index scores, expected annual loss, and the reported 26% expansion of CAL FIRE Very High zones could not be read from an official page in that audit and are withheld rather than published as fact. All of these require parcel-level verification in any case. <a href="risks.html">Open the risk register</a>.</li>
-              <li><strong>The regional economy is large and diverse, but parcel-level demand is unverified.</strong> LA metro GDP is $1.355 trillion (2024, BEA) and LA County GDP is $1.003 trillion — the #2 county economy in the U.S. City population has declined 0.8% since 2020 while the county unemployment rate averaged 5.6% in 2025. These provide macro context but do not establish restaurant demand at this site. <a href="market.html">See area indicators</a>.</li>
+              <li><strong>Tail hazards are material to the decision, and only part of the county-scale evidence survives an official read.</strong> USGS/UCERF3 states a 60% probability of M ≥ 6.7 (46% for M ≥ 7.0, 31% for M ≥ 7.5) within 30 years in the Los Angeles region, re-read on the USGS page on 08 Nov 2026. FEMA's OpenFEMA declaration summaries count 88 federal disaster designations for Los Angeles County since 1969 — 61 fire, 10 flood, 8 severe storm — counted directly through the federal API on 08 Nov 2026. County National Risk Index scores and expected annual loss are still withheld: they live inside FEMA's interactive tools and are not served by OpenFEMA. The reported 26% expansion of CAL FIRE Very High zones still could not be located on a state page. All of this is county-scale screening, not a parcel finding. <a href="risks.html">Open the risk register</a>.</li>
+              <li><strong>The regional economy is large, but the local population base is shrinking and parcel-level demand is unverified.</strong> Los Angeles County GDP was $1.003 trillion in 2024, up from $956.2 billion in 2023 in current dollars (BEA via FRED). The metro-area series is officially discontinued after 2023 at $1.295 trillion; a $1.355 trillion "2024" figure that appeared in an earlier draft could not be confirmed and is disclosed on Flagged for Review rather than published. City population fell 0.8% and county population 3.2% from the 2020 estimates base to July 2025, and county unemployment averaged 5.6% over the eleven published months of 2025. Ranking claims are avoided: no official source read for this brief ranks the county against other counties. These figures give macro context, not restaurant demand at this site. <a href="market.html">See area indicators</a>.</li>
             </ol>
           </section>
 
@@ -152,6 +164,32 @@
           </div>
         </section>
 
+        <section class="panel" id="recommendation" style="margin-top:16px" aria-labelledby="rec-title">
+          <div class="panel-header">
+            <div><p class="eyebrow">Recommendation · decision rule with dates</p><h2 id="rec-title">What to do, by when, and with what evidence</h2></div>
+            <a class="source-link" href="decision.html#recommendation">Full risk-balanced plan</a>
+          </div>
+          <div class="decision-banner" style="margin:0 0 14px">
+            <span class="decision-icon" aria-hidden="true">✓</span>
+            <p><strong>Recommended default: dual-track, sell-weighted.</strong><br>Prepare and price a sale now, negotiate a qualifying renewal in parallel, and sign nothing until both cases are underwritten. Unless a renewal clears every test in Gate 3, <strong>sell with the lease in place before the final 24 months of term</strong> — i.e. between 2028 and 2033 depending on the true expiry date, with the listing window opening in late 2027.</p>
+          </div>
+          <p class="small">Why this default and not “wait and see”: the <strong>option to renew is the tenant's, not the owner's</strong>. Jack in the Box discloses that its real-estate leases are generally 20-year initial terms “exclusive of options to renew, which are generally exercisable at our sole discretion for 1 to 20 years.” An owner who plans around a renewal is planning around a decision a third party controls. The same filing shows roughly 93% of the brand's restaurants are franchise-operated, so the paying obligor at this site may be a franchisee rather than the public company. Both facts are issuer-wide context, not findings about this parcel — but they make “renewal will happen” the weakest assumption in the file.</p>
+          <div class="table-wrap">
+            <table>
+              <caption>Decision gates for a reported NNN lease expiring 2030–2035. Dates are this brief's proposed governance, not published data. Each row links the official source behind the test.</caption>
+              <thead><tr><th scope="col">Gate</th><th scope="col">By when</th><th scope="col">What must be true</th><th scope="col">If it is not</th><th scope="col">Official reference</th></tr></thead>
+              <tbody>
+                <tr><td><strong>G1 · Controls</strong></td><td>31 Mar 2027</td><td>Title, executed lease and amendments, estoppel, rent ledger, and a calendar of option / notice dates are in hand; tenant legal entity identified.</td><td>Assume the earliest reported expiry (2030) is firm and begin sale preparation immediately.</td><td><a class="source-link" href="https://assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor</a> · <a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm" target="_blank" rel="noopener noreferrer">SEC · 10-Q lease note</a></td></tr>
+                <tr><td><strong>G2 · Two-sided underwriting</strong></td><td>30 Jun 2027</td><td>An independent appraisal or competitive bids <em>and</em> a documented market-rent benchmark for the renewal are both available.</td><td>Sell path becomes the default; do not extend on unverified economics or a landlord-side guess at rent.</td><td><a class="source-link" href="https://assessor.lacounty.gov/" target="_blank" rel="noopener noreferrer">LA County Assessor</a> · <a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA transfer tax</a></td></tr>
+                <tr><td><strong>G3 · Renewal stress test</strong></td><td>30 Sep 2027</td><td>Renewal term runs at least ten years beyond 2035, with fixed escalations; a guaranty or demonstrable credit support; landlord obligations capped; insurance obtainable at a tolerable cost.</td><td>Go to market with the lease in place; do not sign a short extension to “buy time”.</td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm" target="_blank" rel="noopener noreferrer">SEC · lease terms and obligations</a></td></tr>
+                <tr><td><strong>G4 · Market or sign</strong></td><td>1 Oct 2027 – 31 Dec 2029</td><td>Either a signed qualifying renewal or an active, professionally marketed listing exists before the final 24 months of the actual term.</td><td>Mandatory listing. Treating “hold to expiry” as a passive default is the highest-risk option in this file.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance</a> · <a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm" target="_blank" rel="noopener noreferrer">SEC · 10-Q</a></td></tr>
+                <tr><td><strong>G5 · Sale mechanics</strong></td><td>Before any price is accepted</td><td>Jurisdiction and closing-date transfer-tax check, loan payoff, cost quotes, and owner tax review are complete; thresholds re-read at closing because they re-index annually.</td><td>Do not sign a purchase agreement or accept a non-refundable deposit.</td><td><a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">LA Office of Finance · Measure ULA</a> · <a class="source-link" href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer">IRS Pub. 544</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top:12px">Analyst judgement, clearly separated from sourced data: the gates, the “sell-weighted” tilt, and the 24-month floor are this brief's own risk-balanced framework. They are not statistics, not an appraisal, and not individualized financial or tax advice. One market convention is deliberately <em>not</em> treated as fact here: buyers generally price shorter remaining lease term less favourably. That convention is recorded as an unverified market assumption on <a href="flagged.html">Flagged for Review</a> because no official source read for this brief measures it.</p>
+        </section>
+
         <section class="section-heading" id="privacy">
           <div><p class="eyebrow">Scope and privacy</p><h2>Public evidence only; no personal information</h2><p>This site publishes aggregated public statistics and official source links. No owner name, street address, APN, ownership entity, lease document, or personal financial detail appears here. The asset-specific fields that cannot be checked from public data are blank and listed on <a href="flagged.html">Flagged for Review</a>.</p></div>
         </section>
@@ -159,7 +197,7 @@
 
       <footer class="site-footer">
         <div class="footer-privacy"><strong>Privacy-first:</strong> no personal information is collected, embedded, or published. Property identifiers are intentionally omitted.</div>
-        <div>Research checked against linked official sources · 07 Nov 2026</div>
+        <div>Research checked against linked official sources · 08 Nov 2026</div>
       </footer>
     </div>
   </div>
