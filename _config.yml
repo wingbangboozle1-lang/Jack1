@@ -27,7 +27,7 @@ exclude:
   - research
   - analysis
   - model
-  - risks
+  - risks/
   - tools
   - scripts
   - verification
