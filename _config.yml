@@ -1,0 +1,36 @@
+# Legacy GitHub Pages fallback configuration.
+# Preferred publication path is the workflow-built curated artifact in .github/workflows/pages.yml.
+# If Pages remains in legacy main / mode, Jekyll must not expose historical or internal files.
+title: Jack in the Box NNN decision brief
+description: Verified, privacy-safe decision dashboard for a reported central Los Angeles area NNN property.
+exclude:
+  - archive/
+  - pages/
+  - site/
+  - research/
+  - verification/
+  - data/
+  - model/
+  - tools/
+  - scripts/
+  - tests/
+  - assets/js/
+  - node_modules/
+  - .github/
+  - COORDINATION.md
+  - README.md
+  - DECISION_MEMO.md
+  - EXECUTIVE_SUMMARY.md
+  - METHODOLOGY.md
+  - RISK_REGISTER.md
+  - executive_summary.md
+  - economy.html
+  - model.html
+  - risk.html
+  - schools.html
+  - tenant.html
+  - 404.html
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .nojekyll

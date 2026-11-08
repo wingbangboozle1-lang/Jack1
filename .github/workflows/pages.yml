@@ -23,9 +23,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
-      - name: Validate site and source links
+          python-version: "3.11"
+      - name: Check generated pages match verified dataset
+        run: python scripts/build_public.py --check
+      - name: Run projection, build, privacy, and source tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Validate canonical site
         run: python scripts/validate_site.py
+      - name: Build and validate curated artifact boundary
+        run: |
+          python scripts/build_public.py --out _site
+          python scripts/validate_site.py --site _site --artifact
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -41,16 +49,25 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prefer workflow-built Pages source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" -X PUT -f build_type=workflow; then
+            echo "Pages source set to workflow."
+          else
+            echo "Pages source switch unavailable; legacy fallback must serve only curated root files."
+          fi
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Prepare the public dashboard files only
-        run: |
-          set -eu
-          mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html audit.html _site/
-          cp assets/styles.css assets/site.js _site/assets/
-          cp .nojekyll _site/.nojekyll
-          echo "Assembled $(find _site -type f | wc -l) public files"
+      - name: Build curated public artifact
+        run: python scripts/build_public.py --out _site
+      - name: Validate curated artifact
+        run: python scripts/validate_site.py --site _site --artifact
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:

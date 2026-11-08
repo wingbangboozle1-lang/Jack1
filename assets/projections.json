@@ -1,0 +1,595 @@
+{
+  "meta": {
+    "date": "2026-11-08",
+    "session": "0e369d53",
+    "method": "official inputs + transparent arithmetic; no interpolation or parcel extrapolation"
+  },
+  "dof": {
+    "source": "dof_p2a",
+    "geography": "Los Angeles County",
+    "vintage": "Baseline 2024 / Vintage 2026, released March 13, 2026",
+    "rows": [
+      {
+        "year": 2026,
+        "population": 9811358,
+        "yoy_pct": null,
+        "change_from_base_pct": 0.0,
+        "index_base_100": 100.0,
+        "display": {
+          "population": "9,811,358",
+          "yoy": "—",
+          "change": "+0.00%",
+          "index": "100.0"
+        }
+      },
+      {
+        "year": 2027,
+        "population": 9778629,
+        "yoy_pct": -0.333582772130015,
+        "change_from_base_pct": -0.333582772130015,
+        "index_base_100": 99.66641722786999,
+        "display": {
+          "population": "9,778,629",
+          "yoy": "-0.33%",
+          "change": "-0.33%",
+          "index": "99.7"
+        }
+      },
+      {
+        "year": 2028,
+        "population": 9754806,
+        "yoy_pct": -0.24362310912910182,
+        "change_from_base_pct": -0.5763931965381347,
+        "index_base_100": 99.42360680346187,
+        "display": {
+          "population": "9,754,806",
+          "yoy": "-0.24%",
+          "change": "-0.58%",
+          "index": "99.4"
+        }
+      },
+      {
+        "year": 2029,
+        "population": 9733907,
+        "yoy_pct": -0.21424311257445816,
+        "change_from_base_pct": -0.7894014263876622,
+        "index_base_100": 99.21059857361234,
+        "display": {
+          "population": "9,733,907",
+          "yoy": "-0.21%",
+          "change": "-0.79%",
+          "index": "99.2"
+        }
+      },
+      {
+        "year": 2030,
+        "population": 9727305,
+        "yoy_pct": -0.06782476964285769,
+        "change_from_base_pct": -0.8566907863315149,
+        "index_base_100": 99.14330921366849,
+        "display": {
+          "population": "9,727,305",
+          "yoy": "-0.07%",
+          "change": "-0.86%",
+          "index": "99.1"
+        }
+      },
+      {
+        "year": 2031,
+        "population": 9723118,
+        "yoy_pct": -0.04304378242483401,
+        "change_from_base_pct": -0.8993658166382269,
+        "index_base_100": 99.10063418336176,
+        "display": {
+          "population": "9,723,118",
+          "yoy": "-0.04%",
+          "change": "-0.90%",
+          "index": "99.1"
+        }
+      },
+      {
+        "year": 2032,
+        "population": 9721552,
+        "yoy_pct": -0.016105944615708665,
+        "change_from_base_pct": -0.9153269098936151,
+        "index_base_100": 99.08467309010639,
+        "display": {
+          "population": "9,721,552",
+          "yoy": "-0.02%",
+          "change": "-0.92%",
+          "index": "99.1"
+        }
+      },
+      {
+        "year": 2033,
+        "population": 9720980,
+        "yoy_pct": -0.005883834186146409,
+        "change_from_base_pct": -0.9211568877621222,
+        "index_base_100": 99.07884311223788,
+        "display": {
+          "population": "9,720,980",
+          "yoy": "-0.01%",
+          "change": "-0.92%",
+          "index": "99.1"
+        }
+      },
+      {
+        "year": 2034,
+        "population": 9716390,
+        "yoy_pct": -0.0472174616139525,
+        "change_from_base_pct": -0.9679394024761914,
+        "index_base_100": 99.03206059752381,
+        "display": {
+          "population": "9,716,390",
+          "yoy": "-0.05%",
+          "change": "-0.97%",
+          "index": "99.0"
+        }
+      },
+      {
+        "year": 2035,
+        "population": 9708647,
+        "yoy_pct": -0.07969009066124354,
+        "change_from_base_pct": -1.0468581413500557,
+        "index_base_100": 98.95314185864994,
+        "display": {
+          "population": "9,708,647",
+          "yoy": "-0.08%",
+          "change": "-1.05%",
+          "index": "99.0"
+        }
+      }
+    ],
+    "milestones": [
+      {
+        "year": 2030,
+        "population": 9727305,
+        "change_from_2026_pct": -0.8566907863315149,
+        "cagr_from_2026_pct": -0.2148642045561644,
+        "display": {
+          "population": "9,727,305",
+          "change": "-0.86%",
+          "cagr": "-0.21%"
+        }
+      },
+      {
+        "year": 2035,
+        "population": 9708647,
+        "change_from_2026_pct": -1.0468581413500557,
+        "cagr_from_2026_pct": -0.11686235671662937,
+        "display": {
+          "population": "9,708,647",
+          "change": "-1.05%",
+          "cagr": "-0.12%"
+        }
+      },
+      {
+        "year": 2040,
+        "population": 9637524,
+        "change_from_2026_pct": -1.7717628895001079,
+        "cagr_from_2026_pct": -0.12760754803281538,
+        "display": {
+          "population": "9,637,524",
+          "change": "-1.77%",
+          "cagr": "-0.13%"
+        }
+      },
+      {
+        "year": 2045,
+        "population": 9536756,
+        "change_from_2026_pct": -2.7988174521814413,
+        "cagr_from_2026_pct": -0.149295330138266,
+        "display": {
+          "population": "9,536,756",
+          "change": "-2.80%",
+          "cagr": "-0.15%"
+        }
+      },
+      {
+        "year": 2050,
+        "population": 9390823,
+        "change_from_2026_pct": -4.286205844287814,
+        "cagr_from_2026_pct": -0.18236583755542046,
+        "display": {
+          "population": "9,390,823",
+          "change": "-4.29%",
+          "cagr": "-0.18%"
+        }
+      }
+    ]
+  },
+  "scag": {
+    "source": "scag_appendix",
+    "geography": "Los Angeles County",
+    "vintage": "Connect SoCal 2024, adopted April 4, 2024; rounded to thousands",
+    "series": {
+      "population": {
+        "base_year": 2019,
+        "rows": [
+          {
+            "year": 2019,
+            "value": 10046000,
+            "change_from_base_pct": 0.0,
+            "cagr_from_base_pct": null,
+            "display": {
+              "value": "10,046,000",
+              "change": "+0.00%",
+              "cagr": "—"
+            }
+          },
+          {
+            "year": 2030,
+            "value": 10214000,
+            "change_from_base_pct": 1.672307386024288,
+            "cagr_from_base_pct": 0.1508844698583589,
+            "display": {
+              "value": "10,214,000",
+              "change": "+1.67%",
+              "cagr": "0.15%"
+            }
+          },
+          {
+            "year": 2045,
+            "value": 10757000,
+            "change_from_base_pct": 7.077443758709934,
+            "cagr_from_base_pct": 0.26335447843139903,
+            "display": {
+              "value": "10,757,000",
+              "change": "+7.08%",
+              "cagr": "0.26%"
+            }
+          },
+          {
+            "year": 2050,
+            "value": 10793000,
+            "change_from_base_pct": 7.435795341429424,
+            "cagr_from_base_pct": 0.23163311567937495,
+            "display": {
+              "value": "10,793,000",
+              "change": "+7.44%",
+              "cagr": "0.23%"
+            }
+          }
+        ]
+      },
+      "households": {
+        "base_year": 2019,
+        "rows": [
+          {
+            "year": 2019,
+            "value": 3393000,
+            "change_from_base_pct": 0.0,
+            "cagr_from_base_pct": null,
+            "display": {
+              "value": "3,393,000",
+              "change": "+0.00%",
+              "cagr": "—"
+            }
+          },
+          {
+            "year": 2030,
+            "value": 3784000,
+            "change_from_base_pct": 11.523725316828765,
+            "cagr_from_base_pct": 0.9964515283610531,
+            "display": {
+              "value": "3,784,000",
+              "change": "+11.52%",
+              "cagr": "1.00%"
+            }
+          },
+          {
+            "year": 2045,
+            "value": 4120000,
+            "change_from_base_pct": 21.42646625405246,
+            "cagr_from_base_pct": 0.74948188187558,
+            "display": {
+              "value": "4,120,000",
+              "change": "+21.43%",
+              "cagr": "0.75%"
+            }
+          },
+          {
+            "year": 2050,
+            "value": 4155000,
+            "change_from_base_pct": 22.4580017683466,
+            "cagr_from_base_pct": 0.655681994034607,
+            "display": {
+              "value": "4,155,000",
+              "change": "+22.46%",
+              "cagr": "0.66%"
+            }
+          }
+        ]
+      },
+      "employment": {
+        "base_year": 2019,
+        "rows": [
+          {
+            "year": 2019,
+            "value": 5031000,
+            "change_from_base_pct": 0.0,
+            "cagr_from_base_pct": null,
+            "display": {
+              "value": "5,031,000",
+              "change": "+0.00%",
+              "cagr": "—"
+            }
+          },
+          {
+            "year": 2030,
+            "value": 5277000,
+            "change_from_base_pct": 4.889683959451401,
+            "cagr_from_base_pct": 0.43493385747264135,
+            "display": {
+              "value": "5,277,000",
+              "change": "+4.89%",
+              "cagr": "0.43%"
+            }
+          },
+          {
+            "year": 2045,
+            "value": 5497000,
+            "change_from_base_pct": 9.262572053269729,
+            "cagr_from_base_pct": 0.34128766994223625,
+            "display": {
+              "value": "5,497,000",
+              "change": "+9.26%",
+              "cagr": "0.34%"
+            }
+          },
+          {
+            "year": 2050,
+            "value": 5461000,
+            "change_from_base_pct": 8.547008547008547,
+            "cagr_from_base_pct": 0.26490881870362415,
+            "display": {
+              "value": "5,461,000",
+              "change": "+8.55%",
+              "cagr": "0.26%"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agency_comparison": [
+    {
+      "year": 2030,
+      "dof": 9727305,
+      "scag": 10214000,
+      "difference": 486695,
+      "difference_pct": 5.0033899420240235,
+      "display": {
+        "dof": "9,727,305",
+        "scag": "10,214,000",
+        "difference": "486,695",
+        "difference_pct": "+5.00%"
+      }
+    },
+    {
+      "year": 2045,
+      "dof": 9536756,
+      "scag": 10757000,
+      "difference": 1220244,
+      "difference_pct": 12.795168503839252,
+      "display": {
+        "dof": "9,536,756",
+        "scag": "10,757,000",
+        "difference": "1,220,244",
+        "difference_pct": "+12.80%"
+      }
+    },
+    {
+      "year": 2050,
+      "dof": 9390823,
+      "scag": 10793000,
+      "difference": 1402177,
+      "difference_pct": 14.931353726931068,
+      "display": {
+        "dof": "9,390,823",
+        "scag": "10,793,000",
+        "difference": "1,402,177",
+        "difference_pct": "+14.93%"
+      }
+    }
+  ],
+  "sectors": [
+    {
+      "name": "Accommodation and food service",
+      "start_year": 2022,
+      "end_year": 2050,
+      "start": 832000,
+      "end": 938000,
+      "published_change": "+12.8%",
+      "sources": [
+        "scag_tr"
+      ],
+      "derived_change_pct": 12.740384615384615,
+      "derived_cagr_pct": 0.42919523075017896,
+      "display": {
+        "start": "832,000",
+        "end": "938,000",
+        "change": "+12.7%",
+        "cagr": "+0.43%",
+        "published": "+12.8%"
+      }
+    },
+    {
+      "name": "Health care and social assistance",
+      "start_year": 2022,
+      "end_year": 2050,
+      "start": 1498000,
+      "end": 1914000,
+      "published_change": "+27.8%",
+      "sources": [
+        "scag_tr"
+      ],
+      "derived_change_pct": 27.770360480640853,
+      "derived_cagr_pct": 0.8790713650199233,
+      "display": {
+        "start": "1,498,000",
+        "end": "1,914,000",
+        "change": "+27.8%",
+        "cagr": "+0.88%",
+        "published": "+27.8%"
+      }
+    },
+    {
+      "name": "Retail",
+      "start_year": 2022,
+      "end_year": 2050,
+      "start": 842000,
+      "end": 844000,
+      "published_change": "+0.1%",
+      "sources": [
+        "scag_tr"
+      ],
+      "derived_change_pct": 0.23752969121140144,
+      "derived_cagr_pct": 0.008473503101114055,
+      "display": {
+        "start": "842,000",
+        "end": "844,000",
+        "change": "+0.2%",
+        "cagr": "+0.01%",
+        "published": "+0.1%"
+      }
+    },
+    {
+      "name": "Transportation and warehousing",
+      "start_year": 2022,
+      "end_year": 2050,
+      "start": 528000,
+      "end": 590000,
+      "published_change": "+11.8%",
+      "sources": [
+        "scag_tr"
+      ],
+      "derived_change_pct": 11.742424242424242,
+      "derived_cagr_pct": 0.3973095227534973,
+      "display": {
+        "start": "528,000",
+        "end": "590,000",
+        "change": "+11.7%",
+        "cagr": "+0.40%",
+        "published": "+11.8%"
+      }
+    },
+    {
+      "name": "Manufacturing",
+      "start_year": 2022,
+      "end_year": 2050,
+      "start": 612000,
+      "end": 706000,
+      "published_change": null,
+      "flag": "Source table prints 153% future change, inconsistent with endpoints; derived endpoint change is about 15.4%. Printed percentage withheld.",
+      "sources": [
+        "scag_tr"
+      ],
+      "derived_change_pct": 15.359477124183007,
+      "derived_cagr_pct": 0.5116004967270493,
+      "display": {
+        "start": "612,000",
+        "end": "706,000",
+        "change": "+15.4%",
+        "cagr": "+0.51%",
+        "published": "Withheld — see flag"
+      }
+    }
+  ],
+  "stress": [
+    {
+      "id": "stress_vacancy",
+      "name": "Rent interruption",
+      "symbol": "m months of zero rent plus re-tenanting downtime",
+      "formula": "Lost rent = monthly verified rent × m; add verified downtime costs",
+      "sources": [
+        "sec_release",
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "stress_leakage",
+      "name": "NNN cost leakage",
+      "symbol": "c = annual owner-paid costs not recovered",
+      "formula": "Net operating income = verified rent − verified unrecovered owner costs",
+      "sources": [
+        "sec_10k",
+        "prop13"
+      ]
+    },
+    {
+      "id": "stress_capex",
+      "name": "Re-tenanting / capital shock",
+      "symbol": "K = tenant improvements, leasing commissions, roof/HVAC/seismic/parking capital",
+      "formula": "Subtract K in the year incurred; do not assume zero because lease is labeled NNN",
+      "sources": [
+        "sec_10k",
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "stress_exit",
+      "name": "Exit valuation shock",
+      "symbol": "Δcap = change in market cap rate; ΔNOI = change in stabilized NOI",
+      "formula": "Exit value = stabilized NOI ÷ market cap rate; both inputs require evidence",
+      "sources": [
+        "treasury",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "stress_discount",
+      "name": "Discount-rate shock",
+      "symbol": "Δr = change in owner-required return",
+      "formula": "PV = Σ after-tax cash flow_t ÷ (1+r)^t; r is not the Treasury yield by default",
+      "sources": [
+        "treasury",
+        "irs_544"
+      ]
+    },
+    {
+      "id": "stress_tax",
+      "name": "Tax / transfer-cost shock",
+      "symbol": "ΔT = change in federal/state/local tax and transfer costs",
+      "formula": "Net sale proceeds = price − debt payoff − transaction costs − verified taxes",
+      "sources": [
+        "ula",
+        "irs_544",
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "stress_hazard",
+      "name": "Hazard / insurance shock",
+      "symbol": "Uninsured loss U, deductible D, premium increase P, business-interruption gap B",
+      "formula": "Owner loss = U + D + unrecovered rent interruption + P; county EAL is not a parcel loss estimate",
+      "sources": [
+        "fema_county_query",
+        "cdi_claims",
+        "usgs_faq"
+      ]
+    }
+  ],
+  "property_model": {
+    "status": "blocked",
+    "missing": [
+      "rent_schedule",
+      "owner_costs",
+      "capex_plan",
+      "exit_value",
+      "discount_rate",
+      "tax_basis",
+      "debt_payoff",
+      "transaction_costs",
+      "sale_price",
+      "scenario_probabilities"
+    ],
+    "outputs": {
+      "net_sale_proceeds": null,
+      "hold_npv": null,
+      "renew_npv": null,
+      "retenant_npv": null,
+      "recommended_path": null
+    }
+  }
+}

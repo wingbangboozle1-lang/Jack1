@@ -1,35 +1,28 @@
-(() => {
-  const menuButton = document.querySelector("[data-nav-toggle]");
-  const sidebar = document.querySelector(".sidebar");
-
-  if (menuButton && sidebar) {
-    const closeMenu = () => {
-      sidebar.classList.remove("is-open");
-      menuButton.setAttribute("aria-expanded", "false");
-    };
-
-    menuButton.addEventListener("click", () => {
-      const open = sidebar.classList.toggle("is-open");
-      menuButton.setAttribute("aria-expanded", String(open));
+(function () {
+  "use strict";
+  var toggle = document.querySelector("[data-nav-toggle]");
+  var nav = document.getElementById("site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
-    });
-
-    sidebar.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
+    document.addEventListener("click", function (evt) {
+      if (window.innerWidth > 900) return;
+      if (!nav.contains(evt.target) && !toggle.contains(evt.target) && nav.classList.contains("open")) {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
     });
   }
-
-  document.querySelectorAll("[data-table-search]").forEach((input) => {
-    const target = document.getElementById(input.dataset.tableSearch);
-    if (!target) return;
-    const rows = Array.from(target.querySelectorAll("tbody tr"));
-    input.addEventListener("input", () => {
-      const query = input.value.trim().toLocaleLowerCase();
-      rows.forEach((row) => {
-        row.hidden = query !== "" && !row.textContent.toLocaleLowerCase().includes(query);
+  document.querySelectorAll("[data-table-search]").forEach(function (input) {
+    var table = document.getElementById(input.getAttribute("data-table-search"));
+    if (!table) return;
+    var rows = Array.prototype.slice.call(table.tBodies[0] ? table.tBodies[0].rows : []);
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase();
+      rows.forEach(function (row) {
+        row.hidden = q !== "" && row.textContent.toLowerCase().indexOf(q) === -1;
       });
     });
   });
