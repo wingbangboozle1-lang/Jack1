@@ -1,0 +1,53 @@
+# Publication scope for GitHub Pages
+#
+# The published product is eight hand-written, source-linked pages. The rest of
+# this repository is the audit trail: superseded dashboards from earlier
+# sessions, raw research notes, datasets, tooling and this board. Those files
+# stay in the repository for traceability but are deliberately NOT published,
+# because earlier builds served several competing dashboards from the same root
+# and some of them carried figures this brief has since withdrawn.
+#
+# Jekyll is used here only as the file filter for the legacy branch build.
+# Every page in the list below is plain static HTML with no front matter, so
+# Jekyll copies it byte-for-byte instead of transforming it.
+
+title: Jack in the Box property decision brief
+description: Source-linked, privacy-first decision brief for a Jack in the Box NNN property described as near central Los Angeles.
+
+# Published (everything not listed under exclude is copied as-is):
+#   index.html market.html property.html decision.html risks.html
+#   flagged.html sources.html audit.html 404.html
+#   assets/styles.css assets/site.js
+
+exclude:
+  - archive
+  - pages
+  - site
+  - data
+  - research
+  - analysis
+  - model
+  - risks
+  - tools
+  - scripts
+  - verification
+  - economy.html
+  - schools.html
+  - risk.html
+  - model.html
+  - tenant.html
+  - README.md
+  - COORDINATION.md
+  - EXECUTIVE_SUMMARY.md
+  - DECISION_MEMO.md
+  - METHODOLOGY.md
+  - RISK_REGISTER.md
+  - executive_summary.md
+  - assets/app.js
+  - assets/css/style.css
+  - assets/favicon.svg
+  - assets/js/app.js
+  - assets/js/data.js
+  - assets/js/main.js
+  - assets/model.js
+  - assets/style.css

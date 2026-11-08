@@ -47,9 +47,11 @@ jobs:
         run: |
           set -eu
           mkdir -p _site/assets
-          cp index.html market.html property.html decision.html risks.html flagged.html sources.html audit.html _site/
+          cp index.html market.html property.html decision.html risks.html flagged.html sources.html audit.html 404.html _site/
           cp assets/styles.css assets/site.js _site/assets/
-          cp .nojekyll _site/.nojekyll
+          # The published artifact is scoped by _config.yml as well, so that the
+          # legacy branch build and this artifact publish the same eight pages
+          # and never expose superseded dashboards kept for traceability.
           echo "Assembled $(find _site -type f | wc -l) public files"
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
