@@ -1016,3 +1016,19 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/c5e199ef-jack1 (claimed 2026-11-10 UTC)
+
+**Session ID:** `c5e199ef` (branch `arena/c5e199ef-jack1`; the platform fixes the branch name, so the `session-<id>/<task>` pattern cannot be used, as in earlier sessions.)
+
+**Claim check:** at claim time no other session had commits newer than 2026-11-09; the newest open PR (#33, session 1daf5a2a) was opened 2026-11-08 23:01 UTC with no later commits — more than 60 minutes stale. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are left untouched for their owners. No active claim is being overridden.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| C5-1 | Repo review: inventory, repo-wide privacy scan (tracked files + git metadata), build/test/validator gates | in progress | c5e199ef | `verification/2026-11-10-c5e199ef.md` (new) |
+| C5-2 | Line-by-line re-verification (2026-11-10) of published figures against official pages; update stale figures only when the official page confirms | in progress | c5e199ef | `data/verified-2026-11-08.json` (observations/audit/flags only), generated pages via `scripts/build_public.py` |
+| C5-3 | Final integration: regenerate, validate, link check, PR to `main`, merge, confirm Pages deploy, record | unclaimed → c5e199ef on start | c5e199ef | `COORDINATION.md` (this section only), PR |
+
+Scope rules: this session edits only the files above. It does not edit `archive/`, `research/notes/*`, or other sessions' records. Personal information is never written here — only redacted irregularity notes.
