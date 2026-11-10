@@ -1300,3 +1300,43 @@ frequent commits; `git pull --rebase origin main` before each push; conflicts st
 without discarding another session's work.
 
 Claimed at 2026-11-10 (UTC). Commit and push of this claim precede all content work.
+
+## K-2 / K-3 result — session `arena/8d46ab6c-jack1`, 2026-11-10 (UTC)
+
+**K-2 done.** All 74 official source IDs in `data/verified-2026-11-10.json` were re-read today from
+their exact published URLs and line-by-line compared with the 90 canonical observations. Every
+derived arithmetic family reproduced exactly (DOF-vs-Census gap 158,501 / 1.63%; FHSZ Very High
+65.3%; CA 44.1% and CA+TX 69.8% of the Jack system; 2029–2032 ARD wall $1,429.625M / 95.8% of
+$1,491.984M; transfer-tax stack 0.56/4.56/6.06%; Sep-2026 city vs county 4.5%). Ledger:
+`verification/2026-11-10-8d46ab6c.md`.
+
+Corrections applied this pass (each now has a Flagged for Review row):
+
+| # | Row | Change |
+|---|---|---|
+| R-1 | `tenant_lease_portfolio` | Removed an unreconcilable "YTD −15.4%" rental-revenue delta; official 10-Q totals ($242,526k vs $260,254k) imply −6.8% and no official page prints −15.4%. Official totals kept. |
+| R-2 | `schools_enrollment_2026` | FRPM count/share (386,743; 77.8%) not printed on the cited CDE District Profile page today → withheld pending a DataQuest link. Enrollment 497,105 and EL 81,328 (16.4%) confirmed. |
+| R-5 | `crime_central_bureau` | Robbery count 1,303 → **1,938** (+1.3%), the figure printed in the Operations-Central Bureau COMPSTAT report. |
+| R-4 | Seismic rows | Both usgs.gov pages failed to load today (504 / premature close); values carried as unverified, not re-asserted. |
+
+Carried, re-confirmed: SCAG Table 6 "153%" manufacturing typo (endpoints imply 15.4%); Measure ULA
+narrative "$5M/$10M" vs operative $5,400,000/$10,900,000; FHSZ hazard-is-not-risk wording; OpenFEMA
+window start; BLS printing 4.5% for both city and county; git-metadata privacy (history not
+rewritten).
+
+**Privacy (top priority): clean.** Automated scan of all 11 published HTML files for e-mails, phone
+numbers, SSNs and street addresses returned zero hits after regeneration. Personal names and direct
+work contacts that appear on official pages read today (SEC/IR contact, LAPD bureau command staff,
+CDE district directory, BOE/EDD/DIR spokespeople) were deliberately **not** copied. No parcel, APN,
+owner, lease-party, rent or value data exists in the artifact; those fields stay blank and flagged.
+
+**K-3 done — parallel PRs #47, #54, #56.** None has a claim recorded on `main`, all were past the
+60-minute no-commit takeover window, and #47/#54 overlap the canonical dataset, builder and generated
+pages while #56 is docs-only. None was merged and no content was copied unverified; branches and PRs
+are preserved untouched for owner review. Note for the owner: #54 also commits a session ledger at
+`verification/2026-11-10-8cd7cd89.md` and its own dataset edits, which should be reconciled against
+the corrections above before any merge, or they will re-introduce the withdrawn values.
+
+**Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
+`unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
+local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
