@@ -1,0 +1,184 @@
+path	classification	published	lines	bytes	pii_or_conflict_scan	notes	github_url
+.github/workflows/pages.yml	ci-workflow	no	77	2356	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/.github/workflows/pages.yml
+.gitignore	legacy-excluded	no	3	29	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/.gitignore
+404.html	curated-public	yes	37	1706	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/404.html
+COORDINATION.md	internal-docs-excluded	no	1104	133243	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/COORDINATION.md
+DECISION_MEMO.md	legacy-excluded	no	148	9275	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/DECISION_MEMO.md
+EXECUTIVE_SUMMARY.md	legacy-excluded	no	154	8724	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/EXECUTIVE_SUMMARY.md
+METHODOLOGY.md	legacy-excluded	no	90	4630	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/METHODOLOGY.md
+README.md	internal-docs-excluded	no	59	4175	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/README.md
+RISK_REGISTER.md	legacy-excluded	no	34	4620	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/RISK_REGISTER.md
+_config.yml	pages-config	config-only	47	1067	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/_config.yml
+analysis/projection_system.md	historical-excluded	no	112	12040	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/analysis/projection_system.md
+archive/arena-0e369d53-legacy/.nojekyll	historical-excluded	no	0	0	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-0e369d53-legacy/.nojekyll
+archive/arena-81536038/market.html	historical-excluded	no	128	23807	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-81536038/market.html
+archive/arena-81536038/model.html	historical-excluded	no	89	6121	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-81536038/model.html
+archive/arena-81536038/projection.html	historical-excluded	no	165	27117	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-81536038/projection.html
+archive/arena-81536038/risk.html	historical-excluded	no	112	7389	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-81536038/risk.html
+archive/arena-972c721e/assets/style.css	historical-excluded	no	253	10392	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/assets/style.css
+archive/arena-972c721e/data/assumptions.json	historical-excluded	no	125	4852	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/data/assumptions.json
+archive/arena-972c721e/data/facts.json	historical-excluded	no	142	32888	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/data/facts.json
+archive/arena-972c721e/data/model.json	historical-excluded	no	3274	101402	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/data/model.json
+archive/arena-972c721e/data/sources.json	historical-excluded	no	206	10489	phone(5)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/data/sources.json
+archive/arena-972c721e/decision.html	historical-excluded	no	104	11243	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/decision.html
+archive/arena-972c721e/flagged.html	historical-excluded	no	62	20687	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/flagged.html
+archive/arena-972c721e/index.html	historical-excluded	no	111	9532	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/index.html
+archive/arena-972c721e/market.html	historical-excluded	no	72	34915	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/market.html
+archive/arena-972c721e/property.html	historical-excluded	no	83	10665	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/property.html
+archive/arena-972c721e/risks.html	historical-excluded	no	108	21056	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/risks.html
+archive/arena-972c721e/sources.html	historical-excluded	no	63	16504	phone(5)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/sources.html
+archive/arena-972c721e/tenant.html	historical-excluded	no	76	15024	phone(16)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/tenant.html
+archive/arena-972c721e/valuation.html	historical-excluded	no	171	22338	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-972c721e/valuation.html
+archive/arena-d2137d88/404.html	historical-excluded	no	28	890	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/404.html
+archive/arena-d2137d88/asset.html	historical-excluded	no	76	6347	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/asset.html
+archive/arena-d2137d88/assets/favicon.svg	historical-excluded	no	1	419	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/assets/favicon.svg
+archive/arena-d2137d88/assets/js/app.js	historical-excluded	no	162	7903	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/assets/js/app.js
+archive/arena-d2137d88/assets/js/data.js	historical-excluded	no	177	34714	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/assets/js/data.js
+archive/arena-d2137d88/assets/style.css	historical-excluded	no	168	9775	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/assets/style.css
+archive/arena-d2137d88/decision.html	historical-excluded	no	132	11290	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/decision.html
+archive/arena-d2137d88/demographics.html	historical-excluded	no	51	3788	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/demographics.html
+archive/arena-d2137d88/economy.html	historical-excluded	no	47	3880	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/economy.html
+archive/arena-d2137d88/flagged.html	historical-excluded	no	51	4447	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/flagged.html
+archive/arena-d2137d88/index.html	historical-excluded	no	123	10021	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/index.html
+archive/arena-d2137d88/market.html	historical-excluded	no	57	5801	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/market.html
+archive/arena-d2137d88/projection.html	historical-excluded	no	153	9307	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/projection.html
+archive/arena-d2137d88/risk.html	historical-excluded	no	76	5522	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/risk.html
+archive/arena-d2137d88/schools.html	historical-excluded	no	45	3238	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/schools.html
+archive/arena-d2137d88/sources.html	historical-excluded	no	69	4449	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/sources.html
+archive/arena-d2137d88/tenant.html	historical-excluded	no	130	16410	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-d2137d88/tenant.html
+archive/arena-ffc97e4e/NOTES.md	historical-excluded	no	12	978	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/NOTES.md
+archive/arena-ffc97e4e/assets/app.js	historical-excluded	no	51	2688	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/assets/app.js
+archive/arena-ffc97e4e/assets/projection.js	historical-excluded	no	121	5751	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/assets/projection.js
+archive/arena-ffc97e4e/assets/style.css	historical-excluded	no	273	16571	conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/assets/style.css
+archive/arena-ffc97e4e/decision.html	historical-excluded	no	238	22296	conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/decision.html
+archive/arena-ffc97e4e/economy.html	historical-excluded	no	159	19229	phone(4),conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/economy.html
+archive/arena-ffc97e4e/executive-summary.html	historical-excluded	no	104	13117	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/executive-summary.html
+archive/arena-ffc97e4e/flagged.html	historical-excluded	no	153	17156	conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/flagged.html
+archive/arena-ffc97e4e/index.html	historical-excluded	no	206	20361	phone(4),conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/index.html
+archive/arena-ffc97e4e/market.html	historical-excluded	no	180	17624	phone(2),conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/market.html
+archive/arena-ffc97e4e/projections.html	historical-excluded	no	127	12764	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/projections.html
+archive/arena-ffc97e4e/property.html	historical-excluded	no	88	10336	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/property.html
+archive/arena-ffc97e4e/risk.html	historical-excluded	no	161	22589	phone(2),conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/risk.html
+archive/arena-ffc97e4e/sources.html	historical-excluded	no	140	21820	phone(4),conflict_markers	Preserved historical snapshot with unresolved conflict markers; excluded from Pages.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/sources.html
+archive/arena-ffc97e4e/tenant.html	historical-excluded	no	122	16045	phone(4)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-ffc97e4e/tenant.html
+archive/arena-main-3da3b70/404.html	historical-excluded	no	28	1767	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/404.html
+archive/arena-main-3da3b70/assets/favicon.svg	historical-excluded	no	1	419	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/assets/favicon.svg
+archive/arena-main-3da3b70/assets/site.js	historical-excluded	no	113	5337	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/assets/site.js
+archive/arena-main-3da3b70/assets/styles.css	historical-excluded	no	211	15672	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/assets/styles.css
+archive/arena-main-3da3b70/audit.html	historical-excluded	no	47	21983	phone(5)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/audit.html
+archive/arena-main-3da3b70/decision.html	historical-excluded	no	47	19249	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/decision.html
+archive/arena-main-3da3b70/economy.html	historical-excluded	no	47	12550	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/economy.html
+archive/arena-main-3da3b70/flagged.html	historical-excluded	no	47	12630	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/flagged.html
+archive/arena-main-3da3b70/geography.html	historical-excluded	no	47	11170	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/geography.html
+archive/arena-main-3da3b70/income.html	historical-excluded	no	47	11799	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/income.html
+archive/arena-main-3da3b70/index.html	historical-excluded	no	102	18410	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/index.html
+archive/arena-main-3da3b70/jobs.html	historical-excluded	no	47	13619	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/jobs.html
+archive/arena-main-3da3b70/population.html	historical-excluded	no	47	11189	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/population.html
+archive/arena-main-3da3b70/projections.html	historical-excluded	no	81	20257	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/projections.html
+archive/arena-main-3da3b70/property.html	historical-excluded	no	47	11597	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/property.html
+archive/arena-main-3da3b70/repo-review.html	historical-excluded	no	47	13119	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/repo-review.html
+archive/arena-main-3da3b70/requirements.html	historical-excluded	no	47	16907	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/requirements.html
+archive/arena-main-3da3b70/risks.html	historical-excluded	no	47	23314	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/risks.html
+archive/arena-main-3da3b70/schools.html	historical-excluded	no	47	10978	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/schools.html
+archive/arena-main-3da3b70/sources.html	historical-excluded	no	47	18749	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/sources.html
+archive/arena-main-3da3b70/tenant.html	historical-excluded	no	47	12070	phone(4)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/archive/arena-main-3da3b70/tenant.html
+assets/app.js	legacy-excluded	no	266	10549	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/app.js
+assets/css/style.css	legacy-excluded	no	340	13395	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/css/style.css
+assets/favicon.svg	legacy-excluded	no	1	419	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/favicon.svg
+assets/js/app.js	legacy-excluded	no	162	7903	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/js/app.js
+assets/js/data.js	legacy-excluded	no	177	34714	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/js/data.js
+assets/js/main.js	legacy-excluded	no	17	749	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/js/main.js
+assets/model.js	legacy-excluded	no	162	7659	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/model.js
+assets/projections.json	curated-public	yes	595	16127	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/projections.json
+assets/site.js	curated-public	yes	151	6620	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/site.js
+assets/style.css	legacy-excluded	no	170	10054	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/style.css
+assets/styles.css	curated-public	yes	116	9075	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/styles.css
+audit.html	curated-public	yes	65	19674	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/audit.html
+data/assumptions.json	legacy-excluded	no	125	4852	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/assumptions.json
+data/facts.json	legacy-excluded	no	142	32888	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/facts.json
+data/model.json	legacy-excluded	no	3274	101402	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/model.json
+data/property_data.md	legacy-excluded	no	66	8287	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/property_data.md
+data/records.json	legacy-excluded	no	1963	75342	phone(19)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/records.json
+data/risks.json	legacy-excluded	no	230	13630	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/risks.json
+data/scenarios.json	legacy-excluded	no	85	2560	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/scenarios.json
+data/sources.json	legacy-excluded	no	206	10489	phone(5)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/sources.json
+data/verified-2026-11-08.json	curated-dataset	no	2574	98824	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-08.json
+data/verified-2026-11-10.json	curated-dataset	no	3035	122540	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-10.json
+decision.html	curated-public	yes	97	20644	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/decision.html
+economy.html	legacy-excluded	no	47	12550	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/economy.html
+executive_summary.md	legacy-excluded	no	122	11225	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/executive_summary.md
+flagged.html	curated-public	yes	70	22714	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/flagged.html
+geography.html	legacy-excluded	no	47	11170	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/geography.html
+income.html	legacy-excluded	no	47	11799	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/income.html
+index.html	curated-public	yes	67	13557	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/index.html
+jobs.html	legacy-excluded	no	47	13619	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/jobs.html
+market.html	curated-public	yes	101	35950	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/market.html
+model/model.py	legacy-excluded	no	458	22163	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/model/model.py
+pages/decision.html	historical-excluded	no	173	14680	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/decision.html
+pages/demographics.html	historical-excluded	no	101	12533	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/demographics.html
+pages/economy.html	historical-excluded	no	80	10205	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/economy.html
+pages/education.html	historical-excluded	no	71	8640	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/education.html
+pages/employment.html	historical-excluded	no	80	11314	phone(9)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/employment.html
+pages/flagged.html	historical-excluded	no	92	10404	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/flagged.html
+pages/geography.html	historical-excluded	no	86	8625	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/geography.html
+pages/infrastructure.html	historical-excluded	no	70	8758	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/infrastructure.html
+pages/methodology.html	historical-excluded	no	109	10436	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/methodology.html
+pages/real-estate.html	historical-excluded	no	106	13128	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/real-estate.html
+pages/risks.html	historical-excluded	no	114	13992	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/risks.html
+pages/sources.html	historical-excluded	no	121	14939	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/sources.html
+population.html	legacy-excluded	no	47	11189	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/population.html
+projections.html	curated-public	yes	114	33052	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/projections.html
+property.html	curated-public	yes	101	36926	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/property.html
+repo-review.html	legacy-excluded	no	47	13119	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/repo-review.html
+requirements.html	curated-public	yes	59	15347	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/requirements.html
+research/0e369d53/source-notes.md	internal-docs-excluded	no	172	19748	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/0e369d53/source-notes.md
+research/2026-11-10-ac5b9087/source-notes.md	internal-docs-excluded	no	57	11304	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/2026-11-10-ac5b9087/source-notes.md
+research/VERIFICATION-LOG.md	internal-docs-excluded	no	35	3334	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/VERIFICATION-LOG.md
+research/area.md	internal-docs-excluded	no	87	4483	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/area.md
+research/labor.md	internal-docs-excluded	no	65	3762	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/labor.md
+research/macro.md	internal-docs-excluded	no	71	4022	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/macro.md
+research/notes/hazard-blackswan.md	internal-docs-excluded	no	26	3560	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/hazard-blackswan.md
+research/notes/market-census.md	internal-docs-excluded	no	66	4131	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/market-census.md
+research/notes/market-labor-cpi.md	internal-docs-excluded	no	45	1855	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/market-labor-cpi.md
+research/notes/market-population-dof.md	internal-docs-excluded	no	29	1443	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/market-population-dof.md
+research/notes/regulatory-tax.md	internal-docs-excluded	no	20	2524	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/regulatory-tax.md
+research/notes/schools-capital.md	internal-docs-excluded	no	24	1743	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/schools-capital.md
+research/notes/tenant-jack.md	internal-docs-excluded	no	48	3717	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/notes/tenant-jack.md
+research/repo-review-2026-11-08.md	internal-docs-excluded	no	96	5715	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/repo-review-2026-11-08.md
+research/tenant-tax-cat.md	internal-docs-excluded	no	143	8142	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/tenant-tax-cat.md
+research/verification-2026-11-08.md	internal-docs-excluded	no	99	8278	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/verification-2026-11-08.md
+research/verification-audit-b8188ee0.md	internal-docs-excluded	no	115	14209	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/verification-audit-b8188ee0.md
+research/verification-audit-d18e3065.md	internal-docs-excluded	no	81	11721	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/verification-audit-d18e3065.md
+research/verification-report.md	internal-docs-excluded	no	71	4660	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/verification-report.md
+risks.html	curated-public	yes	88	43475	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/risks.html
+risks/risk_analysis.md	historical-excluded	no	117	10710	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/risks/risk_analysis.md
+schools.html	legacy-excluded	no	47	10978	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/schools.html
+scripts/build-data.mjs	legacy-excluded	no	348	38824	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build-data.mjs
+scripts/build_pages.py	legacy-excluded	no	1486	134011	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build_pages.py
+scripts/build_public.py	active-script	no	489	39947	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build_public.py
+scripts/projection_model.py	active-script	no	211	8155	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/projection_model.py
+scripts/validate_site.py	active-script	no	315	13634	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/validate_site.py
+scripts/verify-data.mjs	active-script	no	28	1379	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/verify-data.mjs
+site/executive_summary.html	historical-excluded	no	309	17982	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/executive_summary.html
+site/flagged_review.html	historical-excluded	no	156	8970	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/flagged_review.html
+site/index.html	historical-excluded	no	312	12066	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/index.html
+site/projection_system.html	historical-excluded	no	509	26669	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/projection_system.html
+site/property_data.html	historical-excluded	no	344	19491	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/property_data.html
+site/risk_analysis.html	historical-excluded	no	403	22076	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/risk_analysis.html
+sources.html	curated-public	yes	118	33959	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/sources.html
+tenant.html	legacy-excluded	no	47	12730	phone(4)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tenant.html
+tests/test_projection_and_site.py	active-test	no	163	7668	email(1),phone(1),apn(1)	Synthetic unit-test fixtures for privacy/conflict regex validation.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tests/test_projection_and_site.py
+tools/build.py	legacy-excluded	no	987	59380	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tools/build.py
+tools/check.py	legacy-excluded	no	249	9481	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tools/check.py
+verification/2026-11-07-aa4a9fab.md	internal-docs-excluded	no	105	11018	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-07-aa4a9fab.md
+verification/2026-11-08-0e369d53.md	internal-docs-excluded	no	64	8753	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-0e369d53.md
+verification/2026-11-08-14c28bc9.md	internal-docs-excluded	no	81	7679	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-14c28bc9.md
+verification/2026-11-08-81536038.md	internal-docs-excluded	no	286	18658	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-81536038.md
+verification/2026-11-08-857537b4.md	internal-docs-excluded	no	99	28980	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-857537b4.md
+verification/2026-11-08-9dce30d0.md	internal-docs-excluded	no	78	10962	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-9dce30d0.md
+verification/2026-11-08-c9121cd5.md	internal-docs-excluded	no	89	14769	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-c9121cd5.md
+verification/2026-11-10-ac5b9087.md	internal-docs-excluded	no	42	8312	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-ac5b9087.md
+verification/2026-11-10-af77a54e.md	internal-docs-excluded	no	76	9771	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-af77a54e.md
+verification/2026-11-10-c5e199ef.md	internal-docs-excluded	no	65	9434	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-c5e199ef.md
+verification/repository-line-audit-0e369d53.tsv	internal-docs-excluded	no	177	69222	phone(18)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-0e369d53.tsv
+verification/repository-line-audit-2026-11-10.tsv	internal-docs-excluded	no	164	32322	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-2026-11-10.tsv
