@@ -1048,4 +1048,4 @@ Scope rules: this session edits only the files above. It does not edit `archive/
 - **PR:** #46 `arena/c5e199ef-jack1` → `main`, https://github.com/wingbangboozle1-lang/Jack1/pull/46 — merged 2026-11-10T00:34:11Z, merge commit `a72b141392cb8d55c25d7275cc1db90b334c8c7d`. Merge state was CLEAN/MERGEABLE; PR `validate` check passed before merge.
 - **Main-branch runs:** `Validate and publish the decision brief` run 42729301297 — success; `pages build and deployment` run 42729301121 — success. Pages API: `status: built`, `build_type: legacy` (`main /`; unchanged — the workflow-source switch remains unavailable to the workflow token, see existing flag).
 - **Live check (2026-11-10):** https://wingbangboozle1-lang.github.io/Jack1/flagged.html serves both new flags (DOF/Census gap; git-metadata privacy). `COORDINATION.md` on the live host returns 404, so internal records stay unpublished.
-- **Follow-up:** this record itself ships in a docs-only PR from the same branch (no site/dataset change).
+- **Follow-up:** this record ships in docs-only PR #48 (no site/dataset change).
