@@ -1,7 +1,7 @@
 {
   "meta": {
-    "date": "2026-11-08",
-    "session": "0e369d53",
+    "date": "2026-11-10",
+    "session": "0e369d53; integration + re-verification pass arena/8cd7cd89 (2026-11-10)",
     "method": "official inputs + transparent arithmetic; no interpolation or parcel extrapolation"
   },
   "dof": {

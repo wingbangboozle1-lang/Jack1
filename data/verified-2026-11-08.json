@@ -1,7 +1,7 @@
 {
   "meta": {
-    "date": "2026-11-08",
-    "session": "0e369d53",
+    "date": "2026-11-10",
+    "session": "0e369d53; integration + re-verification pass arena/8cd7cd89 (2026-11-10)",
     "title": "Jack in the Box NNN decision brief — central Los Angeles area",
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
@@ -12,21 +12,21 @@
       "title": "QuickFacts: Los Angeles city, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "census_county": {
       "title": "QuickFacts: Los Angeles County, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "bls_summary": {
       "title": "Los Angeles Area Economic Summary, updated November 4, 2026",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "bls_laus": {
@@ -40,35 +40,35 @@
       "title": "Annual unemployment rates for 50 largest cities, 2025",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "edd_la": {
       "title": "Los Angeles County preliminary labor force and industry employment, September 2026",
       "publisher": "California Employment Development Department",
       "url": "https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "fred_county_gdp": {
       "title": "GDPALL06037: Total Gross Domestic Product for Los Angeles County, CA",
       "publisher": "U.S. Bureau of Economic Analysis via FRED",
       "url": "https://fred.stlouisfed.org/series/GDPALL06037",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "fred_metro_gdp": {
       "title": "NGMP31080: Total Gross Domestic Product for Los Angeles-Long Beach-Anaheim, CA (MSA), discontinued",
       "publisher": "U.S. Bureau of Economic Analysis via FRED",
       "url": "https://fred.stlouisfed.org/series/NGMP31080",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "treasury": {
       "title": "Daily Treasury Par Yield Curve Rates, November 2026",
       "publisher": "U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official market data"
     },
     "dof_landing": {
@@ -145,7 +145,7 @@
       "title": "Measure ULA FAQ",
       "publisher": "Los Angeles Office of Finance",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "ftb_capgains": {
@@ -173,35 +173,35 @@
       "title": "Fast Food Minimum Wage FAQ",
       "publisher": "California Department of Industrial Relations",
       "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official labor rule"
     },
     "dir_minwage": {
       "title": "Minimum Wage FAQ",
       "publisher": "California Department of Industrial Relations",
       "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official labor rule"
     },
     "la_wage": {
       "title": "2026 Minimum Wage Ordinance notice, effective July 1, 2026",
       "publisher": "Los Angeles Office of Wage Standards",
       "url": "https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official labor rule"
     },
     "dashboard_engagement": {
       "title": "California School Dashboard 2026: Los Angeles Unified, Academic Engagement",
       "publisher": "California Department of Education",
       "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official education data"
     },
     "dashboard_performance": {
       "title": "California School Dashboard 2026: Los Angeles Unified, Academic Performance",
       "publisher": "California Department of Education",
       "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-performance",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official education data"
     },
     "dashboard_faq": {
@@ -236,7 +236,7 @@
       "title": "Jack in the Box Inc. Q3 FY2026 earnings release, Exhibit 99.1",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official issuer filing"
     },
     "fema_nri": {
@@ -257,42 +257,42 @@
       "title": "NRI Counties official query: Los Angeles County risk, EAL, vulnerability, resilience, earthquake/wildfire/inland flood",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard model"
     },
     "fema_hazard_ratings": {
       "title": "NRI Counties official query: Los Angeles County 18 hazard ratings",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,AVLN_RISKR,CFLD_RISKR,CWAV_RISKR,DRGT_RISKR,ERQK_RISKR,HAIL_RISKR,HWAV_RISKR,HRCN_RISKR,ISTM_RISKR,IFLD_RISKR,LNDS_RISKR,LTNG_RISKR,SWND_RISKR,TRND_RISKR,TSUN_RISKR,VLCN_RISKR,WFIR_RISKR,WNTW_RISKR&returnGeometry=false&f=json",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard model"
     },
     "usgs_faq": {
       "title": "What is the probability that an earthquake will occur in the Los Angeles Area? In the San Francisco Bay area?",
       "publisher": "U.S. Geological Survey",
       "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard science"
     },
     "calfire_fhsz": {
       "title": "Fire Hazard Severity Zones",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard mapping"
     },
     "calfire_acres": {
       "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024–2025",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf?rev=d1f74280dd01402f841bf2da5d5fc8cd&hash=EC6CA86D1AF5094D808CB341A328C52F",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard mapping"
     },
     "cdi_claims": {
       "title": "Wildfire Claims Tracker, updated July 6, 2026",
       "publisher": "California Department of Insurance",
       "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official insurance data"
     },
     "lapd": {
@@ -343,6 +343,13 @@
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
       "accessed": "2026-11-08",
       "kind": "issuer filing"
+    },
+    "fred_laus_annual": {
+      "title": "LAUCN060370000000003A: Unemployment Rate in Los Angeles County, CA, annual average",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED",
+      "url": "https://fred.stlouisfed.org/series/LAUCN060370000000003A",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
     }
   },
   "observations": [
@@ -459,6 +466,32 @@
       "period": "2020–2024 ACS, 2024 dollars",
       "status": "verified",
       "note": "County differs from city; do not average for a parcel.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "income_county_pc",
+      "category": "Income",
+      "measure": "Per-capita income",
+      "value": "$45,792",
+      "geography": "Los Angeles County",
+      "period": "2020–2024 ACS, 2024 dollars",
+      "status": "verified",
+      "note": "County context alongside median household income; not customer spending.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "poverty_county",
+      "category": "Income",
+      "measure": "Poverty rate",
+      "value": "13.3%",
+      "geography": "Los Angeles County",
+      "period": "2020–2024 ACS",
+      "status": "verified",
+      "note": "County estimate with sampling error; city rate differs (16.5%).",
       "sources": [
         "census_county"
       ]
@@ -659,6 +692,19 @@
       ]
     },
     {
+      "id": "jobs_county_cbp",
+      "category": "Labor",
+      "measure": "County employment and job growth (County Business Patterns)",
+      "value": "3,987,736; +2.3% from 2022",
+      "geography": "Los Angeles County",
+      "period": "2023; change 2022→2023",
+      "status": "verified",
+      "note": "Establishment-based employment; differs from LAUS residence-based and CES payroll measures. Do not blend series.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
       "id": "sector_edhealth",
       "category": "Labor",
       "measure": "Education and health services payrolls",
@@ -760,6 +806,19 @@
       "note": "Historical context only; latest monthly headline is September 2026.",
       "sources": [
         "bls_city_annual"
+      ]
+    },
+    {
+      "id": "unemp_county_annual_2025",
+      "category": "Labor",
+      "measure": "County annual unemployment rate (published annual average)",
+      "value": "5.7%",
+      "geography": "Los Angeles County",
+      "period": "2025 annual average, NSA",
+      "status": "verified",
+      "note": "Published annual average (FRED/BLS LAUS); 2025 monthly headline on this page is September 2026. A prior brief's computed 5.6% was superseded by this published figure.",
+      "sources": [
+        "fred_laus_annual"
       ]
     },
     {
@@ -2403,6 +2462,15 @@
         "repo",
         "repo_line_audit"
       ]
+    },
+    {
+      "id": "flag_sra_fhsz_comment",
+      "item": "2026 State Responsibility Area FHSZ map update",
+      "reason": "CAL FIRE/OSFM states the 2026 SRA Fire Hazard Severity Zone public comment period is open (page read 2026-11-10). Published acreage rows use the adopted 2024–2025 tables.",
+      "action": "Track the 2026 SRA update; re-check the parcel's FHSZ after adoption. Owner decision item N-01 from session 14c28bc9, surfaced here.",
+      "sources": [
+        "calfire_fhsz"
+      ]
     }
   ],
   "audit": [
@@ -2502,6 +2570,38 @@
         "census_city",
         "sec_10q",
         "fema_county_query"
+      ]
+    },
+    {
+      "id": "audit_reverify_20261110",
+      "check": "Line-by-line official-source re-verification (session arena/8cd7cd89, 10 Nov 2026)",
+      "result": "22 official source groups re-read on their official pages; 65+ published figures matched exactly; zero corrections to existing rows required.",
+      "detail": "Re-read: Census QuickFacts city+county (all geography, population, income, housing, economy rows), BLS LA area summary (Nov 4, 2026 edition: unemployment, payrolls, sectors, CPI, QCEW wage), BLS 50-cities annual, EDD LA county Sep 2026 release, FRED GDPALL06037 + NGMP31080 + LAUCN060370000000003A, Treasury daily curve 11/06/2026, CA School Dashboard 2026 engagement+performance, SEC Q3 FY2026 release (statements, balance sheet, guidance, refinancing), Measure ULA FAQ, DIR fast-food and state minimum-wage FAQs, LA city 2026 wage notice, CDI wildfire claims tracker (Jul 6, 2026), FEMA NRI county queries (composite, EALs, 18 hazard ratings), USGS UCERF3 FAQ, CAL FIRE FHSZ acreage table + FHSZ page. Not re-read this pass (carried from the 07–08 Nov 2026 passes, each recorded in research/verification-*.md): SEC 10-Q/10-K/8-K, DOF P-2A, SCAG reports, DTLA 2040, Prop 13/BOE/FTB/IRS guidance, BLS LAUS exact series integers (rounded values corroborated today via EDD), and secondary lookup portals. Derived rows (16.4% CA share; 65.3% Very High FHSZ share) recomputed from verified inputs.",
+      "sources": [
+        "census_city",
+        "bls_summary",
+        "fema_county_query",
+        "sec_release",
+        "treasury"
+      ]
+    },
+    {
+      "id": "audit_source_of_truth",
+      "check": "Single source of truth for published tables (RR-08 resolution)",
+      "result": "Resolved 10 Nov 2026: data/verified-2026-11-08.json + scripts/build_public.py are the sole source of truth for every published table.",
+      "detail": "The legacy 130-row data/records.json and the other historical datasets (facts.json, model.json, etc.) are superseded, excluded from publication by _config.yml and the workflow artifact allowlist, and retained in the repository for traceability only. Pages are regenerated from the dataset and gated by python3 scripts/build_public.py --check.",
+      "sources": [
+        "repo",
+        "repo_line_audit"
+      ]
+    },
+    {
+      "id": "audit_stale_pr_review",
+      "check": "Open pull-request review (session arena/8cd7cd89, 10 Nov 2026)",
+      "result": "9 stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33) reviewed line by line against the canonical build; all are CONFLICTING, superseded full-site builds or records; none contains unique verified content missing from the canonical dataset.",
+      "detail": "PR #33's verification report was re-checked against official sources today: its county annual unemployment 5.7% (2025) figure is verified and has been adopted as a published row; its 2025 Dashboard figures are superseded by the 2026 Dashboard rows already published; its other additions are already present or out of scope. Per the coordination rules the branches are preserved and the PRs are left open for the owner to close; no work is discarded.",
+      "sources": [
+        "repo"
       ]
     }
   ]
