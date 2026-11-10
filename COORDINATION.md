@@ -1267,3 +1267,76 @@ and corrections were kept (including their independent 941-CA fix and flag sets 
 merge is `data/verified-2026-11-10.json` (90 observations, session ac5b9087) — this session's
 corrections to `verified-2026-11-08.json` are preserved in that legacy file and their equivalents
 (also fixing tenant_ca to 941/44.1%) are in the canonical file.
+
+---
+
+## Session: arena/8d46ab6c-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/8d46ab6c-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-10, ~06:0x UTC):** local `main` = `bcefb4e` (PR #55 merge).
+`origin/main` = same commit; no newer branch, PR, or Actions run beyond it (`gh pr list`/`gh run list`
+checked). Three parallel-session PRs are **open and unmerged**: #47 (`arena/6c87c9a8-jack1`,
+2026-11-10T00:34Z), #54 (`arena/8cd7cd89-jack1`, 2026-11-10T00:51Z), #56 (`arena/c9dbd92f-jack1`,
+2026-11-10T01:05Z). Their claimed files (`verification/2026-11-10-c9dbd92f.md`,
+`verification/2026-11-10-6c87c9a8.md`, etc.) are **not present in `main`** and `COORDINATION.md` on
+`main` contains **no** `c9dbd92f` entry. All three exceed the 60-minute no-commit takeover window
+(latest activity 01:05Z, claim at 06:0xZ) and none has a posted claim on `main`; per the takeover rule
+this session may proceed while **preserving (not deleting) their branches and PRs**. Nothing from those
+PRs is copied into this branch without independent verification.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| K-1 | Session claim + coordination protocol | **done** | arena/8d46ab6c-jack1 | this board (append-only) |
+| K-2 | Fresh 2026-11-10 independent line-by-line verification of the 90 canonical observations + 74 official source URLs, derived arithmetic re-computation, privacy/PII rescan, irregularity log | in progress | arena/8d46ab6c-jack1 | `verification/2026-11-10-8d46ab6c.md` (new), dataset corrections only if an official page disagrees (with dated audit entry) |
+| K-3 | Audit of the three unmerged parallel-session PRs (#47, #54, #56) for files/claims absent from `main`; record findings; do not merge their content unverified | in progress | arena/8d46ab6c-jack1 | this board, `verification/2026-11-10-8d46ab6c.md` |
+| K-4 | Final integration gates (build `--check`, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed | arena/8d46ab6c-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs (dataset,
+generated pages) change only through K-2-verified corrections and deterministic regeneration. Small
+frequent commits; `git pull --rebase origin main` before each push; conflicts stop and are resolved
+without discarding another session's work.
+
+Claimed at 2026-11-10 (UTC). Commit and push of this claim precede all content work.
+
+## K-2 / K-3 result — session `arena/8d46ab6c-jack1`, 2026-11-10 (UTC)
+
+**K-2 done.** All 74 official source IDs in `data/verified-2026-11-10.json` were re-read today from
+their exact published URLs and line-by-line compared with the 90 canonical observations. Every
+derived arithmetic family reproduced exactly (DOF-vs-Census gap 158,501 / 1.63%; FHSZ Very High
+65.3%; CA 44.1% and CA+TX 69.8% of the Jack system; 2029–2032 ARD wall $1,429.625M / 95.8% of
+$1,491.984M; transfer-tax stack 0.56/4.56/6.06%; Sep-2026 city vs county 4.5%). Ledger:
+`verification/2026-11-10-8d46ab6c.md`.
+
+Corrections applied this pass (each now has a Flagged for Review row):
+
+| # | Row | Change |
+|---|---|---|
+| R-1 | `tenant_lease_portfolio` | Removed an unreconcilable "YTD −15.4%" rental-revenue delta; official 10-Q totals ($242,526k vs $260,254k) imply −6.8% and no official page prints −15.4%. Official totals kept. |
+| R-2 | `schools_enrollment_2026` | FRPM count/share (386,743; 77.8%) not printed on the cited CDE District Profile page today → withheld pending a DataQuest link. Enrollment 497,105 and EL 81,328 (16.4%) confirmed. |
+| R-5 | `crime_central_bureau` | Robbery count 1,303 → **1,938** (+1.3%), the figure printed in the Operations-Central Bureau COMPSTAT report. |
+| R-4 | Seismic rows | Both usgs.gov pages failed to load today (504 / premature close); values carried as unverified, not re-asserted. |
+
+Carried, re-confirmed: SCAG Table 6 "153%" manufacturing typo (endpoints imply 15.4%); Measure ULA
+narrative "$5M/$10M" vs operative $5,400,000/$10,900,000; FHSZ hazard-is-not-risk wording; OpenFEMA
+window start; BLS printing 4.5% for both city and county; git-metadata privacy (history not
+rewritten).
+
+**Privacy (top priority): clean.** Automated scan of all 11 published HTML files for e-mails, phone
+numbers, SSNs and street addresses returned zero hits after regeneration. Personal names and direct
+work contacts that appear on official pages read today (SEC/IR contact, LAPD bureau command staff,
+CDE district directory, BOE/EDD/DIR spokespeople) were deliberately **not** copied. No parcel, APN,
+owner, lease-party, rent or value data exists in the artifact; those fields stay blank and flagged.
+
+**K-3 done — parallel PRs #47, #54, #56.** None has a claim recorded on `main`, all were past the
+60-minute no-commit takeover window, and #47/#54 overlap the canonical dataset, builder and generated
+pages while #56 is docs-only. None was merged and no content was copied unverified; branches and PRs
+are preserved untouched for owner review. Note for the owner: #54 also commits a session ledger at
+`verification/2026-11-10-8cd7cd89.md` and its own dataset edits, which should be reconciled against
+the corrections above before any merge, or they will re-introduce the withdrawn values.
+
+**Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
+`unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
+local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
