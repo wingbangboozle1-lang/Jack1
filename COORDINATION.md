@@ -1016,3 +1016,20 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/af77a54e-jack1 (2026-11-10, UTC)
+
+**Session ID:** `arena/af77a54e-jack1` (Arena-assigned fixed branch; work happens on this branch only.)
+
+### Claims (task board addendum, committed before any content work)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T28-af77a54e | Fresh independent 2026-11-10 re-verification of the canonical 10-page dashboard against official sources (BLS/Census/FRED/SEC/CAL FIRE/FEMA/etc.), repo line-by-line review (PII sweep, conflict markers, local-link integrity), live Pages deploy-state check via GitHub API | in progress | arena/af77a54e-jack1 | `verification/2026-11-10-af77a54e.md` (new), `COORDINATION.md` (append only), root site pages/dataset only if a verified defect is found (each logged here) | official primary pages re-read on 2026-11-10 (ledger in the verification report) | build/test/validator gates re-run; figure-by-figure re-reads recorded; deploy state checked via Pages API | To be published in the verification report and Flagged for Review if any are found |
+| T29-af77a54e | Final integration for this session: PR to main, merge, post-merge deploy confirmation, board record | in progress | arena/af77a54e-jack1 | `COORDINATION.md`, git/gh operations | n/a | gates re-run pre-merge; live deploy verified post-merge via Pages API and sentinel fetch through the repo's own tooling | None unless found; flagged items do not block per brief |
+
+Scope rules for this session: edits only the files listed above. It does not edit `archive/`, `pages/`, `site/`, `research/`, `verification/` (except its own new report), `data/`, or any other session's records, unless a verified defect forces a root-page/data fix — in which case the change is minimal, logged here, and published on Flagged for Review. No other session is identified as active at claim time (newest merged PR #45, 2026-11-08T23:36Z; branch even with `origin/main` at `9be7757`). Historical `in progress` entries above are records, not locks.
+
+**Claim time:** 2026-11-10 (UTC). Committed and pushed before any content work per protocol.
