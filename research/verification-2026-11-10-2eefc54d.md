@@ -4,11 +4,11 @@ This is the internal research companion to `verification/2026-11-10-2eefc54d.md`
 
 ## A. Source groups re-read
 
-The verification report contains all 74 active source IDs, official links, and exact re-read/reconciliation notes: 48 at-claim IDs, 25 added by `ac5b9087`, and one dedicated FEMA coastal query added in V-2. This pass closes the groups that session `c5e199ef` listed as "Not re-read this pass": SEC 10-K California table; SCAG 2030/2045 rows and sector endpoints; Q3 FY2026 10-Q balance detail; 8-K filing date / role-only governance; CAL FIRE, LAPD, Port, EPA, IRS, FTB, BOE, and Assessor/ZIMAS guidance; FEMA coastal-flood numeric score.
+The verification report contains all 74 active source IDs, official links, and exact re-read/reconciliation notes: 48 at-claim IDs, 25 added by `ac5b9087`, and one dedicated FEMA coastal query added in V-2. V-2 also reconciled PR #52 (`a8681975`) by union resolution and corrected the internal `data/README.md` canonical-path statement. This pass closes the groups that session `c5e199ef` listed as "Not re-read this pass": SEC 10-K California table; SCAG 2030/2045 rows and sector endpoints; Q3 FY2026 10-Q balance detail; 8-K filing date / role-only governance; CAL FIRE, LAPD, Port, EPA, IRS, FTB, BOE, and Assessor/ZIMAS guidance; FEMA coastal-flood numeric score.
 
 ## B. Critical cross-checks
 
-1. **FY2025 10-K state table.** The table has separate Del Taco and Jack in the Box column groups. California Del Taco = 94 company + 257 franchise = 351 total. California Jack in the Box = 96 company + 845 franchise = 941 total. The brand system total is 2,136 Jack in the Box restaurants (150 company + 1,986 franchise), separate from 576 Del Taco restaurants. Therefore 941 ÷ 2,136 = 44.1%, not 351 ÷ 2,136 = 16.4%. The active 2026-11-10 dataset already publishes this correction (session `ac5b9087`); this session recorded independent confirmation rather than duplicating the edit. Official link: <https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm>.
+1. **FY2025 10-K state table.** The table has separate Del Taco and Jack in the Box column groups. California Del Taco = 94 company + 257 franchise = 351 total. California Jack in the Box = 96 company + 845 franchise = 941 total. The brand system total is 2,136 Jack in the Box restaurants (150 company + 1,986 franchise), separate from 576 Del Taco restaurants. Therefore 941 ÷ 2,136 = 44.1%, not 351 ÷ 2,136 = 16.4%. The active 2026-11-10 dataset already publishes this correction (session `ac5b9087`), and session `a8681975` corrected the historical 2026-11-08 baseline on `main`; this session recorded independent confirmation rather than duplicating either edit. Official link: <https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm>.
 2. **FEMA NRI coastal flooding.** The generic county query returns composite, EAL, social vulnerability, resilience, earthquake, wildfire and inland-flood fields, but no `CFLD_RISKS`. The hazard-ratings query returns `CFLD_RISKR: "Relatively High"` but no numeric score. A dedicated official query returns both `CFLD_RISKS: 90` and `CFLD_RISKR: "Relatively High"`. Official link: <https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,CFLD_RISKS,CFLD_RISKR&returnGeometry=false&f=json>.
 3. **SCAG 2030/2045.** Appendix I tables give LA County 2030 population 10,214,000 / households 3,784,000 / employment 5,277,000 and 2045 population 10,757,000 / households 4,120,000 / employment 5,497,000. Technical Report Table 6 gives sector endpoints and the inconsistent printed manufacturing percentage. Official links: <https://scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf> and <https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf>.
 4. **Treasury.** Official November 2026 table has 11/06 and 11/09 rows. The dataset now uses 11/09 with its exact date; the older 11/06 row is not blended. Official link: <https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611>.
@@ -103,7 +103,7 @@ High-risk SEC XBRL notes `R14.htm`, `R8.htm`, `R12.htm`, `R16.htm`, and `R20.htm
 
 ## D. Final row inventory
 
-Canonical dataset after V-2: `74` source IDs, `90` observations, `27` flags, `13` audit entries. Generated canonical artifact: 10 pages + `404.html` + `assets/projections.json`; validator reports **324 sourced table rows**. Source IDs below resolve through the exact official URLs in section C and `verification/2026-11-10-2eefc54d.md`.
+Canonical union dataset after PR #52 reconciliation: `74` source IDs, `90` observations, `27` flags, `14` audit entries. Generated canonical artifact: 10 pages + `404.html` + `assets/projections.json`; validator reports **325 sourced table rows**. Source IDs below resolve through the exact official URLs in section C and `verification/2026-11-10-2eefc54d.md`.
 
 | Page | Row | Label (truncated) | Source ID(s) / host | Links |
 |---|---:|---|---|---:|
@@ -430,17 +430,17 @@ Canonical dataset after V-2: `74` source IDs, `90` observations, `27` flags, `13
 | `audit.html` | 10 | Independent re-verification pass (session c5e199ef, 10 Nov 2026) | treasury, dof_p2a, census_county, sec_release | 4 |
 | `audit.html` | 11 | Independent re-verification pass, session af77a54e (2026-11-10) | repo | 1 |
 | `audit.html` | 12 | Full repo line-audit & live official re-verification (session ac5b9087, 10 Nov 2026) | repo_line_audit, sec_10q_debt, dof_e1, treasury, lavote_dtt | 5 |
-| `audit.html` | 13 | Independent line-by-line official-source re-verification (session 2eefc54d, 2026-11-10) | fema_coastal_score, sec_10k, repo_line_audit | 3 |
+| `audit.html` | 13 | Independent source re-verification (session a8681975, 10 Nov 2026) | repo, sec_10k, dof_p2a, scag_tr, fema_county_query, bls_summary | 6 |
+| `audit.html` | 14 | Independent line-by-line official-source re-verification (session 2eefc54d, 2026-11-10) | fema_coastal_score, sec_10k, repo_line_audit | 3 |
+
+## E. Privacy and scope
+
+Only official domains and the repository/live provenance links appear above. Personal contact metadata present on some official pages was used solely to confirm the institutional source and was not copied. Historical internal notes under `research/0e369d53/` and `verification/2026-11-08-0e369d53.md` preserve an earlier California-column misreading; they are not part of the curated public artifact and are not edited by this session. The active `data/verified-2026-11-10.json` dataset and `property.html` were corrected by `ac5b9087`; `a8681975` corrected the historical `data/verified-2026-11-08.json` baseline on `main`. This session confirmed both and corrected only the internal `data/README.md` canonical-path statement.
 
 ## F. V-2 final gates
 
 - `python3 scripts/build_public.py --check` → PASS: 12 generated files match the verified dataset.
 - `python3 -m unittest discover -s tests -p 'test_*.py' -q` → 14 tests OK.
-- `python3 scripts/validate_site.py` → PASS: 10 pages, 324 sourced table rows, allowlist/local links/privacy/blanks OK.
-- `python3 scripts/build_public.py --out /tmp/jack1-site-2eefc54d` + `python3 scripts/validate_site.py --site ... --artifact` → PASS: 10 pages, 324 sourced table rows, strict curated artifact boundary.
-- Dataset/reference integrity: zero missing source IDs; zero canonical rows without source links; zero privacy hits in canonical pages or new reports. Noncanonical legacy root HTML files are excluded from the published artifact and were not modified.
-
-
-## E. Privacy and scope
-
-Only official domains and the repository/live provenance links appear above. Personal contact metadata present on some official pages was used solely to confirm the institutional source and was not copied. Historical internal notes under `research/0e369d53/` and `verification/2026-11-08-0e369d53.md` preserve an earlier California-column misreading; they are not part of the curated public artifact and are not edited by this session. The canonical dataset and `property.html` are corrected in V-2.
+- `python3 scripts/validate_site.py` → PASS: 10 pages, 325 sourced table rows, allowlist/local links/privacy/blanks OK.
+- `python3 scripts/build_public.py --out /tmp/jack1-site-2eefc54d-union` + `python3 scripts/validate_site.py --site ... --artifact` → PASS: 10 pages, 325 sourced table rows, strict curated artifact boundary.
+- PR #52 union resolution preserved `audit_a8681975_pass` and `audit_2eefc54d_v1_recheck`, both verification-log lists, and all prior flags/audit entries. Dataset/reference integrity: zero missing source IDs; zero canonical rows without source links; zero privacy hits in canonical pages or new reports. Noncanonical legacy root HTML files are excluded from the published artifact and were not modified.

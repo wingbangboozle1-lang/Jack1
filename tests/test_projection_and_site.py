@@ -154,6 +154,7 @@ class BuildAndValidationTests(unittest.TestCase):
             "verification/2026-11-10-2eefc54d.md",
             "verification/2026-11-10-ac5b9087.md",
             "verification/2026-11-10-af77a54e.md",
+            "verification/2026-11-10-a8681975.md",
             "verification/2026-11-10-c5e199ef.md",
             "verification/2026-11-08-0e369d53.md",
         ):
