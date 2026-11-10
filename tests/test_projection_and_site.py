@@ -151,6 +151,7 @@ class BuildAndValidationTests(unittest.TestCase):
         outputs = build_public.render_all()
         self.assertIn("Caution: DOF level vs Census estimate", outputs["projections.html"])
         for log_name in (
+            "verification/2026-11-10-2eefc54d.md",
             "verification/2026-11-10-ac5b9087.md",
             "verification/2026-11-10-af77a54e.md",
             "verification/2026-11-10-c5e199ef.md",
