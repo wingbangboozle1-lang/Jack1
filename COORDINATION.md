@@ -37,7 +37,9 @@ made only through the verified dataset + generator and are logged with their off
 | Item | Result |
 |---|---|
 | Branch | `arena/8cd7cd89-jack1` (Arena-assigned; `session-*` branches unavailable per platform policy, as prior sessions recorded) |
-| Pull request | see final entry below (recorded after merge) |
+| Branch push | `af78d75` claim · `4ba05de` data+site+report · `d72f9a7` coord · `02b2936` merge PRs #46–#49 · `827f4cd` merge PR #50 · `177408e` coord |
+| Pull request | **PR #54** (arena/8cd7cd89-jack1 → main, opened 2026-11-10 after all gates passed; merged after CI validation) |
+| Pages deploy | `pages.yml` workflow triggered by the merge to main; live-site check + workflow run URL appended in the post-merge record commit on this branch |
 
 **Shared-file follow-up requests from other sessions, dispositioned this pass:** N-857537b4-01
 (moot), N-857537b4-02 (moot; adjacent cell recomputed correct), N-857537b4-03 (SEC release rows now
