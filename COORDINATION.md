@@ -1016,3 +1016,34 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/cd460c3b-jack1 (2026-11-10, UTC)
+
+**Session ID:** `cd460c3b` · **Branch:** `arena/cd460c3b-jack1` (Arena-assigned branch; platform policy prevents creating `session-<id>/<task>` branches, so all work stays on this assigned branch.)
+
+**Claim time:** 2026-11-10 (UTC). Claim committed and pushed before any content work.
+
+### State observed at claim time
+
+- `origin/main` = `9be7757` ("Merge pull request #43 …"). Repository history was re-materialised as a single-commit snapshot; the working tree carries the 10-page data-driven canonical build (`data/verified-2026-11-08.json` → `scripts/build_public.py`) created by session `0e369d53`.
+- Gates green at claim time: `build_public.py --check` (11 generated files match), 11 unit tests pass, `validate_site.py` = "10 pages, 268 sourced table rows".
+- GitHub Pages API: `status: built`, `build_type: legacy`, `source: main /`, `https_enforced: true`. Live root confirmed serving the canonical dashboard.
+- Open PRs observed: #5, #10, #11, #14, #18, #21, #24, #27, #33 — all last updated 2026-11-06 → 2026-11-08 (stale under the 60-minute handoff rule). They are **left open and untouched**; no branch or work of theirs is discarded or merged without verification.
+- No other session has a live claim on the board. All prior records read `done`.
+
+### Claims (file scope — exclusive for this session)
+
+| Task ID | Description | Status | Owning Session ID | Files touched (exclusive scope) | Sources | Verification performed | Irregularities |
+|---|---|---|---|---|---|---|---|
+| C-1 | Repo review: full inventory, orphan/duplicate builds, conflict markers, privacy (PII) sweep, link/structure audit | in progress | arena/cd460c3b-jack1 | `verification/2026-11-10-cd460c3b.md` (new), this board | repository-level only | pending | pending |
+| C-2 | Line-by-line re-verification of every published figure (71 observations, 22 risks, projections, 21 flags) against the live official primary page | in progress | arena/cd460c3b-jack1 | `data/verified-2026-11-10.json` (new dataset, superseding `data/verified-2026-11-08.json`), `verification/2026-11-10-cd460c3b.md` | pending | pending | pending |
+| C-3 | Refresh to the newest official vintages available on 2026-11-10; withdraw anything that cannot be confirmed | in progress | arena/cd460c3b-jack1 | `data/verified-2026-11-10.json`, `scripts/projection_model.py` | pending | pending | pending |
+| C-4 | Site integration: regenerate canonical pages, extend validator/tests to the new dataset, PR → main, merge, Pages deploy confirmation, publication record | pending C-1…C-3 | arena/cd460c3b-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `scripts/projection_model.py`, `tests/`, canonical root pages, `assets/`, `.github/workflows/pages.yml`, `_config.yml`, `README.md`, this board | pending | pending | pending |
+
+**Scope rules.** This session edits only the files listed above plus the generated canonical pages it must regenerate (`index`, `market`, `property`, `projections`, `decision`, `risks`, `requirements`, `flagged`, `sources`, `audit`) and `assets/projections.json`. It does **not** edit `archive/`, `pages/`, `site/`, `research/`, `verification/` files owned by prior sessions, `data/records.json`, `data/facts.json`, `data/model.json`, `data/risks.json`, `data/scenarios.json`, `data/sources.json`, `data/assumptions.json`, `scripts/build-data.mjs`, `scripts/build_pages.py`, `scripts/verify-data.mjs`, `model/`, `analysis/`, `risks/`, `tools/`, or the root markdown briefs. Requests that would require editing another session's file are logged below instead of made.
+
+**Ownership note.** `data/verified-2026-11-08.json` is superseded in place by `data/verified-2026-11-10.json` rather than edited, so the 2026-11-08 dataset remains reproducible for audit. The legacy file stays in the repository but is removed from the public artifact boundary by `scripts/build_public.py --out`.
+
+**Handoff rule.** If this session crashes, any other session may take over after 60 minutes with no commits, noting the handoff in this log.
