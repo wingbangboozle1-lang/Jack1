@@ -17,12 +17,13 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `market.html` — geography, population, income, jobs, schools, drivers
 - `property.html` — blank asset fields, tenant/issuer context, taxes, gates
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
-- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths
+- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
 - `requirements.html` — coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
+- `404.html` — fallback page linking only to the ten canonical pages
 
 Historical `pages/`, `site/`, `archive/`, extra root pages, old data/model/tools, and research notes are preserved in Git but are **not** part of the curated public artifact.
 
@@ -31,7 +32,7 @@ Historical `pages/`, `site/`, `archive/`, extra root pages, old data/model/tools
 Python 3.11+; no third-party runtime dependencies.
 
 ```bash
-python3 scripts/build_public.py           # generate canonical pages + assets/projections.json
+python3 scripts/build_public.py           # generate canonical pages, 404.html + assets/projections.json
 python3 scripts/build_public.py --check   # fail if committed pages differ from dataset
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 scripts/validate_site.py          # structure, row sources, allowlist, links, blanks, privacy
@@ -39,7 +40,7 @@ python3 scripts/build_public.py --out _site
 python3 scripts/validate_site.py --site _site --artifact
 ```
 
-The verified dataset is `data/verified-2026-11-08.json`. Projection arithmetic is in `scripts/projection_model.py`. Missing property inputs produce `None`/blank outputs, never zero or invented assumptions.
+The verified dataset is `data/verified-2026-11-10.json` (with `data/verified-2026-11-08.json` preserved as historical baseline). Projection arithmetic is in `scripts/projection_model.py`. Missing property inputs produce `None`/blank outputs, never zero or invented assumptions, and the browser worksheet in `decision.html` starts completely blank with zero storage or network calls.
 
 ## Privacy and source policy
 
@@ -55,4 +56,4 @@ The verified dataset is `data/verified-2026-11-08.json`. Projection arithmetic i
 
 If Pages remains in legacy `main /` mode, `_config.yml` excludes historical/internal files so the legacy fallback serves only the curated root dashboard. The former root `.nojekyll` marker is preserved under `archive/arena-0e369d53-legacy/` and is regenerated inside the workflow artifact. A successful Actions upload alone is not publication proof; the live URL and a sentinel page must be fetched after merge.
 
-Coordination and verification records: `COORDINATION.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
+Coordination and verification records: `COORDINATION.md`, `verification/2026-11-10-ac5b9087.md`, `research/2026-11-10-ac5b9087/source-notes.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.

@@ -96,8 +96,19 @@ tbody tr:hover { background: #fafbff; }
   .content { padding: 1rem; }
   .section-heading { flex-direction: column; align-items: start; }
 }
+.worksheet { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1rem; }
+.ws-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.ws-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .85rem; }
+.ws-field { display: flex; flex-direction: column; gap: .25rem; }
+.ws-field label { font-size: .82rem; font-weight: 700; color: var(--ink); }
+.ws-field input, .ws-field select { border: 1px solid var(--line); border-radius: 10px; padding: .5rem .65rem; font: inherit; background: #fff; color: var(--ink); }
+.ws-field input:focus, .ws-field select:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+.ws-outputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .85rem; }
+.ws-card { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: .9rem; }
+.ws-card.ws-highlight { background: var(--accent-soft); border-color: var(--accent); }
+.ws-val { font-size: 1.25rem; font-weight: 800; margin: .2rem 0; }
 @media print {
-  .sidebar, .topbar, .table-tools, .hero-actions { display: none; }
+  .sidebar, .topbar, .table-tools, .hero-actions, .ws-reset { display: none; }
   .shell { display: block; }
   .content { width: 100%; padding: 0; }
   .table-wrap { overflow: visible; border: 0; }
