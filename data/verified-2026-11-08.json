@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-11-08",
+    "date": "2026-11-10",
     "session": "0e369d53",
     "title": "Jack in the Box NNN decision brief — central Los Angeles area",
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
@@ -68,7 +68,7 @@
       "title": "Daily Treasury Par Yield Curve Rates, November 2026",
       "publisher": "U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official market data"
     },
     "dof_landing": {
@@ -766,11 +766,11 @@
       "id": "treasury_yields",
       "category": "Financing",
       "measure": "Treasury par yields",
-      "value": "2Y 4.51%; 5Y 4.64%; 10Y 4.86%; 30Y 5.26%",
+      "value": "2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 30Y 5.26%",
       "geography": "U.S. sovereign curve",
-      "period": "November 6, 2026",
+      "period": "November 9, 2026",
       "status": "verified",
-      "note": "Risk-free context, not a cap rate or owner discount rate.",
+      "note": "Risk-free context, not a cap rate or owner discount rate. Refreshed from the November 9, 2026 print on the 2026-11-10 re-verification pass; the November 6 print (2Y 4.51%; 5Y 4.64%; 10Y 4.86%; 30Y 5.26%) was verified on the prior pass.",
       "sources": [
         "treasury"
       ]
@@ -2502,6 +2502,16 @@
         "census_city",
         "sec_10q",
         "fema_county_query"
+      ]
+    },
+    {
+      "id": "audit_6c87c9a8_pass",
+      "check": "Independent re-verification pass (session 6c87c9a8, 10 Nov 2026)",
+      "result": "All 71 observations, 15 DOF/SCAG projection inputs, 5 sector endpoints, 7 decision paths, 22 risks, 14 requirements, and 21 flags re-read against their cited official pages on 2026-11-10. Every figure matched exactly except one freshness refresh: Treasury par yields updated from the November 6 to the November 9, 2026 print (2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 30Y 5.26%). No value was changed on inference; no unverified value was filled.",
+      "detail": "Full line-by-line trail in verification/2026-11-10-6c87c9a8.md. Derived values recomputed (CA share 351/2,136 = 16.4%; Very High FHSZ share 769,561/1,177,944 = 65.3%; sector changes/CAGRs). Privacy regex scan of dataset clean. Build check, 11 unit tests, and validator pass.",
+      "sources": [
+        "repo",
+        "live"
       ]
     }
   ]

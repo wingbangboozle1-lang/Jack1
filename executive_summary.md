@@ -1,3 +1,10 @@
+> **SUPERSEDED (2026-11-10).** This November 6, 2026 draft is preserved for history and is
+> excluded from the public artifact. Its figures (non-official sources, 2025 school data)
+> are superseded by the canonical verified dataset. The current executive summary is
+> [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md) and the live brief is
+> https://wingbangboozle1-lang.github.io/Jack1/ — recommendation: **dual-track sale +
+> renewal; do not drift to expiry**.
+
 # Executive Summary: Jack in the Box Property Decision Analysis (Central Los Angeles)
 
 **Date:** November 6, 2026  

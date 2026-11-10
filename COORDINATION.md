@@ -1038,3 +1038,19 @@ Scope rules for this session: edits only the files listed above. It does not edi
 - Branch `arena/6c87c9a8-jack1` at `9be7757` (Merge PR #43), identical to `origin/main`. Working tree clean.
 - Local gates at claim time: `build_public.py --check` PASS; 11 unit tests PASS; `validate_site.py` PASS (10 pages, 268 rows).
 - Pages API: `status: built`, `build_type: legacy` (`main /`), HTTPS enforced. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are stale (2026-11-06/07); left untouched, not treated as active locks.
+
+### Session completion record — arena/6c87c9a8-jack1 (2026-11-10 UTC)
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| N-1 Line-by-line re-verification | done | `verification/2026-11-10-6c87c9a8.md` (new), `data/verified-2026-11-08.json`, `scripts/build_public.py`, regenerated canonical pages, `assets/projections.json` | Census QuickFacts city+county, FRED GDPALL06037/NGMP31080, BLS LA summary + LAUS + city annual, EDD LA release, Treasury par yields, DIR fast-food + state wage, LA Wage Standards notice, CA School Dashboard LAUSD (engagement + performance), SEC Q3 FY2026 release + FY2025 10-K + Sep 21 2026 8-K, LA Finance ULA FAQ, LA Assessor Prop 13, FTB capital gains, IRS Form 8824 instructions, FEMA NRI county service (all hazard fields incl. CFLD/HWAV/LNDS/TRND/LTNG/DRGT/TSUN), USGS UCERF3 FAQ, OSFM FHSZ acres table, CDI claims tracker, LA Planning DTLA release + ZIMAS, LAPD crime mapping, EPA brownfields, Port of LA statistics, DOF P-2A workbook (LA row), SCAG Appendix I Tables 3.14-8/9/10 + ES-1, SCAG TR Table 6, BOE LTA 22046, IRS Pub 544, CDE directory, Assessor portal, SCAG Connect SoCal page, FEMA NRI page, repo line-audit manifest | 71 observations + 15 DOF/SCAG inputs + 5 sector endpoints re-read; all exact. Derived recomputed (351/2,136=16.4%; 769,561/1,177,944=65.3%; sector changes). Privacy regex scan clean. Build check, 11 tests, validator (269 rows) PASS. Live root fetched OK | 1 freshness refresh (Treasury Nov 6 → Nov 9 print). No figure errors. Near-miss: truncated print suggested la_wage 404; dataset URL already correct (ADA260304.pdf) |
+| N-2 Executive summary + requirements refresh | done | `EXECUTIVE_SUMMARY.md` (rewritten as canonical summary), `executive_summary.md` (supersession banner), `README.md` (verification records line) | N-1 sources | Canonical summary mirrors the public brief (dual-track, verified figures only, no PII). Requirements page re-generated from dataset (14 requirements; partial items unchanged — they depend on unverified property inputs, not on this pass) | Older internal drafts (EXECUTIVE_SUMMARY.md pre-rewrite, executive_summary.md, DECISION_MEMO.md, METHODOLOGY.md, RISK_REGISTER.md) used superseded figures/framing. EXECUTIVE_SUMMARY.md rewritten; executive_summary.md bannered. DECISION_MEMO.md / METHODOLOGY.md / RISK_REGISTER.md are outside this session's claimed scope — banner request logged below |
+| N-3 Final integration | in progress | `COORDINATION.md`, gh operations | GitHub Actions / Pages API | Build check, tests, validator, artifact validator, live fetch — all PASS locally | TBD |
+
+**Request to owning sessions (not edited — outside claimed scope):** please add a supersession
+banner to `DECISION_MEMO.md`, `METHODOLOGY.md`, and `RISK_REGISTER.md` noting that the
+canonical verified dataset (`data/verified-2026-11-08.json`, re-verified 2026-11-10) and
+the live brief (https://wingbangboozle1-lang.github.io/Jack1/) supersede their November 6
+figures/framing, and that modeled cap rates in `DECISION_MEMO.md` are internal assumptions,
+not verified values. These files are excluded from the public artifact, so this does not
+block publication.

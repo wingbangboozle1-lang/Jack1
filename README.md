@@ -55,4 +55,4 @@ The verified dataset is `data/verified-2026-11-08.json`. Projection arithmetic i
 
 If Pages remains in legacy `main /` mode, `_config.yml` excludes historical/internal files so the legacy fallback serves only the curated root dashboard. The former root `.nojekyll` marker is preserved under `archive/arena-0e369d53-legacy/` and is regenerated inside the workflow artifact. A successful Actions upload alone is not publication proof; the live URL and a sentinel page must be fetched after merge.
 
-Coordination and verification records: `COORDINATION.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
+Coordination and verification records: `COORDINATION.md`, `verification/2026-11-08-0e369d53.md`, `verification/2026-11-10-6c87c9a8.md`, `research/0e369d53/source-notes.md`. Executive summary: `EXECUTIVE_SUMMARY.md`.
