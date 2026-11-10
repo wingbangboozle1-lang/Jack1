@@ -16,8 +16,8 @@ canonical files listed below.
 
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
-| V-1 | Fresh 2026-11-10 line-by-line verification of every published table row against its linked official source; correct or blank-and-flag anything not reproducible; privacy scan of the whole public artifact; irregularity log with links | in progress | arena/2eefc54d-jack1 | `verification/2026-11-10-2eefc54d.md` (new), `research/verification-2026-11-10-2eefc54d.md` (new) |
-| V-2 | Final integration: dataset + generated canonical pages, category navigation, executive summary, flagged page, build/link/privacy gates | unclaimed (reserved for this session after V-1) | arena/2eefc54d-jack1 | `data/verified-2026-11-08.json`, canonical root `*.html`, `assets/styles.css`, `assets/site.js`, `assets/projections.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/`, `_config.yml`, `.github/workflows/pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`, this board |
+| V-1 | Fresh 2026-11-10 line-by-line verification of every published table row against its linked official source; correct or blank-and-flag anything not reproducible; privacy scan of the whole public artifact; irregularity log with links | done | arena/2eefc54d-jack1 | `verification/2026-11-10-2eefc54d.md` (new), `research/verification-2026-11-10-2eefc54d.md` (new) |
+| V-2 | Final integration: dataset + generated canonical pages, category navigation, executive summary, flagged page, build/link/privacy gates | claimed / in progress | arena/2eefc54d-jack1 | `data/verified-2026-11-08.json`, canonical root `*.html`, `assets/styles.css`, `assets/site.js`, `assets/projections.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/`, `_config.yml`, `.github/workflows/pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`, this board |
 | V-3 | PR from this integration branch → `main`, merge, Pages deploy confirmation, publication record | unclaimed (reserved for this session after V-2) | arena/2eefc54d-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`,
@@ -31,6 +31,14 @@ Claimed at: 2026-11-10 (UTC). Commit + push of this claim precedes all content w
 ### Interleave note — 2026-11-10 UTC (session arena/2eefc54d-jack1)
 
 `origin/main` advanced after this claim: session `c5e199ef` completed C5-1…C5-3 and merged PRs #46 and #48 (head `6be1425`). This branch was rebased onto `origin/main` via `git pull --rebase origin main`; their dataset refresh, new DOF/Census gap row, flags, audit entry, generated pages, verification record, and all historical coordination entries were preserved. Git auto-merged `COORDINATION.md` without a conflict; no other session's work was discarded. Their report explicitly lists source groups not re-read (SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance detail, 8-K governance, LAPD/Port/EPA/IRS/FTB/BOE/Assessor guidance). V-1 below covers those remaining official sources and logs fresh irregularities; V-2 will apply only corrections verified this pass. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 remain untouched.
+
+### Session completion record — V-1 (session arena/2eefc54d-jack1, 2026-11-10 UTC)
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| V-1 line-by-line verification, privacy scan, irregularity log | done | `verification/2026-11-10-2eefc54d.md`, `research/verification-2026-11-10-2eefc54d.md` | All 48 existing official source IDs plus one new dedicated FEMA coastal query; full manual-review links in the verification report. Closed c5e199ef's "not re-read" groups: SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance detail, 8-K filing date/roles, CAL FIRE/LAPD/Port/EPA/IRS/FTB/BOE/Assessor/ZIMAS guidance, FEMA coastal score. | Re-read every official page; matched value, geography, period, unit; checked generated row source links; reproduced derived arithmetic; privacy regex scan; baseline build check, 11 unit tests, validator (10 pages, 272 rows). No personal identifier copied. | V1-01 SEC California brand-column mislabel (corrected in V-2); V1-02 FEMA coastal score source-link gap (corrected in V-2); V1-03 Treasury 11/06 vs 11/09 vintage resolved by c5e199ef; V1-04 SCAG manufacturing 153% inconsistency; V1-05 USGS 30-year start date unstated; V1-06 DOF/Census 2025 level gap; V1-07 personal identifiers on official pages and git metadata (no copy; role-only wording). |
+
+V-2 is now claimed on this branch for the two verified corrections, two new Flagged for Review rows, one audit entry, regeneration, and final gates. V-3 remains reserved until V-2 passes. Historical internal notes that preserve the old California misreading are outside the curated public artifact and are not edited.
 
 
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
