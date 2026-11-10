@@ -1016,3 +1016,25 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/6c87c9a8-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/6c87c9a8-jack1` (Arena-assigned branch; per platform policy this session uses the assigned branch `arena/6c87c9a8-jack1`, branched from `9be7757` = `origin/main` tip at claim time. No `session-<id>/<task>` branch is created.)
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---|---|---|---|---|---|---|---|
+| N-1 | Fresh independent line-by-line re-verification (2026-11-10) of the canonical 10-page dashboard dataset against official sources; correct any errors; record results | in progress | arena/6c87c9a8-jack1 | `verification/2026-11-10-6c87c9a8.md` (new), `data/verified-2026-11-08.json`, regenerated canonical pages, `assets/projections.json` | Census, BLS, EDD, BEA/FRED, Treasury, DOF, SCAG, LA Planning/Finance/Wage, Assessor, BOE, FTB, IRS, DIR, CDE/Dashboard, SEC, FEMA, USGS, CAL FIRE/OSFM, CDI, LAPD, EPA, Port | Re-read of every dataset observation value against its cited official page; validator + unit tests + build check; privacy scan | TBD — logged below |
+| N-2 | Executive summary + requirements coverage refresh (privacy-safe, no PII, placeholders only) | in progress | arena/6c87c9a8-jack1 | `EXECUTIVE_SUMMARY.md`, `executive_summary.md`, `requirements.html` (via dataset), `README.md` | N-1 sources | Cross-check summary claims against verified dataset; flag contradictions | TBD |
+| N-3 | Final integration: validate, PR to main, merge, deploy confirmation, record | pending | arena/6c87c9a8-jack1 | `COORDINATION.md`, gh operations | GitHub Actions / Pages API | Build check, tests, validator, artifact validator, live-page fetch, link check | TBD |
+
+Scope rules for this session: edits only the files listed above. It does not edit `pages/*`, `site/*`, `research/notes/*`, or `archive/*` (historical/other sessions). Requests requiring another session's file are logged here instead. Small frequent commits; `git pull --rebase` before every push. Stale-claim rule (60 min, no commits) noted; this session commits continuously.
+
+### Pre-claim state (2026-11-10)
+
+- Branch `arena/6c87c9a8-jack1` at `9be7757` (Merge PR #43), identical to `origin/main`. Working tree clean.
+- Local gates at claim time: `build_public.py --check` PASS; 11 unit tests PASS; `validate_site.py` PASS (10 pages, 268 rows).
+- Pages API: `status: built`, `build_type: legacy` (`main /`), HTTPS enforced. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are stale (2026-11-06/07); left untouched, not treated as active locks.
