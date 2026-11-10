@@ -1049,3 +1049,41 @@ Scope rules: this session edits only the files above. It does not edit `archive/
 - **Main-branch runs:** `Validate and publish the decision brief` run 42729301297 — success; `pages build and deployment` run 42729301121 — success. Pages API: `status: built`, `build_type: legacy` (`main /`; unchanged — the workflow-source switch remains unavailable to the workflow token, see existing flag).
 - **Live check (2026-11-10):** https://wingbangboozle1-lang.github.io/Jack1/flagged.html serves both new flags (DOF/Census gap; git-metadata privacy). `COORDINATION.md` on the live host returns 404, so internal records stay unpublished.
 - **Follow-up:** this record ships in docs-only PR #48 (no site/dataset change).
+
+## Session: arena/af77a54e-jack1 (2026-11-10, UTC)
+
+**Session ID:** `arena/af77a54e-jack1` (Arena-assigned fixed branch; work happens on this branch only.)
+
+### Claims (task board addendum, committed before any content work)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T28-af77a54e | Fresh independent 2026-11-10 re-verification of the canonical 10-page dashboard against official sources (BLS/Census/FRED/SEC/CAL FIRE/FEMA/etc.), repo line-by-line review (PII sweep, conflict markers, local-link integrity), live Pages deploy-state check via GitHub API | done | arena/af77a54e-jack1 | `verification/2026-11-10-af77a54e.md` (new), `COORDINATION.md` (append only), root site pages/dataset only if a verified defect is found (each logged here) | official primary pages re-read on 2026-11-10 (ledger in the verification report) | build/test/validator gates re-run; figure-by-figure re-reads recorded; deploy state checked via Pages API | To be published in the verification report and Flagged for Review if any are found |
+| T29-af77a54e | Final integration for this session: PR to main, merge, post-merge deploy confirmation, board record | in progress | arena/af77a54e-jack1 | `COORDINATION.md`, git/gh operations | n/a | gates re-run pre-merge; live deploy verified post-merge via Pages API and sentinel fetch through the repo's own tooling | None unless found; flagged items do not block per brief |
+
+Scope rules for this session: edits only the files listed above. It does not edit `archive/`, `pages/`, `site/`, `research/`, `verification/` (except its own new report), `data/`, or any other session's records, unless a verified defect forces a root-page/data fix — in which case the change is minimal, logged here, and published on Flagged for Review. No other session is identified as active at claim time (newest merged PR #45, 2026-11-08T23:36Z; branch even with `origin/main` at `9be7757`). Historical `in progress` entries above are records, not locks.
+
+**Claim time:** 2026-11-10 (UTC). Committed and pushed before any content work per protocol.
+
+
+### T28-af77a54e completion record — session af77a54e (2026-11-10)
+
+- **Deliverable:** `verification/2026-11-10-af77a54e.md` — full ledger of 12 figure groups re-read verbatim from official pages on 2026-11-10 (all exact matches), plus carried-forward items, six non-blocking irregularities, and the two dataset additions.
+- **Re-verified today (exact matches):** BLS LA Area Economic Summary (Nov 4, 2026); Census QuickFacts Vintage 2025 (city: 3,869,089 / −0.8% / $81,939 / $921,200 / 36.0% / $1,933 / 16.5% / retail $81.35B / food services $17.37B; county: 9,694,934 / −3.2%); FRED GDPALL06037 ($1,002,965,029K, updated 2026-02-05); Treasury Nov 6, 2026 curve (2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26); SEC Q3 FY2026 release (SSS −1.1/−1.2/−0.9; revenue $257.7M; 2,115 units = 149 + 1,966; Adj. EBITDA $61.2M; continuing ops $21.0M); CDI claims tracker (41,727 / 40,482 / $25.2B, updated 2026-07-06); LA Office of Finance ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%); USGS UCERF3 FAQ (60/46/31%); OSFM 2024–2025 FHSZ acreage (LA combined 330,431 / 77,951 / 769,561 / 1,177,944; derived 65.3% Very High reproduced: 769,561/1,177,944 = 0.6534); CDE 2026 Dashboard LAUSD (ELA 13.2 below/+4.6; math 40.7 below/+8.2; grad 87.6%/+1.1; absenteeism 21.3%/−0.6); SCAG Appendix I (LA pop 10,046,000→10,214,000→10,757,000→10,793,000; households 3,393,000→3,784,000→4,120,000→4,155,000; employment 5,031,000/4,942,000→5,277,000→5,497,000→5,461,000).
+- **Carried forward (not re-opened today):** DOF P-2A xlsx; SEC 10-Q XBRL / 8-K; FY2025 10-K unit geography; FEMA NRI v1.20 ArcGIS values; EDD la$pds.pdf; county LAUS levels; DTLA 2040; IRS/FTB/DIR. These were re-read verbatim on 2026-11-08 (ledgers: `verification/2026-11-08-*.md`) and their pages are unchanged; recorded as carried, not as re-verified today.
+- **Gates:** build check pass; unittest 11/11; validator PASS (10 pages, 270 rows); curated-artifact build+validate PASS; conflict-marker scan clean outside `archive/`; PII scan clean (SEC accession numbers are public filing IDs, not personal data).
+- **Changes (2 additive, no content edits):** `data/verified-2026-11-08.json` + flag `flag_root_briefs` (root markdown briefs contradict the published dual-track recommendation; excluded from artifact; owner to delete/supersede) + audit entry `audit_recheck_2026_11_10`; `flagged.html` and `audit.html` regenerated deterministically.
+- **Pages deploy state at record time:** API `status: built`, HTTPS enforced, `build_type: legacy` (main `/`) — unchanged; admin action still required to switch to GitHub Actions source (403 recorded again by session b8188ee0).
+- **Irregularities:** IRR-01..IRR-06 logged in the verification report; IRR-01 is on the Flagged for Review page. None blocks anything.
+- **PR/merge/deploy record:** see T29-af77a54e below.
+
+### Interleave note — PR #49 vs concurrent session c5e199ef (2026-11-10)
+
+`origin/main` advanced through PRs #46 and #48 (session `arena/c5e199ef-jack1`) while this session's PR #49 was open. Conflicts were resolved as follows, with **no session's work discarded**:
+
+1. **Dataset:** kept `origin/main`'s version (Treasury refreshed to the 2026-11-09 print — 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26; DOF-vs-Census derived gap row; accessed dates moved to 2026-11-10; `reverified` meta; their flags and audit entry), then re-applied this session's two additive items on top (`flag_root_briefs`; `audit_recheck_2026_11_10`, reworded to record that both the Nov 6 and Nov 9 Treasury prints were verified today and that the Nov 9 print is now published).
+2. **`flagged.html` / `audit.html`:** regenerated deterministically with `scripts/build_public.py`; no manual conflict resolution.
+3. **COORDINATION.md:** both sessions' sections retained in sequence (c5e199ef above; af77a54e below), plus this note.
+4. This session's T28 ledger text (naming the Nov 6 Treasury print) remains accurate as a record of what was read on 2026-11-10; the published figure since PR #46 is the Nov 9 print, also re-read today (10Y 4.88 confirmed on the official Treasury page).
+
+Verification report `verification/2026-11-10-af77a54e.md` updated to match the merged state.

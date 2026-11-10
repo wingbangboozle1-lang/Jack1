@@ -2439,6 +2439,15 @@
       "sources": [
         "repo"
       ]
+    },
+    {
+      "id": "flag_root_briefs",
+      "item": "Root markdown executive briefs vs the published dashboard",
+      "reason": "2026-11-10 repo line review: EXECUTIVE_SUMMARY.md asserts 'Renew — but renew now' with unsourced cap-rate steps (7.25%/6.50%/6.00%, +20.8%); executive_summary.md cites non-official aggregator figures and predates the verified build; both are excluded from the published artifact and contradict the published dual-track recommendation.",
+      "action": "Treat the published dashboard and README as canonical. Owner to delete or supersede the stale root briefs (and DECISION_MEMO.md/METHODOLOGY.md/RISK_REGISTER.md if inconsistent); do not merge them into the site without source-verification against primary pages.",
+      "sources": [
+        "repo"
+      ]
     }
   ],
   "audit": [
@@ -2550,6 +2559,15 @@
         "dof_p2a",
         "census_county",
         "sec_release"
+      ]
+    },
+    {
+      "id": "audit_recheck_2026_11_10",
+      "check": "Independent re-verification pass, session af77a54e (2026-11-10)",
+      "result": "PASS with observations. Twelve figure groups re-read against official pages on 2026-11-10 and all match the published values exactly: Census QuickFacts Vintage 2025 (city + county), BLS Los Angeles Area Economic Summary (Nov 4, 2026; 4.5% city/county, 4.4% metro), FRED GDPALL06037 (2024: $1,002,965,029K, updated Feb 5, 2026), Treasury par yield curve (both days verified 2026-11-10: Nov 6 print 2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26; Nov 9 print 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26 — Nov 9 print published by concurrent session c5e199ef, PR #46), SEC Q3 FY2026 earnings release (SSS -1.1/-1.2/-0.9; revenue $257.7M; 2,115 units; Adj. EBITDA $61.2M), CDI Wildfire Claims Tracker (41,727 filed / 40,482 partially paid / $25.2B, updated Jul 6, 2026), LA Office of Finance Measure ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%), USGS UCERF3 FAQ (60/46/31%), OSFM 2024-2025 FHSZ acreage (LA combined Very High 769,561 of 1,177,944 acres), CDE 2026 Dashboard LAUSD (grad 87.6%; absenteeism 21.3%; ELA 13.2 below; math 40.7 below), SCAG Connect SoCal 2024 Appendix I Tables ES-1/2-1 and 3.14-8/9/10.",
+      "detail": "Gates re-run after merging concurrent 2026-11-10 session c5e199ef (PRs #46/#48): build check pass; unittest 11/11; validator PASS. Non-blocking observations: (1) no conflict markers or personal identifiers in the curated set (only public SEC accession numbers, which are not personal data); (2) Pages build_type remains legacy (admin action pending; _config.yml curation is the interim mitigation); (3) stale root markdown briefs flagged as flag_root_briefs; (4) git commit metadata may expose owner contact details (noted by c5e199ef; redacted, history not rewritten; owner decision required); (5) stale open PRs remain open for owner review. Full ledger: verification/2026-11-10-af77a54e.md.",
+      "sources": [
+        "repo"
       ]
     }
   ]
