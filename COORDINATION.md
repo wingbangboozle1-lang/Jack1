@@ -1016,3 +1016,19 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Current session: arena/ac5b9087-jack1 — 2026-11-10
+
+### Active claim and coordination
+
+Per platform policy, this session works strictly on its assigned branch `arena/ac5b9087-jack1` (branched from `main` at `9be7757`, PR #43). Checked `COORDINATION.md`, `origin/main`, and open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33 — all last updated on 2026-11-06..08, >24 hours stale; prior `b8188ee0` T20 entry merged via PR #43). No other session is currently active. All historical records and files remain preserved; open PRs are not discarded or overwritten.
+
+| Task ID | Description | Status | Owning Session ID | Files / scope | Sources | Verification performed | Irregularities |
+|---|---|---|---|---|---|---|---|
+| AC-1 | 2026-11-10 full repository line-by-line audit, privacy sweep, 404/fallback/retired-gate reconciliation | in progress | arena/ac5b9087-jack1 | `verification/2026-11-10-ac5b9087.md`, `verification/repository-line-audit-2026-11-10.tsv`, `404.html`, `_config.yml`, `scripts/verify-data.mjs` | GitHub repository / API | Pending | Stale 17-page `404.html` excluded in `_config.yml`; `flag_old_gate` stale vs retired `verify-data.mjs` |
+| AC-2 | 2026-11-10 independent live re-verification of all official sources, check for Nov 9–10 updates, close verifiable gaps (OpenFEMA, Central LA planning/geography, local transfer tax, EDD/CDE/etc.) | in progress | arena/ac5b9087-jack1 | `research/2026-11-10-source-notes.md`, `data/verified-2026-11-10.json` | Census, BLS, EDD, BEA/FRED, Treasury, DOF, SCAG, LA Planning/Finance/Assessor, BOE, FTB, IRS, DIR, CDE, SEC, FEMA/OpenFEMA, USGS, CAL FIRE, CDI, LAPD, EPA, Port of LA | Pending | Pending live fetches |
+| AC-3 | Rebuild canonical dashboard, add privacy-safe interactive local scenario calculator (blank defaults, zero storage/inference), update tests/validator/README | in progress | arena/ac5b9087-jack1 | Canonical 10 root HTML pages, `assets/`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `.github/workflows/pages.yml`, `README.md` | AC-1 & AC-2 outputs | Pending | Must preserve blank-unverified rule & zero PII |
+| AC-4 | Final combined check, PR to `main`, merge, live GitHub Pages deployment & sentinel verification, final record | pending | arena/ac5b9087-jack1 | `COORDINATION.md`, `data/verified-2026-11-10.json`, canonical pages, GitHub PR/Pages | AC-3 done | Pending | Must verify live URLs including `404.html` and boundary 404s |
+
