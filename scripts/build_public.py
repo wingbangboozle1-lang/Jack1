@@ -130,7 +130,7 @@ def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str
     <div class="main-column">
       <header class="topbar">
         <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button>
-        <span class="crumb">Verified dashboard · {e(data['meta']['date'])}</span>
+        <span class="crumb">Verified dashboard · {e(data['meta']['date'])}{(' · re-verified ' + e(data['meta']['reverified'])) if data['meta'].get('reverified') else ''}</span>
       </header>
       <main id="main-content" class="content">
         <header class="page-intro"><p class="eyebrow">{e(data['meta']['title'])}</p><h1>{e(title)}</h1><p class="lead">{e(subtitle)}</p></header>
@@ -153,10 +153,10 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     s = data["sources"]
     cards = "".join([
         card("Recommendation", "Dual-track", "Prepare sale and renewal in parallel; preserve notice/option rights.", s["sec_10k"]["url"], "SEC lease-context source"),
-        card("County population path", "DOF ↓ / SCAG ↑", "Official projections diverge; do not blend or assign to parcel.", s["dof_p2a"]["url"], "California DOF P-2A"),
-        card("Latest labor headline", "4.5% NSA", "LA city/county September 2026 unemployment; metro 4.4%.", s["bls_summary"]["url"], "BLS November 4, 2026 summary"),
-        card("Tenant pressure", "SSS −1.1%", "Jack system Q3 FY2026; franchise −1.2%; net count −13 QTD.", s["sec_release"]["url"], "SEC Q3 FY2026 release"),
-        card("County hazard context", "Very High", "FEMA NRI composite 100; county model, not parcel loss.", s["fema_county_query"]["url"], "FEMA NRI county query"),
+        card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B principal matures ARDs Aug 2029–Feb 2032; 7.624% refi.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
+        card("Latest labor & yields", "4.5% / 4.88%", "Sep 2026 LA NSA unemployment 4.5%; Nov 9 10Y Treasury 4.88%.", s["treasury"]["url"], "U.S. Treasury Nov 9 yield curve"),
+        card("Tenant operating trend", "SSS −1.1%", "Jack Q3 FY26 system −1.1%; franchise allowance +70.3% to $(7.61)M.", s["sec_10q_ar"]["url"], "SEC Q3 FY2026 credit allowance"),
+        card("LA exit tax tiers", "0.56–6.06%", "County 0.11% + City 0.45% + ULA 4%/5.5% ($5.4M/$10.9M thresholds).", s["lavote_dtt"]["url"], "LA County DTT & ULA schedule"),
         card("Property inputs", "Blank", "Parcel, lease, rent, value, debt, tax basis, insurance remain unverified.", s["assessor"]["url"], "Official parcel lookup"),
     ])
     categories = "".join(
@@ -165,7 +165,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("market.html", "Market & community", "Geography, population, income, jobs, schools, drivers."),
             ("property.html", "Property & tenant", "Blank asset fields, issuer credit, taxes, lease gates."),
             ("projections.html", "Projections", "Official DOF/SCAG paths, derived arithmetic, gated property model."),
-            ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant."),
+            ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
             ("requirements.html", "Requirements", "Coverage checklist and open evidence."),
             ("flagged.html", "Flagged for review", "Unconfirmed values and irregularities."),
@@ -178,15 +178,16 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
   <p class="eyebrow">Executive decision</p>
   <h2 id="recommendation">Prepare sale and renewal in parallel. Do not drift to expiry.</h2>
   <p>{e(data['meta']['recommendation'])}</p>
-  <div class="hero-actions"><a class="button" href="decision.html">Open decision paths</a><a class="button button-secondary" href="flagged.html">See what is still unverified</a></div>
+  <div class="hero-actions"><a class="button" href="decision.html">Open decision paths &amp; worksheet</a><a class="button button-secondary" href="flagged.html">See what is still unverified</a></div>
 </section>
 <div class="callout warning"><h3>Working premise, not a verified asset</h3><p>{e(data['meta']['premise'])}</p></div>
 <section class="card-grid" aria-label="Key findings">{cards}</section>
 {table("executive-snapshot", "Executive evidence snapshot.", ["Finding", "Value", "Status", "Decision meaning", "Official source"], [
     ["Course of action", "<strong>Dual-track sale + renewal</strong>", badge("analysis"), "Preserve optionality until verified lease, value, tax, and risk evidence supports a choice.", source_links(data, ["sec_10k", "irs_544", "treasury"])],
     ["Property-specific inputs", value_cell(None, "unverified"), badge("unverified"), "Parcel, lease, rent, value, debt, condition, insurance, and tax basis remain blank.", source_links(data, ["assessor", "zimas"])],
-    ["Official population paths", "DOF declines; SCAG grows", badge("derived"), "Planning divergence is material; do not blend or assign to the parcel.", source_links(data, ["dof_p2a", "scag_appendix"])],
-    ["County hazard context", "FEMA NRI Very High", badge("verified"), "County model context only; parcel exposure and insurance remain unverified.", source_links(data, ["fema_county_query", "cdi_claims"])],
+    ["Tenant 2029–2032 ARD wall", "95.8% ($1,429.6M) of principal", badge("derived"), "Refinancing cliffs (Aug 2029, May 2031 at 7.624%, Feb 2032) overlap the 2030–2035 expiry window.", source_links(data, ["sec_10q_debt", "sec_10q_ar"])],
+    ["Official population paths", "DOF declines; SCAG grows", badge("derived"), "DOF E-1 (Jan 2026) and P-2A decline while SCAG grows; do not blend or assign to parcel.", source_links(data, ["dof_e1", "dof_p2a", "scag_appendix"])],
+    ["County hazard & insurance", "FEMA NRI 100 / $20M FAIR cap", badge("verified"), "88 FEMA declarations (61 fire); CDI FAIR Plan commercial cap raised to $20M/$100M through 2028.", source_links(data, ["fema_county_query", "openfema_la", "cdi_fairplan_2025"])],
 ])}
 <div class="section-heading"><div><p class="eyebrow">Navigate</p><h2>Category subpages</h2><p>Clean tables, official row sources, and explicit blank fields.</p></div></div>
 <section class="category-grid">{categories}</section>
@@ -260,6 +261,7 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
     pm_rows = [[e(k.replace("_", " ").title()), value_cell(v, "unverified"), badge("blocked"), "Requires verified property inputs; no zero-fill or inferred assumptions.", source_links(data, ["sec_10k", "irs_544", "treasury"])] for k, v in pm["outputs"].items()]
     body = f"""
 <div class="callout"><h3>Method</h3><p>Official DOF and SCAG projections are published separately. Derived columns are transparent arithmetic from cited official inputs, not official observations. No interpolation, agency blending, parcel extrapolation, cap-rate assumption, rent-growth assumption, or invented probability is used. Property outputs remain blank because required inputs are unverified.</p></div>
+<div class="callout"><h3>Caution: DOF level vs Census estimate</h3><p>DOF lists 9,853,435 for Los Angeles County in 2025; Census lists 9,694,934 for July 1, 2025 (DOF +158,501, +1.63%). The two are different series and the cause of the gap is not stated on the pages read. Read the DOF path below for direction and rate of change, not as an absolute head-count, until reconciled. See <a href="flagged.html">Flagged for review</a>.</p></div>
 <div class="section-heading"><div><p class="eyebrow">California DOF · {e(dof['vintage'])}</p><h2>Los Angeles County annual population, 2026–2035</h2><p>Index base: 2026 = 100. Year-over-year and cumulative changes are derived calculations.</p></div></div>
 {table("dof-annual", "DOF P-2A annual county population and derived changes.", ["Year", "Population", "YoY change", "Change from 2026", "Index (2026=100)", "Official source"], dof_rows)}
 {table("dof-milestones", "DOF county milestones through 2050.", ["Year", "Population", "Change from 2026", "CAGR from 2026", "Official source"], milestone_rows)}
@@ -273,7 +275,7 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
 {table("stress-tests", "Symbolic stress definitions; numeric shocks are unverified.", ["Stress", "Symbol / input", "Numeric magnitude", "Formula / treatment", "Official source"], stress_rows)}
 <div class="section-heading"><div><p class="eyebrow">Gated property model</p><h2>Property decision outputs</h2><p>Status: {e(pm['status'])}. Missing inputs: {e(', '.join(pm['missing']))}.</p></div><span class="badge badge-review">Blank by design</span></div>
 {table("property-model", "Property outputs remain null/blank until verified inputs exist.", ["Output", "Value", "Status", "Reason", "Official source"], pm_rows)}
-<p class="small muted">Reproduce: <code>python3 scripts/projection_model.py</code> and <code>python3 scripts/build_public.py</code>. Generated public data: <a href="assets/projections.json">assets/projections.json</a>.</p>
+<p class="small muted">Reproduce: <code>python3 scripts/projection_model.py</code> and <code>python3 scripts/build_public.py</code>. Generated public data: <a href="assets/projections.json">assets/projections.json</a>. To test your private verified lease, debt, and tax inputs strictly inside your own browser without publishing or saving assumptions, use the <a href="decision.html#owner-worksheet">blank-default local owner worksheet</a>.</p>
 """
     return layout(data, "projections.html", "Official projections, transparent arithmetic, gated property outputs.", "DOF and SCAG paths are kept separate; derived values are labeled; missing property inputs produce blank outputs, never zero.", body)
 
@@ -301,6 +303,36 @@ def build_decision(data: dict[str, Any]) -> str:
   <li>Compare after-tax net sale proceeds with risk-adjusted hold/renew/re-tenant value using verified inputs.</li>
   <li>If evidence remains incomplete, default to optionality and funded fallback—not an irreversible choice.</li>
 </ol>
+<section class="worksheet" id="owner-worksheet" aria-labelledby="worksheet-heading">
+  <div class="ws-head">
+    <div>
+      <p class="eyebrow">Private local calculator · zero defaults</p>
+      <h2 id="worksheet-heading">Owner decision worksheet (browser memory only)</h2>
+      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests, applying the verified LA transfer-tax tiers (0.56% / 4.56% / 6.06% city; 0.11% county-only).</p>
+    </div>
+    <button type="button" class="button button-secondary ws-reset" data-ws-reset>Clear inputs</button>
+  </div>
+  <div class="ws-grid">
+    <div class="ws-field"><label for="ws-jurisdiction">Transfer-tax jurisdiction</label><select id="ws-jurisdiction"><option value="la_city">City of Los Angeles (County 0.11% + City 0.45% + ULA)</option><option value="county_only">LA County unincorporated / non-special city (0.11%)</option></select></div>
+    <div class="ws-field"><label for="ws-exchange">Income tax mode</label><select id="ws-exchange"><option value="taxable">Taxable sale (apply gain basis &amp; rate)</option><option value="1031">1031 like-kind exchange deferral (IRS Form 8824)</option></select></div>
+    <div class="ws-field"><label for="ws-sale-price">Executable sale price ($)</label><input id="ws-sale-price" type="number" min="0" step="any" placeholder="Enter verified quote"></div>
+    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-broker-pct">Brokerage &amp; other closing costs (%)</label><input id="ws-broker-pct" type="number" min="0" step="any" placeholder="Enter % (excl. transfer tax)"></div>
+    <div class="ws-field"><label for="ws-tax-basis">Adjusted tax basis ($)</label><input id="ws-tax-basis" type="number" min="0" step="any" placeholder="Enter CPA basis (if taxable)"></div>
+    <div class="ws-field"><label for="ws-tax-rate">Combined federal + CA gain/recapture rate (%)</label><input id="ws-tax-rate" type="number" min="0" step="any" placeholder="Enter blended tax %"></div>
+    <div class="ws-field"><label for="ws-rent">Current annual NNN base rent ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified annual NOI"></div>
+    <div class="ws-field"><label for="ws-years">Remaining lease years to test</label><input id="ws-years" type="number" min="0" step="any" placeholder="Enter exact years"></div>
+    <div class="ws-field"><label for="ws-esc">Annual contractual rent growth (%)</label><input id="ws-esc" type="number" step="any" placeholder="Enter lease escalation %"></div>
+    <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Compare vs 4.88% 10Y Treasury"></div>
+    <div class="ws-field"><label for="ws-exit-val">Expected gross value at horizon ($)</label><input id="ws-exit-val" type="number" min="0" step="any" placeholder="Enter stabilized/dark exit value"></div>
+  </div>
+  <div class="ws-outputs" aria-live="polite">
+    <div class="ws-card"><div class="metric-label">Combined DTT + ULA</div><div class="ws-val" id="ws-out-dtt">—</div><p class="micro muted" id="ws-out-dtt-note">Enter a sale price to evaluate the 0.56% / 4.56% / 6.06% LA transfer-tax tier.</p></div>
+    <div class="ws-card"><div class="metric-label">Net sale proceeds</div><div class="ws-val" id="ws-out-sale">—</div><p class="micro muted" id="ws-out-sale-note">Requires sale price, debt payoff, and brokerage/other cost % locally.</p></div>
+    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, and debt.</p></div>
+    <div class="ws-card ws-highlight"><div class="metric-label">Local path spread</div><div class="ws-val" id="ws-out-spread">—</div><p class="micro muted" id="ws-out-spread-note">Complete both Sale and Hold inputs above to compare paths locally.</p></div>
+  </div>
+</section>
 """
     return layout(data, "decision.html", "Decision paths and balanced recommendation", "A conditional, wealth-preservation-first course among selling, renewing, holding, exchanging, refinancing, and re-tenanting.", body)
 
@@ -360,9 +392,41 @@ def build_audit(data: dict[str, Any]) -> str:
   <li><code>python3 scripts/validate_site.py</code> validates pages, row source links, allowlist, local links, blanks, and privacy patterns.</li>
   <li>Public artifact contains only curated pages, assets, and generated projection data. Historical builds remain in Git but are not published.</li>
 </ul>
-<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-a8681975.md</code>.</p>
+<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-a8681975.md</code>.</p>
 """
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
+
+
+def build_404(data: dict[str, Any]) -> str:
+    links = "".join(f'    <li><a href="{e(href)}">{e(label)}</a></li>\n' for href, label in NAV)
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found · Jack in the Box NNN decision brief</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="content" style="max-width:760px;padding:3rem 1.5rem">
+    <header class="page-intro">
+      <p class="eyebrow">404 · Curated dashboard</p>
+      <h1>That path is not part of the published decision brief</h1>
+      <p class="lead">The public brief is published as ten curated pages ({e(data['meta']['date'])}). Internal coordination records, verification logs, and historical archives are intentionally excluded from publication.</p>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">Navigate</p>
+      <h2>Canonical dashboard sections</h2>
+      <ul class="action-list">
+{links}      </ul>
+      <div class="hero-actions"><a class="button" href="index.html">Return to overview</a></div>
+    </section>
+    <footer class="footer">Privacy-first: no owner, parcel, or personal financial identifiers are published.</footer>
+  </main>
+</body>
+</html>
+"""
 
 
 def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
@@ -379,6 +443,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "flagged.html": build_flagged(data),
         "sources.html": build_sources(data),
         "audit.html": build_audit(data),
+        "404.html": build_404(data),
         "assets/projections.json": json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
     }
 

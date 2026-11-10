@@ -6,7 +6,9 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030\u20132035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged.",
-    "last_reviewed": "2026-11-10"
+    "last_reviewed": "2026-11-10",
+    "reverified": "2026-11-10",
+    "reverified_by": "c5e199ef"
   },
   "sources": {
     "census_city": {
@@ -76,7 +78,7 @@
       "title": "Population Projections, Baseline 2024; Vintage 2026 release notes",
       "publisher": "California Department of Finance",
       "url": "https://dof.ca.gov/forecasting/demographics/projections/",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official projection"
     },
     "dof_p2a": {
@@ -439,6 +441,20 @@
       ]
     },
     {
+      "id": "pop_dof_census_2025_gap",
+      "category": "Population",
+      "measure": "DOF P-2A July 1, 2025 county level vs Census V2025 estimate",
+      "value": "DOF 9,853,435 vs Census 9,694,934; DOF higher by +158,501 (+1.63%)",
+      "geography": "Los Angeles County",
+      "period": "July 1, 2025",
+      "status": "derived",
+      "note": "Calculation: 9,853,435 − 9,694,934 = 158,501; 158,501 ÷ 9,694,934. DOF Baseline 2024 and Census Vintage 2025 are different series; the reason for the gap is not stated on the pages read and is not inferred. Do not splice or rebase.",
+      "sources": [
+        "dof_p2a",
+        "census_county"
+      ]
+    },
+    {
       "id": "income_city",
       "category": "Income",
       "measure": "Median household income",
@@ -767,11 +783,11 @@
       "id": "treasury_yields",
       "category": "Financing",
       "measure": "Treasury par yields",
-      "value": "2Y 4.51%; 5Y 4.64%; 10Y 4.86%; 30Y 5.26%",
+      "value": "2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 30Y 5.26%",
       "geography": "U.S. sovereign curve",
-      "period": "November 6, 2026",
+      "period": "November 9, 2026",
       "status": "verified",
-      "note": "Risk-free context, not a cap rate or owner discount rate.",
+      "note": "Risk-free context, not a cap rate or owner discount rate. Refreshed 2026-11-10; the prior 2026-11-06 print (10Y 4.86%) is superseded.",
       "sources": [
         "treasury"
       ]
@@ -1812,7 +1828,7 @@
       "category": "Ordinary financial risk",
       "name": "Interest-rate / cap-rate repricing",
       "mechanism": "Higher required returns can reduce value and buyer leverage.",
-      "context": "Treasury 10Y 4.86% on November 6, 2026 is context, not a cap rate.",
+      "context": "Treasury 10Y 4.88% on November 9, 2026 is context, not a cap rate.",
       "site_status": "unverified",
       "mitigation": "Stress exit cap and discount rate with evidence-backed ranges; avoid fixed-rate assumptions.",
       "sources": [
@@ -2413,6 +2429,35 @@
       "sources": [
         "sec_10k"
       ]
+    },
+    {
+      "id": "flag_dof_census_base",
+      "item": "DOF 2025 county population exceeds the Census V2025 estimate by 158,501 (+1.63%)",
+      "reason": "Found 2026-11-10 on re-read. DOF P-2A (Baseline 2024, Vintage 2026) lists 9,853,435 for 2025; Census QuickFacts lists 9,694,934 for July 1, 2025. The published DOF decline path therefore starts from a higher level than the Census-estimated one. The cause is not stated on the pages read; no explanation is inferred.",
+      "action": "Use DOF and Census only as separate series; compare growth rates, not absolute levels, until DOF's own July 1, 2025 estimate is read and reconciled. Do not blend or rebase.",
+      "sources": [
+        "dof_p2a",
+        "census_county",
+        "dof_landing"
+      ]
+    },
+    {
+      "id": "flag_git_metadata_privacy",
+      "item": "Repository commit metadata (outside website content) may expose personal contact details of the owner",
+      "reason": "The repository is public. Git author metadata on earlier commits is part of the public history. A scan of all tracked files and of the published site found no emails, phone numbers, street addresses, APNs, or SSNs; the metadata exposure is separate and was not copied into any file. Values are deliberately not reproduced here.",
+      "action": "Owner decision: enable GitHub's 'Keep my email address private' and 'Block command line pushes that expose my email' settings for future commits. Removing past exposure would require rewriting public history, which this session did not do.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_root_briefs",
+      "item": "Root markdown executive briefs vs the published dashboard",
+      "reason": "2026-11-10 repo line review: EXECUTIVE_SUMMARY.md asserts 'Renew — but renew now' with unsourced cap-rate steps (7.25%/6.50%/6.00%, +20.8%); executive_summary.md cites non-official aggregator figures and predates the verified build; both are excluded from the published artifact and contradict the published dual-track recommendation.",
+      "action": "Treat the published dashboard and README as canonical. Owner to delete or supersede the stale root briefs (and DECISION_MEMO.md/METHODOLOGY.md/RISK_REGISTER.md if inconsistent); do not merge them into the site without source-verification against primary pages.",
+      "sources": [
+        "repo"
+      ]
     }
   ],
   "audit": [
@@ -2536,6 +2581,27 @@
       "detail": "Del Taco California is 351 (94/257); Jack in the Box California is 941 (96/845) at September 28, 2025. Brand totals 2,136 (149 company; 1,986 franchise) unchanged. Row notes carry the 2026-11-10 correction date.",
       "sources": [
         "sec_10k"
+      ]
+    },
+    {
+      "id": "audit_c5e199ef_pass",
+      "check": "Independent re-verification pass (session c5e199ef, 10 Nov 2026)",
+      "result": "Re-read 24 official sources line by line against the dataset: Census city/county QuickFacts, BLS regional summary and LAUS county series, EDD county release, FRED county and metro GDP, Treasury par yields, DOF P-2A (LA County 2026–2050), SCAG Appendix I, DTLA 2040 release, LA ULA FAQ, DIR fast-food and general minimum wage, LA minimum wage notice, CA School Dashboard (LAUSD), SEC Q3 FY2026 release, FEMA NRI county service (composite, EAL, per-hazard ratings), USGS UCERF3 FAQ, CAL FIRE FHSZ acreage, CDI claims tracker. Every value matched except Treasury yields, which were refreshed to the November 9 print.",
+      "detail": "Added one derived row and one flag: DOF's 2025 level is 158,501 (+1.63%) above Census's July 2025 estimate. EDGAR filing list checked on 2026-11-09: no new Jack in the Box 8-K, 10-Q, or 10-K after the 2026-09-21 8-K, so tenant rows remain current. Not re-read this pass: the SEC 10-K California restaurant table (only the 2,136 system total was re-read), SCAG 2030/2045 rows (2019/2050 re-read), CAL FIRE 26%/35% claims, LAPD and Port status pages, IRS/FTB/BOE/Assessor guidance; those carry forward from the 2026-11-08 passes and stay as dated. Full trail in verification/2026-11-10-c5e199ef.md.",
+      "sources": [
+        "treasury",
+        "dof_p2a",
+        "census_county",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "audit_recheck_2026_11_10",
+      "check": "Independent re-verification pass, session af77a54e (2026-11-10)",
+      "result": "PASS with observations. Twelve figure groups re-read against official pages on 2026-11-10 and all match the published values exactly: Census QuickFacts Vintage 2025 (city + county), BLS Los Angeles Area Economic Summary (Nov 4, 2026; 4.5% city/county, 4.4% metro), FRED GDPALL06037 (2024: $1,002,965,029K, updated Feb 5, 2026), Treasury par yield curve (both days verified 2026-11-10: Nov 6 print 2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26; Nov 9 print 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26 — Nov 9 print published by concurrent session c5e199ef, PR #46), SEC Q3 FY2026 earnings release (SSS -1.1/-1.2/-0.9; revenue $257.7M; 2,115 units; Adj. EBITDA $61.2M), CDI Wildfire Claims Tracker (41,727 filed / 40,482 partially paid / $25.2B, updated Jul 6, 2026), LA Office of Finance Measure ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%), USGS UCERF3 FAQ (60/46/31%), OSFM 2024-2025 FHSZ acreage (LA combined Very High 769,561 of 1,177,944 acres), CDE 2026 Dashboard LAUSD (grad 87.6%; absenteeism 21.3%; ELA 13.2 below; math 40.7 below), SCAG Connect SoCal 2024 Appendix I Tables ES-1/2-1 and 3.14-8/9/10.",
+      "detail": "Gates re-run after merging concurrent 2026-11-10 session c5e199ef (PRs #46/#48): build check pass; unittest 11/11; validator PASS. Non-blocking observations: (1) no conflict markers or personal identifiers in the curated set (only public SEC accession numbers, which are not personal data); (2) Pages build_type remains legacy (admin action pending; _config.yml curation is the interim mitigation); (3) stale root markdown briefs flagged as flag_root_briefs; (4) git commit metadata may expose owner contact details (noted by c5e199ef; redacted, history not rewritten; owner decision required); (5) stale open PRs remain open for owner review. Full ledger: verification/2026-11-10-af77a54e.md.",
+      "sources": [
+        "repo"
       ]
     }
   ]
