@@ -47,6 +47,23 @@ RR-08 (resolved). Standing owner items unchanged: Pages-source admin switch (wor
 deploy), CAL FIRE 26%/35% claims remain flagged, stale PRs #5/#10/#11/#14/#18/#21/#24/#27/#33 left
 open for the owner after today's line-by-line review (report §5).
 
+**Merge conflict record (2026-11-10):** while this session's pass was in flight, sessions
+`c5e199ef` / `af77a54e` merged PRs #46–#49 to `main`, including their own 2026-11-10
+re-verification pass over the same shared dataset and generated pages. `git pull --rebase` hit
+conflicts on `data/verified-2026-11-08.json` and the generated pages. Resolution (nothing of
+theirs discarded): the dataset was semantically merged — **their version as the base** (24-source
+pass, Treasury refresh to the 11/09/2026 print, DOF-vs-Census gap row and flag, git-metadata and
+root-brief flags, `audit_c5e199ef_pass` / `audit_recheck_2026_11_10`) **plus this session's unique
+additions** (county per-capita income, poverty, CBP job-growth, county annual unemployment 5.7%
+rows; `fred_laus_annual` source; SRA FHSZ comment flag; `audit_reverify_20261110`,
+`audit_source_of_truth`, `audit_stale_pr_review`). All generated pages were then rebuilt from the
+merged dataset via `scripts/build_public.py`, which resolves page conflicts deterministically
+(283 sourced rows after merge). Their `scripts/build_public.py` header/callout changes and both of
+their verification reports are kept. Gates re-run post-merge: build check, 11 tests, validator all
+PASS. The Treasury row action in `verification/2026-11-10-8cd7cd89.md` §1 #21 was amended to record
+the adopted refresh. Rebase was abandoned in favour of a merge commit so no session's history is
+rewritten and no force-push was needed.
+
 
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
 
@@ -1064,3 +1081,74 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/c5e199ef-jack1 (claimed 2026-11-10 UTC)
+
+**Session ID:** `c5e199ef` (branch `arena/c5e199ef-jack1`; the platform fixes the branch name, so the `session-<id>/<task>` pattern cannot be used, as in earlier sessions.)
+
+**Claim check:** at claim time no other session had commits newer than 2026-11-09; the newest open PR (#33, session 1daf5a2a) was opened 2026-11-08 23:01 UTC with no later commits — more than 60 minutes stale. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are left untouched for their owners. No active claim is being overridden.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| C5-1 | Repo review: inventory, repo-wide privacy scan (tracked files + git metadata), build/test/validator gates | done | c5e199ef | `verification/2026-11-10-c5e199ef.md` (new), `scripts/build_public.py` (re-verified date in header, projections caution callout, audit footer) |
+| C5-2 | Line-by-line re-verification (2026-11-10) of published figures against official pages; update stale figures only when the official page confirms | done | c5e199ef | `data/verified-2026-11-08.json` (observations/audit/flags only), generated pages via `scripts/build_public.py` |
+| C5-3 | Final integration: regenerate, validate, link check, PR to `main`, merge, confirm Pages deploy, record | done | c5e199ef | `COORDINATION.md` (this section only), PR |
+
+Scope rules: this session edits only the files above. It does not edit `archive/`, `research/notes/*`, or other sessions' records. Personal information is never written here — only redacted irregularity notes.
+
+### Completion record — C5-1 / C5-2 (session c5e199ef, 2026-11-10 UTC)
+
+- **Sources re-read (24, all official):** Census city + county QuickFacts; BLS regional summary (updated 2026-11-04) and LAUS county series; EDD LA County release; FRED GDPALL06037 and NGMP31080; Treasury par yields (Nov 2026); DOF P-2A xlsx and landing page; SCAG Appendix I; LA City Planning DTLA 2040 release; LA Office of Finance ULA FAQ; DIR fast-food and general minimum-wage FAQs; LA Office of Wage Standards notice; CA School Dashboard (LAUSD engagement + performance); SEC Q3 FY2026 release and EDGAR filing list; FEMA NRI county feature service (composite, EAL, per-hazard); USGS UCERF3 FAQ; CAL FIRE FHSZ acreage PDF; CDI wildfire claims tracker. Per-row links: `verification/2026-11-10-c5e199ef.md`.
+- **Result:** every re-read value matched the dataset except Treasury yields, refreshed from the 2026-11-06 print to the 2026-11-09 print (2Y 4.56, 5Y 4.67, 10Y 4.88, 30Y 5.26). The 11-06 values were themselves correct.
+- **New irregularities (published on `flagged.html`):** (1) DOF P-2A's 2025 level (9,853,435) is 158,501 / +1.63% above Census's July 2025 estimate (9,694,934), cause not stated, not inferred; (2) public git commit metadata may expose the owner's personal contact details — redacted here, not reproduced anywhere; owner decision required, past history not rewritten.
+- **Privacy:** regex scan (emails, phones, APNs, street addresses, SSNs) across all tracked files incl. `archive/`, `research/`, this file — only synthetic test fixtures matched. Named press contacts and officials printed on EDD/SEC/DTLA pages were not copied; roles only.
+- **Not re-read this pass (still dated 2026-11-08):** SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance rows, 8-K governance row, CAL FIRE 26%/35% claims, LAPD/Port/EPA status pages, IRS/FTB/BOE/Assessor guidance.
+- **Gates:** `build_public.py --check`, 11 tests, `validate_site.py` (10 pages, 272 sourced rows), `_site` artifact validation, local HTTP smoke (10 pages + 3 assets = 200; `COORDINATION.md`, `data/`, `archive/`, `research/` = 404).
+- **Open PRs left untouched for owners (all >60 min stale):** #5, #10, #11, #14, #18, #21, #24, #27, #33.
+
+### PR and deploy record — C5-3 (session c5e199ef, 2026-11-10 UTC)
+
+- **PR:** #46 `arena/c5e199ef-jack1` → `main`, https://github.com/wingbangboozle1-lang/Jack1/pull/46 — merged 2026-11-10T00:34:11Z, merge commit `a72b141392cb8d55c25d7275cc1db90b334c8c7d`. Merge state was CLEAN/MERGEABLE; PR `validate` check passed before merge.
+- **Main-branch runs:** `Validate and publish the decision brief` run 42729301297 — success; `pages build and deployment` run 42729301121 — success. Pages API: `status: built`, `build_type: legacy` (`main /`; unchanged — the workflow-source switch remains unavailable to the workflow token, see existing flag).
+- **Live check (2026-11-10):** https://wingbangboozle1-lang.github.io/Jack1/flagged.html serves both new flags (DOF/Census gap; git-metadata privacy). `COORDINATION.md` on the live host returns 404, so internal records stay unpublished.
+- **Follow-up:** this record ships in docs-only PR #48 (no site/dataset change).
+
+## Session: arena/af77a54e-jack1 (2026-11-10, UTC)
+
+**Session ID:** `arena/af77a54e-jack1` (Arena-assigned fixed branch; work happens on this branch only.)
+
+### Claims (task board addendum, committed before any content work)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T28-af77a54e | Fresh independent 2026-11-10 re-verification of the canonical 10-page dashboard against official sources (BLS/Census/FRED/SEC/CAL FIRE/FEMA/etc.), repo line-by-line review (PII sweep, conflict markers, local-link integrity), live Pages deploy-state check via GitHub API | done | arena/af77a54e-jack1 | `verification/2026-11-10-af77a54e.md` (new), `COORDINATION.md` (append only), root site pages/dataset only if a verified defect is found (each logged here) | official primary pages re-read on 2026-11-10 (ledger in the verification report) | build/test/validator gates re-run; figure-by-figure re-reads recorded; deploy state checked via Pages API | To be published in the verification report and Flagged for Review if any are found |
+| T29-af77a54e | Final integration for this session: PR to main, merge, post-merge deploy confirmation, board record | in progress | arena/af77a54e-jack1 | `COORDINATION.md`, git/gh operations | n/a | gates re-run pre-merge; live deploy verified post-merge via Pages API and sentinel fetch through the repo's own tooling | None unless found; flagged items do not block per brief |
+
+Scope rules for this session: edits only the files listed above. It does not edit `archive/`, `pages/`, `site/`, `research/`, `verification/` (except its own new report), `data/`, or any other session's records, unless a verified defect forces a root-page/data fix — in which case the change is minimal, logged here, and published on Flagged for Review. No other session is identified as active at claim time (newest merged PR #45, 2026-11-08T23:36Z; branch even with `origin/main` at `9be7757`). Historical `in progress` entries above are records, not locks.
+
+**Claim time:** 2026-11-10 (UTC). Committed and pushed before any content work per protocol.
+
+
+### T28-af77a54e completion record — session af77a54e (2026-11-10)
+
+- **Deliverable:** `verification/2026-11-10-af77a54e.md` — full ledger of 12 figure groups re-read verbatim from official pages on 2026-11-10 (all exact matches), plus carried-forward items, six non-blocking irregularities, and the two dataset additions.
+- **Re-verified today (exact matches):** BLS LA Area Economic Summary (Nov 4, 2026); Census QuickFacts Vintage 2025 (city: 3,869,089 / −0.8% / $81,939 / $921,200 / 36.0% / $1,933 / 16.5% / retail $81.35B / food services $17.37B; county: 9,694,934 / −3.2%); FRED GDPALL06037 ($1,002,965,029K, updated 2026-02-05); Treasury Nov 6, 2026 curve (2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26); SEC Q3 FY2026 release (SSS −1.1/−1.2/−0.9; revenue $257.7M; 2,115 units = 149 + 1,966; Adj. EBITDA $61.2M; continuing ops $21.0M); CDI claims tracker (41,727 / 40,482 / $25.2B, updated 2026-07-06); LA Office of Finance ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%); USGS UCERF3 FAQ (60/46/31%); OSFM 2024–2025 FHSZ acreage (LA combined 330,431 / 77,951 / 769,561 / 1,177,944; derived 65.3% Very High reproduced: 769,561/1,177,944 = 0.6534); CDE 2026 Dashboard LAUSD (ELA 13.2 below/+4.6; math 40.7 below/+8.2; grad 87.6%/+1.1; absenteeism 21.3%/−0.6); SCAG Appendix I (LA pop 10,046,000→10,214,000→10,757,000→10,793,000; households 3,393,000→3,784,000→4,120,000→4,155,000; employment 5,031,000/4,942,000→5,277,000→5,497,000→5,461,000).
+- **Carried forward (not re-opened today):** DOF P-2A xlsx; SEC 10-Q XBRL / 8-K; FY2025 10-K unit geography; FEMA NRI v1.20 ArcGIS values; EDD la$pds.pdf; county LAUS levels; DTLA 2040; IRS/FTB/DIR. These were re-read verbatim on 2026-11-08 (ledgers: `verification/2026-11-08-*.md`) and their pages are unchanged; recorded as carried, not as re-verified today.
+- **Gates:** build check pass; unittest 11/11; validator PASS (10 pages, 270 rows); curated-artifact build+validate PASS; conflict-marker scan clean outside `archive/`; PII scan clean (SEC accession numbers are public filing IDs, not personal data).
+- **Changes (2 additive, no content edits):** `data/verified-2026-11-08.json` + flag `flag_root_briefs` (root markdown briefs contradict the published dual-track recommendation; excluded from artifact; owner to delete/supersede) + audit entry `audit_recheck_2026_11_10`; `flagged.html` and `audit.html` regenerated deterministically.
+- **Pages deploy state at record time:** API `status: built`, HTTPS enforced, `build_type: legacy` (main `/`) — unchanged; admin action still required to switch to GitHub Actions source (403 recorded again by session b8188ee0).
+- **Irregularities:** IRR-01..IRR-06 logged in the verification report; IRR-01 is on the Flagged for Review page. None blocks anything.
+- **PR/merge/deploy record:** see T29-af77a54e below.
+
+### Interleave note — PR #49 vs concurrent session c5e199ef (2026-11-10)
+
+`origin/main` advanced through PRs #46 and #48 (session `arena/c5e199ef-jack1`) while this session's PR #49 was open. Conflicts were resolved as follows, with **no session's work discarded**:
+
+1. **Dataset:** kept `origin/main`'s version (Treasury refreshed to the 2026-11-09 print — 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26; DOF-vs-Census derived gap row; accessed dates moved to 2026-11-10; `reverified` meta; their flags and audit entry), then re-applied this session's two additive items on top (`flag_root_briefs`; `audit_recheck_2026_11_10`, reworded to record that both the Nov 6 and Nov 9 Treasury prints were verified today and that the Nov 9 print is now published).
+2. **`flagged.html` / `audit.html`:** regenerated deterministically with `scripts/build_public.py`; no manual conflict resolution.
+3. **COORDINATION.md:** both sessions' sections retained in sequence (c5e199ef above; af77a54e below), plus this note.
+4. This session's T28 ledger text (naming the Nov 6 Treasury print) remains accurate as a record of what was read on 2026-11-10; the published figure since PR #46 is the Nov 9 print, also re-read today (10Y 4.88 confirmed on the official Treasury page).
+
+Verification report `verification/2026-11-10-af77a54e.md` updated to match the merged state.
