@@ -1116,3 +1116,20 @@ Per platform policy, this session works strictly on its assigned branch `arena/a
 ### Interleave note (2) — PR #51 vs concurrent session ac5b9087 (2026-11-10)
 
 PR #50 (`arena/ac5b9087-jack1`) merged to `main` at 2026-11-10T00:39:12Z while this session's docs-only record PR #51 was open. Conflicts in `COORDINATION.md` (both sessions appended at the tail) were resolved by retaining both sections in sequence (this session's T29 record above; ac5b9087's AC-1..AC-4 section below it). **No session's work was discarded.** This session's site content from PR #49 was carried into ac5b9087's merged build (they explicitly merged `af77a54e`'s `flag_root_briefs` and `audit_recheck_2026_11_10`). The record PR contains no site, dataset, or workflow changes.
+## Session: arena/fcc743a7-jack1 (2026-11-10 UTC) — FINAL INTEGRATION
+
+**Session ID:** `arena/fcc743a7-jack1` (fixed Arena branch; platform policy prohibits `session-*` branches — same convention as all prior sessions).
+
+### Claim (task board addendum) — committed before any content work, per protocol
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| F1 | Repo state review 2026-11-10: inventory, conflict-marker scan, orphan/nav diff, privacy (PII) scan of the published set, structural validation | claimed → in progress | arena/fcc743a7-jack1 | `verification/2026-11-10-fcc743a7.md` (new) | repository-level; no external figure asserted without a link | pending | to be recorded |
+| F2 | Fresh line-by-line re-verification (2026-11-10) of every published figure on the canonical pages against its official page; correct or flag anything not reproducible | claimed → in progress | arena/fcc743a7-jack1 | same report; canonical pages/dataset **only** if a verified error is found (every change logged here) | census.gov, bls.gov, fred.stlouisfed.org, bea.gov, scag.ca.gov, edd.ca.gov, sec.gov, usgs.gov, fema.gov, osfm.fire.ca.gov, finance.lacity.gov, insurance.ca.gov, planning.lacity.gov, cde.ca.gov, treasury.gov (re-read this session; links recorded in the report) | pending | to be published on `flagged.html` |
+| F3 | Live-site and deploy-path health check: Pages status, workflow runs, page reachability, broken-link review | claimed → in progress | arena/fcc743a7-jack1 | same report | github.com API, Pages API | pending | to be recorded |
+| F4 | Final integration: run all gates (build --check, unit tests, validator, artifact validation, local smoke), PR → main, merge, confirm GitHub Pages deploy, record PR link and merge result | claimed → in progress | arena/fcc743a7-jack1 | `COORDINATION.md` (this session's sections only), gh operations | n/a (gates + GitHub) | pending | flagged items do not block merge |
+
+### Staleness basis for this claim
+
+At claim time (2026-11-10 UTC) the newest activity on any other session branch/PR is 2026-11-08 (PRs #33, #44, #45 all merged or cold for >24 hours; open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are all stale well beyond the 60-minute rule). Historical `in progress` entries (T6 d85fba50; T19–T22 81536038; T22; T30 c9121cd5; T20 b8188ee0) are records of sessions whose merges completed or whose branches went cold; none is treated as an active file lock, consistent with the ruling recorded by session 0e369d53. Open PRs are not merged or closed without verification; archives are untouched. Scope rule: this session edits only the files listed in F1–F4 above; requests for changes to files owned elsewhere are appended here instead.
+
