@@ -1,5 +1,34 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/2eefc54d-jack1` (2026-11-10 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/2eefc54d-jack1`; platform policy
+prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used
+as the integration branch (as prior sessions did). Only `arena/2eefc54d-jack1` is pushed.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `9be7757` (PR #43 merge,
+2026-11-08T23:42:08Z). `gh api` showed no branch, PR, or Actions run newer than that commit;
+the newest open PR (#27) was last updated 2026-11-08T23:15:57Z. Every prior `in progress` entry
+is more than 24 hours old with no commits, exceeding the 60-minute takeover rule. No active
+session's lock is overridden; all historical records and open PRs are preserved, not discarded
+or merged without verification. If a prior session resumes, coordinate here before editing the
+canonical files listed below.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| V-1 | Fresh 2026-11-10 line-by-line verification of every published table row against its linked official source; correct or blank-and-flag anything not reproducible; privacy scan of the whole public artifact; irregularity log with links | in progress | arena/2eefc54d-jack1 | `verification/2026-11-10-2eefc54d.md` (new), `research/verification-2026-11-10-2eefc54d.md` (new) |
+| V-2 | Final integration: dataset + generated canonical pages, category navigation, executive summary, flagged page, build/link/privacy gates | unclaimed (reserved for this session after V-1) | arena/2eefc54d-jack1 | `data/verified-2026-11-08.json`, canonical root `*.html`, `assets/styles.css`, `assets/site.js`, `assets/projections.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/`, `_config.yml`, `.github/workflows/pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`, this board |
+| V-3 | PR from this integration branch → `main`, merge, Pages deploy confirmation, publication record | unclaimed (reserved for this session after V-2) | arena/2eefc54d-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`,
+`verification/2026-*`, or any other session's report is edited. Shared outputs (table data,
+index, navigation) are changed only in V-2 after V-1 finishes. Requests requiring another
+session's file are logged here instead of edited. Small frequent commits; `git pull --rebase`
+before every push; conflicts stop and are resolved without discarding other sessions' work.
+
+Claimed at: 2026-11-10 (UTC). Commit + push of this claim precedes all content work.
+
+
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
 
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
