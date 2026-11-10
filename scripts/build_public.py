@@ -267,6 +267,14 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
 {''.join(scag_tables)}
 <div class="section-heading"><div><p class="eyebrow">Planning divergence</p><h2>DOF versus SCAG county population</h2><p>The gap is a planning-model difference, not a confidence interval and not a parcel demand forecast.</p></div></div>
 {table("agency-comparison", "Official county population milestones compared.", ["Year", "DOF", "SCAG", "SCAG − DOF", "Difference vs DOF", "Official sources"], comp_rows)}
+<div class="section-heading"><div><p class="eyebrow">Financing sensitivity</p><h2>Why the exit window matters: verified rate arithmetic</h2><p>No capitalisation rate is assumed here. The table shows the only financing facts that are officially published, and what each one does to a buyer's bid arithmetic.</p></div></div>
+{table("financing-sensitivity", "Verified financing inputs and their mechanical effect on an exit.", ["Verified input", "Official value", "Mechanical effect on an exit", "What is still unverified", "Official source"], [
+  ["10-year Treasury, 12-month change", "4.11% (2025-11-06) → 4.86% (2026-11-06); +75 bp", "A buyer financing with debt has a higher cost of capital than a year ago. For a given net operating income, a constant spread over the risk-free rate implies a lower supportable price.", "This property's actual debt terms, buyer financing, and the market spread.", source_links(data, ["fred_dgs10", "treasury"])],
+  ["10-year Treasury, six-month range", "Low 4.38% (2026-06-26); high 5.31% (2026-10-05); range 93 bp", "Rate volatility widens the gap between a negotiated price and an executable closing, and can break a buyer's financing during diligence.", "Whether any specific buyer is rate-locked and for how long.", source_links(data, ["fred_dgs10"])],
+  ["Yield curve level and shape", "2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 30Y 5.26% (2026-11-09)", "A positively sloped curve makes long-dated borrowing more expensive than short-dated borrowing, which penalises long-lease pricing relative to short-lease pricing.", "The property's own lease term and the buyer's hold period.", source_links(data, ["treasury"])],
+  ["CPI-U, U.S. city average", "+3.7% year-over-year (Sep 2026, published); NSA index check +3.74%", "If contract escalations are below this, real rent is falling. If they are CPI-linked, this measures the escalation the tenant is actually paying.", "The escalations actually written into this lease.", source_links(data, ["fred_cpi", "bls_summary"])],
+  ["LOS ANGELES CPI-U", "All items +3.7% year-over-year (Sep 2026)", "Local inflation is the relevant comparator for a local escalation clause, not the national print.", "Whether this lease escalates on CPI, a fixed bump, or nothing.", source_links(data, ["bls_summary"])],
+])}
 <div class="section-heading"><div><p class="eyebrow">SCAG regional sector jobs</p><h2>Six-county SCAG region, 2022–2050</h2><p>Regional sector context only. Manufacturing printed percentage is withheld because it conflicts with its endpoints.</p></div></div>
 {table("sector-projection", "SCAG regional sector job endpoints and derived arithmetic.", ["Sector", "Jobs 2022 → 2050", "Derived change", "Derived CAGR", "Published change / flag", "Official source"], sector_rows)}
 <div class="section-heading"><div><p class="eyebrow">Symbolic stress tests</p><h2>Lease and ownership stresses without invented magnitudes</h2><p>Magnitudes and probabilities stay blank until evidence exists. These formulas define what must be measured.</p></div></div>
@@ -291,6 +299,14 @@ def build_decision(data: dict[str, Any]) -> str:
 <section class="hero"><p class="eyebrow">Provisional recommendation</p><h2>Dual-track now; choose only after evidence.</h2><p>{e(data['meta']['recommendation'])}</p></section>
 <div class="section-heading"><div><p class="eyebrow">Path comparison</p><h2>Sell, renew, hold, and related alternatives</h2></div></div>
 {table("decision-paths", "Decision paths, conditions, tradeoffs, and required evidence.", ["Path", "When it can win", "Tradeoffs", "Required evidence", "Provisional view", "Official source"], rows)}
+<div class="section-heading"><div><p class="eyebrow">Decision rule</p><h2>Sell or renew: the test that must be passed</h2><p>This is the arithmetic the decision reduces to. Every input on the left is blank until the private lease, tax, title, and appraisal file exists; the rule can be written now, and it cannot be evaluated honestly until then.</p></div></div>
+{table("decision-rule", "Explicit sell-versus-renew rule with inputs that must be verified first.", ["Term", "What it means", "Input required", "Status", "Official source"], [
+  ["Net sale proceeds today", "Executed sale price, minus selling costs, minus transfer taxes, minus debt payoff, minus income tax on the gain.", "Appraisal/BOV, title, debt payoff statement, tax basis and entity, broker commission, ULA and county transfer tax.", badge("unverified"), source_links(data, ["ula", "irs_544", "ftb_capgains", "treasury"])],
+  ["After-tax exchange proceeds", "Proceeds rolled into a qualifying replacement under section 1031, deferring rather than eliminating the gain.", "Qualified intermediary, replacement list, 45-day identification, 180-day receipt, California conformity.", badge("unverified"), source_links(data, ["irs_8824", "ftb_capgains"])],
+  ["Risk-adjusted hold value", "Present value of contract rent plus renewal or re-tenanting value, minus owner costs, capital, downtime, and hazard exposure, discounted at a verified rate.", "Lease rent/escalations, NNN scope, capital plan, insurance, vacancy and downtime evidence, discount rate.", badge("unverified"), source_links(data, ["sec_10k", "fema_county_query", "treasury"])],
+  ["Funding cost trend (verified)", "A buyer's borrowing cost sets the bid. A 75 bp rise in the 10-year yield over the last twelve months widens the gap between a negotiated price and an executable closing.", "Dated Treasury observations; not this property's mortgage rate.", badge("derived"), source_links(data, ["fred_dgs10", "treasury"])],
+  ["<strong>Rule</strong>", "Sell when verified after-tax net sale proceeds exceed risk-adjusted hold value, or when concentration, liquidity, or hazard risk is unacceptable. Renew when the verified obligor, market-supported terms, and enforceable guaranty make extended-term value exceed net sale proceeds. Otherwise preserve optionality and fund a re-tenanting fallback.", "All inputs above, verified. No input may be assumed.", badge("analysis"), source_links(data, ["irs_544", "sec_10q", "treasury"])],
+])}
 <div class="section-heading"><div><p class="eyebrow">Objective balance</p><h2>Preservation, growth, and risk control</h2></div></div>
 {table("objective-balance", "How the recommendation balances the stated objectives.", ["Objective", "Application", "Official source"], balance)}
 <div class="section-heading"><div><p class="eyebrow">Execution sequence</p><h2>Next steps that do not require guessing</h2></div></div>
@@ -365,6 +381,20 @@ def build_audit(data: dict[str, Any]) -> str:
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
 
 
+def build_not_found(data: dict[str, Any]) -> str:
+    """Custom 404 page, generated from the same NAV list so it cannot drift from the real pages."""
+    items = "".join(
+        f'<li><a href="{e(href)}">{e(label)}</a></li>' for href, label in NAV
+    )
+    body = f"""
+<div class="callout"><h3>This address is not part of the published dashboard</h3><p>The brief is published as {len(PAGES)} pages. Every published page is listed below; anything else returns this page. Historical builds, research notes, and archived drafts are kept in the repository but are intentionally not published.</p></div>
+<div class="section-heading"><div><p class="eyebrow">Navigation</p><h2>Published pages</h2></div></div>
+<ul class="action-list">{items}</ul>
+<p class="small muted">If you reached this page from a link inside the dashboard, that link is a defect. Report it through the repository issues page: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">repository</a>.</p>
+"""
+    return layout(data, "", "Page not found", "This address is not part of the published decision dashboard.", body)
+
+
 def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
     data = data or load_data()
     payload = build_projection_payload(data)
@@ -379,6 +409,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "flagged.html": build_flagged(data),
         "sources.html": build_sources(data),
         "audit.html": build_audit(data),
+        "404.html": build_not_found(data),
         "assets/projections.json": json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
     }
 
@@ -413,10 +444,10 @@ def main() -> int:
         for asset in ("styles.css", "site.js"):
             shutil.copyfile(ROOT / "assets" / asset, args.out / "assets" / asset)
         (args.out / ".nojekyll").write_text("", encoding="utf-8")
-        print(f"Wrote curated artifact to {args.out} ({len(PAGES)} pages).")
+        print(f"Wrote curated artifact to {args.out} ({len(PAGES)} pages + 404.html).")
         return 0
     write_outputs(outputs, ROOT)
-    print(f"Wrote {len(PAGES)} canonical pages and assets/projections.json.")
+    print(f"Wrote {len(PAGES)} canonical pages, 404.html, and assets/projections.json.")
     return 0
 
 

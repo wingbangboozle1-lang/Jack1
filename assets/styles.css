@@ -103,3 +103,7 @@ tbody tr:hover { background: #fafbff; }
   .table-wrap { overflow: visible; border: 0; }
   th { position: static; }
 }
+
+/* ---- Row filter feedback ---- */
+.filter-count { white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.is-filtered caption::after { content: " · filtered"; color: var(--muted, #64748b); }

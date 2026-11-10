@@ -28,7 +28,6 @@ exclude:
   - METHODOLOGY.md
   - RISK_REGISTER.md
   - executive_summary.md
-  - 404.html
   - economy.html
   - geography.html
   - income.html

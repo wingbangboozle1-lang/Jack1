@@ -5,7 +5,9 @@
     "title": "Jack in the Box NNN decision brief — central Los Angeles area",
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
-    "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged."
+    "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged.",
+    "reverified": "2026-11-10",
+    "reverified_by": "session arena/f046010e-jack1"
   },
   "sources": {
     "census_city": {
@@ -343,6 +345,20 @@
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
       "accessed": "2026-11-08",
       "kind": "issuer filing"
+    },
+    "fred_cpi": {
+      "title": "Consumer Price Index for All Urban Consumers: All Items in U.S. city average, not seasonally adjusted (CPIAUCNS)",
+      "publisher": "U.S. Bureau of Labor Statistics via FRED, Federal Reserve Bank of St. Louis",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCNS",
+      "accessed": "2026-11-10",
+      "kind": "official index series"
+    },
+    "fred_dgs10": {
+      "title": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (DGS10), daily",
+      "publisher": "U.S. Department of the Treasury via FRED, Federal Reserve Bank of St. Louis",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
+      "accessed": "2026-11-10",
+      "kind": "official rate series"
     }
   },
   "observations": [
@@ -1272,6 +1288,73 @@
       "note": "Regional driver; no port volume is assigned to this site's traffic.",
       "sources": [
         "port_stats"
+      ]
+    },
+    {
+      "id": "yield_10y_change",
+      "category": "Financing",
+      "measure": "10-year Treasury yield over 12 months",
+      "value": "4.86% on 2026-11-06 vs 4.11% on 2025-11-06; +75 basis points",
+      "geography": "U.S. Treasury constant maturity",
+      "period": "2025-11-06 to 2026-11-06",
+      "status": "derived",
+      "note": "Calculation: 4.86 − 4.11 = 0.75 percentage points, from the daily DGS10 series. A buyer's financing cost is a direct input to bid price; this is not this property's mortgage rate and not a cap rate.",
+      "sources": [
+        "fred_dgs10",
+        "treasury"
+      ]
+    },
+    {
+      "id": "yield_10y_range",
+      "category": "Financing",
+      "measure": "10-year Treasury yield range over the prior six months",
+      "value": "Low 4.38% (2026-06-26); high 5.31% (2026-10-05); range 93 bp",
+      "geography": "U.S. Treasury constant maturity",
+      "period": "2026-06-01 to 2026-11-06",
+      "status": "derived",
+      "note": "Calculation: 5.31 − 4.38 = 0.93 percentage points, from the daily DGS10 series over 2026-06-01 to 2026-11-06. Rate volatility widens the gap between a negotiated price and an executable closing.",
+      "sources": [
+        "fred_dgs10"
+      ]
+    },
+    {
+      "id": "cpi_yoy_us",
+      "category": "Inflation",
+      "measure": "U.S. CPI-U all items, year-over-year",
+      "value": "+3.7% (published by BLS); NSA index check +3.74%",
+      "geography": "U.S. city average",
+      "period": "September 2026 vs September 2025",
+      "status": "derived",
+      "note": "Calculation: 336.940 (Sep 2026) ÷ 324.800 (Sep 2025) − 1 = +3.74%, from the not-seasonally-adjusted CPIAUCNS series, which is the correct basis for a same-month year-over-year comparison and matches the +3.7% the BLS Los Angeles summary prints at one decimal for the U.S. city average. The seasonally adjusted series is not substituted because it answers a different question.",
+      "sources": [
+        "fred_cpi",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "tenant_lease_obligation",
+      "category": "Tenant",
+      "measure": "Issuer's own description of lease obligations at closed locations",
+      "value": "If a restaurant closes in a leased location, the issuer may remain obligated for base rent for the balance of the lease term; at expiry it may be unable to renew without substantial additional cost",
+      "geography": "Issuer-wide (Form 10-K FY2025, Item 1A)",
+      "period": "FY2025 filed 2025-11-19",
+      "status": "verified",
+      "note": "This cuts both ways for a landlord: the same clause that keeps a dark unit paying rent caps the landlord's ability to re-tenant before expiry. Read the actual lease assignment and dark-store clauses.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "tenant_hazard_geography",
+      "category": "Tenant",
+      "measure": "Issuer concentration in California and Texas",
+      "value": "Approximately 70% of systemwide restaurants are located in California and Texas",
+      "geography": "Issuer-wide (Form 10-K FY2025, Item 1/Item 1A)",
+      "period": "FY2025 filed 2025-11-19",
+      "status": "verified",
+      "note": "The issuer names severe weather, earthquakes, and wildfires as risk factors and ties the exposure to this concentration. Brand-level resilience to a regional shock is therefore not diversified away.",
+      "sources": [
+        "sec_10k"
       ]
     }
   ],
@@ -2403,6 +2486,25 @@
         "repo",
         "repo_line_audit"
       ]
+    },
+    {
+      "id": "flag_404_custom_page",
+      "item": "Custom 404 page was not being served",
+      "reason": "_config.yml excluded 404.html from the legacy Pages build, so any mistyped or retired URL returned GitHub's default error page with no route back to the dashboard.",
+      "action": "Fixed 10 Nov 2026: 404.html is now generated by the builder and published. Verified against a deliberately invalid URL.",
+      "sources": [
+        "live",
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_orphan_unpublished_drafts",
+      "item": "Unpublished root drafts and unused assets retained in the repository",
+      "reason": "economy.html, geography.html, income.html, jobs.html, population.html, repo-review.html, schools.html, tenant.html, model.html, projection.html and risk.html are excluded from publication, as are assets/app.js, assets/model.js and assets/style.css. They are kept for traceability but serve no public purpose and remain a source of drift.",
+      "action": "Left in place deliberately: deleting another session's historical records is out of scope. A future consolidation session may archive them under archive/ once no session references them.",
+      "sources": [
+        "repo"
+      ]
     }
   ],
   "audit": [
@@ -2502,6 +2604,36 @@
         "census_city",
         "sec_10q",
         "fema_county_query"
+      ]
+    },
+    {
+      "id": "audit_reverify_20261110",
+      "check": "Independent line-by-line re-verification (10 Nov 2026)",
+      "result": "71 of 71 published observations re-read at their own official URL and matched exactly: 0 contradictions, 0 corrections, 0 invented values. Five decision-relevant rows added from official sources.",
+      "detail": "Report: research/verification-2026-11-10.md. Freshness of every series was re-checked; only the Treasury yield series had newer observations, so the page keeps a dated snapshot and now also shows the 12-month change.",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    },
+    {
+      "id": "audit_404_defect",
+      "check": "Site-level defect: missing custom 404",
+      "result": "Fixed 10 Nov 2026. GitHub Pages served its default error page because 404.html was excluded from publication by _config.yml.",
+      "detail": "The stale 404.html was regenerated from the page list and the exclusion removed, so a mistyped URL now lands on a real navigation page. Re-checked against a deliberately invalid URL.",
+      "sources": [
+        "live",
+        "repo"
+      ]
+    },
+    {
+      "id": "audit_stale_404_content",
+      "check": "Site-level defect: stale 404 content",
+      "result": "Fixed 10 Nov 2026. The previous 404 page claimed the brief was 'seventeen pages' and linked six pages that are excluded from publication and return 404.",
+      "detail": "The page is now generated from the same navigation list as the dashboard, so it cannot drift again.",
+      "sources": [
+        "repo",
+        "live"
       ]
     }
   ]
