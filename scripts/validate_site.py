@@ -20,7 +20,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from projection_model import build_projection_payload, load_data  # noqa: E402
 
 PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
-PUBLIC_FILES = set(PAGES) | {"assets/styles.css", "assets/site.js", "assets/projections.json", ".nojekyll"}
+PUBLIC_FILES = set(PAGES) | {"404.html", "assets/styles.css", "assets/site.js", "assets/projections.json", ".nojekyll"}
+LEGACY_EXCLUDED_PAGES = ("economy.html", "geography.html", "income.html", "jobs.html", "population.html", "repo-review.html", "schools.html", "tenant.html", "model.html", "projection.html", "risk.html")
 
 ALLOWED_HOSTS = {
     "www.census.gov", "census.gov",
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = {
     "scag.ca.gov", "www.scag.ca.gov",
     "planning.lacity.gov", "finance.lacity.gov", "wagesla.lacity.gov",
     "portal.assessor.lacounty.gov", "assessor.lacounty.gov",
+    "www.lavote.gov", "lavote.gov",
     "www.boe.ca.gov", "boe.ca.gov",
     "www.ftb.ca.gov", "ftb.ca.gov",
     "www.irs.gov", "irs.gov",
@@ -42,17 +44,20 @@ ALLOWED_HOSTS = {
     "www.fema.gov", "fema.gov", "hazards.fema.gov",
     "fema.maps.arcgis.com",
     "www.usgs.gov", "usgs.gov", "pubs.usgs.gov", "earthquake.usgs.gov",
+    "www.conservation.ca.gov", "conservation.ca.gov",
     "osfm.fire.ca.gov", "www.fire.ca.gov", "fire.ca.gov",
     "www.insurance.ca.gov", "insurance.ca.gov",
     "www.lapdonline.org", "lapdonline.org",
+    "www.metro.net", "metro.net",
     "www.epa.gov", "epa.gov",
     "www.portoflosangeles.org", "portoflosangeles.org",
     "github.com", "wingbangboozle1-lang.github.io",
 }
-# Official hosted services are allowed only for the specific FEMA/CAL FIRE resources used.
+# Official hosted services are allowed only for the specific FEMA/CAL FIRE/LAPD resources used.
 ALLOWED_HOST_PATH_PREFIXES = {
     "services.arcgis.com": ["/XG15cJAlne2vxtgt/"],
     "34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net": ["/-/media/osfm-website/"],
+    "lapdonlinestrgeacc.blob.core.usgovcloudapi.net": ["/lapdonlinemedia/"],
     "github.com": ["/wingbangboozle1-lang/Jack1"],
     "wingbangboozle1-lang.github.io": ["/Jack1/"],
 }
@@ -83,9 +88,12 @@ class PageParser(HTMLParser):
         self.nav_links: list[str] = []
         self._in_nav = False
         self.tables = 0
+        self.nonempty_input_values: list[str] = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == "input" and a.get("type", "").lower() != "search" and a.get("value", "").strip():
+            self.nonempty_input_values.append(a.get("id", "input"))
         if "id" in a:
             self.ids.add(a["id"])
         if tag == "a" and "href" in a:
@@ -219,6 +227,32 @@ def validate(site: Path, artifact: bool = False) -> list[str]:
         for nav in PAGES:
             if nav not in parser.nav_links:
                 errors.append(f"{page}: nav missing {nav}")
+        if parser.nonempty_input_values:
+            errors.append(f"{page}: worksheet/non-search input must start blank: {parser.nonempty_input_values}")
+    # Validate canonical 404.html
+    err_path = site / "404.html"
+    if not err_path.exists():
+        errors.append("missing 404.html")
+    else:
+        err_text = err_path.read_text(encoding="utf-8")
+        err_hits = privacy_hits(err_text)
+        if err_hits:
+            errors.append(f"404.html: privacy/conflict hits {err_hits}")
+        ep = PageParser()
+        ep.feed(err_text)
+        for p_name in PAGES:
+            if p_name not in ep.links:
+                errors.append(f"404.html: missing canonical link {p_name}")
+        for legacy in LEGACY_EXCLUDED_PAGES:
+            if legacy in ep.links or legacy in err_text:
+                errors.append(f"404.html: references excluded legacy page {legacy}")
+        for href in ep.links:
+            if href.startswith(("http://", "https://")) and not allowed_external(href):
+                errors.append(f"404.html: external link not allowlisted: {href}")
+            elif not href.startswith(("http://", "https://", "mailto:", "tel:", "#")):
+                target = (err_path.parent / unquote(href.split("#")[0])).resolve()
+                if not target.exists():
+                    errors.append(f"404.html: broken local link {href}")
     # Dataset integrity
     source_ids = set(data["sources"])
     for collection in ("observations", "property_fields", "decisions", "risks", "requirements", "flags", "audit"):

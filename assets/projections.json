@@ -1,7 +1,7 @@
 {
   "meta": {
-    "date": "2026-11-08",
-    "session": "0e369d53; integration + re-verification pass arena/8cd7cd89 (2026-11-10)",
+    "date": "2026-11-10",
+    "session": "ac5b9087; integration arena/8cd7cd89 merge (2026-11-10): county QuickFacts/unemployment rows, fred_laus_annual, SRA FHSZ comment flag, three audit entries",
     "method": "official inputs + transparent arithmetic; no interpolation or parcel extrapolation"
   },
   "dof": {
