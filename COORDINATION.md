@@ -1340,3 +1340,25 @@ the corrections above before any merge, or they will re-introduce the withdrawn 
 **Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
 `unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
 local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
+
+## K-4 result — final integration and deployment — session `arena/8d46ab6c-jack1`, 2026-11-10 (UTC)
+
+| Step | Result |
+|---|---|
+| PR | [#57](https://github.com/wingbangboozle1-lang/Jack1/pull/57) — base `main` ← `arena/8d46ab6c-jack1` |
+| Merge | **MERGED** 2026-11-10T06:16:24Z, merge commit `dd0705c864441b77d815d9203fa3c3968f75077e` (owner approval not waited for, per instructions) |
+| CI | "Validate and publish the decision brief" on `main`: **success** |
+| Pages | `pages-build-deployment` on `main`: **success**; Pages API `status: built`, `build_type: legacy` |
+| Live URL | https://wingbangboozle1-lang.github.io/Jack1/ |
+| Live check | Root, `property.html`, `market.html`, `flagged.html` re-fetched after deploy: corrected values are live (LAUSD "497,105 students; 81,328 English Learners (16.4%)" with no FRPM figure; "1,938" robbery; franchise rent "$73.02M … $242.53M"; 33 flag rows including the four new ones) |
+
+**Task board status:** K-1 done · K-2 done · K-3 done · K-4 done. This session's work on the shared
+dataset and canonical pages is complete; no further edits are planned from this session, so the
+integration scope is free for the next session.
+
+**Open items left for the owner / next session (all published on Flagged for Review):** parcel and
+lease identity; legal tenant/guarantor; rent, value, debt, tax basis, insurance, condition; CDE
+DataQuest confirmation of the LAUSD FRPM count; re-derivation of the franchise rental-revenue YoY
+change from 10-Q R12; USGS pages (unreachable 2026-11-10); reconciliation of unmerged PRs #47/#54/#56
+before any merge — **#54 in particular would re-introduce the three withdrawn values if merged
+naively**; and GitHub commit-metadata privacy settings for future commits.
