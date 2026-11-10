@@ -2,7 +2,7 @@ path	classification	published	lines	bytes	pii_or_conflict_scan	notes	github_url
 .github/workflows/pages.yml	ci-workflow	no	77	2356	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/.github/workflows/pages.yml
 .gitignore	legacy-excluded	no	3	29	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/.gitignore
 404.html	curated-public	yes	37	1706	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/404.html
-COORDINATION.md	internal-docs-excluded	no	1034	121720	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/COORDINATION.md
+COORDINATION.md	internal-docs-excluded	no	1066	126690	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/COORDINATION.md
 DECISION_MEMO.md	legacy-excluded	no	148	9275	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/DECISION_MEMO.md
 EXECUTIVE_SUMMARY.md	legacy-excluded	no	154	8724	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/EXECUTIVE_SUMMARY.md
 METHODOLOGY.md	legacy-excluded	no	90	4630	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/METHODOLOGY.md
@@ -93,7 +93,7 @@ assets/projections.json	curated-public	yes	595	16127	clean	No PII or conflict ma
 assets/site.js	curated-public	yes	151	6620	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/site.js
 assets/style.css	legacy-excluded	no	170	10054	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/style.css
 assets/styles.css	curated-public	yes	116	9075	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/assets/styles.css
-audit.html	curated-public	yes	63	15085	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/audit.html
+audit.html	curated-public	yes	64	17544	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/audit.html
 data/assumptions.json	legacy-excluded	no	125	4852	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/assumptions.json
 data/facts.json	legacy-excluded	no	142	32888	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/facts.json
 data/model.json	legacy-excluded	no	3274	101402	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/model.json
@@ -102,17 +102,17 @@ data/records.json	legacy-excluded	no	1963	75342	phone(19)	10-digit ID/FIPS/CIK/S
 data/risks.json	legacy-excluded	no	230	13630	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/risks.json
 data/scenarios.json	legacy-excluded	no	85	2560	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/scenarios.json
 data/sources.json	legacy-excluded	no	206	10489	phone(5)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/sources.json
-data/verified-2026-11-08.json	curated-dataset	no	2508	92122	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-08.json
-data/verified-2026-11-10.json	curated-dataset	no	2958	114572	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-10.json
+data/verified-2026-11-08.json	curated-dataset	no	2556	96017	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-08.json
+data/verified-2026-11-10.json	curated-dataset	no	3017	119710	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/data/verified-2026-11-10.json
 decision.html	curated-public	yes	97	20644	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/decision.html
 economy.html	legacy-excluded	no	47	12550	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/economy.html
 executive_summary.md	legacy-excluded	no	122	11225	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/executive_summary.md
-flagged.html	curated-public	yes	66	18019	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/flagged.html
+flagged.html	curated-public	yes	69	21780	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/flagged.html
 geography.html	legacy-excluded	no	47	11170	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/geography.html
 income.html	legacy-excluded	no	47	11799	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/income.html
 index.html	curated-public	yes	67	13557	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/index.html
 jobs.html	legacy-excluded	no	47	13619	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/jobs.html
-market.html	curated-public	yes	100	34714	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/market.html
+market.html	curated-public	yes	101	35950	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/market.html
 model/model.py	legacy-excluded	no	458	22163	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/model/model.py
 pages/decision.html	historical-excluded	no	173	14680	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/decision.html
 pages/demographics.html	historical-excluded	no	101	12533	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/demographics.html
@@ -127,12 +127,12 @@ pages/real-estate.html	historical-excluded	no	106	13128	phone(1)	10-digit ID/FIP
 pages/risks.html	historical-excluded	no	114	13992	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/risks.html
 pages/sources.html	historical-excluded	no	121	14939	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/pages/sources.html
 population.html	legacy-excluded	no	47	11189	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/population.html
-projections.html	curated-public	yes	113	32611	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/projections.html
-property.html	curated-public	yes	101	36628	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/property.html
+projections.html	curated-public	yes	114	33052	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/projections.html
+property.html	curated-public	yes	101	36926	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/property.html
 repo-review.html	legacy-excluded	no	47	13119	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/repo-review.html
 requirements.html	curated-public	yes	59	15347	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/requirements.html
 research/0e369d53/source-notes.md	internal-docs-excluded	no	172	19748	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/0e369d53/source-notes.md
-research/2026-11-10-ac5b9087/source-notes.md	internal-docs-excluded	no	57	11135	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/2026-11-10-ac5b9087/source-notes.md
+research/2026-11-10-ac5b9087/source-notes.md	internal-docs-excluded	no	57	11304	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/2026-11-10-ac5b9087/source-notes.md
 research/VERIFICATION-LOG.md	internal-docs-excluded	no	35	3334	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/VERIFICATION-LOG.md
 research/area.md	internal-docs-excluded	no	87	4483	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/area.md
 research/labor.md	internal-docs-excluded	no	65	3762	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/research/labor.md
@@ -155,7 +155,7 @@ risks/risk_analysis.md	historical-excluded	no	117	10710	clean	No PII or conflict
 schools.html	legacy-excluded	no	47	10978	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/schools.html
 scripts/build-data.mjs	legacy-excluded	no	348	38824	phone(2)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build-data.mjs
 scripts/build_pages.py	legacy-excluded	no	1486	134011	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build_pages.py
-scripts/build_public.py	active-script	no	488	39310	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build_public.py
+scripts/build_public.py	active-script	no	489	39897	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/build_public.py
 scripts/projection_model.py	active-script	no	211	8155	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/projection_model.py
 scripts/validate_site.py	active-script	no	315	13634	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/validate_site.py
 scripts/verify-data.mjs	active-script	no	28	1379	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/scripts/verify-data.mjs
@@ -167,7 +167,7 @@ site/property_data.html	historical-excluded	no	344	19491	clean	No PII or conflic
 site/risk_analysis.html	historical-excluded	no	403	22076	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/site/risk_analysis.html
 sources.html	curated-public	yes	118	33959	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/sources.html
 tenant.html	legacy-excluded	no	47	12730	phone(4)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tenant.html
-tests/test_projection_and_site.py	active-test	no	135	6271	email(1),phone(1),apn(1)	Synthetic unit-test fixtures for privacy/conflict regex validation.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tests/test_projection_and_site.py
+tests/test_projection_and_site.py	active-test	no	162	7556	email(1),phone(1),apn(1)	Synthetic unit-test fixtures for privacy/conflict regex validation.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tests/test_projection_and_site.py
 tools/build.py	legacy-excluded	no	987	59380	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tools/build.py
 tools/check.py	legacy-excluded	no	249	9481	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/tools/check.py
 verification/2026-11-07-aa4a9fab.md	internal-docs-excluded	no	105	11018	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-07-aa4a9fab.md
@@ -177,6 +177,7 @@ verification/2026-11-08-81536038.md	internal-docs-excluded	no	286	18658	phone(3)
 verification/2026-11-08-857537b4.md	internal-docs-excluded	no	99	28980	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-857537b4.md
 verification/2026-11-08-9dce30d0.md	internal-docs-excluded	no	78	10962	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-9dce30d0.md
 verification/2026-11-08-c9121cd5.md	internal-docs-excluded	no	89	14769	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-08-c9121cd5.md
-verification/2026-11-10-ac5b9087.md	internal-docs-excluded	no	42	7838	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-ac5b9087.md
+verification/2026-11-10-ac5b9087.md	internal-docs-excluded	no	42	8246	phone(3)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-ac5b9087.md
+verification/2026-11-10-c5e199ef.md	internal-docs-excluded	no	65	9434	phone(1)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-10-c5e199ef.md
 verification/repository-line-audit-0e369d53.tsv	internal-docs-excluded	no	177	69222	phone(18)	10-digit ID/FIPS/CIK/SHA false positives only (no phone numbers).	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-0e369d53.tsv
 verification/repository-line-audit-2026-11-10.tsv	internal-docs-excluded	no	164	32322	clean	No PII or conflict markers detected.	https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-2026-11-10.tsv

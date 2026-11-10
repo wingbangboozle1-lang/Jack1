@@ -124,11 +124,38 @@ class BuildAndValidationTests(unittest.TestCase):
     def test_2026_11_10_dataset_enrichment(self):
         data = pm.load_data()
         self.assertEqual(data["meta"]["date"], "2026-11-10")
-        obs_ids = {o["id"] for o in data["observations"]}
-        for required in ("tenant_ard_wall", "tenant_ar_allowance", "dtt_combined_stack", "openfema_declarations_la", "pop_dof_city_2026", "wage_state_2027"):
-            self.assertIn(required, obs_ids)
+        obs = {o["id"]: o for o in data["observations"]}
+        for required in (
+            "tenant_ard_wall",
+            "tenant_ar_allowance",
+            "dtt_combined_stack",
+            "openfema_declarations_la",
+            "pop_dof_city_2026",
+            "wage_state_2027",
+            "pop_dof_census_2025_gap",
+        ):
+            self.assertIn(required, obs)
+        # Ensure FY2025 10-K Item 2 California unit count uses Jack in the Box (941 / 44.1%), not Del Taco (351).
+        self.assertIn("941", obs["tenant_ca_2025"]["value"])
+        self.assertNotIn("351", obs["tenant_ca_2025"]["value"])
+        self.assertIn("44.1%", obs["tenant_ca_share"]["value"])
+        # Ensure merged c5e199ef flags/audit entries and caution callout remain preserved.
+        flag_ids = {f["id"] for f in data["flags"]}
+        self.assertTrue({"flag_dof_census_base", "flag_git_metadata_privacy", "flag_ca_units_correction"}.issubset(flag_ids))
+        audit_ids = {a["id"] for a in data["audit"]}
+        self.assertTrue({"audit_c5e199ef_pass", "audit_ac5b9087_pass"}.issubset(audit_ids))
         for sid, src in data["sources"].items():
             self.assertTrue(validate_site.allowed_external(src["url"]), (sid, src["url"]))
+
+    def test_merged_callout_and_verification_logs_present(self):
+        outputs = build_public.render_all()
+        self.assertIn("Caution: DOF level vs Census estimate", outputs["projections.html"])
+        for log_name in (
+            "verification/2026-11-10-ac5b9087.md",
+            "verification/2026-11-10-c5e199ef.md",
+            "verification/2026-11-08-0e369d53.md",
+        ):
+            self.assertIn(log_name, outputs["audit.html"])
 
 
 if __name__ == "__main__":

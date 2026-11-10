@@ -130,7 +130,7 @@ def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str
     <div class="main-column">
       <header class="topbar">
         <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button>
-        <span class="crumb">Verified dashboard · {e(data['meta']['date'])}</span>
+        <span class="crumb">Verified dashboard · {e(data['meta']['date'])}{(' · re-verified ' + e(data['meta']['reverified'])) if data['meta'].get('reverified') else ''}</span>
       </header>
       <main id="main-content" class="content">
         <header class="page-intro"><p class="eyebrow">{e(data['meta']['title'])}</p><h1>{e(title)}</h1><p class="lead">{e(subtitle)}</p></header>
@@ -261,6 +261,7 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
     pm_rows = [[e(k.replace("_", " ").title()), value_cell(v, "unverified"), badge("blocked"), "Requires verified property inputs; no zero-fill or inferred assumptions.", source_links(data, ["sec_10k", "irs_544", "treasury"])] for k, v in pm["outputs"].items()]
     body = f"""
 <div class="callout"><h3>Method</h3><p>Official DOF and SCAG projections are published separately. Derived columns are transparent arithmetic from cited official inputs, not official observations. No interpolation, agency blending, parcel extrapolation, cap-rate assumption, rent-growth assumption, or invented probability is used. Property outputs remain blank because required inputs are unverified.</p></div>
+<div class="callout"><h3>Caution: DOF level vs Census estimate</h3><p>DOF lists 9,853,435 for Los Angeles County in 2025; Census lists 9,694,934 for July 1, 2025 (DOF +158,501, +1.63%). The two are different series and the cause of the gap is not stated on the pages read. Read the DOF path below for direction and rate of change, not as an absolute head-count, until reconciled. See <a href="flagged.html">Flagged for review</a>.</p></div>
 <div class="section-heading"><div><p class="eyebrow">California DOF · {e(dof['vintage'])}</p><h2>Los Angeles County annual population, 2026–2035</h2><p>Index base: 2026 = 100. Year-over-year and cumulative changes are derived calculations.</p></div></div>
 {table("dof-annual", "DOF P-2A annual county population and derived changes.", ["Year", "Population", "YoY change", "Change from 2026", "Index (2026=100)", "Official source"], dof_rows)}
 {table("dof-milestones", "DOF county milestones through 2050.", ["Year", "Population", "Change from 2026", "CAGR from 2026", "Official source"], milestone_rows)}
@@ -391,7 +392,7 @@ def build_audit(data: dict[str, Any]) -> str:
   <li><code>python3 scripts/validate_site.py</code> validates pages, row source links, allowlist, local links, blanks, and privacy patterns.</li>
   <li>Public artifact contains only curated pages, assets, and generated projection data. Historical builds remain in Git but are not published.</li>
 </ul>
-<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-08-0e369d53.md</code>.</p>
+<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-08-0e369d53.md</code>.</p>
 """
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
 
