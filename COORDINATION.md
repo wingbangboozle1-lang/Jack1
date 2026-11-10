@@ -28,6 +28,10 @@ before every push; conflicts stop and are resolved without discarding other sess
 
 Claimed at: 2026-11-10 (UTC). Commit + push of this claim precedes all content work.
 
+### Interleave note — 2026-11-10 UTC (session arena/2eefc54d-jack1)
+
+`origin/main` advanced after this claim: session `c5e199ef` completed C5-1…C5-3 and merged PRs #46 and #48 (head `6be1425`). This branch was rebased onto `origin/main` via `git pull --rebase origin main`; their dataset refresh, new DOF/Census gap row, flags, audit entry, generated pages, verification record, and all historical coordination entries were preserved. Git auto-merged `COORDINATION.md` without a conflict; no other session's work was discarded. Their report explicitly lists source groups not re-read (SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance detail, 8-K governance, LAPD/Port/EPA/IRS/FTB/BOE/Assessor guidance). V-1 below covers those remaining official sources and logs fresh irregularities; V-2 will apply only corrections verified this pass. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 remain untouched.
+
 
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
 
