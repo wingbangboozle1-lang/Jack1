@@ -1016,3 +1016,29 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/c5e199ef-jack1 (claimed 2026-11-10 UTC)
+
+**Session ID:** `c5e199ef` (branch `arena/c5e199ef-jack1`; the platform fixes the branch name, so the `session-<id>/<task>` pattern cannot be used, as in earlier sessions.)
+
+**Claim check:** at claim time no other session had commits newer than 2026-11-09; the newest open PR (#33, session 1daf5a2a) was opened 2026-11-08 23:01 UTC with no later commits — more than 60 minutes stale. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 are left untouched for their owners. No active claim is being overridden.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| C5-1 | Repo review: inventory, repo-wide privacy scan (tracked files + git metadata), build/test/validator gates | done | c5e199ef | `verification/2026-11-10-c5e199ef.md` (new), `scripts/build_public.py` (re-verified date in header, projections caution callout, audit footer) |
+| C5-2 | Line-by-line re-verification (2026-11-10) of published figures against official pages; update stale figures only when the official page confirms | done | c5e199ef | `data/verified-2026-11-08.json` (observations/audit/flags only), generated pages via `scripts/build_public.py` |
+| C5-3 | Final integration: regenerate, validate, link check, PR to `main`, merge, confirm Pages deploy, record | in progress | c5e199ef | `COORDINATION.md` (this section only), PR |
+
+Scope rules: this session edits only the files above. It does not edit `archive/`, `research/notes/*`, or other sessions' records. Personal information is never written here — only redacted irregularity notes.
+
+### Completion record — C5-1 / C5-2 (session c5e199ef, 2026-11-10 UTC)
+
+- **Sources re-read (24, all official):** Census city + county QuickFacts; BLS regional summary (updated 2026-11-04) and LAUS county series; EDD LA County release; FRED GDPALL06037 and NGMP31080; Treasury par yields (Nov 2026); DOF P-2A xlsx and landing page; SCAG Appendix I; LA City Planning DTLA 2040 release; LA Office of Finance ULA FAQ; DIR fast-food and general minimum-wage FAQs; LA Office of Wage Standards notice; CA School Dashboard (LAUSD engagement + performance); SEC Q3 FY2026 release and EDGAR filing list; FEMA NRI county feature service (composite, EAL, per-hazard); USGS UCERF3 FAQ; CAL FIRE FHSZ acreage PDF; CDI wildfire claims tracker. Per-row links: `verification/2026-11-10-c5e199ef.md`.
+- **Result:** every re-read value matched the dataset except Treasury yields, refreshed from the 2026-11-06 print to the 2026-11-09 print (2Y 4.56, 5Y 4.67, 10Y 4.88, 30Y 5.26). The 11-06 values were themselves correct.
+- **New irregularities (published on `flagged.html`):** (1) DOF P-2A's 2025 level (9,853,435) is 158,501 / +1.63% above Census's July 2025 estimate (9,694,934), cause not stated, not inferred; (2) public git commit metadata may expose the owner's personal contact details — redacted here, not reproduced anywhere; owner decision required, past history not rewritten.
+- **Privacy:** regex scan (emails, phones, APNs, street addresses, SSNs) across all tracked files incl. `archive/`, `research/`, this file — only synthetic test fixtures matched. Named press contacts and officials printed on EDD/SEC/DTLA pages were not copied; roles only.
+- **Not re-read this pass (still dated 2026-11-08):** SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance rows, 8-K governance row, CAL FIRE 26%/35% claims, LAPD/Port/EPA status pages, IRS/FTB/BOE/Assessor guidance.
+- **Gates:** `build_public.py --check`, 11 tests, `validate_site.py` (10 pages, 272 sourced rows), `_site` artifact validation, local HTTP smoke (10 pages + 3 assets = 200; `COORDINATION.md`, `data/`, `archive/`, `research/` = 404).
+- **Open PRs left untouched for owners (all >60 min stale):** #5, #10, #11, #14, #18, #21, #24, #27, #33.
