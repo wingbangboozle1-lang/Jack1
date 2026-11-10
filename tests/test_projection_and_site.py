@@ -109,6 +109,27 @@ class BuildAndValidationTests(unittest.TestCase):
         payload = json.loads(outputs["assets/projections.json"])
         self.assertEqual(payload, pm.build_projection_payload())
 
+    def test_404_aligned_and_worksheet_blank_defaults(self):
+        outputs = build_public.render_all()
+        self.assertIn("404.html", outputs)
+        err_html = outputs["404.html"]
+        for page in validate_site.PAGES:
+            self.assertIn(page, err_html)
+        for legacy in validate_site.LEGACY_EXCLUDED_PAGES:
+            self.assertNotIn(legacy, err_html)
+        dp = validate_site.PageParser()
+        dp.feed(outputs["decision.html"])
+        self.assertEqual(dp.nonempty_input_values, [])
+
+    def test_2026_11_10_dataset_enrichment(self):
+        data = pm.load_data()
+        self.assertEqual(data["meta"]["date"], "2026-11-10")
+        obs_ids = {o["id"] for o in data["observations"]}
+        for required in ("tenant_ard_wall", "tenant_ar_allowance", "dtt_combined_stack", "openfema_declarations_la", "pop_dof_city_2026", "wage_state_2027"):
+            self.assertIn(required, obs_ids)
+        for sid, src in data["sources"].items():
+            self.assertTrue(validate_site.allowed_external(src["url"]), (sid, src["url"]))
+
 
 if __name__ == "__main__":
     unittest.main()

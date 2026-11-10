@@ -1,0 +1,2958 @@
+{
+  "meta": {
+    "date": "2026-11-10",
+    "session": "ac5b9087",
+    "title": "Jack in the Box NNN decision brief — central Los Angeles area",
+    "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
+    "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
+    "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only."
+  },
+  "sources": {
+    "census_city": {
+      "title": "QuickFacts: Los Angeles city, California; Vintage 2025",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "census_county": {
+      "title": "QuickFacts: Los Angeles County, California; Vintage 2025",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "bls_summary": {
+      "title": "Los Angeles Area Economic Summary, updated November 4, 2026",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "bls_laus": {
+      "title": "LAUS series LAUCN060370000000003: Los Angeles County unemployment rate, NSA",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=true",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "bls_city_annual": {
+      "title": "Annual unemployment rates for 50 largest cities, 2025",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "edd_la": {
+      "title": "Los Angeles County preliminary labor force and industry employment, September 2026",
+      "publisher": "California Employment Development Department",
+      "url": "https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "fred_county_gdp": {
+      "title": "GDPALL06037: Total Gross Domestic Product for Los Angeles County, CA",
+      "publisher": "U.S. Bureau of Economic Analysis via FRED",
+      "url": "https://fred.stlouisfed.org/series/GDPALL06037",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "fred_metro_gdp": {
+      "title": "NGMP31080: Total Gross Domestic Product for Los Angeles-Long Beach-Anaheim, CA (MSA), discontinued",
+      "publisher": "U.S. Bureau of Economic Analysis via FRED",
+      "url": "https://fred.stlouisfed.org/series/NGMP31080",
+      "accessed": "2026-11-10",
+      "kind": "official statistics"
+    },
+    "treasury": {
+      "title": "Daily Treasury Par Yield Curve Rates, November 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "accessed": "2026-11-10",
+      "kind": "official market data"
+    },
+    "dof_landing": {
+      "title": "Population Projections, Baseline 2024; Vintage 2026 release notes",
+      "publisher": "California Department of Finance",
+      "url": "https://dof.ca.gov/forecasting/demographics/projections/",
+      "accessed": "2026-11-10",
+      "kind": "official projection"
+    },
+    "dof_p2a": {
+      "title": "P-2A: Total Population for California and Counties, Baseline 2024 / Vintage 2026",
+      "publisher": "California Department of Finance",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx",
+      "accessed": "2026-11-10",
+      "kind": "official projection"
+    },
+    "scag_plan": {
+      "title": "Connect SoCal 2024; Connect SoCal 2050 in development",
+      "publisher": "Southern California Association of Governments",
+      "url": "https://scag.ca.gov/connect-socal",
+      "accessed": "2026-11-10",
+      "kind": "official planning"
+    },
+    "scag_tr": {
+      "title": "Connect SoCal 2024 Technical Report: Demographics and Growth Forecast",
+      "publisher": "Southern California Association of Governments",
+      "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official projection"
+    },
+    "scag_appendix": {
+      "title": "Connect SoCal 2024 Final PEIR Appendix I, updated tables",
+      "publisher": "Southern California Association of Governments",
+      "url": "https://scag.ca.gov/sites/default/files/2024-05/appendix_i_updated_tables_508_final.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official projection"
+    },
+    "dtla_release": {
+      "title": "DTLA 2040 New Zoning Code adoption press release, December 4, 2024",
+      "publisher": "Los Angeles City Planning",
+      "url": "https://planning.lacity.gov/odocument/92b97b24-1978-4e0e-9eae-51f22eda9e4c/Press%20Release_%20DTLA%20New%20Zoning%20Code.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official planning"
+    },
+    "zimas": {
+      "title": "Zoning Search / ZIMAS parcel lookup",
+      "publisher": "Los Angeles City Planning",
+      "url": "https://planning.lacity.gov/zoning/zoning-search",
+      "accessed": "2026-11-10",
+      "kind": "official lookup"
+    },
+    "assessor": {
+      "title": "Assessor parcel search",
+      "publisher": "Los Angeles County Assessor",
+      "url": "https://portal.assessor.lacounty.gov/",
+      "accessed": "2026-11-10",
+      "kind": "official lookup"
+    },
+    "prop13": {
+      "title": "Proposition 13 property tax overview",
+      "publisher": "Los Angeles County Assessor",
+      "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "boe_reassessment": {
+      "title": "Letter 2022/046: Change in Ownership — Base Year Value Transfers; Prop 13 current-law summary",
+      "publisher": "California State Board of Equalization",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/lta22046.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "ula": {
+      "title": "Measure ULA FAQ",
+      "publisher": "Los Angeles Office of Finance",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "ftb_capgains": {
+      "title": "Capital gains and losses",
+      "publisher": "California Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "irs_544": {
+      "title": "Publication 544: Sales and Other Dispositions of Assets",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/publications/p544",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "irs_8824": {
+      "title": "Instructions for Form 8824 (2025): Like-Kind Exchanges",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official tax guidance"
+    },
+    "dir_fastfood": {
+      "title": "Fast Food Minimum Wage FAQ",
+      "publisher": "California Department of Industrial Relations",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "accessed": "2026-11-10",
+      "kind": "official labor rule"
+    },
+    "dir_minwage": {
+      "title": "Minimum Wage FAQ",
+      "publisher": "California Department of Industrial Relations",
+      "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+      "accessed": "2026-11-10",
+      "kind": "official labor rule"
+    },
+    "la_wage": {
+      "title": "2026 Minimum Wage Ordinance notice, effective July 1, 2026",
+      "publisher": "Los Angeles Office of Wage Standards",
+      "url": "https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf",
+      "accessed": "2026-11-10",
+      "kind": "official labor rule"
+    },
+    "dashboard_engagement": {
+      "title": "California School Dashboard 2026: Los Angeles Unified, Academic Engagement",
+      "publisher": "California Department of Education",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement",
+      "accessed": "2026-11-10",
+      "kind": "official education data"
+    },
+    "dashboard_performance": {
+      "title": "California School Dashboard 2026: Los Angeles Unified, Academic Performance",
+      "publisher": "California Department of Education",
+      "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-performance",
+      "accessed": "2026-11-10",
+      "kind": "official education data"
+    },
+    "dashboard_faq": {
+      "title": "California School Dashboard FAQ",
+      "publisher": "California Department of Education",
+      "url": "https://www.caschooldashboard.org/about/faq",
+      "accessed": "2026-11-10",
+      "kind": "official methodology"
+    },
+    "cde_directory": {
+      "title": "California School Directory",
+      "publisher": "California Department of Education",
+      "url": "https://www.cde.ca.gov/schooldirectory/",
+      "accessed": "2026-11-10",
+      "kind": "official lookup"
+    },
+    "sec_10k": {
+      "title": "Jack in the Box Inc. FY2025 Form 10-K",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "accessed": "2026-11-10",
+      "kind": "official issuer filing"
+    },
+    "sec_10q": {
+      "title": "Jack in the Box Inc. Q3 FY2026 Form 10-Q",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm",
+      "accessed": "2026-11-10",
+      "kind": "official issuer filing"
+    },
+    "sec_release": {
+      "title": "Jack in the Box Inc. Q3 FY2026 earnings release, Exhibit 99.1",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "accessed": "2026-11-10",
+      "kind": "official issuer filing"
+    },
+    "fema_nri": {
+      "title": "National Risk Index for Natural Hazards; v1.20 December 2025",
+      "publisher": "Federal Emergency Management Agency",
+      "url": "https://www.fema.gov/flood-maps/products-tools/national-risk-index",
+      "accessed": "2026-11-10",
+      "kind": "official hazard model"
+    },
+    "fema_county_item": {
+      "title": "National Risk Index Counties feature layer; data updated December 16, 2025",
+      "publisher": "FEMA via ArcGIS Living Atlas",
+      "url": "https://fema.maps.arcgis.com/home/item.html?id=39485e8035d446a5bff03259508ae355",
+      "accessed": "2026-11-10",
+      "kind": "official hazard model"
+    },
+    "fema_county_query": {
+      "title": "NRI Counties official query: Los Angeles County risk, EAL, vulnerability, resilience, earthquake/wildfire/inland flood",
+      "publisher": "FEMA ArcGIS feature service",
+      "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json",
+      "accessed": "2026-11-10",
+      "kind": "official hazard model"
+    },
+    "fema_hazard_ratings": {
+      "title": "NRI Counties official query: Los Angeles County 18 hazard ratings",
+      "publisher": "FEMA ArcGIS feature service",
+      "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,AVLN_RISKR,CFLD_RISKR,CWAV_RISKR,DRGT_RISKR,ERQK_RISKR,HAIL_RISKR,HWAV_RISKR,HRCN_RISKR,ISTM_RISKR,IFLD_RISKR,LNDS_RISKR,LTNG_RISKR,SWND_RISKR,TRND_RISKR,TSUN_RISKR,VLCN_RISKR,WFIR_RISKR,WNTW_RISKR&returnGeometry=false&f=json",
+      "accessed": "2026-11-10",
+      "kind": "official hazard model"
+    },
+    "usgs_faq": {
+      "title": "What is the probability that an earthquake will occur in the Los Angeles Area? In the San Francisco Bay area?",
+      "publisher": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "accessed": "2026-11-10",
+      "kind": "official hazard science"
+    },
+    "calfire_fhsz": {
+      "title": "Fire Hazard Severity Zones",
+      "publisher": "California State Fire Marshal / CAL FIRE",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "accessed": "2026-11-10",
+      "kind": "official hazard mapping"
+    },
+    "calfire_acres": {
+      "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024–2025",
+      "publisher": "California State Fire Marshal / CAL FIRE",
+      "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf?rev=d1f74280dd01402f841bf2da5d5fc8cd&hash=EC6CA86D1AF5094D808CB341A328C52F",
+      "accessed": "2026-11-10",
+      "kind": "official hazard mapping"
+    },
+    "cdi_claims": {
+      "title": "Wildfire Claims Tracker, updated July 6, 2026",
+      "publisher": "California Department of Insurance",
+      "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
+      "accessed": "2026-11-10",
+      "kind": "official insurance data"
+    },
+    "lapd": {
+      "title": "Crime Mapping and COMPSTAT",
+      "publisher": "Los Angeles Police Department",
+      "url": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/",
+      "accessed": "2026-11-10",
+      "kind": "official public safety"
+    },
+    "epa_brownfields": {
+      "title": "Brownfields and Land Revitalization",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/brownfields",
+      "accessed": "2026-11-10",
+      "kind": "official environmental program"
+    },
+    "port_stats": {
+      "title": "Port of Los Angeles Statistics hub",
+      "publisher": "Port of Los Angeles",
+      "url": "https://www.portoflosangeles.org/business/statistics",
+      "accessed": "2026-11-10",
+      "kind": "official economic driver"
+    },
+    "repo": {
+      "title": "Jack1 repository: source, verification, and coordination records",
+      "publisher": "GitHub repository",
+      "url": "https://github.com/wingbangboozle1-lang/Jack1",
+      "accessed": "2026-11-10",
+      "kind": "repository provenance"
+    },
+    "live": {
+      "title": "Live GitHub Pages dashboard",
+      "publisher": "GitHub Pages",
+      "url": "https://wingbangboozle1-lang.github.io/Jack1/",
+      "accessed": "2026-11-10",
+      "kind": "publication"
+    },
+    "repo_line_audit": {
+      "title": "Tracked repository line-by-line audit manifest (2026-11-10)",
+      "publisher": "GitHub repository verification record",
+      "url": "https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/repository-line-audit-2026-11-10.tsv",
+      "accessed": "2026-11-10",
+      "kind": "repository provenance"
+    },
+    "sec_8k_sept2026": {
+      "title": "Jack in the Box Inc. Form 8-K, Exhibit 99.1 (board refreshment; CEO transition; cooperation agreement extension)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
+      "accessed": "2026-11-10",
+      "kind": "issuer filing"
+    },
+    "dof_e1": {
+      "title": "Report E-1 Population and Housing Estimates (January 1, 2026; released May 1, 2026)",
+      "publisher": "California Department of Finance",
+      "kind": "Official population/housing release (PDF)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf",
+      "accessed": "2026-11-10"
+    },
+    "dof_e5": {
+      "title": "July 2025 Population Estimates (released February 2026)",
+      "publisher": "California Department of Finance",
+      "kind": "Official population estimates release (PDF)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/July2025_Population_Estimates_Feb26_release.pdf",
+      "accessed": "2026-11-10"
+    },
+    "cde_sdprofile": {
+      "title": "LAUSD District Profile 2025-26 (CDS 19647330000000)",
+      "publisher": "California Department of Education",
+      "kind": "Official school district profile",
+      "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+      "accessed": "2026-11-10"
+    },
+    "lavote_dtt": {
+      "title": "Documentary Transfer Tax — General Information (County & Special City Rates)",
+      "publisher": "LA County Registrar-Recorder / County Clerk",
+      "kind": "Official tax administration schedule",
+      "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
+      "accessed": "2026-11-10"
+    },
+    "dir_release_2027": {
+      "title": "News Release 2026-66: California Minimum Wage Increases to $17.40 Effective Jan. 1, 2027",
+      "publisher": "California Department of Industrial Relations",
+      "kind": "Official state labor notice",
+      "url": "https://www.dir.ca.gov/DIRNews/2026/2026-66.html",
+      "accessed": "2026-11-10"
+    },
+    "port_facts": {
+      "title": "Port of Los Angeles Facts and Figures (CY 2025)",
+      "publisher": "Port of Los Angeles",
+      "kind": "Official port economic summary",
+      "url": "https://portoflosangeles.org/business/statistics/facts-and-figures",
+      "accessed": "2026-11-10"
+    },
+    "port_containers": {
+      "title": "Port of Los Angeles Container Statistics (Through September 2026)",
+      "publisher": "Port of Los Angeles",
+      "kind": "Official port TEU table",
+      "url": "https://portoflosangeles.org/business/statistics/container-statistics",
+      "accessed": "2026-11-10"
+    },
+    "metro_dline": {
+      "title": "D Line Subway Extension Project (Section 1 opened May 8, 2026; Sec. 2–3 forecast 2027)",
+      "publisher": "Los Angeles County Metropolitan Transportation Authority",
+      "kind": "Official transit project status",
+      "url": "https://www.metro.net/projects/westside/",
+      "accessed": "2026-11-10"
+    },
+    "metro_lax": {
+      "title": "LAX/Metro Transit Center Station Official Opening",
+      "publisher": "Los Angeles County Metropolitan Transportation Authority",
+      "kind": "Official transit announcement",
+      "url": "https://www.metro.net/about/media-relations/now-boarding-metros-lax-metro-transit-center-station-officially-opens-connecting-communities-bringing-faster-easier-travel-for-angelenos-visitors/",
+      "accessed": "2026-11-10"
+    },
+    "lapd_city": {
+      "title": "LAPD COMPSTAT Citywide Profile (Through Oct 31, 2026)",
+      "publisher": "Los Angeles Police Department",
+      "kind": "Official crime statistics (PDF)",
+      "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf",
+      "accessed": "2026-11-10"
+    },
+    "lapd_central": {
+      "title": "LAPD COMPSTAT Operations-Central Bureau Profile (Through Oct 31, 2026)",
+      "publisher": "Los Angeles Police Department",
+      "kind": "Official bureau crime statistics (PDF)",
+      "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/ocbprof.pdf",
+      "accessed": "2026-11-10"
+    },
+    "sec_10q_debt": {
+      "title": "Jack in the Box Q3 FY2026 10-Q Note 7 (Indebtedness / ARDs / Leverage)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm",
+      "accessed": "2026-11-10"
+    },
+    "sec_10q_ar": {
+      "title": "Jack in the Box Q3 FY2026 10-Q Note 1 (Basis & Allowance for Credit Losses)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R8.htm",
+      "accessed": "2026-11-10"
+    },
+    "sec_10q_leases": {
+      "title": "Jack in the Box Q3 FY2026 10-Q Note 5 (Leases / Rental Spread)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm",
+      "accessed": "2026-11-10"
+    },
+    "sec_10k_leases": {
+      "title": "Jack in the Box FY2025 10-K Note 10 (Lease Term & Commitments)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm",
+      "accessed": "2026-11-10"
+    },
+    "sec_10q_contingencies": {
+      "title": "Jack in the Box Q3 FY2026 10-Q Note 13 (Commitments & Contingencies)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R20.htm",
+      "accessed": "2026-11-10"
+    },
+    "openfema_la": {
+      "title": "OpenFEMA Disaster Declarations Summaries v2 (LA County Query)",
+      "publisher": "Federal Emergency Management Agency",
+      "kind": "Official federal API dataset",
+      "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=state%20eq%20%27CA%27%20and%20contains(designatedArea%2C%20%27Los%20Angeles%27)&%24inlinecount=allpages&%24top=5",
+      "accessed": "2026-11-10"
+    },
+    "calfire_palisades": {
+      "title": "Palisades Fire Official Incident Record",
+      "publisher": "CAL FIRE",
+      "kind": "Official incident assessment",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/",
+      "accessed": "2026-11-10"
+    },
+    "calfire_eaton": {
+      "title": "Eaton Fire Official Incident Record",
+      "publisher": "CAL FIRE",
+      "kind": "Official incident assessment",
+      "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire/",
+      "accessed": "2026-11-10"
+    },
+    "cgs_alquist_priolo": {
+      "title": "Alquist-Priolo Earthquake Fault Zones",
+      "publisher": "California Geological Survey",
+      "kind": "Official state fault-zone regulation",
+      "url": "https://www.conservation.ca.gov/cgs/alquist-priolo",
+      "accessed": "2026-11-10"
+    },
+    "cgs_shma": {
+      "title": "Seismic Hazard Zones (Liquefaction & Landslide)",
+      "publisher": "California Geological Survey",
+      "kind": "Official state seismic hazard regulation",
+      "url": "https://www.conservation.ca.gov/cgs/shma",
+      "accessed": "2026-11-10"
+    },
+    "usgs_shakeout": {
+      "title": "The ShakeOut Scenario: Hypothetical Mw7.8 Southern San Andreas Earthquake",
+      "publisher": "U.S. Geological Survey",
+      "kind": "Official earthquake scenario publication",
+      "url": "https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault",
+      "accessed": "2026-11-10"
+    },
+    "cdi_fairplan_2025": {
+      "title": "Commissioner Approves FAIR Plan Commercial Expansion ($20M/$100M, Release 028-2025)",
+      "publisher": "California Department of Insurance",
+      "kind": "Official regulatory press release",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release028-2025.cfm",
+      "accessed": "2026-11-10"
+    },
+    "cdi_catmodel_2025": {
+      "title": "CDI Completes First Wildfire Catastrophe Model Review (Release 052-2025)",
+      "publisher": "California Department of Insurance",
+      "kind": "Official regulatory press release",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release052-2025.cfm",
+      "accessed": "2026-11-10"
+    },
+    "epa_heat": {
+      "title": "Heat Islands Overview (Updated September 30, 2026)",
+      "publisher": "U.S. Environmental Protection Agency",
+      "kind": "Official environmental guidance",
+      "url": "https://www.epa.gov/heatislands",
+      "accessed": "2026-11-10"
+    }
+  },
+  "observations": [
+    {
+      "id": "geo_city_area",
+      "category": "Geography",
+      "measure": "Los Angeles city land area",
+      "value": "469.49 sq mi",
+      "geography": "City of Los Angeles",
+      "period": "2020 Census geography",
+      "status": "verified",
+      "note": "City boundary is not a restaurant trade area.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "geo_city_density",
+      "category": "Geography",
+      "measure": "Los Angeles city population density",
+      "value": "8,304.2 people/sq mi",
+      "geography": "City of Los Angeles",
+      "period": "2020 Census",
+      "status": "verified",
+      "note": "Density is citywide; access, visibility, and traffic require parcel review.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "geo_county_area",
+      "category": "Geography",
+      "measure": "Los Angeles County land area",
+      "value": "4,059.28 sq mi",
+      "geography": "Los Angeles County",
+      "period": "2020 Census geography",
+      "status": "verified",
+      "note": "County statistics are broad context only.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "pop_city_2025",
+      "category": "Population",
+      "measure": "City population estimate",
+      "value": "3,869,089",
+      "geography": "City of Los Angeles",
+      "period": "July 1, 2025",
+      "status": "verified",
+      "note": "Estimate, not a trade-area count.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "pop_city_change",
+      "category": "Population",
+      "measure": "City population change from estimates base",
+      "value": "−0.8%",
+      "geography": "City of Los Angeles",
+      "period": "April 1, 2020 base to July 1, 2025",
+      "status": "verified",
+      "note": "Published Census change; do not splice with DOF projections.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "pop_county_2025",
+      "category": "Population",
+      "measure": "County population estimate",
+      "value": "9,694,934",
+      "geography": "Los Angeles County",
+      "period": "July 1, 2025",
+      "status": "verified",
+      "note": "County context for official projections.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "pop_county_change",
+      "category": "Population",
+      "measure": "County population change from estimates base",
+      "value": "−3.2%",
+      "geography": "Los Angeles County",
+      "period": "April 1, 2020 base to July 1, 2025",
+      "status": "verified",
+      "note": "Recent decline does not prove future parcel demand.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "income_city",
+      "category": "Income",
+      "measure": "Median household income",
+      "value": "$81,939",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS, 2024 dollars",
+      "status": "verified",
+      "note": "Household income, not restaurant customer spending.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "income_county",
+      "category": "Income",
+      "measure": "Median household income",
+      "value": "$90,112",
+      "geography": "Los Angeles County",
+      "period": "2020–2024 ACS, 2024 dollars",
+      "status": "verified",
+      "note": "County differs from city; do not average for a parcel.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "income_pc_city",
+      "category": "Income",
+      "measure": "Per-capita income",
+      "value": "$47,685",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS, 2024 dollars",
+      "status": "verified",
+      "note": "Context for purchasing power, not a sales forecast.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "poverty_city",
+      "category": "Income",
+      "measure": "Poverty rate",
+      "value": "16.5%",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS",
+      "status": "verified",
+      "note": "Citywide estimate with sampling error.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "housing_rent",
+      "category": "Housing",
+      "measure": "Median gross rent",
+      "value": "$1,933/month",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS",
+      "status": "verified",
+      "note": "Residential rent; not commercial NNN rent.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "housing_owner",
+      "category": "Housing",
+      "measure": "Owner-occupied housing unit rate",
+      "value": "36.0%",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS",
+      "status": "verified",
+      "note": "Community context only.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "housing_value",
+      "category": "Housing",
+      "measure": "Median owner-occupied home value",
+      "value": "$921,200",
+      "geography": "City of Los Angeles",
+      "period": "2020–2024 ACS",
+      "status": "verified",
+      "note": "Residential value; not the subject property value.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "retail_city",
+      "category": "Economy",
+      "measure": "Total retail sales",
+      "value": "$81,351,523 thousand",
+      "geography": "City of Los Angeles",
+      "period": "2022 Economic Census",
+      "status": "verified",
+      "note": "Sales scale preserved; not inflation-adjusted here.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "food_sales_city",
+      "category": "Economy",
+      "measure": "Accommodation and food-services sales",
+      "value": "$17,366,966 thousand",
+      "geography": "City of Los Angeles",
+      "period": "2022 Economic Census",
+      "status": "verified",
+      "note": "Sector context, not tenant sales.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "gdp_county_2024",
+      "category": "Economy",
+      "measure": "County nominal GDP",
+      "value": "$1,002,965,029 thousand",
+      "geography": "Los Angeles County",
+      "period": "2024; updated February 5, 2026",
+      "status": "verified",
+      "note": "Current-dollar county GDP; not metro GDP.",
+      "sources": [
+        "fred_county_gdp"
+      ]
+    },
+    {
+      "id": "gdp_metro_2023",
+      "category": "Economy",
+      "measure": "Metro nominal GDP, latest available",
+      "value": "$1,295,361.403 million",
+      "geography": "Los Angeles-Long Beach-Anaheim MSA",
+      "period": "2023; series discontinued",
+      "status": "verified",
+      "note": "No 2024 observation; do not use the old $1.355T 2024 claim.",
+      "sources": [
+        "fred_metro_gdp"
+      ]
+    },
+    {
+      "id": "unemp_sep2026",
+      "category": "Labor",
+      "measure": "Unemployment rate, not seasonally adjusted",
+      "value": "City 4.5%; County 4.5%; Metro 4.4%",
+      "geography": "City / County / Los Angeles metro",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "BLS summary updated November 4, 2026; geographies differ.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "unemp_comparators",
+      "category": "Labor",
+      "measure": "Unemployment comparators, NSA",
+      "value": "California 5.1%; United States 4.0%",
+      "geography": "State / nation",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Context only; not parcel labor supply.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "laus_sep2026",
+      "category": "Labor",
+      "measure": "County labor force / employment / unemployed",
+      "value": "5,031,013 / 4,806,494 / 224,519",
+      "geography": "Los Angeles County, NSA",
+      "period": "September 2026 preliminary",
+      "status": "verified",
+      "note": "Rate 4.5%; preliminary and subject to revision.",
+      "sources": [
+        "bls_laus"
+      ]
+    },
+    {
+      "id": "edd_sa_sep2026",
+      "category": "Labor",
+      "measure": "County unemployment rate, seasonally adjusted",
+      "value": "4.8%",
+      "geography": "Los Angeles County, SA",
+      "period": "September 2026 preliminary",
+      "status": "verified",
+      "note": "Do not mix with NSA 4.5%.",
+      "sources": [
+        "edd_la"
+      ]
+    },
+    {
+      "id": "payrolls_metro",
+      "category": "Labor",
+      "measure": "Metro nonfarm payrolls",
+      "value": "6,282.1 thousand; +30.2 thousand / +0.5% YoY",
+      "geography": "Los Angeles metro area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Modest headline job growth.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "payrolls_county",
+      "category": "Labor",
+      "measure": "County nonfarm wage and salary employment, SA",
+      "value": "4,539,800; −4,100 monthly; +20,300 annually",
+      "geography": "Los Angeles County, SA",
+      "period": "September 2026 preliminary",
+      "status": "verified",
+      "note": "County series differs from metro payrolls.",
+      "sources": [
+        "edd_la"
+      ]
+    },
+    {
+      "id": "sector_edhealth",
+      "category": "Labor",
+      "measure": "Education and health services payrolls",
+      "value": "1,340.7 thousand; +49.1 thousand / +3.8% YoY",
+      "geography": "Los Angeles metro area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Largest cited growth driver; supports daytime demand indirectly.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "sector_leisure",
+      "category": "Labor",
+      "measure": "Leisure and hospitality payrolls",
+      "value": "782.0 thousand; +11.5 thousand / +1.5% YoY",
+      "geography": "Los Angeles metro area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Relevant sector, but not tenant performance.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "sector_restaurants",
+      "category": "Labor",
+      "measure": "Restaurants and other eating places employment change",
+      "value": "+7,300 jobs YoY",
+      "geography": "Los Angeles County, NSA",
+      "period": "September 2026 preliminary",
+      "status": "verified",
+      "note": "Industry employment, not same-store sales.",
+      "sources": [
+        "edd_la"
+      ]
+    },
+    {
+      "id": "sector_information",
+      "category": "Labor",
+      "measure": "Information payrolls",
+      "value": "187.0 thousand; −11.4 thousand / −5.7% YoY",
+      "geography": "Los Angeles metro area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Office-related weakness can affect daytime traffic.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "sector_manufacturing",
+      "category": "Labor",
+      "measure": "Manufacturing payrolls",
+      "value": "444.8 thousand; −5.4 thousand / −1.2% YoY",
+      "geography": "Los Angeles metro area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Cyclical exposure.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "cpi_la",
+      "category": "Inflation",
+      "measure": "LA-area CPI-U year-over-year",
+      "value": "All items +3.7%; food +2.8%; energy +20.3%",
+      "geography": "Los Angeles area",
+      "period": "September 2026",
+      "status": "verified",
+      "note": "Cost pressure context; lease escalations may not match CPI.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "wage_county",
+      "category": "Income",
+      "measure": "Average weekly wage, all industries",
+      "value": "$1,704",
+      "geography": "Los Angeles County",
+      "period": "Q1 2026",
+      "status": "verified",
+      "note": "QCEW wage context, not fast-food wage.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "unemp_city_2025",
+      "category": "Labor",
+      "measure": "City annual unemployment rate, historical",
+      "value": "5.8%",
+      "geography": "City of Los Angeles",
+      "period": "2025; 11-month average excluding October",
+      "status": "verified",
+      "note": "Historical context only; latest monthly headline is September 2026.",
+      "sources": [
+        "bls_city_annual"
+      ]
+    },
+    {
+      "id": "treasury_yields",
+      "category": "Financing",
+      "measure": "Treasury par yields",
+      "value": "2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 20Y 5.29%; 30Y 5.26%",
+      "geography": "U.S. sovereign curve",
+      "period": "November 9, 2026 close",
+      "status": "verified",
+      "note": "Daily Treasury par yield curve updated November 9, 2026. Risk-free sovereign benchmarks, not commercial NNN cap rates or owner discount rates.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "schools_grad",
+      "category": "Schools",
+      "measure": "LAUSD combined four-/five-year graduation rate",
+      "value": "87.6%; +1.1 percentage points",
+      "geography": "Los Angeles Unified School District",
+      "period": "2026 Dashboard",
+      "status": "verified",
+      "note": "District context; parcel attendance assignment unverified.",
+      "sources": [
+        "dashboard_engagement"
+      ]
+    },
+    {
+      "id": "schools_absent",
+      "category": "Schools",
+      "measure": "LAUSD chronic absenteeism",
+      "value": "21.3%; declined 0.6 percentage points",
+      "geography": "Los Angeles Unified School District",
+      "period": "2026 Dashboard",
+      "status": "verified",
+      "note": "TK–8 denominator 254,681; community indicator, not property rating.",
+      "sources": [
+        "dashboard_engagement"
+      ]
+    },
+    {
+      "id": "schools_ela",
+      "category": "Schools",
+      "measure": "LAUSD ELA distance from proficient",
+      "value": "13.2 points below; improved 4.6 points",
+      "geography": "Los Angeles Unified School District",
+      "period": "2026 Dashboard",
+      "status": "verified",
+      "note": "Distance from proficient is not a percent-proficient rate.",
+      "sources": [
+        "dashboard_performance"
+      ]
+    },
+    {
+      "id": "schools_math",
+      "category": "Schools",
+      "measure": "LAUSD mathematics distance from proficient",
+      "value": "40.7 points below; improved 8.2 points",
+      "geography": "Los Angeles Unified School District",
+      "period": "2026 Dashboard",
+      "status": "verified",
+      "note": "District-wide; school-level and boundary checks required.",
+      "sources": [
+        "dashboard_performance"
+      ]
+    },
+    {
+      "id": "tenant_sss",
+      "category": "Tenant",
+      "measure": "Jack in the Box system same-store sales",
+      "value": "System −1.1%; franchise −1.2%; company −0.9%",
+      "geography": "Jack in the Box system",
+      "period": "Q3 FY2026, 12 weeks ended July 5, 2026",
+      "status": "verified",
+      "note": "Issuer-wide, not the subject restaurant.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_count",
+      "category": "Tenant",
+      "measure": "Jack in the Box restaurant count",
+      "value": "2,115 total; 149 company; 1,966 franchise",
+      "geography": "Jack in the Box system",
+      "period": "End of Q3 FY2026",
+      "status": "verified",
+      "note": "QTD 4 openings, 17 closures, net −13.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_revenue",
+      "category": "Tenant",
+      "measure": "Quarterly revenue",
+      "value": "$257.657 million",
+      "geography": "Jack in the Box Inc.",
+      "period": "Q3 FY2026",
+      "status": "verified",
+      "note": "Issuer revenue, not property rent.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_earnings",
+      "category": "Tenant",
+      "measure": "Net earnings",
+      "value": "Continuing operations $21.041 million; total $20.122 million",
+      "geography": "Jack in the Box Inc.",
+      "period": "Q3 FY2026",
+      "status": "verified",
+      "note": "Del Taco is discontinued operations; do not mix old combined metrics.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_ebitda",
+      "category": "Tenant",
+      "measure": "Adjusted EBITDA",
+      "value": "$61.2 million",
+      "geography": "Jack in the Box Inc.",
+      "period": "Q3 FY2026",
+      "status": "verified",
+      "note": "Non-GAAP measure; see issuer reconciliation.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_balance",
+      "category": "Tenant",
+      "measure": "Cash and debt balances",
+      "value": "Cash $46.318M; current debt $44.160M; long-term debt $1,428.667M; stockholders' deficit $901.286M",
+      "geography": "Jack in the Box Inc.",
+      "period": "July 5, 2026",
+      "status": "verified",
+      "note": "Balance-sheet credit context, not a guaranty of the subject lease.",
+      "sources": [
+        "sec_release",
+        "sec_10q"
+      ]
+    },
+    {
+      "id": "tenant_refi",
+      "category": "Tenant",
+      "measure": "Securitized refinancing",
+      "value": "$500.0M Series 2026-1 Class A-2 Notes at 7.624%; ARD May 2031",
+      "geography": "Jack in the Box Inc.",
+      "period": "Q3 FY2026",
+      "status": "verified",
+      "note": "Coupon rose +315 bps above repaid Series 2019-1 A-2-II (4.476%); HoldCo Leverage >5.0x and Senior ABS Leverage >5.25x trigger $23.3M cash sweep in current debt.",
+      "sources": [
+        "sec_10q_debt",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_guidance",
+      "category": "Tenant",
+      "measure": "FY2026 restaurant guidance",
+      "value": "Approximately 2,100 units; about 25 openings and 50–60 closures, mostly franchise",
+      "geography": "Jack in the Box system",
+      "period": "FY2026 guidance issued August 2026",
+      "status": "verified",
+      "note": "Guidance, not actual results; closure risk is franchise-weighted.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_governance",
+      "category": "Tenant",
+      "measure": "Issuer leadership transition (Form 8-K)",
+      "value": "CEO transition expected within 12 months; Executive Chairman serving as interim CEO; board refreshment; investor cooperation agreement extended",
+      "geography": "Jack in the Box Inc.",
+      "period": "8-K dated Sep 17, 2026, filed Sep 21, 2026",
+      "status": "verified",
+      "note": "Issuer-level governance context only; does not identify this unit's tenant or guarantor. Roles described without personal names. Read 08 Nov 2026 (session b8188ee0).",
+      "sources": [
+        "sec_8k_sept2026"
+      ]
+    },
+    {
+      "id": "tenant_ca_2025",
+      "category": "Tenant",
+      "measure": "California Jack in the Box restaurants, FY2025",
+      "value": "351 total; 94 company; 257 franchise",
+      "geography": "California",
+      "period": "FY2025 Form 10-K",
+      "status": "verified",
+      "note": "Jack-only. The 941 California figure includes Del Taco and must not be labeled Jack-only.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "tenant_ca_share",
+      "category": "Tenant",
+      "measure": "California share of Jack system",
+      "value": "16.4%",
+      "geography": "California / Jack system",
+      "period": "FY2025",
+      "status": "derived",
+      "note": "Calculation: 351 ÷ 2,136. Geographic concentration, not parcel exposure.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "ula_thresholds",
+      "category": "Taxes",
+      "measure": "Los Angeles Measure ULA thresholds",
+      "value": "$5,400,000 and $10,900,000",
+      "geography": "City of Los Angeles",
+      "period": "Transactions closing after June 30, 2026",
+      "status": "verified",
+      "note": "City-only; jurisdiction, exemptions, and closing date must be verified.",
+      "sources": [
+        "ula"
+      ]
+    },
+    {
+      "id": "ula_rates",
+      "category": "Taxes",
+      "measure": "Measure ULA additional rates",
+      "value": "4% above lower threshold and below upper; 5.5% at/above upper",
+      "geography": "City of Los Angeles",
+      "period": "Current FAQ for post-June 30, 2026 closings",
+      "status": "verified",
+      "note": "Additional to base city transfer tax; not a county-wide rate.",
+      "sources": [
+        "ula"
+      ]
+    },
+    {
+      "id": "prop13_rule",
+      "category": "Taxes",
+      "measure": "Proposition 13 general levy and assessed growth",
+      "value": "1% general levy plus voter-approved/direct assessments; assessed growth generally capped at 2%",
+      "geography": "California real property",
+      "period": "Current assessor guidance",
+      "status": "verified",
+      "note": "Actual bill, assessments, and reassessment treatment unknown.",
+      "sources": [
+        "prop13",
+        "boe_reassessment"
+      ]
+    },
+    {
+      "id": "ftb_gains",
+      "category": "Taxes",
+      "measure": "California individual capital-gains treatment",
+      "value": "Taxed as ordinary income; no lower individual capital-gains rate",
+      "geography": "California",
+      "period": "Current FTB guidance",
+      "status": "verified",
+      "note": "Owner entity and tax situation unknown.",
+      "sources": [
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "irs_1031_timing",
+      "category": "Taxes",
+      "measure": "Deferred like-kind exchange timing",
+      "value": "Identify replacement within 45 days; receive within 180 days or return due date including extensions, whichever earlier",
+      "geography": "U.S. federal tax",
+      "period": "2025 Form 8824 instructions",
+      "status": "verified",
+      "note": "Eligibility, boot, qualified intermediary, and California conformity require review.",
+      "sources": [
+        "irs_8824"
+      ]
+    },
+    {
+      "id": "wage_fastfood",
+      "category": "Labor costs",
+      "measure": "Covered fast-food minimum wage",
+      "value": "$20.00/hour",
+      "geography": "California covered fast-food employees",
+      "period": "Effective April 1, 2024; current FAQ",
+      "status": "verified",
+      "note": "Coverage depends on qualifying chain/establishment rules.",
+      "sources": [
+        "dir_fastfood"
+      ]
+    },
+    {
+      "id": "wage_state",
+      "category": "Labor costs",
+      "measure": "California general minimum wage",
+      "value": "$16.90/hour",
+      "geography": "California",
+      "period": "January 1, 2026",
+      "status": "verified",
+      "note": "Higher applicable industry/local standard governs.",
+      "sources": [
+        "dir_minwage"
+      ]
+    },
+    {
+      "id": "wage_city",
+      "category": "Labor costs",
+      "measure": "Los Angeles city general minimum wage",
+      "value": "$18.42/hour",
+      "geography": "City of Los Angeles",
+      "period": "July 1, 2026",
+      "status": "verified",
+      "note": "Do not add city, state, and fast-food rates together.",
+      "sources": [
+        "la_wage"
+      ]
+    },
+    {
+      "id": "nri_composite",
+      "category": "Hazards",
+      "measure": "FEMA NRI composite risk",
+      "value": "Score 100; Very High",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "County relative score, not parcel probability.",
+      "sources": [
+        "fema_county_query",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "nri_eal",
+      "category": "Hazards",
+      "measure": "FEMA NRI total expected annual loss",
+      "value": "$7,601,846,373 total; $5,946,330,343 building value",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "Modeled county aggregate across hazards; not this property's annual loss or premium.",
+      "sources": [
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "nri_earthquake",
+      "category": "Hazards",
+      "measure": "FEMA NRI earthquake risk",
+      "value": "Score 100; Very High; EAL $4,565,736,367",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "Parcel shaking depends on soil, structure, and distance.",
+      "sources": [
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "nri_wildfire",
+      "category": "Hazards",
+      "measure": "FEMA NRI wildfire risk",
+      "value": "Score 99.936; Very High; EAL $155,191,812",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "County rating; parcel FHSZ and defensible space unverified.",
+      "sources": [
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "nri_flood",
+      "category": "Hazards",
+      "measure": "FEMA NRI inland flooding risk",
+      "value": "Score 100; Very High; EAL $2,808,736,524",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "Includes pluvial/fluvial modeling; parcel flood zone unverified.",
+      "sources": [
+        "fema_county_query",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "nri_coastal_flood",
+      "category": "Hazards",
+      "measure": "FEMA NRI coastal flooding risk",
+      "value": "Score 90; Relatively High",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "v1.20 splits inland and coastal flooding; complements the inland score of 100. Parcel flood zone still requires a FIRM lookup. Read 08 Nov 2026 (session b8188ee0).",
+      "sources": [
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "nri_social",
+      "category": "Hazards",
+      "measure": "Social vulnerability / community resilience",
+      "value": "Social vulnerability 55.375, Relatively Moderate; resilience 13.550, Very Low",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "Community recovery context, not owner finances.",
+      "sources": [
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "nri_other_hazards",
+      "category": "Hazards",
+      "measure": "Other county hazard ratings",
+      "value": "Heat wave, landslide, tornado: Relatively High; lightning: Very High; drought/tsunami: Relatively Low; hurricane: No Rating; ice storm/volcanic: Not Applicable",
+      "geography": "Los Angeles County",
+      "period": "NRI v1.20, December 2025",
+      "status": "verified",
+      "note": "Ratings are relative county metrics; do not convert to invented probabilities.",
+      "sources": [
+        "fema_hazard_ratings"
+      ]
+    },
+    {
+      "id": "usgs_quake",
+      "category": "Hazards",
+      "measure": "UCERF3 regional earthquake probabilities",
+      "value": "60% M≥6.7; 46% M≥7.0; 31% M≥7.5 in 30 years",
+      "geography": "Los Angeles region",
+      "period": "USGS FAQ citing UCERF3; start date not stated",
+      "status": "verified",
+      "note": "Do not label as a fresh 2026–2056 forecast; regional, not site-specific.",
+      "sources": [
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "calfire_acres_obs",
+      "category": "Hazards",
+      "measure": "CAL FIRE FHSZ mapped acres, Los Angeles County",
+      "value": "Moderate 330,431; High 77,951; Very High 769,561; Total mapped 1,177,944",
+      "geography": "Los Angeles County, combined SRA/LRA",
+      "period": "2024–2025 official acreage table",
+      "status": "verified",
+      "note": "Mapped hazard acres, not all county land and not a parcel assignment.",
+      "sources": [
+        "calfire_acres",
+        "calfire_fhsz"
+      ]
+    },
+    {
+      "id": "calfire_share",
+      "category": "Hazards",
+      "measure": "Very High share of mapped FHSZ acres",
+      "value": "65.3%",
+      "geography": "Los Angeles County mapped FHSZ acres",
+      "period": "2024–2025 table",
+      "status": "derived",
+      "note": "Calculation: 769,561 ÷ 1,177,944. Not a parcel probability.",
+      "sources": [
+        "calfire_acres"
+      ]
+    },
+    {
+      "id": "cdi_claims_obs",
+      "category": "Insurance",
+      "measure": "Eaton/Palisades wildfire claims tracker",
+      "value": "41,727 claims filed; 40,482 partially paid; $25.2 billion paid",
+      "geography": "California, Eaton and Palisades fires",
+      "period": "Tracker updated July 6, 2026",
+      "status": "verified",
+      "note": "Includes home, business, living expense, auto, and other claims; not commercial-only losses.",
+      "sources": [
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "dtla_plan",
+      "category": "Planning",
+      "measure": "DTLA 2040 plan expectations",
+      "value": "100,000 new homes; 100,000 more work opportunities; 175,000 additional residents through 2040",
+      "geography": "Seven-square-mile Downtown Los Angeles plan core",
+      "period": "Adopted December 2024",
+      "status": "verified",
+      "note": "Plan expectations, not verified outcomes; not all central LA.",
+      "sources": [
+        "dtla_release"
+      ]
+    },
+    {
+      "id": "crime_status",
+      "category": "Public safety",
+      "measure": "LAPD citywide NIBRS crime profile",
+      "value": "83,596 Person & Property incidents YTD (−10.6% YoY); 8,555 sworn officers",
+      "geography": "City of Los Angeles",
+      "period": "YTD through October 31, 2026 (published Nov 3, 2026)",
+      "status": "verified",
+      "note": "LAPD COMPSTAT citywide NIBRS PDF summary while web mapping platform undergoes updates. Citywide trend, not a parcel crime rate.",
+      "sources": [
+        "lapd_city",
+        "lapd"
+      ]
+    },
+    {
+      "id": "port_driver",
+      "category": "Economic drivers",
+      "measure": "Port of Los Angeles annual throughput and economic impact",
+      "value": "10,239,318 TEUs; $301B cargo; 126,000 LA jobs (1 in 16)",
+      "geography": "Port of Los Angeles / 5-county region (444,000 regional jobs)",
+      "period": "Calendar Year 2025",
+      "status": "verified",
+      "note": "Largest U.S. container port (17% national / 31% San Pedro Bay share). Regional goods-movement driver, not parcel traffic.",
+      "sources": [
+        "port_facts",
+        "port_stats"
+      ]
+    },
+    {
+      "id": "pop_dof_city_2026",
+      "category": "Population",
+      "measure": "DOF city population estimate (E-1)",
+      "value": "3,806,201 (−0.9% YoY from 3,839,536)",
+      "geography": "Los Angeles city",
+      "period": "January 1, 2026 (released May 1, 2026)",
+      "status": "verified",
+      "note": "Official state demographic benchmark; methodology differs from Census QuickFacts (3,869,089 July 2025). Do not splice series.",
+      "sources": [
+        "dof_e1"
+      ]
+    },
+    {
+      "id": "pop_dof_county_2026",
+      "category": "Population",
+      "measure": "DOF county population estimate (E-1 & July 2025)",
+      "value": "Jan 1, 2026: 9,837,286 (−0.6% / −64k); Jul 1, 2025: 9,853,435 (−0.45%)",
+      "geography": "Los Angeles County",
+      "period": "July 1, 2025 / January 1, 2026",
+      "status": "verified",
+      "note": "Reflects Eaton/Palisades wildfire displacement, domestic outflow, and lower net immigration; separate methodology from Census QuickFacts.",
+      "sources": [
+        "dof_e1",
+        "dof_e5"
+      ]
+    },
+    {
+      "id": "housing_dof_net_2025",
+      "category": "Housing",
+      "measure": "Net housing units added (statewide-highest county total)",
+      "value": "+11,260 net units (62.7% multifamily)",
+      "geography": "Los Angeles County",
+      "period": "Calendar Year 2025 (E-1, May 1, 2026)",
+      "status": "verified",
+      "note": "Multifamily infill continues expanding dense urban households even amid aggregate population decline; redevelopment context only.",
+      "sources": [
+        "dof_e1"
+      ]
+    },
+    {
+      "id": "port_containers_2026",
+      "category": "Economic drivers",
+      "measure": "Port of Los Angeles container throughput",
+      "value": "Sep 2026: 1,042,652.30 TEUs (+18.07% YoY); YTD Jan–Sep: 8,081,625.55 TEUs (+3.38% YoY)",
+      "geography": "Port of Los Angeles",
+      "period": "Through September 2026",
+      "status": "verified",
+      "note": "Rebounding 2026 regional freight volumes; macro goods-movement indicator, not site traffic.",
+      "sources": [
+        "port_containers"
+      ]
+    },
+    {
+      "id": "scag_commute_wfh",
+      "category": "Economic drivers",
+      "measure": "Regional commute mode & remote-work divergence",
+      "value": "LA County drive-alone 65.5% work / 35.9% daily trips; Hospitality WFH 0.59 days/wk vs Info/Finance 2.15–2.30",
+      "geography": "Los Angeles County / SCAG 6-county region",
+      "period": "Connect SoCal 2024 Technical Report",
+      "status": "verified",
+      "note": "Supports neighborhood/drive-thru daypart resilience relative to CBD office-lunch dependency; lowest regional wage in NAICS 72 ($32,002).",
+      "sources": [
+        "scag_tr",
+        "scag_appendix"
+      ]
+    },
+    {
+      "id": "metro_transit_drivers",
+      "category": "Planning",
+      "measure": "LA Metro D Line extension & LAX Transit Center",
+      "value": "D Line Sec. 1 (La Brea/Fairfax/La Cienega) opened May 8, 2026; Sec. 2–3 forecast 2027; LAX Transit Center open",
+      "geography": "Central / Westside Los Angeles corridors",
+      "period": "2026–2028 major-event cycle",
+      "status": "verified",
+      "note": "Major corridor transit upgrades ahead of FIFA 2026, Super Bowl LXI, and LA28. Parcel walk-shed impact requires parcel address.",
+      "sources": [
+        "metro_dline",
+        "metro_lax"
+      ]
+    },
+    {
+      "id": "schools_enrollment_2026",
+      "category": "Schools",
+      "measure": "LAUSD district enrollment & student composition",
+      "value": "497,105 students; 81,328 English Learners (16.4%); 386,743 FRPM (77.8%)",
+      "geography": "Los Angeles Unified School District",
+      "period": "2025–2026 academic year",
+      "status": "verified",
+      "note": "Large lower-/middle-income urban student base; community context only, not parcel attendance assignment.",
+      "sources": [
+        "cde_sdprofile"
+      ]
+    },
+    {
+      "id": "crime_central_bureau",
+      "category": "Public safety",
+      "measure": "LAPD Operations-Central Bureau NIBRS crime profile",
+      "value": "23,423 incidents YTD (−2.0% YoY; 28.0% of citywide); Larceny +10.0% (6,213); Robbery +1.3% (1,303)",
+      "geography": "LAPD Operations-Central Bureau (Central, Hollenbeck, Newton, Northeast, Rampart)",
+      "period": "YTD through October 31, 2026",
+      "status": "verified",
+      "note": "Central Bureau accounts for 28% of citywide incidents with rising larceny despite lower citywide totals; verify parcel division/calls directly.",
+      "sources": [
+        "lapd_central",
+        "lapd"
+      ]
+    },
+    {
+      "id": "tenant_ard_wall",
+      "category": "Tenant",
+      "measure": "Securitized debt 2029–2032 ARD concentration (overlapping lease window)",
+      "value": "$1,429.625M of $1,491.984M principal (95.8%) due ARD 2029–2032 (Aug 2029 $426.38M; May 2031 $500.00M; Feb 2032 $503.25M)",
+      "geography": "Jack in the Box Inc. (Master Issuer)",
+      "period": "As of July 5, 2026 (Q3 FY2026 10-Q)",
+      "status": "derived",
+      "note": "Derived sum of 2019-1 A-2-III ($426,375k), 2026-1 A-2 ($500,000k), and 2022-1 A-2-II ($503,250k) over $1,491,984k total principal. Refinancing pressure coincides directly with 2030–2035 lease expiry.",
+      "sources": [
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "tenant_ar_allowance",
+      "category": "Tenant",
+      "measure": "Franchisee accounts & notes allowance for credit losses",
+      "value": "$(7,607)k at July 5, 2026 vs $(4,466)k at Sep 28, 2025 (+70.3% widening)",
+      "geography": "Jack in the Box Inc. franchise receivables",
+      "period": "40 weeks ended July 5, 2026",
+      "status": "verified",
+      "note": "Q3 provision $3,479k vs $2,361k prior year. Direct balance-sheet signal of franchisee cash-flow stress; subject operator credit remains unverified.",
+      "sources": [
+        "sec_10q_ar"
+      ]
+    },
+    {
+      "id": "tenant_lease_portfolio",
+      "category": "Tenant",
+      "measure": "Issuer lease footprint, ROU obligations & rental spread",
+      "value": "74.2% (1,585/2,136) leased sites; $1,008.79M continuing ROU liabilities; 11.2-yr WA term ($2.016B undiscounted FY25); Q3 franchise rent spread $23.32M (YTD −15.4% YoY)",
+      "geography": "Jack in the Box Inc. consolidated",
+      "period": "FY2025 10-K / Q3 FY2026 10-Q",
+      "status": "verified",
+      "note": "Company often sits as master tenant subleasing to franchisees; plus $22.9M contingent Qdoba guarantees. Item 1A notes renewal is not assured without substantial cost.",
+      "sources": [
+        "sec_10q_leases",
+        "sec_10k_leases",
+        "sec_10k",
+        "sec_10q_contingencies"
+      ]
+    },
+    {
+      "id": "dtt_combined_stack",
+      "category": "Taxes",
+      "measure": "LA County + LA City combined documentary transfer tax stack",
+      "value": "County 0.11% ($0.55/$500) + City Base 0.45% ($2.25/$500) = 0.56% (≤$5.4M), 4.56% (>$5.4M–<$10.9M), 6.06% (≥$10.9M)",
+      "geography": "City of Los Angeles (LA County)",
+      "period": "Effective July 1, 2026",
+      "status": "derived",
+      "note": "Derived sum of LA County 0.11%, City Base 0.45%, and Measure ULA 4%/5.5% thresholds. Seller-side closing tax drag jumps 400–550 bps above $5.4M/$10.9M.",
+      "sources": [
+        "lavote_dtt",
+        "ula"
+      ]
+    },
+    {
+      "id": "wage_state_2027",
+      "category": "Labor costs",
+      "measure": "California general minimum wage (effective January 1, 2027)",
+      "value": "$17.40/hour (+2.97% CPI escalation from $16.90)",
+      "geography": "California statewide",
+      "period": "Effective January 1, 2027 (announced August 3, 2026)",
+      "status": "verified",
+      "note": "Governs smaller/non-AB-1228 re-tenanting prospects unless LA City's $18.42+ CPI-indexed local wage exceeds it.",
+      "sources": [
+        "dir_release_2027"
+      ]
+    },
+    {
+      "id": "openfema_declarations_la",
+      "category": "Hazards",
+      "measure": "Federal disaster declarations (OpenFEMA tally, 1969–2025)",
+      "value": "88 declarations (44 Fire Mgmt FM, 35 Major Disaster DR, 9 Emergency EM): 61 Fire, 10 Flood, 8 Severe Storm, 3 Earthquake",
+      "geography": "Los Angeles County",
+      "period": "January 26, 1969 – August 8, 2025 (8 in 2024–2025)",
+      "status": "verified",
+      "note": "Full OpenFEMA API count across designatedArea containing Los Angeles (plus 2 Biological, 2 Freezing, 1 Coastal Storm, 1 Hurricane evacuation).",
+      "sources": [
+        "openfema_la"
+      ]
+    },
+    {
+      "id": "calfire_2026_sra_fires",
+      "category": "Hazards",
+      "measure": "2026 SRA FHSZ update & Jan 2025 Palisades/Eaton incident damage",
+      "value": "2026 SRA public comment active (Nov 6, 2026 FAQ); Palisades 23,448 ac / 6,845 destroyed; Eaton 14,021 ac / 9,419 destroyed",
+      "geography": "Los Angeles County",
+      "period": "January 2025 incidents / November 2026 SRA update",
+      "status": "verified",
+      "note": "Urban central-LA parcel exposure depends on parcel lookup; 2025 wildfires materially strained regional contractors, insurers, and county population.",
+      "sources": [
+        "calfire_fhsz",
+        "calfire_palisades",
+        "calfire_eaton"
+      ]
+    },
+    {
+      "id": "cgs_usgs_seismic_rules",
+      "category": "Hazards",
+      "measure": "CGS Alquist-Priolo/SHMA rules & USGS M7.8 ShakeOut benchmark",
+      "value": "~50 ft active-fault setback, NHD disclosure & liquefaction check; ShakeOut M7.8 scenario $191B loss ($87B fire, $46B shake, $24B water)",
+      "geography": "California / Southern California region",
+      "period": "Current statutory code / USGS ShakeOut scenario",
+      "status": "verified",
+      "note": "Drives lender/buyer seismic underwriting, unreinforced/non-ductile retrofit risk, and post-quake fire/water-outage interruption planning.",
+      "sources": [
+        "cgs_alquist_priolo",
+        "cgs_shma",
+        "usgs_shakeout"
+      ]
+    },
+    {
+      "id": "epa_heat_islands_obs",
+      "category": "Hazards",
+      "measure": "Urban heat island mitigation & cooling load context",
+      "value": "Updated federal heat-island guidance (cool roofs, shade/pavement mitigation)",
+      "geography": "Urban infill / impervious drive-thru lots",
+      "period": "Updated September 30, 2026",
+      "status": "verified",
+      "note": "Relevant to HVAC capital reserves, paving maintenance, and outdoor drive-thru worker heat rules on NNN re-leasing.",
+      "sources": [
+        "epa_heat"
+      ]
+    },
+    {
+      "id": "cdi_fairplan_catmodel",
+      "category": "Insurance",
+      "measure": "CDI FAIR Plan commercial limits & catastrophe model reform",
+      "value": "FAIR Plan commercial limits up to $20M/bldg & $100M/location (thru 2028); Verisk wildfire model approved Jul 24, 2025 w/ 85% distressed-area rule",
+      "geography": "California commercial property insurance market",
+      "period": "Effective 2025–2028 under Sustainable Insurance Strategy",
+      "status": "verified",
+      "note": "Expands last-resort commercial limits while voluntary admitted underwriting transitions to forward-looking cat models; verify NNN policy form & sublimits.",
+      "sources": [
+        "cdi_fairplan_2025",
+        "cdi_catmodel_2025"
+      ]
+    }
+  ],
+  "property_fields": [
+    {
+      "id": "pf_address",
+      "field": "Street address / parcel match",
+      "value": null,
+      "status": "unverified",
+      "note": "Do not identify a nearby assessor parcel by inference.",
+      "sources": [
+        "zimas",
+        "assessor"
+      ]
+    },
+    {
+      "id": "pf_apn",
+      "field": "Assessor parcel number",
+      "value": null,
+      "status": "unverified",
+      "note": "Parcel identity and situs must be checked against title/survey.",
+      "sources": [
+        "assessor"
+      ]
+    },
+    {
+      "id": "pf_title",
+      "field": "Fee owner, vesting, easements, lender liens",
+      "value": null,
+      "status": "unverified",
+      "note": "Title report required; no ownership identifiers published.",
+      "sources": [
+        "assessor",
+        "prop13"
+      ]
+    },
+    {
+      "id": "pf_tenant",
+      "field": "Legal tenant and operating entity",
+      "value": null,
+      "status": "unverified",
+      "note": "Brand may be operated by a corporate unit or franchisee; issuer filings do not identify this location.",
+      "sources": [
+        "sec_10q"
+      ]
+    },
+    {
+      "id": "pf_guarantor",
+      "field": "Guarantor, scope, recourse",
+      "value": null,
+      "status": "unverified",
+      "note": "No parent support or continuing liability assumed.",
+      "sources": [
+        "sec_10q"
+      ]
+    },
+    {
+      "id": "pf_rent",
+      "field": "Base rent, additional rent, escalations",
+      "value": null,
+      "status": "unverified",
+      "note": "No rent, percentage rent, pass-through, or escalation inferred.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "pf_expiry",
+      "field": "Exact lease expiration and options",
+      "value": null,
+      "status": "unverified",
+      "note": "Reported 2030–2035 range only; exact dates and notice windows drive value.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "pf_nnn",
+      "field": "NNN scope and landlord retained obligations",
+      "value": null,
+      "status": "unverified",
+      "note": "Roof, structure, parking, HVAC, insurance, taxes, and capital repairs must be read from the lease.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "pf_value",
+      "field": "Current market value / broker opinion / appraisal",
+      "value": null,
+      "status": "unverified",
+      "note": "No cap rate or value inferred from area averages.",
+      "sources": [
+        "treasury",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "pf_debt",
+      "field": "Property debt, rate, maturity, prepayment",
+      "value": null,
+      "status": "unverified",
+      "note": "Financing can dominate net proceeds and hold risk.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "pf_condition",
+      "field": "Building condition, seismic/roof/HVAC/parking capital needs",
+      "value": null,
+      "status": "unverified",
+      "note": "Inspection and capital plan required.",
+      "sources": [
+        "usgs_faq",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "pf_insurance",
+      "field": "Insurance coverage, exclusions, deductibles, premium",
+      "value": null,
+      "status": "unverified",
+      "note": "Collect policy forms, loss runs, and current broker indications.",
+      "sources": [
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "pf_taxbasis",
+      "field": "Tax basis, depreciation, owner entity, marginal rates",
+      "value": null,
+      "status": "unverified",
+      "note": "After-tax sale/hold comparison impossible without these.",
+      "sources": [
+        "irs_544",
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "pf_zoning",
+      "field": "Zoning, overlays, entitlements, alternative use",
+      "value": null,
+      "status": "unverified",
+      "note": "Parcel match required before assigning zoning or redevelopment value.",
+      "sources": [
+        "zimas",
+        "dtla_release"
+      ]
+    },
+    {
+      "id": "pf_environment",
+      "field": "Phase I/II environmental status",
+      "value": null,
+      "status": "unverified",
+      "note": "Restaurant/automotive history can create diligence issues; no site condition inferred.",
+      "sources": [
+        "epa_brownfields"
+      ]
+    },
+    {
+      "id": "pf_schools",
+      "field": "Assigned schools / attendance boundary",
+      "value": null,
+      "status": "unverified",
+      "note": "LAUSD data are district context only.",
+      "sources": [
+        "cde_directory",
+        "dashboard_faq"
+      ]
+    },
+    {
+      "id": "pf_owner",
+      "field": "Owner liquidity, concentration, tax and estate objectives",
+      "value": null,
+      "status": "unverified",
+      "note": "Personal financial information is not published; decision remains conditional.",
+      "sources": [
+        "irs_544",
+        "ftb_capgains"
+      ]
+    }
+  ],
+  "projections": {
+    "dof": {
+      "source": "dof_p2a",
+      "geography": "Los Angeles County",
+      "vintage": "Baseline 2024 / Vintage 2026, released March 13, 2026",
+      "annual": {
+        "2026": 9811358,
+        "2027": 9778629,
+        "2028": 9754806,
+        "2029": 9733907,
+        "2030": 9727305,
+        "2031": 9723118,
+        "2032": 9721552,
+        "2033": 9720980,
+        "2034": 9716390,
+        "2035": 9708647
+      },
+      "milestones": {
+        "2030": 9727305,
+        "2035": 9708647,
+        "2040": 9637524,
+        "2045": 9536756,
+        "2050": 9390823
+      }
+    },
+    "scag": {
+      "source": "scag_appendix",
+      "geography": "Los Angeles County",
+      "vintage": "Connect SoCal 2024, adopted April 4, 2024; rounded to thousands",
+      "population": {
+        "2019": 10046000,
+        "2030": 10214000,
+        "2045": 10757000,
+        "2050": 10793000
+      },
+      "households": {
+        "2019": 3393000,
+        "2030": 3784000,
+        "2045": 4120000,
+        "2050": 4155000
+      },
+      "employment": {
+        "2019": 5031000,
+        "2030": 5277000,
+        "2045": 5497000,
+        "2050": 5461000
+      }
+    },
+    "sectors": [
+      {
+        "name": "Accommodation and food service",
+        "start_year": 2022,
+        "end_year": 2050,
+        "start": 832000,
+        "end": 938000,
+        "published_change": "+12.8%",
+        "sources": [
+          "scag_tr"
+        ]
+      },
+      {
+        "name": "Health care and social assistance",
+        "start_year": 2022,
+        "end_year": 2050,
+        "start": 1498000,
+        "end": 1914000,
+        "published_change": "+27.8%",
+        "sources": [
+          "scag_tr"
+        ]
+      },
+      {
+        "name": "Retail",
+        "start_year": 2022,
+        "end_year": 2050,
+        "start": 842000,
+        "end": 844000,
+        "published_change": "+0.1%",
+        "sources": [
+          "scag_tr"
+        ]
+      },
+      {
+        "name": "Transportation and warehousing",
+        "start_year": 2022,
+        "end_year": 2050,
+        "start": 528000,
+        "end": 590000,
+        "published_change": "+11.8%",
+        "sources": [
+          "scag_tr"
+        ]
+      },
+      {
+        "name": "Manufacturing",
+        "start_year": 2022,
+        "end_year": 2050,
+        "start": 612000,
+        "end": 706000,
+        "published_change": null,
+        "flag": "Source table prints 153% future change, inconsistent with endpoints; derived endpoint change is about 15.4%. Printed percentage withheld.",
+        "sources": [
+          "scag_tr"
+        ]
+      }
+    ],
+    "stress": [
+      {
+        "id": "stress_vacancy",
+        "name": "Rent interruption",
+        "symbol": "m months of zero rent plus re-tenanting downtime",
+        "formula": "Lost rent = monthly verified rent × m; add verified downtime costs",
+        "sources": [
+          "sec_release",
+          "sec_10k"
+        ]
+      },
+      {
+        "id": "stress_leakage",
+        "name": "NNN cost leakage",
+        "symbol": "c = annual owner-paid costs not recovered",
+        "formula": "Net operating income = verified rent − verified unrecovered owner costs",
+        "sources": [
+          "sec_10k",
+          "prop13"
+        ]
+      },
+      {
+        "id": "stress_capex",
+        "name": "Re-tenanting / capital shock",
+        "symbol": "K = tenant improvements, leasing commissions, roof/HVAC/seismic/parking capital",
+        "formula": "Subtract K in the year incurred; do not assume zero because lease is labeled NNN",
+        "sources": [
+          "sec_10k",
+          "usgs_faq"
+        ]
+      },
+      {
+        "id": "stress_exit",
+        "name": "Exit valuation shock",
+        "symbol": "Δcap = change in market cap rate; ΔNOI = change in stabilized NOI",
+        "formula": "Exit value = stabilized NOI ÷ market cap rate; both inputs require evidence",
+        "sources": [
+          "treasury",
+          "sec_release"
+        ]
+      },
+      {
+        "id": "stress_discount",
+        "name": "Discount-rate shock",
+        "symbol": "Δr = change in owner-required return",
+        "formula": "PV = Σ after-tax cash flow_t ÷ (1+r)^t; r is not the Treasury yield by default",
+        "sources": [
+          "treasury",
+          "irs_544"
+        ]
+      },
+      {
+        "id": "stress_tax",
+        "name": "Tax / transfer-cost shock",
+        "symbol": "ΔT = change in federal/state/local tax and transfer costs",
+        "formula": "Net sale proceeds = price − debt payoff − transaction costs − verified taxes",
+        "sources": [
+          "ula",
+          "irs_544",
+          "ftb_capgains"
+        ]
+      },
+      {
+        "id": "stress_hazard",
+        "name": "Hazard / insurance shock",
+        "symbol": "Uninsured loss U, deductible D, premium increase P, business-interruption gap B",
+        "formula": "Owner loss = U + D + unrecovered rent interruption + P; county EAL is not a parcel loss estimate",
+        "sources": [
+          "fema_county_query",
+          "cdi_claims",
+          "usgs_faq"
+        ]
+      }
+    ],
+    "property_inputs": {
+      "rent_schedule": null,
+      "owner_costs": null,
+      "capex_plan": null,
+      "exit_value": null,
+      "discount_rate": null,
+      "tax_basis": null,
+      "debt_payoff": null,
+      "transaction_costs": null,
+      "sale_price": null,
+      "scenario_probabilities": null
+    }
+  },
+  "decisions": [
+    {
+      "id": "sell_before_expiry",
+      "path": "Sell before expiry",
+      "when": "Best when verified after-tax net proceeds exceed risk-adjusted hold value, remaining term is short, buyer pricing is executable, or concentration/liquidity risk is unacceptable.",
+      "tradeoffs": "crystallizes value and reduces single-tenant/hazard exposure; may trigger tax, transfer costs, and loss of future upside.",
+      "required": "Executed lease, obligor/guaranty, rent roll, title, debt payoff, tax basis, appraisal/BOV, insurance, and closing-cost estimate.",
+      "verdict": "Prepare now; do not commit without verified net proceeds and hold comparison.",
+      "sources": [
+        "sec_10k",
+        "irs_544",
+        "ula",
+        "treasury"
+      ]
+    },
+    {
+      "id": "renew_extend",
+      "path": "Renew / extend with tenant",
+      "when": "Best when the actual obligor is creditworthy, extension rent/terms are market-supported, guaranty and repair allocations are enforceable, and extended-term value exceeds sale proceeds.",
+      "tradeoffs": "Can stabilize cash flow and saleability; may lock below-market rent, weak credit, or landlord capital obligations.",
+      "required": "Option/notice dates, tenant financials, guaranty, market rent evidence, amendment terms, and capital plan.",
+      "verdict": "Negotiate in parallel; preserve rights; sign only after credit and value tests.",
+      "sources": [
+        "sec_release",
+        "sec_10k",
+        "treasury"
+      ]
+    },
+    {
+      "id": "hold_status_quo",
+      "path": "Hold without extension",
+      "when": "Only if verified cash flow, reserves, insurance, and re-tenanting plan cover expiry, vacancy, capital, and tax risks better than sale/extension.",
+      "tradeoffs": "Retains upside but accumulates lease-decay, vacancy, and hazard exposure; passive drift is not a strategy.",
+      "required": "Funded reserve plan, downtime budget, re-tenanting strategy, insurance quotes, and exit alternatives.",
+      "verdict": "Not recommended as default without a funded expiry plan.",
+      "sources": [
+        "sec_release",
+        "fema_county_query",
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "sell_to_user",
+      "path": "Sell to user / operator / redeveloper",
+      "when": "Best when alternative-use or owner-user value exceeds investor NNN value after entitlement, environmental, and capital costs.",
+      "tradeoffs": "Can unlock land value; entitlement, zoning, environmental, and execution risk are high.",
+      "required": "Parcel zoning/overlays, Phase I/II, title, access/parking, entitlement feasibility, and buyer demand.",
+      "verdict": "Test only after parcel match; no redevelopment value assumed.",
+      "sources": [
+        "zimas",
+        "dtla_release",
+        "epa_brownfields"
+      ]
+    },
+    {
+      "id": "exchange_1031",
+      "path": "Sale plus 1031 exchange / diversification",
+      "when": "Best when tax deferral and diversification improve after-tax wealth preservation and replacement assets are verified.",
+      "tradeoffs": "Deferral is not forgiveness; timing, boot, replacement quality, and concentration risk remain.",
+      "required": "Tax advisor confirmation, qualified intermediary, 45/180-day calendar, replacement underwriting, and California conformity review.",
+      "verdict": "Evaluate as sale execution alternative, not a separate property verdict.",
+      "sources": [
+        "irs_8824",
+        "irs_544",
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "refinance",
+      "path": "Refinance / recapitalize",
+      "when": "Only if verified debt terms improve liquidity without over-levering a short-term lease or weakening covenant resilience.",
+      "tradeoffs": "Can extract liquidity but adds rate, maturity, and refinancing risk near expiry.",
+      "required": "Loan documents, payoff/prepayment, rate quotes, DSCR/debt yield, lease term, and reserve capacity.",
+      "verdict": "Secondary tool; not a substitute for lease/credit resolution.",
+      "sources": [
+        "treasury",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "retenant",
+      "path": "Prepare re-tenanting / alternative use",
+      "when": "Necessary fallback if tenant does not extend; best when downtime, capital, and replacement rent are funded and market-tested.",
+      "tradeoffs": "Preserves ownership but requires capital, leasing time, and execution risk.",
+      "required": "Market rent study, tenant improvement budget, leasing commissions, zoning, condition report, and reserve funding.",
+      "verdict": "Build the fallback now; do not wait until expiry.",
+      "sources": [
+        "sec_release",
+        "zimas",
+        "sec_10k"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk_lease_decay",
+      "category": "Ordinary lease risk",
+      "name": "Lease-term decay",
+      "mechanism": "Shortening remaining term can reduce buyer pool, financing options, and value even if rent is current.",
+      "context": "Reported expiry range 2030–2035 is unverified; exact term drives the decision.",
+      "site_status": "unverified",
+      "mitigation": "Verify dates/options; calendar notices; price sale and extension cases in parallel.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "risk_tenant_credit",
+      "category": "Ordinary tenant risk",
+      "name": "Tenant / guarantor credit",
+      "mechanism": "Brand strength does not equal lease credit; franchisee or subsidiary obligor may be weaker than issuer.",
+      "context": "Q3 FY26 SSS −1.1%, franchise allowance for credit losses up 70.3% to $(7,607)k, HoldCo >5.0x & Senior ABS >5.25x ($23.3M sweep), 95.8% of debt ($1.430B) facing 2029–2032 ARDs.",
+      "site_status": "unverified",
+      "mitigation": "Identify legal tenant/guarantor; review financials, guaranty scope, defaults, and assignment rights.",
+      "sources": [
+        "sec_10q_debt",
+        "sec_10q_ar",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "risk_nnn_leakage",
+      "category": "Ordinary operating risk",
+      "name": "NNN label versus actual obligations",
+      "mechanism": "Landlord may retain roof, structure, parking, insurance, tax, or capital obligations.",
+      "context": "No executed lease provided.",
+      "site_status": "unverified",
+      "mitigation": "Read lease/amendments; build unrecovered-cost and capital reserve schedule.",
+      "sources": [
+        "sec_10k",
+        "prop13"
+      ]
+    },
+    {
+      "id": "risk_rent_market",
+      "category": "Ordinary market risk",
+      "name": "Above-market rent / renewal reset",
+      "mechanism": "Contract rent above market can create expiry cliff and extension pressure.",
+      "context": "No subject rent or market rent study verified.",
+      "site_status": "unverified",
+      "mitigation": "Obtain market rent evidence and tenant sales coverage if available; stress renewal rent.",
+      "sources": [
+        "sec_release",
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "risk_vacancy",
+      "category": "Ordinary market risk",
+      "name": "Vacancy and re-tenanting downtime",
+      "mechanism": "Expiry or default can interrupt rent while taxes, insurance, debt service, and capital continue.",
+      "context": "No downtime, TI/LC, or replacement rent verified.",
+      "site_status": "unverified",
+      "mitigation": "Fund reserve; pre-market fallback; test m-month rent interruption symbolically.",
+      "sources": [
+        "sec_release",
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "risk_rates",
+      "category": "Ordinary financial risk",
+      "name": "Interest-rate / cap-rate repricing",
+      "mechanism": "Higher required returns can reduce value and buyer leverage.",
+      "context": "Treasury 10Y 4.86% on November 6, 2026 is context, not a cap rate.",
+      "site_status": "unverified",
+      "mitigation": "Stress exit cap and discount rate with evidence-backed ranges; avoid fixed-rate assumptions.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "risk_tax_transfer",
+      "category": "Ordinary tax risk",
+      "name": "Transfer taxes and closing costs",
+      "mechanism": "City ULA, base transfer tax, county tax, brokerage, and payoff can materially reduce net proceeds.",
+      "context": "Combined LA County 0.11% + City Base 0.45% + ULA 4%/5.5% = 0.56% (≤$5.4M), 4.56% (>$5.4M–<$10.9M), 6.06% (≥$10.9M) effective Jul 1, 2026.",
+      "site_status": "unverified",
+      "mitigation": "Confirm jurisdiction, exemptions, closing date, and allocation; model after-tax net proceeds.",
+      "sources": [
+        "lavote_dtt",
+        "ula"
+      ]
+    },
+    {
+      "id": "risk_property_tax",
+      "category": "Ordinary tax risk",
+      "name": "Property-tax reassessment",
+      "mechanism": "Sale or ownership change can reset assessed value and change buyer underwriting.",
+      "context": "Prop 13 general levy 1% plus assessments; actual bill unknown.",
+      "site_status": "unverified",
+      "mitigation": "Review current bill, direct assessments, and reassessment treatment with tax advisor.",
+      "sources": [
+        "prop13",
+        "boe_reassessment"
+      ]
+    },
+    {
+      "id": "risk_income_tax",
+      "category": "Ordinary tax risk",
+      "name": "Capital gain / depreciation recapture",
+      "mechanism": "Federal and California tax can change sale versus hold ranking.",
+      "context": "California individual gains taxed as ordinary income; owner basis unknown.",
+      "site_status": "unverified",
+      "mitigation": "Obtain basis/depreciation and entity details; compare after-tax outcomes; evaluate 1031 timing.",
+      "sources": [
+        "irs_544",
+        "ftb_capgains",
+        "irs_8824"
+      ]
+    },
+    {
+      "id": "risk_insurance",
+      "category": "Ordinary insurance risk",
+      "name": "Insurance availability / premium shock",
+      "mechanism": "Coverage gaps, deductibles, exclusions, or premium increases can reduce net rent and marketability.",
+      "context": "CDI tracker $25.2B paid; FAIR Plan commercial limits expanded to $20M/bldg ($100M/loc) thru 2028; Verisk wildfire cat model approved Jul 2025 w/ 85% distressed-area rule.",
+      "site_status": "unverified",
+      "mitigation": "Collect policy forms, loss runs, renewal quotes, and business-interruption terms.",
+      "sources": [
+        "cdi_claims",
+        "cdi_fairplan_2025",
+        "cdi_catmodel_2025"
+      ]
+    },
+    {
+      "id": "risk_labor",
+      "category": "Ordinary operating risk",
+      "name": "Labor and input-cost pressure",
+      "mechanism": "Wage floors and food/energy inflation can pressure tenant margins and renewal capacity.",
+      "context": "CA fast-food $20.00/hr; LA City $18.42/hr; CA general rising to $17.40/hr eff. Jan 1, 2027; LA metro energy CPI +20.3% YoY.",
+      "site_status": "unverified",
+      "mitigation": "Review tenant sales coverage and cost structure; do not assume rent growth matches CPI.",
+      "sources": [
+        "dir_fastfood",
+        "la_wage",
+        "dir_release_2027",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "risk_access",
+      "category": "Ordinary site risk",
+      "name": "Access, visibility, parking, circulation",
+      "mechanism": "Site utility can change with traffic, construction, curb cuts, parking, and neighborhood operations.",
+      "context": "No parcel or traffic study verified.",
+      "site_status": "unverified",
+      "mitigation": "Inspect access/parking; review public works and zoning after parcel match.",
+      "sources": [
+        "zimas",
+        "dtla_release"
+      ]
+    },
+    {
+      "id": "risk_crime",
+      "category": "Ordinary community risk",
+      "name": "Crime / perception / operating hours",
+      "mechanism": "Safety and perception can affect customer traffic, tenant operations, and buyer demand.",
+      "context": "LAPD thru Oct 31, 2026: Citywide −10.6% YoY (83,596), Operations-Central Bureau 23,423 (−2.0% overall, 28% of citywide) with Larceny +10.0% and Robbery +1.3%.",
+      "site_status": "unverified",
+      "mitigation": "Use current official area data and on-site observation after parcel match.",
+      "sources": [
+        "lapd_city",
+        "lapd_central",
+        "lapd"
+      ]
+    },
+    {
+      "id": "risk_environment",
+      "category": "Ordinary environmental risk",
+      "name": "Contamination / historical use",
+      "mechanism": "Restaurant, automotive, or industrial history can create assessment, cleanup, financing, and liability issues.",
+      "context": "No Phase I/II provided.",
+      "site_status": "unverified",
+      "mitigation": "Order Phase I; escalate to Phase II if recognized environmental conditions appear.",
+      "sources": [
+        "epa_brownfields"
+      ]
+    },
+    {
+      "id": "risk_earthquake",
+      "category": "Rare high-impact hazard",
+      "name": "Earthquake",
+      "mechanism": "Structural damage, business interruption, insurance gaps, and regional repricing can impair value.",
+      "context": "FEMA NRI 100 / $4.57B EAL; USGS 60%/46%/31% 30-yr; ShakeOut M7.8 $191B scenario; CGS 50-ft fault setback & liquefaction zone NHD rules.",
+      "site_status": "unverified",
+      "mitigation": "Seismic/structural review, insurance adequacy, emergency plan, and capital reserve.",
+      "sources": [
+        "fema_county_query",
+        "usgs_faq",
+        "usgs_shakeout",
+        "cgs_alquist_priolo",
+        "cgs_shma"
+      ]
+    },
+    {
+      "id": "risk_wildfire",
+      "category": "Rare high-impact hazard",
+      "name": "Wildfire / smoke / insurance market",
+      "mechanism": "Direct fire, smoke, access closure, utility shutoff, and insurance repricing can affect asset even without parcel burn.",
+      "context": "769,561 Very High acres (65.3% of mapped); 2026 SRA update public comment active (Nov 2026); Palisades 23,448 ac / Eaton 14,021 ac; 61 of 88 FEMA LA declarations are Fire.",
+      "site_status": "unverified",
+      "mitigation": "Parcel FHSZ check, defensible space, roof/vent review, insurance and business-interruption review.",
+      "sources": [
+        "calfire_acres",
+        "calfire_fhsz",
+        "calfire_palisades",
+        "calfire_eaton",
+        "openfema_la"
+      ]
+    },
+    {
+      "id": "risk_flood",
+      "category": "Rare high-impact hazard",
+      "name": "Inland flooding / storm drainage",
+      "mechanism": "Pluvial/fluvial flooding can damage building, interrupt access, and increase insurance/capital costs.",
+      "context": "FEMA county inland flood risk Very High; parcel flood zone unknown.",
+      "site_status": "unverified",
+      "mitigation": "FIRM/Elevation review, drainage inspection, flood insurance and emergency plan.",
+      "sources": [
+        "fema_county_query",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "risk_heat_landslide",
+      "category": "Rare high-impact hazard",
+      "name": "Heat, landslide, wind, lightning, tornado",
+      "mechanism": "Secondary hazards can affect operations, utilities, insurance, and capital needs.",
+      "context": "County ratings: heat/landslide/tornado Relatively High; lightning Very High; strong wind Relatively Moderate.",
+      "site_status": "unverified",
+      "mitigation": "Include in property condition and insurance review; do not assign parcel probabilities from county ratings.",
+      "sources": [
+        "fema_hazard_ratings"
+      ]
+    },
+    {
+      "id": "risk_black_swan_tenant",
+      "category": "Black-swan / severe stress",
+      "name": "Tenant bankruptcy or system shock",
+      "mechanism": "Lease rejection, rent reduction, or brand impairment can create abrupt vacancy and value loss.",
+      "context": "Issuer closure guidance and negative SSS show pressure; no subject default verified.",
+      "site_status": "unverified",
+      "mitigation": "Guaranty review, default remedies, reserve funding, and pre-negotiated fallback tenants.",
+      "sources": [
+        "sec_release",
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "risk_black_swan_capital",
+      "category": "Black-swan / severe stress",
+      "name": "Capital-market freeze",
+      "mechanism": "Buyer financing or owner refinancing can disappear near expiry, forcing price or term concessions.",
+      "context": "Treasury yields are observable; property debt and buyer leverage unknown.",
+      "site_status": "unverified",
+      "mitigation": "Avoid maturity cliff; maintain liquidity; test all-cash buyer and extension cases.",
+      "sources": [
+        "treasury",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "risk_black_swan_regulatory",
+      "category": "Black-swan / severe stress",
+      "name": "Regulatory / tax / zoning shock",
+      "mechanism": "New transfer taxes, wage rules, zoning, or environmental requirements can change net proceeds or use value.",
+      "context": "ULA thresholds and wage floors already changed; future policy unknown.",
+      "site_status": "unverified",
+      "mitigation": "Monitor official rule changes; preserve optionality; avoid irreversible entitlement assumptions.",
+      "sources": [
+        "ula",
+        "dir_fastfood",
+        "zimas"
+      ]
+    },
+    {
+      "id": "risk_black_swan_compound",
+      "category": "Black-swan / severe stress",
+      "name": "Compound disaster",
+      "mechanism": "Hazard plus insurance withdrawal plus tenant weakness plus capital-market stress can interact nonlinearly.",
+      "context": "County NRI composite Very High and resilience Very Low; no parcel loss model verified.",
+      "site_status": "unverified",
+      "mitigation": "Use combined stress cases, liquidity reserves, and exit optionality; do not rely on single-risk averages.",
+      "sources": [
+        "fema_county_query",
+        "cdi_claims",
+        "sec_release"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req_identity",
+      "requirement": "Property identity and privacy",
+      "coverage": "Parcel/address/APN/owner remain blank; no personal identifiers published.",
+      "evidence": "Official lookup links provided; title/parcel match required.",
+      "status": "partial",
+      "sources": [
+        "assessor",
+        "zimas"
+      ]
+    },
+    {
+      "id": "req_lease",
+      "requirement": "Lease, tenant, guaranty, options, notices",
+      "coverage": "Issuer context verified; subject lease fields blank and flagged.",
+      "evidence": "Executed lease/amendments and guaranty required.",
+      "status": "partial",
+      "sources": [
+        "sec_10k",
+        "sec_10q"
+      ]
+    },
+    {
+      "id": "req_geography",
+      "requirement": "Geography, population, income, housing",
+      "coverage": "City/county Census values published with periods and caveats.",
+      "evidence": "QuickFacts Vintage 2025.",
+      "status": "covered",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "req_economy",
+      "requirement": "Employment, job growth, economic drivers, inflation",
+      "coverage": "BLS/EDD September 2026 labor, sector, CPI; BEA/FRED GDP; port/planning context.",
+      "evidence": "Official releases with geography/adjustment labels.",
+      "status": "covered",
+      "sources": [
+        "bls_summary",
+        "edd_la",
+        "fred_county_gdp",
+        "port_stats"
+      ]
+    },
+    {
+      "id": "req_schools",
+      "requirement": "Schools and community context",
+      "coverage": "2026 LAUSD Dashboard published; parcel assignment blank.",
+      "evidence": "CDE Dashboard and directory.",
+      "status": "partial",
+      "sources": [
+        "dashboard_engagement",
+        "dashboard_performance",
+        "cde_directory"
+      ]
+    },
+    {
+      "id": "req_tenant_credit",
+      "requirement": "Tenant / lease credit",
+      "coverage": "SEC issuer financials and closure guidance published; legal obligor unverified.",
+      "evidence": "FY2025 10-K, Q3 FY2026 10-Q/release.",
+      "status": "partial",
+      "sources": [
+        "sec_10k",
+        "sec_10q",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "req_value",
+      "requirement": "Value influences and taxes",
+      "coverage": "Rates, ULA, Prop 13, IRS/FTB rules published; property value/basis blank.",
+      "evidence": "Official tax and market sources.",
+      "status": "partial",
+      "sources": [
+        "treasury",
+        "ula",
+        "prop13",
+        "irs_544",
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "req_risks",
+      "requirement": "Ordinary risks and rare high-impact events",
+      "coverage": "Risk register includes lease, market, tax, insurance, hazards, and black-swan stresses.",
+      "evidence": "FEMA, USGS, CAL FIRE, CDI, SEC, EPA, LAPD.",
+      "status": "covered",
+      "sources": [
+        "fema_county_query",
+        "usgs_faq",
+        "calfire_acres",
+        "cdi_claims",
+        "sec_release",
+        "epa_brownfields",
+        "lapd"
+      ]
+    },
+    {
+      "id": "req_projections",
+      "requirement": "Reliable transparent projection/scenario system",
+      "coverage": "Official DOF/SCAG paths published separately; derived arithmetic labeled; property outputs gated blank.",
+      "evidence": "DOF P-2A, SCAG Appendix I, reproducible Python model.",
+      "status": "covered",
+      "sources": [
+        "dof_p2a",
+        "scag_appendix",
+        "repo"
+      ]
+    },
+    {
+      "id": "req_decisions",
+      "requirement": "All decision paths and balanced recommendation",
+      "coverage": "Sell, renew, hold, user/redeveloper, 1031, refinance, re-tenanting compared conditionally.",
+      "evidence": "Official lease/tax/market context; no invented property inputs.",
+      "status": "covered",
+      "sources": [
+        "sec_10k",
+        "irs_8824",
+        "treasury",
+        "zimas"
+      ]
+    },
+    {
+      "id": "req_sources",
+      "requirement": "Every published table row links to an official source",
+      "coverage": "Generated tables include source column; validator enforces allowlist and row links.",
+      "evidence": "Source registry and validation script.",
+      "status": "covered",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "req_flagged",
+      "requirement": "Unconfirmed values blank and flagged",
+      "coverage": "Property fields and open issues appear on Flagged for Review.",
+      "evidence": "Generated flagged page and dataset nulls.",
+      "status": "covered",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "req_coordination",
+      "requirement": "Coordinate parallel sessions and preserve prior work",
+      "coverage": "Claims recorded; historical builds preserved but excluded from curated artifact.",
+      "evidence": "COORDINATION.md and Git history.",
+      "status": "covered",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "req_publish",
+      "requirement": "PR, merge, and live deployment verification",
+      "coverage": "PR #44 merged to main (bf56780). Workflow validate/deploy and legacy Pages build succeeded. Live root, projections, flagged, and all canonical pages fetched; historical/internal paths return 404.",
+      "evidence": "GitHub Actions runs 42535821817 / 42535821358; live URL and sentinel checks recorded in verification log.",
+      "status": "covered",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "flag_property_identity",
+      "item": "Exact parcel, address, APN, title, and owner",
+      "reason": "Not supplied; no official parcel match performed.",
+      "action": "Match title/survey to assessor/ZIMAS before any property-specific conclusion.",
+      "sources": [
+        "assessor",
+        "zimas"
+      ]
+    },
+    {
+      "id": "flag_lease_terms",
+      "item": "Exact expiry, options, notices, rent, escalations, NNN scope",
+      "reason": "Reported 2030–2035 range and NNN label are premises only.",
+      "action": "Read executed lease and amendments; calendar all notice/option dates.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "flag_obligor",
+      "item": "Legal tenant, franchisee, guarantor, recourse",
+      "reason": "Issuer filings do not identify the subject lease obligor.",
+      "action": "Obtain lease parties, guaranty, financials, and default history.",
+      "sources": [
+        "sec_10q",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "flag_value_debt",
+      "item": "Market value, cap rate, debt, prepayment, owner discount rate",
+      "reason": "No appraisal, BOV, loan documents, or owner return requirement verified.",
+      "action": "Collect executable pricing and financing evidence; keep model outputs blank.",
+      "sources": [
+        "treasury",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "flag_tax_basis",
+      "item": "Tax basis, depreciation, entity, marginal rates, 1031 eligibility",
+      "reason": "Owner-specific tax facts unavailable and private.",
+      "action": "Tax advisor to compute after-tax sale/hold/exchange cases.",
+      "sources": [
+        "irs_544",
+        "ftb_capgains",
+        "irs_8824"
+      ]
+    },
+    {
+      "id": "flag_condition",
+      "item": "Roof, structure, seismic, HVAC, parking, capital plan",
+      "reason": "No inspection or capital report provided.",
+      "action": "Order property condition assessment and reserve study.",
+      "sources": [
+        "usgs_faq",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "flag_insurance",
+      "item": "Policy forms, exclusions, deductibles, premium, business interruption",
+      "reason": "No current commercial policy or quote verified.",
+      "action": "Broker to provide current and renewal indications.",
+      "sources": [
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "flag_hazard_parcel",
+      "item": "Parcel FHSZ, flood zone, fault/soil/landslide exposure",
+      "reason": "County metrics cannot be assigned to an unidentified parcel.",
+      "action": "Run official parcel-level hazard lookups after identity match.",
+      "sources": [
+        "calfire_fhsz",
+        "fema_nri",
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "flag_school_boundary",
+      "item": "Assigned schools and attendance boundary",
+      "reason": "LAUSD district data do not establish parcel assignment.",
+      "action": "Use CDE directory and district boundary tools after parcel match.",
+      "sources": [
+        "cde_directory",
+        "dashboard_faq"
+      ]
+    },
+    {
+      "id": "flag_crime",
+      "item": "Current parcel-area crime statistics",
+      "reason": "LAPD citywide (−10.6%) and Central Bureau (−2.0%, larceny +10.0%) COMPSTAT PDFs are verified through Oct 31, 2026, but parcel-level division and calls for service remain unknown without the site address.",
+      "action": "Use current official area PDFs and consistent dates/boundaries after match.",
+      "sources": [
+        "lapd_city",
+        "lapd_central",
+        "lapd"
+      ]
+    },
+    {
+      "id": "flag_environment",
+      "item": "Phase I/II environmental condition",
+      "reason": "No environmental report provided.",
+      "action": "Order Phase I; escalate if recognized environmental conditions appear.",
+      "sources": [
+        "epa_brownfields"
+      ]
+    },
+    {
+      "id": "flag_zoning",
+      "item": "Zoning, overlays, alternative use, entitlement feasibility",
+      "reason": "Parcel location and plan area unknown.",
+      "action": "Check ZIMAS and planning code after match; do not assume DTLA plan applies.",
+      "sources": [
+        "zimas",
+        "dtla_release"
+      ]
+    },
+    {
+      "id": "flag_scag_manufacturing",
+      "item": "SCAG manufacturing future-change percentage",
+      "reason": "Official table prints 153% while endpoints 612k→706k imply about 15.4%.",
+      "action": "Withhold printed percentage; use endpoint-derived calculation only with flag.",
+      "sources": [
+        "scag_tr"
+      ]
+    },
+    {
+      "id": "flag_usgs_vintage",
+      "item": "USGS 30-year probability start date",
+      "reason": "Live FAQ does not state start date; old fact-sheet PDF returned 404.",
+      "action": "Do not label as a fresh 2026–2056 forecast; verify publication vintage before time-specific use.",
+      "sources": [
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "flag_calfire_expansion",
+      "item": "Prior 26%/35% FHSZ expansion claims",
+      "reason": "Not located on official state page during audit.",
+      "action": "Keep withheld; publish only official acreage table and derived mapped-acre share.",
+      "sources": [
+        "calfire_fhsz",
+        "calfire_acres"
+      ]
+    },
+    {
+      "id": "flag_gdp_summary",
+      "item": "Old executive-summary metro GDP $1.355T (2024) and county ranking",
+      "reason": "Official metro series discontinued at 2023; ranking unsupported.",
+      "action": "Corrected in this dashboard; historical claim preserved only in Git/archives.",
+      "sources": [
+        "fred_metro_gdp",
+        "fred_county_gdp",
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_stale_labor",
+      "item": "Stale December 2025 labor headline",
+      "reason": "September 2026 BLS/EDD releases are available.",
+      "action": "Use dated September 2026 values; retain 2025 city annual rate only as historical context.",
+      "sources": [
+        "bls_summary",
+        "edd_la",
+        "bls_city_annual"
+      ]
+    },
+    {
+      "id": "flag_pages_source",
+      "item": "GitHub Pages serving path",
+      "reason": "GitHub Pages API remains build_type=legacy serving curated root files via _config.yml; workflow token cannot switch build_type=workflow. Fixed stale 404.html exclusion so 404.html aligns with the 10 canonical pages.",
+      "action": "Resolved for curated publication: legacy Jekyll exclusion config serves only canonical pages; live root and sentinel pages verified after PR #44. Workflow artifact remains preferred if source is later switched.",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    },
+    {
+      "id": "flag_old_gate",
+      "item": "Obsolete verify-data.mjs gate",
+      "reason": "Five architecture assertions fail against canonical site.",
+      "action": "Preserve file; current CI uses build/tests/validator instead.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_historical_builds",
+      "item": "Competing historical pages/site/archive builds",
+      "reason": "Contain nonofficial citations and unsupported assumptions; not canonical.",
+      "action": "Preserve in Git; exclude from curated public artifact and legacy fallback.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_archive_conflicts",
+      "item": "Archived arena-ffc97e4e unresolved conflict markers",
+      "reason": "Line audit found actual <<<<<<< / >>>>>>> markers in eight archived files; they are preserved historical artifacts, not canonical public pages.",
+      "action": "Keep excluded from curated artifact and legacy fallback; do not merge archived content without resolution.",
+      "sources": [
+        "repo",
+        "repo_line_audit"
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "audit_inventory",
+      "check": "Repository inventory and privacy scan",
+      "result": "Post-merge tracked inventory: 176 files / 33,914 text lines. Curated public pages/assets pass privacy scan. Historical/internal hits are false positives, synthetic test fixtures, or preserved archive irregularities.",
+      "detail": "Line-audit manifest records hashes, counts, domains, and GitHub review links. No personal information copied into public outputs.",
+      "sources": [
+        "repo",
+        "repo_line_audit"
+      ]
+    },
+    {
+      "id": "audit_conflicts",
+      "check": "Git conflict-marker scan",
+      "result": "No conflict markers in curated public pages or integration support files. Eight preserved archive/arena-ffc97e4e files contain historical conflict markers and are excluded from publication.",
+      "detail": "Exact <<<<<<< / >>>>>>> scan required; naive ======= scan falsely flags archived CSS separators.",
+      "sources": [
+        "repo",
+        "repo_line_audit"
+      ]
+    },
+    {
+      "id": "audit_baseline_validator",
+      "check": "Baseline structural validator",
+      "result": "PASS: 8 pages / 209 tbody rows before integration.",
+      "detail": "Structural pass is not factual verification; current gate is stronger.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "audit_official_sources",
+      "check": "Official-source re-read",
+      "result": "Census, BLS, EDD, BEA/FRED, DOF, SCAG, CDE, SEC, FEMA, USGS, CAL FIRE, CDI, LA Finance/Planning, DIR, IRS, FTB, Treasury values recorded with geography/period/units.",
+      "detail": "Corrections and open flags are published; unverified values remain blank.",
+      "sources": [
+        "census_city",
+        "bls_summary",
+        "dof_p2a",
+        "scag_appendix",
+        "sec_release",
+        "fema_county_query",
+        "repo"
+      ]
+    },
+    {
+      "id": "audit_projection_method",
+      "check": "Projection method",
+      "result": "DOF and SCAG official paths kept separate; only transparent derived arithmetic; no interpolation or parcel extrapolation.",
+      "detail": "Property NPV/scenario outputs remain null until verified inputs exist.",
+      "sources": [
+        "dof_p2a",
+        "scag_appendix",
+        "repo"
+      ]
+    },
+    {
+      "id": "audit_decision",
+      "check": "Decision support",
+      "result": "Conditional dual-track recommendation: prepare sale and renewal; preserve rights; avoid passive drift to expiry.",
+      "detail": "No definitive property-specific verdict without lease, value, tax, debt, condition, insurance, and owner objectives.",
+      "sources": [
+        "sec_10k",
+        "irs_544",
+        "treasury",
+        "repo"
+      ]
+    },
+    {
+      "id": "audit_public_artifact",
+      "check": "Public artifact boundary",
+      "result": "Curated pages/assets/generated projection data only; archives, research notes, coordination, and personal identifiers excluded.",
+      "detail": "Legacy fallback uses Jekyll exclusion config; workflow artifact includes .nojekyll.",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    },
+    {
+      "id": "audit_deploy",
+      "check": "Deployment verification",
+      "result": "PR #44 merged 2026-11-08T23:34:27Z (bf56780). Runs 42535821817 and 42535821358 success. Pages API built; live curated dashboard verified.",
+      "detail": "Pages source remains legacy main /; workflow source switch unavailable, but legacy Jekyll fallback serves only curated root files. Live root/projections/flagged/assets/projections.json fetched; geography.html, COORDINATION.md, archive, pages, and data paths return 404.",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    },
+    {
+      "id": "audit_b8188ee0_pass",
+      "check": "Independent re-verification pass (session b8188ee0, 08 Nov 2026)",
+      "result": "All 20 figure groups re-read on their official pages matched: Census city/county QuickFacts, BLS city rate + LAUS county series (incl. Sep 2026 prelim 4.5%), FRED metro (discontinued at 2023) and county GDP, SCAG adopted tables, DTLA 2040, SEC 10-Q XBRL statements, ULA thresholds, USGS UCERF3, CDI tracker, OSFM FHSZ acreage. FEMA NRI county values and OpenFEMA declarations independently confirmed via the same official data services.",
+      "detail": "Full trail in research/verification-audit-b8188ee0.md. Unique additions re-applied after two concurrent main advances: SEC 8-K governance observation and NRI coastal-flooding sub-score; no other session's work discarded.",
+      "sources": [
+        "census_city",
+        "sec_10q",
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "audit_ac5b9087_pass",
+      "check": "Full repo line-audit & live official re-verification (session ac5b9087, 10 Nov 2026)",
+      "result": "177 files / 34,181 lines; 61+ official sources live-verified",
+      "detail": "Re-verified all baseline official series, updated Treasury yields (Nov 9), added CA DOF E-1/E-5, Jack 2029–2032 ARD wall & allowance/lease obligations, LA County+City DTT stack, CA 2027 $17.40/hr wage, LAPD Oct 2026 COMPSTAT, Port of LA CY25/Sep 2026 TEUs, LA Metro D Line/LAX Transit, OpenFEMA 88-record breakdown, CDI FAIR Plan/Verisk model, CGS/USGS ShakeOut, CAL FIRE Nov 2026 SRA update, aligned 404.html, and added blank-default local owner worksheet.",
+      "sources": [
+        "repo_line_audit",
+        "sec_10q_debt",
+        "dof_e1",
+        "treasury",
+        "lavote_dtt"
+      ]
+    }
+  ]
+}

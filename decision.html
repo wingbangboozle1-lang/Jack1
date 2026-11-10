@@ -27,12 +27,12 @@
     <div class="main-column">
       <header class="topbar">
         <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">☰ <span>Sections</span></button>
-        <span class="crumb">Verified dashboard · 2026-11-08</span>
+        <span class="crumb">Verified dashboard · 2026-11-10</span>
       </header>
       <main id="main-content" class="content">
         <header class="page-intro"><p class="eyebrow">Jack in the Box NNN decision brief — central Los Angeles area</p><h1>Decision paths and balanced recommendation</h1><p class="lead">A conditional, wealth-preservation-first course among selling, renewing, holding, exchanging, refinancing, and re-tenanting.</p></header>
         
-<section class="hero"><p class="eyebrow">Provisional recommendation</p><h2>Dual-track now; choose only after evidence.</h2><p>Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.</p></section>
+<section class="hero"><p class="eyebrow">Provisional recommendation</p><h2>Dual-track now; choose only after evidence.</h2><p>Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA&#x27;s 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box&#x27;s 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.</p></section>
 <div class="section-heading"><div><p class="eyebrow">Path comparison</p><h2>Sell, renew, hold, and related alternatives</h2></div></div>
 <div class="table-tools"><label class="micro muted" for="search-decision-paths">Filter table</label><input id="search-decision-paths" class="table-search" type="search" placeholder="Search rows…" aria-label="Search Decision paths, conditions, tradeoffs, and required evidence." data-table-search="decision-paths"></div><div class="table-wrap"><table id="decision-paths"><caption>Decision paths, conditions, tradeoffs, and required evidence.</caption><thead><tr><th scope="col">Path</th><th scope="col">When it can win</th><th scope="col">Tradeoffs</th><th scope="col">Required evidence</th><th scope="col">Provisional view</th><th scope="col">Official source</th></tr></thead><tbody>
 <tr><td><strong>Sell before expiry</strong></td><td>Best when verified after-tax net proceeds exceed risk-adjusted hold value, remaining term is short, buyer pricing is executable, or concentration/liquidity risk is unacceptable.</td><td>crystallizes value and reduces single-tenant/hazard exposure; may trigger tax, transfer costs, and loss of future upside.</td><td>Executed lease, obligor/guaranty, rent roll, title, debt payoff, tax basis, appraisal/BOV, insurance, and closing-cost estimate.</td><td><strong>Prepare now; do not commit without verified net proceeds and hold comparison.</strong></td><td><a class="source-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">U.S. Securities and Exchange Commission</a> · <a class="source-link" href="https://www.irs.gov/publications/p544" target="_blank" rel="noopener noreferrer">Internal Revenue Service</a> · <a class="source-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer">Los Angeles Office of Finance</a> · <a class="source-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" target="_blank" rel="noopener noreferrer">U.S. Department of the Treasury</a></td></tr>
@@ -57,6 +57,36 @@
   <li>Compare after-tax net sale proceeds with risk-adjusted hold/renew/re-tenant value using verified inputs.</li>
   <li>If evidence remains incomplete, default to optionality and funded fallback—not an irreversible choice.</li>
 </ol>
+<section class="worksheet" id="owner-worksheet" aria-labelledby="worksheet-heading">
+  <div class="ws-head">
+    <div>
+      <p class="eyebrow">Private local calculator · zero defaults</p>
+      <h2 id="worksheet-heading">Owner decision worksheet (browser memory only)</h2>
+      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests, applying the verified LA transfer-tax tiers (0.56% / 4.56% / 6.06% city; 0.11% county-only).</p>
+    </div>
+    <button type="button" class="button button-secondary ws-reset" data-ws-reset>Clear inputs</button>
+  </div>
+  <div class="ws-grid">
+    <div class="ws-field"><label for="ws-jurisdiction">Transfer-tax jurisdiction</label><select id="ws-jurisdiction"><option value="la_city">City of Los Angeles (County 0.11% + City 0.45% + ULA)</option><option value="county_only">LA County unincorporated / non-special city (0.11%)</option></select></div>
+    <div class="ws-field"><label for="ws-exchange">Income tax mode</label><select id="ws-exchange"><option value="taxable">Taxable sale (apply gain basis &amp; rate)</option><option value="1031">1031 like-kind exchange deferral (IRS Form 8824)</option></select></div>
+    <div class="ws-field"><label for="ws-sale-price">Executable sale price ($)</label><input id="ws-sale-price" type="number" min="0" step="any" placeholder="Enter verified quote"></div>
+    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-broker-pct">Brokerage &amp; other closing costs (%)</label><input id="ws-broker-pct" type="number" min="0" step="any" placeholder="Enter % (excl. transfer tax)"></div>
+    <div class="ws-field"><label for="ws-tax-basis">Adjusted tax basis ($)</label><input id="ws-tax-basis" type="number" min="0" step="any" placeholder="Enter CPA basis (if taxable)"></div>
+    <div class="ws-field"><label for="ws-tax-rate">Combined federal + CA gain/recapture rate (%)</label><input id="ws-tax-rate" type="number" min="0" step="any" placeholder="Enter blended tax %"></div>
+    <div class="ws-field"><label for="ws-rent">Current annual NNN base rent ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified annual NOI"></div>
+    <div class="ws-field"><label for="ws-years">Remaining lease years to test</label><input id="ws-years" type="number" min="0" step="any" placeholder="Enter exact years"></div>
+    <div class="ws-field"><label for="ws-esc">Annual contractual rent growth (%)</label><input id="ws-esc" type="number" step="any" placeholder="Enter lease escalation %"></div>
+    <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Compare vs 4.88% 10Y Treasury"></div>
+    <div class="ws-field"><label for="ws-exit-val">Expected gross value at horizon ($)</label><input id="ws-exit-val" type="number" min="0" step="any" placeholder="Enter stabilized/dark exit value"></div>
+  </div>
+  <div class="ws-outputs" aria-live="polite">
+    <div class="ws-card"><div class="metric-label">Combined DTT + ULA</div><div class="ws-val" id="ws-out-dtt">—</div><p class="micro muted" id="ws-out-dtt-note">Enter a sale price to evaluate the 0.56% / 4.56% / 6.06% LA transfer-tax tier.</p></div>
+    <div class="ws-card"><div class="metric-label">Net sale proceeds</div><div class="ws-val" id="ws-out-sale">—</div><p class="micro muted" id="ws-out-sale-note">Requires sale price, debt payoff, and brokerage/other cost % locally.</p></div>
+    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, and debt.</p></div>
+    <div class="ws-card ws-highlight"><div class="metric-label">Local path spread</div><div class="ws-val" id="ws-out-spread">—</div><p class="micro muted" id="ws-out-spread-note">Complete both Sale and Hold inputs above to compare paths locally.</p></div>
+  </div>
+</section>
 
       </main>
       <footer class="footer">Decision support, not legal, tax, appraisal, or brokerage advice. Every table row links to an official source. <a href="sources.html">Source registry</a> · <a href="flagged.html">Flagged for review</a> · <a href="audit.html">Audit</a></footer>
