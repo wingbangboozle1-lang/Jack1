@@ -1267,3 +1267,36 @@ and corrections were kept (including their independent 941-CA fix and flag sets 
 merge is `data/verified-2026-11-10.json` (90 observations, session ac5b9087) — this session's
 corrections to `verified-2026-11-08.json` are preserved in that legacy file and their equivalents
 (also fixing tenant_ca to 941/44.1%) are in the canonical file.
+
+---
+
+## Session: arena/8d46ab6c-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/8d46ab6c-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-10, ~06:0x UTC):** local `main` = `bcefb4e` (PR #55 merge).
+`origin/main` = same commit; no newer branch, PR, or Actions run beyond it (`gh pr list`/`gh run list`
+checked). Three parallel-session PRs are **open and unmerged**: #47 (`arena/6c87c9a8-jack1`,
+2026-11-10T00:34Z), #54 (`arena/8cd7cd89-jack1`, 2026-11-10T00:51Z), #56 (`arena/c9dbd92f-jack1`,
+2026-11-10T01:05Z). Their claimed files (`verification/2026-11-10-c9dbd92f.md`,
+`verification/2026-11-10-6c87c9a8.md`, etc.) are **not present in `main`** and `COORDINATION.md` on
+`main` contains **no** `c9dbd92f` entry. All three exceed the 60-minute no-commit takeover window
+(latest activity 01:05Z, claim at 06:0xZ) and none has a posted claim on `main`; per the takeover rule
+this session may proceed while **preserving (not deleting) their branches and PRs**. Nothing from those
+PRs is copied into this branch without independent verification.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| K-1 | Session claim + coordination protocol | **done** | arena/8d46ab6c-jack1 | this board (append-only) |
+| K-2 | Fresh 2026-11-10 independent line-by-line verification of the 90 canonical observations + 74 official source URLs, derived arithmetic re-computation, privacy/PII rescan, irregularity log | in progress | arena/8d46ab6c-jack1 | `verification/2026-11-10-8d46ab6c.md` (new), dataset corrections only if an official page disagrees (with dated audit entry) |
+| K-3 | Audit of the three unmerged parallel-session PRs (#47, #54, #56) for files/claims absent from `main`; record findings; do not merge their content unverified | in progress | arena/8d46ab6c-jack1 | this board, `verification/2026-11-10-8d46ab6c.md` |
+| K-4 | Final integration gates (build `--check`, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed | arena/8d46ab6c-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs (dataset,
+generated pages) change only through K-2-verified corrections and deterministic regeneration. Small
+frequent commits; `git pull --rebase origin main` before each push; conflicts stop and are resolved
+without discarding another session's work.
+
+Claimed at 2026-11-10 (UTC). Commit and push of this claim precede all content work.
