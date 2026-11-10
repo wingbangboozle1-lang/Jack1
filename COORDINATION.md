@@ -64,6 +64,26 @@ PASS. The Treasury row action in `verification/2026-11-10-8cd7cd89.md` §1 #21 w
 the adopted refresh. Rebase was abandoned in favour of a merge commit so no session's history is
 rewritten and no force-push was needed.
 
+**Second merge conflict record (2026-11-10, same day):** session `ac5b9087`'s PR #50 then landed
+on `main`, moving the source of truth to a new `data/verified-2026-11-10.json` (90 observations /
+73 sources), adding a generated `404.html`, an owner decision worksheet, validator/test
+expansions (14 tests), and — critically — **correcting the FY2025 10-K Item 2 California unit
+row**: the long-published "351 CA restaurants (94 company / 257 franchise)" figure is the **Del
+Taco** column set; the Jack in the Box row is **941 (96 company / 845 franchise)**, making the
+derived California share **44.1%** of the 2,136-unit system, not 16.4%. This session
+independently re-verified that correction by reading the 10-K Item 2 table first-hand before
+adopting it (Del Taco 94/257/351 and Jack 96/845/941 both visible in the *California* row),
+spot-verified the enriched lease figures ($1,008.79M continuing lease liabilities =
+$134,300k + $874,494k; 11.2-yr WA term; $2.016B undiscounted from the 10-K leases note), and
+then semantically merged again: their new dataset and pipeline adopted wholesale, with this
+session's unique additions ported in (county per-capita income / poverty / CBP / county annual
+unemployment rows, `fred_laus_annual`, the SRA FHSZ comment flag, and the three audit entries —
+`audit_reverify_20261110` amended with an honest correction note about the carried Item 2 input).
+Correction C-1 is recorded in `verification/2026-11-10-8cd7cd89.md`. Pages were rebuilt from the
+merged dataset (329 sourced rows); all gates re-run PASS (12 generated files, 14 unit tests,
+validator incl. artifact boundary). A later PR #51 (COORDINATION record only, `af77a54e`) merged
+cleanly.
+
 
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
 
