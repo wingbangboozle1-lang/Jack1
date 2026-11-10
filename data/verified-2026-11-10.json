@@ -518,6 +518,13 @@
       "kind": "Official environmental guidance",
       "url": "https://www.epa.gov/heatislands",
       "accessed": "2026-11-10"
+    },
+    "fema_coastal_score": {
+      "title": "NRI Counties official query: Los Angeles County coastal flooding risk index score and rating",
+      "publisher": "FEMA ArcGIS feature service",
+      "kind": "Official hazard-model query (JSON)",
+      "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,CFLD_RISKS,CFLD_RISKR&returnGeometry=false&f=json",
+      "accessed": "2026-11-10"
     }
   },
   "observations": [
@@ -1342,8 +1349,10 @@
       "geography": "Los Angeles County",
       "period": "NRI v1.20, December 2025",
       "status": "verified",
-      "note": "v1.20 splits inland and coastal flooding; complements the inland score of 100. Parcel flood zone still requires a FIRM lookup. Read 08 Nov 2026 (session b8188ee0).",
+      "note": "Dedicated v1.20 query returns CFLD_RISKS = 90 and CFLD_RISKR = Relatively High; rating-only and generic county queries corroborate context. v1.20 splits inland and coastal flooding; parcel flood zone still requires a FIRM lookup. Re-read 2026-11-10 (session 2eefc54d).",
       "sources": [
+        "fema_coastal_score",
+        "fema_hazard_ratings",
         "fema_county_query"
       ]
     },
@@ -2896,6 +2905,27 @@
       "sources": [
         "repo"
       ]
+    },
+    {
+      "id": "flag_fema_coastal_score_link",
+      "item": "FEMA coastal-flood numeric score previously linked to a query without its score field",
+      "reason": "The published \"Score 90; Relatively High\" row cited the generic county query, whose outFields do not include CFLD_RISKS. The separate hazard-ratings query returns only CFLD_RISKR = Relatively High. A dedicated official v1.20 query returns both CFLD_RISKS = 90 and CFLD_RISKR = Relatively High.",
+      "action": "Linked nri_coastal_flood to the dedicated FEMA coastal-score query and retained the rating and generic county queries as corroborating context. No value was changed.",
+      "sources": [
+        "fema_coastal_score",
+        "fema_hazard_ratings",
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "flag_ca_units_reading_reconciliation",
+      "item": "Independent confirmation of the FY2025 Form 10-K California unit-column correction",
+      "reason": "A separate 2026-11-10 re-read of SEC Item 2 confirmed that 351 / 94 / 257 is California Del Taco, while 941 / 96 / 845 is California Jack in the Box; the earlier 16.4% share used the wrong brand columns.",
+      "action": "No duplicate data edit: the canonical 2026-11-10 dataset already publishes 941 / 44.1% and flag_ca_units_correction. This entry records the independent audit and preserves the official source trail.",
+      "sources": [
+        "sec_10k",
+        "sec_release"
+      ]
     }
   ],
   "audit": [
@@ -3043,6 +3073,17 @@
         "scag_tr",
         "fema_county_query",
         "bls_summary"
+      ]
+    },
+    {
+      "id": "audit_2eefc54d_v1_recheck",
+      "check": "Independent line-by-line official-source re-verification (session 2eefc54d, 2026-11-10)",
+      "result": "PASS with corrections. 48 baseline official source IDs plus newly merged 25 official sub-sources were checked against the active 2026-11-10 dataset; FEMA coastal score 90 / Relatively High reproduced from a dedicated official query; SEC FY2025 10-K California brand-column correction independently confirmed; Treasury 11/09/2026 exact row confirmed; derived arithmetic and row-source links checked.",
+      "detail": "Added dedicated source fema_coastal_score and linked nri_coastal_flood to it; added two Flagged for Review rows and this audit entry; regenerated canonical pages. Concurrent sessions c5e199ef, af77a54e and ac5b9087 work preserved. Full ledger: verification/2026-11-10-2eefc54d.md; research trail: research/verification-2026-11-10-2eefc54d.md. No personal identifiers copied. All build, unit-test, validator and artifact gates re-run after V-2.",
+      "sources": [
+        "fema_coastal_score",
+        "sec_10k",
+        "repo_line_audit"
       ]
     }
   ]

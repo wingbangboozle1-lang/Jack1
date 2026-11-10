@@ -1,5 +1,68 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/2eefc54d-jack1` (2026-11-10 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/2eefc54d-jack1`; platform policy
+prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used
+as the integration branch (as prior sessions did). Only `arena/2eefc54d-jack1` is pushed.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `9be7757` (PR #43 merge,
+2026-11-08T23:42:08Z). `gh api` showed no branch, PR, or Actions run newer than that commit;
+the newest open PR (#27) was last updated 2026-11-08T23:15:57Z. Every prior `in progress` entry
+is more than 24 hours old with no commits, exceeding the 60-minute takeover rule. No active
+session's lock is overridden; all historical records and open PRs are preserved, not discarded
+or merged without verification. If a prior session resumes, coordinate here before editing the
+canonical files listed below.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| V-1 | Fresh 2026-11-10 line-by-line verification of every published table row against its linked official source; correct or blank-and-flag anything not reproducible; privacy scan of the whole public artifact; irregularity log with links | done | arena/2eefc54d-jack1 | `verification/2026-11-10-2eefc54d.md` (new), `research/verification-2026-11-10-2eefc54d.md` (new) |
+| V-2 | Final integration: dataset + generated canonical pages, category navigation, executive summary, flagged page, build/link/privacy gates | done | arena/2eefc54d-jack1 | `data/verified-2026-11-08.json`, canonical root `*.html`, `assets/styles.css`, `assets/site.js`, `assets/projections.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/`, `_config.yml`, `.github/workflows/pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`, this board |
+| V-3 | PR from this integration branch → `main`, merge, Pages deploy confirmation, publication record | unclaimed (reserved for this session after V-2) | arena/2eefc54d-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`,
+`verification/2026-*`, or any other session's report is edited. Shared outputs (table data,
+index, navigation) are changed only in V-2 after V-1 finishes. Requests requiring another
+session's file are logged here instead of edited. Small frequent commits; `git pull --rebase`
+before every push; conflicts stop and are resolved without discarding other sessions' work.
+
+Claimed at: 2026-11-10 (UTC). Commit + push of this claim precedes all content work.
+
+### Interleave note — 2026-11-10 UTC (session arena/2eefc54d-jack1)
+
+`origin/main` advanced after this claim: session `c5e199ef` completed C5-1…C5-3 and merged PRs #46 and #48 (head `6be1425`). This branch was rebased onto `origin/main` via `git pull --rebase origin main`; their dataset refresh, new DOF/Census gap row, flags, audit entry, generated pages, verification record, and all historical coordination entries were preserved. Git auto-merged `COORDINATION.md` without a conflict; no other session's work was discarded. Their report explicitly lists source groups not re-read (SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance detail, 8-K governance, LAPD/Port/EPA/IRS/FTB/BOE/Assessor guidance). V-1 below covers those remaining official sources and logs fresh irregularities; V-2 will apply only corrections verified this pass. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33 remain untouched.
+
+### Session completion record — V-1 (session arena/2eefc54d-jack1, 2026-11-10 UTC)
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| V-1 line-by-line verification, privacy scan, irregularity log | done | `verification/2026-11-10-2eefc54d.md`, `research/verification-2026-11-10-2eefc54d.md` | All 48 existing official source IDs plus one new dedicated FEMA coastal query; full manual-review links in the verification report. Closed c5e199ef's "not re-read" groups: SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance detail, 8-K filing date/roles, CAL FIRE/LAPD/Port/EPA/IRS/FTB/BOE/Assessor/ZIMAS guidance, FEMA coastal score. | Re-read every official page; matched value, geography, period, unit; checked generated row source links; reproduced derived arithmetic; privacy regex scan; baseline build check, 11 unit tests, validator (10 pages, 272 rows). No personal identifier copied. | V1-01 SEC California brand-column mislabel (concurrently corrected on main; independently confirmed in V-2); V1-02 FEMA coastal score source-link gap (corrected in V-2); V1-03 Treasury 11/06 vs 11/09 vintage resolved by c5e199ef; V1-04 SCAG manufacturing 153% inconsistency; V1-05 USGS 30-year start date unstated; V1-06 DOF/Census 2025 level gap; V1-07 personal identifiers on official pages and git metadata (no copy; role-only wording). |
+
+V-2 is now claimed on this branch for the two verified corrections, two new Flagged for Review rows, one audit entry, regeneration, and final gates. V-3 remains reserved until V-2 passes. Historical internal notes that preserve the old California misreading are outside the curated public artifact and are not edited.
+
+### Interleave note — PR #50 / session ac5b9087 (2026-11-10 UTC)
+
+After V-1, `origin/main` advanced to `e6f5411` through PR #50 (`ac5b9087`) and PR #49 (`af77a54e`). This branch rebased with no conflict and preserved all concurrent work: the active builder now reads `data/verified-2026-11-10.json` (73 official sources, 90 observations, 14 tests, deterministic `404.html`, blank-default worksheet); the SEC California unit correction `941 / 44.1%` was independently fixed there; `flag_ca_units_correction`, `flag_root_briefs`, `audit_recheck_2026_11_10`, `audit_ac5b9087_pass`, and all earlier records remain intact. This session did not duplicate that SEC edit or edit another session's report.
+
+### Session completion record — V-2 (session arena/2eefc54d-jack1, 2026-11-10 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| V-2 final integration | done | `data/verified-2026-11-10.json`, `risks.html`, `sources.html`, `flagged.html`, `audit.html`, `verification/2026-11-10-2eefc54d.md`, `research/verification-2026-11-10-2eefc54d.md` | Added dedicated `fema_coastal_score` official query returning `CFLD_RISKS=90` / `Relatively High`; linked `nri_coastal_flood` to exact score query plus two corroborating official FEMA queries. Added two Flagged for Review rows (`flag_fema_coastal_score_link`, `flag_ca_units_reading_reconciliation`) and `audit_2eefc54d_v1_recheck`. Regenerated canonical pages. Final gates: build check 12 files PASS, 14 unit tests OK, validator 10 pages / 325 sourced rows PASS, curated artifact PASS, zero missing source IDs, zero row-link gaps, privacy scan clean. | V1-02 source-link gap corrected. V1-01 SEC brand-column error already corrected by `ac5b9087` / `a8681975`; independent confirmation logged. PR #52 union resolution preserved both audit entries and both verification-log lists; internal `data/README.md` canonical-path statement corrected. Carried flags (SCAG 153%, USGS 30-year start date, DOF/Census gap, git metadata, legacy Pages source, stale historical builds) remain published on Flagged for Review. |
+
+V-3 is now claimed on this branch for PR → `main`, immediate merge, live Pages confirmation, and the final board entry. The historical `data/verified-2026-11-08.json` baseline and other sessions' reports are unchanged.
+
+### Interleave note — PR #52 / session a8681975 (2026-11-10 UTC)
+
+After V-2 and while V-3 PR #53 was being prepared, `origin/main` advanced to `4a49e85` through PR #52 (`a8681975`): that session added `audit_a8681975_pass`, corrected the historical `data/verified-2026-11-08.json` California rows, added `data/README.md`, and updated `audit.html` / `scripts/build_public.py` with its verification log. Rebase conflicts in the shared dataset, builder, and generated audit page were resolved as a union: both audit entries, all six verification-log names, `fema_coastal_score`, both new flags, and all earlier sessions' work are preserved. `data/README.md` was corrected to name `verified-2026-11-10.json` as the active builder input and `verified-2026-11-08.json` as historical/provenance. Final gates: build check 12 files PASS, 14 unit tests OK, validator 10 pages / 325 sourced rows PASS, curated artifact PASS, privacy scan clean.
+
+### Session record — V-3 PR opened (session arena/2eefc54d-jack1, 2026-11-10 UTC)
+
+- **PR #53:** https://github.com/wingbangboozle1-lang/Jack1/pull/53 — `arena/2eefc54d-jack1` → `main`; includes V-1 reports, V-2 canonical dataset/pages, coastal FEMA source link, 74-source reconciliation, flags/audit, and final gates.
+- **Pre-merge gates on rebased branch:** build check 12 files PASS; 14 unit tests OK; validator 10 pages / 325 sourced rows PASS; curated artifact PASS; privacy scan clean.
+- **Merge result:** pending at the time this record was written; `origin/main` advanced to `4a49e85` via PR #52 during PR preparation, requiring a union rebase before merge. Final merge SHA, Pages state, and live sentinel checks are recorded in the V-3 completion note below.
+
+
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
 
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
