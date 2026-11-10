@@ -18,7 +18,7 @@ canonical files listed below.
 |---|---|---|---|---|
 | V-1 | Fresh 2026-11-10 line-by-line verification of every published table row against its linked official source; correct or blank-and-flag anything not reproducible; privacy scan of the whole public artifact; irregularity log with links | done | arena/2eefc54d-jack1 | `verification/2026-11-10-2eefc54d.md` (new), `research/verification-2026-11-10-2eefc54d.md` (new) |
 | V-2 | Final integration: dataset + generated canonical pages, category navigation, executive summary, flagged page, build/link/privacy gates | done | arena/2eefc54d-jack1 | `data/verified-2026-11-08.json`, canonical root `*.html`, `assets/styles.css`, `assets/site.js`, `assets/projections.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/`, `_config.yml`, `.github/workflows/pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`, this board |
-| V-3 | PR from this integration branch → `main`, merge, Pages deploy confirmation, publication record | unclaimed (reserved for this session after V-2) | arena/2eefc54d-jack1 | this board, `gh` PR/Pages operations |
+| V-3 | PR from this integration branch → `main`, merge, Pages deploy confirmation, publication record | done | arena/2eefc54d-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`,
 `verification/2026-*`, or any other session's report is edited. Shared outputs (table data,
@@ -50,7 +50,7 @@ After V-1, `origin/main` advanced to `e6f5411` through PR #50 (`ac5b9087`) and P
 |---|---|---|---|---|
 | V-2 final integration | done | `data/verified-2026-11-10.json`, `risks.html`, `sources.html`, `flagged.html`, `audit.html`, `verification/2026-11-10-2eefc54d.md`, `research/verification-2026-11-10-2eefc54d.md` | Added dedicated `fema_coastal_score` official query returning `CFLD_RISKS=90` / `Relatively High`; linked `nri_coastal_flood` to exact score query plus two corroborating official FEMA queries. Added two Flagged for Review rows (`flag_fema_coastal_score_link`, `flag_ca_units_reading_reconciliation`) and `audit_2eefc54d_v1_recheck`. Regenerated canonical pages. Final gates: build check 12 files PASS, 14 unit tests OK, validator 10 pages / 325 sourced rows PASS, curated artifact PASS, zero missing source IDs, zero row-link gaps, privacy scan clean. | V1-02 source-link gap corrected. V1-01 SEC brand-column error already corrected by `ac5b9087` / `a8681975`; independent confirmation logged. PR #52 union resolution preserved both audit entries and both verification-log lists; internal `data/README.md` canonical-path statement corrected. Carried flags (SCAG 153%, USGS 30-year start date, DOF/Census gap, git metadata, legacy Pages source, stale historical builds) remain published on Flagged for Review. |
 
-V-3 is now claimed on this branch for PR → `main`, immediate merge, live Pages confirmation, and the final board entry. The historical `data/verified-2026-11-08.json` baseline and other sessions' reports are unchanged.
+V-3 was claimed on this branch for PR → `main`, immediate merge, live Pages confirmation, and the final board entry. All three tasks are now done. This session did not edit the historical `data/verified-2026-11-08.json` baseline or any other session's report; concurrent corrections to that baseline are recorded in the PR #52 interleave note above.
 
 ### Interleave note — PR #52 / session a8681975 (2026-11-10 UTC)
 
@@ -60,7 +60,15 @@ After V-2 and while V-3 PR #53 was being prepared, `origin/main` advanced to `4a
 
 - **PR #53:** https://github.com/wingbangboozle1-lang/Jack1/pull/53 — `arena/2eefc54d-jack1` → `main`; includes V-1 reports, V-2 canonical dataset/pages, coastal FEMA source link, 74-source reconciliation, flags/audit, and final gates.
 - **Pre-merge gates on rebased branch:** build check 12 files PASS; 14 unit tests OK; validator 10 pages / 325 sourced rows PASS; curated artifact PASS; privacy scan clean.
-- **Merge result:** pending at the time this record was written; `origin/main` advanced to `4a49e85` via PR #52 during PR preparation, requiring a union rebase before merge. Final merge SHA, Pages state, and live sentinel checks are recorded in the V-3 completion note below.
+- **Merge result:** merged; `origin/main` advanced to `4a49e85` via PR #52 during PR preparation, requiring a union rebase before merge. Final merge SHA, Pages state, and live sentinel checks are recorded in the V-3 completion note below.
+
+### Session completion record — V-3 (session arena/2eefc54d-jack1, 2026-11-10 UTC)
+
+| Task | Status | PR / merge | Verification / deployment | Irregularities |
+|---|---|---|---|---|
+| V-3 PR → `main`, merge, Pages deploy confirmation, final board entry | done | **PR #53** https://github.com/wingbangboozle1-lang/Jack1/pull/53 — merged 2026-11-10T00:54:43Z; merge commit `fb1a3177875e37261c2b3404c8a9360a6c358b9d`. This completion note ships in docs-only follow-up **PR #55**: https://github.com/wingbangboozle1-lang/Jack1/pull/55. | PR #53 check `validate` run 42731853661 SUCCESS; merged-main `Validate and publish the decision brief` run 42731890012 SUCCESS; `pages-build-deployment` run 42731888954 SUCCESS. Pages API `status: built`, `build_type: legacy` (`main /`), HTTPS enforced, custom 404 enabled; latest build commit `fb1a317...`, updated 2026-11-10T00:55:11Z. Live fetches: `/` serves dual-track recommendation; `flagged.html` serves `FEMA coastal-flood numeric score previously linked...` and `Independent confirmation of the FY2025 Form 10-K California unit-column correction`; `sources.html` serves `fema_coastal_score`; `audit.html` lists all six verification logs including `verification/2026-11-10-2eefc54d.md`; `404.html` serves the canonical 10-page fallback; `COORDINATION.md` returns the same 404 fallback (internal board remains unpublished). | None blocking. Carried flags remain on Flagged for Review. Pages source remains legacy `main /`; workflow source switch still requires owner/admin action. |
+
+All three session tasks V-1, V-2, and V-3 are done. Historical open PRs and other sessions' records remain untouched.
 
 
 ## ▶ ACTIVE CLAIM — session arena-9707cb4b (branch `arena/9707cb4b-jack1`)
