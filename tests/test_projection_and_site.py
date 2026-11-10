@@ -139,11 +139,11 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("941", obs["tenant_ca_2025"]["value"])
         self.assertNotIn("351", obs["tenant_ca_2025"]["value"])
         self.assertIn("44.1%", obs["tenant_ca_share"]["value"])
-        # Ensure merged c5e199ef flags/audit entries and caution callout remain preserved.
+        # Ensure merged c5e199ef and af77a54e flags/audit entries and caution callout remain preserved.
         flag_ids = {f["id"] for f in data["flags"]}
-        self.assertTrue({"flag_dof_census_base", "flag_git_metadata_privacy", "flag_ca_units_correction"}.issubset(flag_ids))
+        self.assertTrue({"flag_dof_census_base", "flag_git_metadata_privacy", "flag_root_briefs", "flag_ca_units_correction"}.issubset(flag_ids))
         audit_ids = {a["id"] for a in data["audit"]}
-        self.assertTrue({"audit_c5e199ef_pass", "audit_ac5b9087_pass"}.issubset(audit_ids))
+        self.assertTrue({"audit_c5e199ef_pass", "audit_recheck_2026_11_10", "audit_ac5b9087_pass"}.issubset(audit_ids))
         for sid, src in data["sources"].items():
             self.assertTrue(validate_site.allowed_external(src["url"]), (sid, src["url"]))
 
@@ -152,6 +152,7 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("Caution: DOF level vs Census estimate", outputs["projections.html"])
         for log_name in (
             "verification/2026-11-10-ac5b9087.md",
+            "verification/2026-11-10-af77a54e.md",
             "verification/2026-11-10-c5e199ef.md",
             "verification/2026-11-08-0e369d53.md",
         ):
