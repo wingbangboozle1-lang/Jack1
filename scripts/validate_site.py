@@ -8,6 +8,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -159,6 +160,82 @@ def privacy_hits(text: str) -> list[str]:
     return hits
 
 
+def _norm_number_text(text: str) -> str:
+    """Strip separators so published numbers can be matched against observation values."""
+    return text.replace(",", "").replace(" ", "")
+
+
+def check_derived_consistency(data: dict) -> list[str]:
+    """Recompute every derived observation from its declared official inputs.
+
+    Guards against a published percentage drifting away from the counts it is derived
+    from - the failure mode found in the 2026-11-08 build (a share computed from the
+    wrong brand's state count).
+    """
+    errors: list[str] = []
+    observations = {obs["id"]: obs for obs in data["observations"]}
+    checks = {c["id"]: c for c in data.get("derived_checks", [])}
+    for obs in data["observations"]:
+        if obs["status"] != "derived":
+            continue
+        check = checks.get(obs["id"])
+        if check is None:
+            errors.append(f"dataset observation {obs['id']}: derived value has no derived_checks entry")
+            continue
+        inputs = check.get("inputs", {})
+        numerator = inputs.get("numerator")
+        denominator = inputs.get("denominator")
+        if not isinstance(numerator, (int, float)) or not isinstance(denominator, (int, float)) or not denominator:
+            errors.append(f"dataset derived check {obs['id']}: inputs must be numeric with a non-zero denominator")
+            continue
+        computed = numerator / denominator * 100.0
+        expected = float(check.get("expected_value"))
+        if abs(computed - expected) > 0.05:
+            errors.append(
+                f"dataset derived check {obs['id']}: recomputed {computed:.4f} does not match expected {expected}"
+            )
+        published = str(obs.get("value") or "").replace("%", "").replace(",", "").strip()
+        try:
+            published_value = float(published)
+        except ValueError:
+            published_value = None
+        if published_value is None or abs(published_value - expected) > 0.06:
+            errors.append(
+                f"dataset observation {obs['id']}: published value {obs.get('value')!r} does not match derived {expected}"
+            )
+        for role, obs_id in (check.get("input_observations") or {}).items():
+            source_obs = observations.get(obs_id)
+            if source_obs is None:
+                errors.append(f"dataset derived check {obs['id']}: unknown input observation {obs_id}")
+                continue
+            raw = inputs.get(role)
+            if raw is None:
+                continue
+            if _norm_number_text(str(raw)) not in _norm_number_text(str(source_obs.get("value") or "")):
+                errors.append(
+                    f"dataset derived check {obs['id']}: input {role}={raw} is not present in observation {obs_id}"
+                )
+    for check_id in checks:
+        if check_id not in observations:
+            errors.append(f"dataset derived check {check_id}: no observation with that id")
+    return errors
+
+
+def check_observations_published(data: dict, site: Path) -> list[str]:
+    """Every verified or derived observation must actually appear on a published page."""
+    errors: list[str] = []
+    texts = []
+    for page in PAGES:
+        path = site / page
+        if path.exists():
+            texts.append(path.read_text(encoding="utf-8"))
+    for obs in data["observations"]:
+        measure = html.escape(obs["measure"])
+        if not any(measure in text for text in texts):
+            errors.append(f"dataset observation {obs['id']}: not published on any page")
+    return errors
+
+
 def validate(site: Path, artifact: bool = False) -> list[str]:
     errors: list[str] = []
     data = load_data()
@@ -177,6 +254,8 @@ def validate(site: Path, artifact: bool = False) -> list[str]:
             errors.append(f"missing page: {page}")
             continue
         text = path.read_text(encoding="utf-8")
+        if data["meta"]["date"] not in text:
+            errors.append(f"{page}: does not show the dataset date {data['meta']['date']}")
         hits = privacy_hits(text)
         if hits:
             errors.append(f"{page}: privacy/conflict hits {hits}")
@@ -228,6 +307,8 @@ def validate(site: Path, artifact: bool = False) -> list[str]:
             for sid in item.get("sources", []):
                 if sid not in source_ids:
                     errors.append(f"dataset {collection} {item.get('id')}: unknown source {sid}")
+    errors.extend(check_derived_consistency(data))
+    errors.extend(check_observations_published(data, site))
     for obs in data["observations"]:
         if obs["status"] == "unverified" and obs["value"] is not None:
             errors.append(f"dataset observation {obs['id']}: unverified value must be null")
@@ -237,6 +318,10 @@ def validate(site: Path, artifact: bool = False) -> list[str]:
     for sid, src in data["sources"].items():
         if not allowed_external(src["url"]):
             errors.append(f"dataset source {sid}: URL not allowlisted")
+        if not src.get("title") or not src.get("publisher") or not src.get("accessed"):
+            errors.append(f"dataset source {sid}: missing title, publisher, or access date")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(src.get("accessed", ""))):
+            errors.append(f"dataset source {sid}: access date is not YYYY-MM-DD")
     # Generated projection data must match model
     proj_path = site / "assets" / "projections.json"
     if proj_path.exists():

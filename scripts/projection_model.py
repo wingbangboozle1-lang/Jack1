@@ -1,7 +1,7 @@
 """Reproducible, evidence-gated projection helpers.
 
 Only transparent arithmetic is performed here. Official inputs are read from
-`data/verified-2026-11-08.json`; missing property inputs produce None, never zero.
+`data/verified-2026-11-10.json`; missing property inputs produce None, never zero.
 No cap rates, rent growth, probabilities, or parcel values are invented.
 """
 from __future__ import annotations
@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT / "data" / "verified-2026-11-08.json"
+DATA_PATH = ROOT / "data" / "verified-2026-11-10.json"
 
 
 def load_data(path: Path | str = DATA_PATH) -> dict[str, Any]:

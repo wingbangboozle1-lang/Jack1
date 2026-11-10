@@ -60,6 +60,90 @@ class ProjectionTests(unittest.TestCase):
         self.assertAlmostEqual(manufacturing["derived_change_pct"], (706000 - 612000) / 612000 * 100)
 
 
+class SessionCd460c3bTests(unittest.TestCase):
+    """Regression guards for the 2026-11-10 re-verification pass.
+
+    The 2026-11-08 build published the Del Taco California row (351 / 94 / 257) as the
+    Jack in the Box California count. These tests pin the corrected figures so the error
+    cannot silently return.
+    """
+
+    def setUp(self):
+        self.data = pm.load_data()
+        self.obs = {o["id"]: o for o in self.data["observations"]}
+
+    def test_dataset_is_the_2026_11_10_build(self):
+        self.assertTrue(str(pm.DATA_PATH).endswith("data/verified-2026-11-10.json"))
+        self.assertEqual(self.data["meta"]["date"], "2026-11-10")
+        self.assertEqual(self.data["meta"]["session"], "cd460c3b")
+
+    def test_california_tenant_count_is_jack_not_del_taco(self):
+        ca = self.obs["tenant_ca_2025"]["value"]
+        self.assertIn("941 total", ca)
+        self.assertIn("96 company-operated", ca)
+        self.assertIn("845 franchise", ca)
+        self.assertNotIn("351", ca)
+        self.assertNotIn("257", ca)
+        for obs in self.data["observations"]:
+            self.assertNotEqual(obs["value"], "351 total; 94 company; 257 franchise")
+
+    def test_california_share_matches_the_corrected_count(self):
+        share = self.obs["tenant_ca_share"]
+        self.assertEqual(share["status"], "derived")
+        self.assertEqual(share["value"], "44.1%")
+        self.assertAlmostEqual(round(941 / 2136 * 100, 1), 44.1, places=1)
+        check = next(c for c in self.data["derived_checks"] if c["id"] == "tenant_ca_share")
+        self.assertEqual(check["inputs"]["numerator"], 941)
+        self.assertEqual(check["inputs"]["denominator"], 2136)
+        self.assertAlmostEqual(check["expected_value"], 44.1, places=1)
+
+    def test_correction_is_disclosed_on_the_flagged_page(self):
+        flag = next(f for f in self.data["flags"] if f["id"] == "flag_tenant_ca_correction")
+        self.assertIn("Del Taco", flag["reason"])
+        self.assertIn("16.4%", flag["action"])
+        self.assertIn("44.1%", flag["action"])
+        self.assertIn("sec_10k", flag["sources"])
+        outputs = build_public.render_all()
+        self.assertIn(flag["item"], outputs["flagged.html"])
+
+    def test_treasury_refreshed_to_latest_business_day(self):
+        treasury = self.obs["treasury_yields"]
+        self.assertIn("10Y 4.88%", treasury["value"])
+        self.assertIn("November 9, 2026", treasury["period"])
+        risk = next(r for r in self.data["risks"] if r["id"] == "risk_rates")
+        self.assertIn("4.88%", risk["context"])
+        self.assertNotIn("4.86%", risk["context"])
+
+    def test_new_rows_carry_official_sources(self):
+        for obs_id in (
+            "geo_county_density", "geo_commute_city", "households_city", "health_insurance_city",
+            "education_city", "housing_cost_city", "retail_county", "business_county",
+            "tenant_lease_structure", "tenant_property_mix", "tenant_prototype_size",
+            "tenant_franchise_terms", "tenant_portfolio", "tenant_discontinued_ops",
+            "tenant_franchising_mix",
+        ):
+            obs = self.obs[obs_id]
+            self.assertTrue(obs["sources"], obs_id)
+            self.assertTrue(obs["value"], obs_id)
+            for sid in obs["sources"]:
+                self.assertIn(sid, self.data["sources"])
+
+    def test_no_personal_names_published(self):
+        outputs = build_public.render_all()
+        for name in ("Anil", "Yadav", "Ruggeri", "Montgomery", "Tucker", "Hooper"):
+            for page, text in outputs.items():
+                self.assertNotIn(name, text, f"{name} must not appear in {page}")
+
+    def test_validator_flags_broken_derived_share(self):
+        broken = json.loads(json.dumps(self.data))
+        for obs in broken["observations"]:
+            if obs["id"] == "tenant_ca_share":
+                obs["value"] = "16.4%"
+        errors = validate_site.check_derived_consistency(broken)
+        self.assertTrue(errors)
+        self.assertTrue(any("tenant_ca_share" in e for e in errors))
+
+
 class BuildAndValidationTests(unittest.TestCase):
     def test_build_deterministic_and_check(self):
         first = build_public.render_all()

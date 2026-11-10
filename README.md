@@ -39,7 +39,7 @@ python3 scripts/build_public.py --out _site
 python3 scripts/validate_site.py --site _site --artifact
 ```
 
-The verified dataset is `data/verified-2026-11-08.json`. Projection arithmetic is in `scripts/projection_model.py`. Missing property inputs produce `None`/blank outputs, never zero or invented assumptions.
+The verified dataset is `data/verified-2026-11-10.json` (superseding `data/verified-2026-11-08.json`, which is retained for audit). Projection arithmetic is in `scripts/projection_model.py`. Missing property inputs produce `None`/blank outputs, never zero or invented assumptions.
 
 ## Privacy and source policy
 
