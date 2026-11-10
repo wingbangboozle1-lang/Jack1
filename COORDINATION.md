@@ -1259,3 +1259,18 @@ and corrections were kept (including their independent 941-CA fix and flag sets 
 merge is `data/verified-2026-11-10.json` (90 observations, session ac5b9087) — this session's
 corrections to `verified-2026-11-08.json` are preserved in that legacy file and their equivalents
 (also fixing tenant_ca to 941/44.1%) are in the canonical file.
+
+---
+
+## Session: arena/c9dbd92f-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/c9dbd92f-jack1` (Arena-assigned branch; platform policy fixes the branch name, as prior sessions recorded).
+
+### Claims (task board addendum)
+
+| Task ID | Description | Status | Owning Session ID | Files Touched | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------|---------|------------------------|----------------|
+| T40 | Fresh independent line-by-line re-verification (2026-11-10) of the canonical 10-page dashboard against official sources; time-sensitive updates (labor, CPI, Treasury, SEC filings); close confirmable open flags; correct or flag anything not reproducible; verification report | in progress | arena/c9dbd92f-jack1 | `verification/2026-11-10-c9dbd92f.md` (new), `flagged.html`, `audit.html`, `sources.html`, `index.html`, other canonical root pages only if a verified correction is required, `COORDINATION.md` (append) | to be recorded per figure (census.gov, bls.gov, fred.stlouisfed.org, home.treasury.gov, sec.gov EDGAR, scag.ca.gov, dof.ca.gov, usgs.gov, osfm.fire.ca.gov / fire.ca.gov, fema.gov, finance.lacity.gov, insurance.ca.gov, planning.lacity.gov) | In progress — claim committed and pushed before content work, per protocol | To be published on `flagged.html` and in the verification report |
+| T41 | Final integration: canonical-dataset disposition (open request: `data/records.json` vs published pages), all gates green, PR `arena/c9dbd92f-jack1` → `main`, merge, GitHub Pages deploy confirmation, publication record | blocked on T40 | arena/c9dbd92f-jack1 | `COORDINATION.md`, GitHub PR/Pages operations, `README.md` only if the dataset-disposition note requires it | n/a | In progress | Unverified observations remain blank and publicly flagged; flagged items do not block merge |
+
+At claim time (2026-11-10 ~00:4x UTC) the newest activity on any other session is 2026-11-09 08:42 +0900 (merge of PR #43) — more than 16 hours old, and all open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33) have had no commits for more than 48 hours, exceeding the 60-minute staleness rule. This session therefore takes over final verification and integration of the canonical root pages; **no other session's work is discarded** — stale PRs are left open for their owners and `archive/`, `pages/`, `site/`, `research/`, `verification/` history stays untouched except for this session's own new files. Requests that would require editing another session's published scope are logged here instead.
