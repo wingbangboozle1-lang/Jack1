@@ -1116,3 +1116,83 @@ Per platform policy, this session works strictly on its assigned branch `arena/a
 ### Interleave note (2) — PR #51 vs concurrent session ac5b9087 (2026-11-10)
 
 PR #50 (`arena/ac5b9087-jack1`) merged to `main` at 2026-11-10T00:39:12Z while this session's docs-only record PR #51 was open. Conflicts in `COORDINATION.md` (both sessions appended at the tail) were resolved by retaining both sections in sequence (this session's T29 record above; ac5b9087's AC-1..AC-4 section below it). **No session's work was discarded.** This session's site content from PR #49 was carried into ac5b9087's merged build (they explicitly merged `af77a54e`'s `flag_root_briefs` and `audit_recheck_2026_11_10`). The record PR contains no site, dataset, or workflow changes.
+
+---
+
+## Session: arena/a8681975-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/a8681975-jack1` (Arena-assigned branch; per platform policy this session cannot create `session-<id>/<task>` branches — the assigned branch is used, as prior sessions did.)
+
+### Claims (task board addendum) — claimed and pushed before any content work
+
+| Task ID | Description | Status | Owning Session ID | Files / scope (exclusive) | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------------------|---------|------------------------|----------------|
+| J-1 | Session claim + coordination protocol | **done** | arena/a8681975-jack1 | `COORDINATION.md` (append-only below this claim) | n/a | Claim pushed before content work | none |
+| J-2 | Fresh 2026-11-10 line-by-line re-verification of the canonical dataset (`data/verified-2026-11-08.json`, 71 observations + 47 sources + derived projection arithmetic) against live official pages; correction of any figure that no longer matches its official source | **done** | arena/a8681975-jack1 | `verification/2026-11-10-a8681975.md` (new), `data/verified-2026-11-08.json` (corrections only, with dated audit entries), regenerated root pages via `scripts/build_public.py` | census.gov QuickFacts, bls.gov, edd.ca.gov, fred.stlouisfed.org, home.treasury.gov, sec.gov, scag.ca.gov, planning.lacity.gov, finance.lacity.gov, dir.ca.gov, wagesla.lacity.gov, usgs.gov, osfm.fire.ca.gov, insurance.ca.gov, fema.gov/ArcGIS NRI, caschooldashboard.org, ftb.ca.gov, irs.gov, assessor.lacounty.gov, boe.ca.gov (each figure checked against its own linked page) | full 2026-11-10 ledger in `verification/2026-11-10-a8681975.md`: 69/71 exact; 2 rows wrong (IR-1) and corrected | IR-1 Del Taco/Jack CA misattribution (fixed); IR-2 SCAG 153%; IR-3 USGS vintage; IR-4 CAL FIRE 26%/35%; IR-5 ULA intro wording |
+| J-3 | Close actionable open items: N-857537b4-01/N-857537b4-02 rounding notes (if they persist in the generated build), N-857537b4-06 date alignment, RR-08 (`data/records.json` source-of-truth decision) | **done** | arena/a8681975-jack1 | `data/verified-2026-11-08.json`, `scripts/projection_model.py` (rounding only, if needed), `data/records.json` (header note only), `sources.html` via regeneration | prior verification reports `verification/2026-11-08-857537b4.md` | N-857537b4-01/02 absent from current build (closed not-applicable); N-857537b4-06 closed via footer log update; RR-08 closed via `data/README.md` | none — all three closed |
+| J-4 | Flagged-item re-check (CAL FIRE 26%/35%, heat brief, EDD gap, SCAG press-release discrepancy, ULA wording) + full privacy (PII) scan of the published set | **done** | arena/a8681975-jack1 | `verification/2026-11-10-a8681975.md`, `data/verified-2026-11-08.json` (flag updates only) | osfm.fire.ca.gov, labormarketinfo.edd.ca.gov, scag.ca.gov, finance.lacity.gov | CAL FIRE 26%/35% not on official page (flagged retained); SCAG 153% confirmed; ULA intro wording flagged; privacy scan clean (names in filings/letterheads never copied to outputs; tests + validator green) | unconfirmable items remain flagged, never inferred |
+| J-5 | Final integration: rebuild generated pages, run all gates (`build_public.py --check`, tests, `validate_site.py`, artifact validation, local HTTP smoke, live-site check), PR to `main`, merge, confirm GitHub Pages deploy, record in this file | **done** | arena/a8681975-jack1 | generated root pages, `assets/projections.json`, this file, GitHub PR/Pages | n/a | all gates green 2026-11-10 (build --check; 11 tests; validate_site 271 sourced rows; artifact validate); PR record appended below | no merge until gates pass |
+
+**Scope rules for this session:** file-disjoint from every historical claim (all previous sessions are
+complete; latest commits 2026-11-08). Files under `archive/`, `pages/`, `site/`, `research/notes/`,
+`tests/`, `scripts/validate_site.py`, `scripts/build_public.py` are read-only for this session except
+where J-3 explicitly names them. Historical open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33) are
+left untouched per the standing norm — their branches preserve their work; nothing is discarded.
+
+Claim time: 2026-11-10 (UTC). Prior claims checked before claiming: all sessions through
+`arena/b8188ee0-jack1` recorded **done/complete**; no active claim existed at claim time.
+
+### Completion log — 2026-11-10 UTC (session arena/a8681975-jack1)
+
+**J-1 claim** — pushed as `c8cbd7a` before any content work.
+
+**J-2 verification** — full line-by-line re-read of all 71 observations + 47 sources against live
+official pages on 2026-11-10. Result: 69/71 exact; **2 rows wrong and corrected (IR-1)**. Complete
+ledger, per-value checks, and IR-1..IR-5 irregularity detail: `verification/2026-11-10-a8681975.md`.
+Corrected rows: `tenant_ca_2025` → Jack-only **941 total; 96 company; 845 franchise** (FY2025 10-K
+Item 2 Properties at 2025-09-28 — the published 351/94/257 figures were the **Del Taco** California
+row, and the old note claiming "941 includes Del Taco" was reversed); `tenant_ca_share` 16.4% →
+**44.1%** (941 ÷ 2,136). Correction recorded on the published Flagged and Audit pages
+(`flag_tenant_ca_counts`, `audit_a8681975_ca_fix`, `audit_a8681975_pass`).
+
+**J-3 open items** — N-857537b4-01/02 (rounding strings): **closed not-applicable** — re-grep
+confirms those artifacts are absent from the current 10-page build (they belonged to a previous
+architecture; A-01..A-13 formula ledger in `verification/2026-11-08-857537b4.md` still stands).
+N-857537b4-06 (date alignment): **closed** — sources footer now carries both verification-log
+paths; 36 source accessed dates refreshed to 2026-11-10; `meta.last_reviewed` added.
+RR-08 (`data/records.json`): **closed by decision** — `data/verified-2026-11-08.json` is the single
+source of truth; `records.json` and sibling drafts are legacy/not-published/not-bid; documented in
+new `data/README.md`.
+
+**J-4 flagged re-check + privacy** — SCAG Table 6 prints 153% (endpoint math 15.4%) → flag kept,
+printed pct withheld. CAL FIRE 26%/35% expansion claims: still not on official FHSZ page or 2024/25
+acreage PDF → flag kept, only acreage table + derived 65.3% published. USGS window-start vintage:
+FAQ still gives no start date → flag kept. ULA FAQ intro still says "$5 million/$10 million" while
+its own banner/rate chart give $5.4M/$10.9M → published rows use the operative values, wording flag
+kept. Privacy (highest priority): all fetched sources contained personal names (issuer officers,
+agency staff); **none copied into any dataset, page, report, or commit** — governance row says
+"Roles described without personal names"; email/phone/SSN/address pattern scans clean
+(tests `test_privacy_patterns` + `validate_site.py` privacy pass green); artifact boundary clean
+(10 pages only; archive/data/research/verification/COORDINATION.md never published).
+
+**J-5 gates (2026-11-10, post-correction rebuild)** — `build_public.py --check` PASS (11 files);
+`python3 -m unittest discover -s tests` 11/11 OK; `validate_site.py` PASS (10 pages, **271**
+sourced rows); artifact build + validate PASS. PR record appended below after merge.
+
+Sources used this session (all official): census.gov QuickFacts; bls.gov LA summary/city-annual/
+LAUS; labormarketinfo.edd.ca.gov; fred.stlouisfed.org; home.treasury.gov; dof.ca.gov P-2A xlsx;
+scag.ca.gov Appendix I + TR 23-2987; planning.lacity.gov DTLA 2040; finance.lacity.gov ULA;
+dir.ca.gov; wagesla.lacity.gov; caschooldashboard.org; fema.gov NRI via ArcGIS services;
+usgs.gov; osfm.fire.ca.gov FHSZ + acreage PDF; insurance.ca.gov CDI tracker; lapdonline.org;
+portoflosangeles.org; sec.gov (8-K 2026-09-21, Q3 FY2026 release, 10-Q R2.htm, FY2025 10-K);
+assessor.lacounty.gov; boe.ca.gov LTA 2022/046; irs.gov (Pub 544, Form 8824); ftb.ca.gov.
+
+**Merge-conflict note (2026-11-10, session a8681975):** while opening this session's PR, `origin/main`
+had advanced through parallel-session PRs #46–#51 (c5e199ef, ac5b9087, af77a54e — all 2026-11-10).
+Conflicts in `COORDINATION.md`, `data/verified-2026-11-08.json`, `scripts/build_public.py` and the
+generated pages were resolved as unions/regenerations: every session's records, flags, audit entries,
+and corrections were kept (including their independent 941-CA fix and flag sets and this session's
+`flag_tenant_ca_counts`/`audit_a8681975_*`). No session's work discarded. Canonical dataset after the
+merge is `data/verified-2026-11-10.json` (90 observations, session ac5b9087) — this session's
+corrections to `verified-2026-11-08.json` are preserved in that legacy file and their equivalents
+(also fixing tenant_ca to 941/44.1%) are in the canonical file.

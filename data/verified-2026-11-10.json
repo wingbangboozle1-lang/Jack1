@@ -2,9 +2,9 @@
   "meta": {
     "date": "2026-11-10",
     "session": "ac5b9087",
-    "title": "Jack in the Box NNN decision brief — central Los Angeles area",
-    "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
-    "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
+    "title": "Jack in the Box NNN decision brief \u2014 central Los Angeles area",
+    "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030\u20132035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
+    "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029\u20132032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only."
   },
   "sources": {
@@ -135,7 +135,7 @@
       "kind": "official tax guidance"
     },
     "boe_reassessment": {
-      "title": "Letter 2022/046: Change in Ownership — Base Year Value Transfers; Prop 13 current-law summary",
+      "title": "Letter 2022/046: Change in Ownership \u2014 Base Year Value Transfers; Prop 13 current-law summary",
       "publisher": "California State Board of Equalization",
       "url": "https://www.boe.ca.gov/proptaxes/pdf/lta22046.pdf",
       "accessed": "2026-11-10",
@@ -282,7 +282,7 @@
       "kind": "official hazard mapping"
     },
     "calfire_acres": {
-      "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024–2025",
+      "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024\u20132025",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf?rev=d1f74280dd01402f841bf2da5d5fc8cd&hash=EC6CA86D1AF5094D808CB341A328C52F",
       "accessed": "2026-11-10",
@@ -366,7 +366,7 @@
       "accessed": "2026-11-10"
     },
     "lavote_dtt": {
-      "title": "Documentary Transfer Tax — General Information (County & Special City Rates)",
+      "title": "Documentary Transfer Tax \u2014 General Information (County & Special City Rates)",
       "publisher": "LA County Registrar-Recorder / County Clerk",
       "kind": "Official tax administration schedule",
       "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
@@ -394,7 +394,7 @@
       "accessed": "2026-11-10"
     },
     "metro_dline": {
-      "title": "D Line Subway Extension Project (Section 1 opened May 8, 2026; Sec. 2–3 forecast 2027)",
+      "title": "D Line Subway Extension Project (Section 1 opened May 8, 2026; Sec. 2\u20133 forecast 2027)",
       "publisher": "Los Angeles County Metropolitan Transportation Authority",
       "kind": "Official transit project status",
       "url": "https://www.metro.net/projects/westside/",
@@ -577,7 +577,7 @@
       "id": "pop_city_change",
       "category": "Population",
       "measure": "City population change from estimates base",
-      "value": "−0.8%",
+      "value": "\u22120.8%",
       "geography": "City of Los Angeles",
       "period": "April 1, 2020 base to July 1, 2025",
       "status": "verified",
@@ -603,7 +603,7 @@
       "id": "pop_county_change",
       "category": "Population",
       "measure": "County population change from estimates base",
-      "value": "−3.2%",
+      "value": "\u22123.2%",
       "geography": "Los Angeles County",
       "period": "April 1, 2020 base to July 1, 2025",
       "status": "verified",
@@ -620,7 +620,7 @@
       "geography": "Los Angeles County",
       "period": "July 1, 2025",
       "status": "derived",
-      "note": "Calculation: 9,853,435 − 9,694,934 = 158,501; 158,501 ÷ 9,694,934. DOF P-2A (Baseline 2024) shows 9,853,435 for 2025 (and E-1 confirms 9,837,286 for Jan 1, 2026), whereas Census Vintage 2025 shows 9,694,934 for July 1, 2025; do not splice or rebase across agencies.",
+      "note": "Calculation: 9,853,435 \u2212 9,694,934 = 158,501; 158,501 \u00f7 9,694,934. DOF P-2A (Baseline 2024) shows 9,853,435 for 2025 (and E-1 confirms 9,837,286 for Jan 1, 2026), whereas Census Vintage 2025 shows 9,694,934 for July 1, 2025; do not splice or rebase across agencies.",
       "sources": [
         "dof_p2a",
         "dof_e1",
@@ -633,7 +633,7 @@
       "measure": "Median household income",
       "value": "$81,939",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "Household income, not restaurant customer spending.",
       "sources": [
@@ -646,7 +646,7 @@
       "measure": "Median household income",
       "value": "$90,112",
       "geography": "Los Angeles County",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "County differs from city; do not average for a parcel.",
       "sources": [
@@ -659,7 +659,7 @@
       "measure": "Per-capita income",
       "value": "$47,685",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "Context for purchasing power, not a sales forecast.",
       "sources": [
@@ -672,7 +672,7 @@
       "measure": "Poverty rate",
       "value": "16.5%",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Citywide estimate with sampling error.",
       "sources": [
@@ -685,7 +685,7 @@
       "measure": "Median gross rent",
       "value": "$1,933/month",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Residential rent; not commercial NNN rent.",
       "sources": [
@@ -698,7 +698,7 @@
       "measure": "Owner-occupied housing unit rate",
       "value": "36.0%",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Community context only.",
       "sources": [
@@ -711,7 +711,7 @@
       "measure": "Median owner-occupied home value",
       "value": "$921,200",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Residential value; not the subject property value.",
       "sources": [
@@ -839,7 +839,7 @@
       "id": "payrolls_county",
       "category": "Labor",
       "measure": "County nonfarm wage and salary employment, SA",
-      "value": "4,539,800; −4,100 monthly; +20,300 annually",
+      "value": "4,539,800; \u22124,100 monthly; +20,300 annually",
       "geography": "Los Angeles County, SA",
       "period": "September 2026 preliminary",
       "status": "verified",
@@ -891,7 +891,7 @@
       "id": "sector_information",
       "category": "Labor",
       "measure": "Information payrolls",
-      "value": "187.0 thousand; −11.4 thousand / −5.7% YoY",
+      "value": "187.0 thousand; \u221211.4 thousand / \u22125.7% YoY",
       "geography": "Los Angeles metro area",
       "period": "September 2026",
       "status": "verified",
@@ -904,7 +904,7 @@
       "id": "sector_manufacturing",
       "category": "Labor",
       "measure": "Manufacturing payrolls",
-      "value": "444.8 thousand; −5.4 thousand / −1.2% YoY",
+      "value": "444.8 thousand; \u22125.4 thousand / \u22121.2% YoY",
       "geography": "Los Angeles metro area",
       "period": "September 2026",
       "status": "verified",
@@ -986,7 +986,7 @@
       "geography": "Los Angeles Unified School District",
       "period": "2026 Dashboard",
       "status": "verified",
-      "note": "TK–8 denominator 254,681; community indicator, not property rating.",
+      "note": "TK\u20138 denominator 254,681; community indicator, not property rating.",
       "sources": [
         "dashboard_engagement"
       ]
@@ -1021,7 +1021,7 @@
       "id": "tenant_sss",
       "category": "Tenant",
       "measure": "Jack in the Box system same-store sales",
-      "value": "System −1.1%; franchise −1.2%; company −0.9%",
+      "value": "System \u22121.1%; franchise \u22121.2%; company \u22120.9%",
       "geography": "Jack in the Box system",
       "period": "Q3 FY2026, 12 weeks ended July 5, 2026",
       "status": "verified",
@@ -1038,7 +1038,7 @@
       "geography": "Jack in the Box system",
       "period": "End of Q3 FY2026",
       "status": "verified",
-      "note": "QTD 4 openings, 17 closures, net −13.",
+      "note": "QTD 4 openings, 17 closures, net \u221213.",
       "sources": [
         "sec_release"
       ]
@@ -1114,7 +1114,7 @@
       "id": "tenant_guidance",
       "category": "Tenant",
       "measure": "FY2026 restaurant guidance",
-      "value": "Approximately 2,100 units; about 25 openings and 50–60 closures, mostly franchise",
+      "value": "Approximately 2,100 units; about 25 openings and 50\u201360 closures, mostly franchise",
       "geography": "Jack in the Box system",
       "period": "FY2026 guidance issued August 2026",
       "status": "verified",
@@ -1157,7 +1157,7 @@
       "geography": "California / Jack system",
       "period": "FY2025",
       "status": "derived",
-      "note": "Calculation: 941 ÷ 2,136 = 44.05%; (941 + 549) ÷ 2,136 = 69.76%. Supersedes prior 16.4% share derived from Del Taco's 351 CA count.",
+      "note": "Calculation: 941 \u00f7 2,136 = 44.05%; (941 + 549) \u00f7 2,136 = 69.76%. Supersedes prior 16.4% share derived from Del Taco's 351 CA count.",
       "sources": [
         "sec_10k"
       ]
@@ -1377,11 +1377,11 @@
       "id": "usgs_quake",
       "category": "Hazards",
       "measure": "UCERF3 regional earthquake probabilities",
-      "value": "60% M≥6.7; 46% M≥7.0; 31% M≥7.5 in 30 years",
+      "value": "60% M\u22656.7; 46% M\u22657.0; 31% M\u22657.5 in 30 years",
       "geography": "Los Angeles region",
       "period": "USGS FAQ citing UCERF3; start date not stated",
       "status": "verified",
-      "note": "Do not label as a fresh 2026–2056 forecast; regional, not site-specific.",
+      "note": "Do not label as a fresh 2026\u20132056 forecast; regional, not site-specific.",
       "sources": [
         "usgs_faq"
       ]
@@ -1392,7 +1392,7 @@
       "measure": "CAL FIRE FHSZ mapped acres, Los Angeles County",
       "value": "Moderate 330,431; High 77,951; Very High 769,561; Total mapped 1,177,944",
       "geography": "Los Angeles County, combined SRA/LRA",
-      "period": "2024–2025 official acreage table",
+      "period": "2024\u20132025 official acreage table",
       "status": "verified",
       "note": "Mapped hazard acres, not all county land and not a parcel assignment.",
       "sources": [
@@ -1406,9 +1406,9 @@
       "measure": "Very High share of mapped FHSZ acres",
       "value": "65.3%",
       "geography": "Los Angeles County mapped FHSZ acres",
-      "period": "2024–2025 table",
+      "period": "2024\u20132025 table",
       "status": "derived",
-      "note": "Calculation: 769,561 ÷ 1,177,944. Not a parcel probability.",
+      "note": "Calculation: 769,561 \u00f7 1,177,944. Not a parcel probability.",
       "sources": [
         "calfire_acres"
       ]
@@ -1443,7 +1443,7 @@
       "id": "crime_status",
       "category": "Public safety",
       "measure": "LAPD citywide NIBRS crime profile",
-      "value": "83,596 Person & Property incidents YTD (−10.6% YoY); 8,555 sworn officers",
+      "value": "83,596 Person & Property incidents YTD (\u221210.6% YoY); 8,555 sworn officers",
       "geography": "City of Los Angeles",
       "period": "YTD through October 31, 2026 (published Nov 3, 2026)",
       "status": "verified",
@@ -1471,7 +1471,7 @@
       "id": "pop_dof_city_2026",
       "category": "Population",
       "measure": "DOF city population estimate (E-1)",
-      "value": "3,806,201 (−0.9% YoY from 3,839,536)",
+      "value": "3,806,201 (\u22120.9% YoY from 3,839,536)",
       "geography": "Los Angeles city",
       "period": "January 1, 2026 (released May 1, 2026)",
       "status": "verified",
@@ -1484,7 +1484,7 @@
       "id": "pop_dof_county_2026",
       "category": "Population",
       "measure": "DOF county population estimate (E-1 & July 2025)",
-      "value": "Jan 1, 2026: 9,837,286 (−0.6% / −64k); Jul 1, 2025: 9,853,435 (−0.45%)",
+      "value": "Jan 1, 2026: 9,837,286 (\u22120.6% / \u221264k); Jul 1, 2025: 9,853,435 (\u22120.45%)",
       "geography": "Los Angeles County",
       "period": "July 1, 2025 / January 1, 2026",
       "status": "verified",
@@ -1511,7 +1511,7 @@
       "id": "port_containers_2026",
       "category": "Economic drivers",
       "measure": "Port of Los Angeles container throughput",
-      "value": "Sep 2026: 1,042,652.30 TEUs (+18.07% YoY); YTD Jan–Sep: 8,081,625.55 TEUs (+3.38% YoY)",
+      "value": "Sep 2026: 1,042,652.30 TEUs (+18.07% YoY); YTD Jan\u2013Sep: 8,081,625.55 TEUs (+3.38% YoY)",
       "geography": "Port of Los Angeles",
       "period": "Through September 2026",
       "status": "verified",
@@ -1524,7 +1524,7 @@
       "id": "scag_commute_wfh",
       "category": "Economic drivers",
       "measure": "Regional commute mode & remote-work divergence",
-      "value": "LA County drive-alone 65.5% work / 35.9% daily trips; Hospitality WFH 0.59 days/wk vs Info/Finance 2.15–2.30",
+      "value": "LA County drive-alone 65.5% work / 35.9% daily trips; Hospitality WFH 0.59 days/wk vs Info/Finance 2.15\u20132.30",
       "geography": "Los Angeles County / SCAG 6-county region",
       "period": "Connect SoCal 2024 Technical Report",
       "status": "verified",
@@ -1538,9 +1538,9 @@
       "id": "metro_transit_drivers",
       "category": "Planning",
       "measure": "LA Metro D Line extension & LAX Transit Center",
-      "value": "D Line Sec. 1 (La Brea/Fairfax/La Cienega) opened May 8, 2026; Sec. 2–3 forecast 2027; LAX Transit Center open",
+      "value": "D Line Sec. 1 (La Brea/Fairfax/La Cienega) opened May 8, 2026; Sec. 2\u20133 forecast 2027; LAX Transit Center open",
       "geography": "Central / Westside Los Angeles corridors",
-      "period": "2026–2028 major-event cycle",
+      "period": "2026\u20132028 major-event cycle",
       "status": "verified",
       "note": "Major corridor transit upgrades ahead of FIFA 2026, Super Bowl LXI, and LA28. Parcel walk-shed impact requires parcel address.",
       "sources": [
@@ -1554,7 +1554,7 @@
       "measure": "LAUSD district enrollment & student composition",
       "value": "497,105 students; 81,328 English Learners (16.4%); 386,743 FRPM (77.8%)",
       "geography": "Los Angeles Unified School District",
-      "period": "2025–2026 academic year",
+      "period": "2025\u20132026 academic year",
       "status": "verified",
       "note": "Large lower-/middle-income urban student base; community context only, not parcel attendance assignment.",
       "sources": [
@@ -1565,7 +1565,7 @@
       "id": "crime_central_bureau",
       "category": "Public safety",
       "measure": "LAPD Operations-Central Bureau NIBRS crime profile",
-      "value": "23,423 incidents YTD (−2.0% YoY; 28.0% of citywide); Larceny +10.0% (6,213); Robbery +1.3% (1,303)",
+      "value": "23,423 incidents YTD (\u22122.0% YoY; 28.0% of citywide); Larceny +10.0% (6,213); Robbery +1.3% (1,303)",
       "geography": "LAPD Operations-Central Bureau (Central, Hollenbeck, Newton, Northeast, Rampart)",
       "period": "YTD through October 31, 2026",
       "status": "verified",
@@ -1578,12 +1578,12 @@
     {
       "id": "tenant_ard_wall",
       "category": "Tenant",
-      "measure": "Securitized debt 2029–2032 ARD concentration (overlapping lease window)",
-      "value": "$1,429.625M of $1,491.984M principal (95.8%) due ARD 2029–2032 (Aug 2029 $426.38M; May 2031 $500.00M; Feb 2032 $503.25M)",
+      "measure": "Securitized debt 2029\u20132032 ARD concentration (overlapping lease window)",
+      "value": "$1,429.625M of $1,491.984M principal (95.8%) due ARD 2029\u20132032 (Aug 2029 $426.38M; May 2031 $500.00M; Feb 2032 $503.25M)",
       "geography": "Jack in the Box Inc. (Master Issuer)",
       "period": "As of July 5, 2026 (Q3 FY2026 10-Q)",
       "status": "derived",
-      "note": "Derived sum of 2019-1 A-2-III ($426,375k), 2026-1 A-2 ($500,000k), and 2022-1 A-2-II ($503,250k) over $1,491,984k total principal. Refinancing pressure coincides directly with 2030–2035 lease expiry.",
+      "note": "Derived sum of 2019-1 A-2-III ($426,375k), 2026-1 A-2 ($500,000k), and 2022-1 A-2-II ($503,250k) over $1,491,984k total principal. Refinancing pressure coincides directly with 2030\u20132035 lease expiry.",
       "sources": [
         "sec_10q_debt"
       ]
@@ -1605,7 +1605,7 @@
       "id": "tenant_lease_portfolio",
       "category": "Tenant",
       "measure": "Issuer lease footprint, ROU obligations & rental spread",
-      "value": "74.2% (1,585/2,136) leased sites; $1,008.79M continuing ROU liabilities; 11.2-yr WA term ($2.016B undiscounted FY25); Q3 franchise rent spread $23.32M (YTD −15.4% YoY)",
+      "value": "74.2% (1,585/2,136) leased sites; $1,008.79M continuing ROU liabilities; 11.2-yr WA term ($2.016B undiscounted FY25); Q3 franchise rent spread $23.32M (YTD \u221215.4% YoY)",
       "geography": "Jack in the Box Inc. consolidated",
       "period": "FY2025 10-K / Q3 FY2026 10-Q",
       "status": "verified",
@@ -1621,11 +1621,11 @@
       "id": "dtt_combined_stack",
       "category": "Taxes",
       "measure": "LA County + LA City combined documentary transfer tax stack",
-      "value": "County 0.11% ($0.55/$500) + City Base 0.45% ($2.25/$500) = 0.56% (≤$5.4M), 4.56% (>$5.4M–<$10.9M), 6.06% (≥$10.9M)",
+      "value": "County 0.11% ($0.55/$500) + City Base 0.45% ($2.25/$500) = 0.56% (\u2264$5.4M), 4.56% (>$5.4M\u2013<$10.9M), 6.06% (\u2265$10.9M)",
       "geography": "City of Los Angeles (LA County)",
       "period": "Effective July 1, 2026",
       "status": "derived",
-      "note": "Derived sum of LA County 0.11%, City Base 0.45%, and Measure ULA 4%/5.5% thresholds. Seller-side closing tax drag jumps 400–550 bps above $5.4M/$10.9M.",
+      "note": "Derived sum of LA County 0.11%, City Base 0.45%, and Measure ULA 4%/5.5% thresholds. Seller-side closing tax drag jumps 400\u2013550 bps above $5.4M/$10.9M.",
       "sources": [
         "lavote_dtt",
         "ula"
@@ -1647,10 +1647,10 @@
     {
       "id": "openfema_declarations_la",
       "category": "Hazards",
-      "measure": "Federal disaster declarations (OpenFEMA tally, 1969–2025)",
+      "measure": "Federal disaster declarations (OpenFEMA tally, 1969\u20132025)",
       "value": "88 declarations (44 Fire Mgmt FM, 35 Major Disaster DR, 9 Emergency EM): 61 Fire, 10 Flood, 8 Severe Storm, 3 Earthquake",
       "geography": "Los Angeles County",
-      "period": "January 26, 1969 – August 8, 2025 (8 in 2024–2025)",
+      "period": "January 26, 1969 \u2013 August 8, 2025 (8 in 2024\u20132025)",
       "status": "verified",
       "note": "Full OpenFEMA API count across designatedArea containing Los Angeles (plus 2 Biological, 2 Freezing, 1 Coastal Storm, 1 Hurricane evacuation).",
       "sources": [
@@ -1706,7 +1706,7 @@
       "measure": "CDI FAIR Plan commercial limits & catastrophe model reform",
       "value": "FAIR Plan commercial limits up to $20M/bldg & $100M/location (thru 2028); Verisk wildfire model approved Jul 24, 2025 w/ 85% distressed-area rule",
       "geography": "California commercial property insurance market",
-      "period": "Effective 2025–2028 under Sustainable Insurance Strategy",
+      "period": "Effective 2025\u20132028 under Sustainable Insurance Strategy",
       "status": "verified",
       "note": "Expands last-resort commercial limits while voluntary admitted underwriting transitions to forward-looking cat models; verify NNN policy form & sublimits.",
       "sources": [
@@ -1783,7 +1783,7 @@
       "field": "Exact lease expiration and options",
       "value": null,
       "status": "unverified",
-      "note": "Reported 2030–2035 range only; exact dates and notice windows drive value.",
+      "note": "Reported 2030\u20132035 range only; exact dates and notice windows drive value.",
       "sources": [
         "sec_10k"
       ]
@@ -2006,7 +2006,7 @@
         "id": "stress_vacancy",
         "name": "Rent interruption",
         "symbol": "m months of zero rent plus re-tenanting downtime",
-        "formula": "Lost rent = monthly verified rent × m; add verified downtime costs",
+        "formula": "Lost rent = monthly verified rent \u00d7 m; add verified downtime costs",
         "sources": [
           "sec_release",
           "sec_10k"
@@ -2016,7 +2016,7 @@
         "id": "stress_leakage",
         "name": "NNN cost leakage",
         "symbol": "c = annual owner-paid costs not recovered",
-        "formula": "Net operating income = verified rent − verified unrecovered owner costs",
+        "formula": "Net operating income = verified rent \u2212 verified unrecovered owner costs",
         "sources": [
           "sec_10k",
           "prop13"
@@ -2035,8 +2035,8 @@
       {
         "id": "stress_exit",
         "name": "Exit valuation shock",
-        "symbol": "Δcap = change in market cap rate; ΔNOI = change in stabilized NOI",
-        "formula": "Exit value = stabilized NOI ÷ market cap rate; both inputs require evidence",
+        "symbol": "\u0394cap = change in market cap rate; \u0394NOI = change in stabilized NOI",
+        "formula": "Exit value = stabilized NOI \u00f7 market cap rate; both inputs require evidence",
         "sources": [
           "treasury",
           "sec_release"
@@ -2045,8 +2045,8 @@
       {
         "id": "stress_discount",
         "name": "Discount-rate shock",
-        "symbol": "Δr = change in owner-required return",
-        "formula": "PV = Σ after-tax cash flow_t ÷ (1+r)^t; r is not the Treasury yield by default",
+        "symbol": "\u0394r = change in owner-required return",
+        "formula": "PV = \u03a3 after-tax cash flow_t \u00f7 (1+r)^t; r is not the Treasury yield by default",
         "sources": [
           "treasury",
           "irs_544"
@@ -2055,8 +2055,8 @@
       {
         "id": "stress_tax",
         "name": "Tax / transfer-cost shock",
-        "symbol": "ΔT = change in federal/state/local tax and transfer costs",
-        "formula": "Net sale proceeds = price − debt payoff − transaction costs − verified taxes",
+        "symbol": "\u0394T = change in federal/state/local tax and transfer costs",
+        "formula": "Net sale proceeds = price \u2212 debt payoff \u2212 transaction costs \u2212 verified taxes",
         "sources": [
           "ula",
           "irs_544",
@@ -2187,7 +2187,7 @@
       "category": "Ordinary lease risk",
       "name": "Lease-term decay",
       "mechanism": "Shortening remaining term can reduce buyer pool, financing options, and value even if rent is current.",
-      "context": "Reported expiry range 2030–2035 is unverified; exact term drives the decision.",
+      "context": "Reported expiry range 2030\u20132035 is unverified; exact term drives the decision.",
       "site_status": "unverified",
       "mitigation": "Verify dates/options; calendar notices; price sale and extension cases in parallel.",
       "sources": [
@@ -2199,7 +2199,7 @@
       "category": "Ordinary tenant risk",
       "name": "Tenant / guarantor credit",
       "mechanism": "Brand strength does not equal lease credit; franchisee or subsidiary obligor may be weaker than issuer.",
-      "context": "Q3 FY26 SSS −1.1%, franchise allowance for credit losses up 70.3% to $(7,607)k, HoldCo >5.0x & Senior ABS >5.25x ($23.3M sweep), 95.8% of debt ($1.430B) facing 2029–2032 ARDs.",
+      "context": "Q3 FY26 SSS \u22121.1%, franchise allowance for credit losses up 70.3% to $(7,607)k, HoldCo >5.0x & Senior ABS >5.25x ($23.3M sweep), 95.8% of debt ($1.430B) facing 2029\u20132032 ARDs.",
       "site_status": "unverified",
       "mitigation": "Identify legal tenant/guarantor; review financials, guaranty scope, defaults, and assignment rights.",
       "sources": [
@@ -2264,7 +2264,7 @@
       "category": "Ordinary tax risk",
       "name": "Transfer taxes and closing costs",
       "mechanism": "City ULA, base transfer tax, county tax, brokerage, and payoff can materially reduce net proceeds.",
-      "context": "Combined LA County 0.11% + City Base 0.45% + ULA 4%/5.5% = 0.56% (≤$5.4M), 4.56% (>$5.4M–<$10.9M), 6.06% (≥$10.9M) effective Jul 1, 2026.",
+      "context": "Combined LA County 0.11% + City Base 0.45% + ULA 4%/5.5% = 0.56% (\u2264$5.4M), 4.56% (>$5.4M\u2013<$10.9M), 6.06% (\u2265$10.9M) effective Jul 1, 2026.",
       "site_status": "unverified",
       "mitigation": "Confirm jurisdiction, exemptions, closing date, and allocation; model after-tax net proceeds.",
       "sources": [
@@ -2346,7 +2346,7 @@
       "category": "Ordinary community risk",
       "name": "Crime / perception / operating hours",
       "mechanism": "Safety and perception can affect customer traffic, tenant operations, and buyer demand.",
-      "context": "LAPD thru Oct 31, 2026: Citywide −10.6% YoY (83,596), Operations-Central Bureau 23,423 (−2.0% overall, 28% of citywide) with Larceny +10.0% and Robbery +1.3%.",
+      "context": "LAPD thru Oct 31, 2026: Citywide \u221210.6% YoY (83,596), Operations-Central Bureau 23,423 (\u22122.0% overall, 28% of citywide) with Larceny +10.0% and Robbery +1.3%.",
       "site_status": "unverified",
       "mitigation": "Use current official area data and on-site observation after parcel match.",
       "sources": [
@@ -2661,7 +2661,7 @@
     {
       "id": "flag_lease_terms",
       "item": "Exact expiry, options, notices, rent, escalations, NNN scope",
-      "reason": "Reported 2030–2035 range and NNN label are premises only.",
+      "reason": "Reported 2030\u20132035 range and NNN label are premises only.",
       "action": "Read executed lease and amendments; calendar all notice/option dates.",
       "sources": [
         "sec_10k"
@@ -2741,7 +2741,7 @@
     {
       "id": "flag_crime",
       "item": "Current parcel-area crime statistics",
-      "reason": "LAPD citywide (−10.6%) and Central Bureau (−2.0%, larceny +10.0%) COMPSTAT PDFs are verified through Oct 31, 2026, but parcel-level division and calls for service remain unknown without the site address.",
+      "reason": "LAPD citywide (\u221210.6%) and Central Bureau (\u22122.0%, larceny +10.0%) COMPSTAT PDFs are verified through Oct 31, 2026, but parcel-level division and calls for service remain unknown without the site address.",
       "action": "Use current official area PDFs and consistent dates/boundaries after match.",
       "sources": [
         "lapd_city",
@@ -2771,7 +2771,7 @@
     {
       "id": "flag_scag_manufacturing",
       "item": "SCAG manufacturing future-change percentage",
-      "reason": "Official table prints 153% while endpoints 612k→706k imply about 15.4%.",
+      "reason": "Official table prints 153% while endpoints 612k\u2192706k imply about 15.4%.",
       "action": "Withhold printed percentage; use endpoint-derived calculation only with flag.",
       "sources": [
         "scag_tr"
@@ -2781,7 +2781,7 @@
       "id": "flag_usgs_vintage",
       "item": "USGS 30-year probability start date",
       "reason": "Live FAQ does not state start date; old fact-sheet PDF returned 404.",
-      "action": "Do not label as a fresh 2026–2056 forecast; verify publication vintage before time-specific use.",
+      "action": "Do not label as a fresh 2026\u20132056 forecast; verify publication vintage before time-specific use.",
       "sources": [
         "usgs_faq"
       ]
@@ -2891,7 +2891,7 @@
     {
       "id": "flag_root_briefs",
       "item": "Root markdown executive briefs vs the published dashboard",
-      "reason": "2026-11-10 repo line review: EXECUTIVE_SUMMARY.md asserts 'Renew — but renew now' with unsourced cap-rate steps (7.25%/6.50%/6.00%, +20.8%); executive_summary.md cites non-official aggregator figures and predates the verified build; both are excluded from the published artifact and contradict the published dual-track recommendation.",
+      "reason": "2026-11-10 repo line review: EXECUTIVE_SUMMARY.md asserts 'Renew \u2014 but renew now' with unsourced cap-rate steps (7.25%/6.50%/6.00%, +20.8%); executive_summary.md cites non-official aggregator figures and predates the verified build; both are excluded from the published artifact and contradict the published dual-track recommendation.",
       "action": "Treat the published dashboard and README as canonical. Owner to delete or supersede the stale root briefs (and DECISION_MEMO.md/METHODOLOGY.md/RISK_REGISTER.md if inconsistent); do not merge them into the site without source-verification against primary pages.",
       "sources": [
         "repo"
@@ -3000,7 +3000,7 @@
     {
       "id": "audit_c5e199ef_pass",
       "check": "Independent re-verification pass (session c5e199ef, 10 Nov 2026)",
-      "result": "Re-read 24 official sources line by line against the dataset: Census city/county QuickFacts, BLS regional summary and LAUS county series, EDD county release, FRED county and metro GDP, Treasury par yields, DOF P-2A (LA County 2026–2050), SCAG Appendix I, DTLA 2040 release, LA ULA FAQ, DIR fast-food and general minimum wage, LA minimum wage notice, CA School Dashboard (LAUSD), SEC Q3 FY2026 release, FEMA NRI county service (composite, EAL, per-hazard ratings), USGS UCERF3 FAQ, CAL FIRE FHSZ acreage, CDI claims tracker. Every value matched except Treasury yields, which were refreshed to the November 9 print.",
+      "result": "Re-read 24 official sources line by line against the dataset: Census city/county QuickFacts, BLS regional summary and LAUS county series, EDD county release, FRED county and metro GDP, Treasury par yields, DOF P-2A (LA County 2026\u20132050), SCAG Appendix I, DTLA 2040 release, LA ULA FAQ, DIR fast-food and general minimum wage, LA minimum wage notice, CA School Dashboard (LAUSD), SEC Q3 FY2026 release, FEMA NRI county service (composite, EAL, per-hazard ratings), USGS UCERF3 FAQ, CAL FIRE FHSZ acreage, CDI claims tracker. Every value matched except Treasury yields, which were refreshed to the November 9 print.",
       "detail": "Added one derived row and one flag: DOF's 2025 level is 158,501 (+1.63%) above Census's July 2025 estimate. EDGAR filing list checked on 2026-11-09: no new Jack in the Box 8-K, 10-Q, or 10-K after the 2026-09-21 8-K, so tenant rows remain current. Not re-read this pass: the SEC 10-K California restaurant table (only the 2,136 system total was re-read), SCAG 2030/2045 rows (2019/2050 re-read), CAL FIRE 26%/35% claims, LAPD and Port status pages, IRS/FTB/BOE/Assessor guidance; those carry forward from the 2026-11-08 passes and stay as dated. Full trail in verification/2026-11-10-c5e199ef.md.",
       "sources": [
         "treasury",
@@ -3012,7 +3012,7 @@
     {
       "id": "audit_recheck_2026_11_10",
       "check": "Independent re-verification pass, session af77a54e (2026-11-10)",
-      "result": "PASS with observations. Twelve figure groups re-read against official pages on 2026-11-10 and all match the published values exactly: Census QuickFacts Vintage 2025 (city + county), BLS Los Angeles Area Economic Summary (Nov 4, 2026; 4.5% city/county, 4.4% metro), FRED GDPALL06037 (2024: $1,002,965,029K, updated Feb 5, 2026), Treasury par yield curve (both days verified 2026-11-10: Nov 6 print 2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26; Nov 9 print 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26 — Nov 9 print published by concurrent session c5e199ef, PR #46), SEC Q3 FY2026 earnings release (SSS -1.1/-1.2/-0.9; revenue $257.7M; 2,115 units; Adj. EBITDA $61.2M), CDI Wildfire Claims Tracker (41,727 filed / 40,482 partially paid / $25.2B, updated Jul 6, 2026), LA Office of Finance Measure ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%), USGS UCERF3 FAQ (60/46/31%), OSFM 2024-2025 FHSZ acreage (LA combined Very High 769,561 of 1,177,944 acres), CDE 2026 Dashboard LAUSD (grad 87.6%; absenteeism 21.3%; ELA 13.2 below; math 40.7 below), SCAG Connect SoCal 2024 Appendix I Tables ES-1/2-1 and 3.14-8/9/10.",
+      "result": "PASS with observations. Twelve figure groups re-read against official pages on 2026-11-10 and all match the published values exactly: Census QuickFacts Vintage 2025 (city + county), BLS Los Angeles Area Economic Summary (Nov 4, 2026; 4.5% city/county, 4.4% metro), FRED GDPALL06037 (2024: $1,002,965,029K, updated Feb 5, 2026), Treasury par yield curve (both days verified 2026-11-10: Nov 6 print 2Y 4.51 / 5Y 4.64 / 10Y 4.86 / 30Y 5.26; Nov 9 print 2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 30Y 5.26 \u2014 Nov 9 print published by concurrent session c5e199ef, PR #46), SEC Q3 FY2026 earnings release (SSS -1.1/-1.2/-0.9; revenue $257.7M; 2,115 units; Adj. EBITDA $61.2M), CDI Wildfire Claims Tracker (41,727 filed / 40,482 partially paid / $25.2B, updated Jul 6, 2026), LA Office of Finance Measure ULA FAQ ($5.4M/$10.9M; 4%/5.5%; base 0.45%), USGS UCERF3 FAQ (60/46/31%), OSFM 2024-2025 FHSZ acreage (LA combined Very High 769,561 of 1,177,944 acres), CDE 2026 Dashboard LAUSD (grad 87.6%; absenteeism 21.3%; ELA 13.2 below; math 40.7 below), SCAG Connect SoCal 2024 Appendix I Tables ES-1/2-1 and 3.14-8/9/10.",
       "detail": "Gates re-run after merging concurrent 2026-11-10 session c5e199ef (PRs #46/#48): build check pass; unittest 11/11; validator PASS. Non-blocking observations: (1) no conflict markers or personal identifiers in the curated set (only public SEC accession numbers, which are not personal data); (2) Pages build_type remains legacy (admin action pending; _config.yml curation is the interim mitigation); (3) stale root markdown briefs flagged as flag_root_briefs; (4) git commit metadata may expose owner contact details (noted by c5e199ef; redacted, history not rewritten; owner decision required); (5) stale open PRs remain open for owner review. Full ledger: verification/2026-11-10-af77a54e.md.",
       "sources": [
         "repo"
@@ -3029,6 +3029,20 @@
         "dof_e1",
         "treasury",
         "lavote_dtt"
+      ]
+    },
+    {
+      "id": "audit_a8681975_pass",
+      "check": "Independent source re-verification (session a8681975, 10 Nov 2026)",
+      "result": "Line-by-line re-read of every published observation against its official source (71-row 2026-11-08 set, then the 2026-11-10 set): 69/71 exact; the two California tenant rows were wrong (Del Taco's California counts published under the Jack label) and corrected to Jack-only 941 (96 company; 845 franchise) with share 44.1% (941 / 2,136) \u2014 independently confirmed by parallel sessions' flag_ca_units_correction. Census, BLS/LAUS/EDD, Treasury, BEA/FRED, DOF P-2A, SCAG Tables ES-1/2-1/3.14-8/9/10 and TR Table 6 (incl. printed 153% manufacturing anomaly), DTLA 2040, FEMA NRI county metrics and all 19 hazard ratings (incl. CFLD score 90), USGS 60/46/31, CAL FIRE acreage + derived 65.3%, CDI tracker, LA ULA/wage pages, DIR pages, LAUSD dashboard, IRS/FTB/BOE/Prop 13 pages, and SEC 8-K/Q3 release/10-Q R2/10-K Item 2 all matched.",
+      "detail": "Full ledger: verification/2026-11-10-a8681975.md. SCAG printed 153% (endpoint math +15.4%), USGS window-start vintage, and prior CAL FIRE 26%/35% claims remain flagged and withheld. Privacy: personal names present in fetched filings/letterheads were never copied into any output; pattern scans and artifact-boundary gates green.",
+      "sources": [
+        "repo",
+        "sec_10k",
+        "dof_p2a",
+        "scag_tr",
+        "fema_county_query",
+        "bls_summary"
       ]
     }
   ]

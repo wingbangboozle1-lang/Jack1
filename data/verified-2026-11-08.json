@@ -2,10 +2,11 @@
   "meta": {
     "date": "2026-11-08",
     "session": "0e369d53",
-    "title": "Jack in the Box NNN decision brief — central Los Angeles area",
-    "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
+    "title": "Jack in the Box NNN decision brief \u2014 central Los Angeles area",
+    "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030\u20132035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances are not verified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged.",
+    "last_reviewed": "2026-11-10",
     "reverified": "2026-11-10",
     "reverified_by": "c5e199ef"
   },
@@ -42,7 +43,7 @@
       "title": "Annual unemployment rates for 50 largest cities, 2025",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official statistics"
     },
     "edd_la": {
@@ -98,7 +99,7 @@
       "title": "Connect SoCal 2024 Technical Report: Demographics and Growth Forecast",
       "publisher": "Southern California Association of Governments",
       "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official projection"
     },
     "scag_appendix": {
@@ -133,14 +134,14 @@
       "title": "Proposition 13 property tax overview",
       "publisher": "Los Angeles County Assessor",
       "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "boe_reassessment": {
-      "title": "Letter 2022/046: Change in Ownership — Base Year Value Transfers; Prop 13 current-law summary",
+      "title": "Letter 2022/046: Change in Ownership \u2014 Base Year Value Transfers; Prop 13 current-law summary",
       "publisher": "California State Board of Equalization",
       "url": "https://www.boe.ca.gov/proptaxes/pdf/lta22046.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "ula": {
@@ -154,21 +155,21 @@
       "title": "Capital gains and losses",
       "publisher": "California Franchise Tax Board",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "irs_544": {
       "title": "Publication 544: Sales and Other Dispositions of Assets",
       "publisher": "Internal Revenue Service",
       "url": "https://www.irs.gov/publications/p544",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "irs_8824": {
       "title": "Instructions for Form 8824 (2025): Like-Kind Exchanges",
       "publisher": "Internal Revenue Service",
       "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official tax guidance"
     },
     "dir_fastfood": {
@@ -224,14 +225,14 @@
       "title": "Jack in the Box Inc. FY2025 Form 10-K",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official issuer filing"
     },
     "sec_10q": {
       "title": "Jack in the Box Inc. Q3 FY2026 Form 10-Q",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official issuer filing"
     },
     "sec_release": {
@@ -280,11 +281,11 @@
       "title": "Fire Hazard Severity Zones",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official hazard mapping"
     },
     "calfire_acres": {
-      "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024–2025",
+      "title": "Fire Hazard Severity Zone acres, state and local responsibility, 2024\u20132025",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire_hazard_severity_zone_acres_state_and_local_responsibility_2024_2025.pdf?rev=d1f74280dd01402f841bf2da5d5fc8cd&hash=EC6CA86D1AF5094D808CB341A328C52F",
       "accessed": "2026-11-10",
@@ -301,7 +302,7 @@
       "title": "Crime Mapping and COMPSTAT",
       "publisher": "Los Angeles Police Department",
       "url": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official public safety"
     },
     "epa_brownfields": {
@@ -315,7 +316,7 @@
       "title": "Port of Los Angeles Statistics hub",
       "publisher": "Port of Los Angeles",
       "url": "https://www.portoflosangeles.org/business/statistics",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "official economic driver"
     },
     "repo": {
@@ -343,7 +344,7 @@
       "title": "Jack in the Box Inc. Form 8-K, Exhibit 99.1 (board refreshment; CEO transition; cooperation agreement extension)",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000098/ex991-pressreleasexbodanno.htm",
-      "accessed": "2026-11-08",
+      "accessed": "2026-11-10",
       "kind": "issuer filing"
     }
   },
@@ -404,7 +405,7 @@
       "id": "pop_city_change",
       "category": "Population",
       "measure": "City population change from estimates base",
-      "value": "−0.8%",
+      "value": "\u22120.8%",
       "geography": "City of Los Angeles",
       "period": "April 1, 2020 base to July 1, 2025",
       "status": "verified",
@@ -430,7 +431,7 @@
       "id": "pop_county_change",
       "category": "Population",
       "measure": "County population change from estimates base",
-      "value": "−3.2%",
+      "value": "\u22123.2%",
       "geography": "Los Angeles County",
       "period": "April 1, 2020 base to July 1, 2025",
       "status": "verified",
@@ -459,7 +460,7 @@
       "measure": "Median household income",
       "value": "$81,939",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "Household income, not restaurant customer spending.",
       "sources": [
@@ -472,7 +473,7 @@
       "measure": "Median household income",
       "value": "$90,112",
       "geography": "Los Angeles County",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "County differs from city; do not average for a parcel.",
       "sources": [
@@ -485,7 +486,7 @@
       "measure": "Per-capita income",
       "value": "$47,685",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS, 2024 dollars",
+      "period": "2020\u20132024 ACS, 2024 dollars",
       "status": "verified",
       "note": "Context for purchasing power, not a sales forecast.",
       "sources": [
@@ -498,7 +499,7 @@
       "measure": "Poverty rate",
       "value": "16.5%",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Citywide estimate with sampling error.",
       "sources": [
@@ -511,7 +512,7 @@
       "measure": "Median gross rent",
       "value": "$1,933/month",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Residential rent; not commercial NNN rent.",
       "sources": [
@@ -524,7 +525,7 @@
       "measure": "Owner-occupied housing unit rate",
       "value": "36.0%",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Community context only.",
       "sources": [
@@ -537,7 +538,7 @@
       "measure": "Median owner-occupied home value",
       "value": "$921,200",
       "geography": "City of Los Angeles",
-      "period": "2020–2024 ACS",
+      "period": "2020\u20132024 ACS",
       "status": "verified",
       "note": "Residential value; not the subject property value.",
       "sources": [
@@ -665,7 +666,7 @@
       "id": "payrolls_county",
       "category": "Labor",
       "measure": "County nonfarm wage and salary employment, SA",
-      "value": "4,539,800; −4,100 monthly; +20,300 annually",
+      "value": "4,539,800; \u22124,100 monthly; +20,300 annually",
       "geography": "Los Angeles County, SA",
       "period": "September 2026 preliminary",
       "status": "verified",
@@ -717,7 +718,7 @@
       "id": "sector_information",
       "category": "Labor",
       "measure": "Information payrolls",
-      "value": "187.0 thousand; −11.4 thousand / −5.7% YoY",
+      "value": "187.0 thousand; \u221211.4 thousand / \u22125.7% YoY",
       "geography": "Los Angeles metro area",
       "period": "September 2026",
       "status": "verified",
@@ -730,7 +731,7 @@
       "id": "sector_manufacturing",
       "category": "Labor",
       "measure": "Manufacturing payrolls",
-      "value": "444.8 thousand; −5.4 thousand / −1.2% YoY",
+      "value": "444.8 thousand; \u22125.4 thousand / \u22121.2% YoY",
       "geography": "Los Angeles metro area",
       "period": "September 2026",
       "status": "verified",
@@ -812,7 +813,7 @@
       "geography": "Los Angeles Unified School District",
       "period": "2026 Dashboard",
       "status": "verified",
-      "note": "TK–8 denominator 254,681; community indicator, not property rating.",
+      "note": "TK\u20138 denominator 254,681; community indicator, not property rating.",
       "sources": [
         "dashboard_engagement"
       ]
@@ -847,7 +848,7 @@
       "id": "tenant_sss",
       "category": "Tenant",
       "measure": "Jack in the Box system same-store sales",
-      "value": "System −1.1%; franchise −1.2%; company −0.9%",
+      "value": "System \u22121.1%; franchise \u22121.2%; company \u22120.9%",
       "geography": "Jack in the Box system",
       "period": "Q3 FY2026, 12 weeks ended July 5, 2026",
       "status": "verified",
@@ -864,7 +865,7 @@
       "geography": "Jack in the Box system",
       "period": "End of Q3 FY2026",
       "status": "verified",
-      "note": "QTD 4 openings, 17 closures, net −13.",
+      "note": "QTD 4 openings, 17 closures, net \u221213.",
       "sources": [
         "sec_release"
       ]
@@ -939,7 +940,7 @@
       "id": "tenant_guidance",
       "category": "Tenant",
       "measure": "FY2026 restaurant guidance",
-      "value": "Approximately 2,100 units; about 25 openings and 50–60 closures, mostly franchise",
+      "value": "Approximately 2,100 units; about 25 openings and 50\u201360 closures, mostly franchise",
       "geography": "Jack in the Box system",
       "period": "FY2026 guidance issued August 2026",
       "status": "verified",
@@ -965,11 +966,11 @@
       "id": "tenant_ca_2025",
       "category": "Tenant",
       "measure": "California Jack in the Box restaurants, FY2025",
-      "value": "351 total; 94 company; 257 franchise",
+      "value": "941 total; 96 company; 845 franchise",
       "geography": "California",
       "period": "FY2025 Form 10-K",
       "status": "verified",
-      "note": "Jack-only. The 941 California figure includes Del Taco and must not be labeled Jack-only.",
+      "note": "Item 2 Properties table, Jack in the Box columns, at September 28, 2025. Corrected 2026-11-10: earlier version published Del Taco California counts (351 total; 94 company; 257 franchise) under the Jack label and claimed 941 included Del Taco (reversed). Del Taco California is 351; Jack-only California is 941.",
       "sources": [
         "sec_10k"
       ]
@@ -978,11 +979,11 @@
       "id": "tenant_ca_share",
       "category": "Tenant",
       "measure": "California share of Jack system",
-      "value": "16.4%",
+      "value": "44.1%",
       "geography": "California / Jack system",
       "period": "FY2025",
       "status": "derived",
-      "note": "Calculation: 351 ÷ 2,136. Geographic concentration, not parcel exposure.",
+      "note": "Calculation: 941 / 2,136 = 44.05% (44.1%). Geographic concentration, not parcel exposure. Corrected 2026-11-10 from 16.4% (351 / 2,136), which used Del Taco California counts.",
       "sources": [
         "sec_10k"
       ]
@@ -1202,11 +1203,11 @@
       "id": "usgs_quake",
       "category": "Hazards",
       "measure": "UCERF3 regional earthquake probabilities",
-      "value": "60% M≥6.7; 46% M≥7.0; 31% M≥7.5 in 30 years",
+      "value": "60% M\u22656.7; 46% M\u22657.0; 31% M\u22657.5 in 30 years",
       "geography": "Los Angeles region",
       "period": "USGS FAQ citing UCERF3; start date not stated",
       "status": "verified",
-      "note": "Do not label as a fresh 2026–2056 forecast; regional, not site-specific.",
+      "note": "Do not label as a fresh 2026\u20132056 forecast; regional, not site-specific.",
       "sources": [
         "usgs_faq"
       ]
@@ -1217,7 +1218,7 @@
       "measure": "CAL FIRE FHSZ mapped acres, Los Angeles County",
       "value": "Moderate 330,431; High 77,951; Very High 769,561; Total mapped 1,177,944",
       "geography": "Los Angeles County, combined SRA/LRA",
-      "period": "2024–2025 official acreage table",
+      "period": "2024\u20132025 official acreage table",
       "status": "verified",
       "note": "Mapped hazard acres, not all county land and not a parcel assignment.",
       "sources": [
@@ -1231,9 +1232,9 @@
       "measure": "Very High share of mapped FHSZ acres",
       "value": "65.3%",
       "geography": "Los Angeles County mapped FHSZ acres",
-      "period": "2024–2025 table",
+      "period": "2024\u20132025 table",
       "status": "derived",
-      "note": "Calculation: 769,561 ÷ 1,177,944. Not a parcel probability.",
+      "note": "Calculation: 769,561 \u00f7 1,177,944. Not a parcel probability.",
       "sources": [
         "calfire_acres"
       ]
@@ -1359,7 +1360,7 @@
       "field": "Exact lease expiration and options",
       "value": null,
       "status": "unverified",
-      "note": "Reported 2030–2035 range only; exact dates and notice windows drive value.",
+      "note": "Reported 2030\u20132035 range only; exact dates and notice windows drive value.",
       "sources": [
         "sec_10k"
       ]
@@ -1582,7 +1583,7 @@
         "id": "stress_vacancy",
         "name": "Rent interruption",
         "symbol": "m months of zero rent plus re-tenanting downtime",
-        "formula": "Lost rent = monthly verified rent × m; add verified downtime costs",
+        "formula": "Lost rent = monthly verified rent \u00d7 m; add verified downtime costs",
         "sources": [
           "sec_release",
           "sec_10k"
@@ -1592,7 +1593,7 @@
         "id": "stress_leakage",
         "name": "NNN cost leakage",
         "symbol": "c = annual owner-paid costs not recovered",
-        "formula": "Net operating income = verified rent − verified unrecovered owner costs",
+        "formula": "Net operating income = verified rent \u2212 verified unrecovered owner costs",
         "sources": [
           "sec_10k",
           "prop13"
@@ -1611,8 +1612,8 @@
       {
         "id": "stress_exit",
         "name": "Exit valuation shock",
-        "symbol": "Δcap = change in market cap rate; ΔNOI = change in stabilized NOI",
-        "formula": "Exit value = stabilized NOI ÷ market cap rate; both inputs require evidence",
+        "symbol": "\u0394cap = change in market cap rate; \u0394NOI = change in stabilized NOI",
+        "formula": "Exit value = stabilized NOI \u00f7 market cap rate; both inputs require evidence",
         "sources": [
           "treasury",
           "sec_release"
@@ -1621,8 +1622,8 @@
       {
         "id": "stress_discount",
         "name": "Discount-rate shock",
-        "symbol": "Δr = change in owner-required return",
-        "formula": "PV = Σ after-tax cash flow_t ÷ (1+r)^t; r is not the Treasury yield by default",
+        "symbol": "\u0394r = change in owner-required return",
+        "formula": "PV = \u03a3 after-tax cash flow_t \u00f7 (1+r)^t; r is not the Treasury yield by default",
         "sources": [
           "treasury",
           "irs_544"
@@ -1631,8 +1632,8 @@
       {
         "id": "stress_tax",
         "name": "Tax / transfer-cost shock",
-        "symbol": "ΔT = change in federal/state/local tax and transfer costs",
-        "formula": "Net sale proceeds = price − debt payoff − transaction costs − verified taxes",
+        "symbol": "\u0394T = change in federal/state/local tax and transfer costs",
+        "formula": "Net sale proceeds = price \u2212 debt payoff \u2212 transaction costs \u2212 verified taxes",
         "sources": [
           "ula",
           "irs_544",
@@ -1763,7 +1764,7 @@
       "category": "Ordinary lease risk",
       "name": "Lease-term decay",
       "mechanism": "Shortening remaining term can reduce buyer pool, financing options, and value even if rent is current.",
-      "context": "Reported expiry range 2030–2035 is unverified; exact term drives the decision.",
+      "context": "Reported expiry range 2030\u20132035 is unverified; exact term drives the decision.",
       "site_status": "unverified",
       "mitigation": "Verify dates/options; calendar notices; price sale and extension cases in parallel.",
       "sources": [
@@ -1775,7 +1776,7 @@
       "category": "Ordinary tenant risk",
       "name": "Tenant / guarantor credit",
       "mechanism": "Brand strength does not equal lease credit; franchisee or subsidiary obligor may be weaker than issuer.",
-      "context": "Issuer Q3 FY2026 system SSS −1.1%, franchise −1.2%; net restaurant count −13 QTD.",
+      "context": "Issuer Q3 FY2026 system SSS \u22121.1%, franchise \u22121.2%; net restaurant count \u221213 QTD.",
       "site_status": "unverified",
       "mitigation": "Identify legal tenant/guarantor; review financials, guaranty scope, defaults, and assignment rights.",
       "sources": [
@@ -1943,7 +1944,7 @@
       "category": "Rare high-impact hazard",
       "name": "Earthquake",
       "mechanism": "Structural damage, business interruption, insurance gaps, and regional repricing can impair value.",
-      "context": "FEMA county earthquake risk Very High; USGS UCERF3 regional 30-year M≥6.7 probability 60% (start date not stated).",
+      "context": "FEMA county earthquake risk Very High; USGS UCERF3 regional 30-year M\u22656.7 probability 60% (start date not stated).",
       "site_status": "unverified",
       "mitigation": "Seismic/structural review, insurance adequacy, emergency plan, and capital reserve.",
       "sources": [
@@ -2227,7 +2228,7 @@
     {
       "id": "flag_lease_terms",
       "item": "Exact expiry, options, notices, rent, escalations, NNN scope",
-      "reason": "Reported 2030–2035 range and NNN label are premises only.",
+      "reason": "Reported 2030\u20132035 range and NNN label are premises only.",
       "action": "Read executed lease and amendments; calendar all notice/option dates.",
       "sources": [
         "sec_10k"
@@ -2335,7 +2336,7 @@
     {
       "id": "flag_scag_manufacturing",
       "item": "SCAG manufacturing future-change percentage",
-      "reason": "Official table prints 153% while endpoints 612k→706k imply about 15.4%.",
+      "reason": "Official table prints 153% while endpoints 612k\u2192706k imply about 15.4%.",
       "action": "Withhold printed percentage; use endpoint-derived calculation only with flag.",
       "sources": [
         "scag_tr"
@@ -2345,7 +2346,7 @@
       "id": "flag_usgs_vintage",
       "item": "USGS 30-year probability start date",
       "reason": "Live FAQ does not state start date; old fact-sheet PDF returned 404.",
-      "action": "Do not label as a fresh 2026–2056 forecast; verify publication vintage before time-specific use.",
+      "action": "Do not label as a fresh 2026\u20132056 forecast; verify publication vintage before time-specific use.",
       "sources": [
         "usgs_faq"
       ]
@@ -2418,6 +2419,15 @@
       "sources": [
         "repo",
         "repo_line_audit"
+      ]
+    },
+    {
+      "id": "flag_tenant_ca_counts",
+      "item": "Del Taco / Jack in the Box California counts misattribution (corrected 2026-11-10)",
+      "reason": "2026-11-10 re-read of FY2025 10-K Item 2 Properties found the published California rows used Del Taco's California counts (351 total; 94 company; 257 franchise) under the Jack label, with a reversed footnote claiming the 941 Jack figure included Del Taco. Jack-only California is 941 (96 company; 845 franchise) at September 28, 2025.",
+      "action": "Rows corrected and California share recomputed to 44.1% (941 / 2,136) on 2026-11-10; correction recorded in audit_a8681975_ca_fix and verification/2026-11-10-a8681975.md.",
+      "sources": [
+        "sec_10k"
       ]
     },
     {
@@ -2547,6 +2557,30 @@
         "census_city",
         "sec_10q",
         "fema_county_query"
+      ]
+    },
+    {
+      "id": "audit_a8681975_pass",
+      "check": "Independent source re-verification (session a8681975, 10 Nov 2026)",
+      "result": "Line-by-line re-read of every published observation value against its official source: 69 of 71 rows exact; 2 California tenant rows wrong and corrected (audit_a8681975_ca_fix). Census (16 values), BLS/LAUS/EDD, Treasury 11/06/2026, BEA/FRED, DOF P-2A (13 values), SCAG Tables ES-1/2-1/3.14-8/9/10 and TR Table 6, DTLA 2040, FEMA NRI county metrics and 19 hazard ratings, USGS probabilities, CAL FIRE acreage table and derived 65.3% share, CDI claims tracker, LA ULA/wage pages, DIR wage pages, CDE dashboard, IRS/FTB/BOE/Prop 13 pages, and SEC Q3 FY2026 release/10-K/10-Q/8-K all matched.",
+      "detail": "Full ledger in verification/2026-11-10-a8681975.md. SCAG printed 153% manufacturing change, USGS window-start vintage, and prior CAL FIRE 26%/35% claims remain flagged and withheld.",
+      "sources": [
+        "repo",
+        "repo_line_audit",
+        "sec_10k",
+        "dof_p2a",
+        "scag_tr",
+        "fema_county_query",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "audit_a8681975_ca_fix",
+      "check": "Correction: California tenant rows (tenant_ca_2025, tenant_ca_share)",
+      "result": "The FY2025 10-K Item 2 Properties table's Del Taco California row (351 total; 94 company; 257 franchise) had been published under the Jack in the Box label, and the footnote claimed the 941 Jack figure included Del Taco (reversed). Corrected to Jack-only 941 total; 96 company; 845 franchise; California share recomputed as 44.1% (941 / 2,136).",
+      "detail": "Del Taco California is 351 (94/257); Jack in the Box California is 941 (96/845) at September 28, 2025. Brand totals 2,136 (149 company; 1,986 franchise) unchanged. Row notes carry the 2026-11-10 correction date.",
+      "sources": [
+        "sec_10k"
       ]
     },
     {
