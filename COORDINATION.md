@@ -1016,3 +1016,28 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 ### Second interleave note (2026-11-09 ~00:0x UTC, 08 Nov local)
 
 `origin/main` advanced again through PRs #44–#45 (session 0e369d53): the canonical build is now a **10-page data-driven dashboard** (`data/verified-2026-11-08.json` + `scripts/build_public.py`), with the 17-page build preserved under `archive/arena-main-3da3b70/`. That build independently verified and published the same FEMA NRI county values this session read (composite 100, EAL $7,601,846,373, earthquake 100, wildfire 99.936, inland flooding 100), plus social vulnerability/resilience and per-hazard EAL detail. Conflict resolution again keeps the merged canonical versions of all shared files (including the data-driven validator with its own FEMA-org path exception). This session's remaining unique contribution re-applied on top: the **SEC 8-K (2026-09-21) issuer-governance observation** (dataset source + observation + audit entry, regenerated pages), and this session's independent audit report `research/verification-audit-b8188ee0.md`. No session's work discarded; all coordination records retained in sequence.
+
+---
+
+## Session: arena/a8681975-jack1 (2026-11-10 UTC)
+
+**Session ID:** `arena/a8681975-jack1` (Arena-assigned branch; per platform policy this session cannot create `session-<id>/<task>` branches — the assigned branch is used, as prior sessions did.)
+
+### Claims (task board addendum) — claimed and pushed before any content work
+
+| Task ID | Description | Status | Owning Session ID | Files / scope (exclusive) | Sources | Verification Performed | Irregularities |
+|---------|-------------|--------|-------------------|---------------------------|---------|------------------------|----------------|
+| J-1 | Session claim + coordination protocol | **done** | arena/a8681975-jack1 | `COORDINATION.md` (append-only below this claim) | n/a | Claim pushed before content work | none |
+| J-2 | Fresh 2026-11-10 line-by-line re-verification of the canonical dataset (`data/verified-2026-11-08.json`, 71 observations + 47 sources + derived projection arithmetic) against live official pages; correction of any figure that no longer matches its official source | **in progress** | arena/a8681975-jack1 | `verification/2026-11-10-a8681975.md` (new), `data/verified-2026-11-08.json` (corrections only, with dated audit entries), regenerated root pages via `scripts/build_public.py` | census.gov QuickFacts, bls.gov, edd.ca.gov, fred.stlouisfed.org, home.treasury.gov, sec.gov, scag.ca.gov, planning.lacity.gov, finance.lacity.gov, dir.ca.gov, wagesla.lacity.gov, usgs.gov, osfm.fire.ca.gov, insurance.ca.gov, fema.gov/ArcGIS NRI, caschooldashboard.org, ftb.ca.gov, irs.gov, assessor.lacounty.gov, boe.ca.gov (each figure checked against its own linked page) | starting after this claim commit | to be published on Flagged for Review if unconfirmable |
+| J-3 | Close actionable open items: N-857537b4-01/N-857537b4-02 rounding notes (if they persist in the generated build), N-857537b4-06 date alignment, RR-08 (`data/records.json` source-of-truth decision) | **in progress** | arena/a8681975-jack1 | `data/verified-2026-11-08.json`, `scripts/projection_model.py` (rounding only, if needed), `data/records.json` (header note only), `sources.html` via regeneration | prior verification reports `verification/2026-11-08-857537b4.md` | pending | RR-08 to be closed by decision + documentation |
+| J-4 | Flagged-item re-check (CAL FIRE 26%/35%, heat brief, EDD gap, SCAG press-release discrepancy, ULA wording) + full privacy (PII) scan of the published set | **in progress** | arena/a8681975-jack1 | `verification/2026-11-10-a8681975.md`, `data/verified-2026-11-08.json` (flag updates only) | osfm.fire.ca.gov, labormarketinfo.edd.ca.gov, scag.ca.gov, finance.lacity.gov | pending | unconfirmable items stay flagged, never inferred |
+| J-5 | Final integration: rebuild generated pages, run all gates (`build_public.py --check`, tests, `validate_site.py`, artifact validation, local HTTP smoke, live-site check), PR to `main`, merge, confirm GitHub Pages deploy, record in this file | **in progress** | arena/a8681975-jack1 | generated root pages, `assets/projections.json`, this file, GitHub PR/Pages | n/a | pending gates | no merge until gates pass |
+
+**Scope rules for this session:** file-disjoint from every historical claim (all previous sessions are
+complete; latest commits 2026-11-08). Files under `archive/`, `pages/`, `site/`, `research/notes/`,
+`tests/`, `scripts/validate_site.py`, `scripts/build_public.py` are read-only for this session except
+where J-3 explicitly names them. Historical open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33) are
+left untouched per the standing norm — their branches preserve their work; nothing is discarded.
+
+Claim time: 2026-11-10 (UTC). Prior claims checked before claiming: all sessions through
+`arena/b8188ee0-jack1` recorded **done/complete**; no active claim existed at claim time.
