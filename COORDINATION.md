@@ -1029,7 +1029,7 @@ This session's 8-page edits are preserved in git history (commits `a5dff00`, `54
 |---|---|---|---|---|
 | C5-1 | Repo review: inventory, repo-wide privacy scan (tracked files + git metadata), build/test/validator gates | done | c5e199ef | `verification/2026-11-10-c5e199ef.md` (new), `scripts/build_public.py` (re-verified date in header, projections caution callout, audit footer) |
 | C5-2 | Line-by-line re-verification (2026-11-10) of published figures against official pages; update stale figures only when the official page confirms | done | c5e199ef | `data/verified-2026-11-08.json` (observations/audit/flags only), generated pages via `scripts/build_public.py` |
-| C5-3 | Final integration: regenerate, validate, link check, PR to `main`, merge, confirm Pages deploy, record | in progress | c5e199ef | `COORDINATION.md` (this section only), PR |
+| C5-3 | Final integration: regenerate, validate, link check, PR to `main`, merge, confirm Pages deploy, record | done | c5e199ef | `COORDINATION.md` (this section only), PR |
 
 Scope rules: this session edits only the files above. It does not edit `archive/`, `research/notes/*`, or other sessions' records. Personal information is never written here — only redacted irregularity notes.
 
@@ -1042,3 +1042,10 @@ Scope rules: this session edits only the files above. It does not edit `archive/
 - **Not re-read this pass (still dated 2026-11-08):** SEC 10-K California table, SCAG 2030/2045 and sector rows, 10-Q balance rows, 8-K governance row, CAL FIRE 26%/35% claims, LAPD/Port/EPA status pages, IRS/FTB/BOE/Assessor guidance.
 - **Gates:** `build_public.py --check`, 11 tests, `validate_site.py` (10 pages, 272 sourced rows), `_site` artifact validation, local HTTP smoke (10 pages + 3 assets = 200; `COORDINATION.md`, `data/`, `archive/`, `research/` = 404).
 - **Open PRs left untouched for owners (all >60 min stale):** #5, #10, #11, #14, #18, #21, #24, #27, #33.
+
+### PR and deploy record — C5-3 (session c5e199ef, 2026-11-10 UTC)
+
+- **PR:** #46 `arena/c5e199ef-jack1` → `main`, https://github.com/wingbangboozle1-lang/Jack1/pull/46 — merged 2026-11-10T00:34:11Z, merge commit `a72b141392cb8d55c25d7275cc1db90b334c8c7d`. Merge state was CLEAN/MERGEABLE; PR `validate` check passed before merge.
+- **Main-branch runs:** `Validate and publish the decision brief` run 42729301297 — success; `pages build and deployment` run 42729301121 — success. Pages API: `status: built`, `build_type: legacy` (`main /`; unchanged — the workflow-source switch remains unavailable to the workflow token, see existing flag).
+- **Live check (2026-11-10):** https://wingbangboozle1-lang.github.io/Jack1/flagged.html serves both new flags (DOF/Census gap; git-metadata privacy). `COORDINATION.md` on the live host returns 404, so internal records stay unpublished.
+- **Follow-up:** this record itself ships in a docs-only PR from the same branch (no site/dataset change).
