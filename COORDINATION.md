@@ -1467,3 +1467,38 @@ PR [#60](https://github.com/wingbangboozle1-lang/Jack1/pull/60) **merged** at 20
 Post-publication inspection noticed two *question-register* phrases from the concurrent PR #59 that were inconsistent with the now-current observation rows: its financing answer still used the November 9 curve (though dated correctly), and its public-safety answer called LAPD offense counts “incidents”. Both updated to match the re-read November 10 Treasury and November 7 LAPD PDFs. This corrective follow-up is claimed by `arena/db9ded39-jack1` on the same pinned branch (scope: `data/verified-2026-11-10.json`, regenerated canonical HTML, this board, and consistency tests). All 23 questions remain; no unknown value filled in.
 
 **Corrective follow-up gates:** 17/17 tests PASS (new consistency assertions for Treasury date/rate and LAPD offenses terminology); 12 generated files match; 10 pages / 362 sourced rows and curated artifact PASS; privacy, blank defaults, local links, source allowlist PASS; diff whitespace clean. Two question answer wordings, one new audit row; no new parcel/owner data.
+### Session completion record — Q-4 (session arena/2efe9aec-jack1, 2026-11-11 UTC)
+
+| Task | Status | PR / merge | Verification / deployment | Irregularities |
+|---|---|---|---|---|
+| Q-4 PR → `main`, merge, Pages deploy confirmation, final board entry | done | **PR #59** https://github.com/wingbangboozle1-lang/Jack1/pull/59 — merged 2026-11-11T02:09:54Z; merge commit `c7557f457a70f2153672ff00ef81dec7c1ef0ef9`. This completion note ships in docs-only follow-up **PR #62**. | Pre-merge: `validate` check PASS (run 42944023950); `build_public.py --check` 12 files; 16 unit tests OK; validator 10 pages / 357 sourced rows; curated artifact PASS; local HTTP smoke 11/11 pages 200; privacy scan zero hits. Post-merge: main push workflow run 42944094899 success; `pages build and deployment` run 42944094175 success; Pages API status `built`. **Live verification:** `requirements.html` served the new decision-question register (23 rows, blank cells, per-page source labels), `risks.html` served the refreshed public-safety context, and the canonical set returned 200. | Q-4-1: the first live fetch immediately after merge still returned the previous build (Pages legacy build in progress); re-fetching after the build settled returned the new pages. Recorded so future sessions do not mistake build latency for a failed deploy. Q-4-2: a residual mixed-vintage string survived in `risk_crime` ("Citywide −10.6% YoY (83,596, Oct 31 vintage)" labelled "thru Nov 7"), and the two LAPD source titles still said "Through Oct 31, 2026"; fixed in this follow-up and now covered by a regression test. |
+
+### Interleave note — PR #60 / session db9ded39 (2026-11-11 UTC)
+
+While this session's follow-up was in flight, `origin/main` advanced to `f6f73b7` through **PR #60**
+(`db9ded39`), whose merge commit explicitly preserved this session's decision-question register
+(`questions`, 23 rows), the November 7 public-safety correction, `flag_lapd_rolling_vintage`, and
+`audit_2efe9aec_pass`. That session also refreshed the Treasury row to the November 10 close (10Y
+4.98%), replaced the unsupported root briefs, and adjusted several rows. This branch was therefore
+**reset onto `origin/main` `f6f73b7`** rather than rebased commit-by-commit, so nothing of theirs is
+overwritten: their dataset, pages, briefs, and tests are kept as-is, and this follow-up now carries
+only the two contributions still unique to it — the regression test that the superseded October 31
+crime cut may appear only on the Flagged history page (and that the LAPD source titles name the cut
+the rows publish), and this coordination record. Gates re-run on the reset tree: `build_public.py
+--check` PASS (12 files), **17 unit tests OK**, `validate_site.py` PASS (10 pages, **361** sourced
+rows), curated artifact PASS. While this follow-up awaited CI, `origin/main` advanced again to
+`d6f0e25` (**PR #63**, same session `db9ded39`), which aligned the decision questions with the
+November 10 Treasury close and the November 7 LAPD cut and added its own question-alignment tests.
+This branch was reset onto `d6f0e25`, so their question text and tests are kept verbatim and only the
+vintage regression test plus this record were re-applied; gates re-run green (17 tests, 362 sourced
+rows).
+
+**Session summary (Q-1…Q-4, all done).** Claimed after rebasing onto `origin/main` `ed32462` (PR #58)
+so the parallel session's work was preserved rather than overwritten. Re-verified 40 official source
+URLs value-by-value; one published row disagreed with its live source and was corrected
+(`crime_status`, the rolling LAPD cut), with the share of citywide now computed inside a single
+vintage. Resolved the USGS access flag, corrected the stale PR reference in `req_publish`, and
+published the decision-question register and discovery plan that the owner explicitly asked for.
+Twelve unmerged parallel-session PRs (#56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5)
+remain untouched for owner review; nothing was merged from them and no content was copied
+unverified.

@@ -178,6 +178,14 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("28.0%", bureau["note"])
         flag_ids = {f["id"] for f in data["flags"]}
         self.assertIn("flag_lapd_rolling_vintage", flag_ids)
+        # Source registry titles must describe the same cut the rows publish.
+        self.assertIn("Nov 7, 2026", data["sources"]["lapd_city"]["title"])
+        self.assertIn("Nov 7, 2026", data["sources"]["lapd_central"]["title"])
+        # The superseded October 31 cut may survive only as documented history on the flagged page.
+        outputs = build_public.render_all()
+        for page in ("index.html", "market.html", "risks.html", "requirements.html", "decision.html", "sources.html"):
+            self.assertNotIn("83,596", outputs[page], page)
+        self.assertIn("83,596", outputs["flagged.html"])
 
     def test_2026_11_10_dataset_enrichment(self):
         data = pm.load_data()
