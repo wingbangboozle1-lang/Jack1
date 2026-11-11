@@ -1409,3 +1409,53 @@ L-3 is now claimed on this branch for PR → `main`, merge, and Pages deploy con
 Union of PR #58 preserved `verification/2026-11-11-a6ebbd99.md` and `audit_a6ebbd99_l2` alongside db9ded39's independent ledger and audit; regenerated pages after semantic dataset merge. Full build `--check`: **12 files pass**. Unit tests: **15/15 pass**. Validator: **10 pages / 336 sourced table rows**; source allowlist, local navigation, blank property values and privacy patterns pass. Curated artifact: only ten pages, 404, three assets and `.nojekyll`; artifact validation passes. Local HTTP smoke: `/`, `/flagged.html`, `/sources.html` return 200; `/data/verified-2026-11-10.json` and `/COORDINATION.md` return 404. Privacy regex check clean on 11 HTML files and five current root briefs; official-source personal contacts never copied. `git diff --check` clean. Historical old summaries replaced with source-linked cautious summary; old versions remain in Git history only. **L-2 done. L-3 claimed now** (this board, PR/Pages) on pinned branch before PR operations.
 
 **Deployment failure remedied in source:** PR #58's custom `deploy-pages` job failed with GitHub “No artifacts named github-pages”, although the separate legacy Pages workflow succeeded and Pages API reports built. A Pages mode switch returned 403 integration restriction; `.github/workflows/pages.yml` is now validation-only, leaving the already successful automatic legacy Pages build as the sole publisher. Do not treat the custom workflow as publishing; verify `pages-build-deployment`, Pages API and live public URL after merge. If a deployment fails, do not claim success.
+
+---
+
+## Session: arena/2efe9aec-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/2efe9aec-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 UTC):** session base commit `dd0705c` (PR #57 merge). Before any
+content work, `git fetch` showed `origin/main` had advanced to `ed32462` (PR #58, session `a6ebbd99`),
+so this branch was rebased onto `origin/main` **before** claiming; their LAPD bureau correction,
+dataset refresh, audit entry, verification report and coordination record are preserved intact.
+Open PRs #56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5 are unmerged; none has a claim on
+`main` newer than PR #58 and all exceed the 60-minute no-commit takeover window. They are preserved,
+not merged, and nothing from them is copied unverified.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| Q-1 | Session claim + parallel-session/vintage audit | done | arena/2efe9aec-jack1 | this board (append-only) |
+| Q-2 | Fresh 2026-11-11 line-by-line verification of published rows against exact official URLs, derived arithmetic recomputation, privacy rescan, irregularity log | in progress | arena/2efe9aec-jack1 | `verification/2026-11-11-2efe9aec.md` (new); dataset corrections only where an official page disagrees (each with an audit entry) |
+| Q-3 | **Missing deliverable:** publish the decision-gating question register (question → verified answer or blank → how to obtain → official source) plus a missing-information discovery plan on the Requirements page, per the owner's explicit request | in progress | arena/2efe9aec-jack1 | `data/verified-2026-11-10.json` (`questions` key, flags, audit), `scripts/build_public.py` (requirements page), `requirements.html`, `tests/test_projection_and_site.py` |
+| Q-4 | Final integration gates (build `--check`, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/2efe9aec-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs change only
+through Q-2-verified corrections and deterministic regeneration. Small frequent commits;
+`git pull --rebase origin main` before each push; conflicts stop and are resolved without discarding
+another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
+
+### Session completion record — Q-2 (session arena/2efe9aec-jack1, 2026-11-11 UTC)
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| Q-2 fresh line-by-line verification + privacy rescan | done | `verification/2026-11-11-2efe9aec.md` (new), `data/verified-2026-11-10.json`, regenerated canonical pages | 40 official source URLs read from their exact published locations: Census QuickFacts city + county (V2025, ACS 2020–2024, 2022 Economic Census, geography); BLS Los Angeles Area Economic Summary; EDD Los Angeles County release; U.S. Treasury daily par yield curve (11/09/2026); LA Office of Finance Measure ULA FAQ; LA County Registrar-Recorder documentary transfer tax; DOF E-1 2026 press release incl. city/county/housing tables; CDE LAUSD district profile; USGS UCERF3 FAQ + ShakeOut publication; FEMA NRI county feature service (composite, EAL, per-hazard, coastal score, hazard ratings); CAL FIRE/OSFM 2024–2025 FHSZ acreage PDF; CDI wildfire claims tracker; Port of Los Angeles container statistics; BEA county GDP via FRED; SEC FY2025 10-K Item 2, Q3 FY2026 earnings release, 10-Q R14 (indebtedness) and R8 (basis of presentation); LAPD citywide and Operations-Central Bureau COMPSTAT PDFs | Every published value in those groups matched its live official page; all derived families reproduced (ARD wall 426,375 + 500,000 + 503,250 = 1,429,625 of 1,491,984 = 95.8%; FHSZ 769,561 ÷ 1,177,944 = 65.3%; allowance 7,607 ÷ 4,466 − 1 = 70.3%; transfer-tax stack 0.56/4.56/6.06%; CA share 941 ÷ 2,136 = 44.1%; Central Bureau 24,349 ÷ 86,837 = 28.0% at one vintage). Privacy regex scan of every regenerated page: zero hits. | **Q-2-1 (corrected):** `crime_status` still published the LAPD October 31 cut (83,596; −10.6%) while the bureau row had already moved to November 7; the cited PDF is a rolling weekly report and no longer serves the older cut. Row refreshed to 86,837 (−9.2%) with the November 7 cut date, and the citywide share is now computed within one vintage only. New flag `flag_lapd_rolling_vintage`. **Q-2-2 (resolved):** `flag_usgs_unreachable_20261110` — both USGS pages loaded today and the published values reproduced; vintage question stays open. **Q-2-3 (updated):** `req_publish` still named PR #44. Carried and still flagged: SCAG 153% print, ULA narrative wording, FHSZ wording, OpenFEMA window start, DOF-vs-Census level gap, git metadata, legacy Pages build type, twelve unmerged parallel PRs. |
+
+### Session completion record — Q-3 (session arena/2efe9aec-jack1, 2026-11-11 UTC)
+
+| Task | Status | Files touched | What was added | Verification | Open items |
+|---|---|---|---|---|---|
+| Q-3 decision-question register + discovery plan | done | `data/verified-2026-11-10.json` (`questions` key), `scripts/build_public.py`, `requirements.html`, `tests/test_projection_and_site.py`, `README.md` | **23 decision-gating questions** rendered as the first table on the Requirements page: question, verified answer or a genuinely blank cell, status (answered 3 / derived 2 / partial 10 / open 4 / blocked 1 / analysis 2), how to obtain the missing information, and the official source link. Plus a nine-step discovery plan ordering the document requests, and a dashboard metric card reporting the gate count. Sources are disambiguated per page when one row cites several pages from the same publisher. | `build_public.py --check` PASS (12 files); **16 unit tests OK**, including two new tests — the register must keep a source for every question, an unknown status fails the build, and an "open" question may not carry a filled answer; `validate_site.py` PASS (10 pages, **357** sourced rows, allowlist/local-links/privacy/blanks); curated artifact build + artifact validation PASS; local HTTP smoke 11/11 pages 200. | The four `open` gates (parcel/title, lease dates, rent/NNN scope, market value) and the `blocked` tax gate stay blank by design until the owner supplies documents; they are listed on Flagged for Review and do not block publication. |
+
+Q-4 is now claimed on this branch for PR → `main`, merge, Pages deploy confirmation, and the final board entry.
+
+**Second union resolution (db9ded39):** PR #59 Q-2/Q-3 questions (23), requirements publication row, 40-source report and `audit_2efe9aec_pass` were preserved alongside both earlier 11/11 reports. Both city and bureau 11/07 results agree; db9ded39 labels counts as offenses and preserves same-vintage 28.0% arithmetic. Merged dataset regenerated; Q-3 builder and tests retained. Git conflict markers cleared without discarding any session report. PR #60 updated after final gates.
+
+### Post-PR #59 union gates (2026-11-11 UTC)
+
+After preserving the concurrent 23-question decision register and the 40-official-source verification ledger from PR #59: deterministic build check **12 files PASS**; **17/17 unit tests PASS** (includes question schema, single-vintage crime arithmetic, blank inputs, benchmark-drift tests); validator **10 pages / 361 sourced table rows PASS**; curated artifact validation **PASS**; no conflict markers. The new register supplies question → verified answer or blank → discovery route → official source. Metadata describes 74-source Nov 10 + 40-source Nov 11 + independent targeted checks without claiming all 74 were re-read today. No prior report was overwritten. Legacy Pages workflow fix remains on this pinned branch; check PR #60 and legacy Pages after merge.

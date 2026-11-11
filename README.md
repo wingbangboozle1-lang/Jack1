@@ -21,7 +21,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
 - `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
-- `requirements.html` — coverage checklist
+- `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
@@ -73,4 +73,5 @@ curated local artifact. `archive/`, `data/`, `research/`, `verification/`,
 Source and review records: `COORDINATION.md`,
 `verification/2026-11-11-db9ded39.md`,
 `verification/2026-11-11-a6ebbd99.md`,
+`verification/2026-11-11-2efe9aec.md`,
 `verification/2026-11-10-8d46ab6c.md`.

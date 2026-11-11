@@ -33,6 +33,8 @@ No fabricated probabilities are assigned to wildfires, earthquakes, tenant defau
 
 ## Answer these before an irreversible choice
 
+The [23-question decision register](https://wingbangboozle1-lang.github.io/Jack1/requirements.html) publishes each gate, a verified answer or explicit blank, an evidence-acquisition route and official source. Highest-priority gaps:
+
 1. **What is the property?** Match private title/survey to the [Assessor](https://portal.assessor.lacounty.gov/) and [City zoning search](https://planning.lacity.gov/zoning/zoning-search); keep the identifying record **off the public website**.
 2. **What does the executed lease actually require?** Verify expiration, option and notice deadlines, rent, escalations, capital repairs, casualty, NNN allocations, assignment and default provisions from private executed documents; no official source can substitute for that lease.
 3. **Who owes the rent and guarantees it?** Verify signed party/guaranty against private lease and available [SEC issuer filings](https://www.sec.gov/edgar/search/) without assuming the franchisor is the obligor.

@@ -6,7 +6,8 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Previous full 74-source check: 2026-11-10 (see verification/2026-11-10-8d46ab6c.md). Targeted live re-check and rolling-source corrections: 2026-11-11 (see verification/2026-11-11-db9ded39.md). Other rows were not re-verified on 2026-11-11."
+    "verification": "Full 74-source check: 2026-11-10 (8d46ab6c). Fresh 40-source recheck: 2026-11-11 (2efe9aec); independent targeted rechecks: 2026-11-11 (a6ebbd99, db9ded39). See dated verification ledgers; other sources not all re-read today.",
+    "reverified": "2026-11-11"
   },
   "sources": {
     "census_city": {
@@ -1579,7 +1580,7 @@
       "geography": "LAPD Operations-Central Bureau (Central, Hollenbeck, Newton, Northeast, Rampart)",
       "period": "YTD through November 7, 2026 (rolling PDF accessed Nov 11)",
       "status": "verified",
-      "note": "Rolling LAPD NIBRS PDF; bureau share = 24,349 / 86,837 (rounded). Offenses, not unique incidents or parcel-area counts; obtain parcel division/calls separately.",
+      "note": "Rolling LAPD NIBRS PDF; bureau share = 24,349 / 86,837 = 28.0% (rounded). Offenses, not unique incidents or parcel-area counts; obtain parcel division/calls separately.",
       "sources": [
         "lapd_central",
         "lapd"
@@ -2648,8 +2649,8 @@
     {
       "id": "req_publish",
       "requirement": "PR, merge, and live deployment verification",
-      "coverage": "PR #44 merged to main (bf56780). Workflow validate/deploy and legacy Pages build succeeded. Live root, projections, flagged, and all canonical pages fetched; historical/internal paths return 404.",
-      "evidence": "GitHub Actions runs 42535821817 / 42535821358; live URL and sentinel checks recorded in verification log.",
+      "coverage": "PR #58 (session a6ebbd99) merged to main as ed32462 before this session rebased; this session ships its own validating PR through the same gates. Live root and every canonical page fetched after deploy; historical/internal paths return 404.",
+      "evidence": "GitHub Actions validate/deploy runs on main plus live-URL sentinel checks recorded in the verification logs.",
       "status": "covered",
       "sources": [
         "repo",
@@ -2963,8 +2964,8 @@
     {
       "id": "flag_usgs_unreachable_20261110",
       "item": "Seismic rows: USGS UCERF3 probabilities and ShakeOut loss estimates",
-      "reason": "Both usgs.gov pages returned fetch failures (504/premature close) on 2026-11-10; values not re-reproduced this pass.",
-      "action": "Treat as carried-unverified until USGS pages load; do not present as freshly verified.",
+      "reason": "Both usgs.gov pages failed to load on 2026-11-10 (504 / premature close). On 2026-11-11 session 2efe9aec re-read both exact URLs successfully: the FAQ prints 60% M≥6.7, 46% M≥7.0 and 31% M≥7.5 within 30 years for the Los Angeles area, and the ShakeOut publication prints a $191B total loss ($87B fire, $46B shake, $24B water). Both published values reproduced; no value changed.",
+      "action": "Resolved for the published values. The separate vintage question stays open: the FAQ still states no start date for the 30-year window, so flag_usgs_vintage remains live.",
       "sources": [
         "usgs_faq",
         "usgs_shakeout"
@@ -3007,6 +3008,17 @@
       "action": "Leave future opening year blank until Metro publishes a dated construction schedule; do not infer nearby parcel benefit.",
       "sources": [
         "metro_dline"
+      ]
+    },
+    {
+      "id": "flag_lapd_rolling_vintage",
+      "item": "Public-safety rows: rolling weekly COMPSTAT source vintage",
+      "reason": "The cited LAPD COMPSTAT PDFs are re-issued every week at the same URL. The 2026-11-10 build captured the October 31, 2026 cut (citywide 83,596, −10.6%; Central Bureau 23,423, −2.0%; robbery 1,938; larceny 6,213). The same URLs served on 2026-11-11 print the November 7, 2026 cut (citywide 86,837, −9.2%; Central Bureau 24,349, −0.6%; robbery 1,971; larceny 6,566). The earlier cut is no longer retrievable from the cited URL and no official archive of it is published.",
+      "action": "Both public-safety rows now carry the same week-ending vintage and the share of citywide is computed only within that vintage. Re-read the cut date before citing; do not compare a stored figure with a newer live cut. Capture the PDF itself if an immutable record is needed.",
+      "sources": [
+        "lapd_city",
+        "lapd_central",
+        "lapd"
       ]
     }
   ],
@@ -3214,6 +3226,306 @@
         "cde_sdprofile",
         "usgs_faq",
         "live"
+      ]
+    },
+    {
+      "id": "audit_2efe9aec_pass",
+      "check": "2026-11-11 independent re-verification (session 2efe9aec)",
+      "result": "PASS — 40 official source URLs re-read; 1 row corrected; decision-question register added",
+      "detail": "Independently reproduced against the exact published pages: Treasury par curve at the 11/09/2026 close (2Y 4.56 / 5Y 4.67 / 10Y 4.88 / 20Y 5.29 / 30Y 5.26); FEMA NRI county scores and EALs (composite 100, EAL $7,601,846,373, buildings $5,946,330,343, earthquake $4,565,736,367, wildfire $155,191,812, inland flood $2,808,736,524, coastal CFLD 90, plus the full hazard-rating set); Census QuickFacts city and county (population, −0.8% / −3.2% change, income, per-capita income, poverty, rent, owner-occupancy, home value, retail and food-service sales, land area, density); BLS LA economic summary (unemployment 4.5/4.5/4.4, CA 5.1, US 4.0; payrolls 6,282.1 (+30.2/+0.5%); information, manufacturing, education/health, leisure sectors; CPI 3.7/2.8/20.3; QCEW wage $1,704); EDD Los Angeles County release (SA 4.8%, nonfarm 4,539,800, −4,100 / +20,300, restaurants +7,300); Los Angeles Measure ULA FAQ ($5,400,000 / $10,900,000; 4% / 5.5%) and LA County documentary transfer tax ($0.55 per $500; City $2.25 per $500; the 7/1/26 city thresholds); DOF E-1 2026 (city 3,806,201 −0.9%; county 9,837,286 −0.6%; housing +11,260 with 62.7% multifamily); CDE LAUSD district profile (497,105 students; 81,328 English learners, 16.4%); USGS UCERF3 FAQ (60/46/31%) and ShakeOut publication ($191B, $87B fire, $46B shake, $24B water); CAL FIRE 2024–25 FHSZ acreage (769,561 of 1,177,944 = 65.3%); CDI claims tracker (41,727 / 40,482 / $25.2B); Port of Los Angeles September 2026 (1,042,652.30 TEU, +18.07%; CY 8,081,625.55, +3.38%; 2025 10,239,318); BEA county GDP via FRED ($1,002,965,029k for 2024); SEC FY2025 10-K Item 2 (California Jack 941 = 96 + 845); Q3 FY2026 release (system SSS −1.1%, franchise −1.2%, company −0.9%; 2,115 units; $257.7M revenue; Adjusted EBITDA $61.2M); 10-Q R14 debt ($1,429.625M of $1,491.984M = 95.8% ARD 2029–2032; $500.0M at 7.624%, ARD May 2031) and R8 allowance ($(7,607)k vs $(4,466)k); LAPD citywide and Operations-Central Bureau COMPSTAT PDFs. Exactly one published row disagreed with its live source: the citywide crime row still carried the October 31 cut while the bureau row had moved to November 7. Both now use the November 7, 2026 vintage on the same rolling report, and the share of citywide is computed only within one vintage. No personal identifier was copied; the privacy scan is clean.",
+      "sources": [
+        "treasury",
+        "fema_county_query",
+        "fema_hazard_ratings",
+        "fema_coastal_score",
+        "census_city",
+        "census_county",
+        "bls_summary",
+        "edd_la",
+        "ula",
+        "lavote_dtt",
+        "dof_e1",
+        "cde_sdprofile",
+        "usgs_faq",
+        "usgs_shakeout",
+        "calfire_acres",
+        "cdi_claims",
+        "port_containers",
+        "fred_county_gdp",
+        "sec_10k",
+        "sec_release",
+        "sec_10q_debt",
+        "sec_10q_ar",
+        "lapd_city",
+        "lapd_central"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_identity",
+      "question": "What exactly is the asset — street address, APN, title, and vesting?",
+      "answer": null,
+      "status": "open",
+      "obtain": "Order a title commitment and ALTA survey, then match the legal description to the Assessor parcel map and ZIMAS. Do not infer a parcel from proximity to a known store.",
+      "sources": [
+        "assessor",
+        "zimas"
+      ]
+    },
+    {
+      "id": "q_lease_dates",
+      "question": "When does the lease actually expire, and which options, notices, and estoppels bind it?",
+      "answer": null,
+      "status": "open",
+      "obtain": "Read the executed lease and every amendment; calendar option, notice, ROFR/ROFO, assignment and estoppel deadlines. The 2030–2035 range is a premise, not a fact.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "q_obligor",
+      "question": "Who is legally liable for the rent — the corporate tenant, a franchisee, or a guarantor?",
+      "answer": "Brand identity does not answer this. At July 5, 2026 the Jack in the Box system was 149 company-operated and 1,966 franchise-operated restaurants, and the filings do not identify the obligor on any single lease.",
+      "status": "partial",
+      "obtain": "Obtain the lease counterparty, any guaranty and its scope, the franchise agreement, tenant financial statements, and a payment/default history.",
+      "sources": [
+        "sec_10q",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "q_tenant_credit",
+      "question": "Is the tenant's credit improving or deteriorating?",
+      "answer": "Deteriorating on operating trend: Q3 FY2026 system same-store sales −1.1% (franchise −1.2%, company −0.9%); 2,115 restaurants, down 13 net in the quarter; the franchisee allowance for credit losses widened 70.3% to $(7,607)k; Adjusted EBITDA $61.2M.",
+      "status": "answered",
+      "obtain": "Already verified at issuer level. Re-read each quarterly release before relying on it; obligor-level credit still requires q_obligor.",
+      "sources": [
+        "sec_release",
+        "sec_10q_ar"
+      ]
+    },
+    {
+      "id": "q_refi_wall",
+      "question": "Does tenant refinancing risk overlap the lease-expiry window?",
+      "answer": "Yes. $1,429.625M of $1,491.984M total principal (95.8%) carries anticipated repayment dates between August 2029 and February 2032, including $500.0M issued June 2026 at 7.624% with a May 2031 ARD.",
+      "status": "derived",
+      "obtain": "Already computed from the 10-Q debt note. Track each 10-Q for ARD movement and for the HoldCo and Senior ABS leverage tests that trigger the $23.3M cash sweep.",
+      "sources": [
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "q_rent",
+      "question": "What rent does the property collect, and what does the NNN structure still leave the owner paying?",
+      "answer": null,
+      "status": "open",
+      "obtain": "Pull base rent, escalations, percentage rent, tax/insurance/CAM recoveries, and landlord-retained items (roof, structure, parking, HVAC) from the lease; reconcile to the rent roll, operating statements, and bank deposits.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "q_value",
+      "question": "What is the property worth today at an executable price?",
+      "answer": null,
+      "status": "open",
+      "obtain": "Commission an appraisal plus two broker opinions of value and test the market with an actual pricing exercise. Do not derive a value from citywide or county averages.",
+      "sources": [
+        "assessor",
+        "treasury"
+      ]
+    },
+    {
+      "id": "q_after_tax",
+      "question": "What are the after-tax net sale proceeds?",
+      "answer": "The rules are known; the amount is not. California taxes individual capital gains as ordinary income with no preferential rate; a §1031 deferral requires identification within 45 days and receipt within 180 days; and the Los Angeles transfer-tax stack depends on price. Without tax basis, debt payoff, and entity structure the dollar answer stays blank.",
+      "status": "blocked",
+      "obtain": "Have a tax adviser compute basis, depreciation recapture, state and federal tax, and exchange eligibility alongside a payoff statement and closing-cost estimate.",
+      "sources": [
+        "ftb_capgains",
+        "irs_544",
+        "irs_8824",
+        "lavote_dtt"
+      ]
+    },
+    {
+      "id": "q_transfer_tax",
+      "question": "What will a sale cost in transfer taxes alone?",
+      "answer": "For a City of Los Angeles property: 0.56% at or below $5,400,000 (County $0.55 + City $2.25 per $500); 4.56% from $5,400,000 to $10,900,000; 6.06% at or above $10,900,000 (ULA 4% / 5.5% on top of the base).",
+      "status": "derived",
+      "obtain": "Already computed from the published rate schedules. Confirm the City/County situs and the closing date, since the ULA thresholds reset annually with CPI.",
+      "sources": [
+        "lavote_dtt",
+        "ula"
+      ]
+    },
+    {
+      "id": "q_financing",
+      "question": "What does money cost if the property is held or refinanced?",
+      "answer": "The risk-free curve at the November 9, 2026 close: 2Y 4.56%, 5Y 4.67%, 10Y 4.88%, 20Y 5.29%, 30Y 5.26%. The tenant's own June 2026 securitization priced at 7.624%. Property-specific spread, LTV, and loan terms are not verified.",
+      "status": "partial",
+      "obtain": "Obtain term sheets from two or three lenders using the verified rent roll and property condition; price the spread, not just the index.",
+      "sources": [
+        "treasury",
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "q_population",
+      "question": "Is the area's population growing or shrinking?",
+      "answer": "Two official series point in different directions. Census V2025: city 3,869,089 (−0.8% from the April 2020 base) and county 9,694,934 (−3.2%). DOF: city 3,806,201 (−0.9% year over year, January 1, 2026) and county 9,837,286 (−0.6%), with DOF's 2025 county level standing 158,501 (1.63%) above the Census estimate. SCAG projects county growth to 10,214,000 by 2030 against DOF's 9,727,305.",
+      "status": "partial",
+      "obtain": "Never blend agencies: pick one series and keep it. For the actual trade area, buy a radius demographic report keyed to the verified parcel and compare it with these county paths.",
+      "sources": [
+        "census_city",
+        "census_county",
+        "dof_e1",
+        "dof_p2a",
+        "scag_appendix"
+      ]
+    },
+    {
+      "id": "q_jobs",
+      "question": "Is employment growing enough to support restaurant sales?",
+      "answer": "Mixed but positive overall: metro nonfarm payrolls 6,282.1k (+30.2k / +0.5% year over year); county nonfarm 4,539,800 (+20,300 / +0.4%); restaurants and other eating places +7,300. Offsetting declines: information −5.7%, manufacturing −1.2%, financial activities −1.7%.",
+      "status": "answered",
+      "obtain": "Already verified. Re-read the monthly BLS/EDD releases; a turn in the leisure-and-hospitality line is the earliest warning for a restaurant tenant.",
+      "sources": [
+        "bls_summary",
+        "edd_la"
+      ]
+    },
+    {
+      "id": "q_labor_cost",
+      "question": "What wage floor applies to a fast-food tenant's operating model?",
+      "answer": "California covered fast-food minimum wage $20.00/hour (from April 1, 2024); state general minimum wage $16.90 (January 1, 2026), rising to $17.40 on January 1, 2027; City of Los Angeles general minimum wage $18.42 (July 1, 2026).",
+      "status": "answered",
+      "obtain": "Already verified. Re-check each January and July, since a wage step that outpaces menu pricing compresses tenant coverage.",
+      "sources": [
+        "dir_fastfood",
+        "dir_minwage",
+        "dir_release_2027",
+        "la_wage"
+      ]
+    },
+    {
+      "id": "q_consumer",
+      "question": "Can local households absorb menu-price increases?",
+      "answer": "City median household income $81,939 and county $90,112 (2020–2024 ACS, 2024 dollars); city poverty rate 16.5%; LA-area CPI +3.7% all items and +2.8% food year over year; median gross rent $1,933/month. Trade-area income is not verified.",
+      "status": "partial",
+      "obtain": "Replace city/county medians with 1-, 3-, and 5-mile ring income and household counts from the parcel-based demographic report.",
+      "sources": [
+        "census_city",
+        "census_county",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "q_schools",
+      "question": "Do school outcomes support family formation in the trade area?",
+      "answer": "District level only: LAUSD enrolls 497,105 students with 16.4% English learners; 87.6% graduation rate; 21.3% chronic absenteeism; ELA 13.2 points and mathematics 40.7 points below proficient. Parcel school assignment is not verified.",
+      "status": "partial",
+      "obtain": "After the parcel match, run the CDE school directory and district boundary tools to identify assigned schools, then read those schools' Dashboard pages rather than the district average.",
+      "sources": [
+        "cde_sdprofile",
+        "dashboard_engagement",
+        "dashboard_performance"
+      ]
+    },
+    {
+      "id": "q_hazard",
+      "question": "What hazard loss should underwriting assume?",
+      "answer": "County context only: FEMA NRI composite score 100 (Very High) with expected annual loss $7.60B total and $5.95B buildings; earthquake EAL $4.57B, inland flood $2.81B, wildfire $155M; 88 federal declarations (61 fire) between 1969 and 2025; CAL FIRE maps 769,561 Very High FHSZ acres, 65.3% of mapped county acres. The parcel's FHSZ, flood zone, and fault proximity are not verified.",
+      "status": "partial",
+      "obtain": "Run official parcel-level lookups (CAL FIRE FHSZ, FEMA flood map, CGS fault-zone and liquefaction maps) once the parcel is identified, and have the insurer quote in writing.",
+      "sources": [
+        "fema_county_query",
+        "openfema_la",
+        "calfire_acres",
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "q_insurance",
+      "question": "Can the property be insured, and at what cost?",
+      "answer": "Capacity is constrained: CDI reports 41,727 claims filed and $25.2B paid on the Eaton and Palisades fires, and the FAIR Plan commercial limits were raised to $20M per building and $100M per location through 2028. The subject policy, exclusions, deductibles, and premium are not verified.",
+      "status": "partial",
+      "obtain": "Obtain the current policy, loss runs, and two broker indications including a FAIR Plan fallback, then test whether full replacement cost is actually covered.",
+      "sources": [
+        "cdi_claims",
+        "cdi_fairplan_2025"
+      ]
+    },
+    {
+      "id": "q_seismic",
+      "question": "Is earthquake risk priced into a hold?",
+      "answer": "USGS puts the Los Angeles region at 60% / 46% / 31% probability of M≥6.7 / 7.0 / 7.5 within 30 years (the window start date is not stated on the page); the ShakeOut M7.8 scenario totals $191B of loss, of which $87B is fire, $46B shaking, and $24B water-outage business interruption. Building retrofit status is not verified.",
+      "status": "partial",
+      "obtain": "Order a seismic and property condition assessment, confirm non-ductile or unreinforced conditions, and price retrofit capital and earthquake deductible before setting hold value.",
+      "sources": [
+        "usgs_faq",
+        "usgs_shakeout",
+        "cgs_shma"
+      ]
+    },
+    {
+      "id": "q_safety",
+      "question": "Is crime a trade-area obstacle?",
+      "answer": "Citywide 86,837 Person & Property incidents year to date (−9.2% year over year); Operations-Central Bureau 24,349 (−0.6%), which is 28.0% of citywide at the same week-ending vintage, with larceny +13.6% and robbery +0.4%. Division-level and calls-for-service data at the parcel are not verified.",
+      "status": "partial",
+      "obtain": "After the parcel match, pull the reporting division's COMPSTAT and calls-for-service data for a consistent multi-year window rather than a single year-to-date cut.",
+      "sources": [
+        "lapd_city",
+        "lapd_central"
+      ]
+    },
+    {
+      "id": "q_development",
+      "question": "Could planned development change traffic and rent?",
+      "answer": "DTLA 2040 contemplates 100,000 new homes, 100,000 more work opportunities, and 175,000 additional residents through 2040; Metro's D Line Section 1 opened May 8, 2026 with Sections 2–3 forecast for 2027. Whether either touches this parcel is not verified.",
+      "status": "partial",
+      "obtain": "Check the parcel against ZIMAS and the applicable community plan, then read the specific entitlement or station-area plan rather than the citywide press release.",
+      "sources": [
+        "dtla_release",
+        "metro_dline",
+        "zimas"
+      ]
+    },
+    {
+      "id": "q_trade",
+      "question": "Do goods-movement and trade flows matter locally?",
+      "answer": "Port of Los Angeles handled 10,239,318 TEUs in 2025; September 2026 was 1,042,652.30 TEUs (+18.07% year over year) and calendar-year-to-date 8,081,625.55 (+3.38%). The link to a central-Los Angeles restaurant site is indirect.",
+      "status": "answered",
+      "obtain": "Already verified as context only. Use it as a regional demand signal, not as a parcel-level input.",
+      "sources": [
+        "port_containers",
+        "port_facts"
+      ]
+    },
+    {
+      "id": "q_decision_rule",
+      "question": "What decision rule should govern sell versus renew?",
+      "answer": "Dual-track: prepare a sale and a renewal in parallel, preserve every notice and option right, and choose only after comparing verified after-tax net sale proceeds with risk-adjusted hold value. Sell is favored when executable net proceeds exceed hold value or concentration and liquidity risk are unacceptable; renew when the obligor is creditworthy and extension terms are market-supported. Never drift to expiry without a funded re-tenanting plan.",
+      "status": "analysis",
+      "obtain": "Adopt the rule now. It becomes actionable as q_identity, q_lease_dates, q_obligor, q_rent, q_value, and q_after_tax are answered.",
+      "sources": [
+        "sec_10k",
+        "irs_544",
+        "treasury",
+        "ula"
+      ]
+    },
+    {
+      "id": "q_black_swan",
+      "question": "Which rare event would break the plan, and what trigger forces action?",
+      "answer": "Compound hazards dominate: a southern San Andreas rupture at ShakeOut scale, a wildfire-driven insurance withdrawal, or a tenant restructuring inside the 2029–2032 ARD window could each stop rent and impair saleability at the same time. Pre-agreed triggers: insurance non-renewal, tenant default or closure, a missed notice window, or a collapse in the buyer pool.",
+      "status": "analysis",
+      "obtain": "Write the triggers into the ownership policy now, with a pre-approved action and decision owner for each, so a shock is executed rather than debated.",
+      "sources": [
+        "usgs_shakeout",
+        "cdi_fairplan_2025",
+        "sec_10q_debt"
       ]
     }
   ]

@@ -135,6 +135,45 @@ class BuildAndValidationTests(unittest.TestCase):
         dp.feed(outputs["decision.html"])
         self.assertEqual(dp.nonempty_input_values, [])
 
+    def test_decision_question_register(self):
+        data = pm.load_data()
+        questions = data["questions"]
+        self.assertGreaterEqual(len(questions), 20)
+        valid = {"answered", "partial", "open", "blocked", "derived", "analysis"}
+        for q in questions:
+            for key in ("id", "question", "answer", "status", "obtain", "sources"):
+                self.assertIn(key, q)
+            self.assertIn(q["status"], valid, q["id"])
+            self.assertTrue(q["sources"], q["id"])
+            for sid in q["sources"]:
+                self.assertIn(sid, data["sources"], (q["id"], sid))
+            # An "open" gate is genuinely blank; a "blocked" gate may state the governing rule
+            # while the property-specific amount stays unknown.
+            if q["status"] == "open":
+                self.assertIsNone(q["answer"], q["id"])
+            else:
+                self.assertTrue(q["answer"], q["id"])
+            if q["status"] == "blocked":
+                self.assertIn("blank", q["answer"].lower(), q["id"])
+        outputs = build_public.render_all()
+        self.assertIn("Questions that must be answered before a decision", outputs["requirements.html"])
+        self.assertIn("decision-questions", outputs["requirements.html"])
+        self.assertIn("How to close the blanks without guessing", outputs["requirements.html"])
+
+    def test_public_safety_rows_share_one_vintage(self):
+        data = pm.load_data()
+        obs = {o["id"]: o for o in data["observations"]}
+        city, bureau = obs["crime_status"], obs["crime_central_bureau"]
+        self.assertIn("November 7, 2026", city["period"])
+        self.assertIn("November 7, 2026", bureau["period"])
+        self.assertIn("86,837", city["value"])
+        self.assertIn("24,349", bureau["value"])
+        # 24,349 / 86,837 = 28.0% at a single vintage; a cross-vintage share must not be published.
+        self.assertAlmostEqual(24349 / 86837 * 100, 28.0, places=1)
+        self.assertIn("28.0%", bureau["note"])
+        flag_ids = {f["id"] for f in data["flags"]}
+        self.assertIn("flag_lapd_rolling_vintage", flag_ids)
+
     def test_2026_11_10_dataset_enrichment(self):
         data = pm.load_data()
         self.assertEqual(data["meta"]["date"], "2026-11-11")
@@ -171,6 +210,8 @@ class BuildAndValidationTests(unittest.TestCase):
             "verification/2026-11-10-a8681975.md",
             "verification/2026-11-10-c5e199ef.md",
             "verification/2026-11-08-0e369d53.md",
+            "verification/2026-11-11-a6ebbd99.md",
+            "verification/2026-11-11-2efe9aec.md",
         ):
             self.assertIn(log_name, outputs["audit.html"])
 
