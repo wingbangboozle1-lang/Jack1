@@ -46,16 +46,22 @@ def badge(status: str) -> str:
         "covered": ("badge-verified", "Covered"),
         "blocked": ("badge-review", "Blocked — inputs missing"),
         "analysis": ("badge-limited", "Analysis / judgment"),
+        "answered": ("badge-verified", "Answered — verified"),
+        "open": ("badge-review", "Open — information missing"),
     }
     cls, label = labels.get(status, ("badge-limited", status.replace("_", " ").title()))
     return f'<span class="badge {cls}">{e(label)}</span>'
 
 
 def source_links(data: dict[str, Any], ids: Iterable[str]) -> str:
+    ids = list(ids)
+    publishers = [data["sources"][sid]["publisher"] for sid in ids]
     links = []
-    for sid in ids:
+    for sid, publisher in zip(ids, publishers):
         src = data["sources"][sid]
-        links.append(f'<a class="source-link" href="{e(src["url"])}" target="_blank" rel="noopener noreferrer">{e(src["publisher"])}</a>')
+        # Disambiguate when one row cites several pages from the same publisher.
+        label = f"{publisher} ({sid})" if publishers.count(publisher) > 1 else publisher
+        links.append(f'<a class="source-link" href="{e(src["url"])}" target="_blank" rel="noopener noreferrer">{e(label)}</a>')
     return " · ".join(links) if links else '<span class="badge badge-review">Source required</span>'
 
 
@@ -151,6 +157,14 @@ def card(title: str, value: str, note: str, href: str, link_label: str) -> str:
 
 def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     s = data["sources"]
+    gates = data["questions"]
+    open_gates = sum(1 for q in gates if q["status"] in ("open", "blocked"))
+    partial_gates = sum(1 for q in gates if q["status"] == "partial")
+    answered_gates = sum(1 for q in gates if q["status"] in ("answered", "derived"))
+    gate_summary = (
+        f"{open_gates} need the property's own documents; {partial_gates} are partly answered; "
+        f"{answered_gates} are answered from official sources."
+    )
     cards = "".join([
         card("Recommendation", "Dual-track", "Prepare sale and renewal in parallel; preserve notice/option rights.", s["sec_10k"]["url"], "SEC lease-context source"),
         card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B principal matures ARDs Aug 2029–Feb 2032; 7.624% refi.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
@@ -158,6 +172,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
         card("Tenant operating trend", "SSS −1.1%", "Jack Q3 FY26 system −1.1%; franchise allowance +70.3% to $(7.61)M.", s["sec_10q_ar"]["url"], "SEC Q3 FY2026 credit allowance"),
         card("LA exit tax tiers", "0.56–6.06%", "County 0.11% + City 0.45% + ULA 4%/5.5% ($5.4M/$10.9M thresholds).", s["lavote_dtt"]["url"], "LA County DTT & ULA schedule"),
         card("Property inputs", "Blank", "Parcel, lease, rent, value, debt, tax basis, insurance remain unverified.", s["assessor"]["url"], "Official parcel lookup"),
+        card("Decision gates", f'{len(data["questions"])} questions', gate_summary, "requirements.html", "Open the decision-question register"),
     ])
     categories = "".join(
         f'<a class="category-card" href="{e(href)}"><strong>{e(label)}</strong><span>{e(desc)}</span></a>'
@@ -167,7 +182,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("projections.html", "Projections", "Official DOF/SCAG paths, derived arithmetic, gated property model."),
             ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
-            ("requirements.html", "Requirements", "Coverage checklist and open evidence."),
+            ("requirements.html", "Requirements", "Decision questions, discovery plan, coverage checklist."),
             ("flagged.html", "Flagged for review", "Unconfirmed values and irregularities."),
             ("sources.html", "Sources", "Official registry with access dates."),
             ("audit.html", "Audit", "Verification, privacy, deployment, and method."),
@@ -353,11 +368,38 @@ def build_risks(data: dict[str, Any]) -> str:
 
 def build_requirements(data: dict[str, Any]) -> str:
     rows = [[f'<strong>{e(r["requirement"])}</strong>', e(r["coverage"]), e(r["evidence"]), badge(r["status"]), source_links(data, r["sources"])] for r in data["requirements"]]
+    question_rows = []
+    for q in data["questions"]:
+        question_rows.append([
+            f'<strong>{e(q["question"])}</strong>',
+            value_cell(q["answer"], q["status"]),
+            badge(q["status"]),
+            e(q["obtain"]),
+            source_links(data, q["sources"]),
+        ])
+    answered = sum(1 for q in data["questions"] if q["status"] in ("answered", "derived"))
+    open_items = sum(1 for q in data["questions"] if q["status"] in ("open", "blocked"))
     body = f"""
+<div class="callout warning"><h3>Answer these before committing to sell or renew</h3><p>Every question below is a gate: the decision cannot be made responsibly until it is answered. {answered} are answered from official sources, {open_items} need the property's own documents, and the rest depend on those answers. A blank answer means the value is genuinely unknown — nothing has been inferred to fill it.</p></div>
+<div class="section-heading"><div><p class="eyebrow">Decision gate</p><h2>Questions that must be answered before a decision</h2><p>Question, the verified answer or an explicit blank, status, how to obtain what is missing, and the official source.</p></div></div>
+{table("decision-questions", "Decision-gating questions with verified answers, blanks, acquisition routes, and official sources.", ["Question", "Verified answer / known facts", "Status", "How to obtain the missing information", "Official source"], question_rows)}
+<div class="section-heading"><div><p class="eyebrow">Discovery plan</p><h2>How to close the blanks without guessing</h2></div></div>
+<ol class="action-list">
+  <li><strong>Title and survey first.</strong> Title commitment, ALTA survey, and the Assessor parcel page establish the address, APN, vesting, easements, and liens. Nothing else can be matched to the right parcel until this is done.</li>
+  <li><strong>Read the lease, not the label.</strong> Executed lease, all amendments, guaranty, side letters, and estoppel. Calendar every option, notice, and estoppel date into a single tracker with reminders.</li>
+  <li><strong>Cash-flow evidence.</strong> Rent roll, 24–36 months of operating statements, bank statements, tax and insurance bills, and the CAM reconciliations — these convert a stated NNN label into actual net income.</li>
+  <li><strong>Credit file.</strong> Legal tenant and guarantor identity, financial statements, franchise agreement, and payment/default history. Compare against the issuer's quarterly filings already published here.</li>
+  <li><strong>Asset condition.</strong> Property condition assessment, roof and HVAC reports, seismic evaluation, Phase I environmental, and a capital reserve study.</li>
+  <li><strong>Insurance.</strong> Current policy and endorsements, three years of loss runs, and two broker indications including a FAIR Plan fallback with an honest replacement-cost estimate.</li>
+  <li><strong>Value.</strong> Appraisal plus two broker opinions of value, and a market test at a real asking price. Compare executable net proceeds against risk-adjusted hold value.</li>
+  <li><strong>Tax and financing.</strong> Basis, depreciation schedule, entity structure, marginal rates, exchange eligibility, payoff statement, prepayment penalties, and lender term sheets.</li>
+  <li><strong>Market evidence for the trade area.</strong> Parcel-keyed 1/3/5-mile demographics, competitor and traffic counts, and the reporting division's multi-year crime series — replacing the citywide and county proxies published on the Market page.</li>
+</ol>
+<div class="section-heading"><div><p class="eyebrow">Coverage checklist</p><h2>What this brief covers, and what stays open</h2></div></div>
 <div class="callout"><h3>Coverage rule</h3><p>Covered means the public dashboard contains official-source evidence and analysis. Partial means the category is addressed but property-specific or private evidence remains open. Open items do not block publication; they are blank and flagged.</p></div>
 {table("requirements-coverage", "Requirement coverage checklist.", ["Requirement", "Coverage", "Evidence", "Status", "Official source"], rows)}
 """
-    return layout(data, "requirements.html", "Requirements coverage", "Checklist mapping the brief to published evidence, open items, and official sources.", body)
+    return layout(data, "requirements.html", "Requirements coverage and decision questions", "The questions that must be answered before a sell-or-renew decision, with verified answers, explicit blanks, and how to obtain what is missing.", body)
 
 
 def build_flagged(data: dict[str, Any]) -> str:
@@ -392,7 +434,7 @@ def build_audit(data: dict[str, Any]) -> str:
   <li><code>python3 scripts/validate_site.py</code> validates pages, row source links, allowlist, local links, blanks, and privacy patterns.</li>
   <li>Public artifact contains only curated pages, assets, and generated projection data. Historical builds remain in Git but are not published.</li>
 </ul>
-<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>.</p>
+<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-8d46ab6c.md</code>, <code>verification/2026-11-11-a6ebbd99.md</code>, <code>verification/2026-11-11-2efe9aec.md</code>.</p>
 """
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
 
