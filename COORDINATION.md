@@ -1608,3 +1608,35 @@ rather than `/Jack1/pages/…`. Canonical root, `requirements.html` (decision-qu
 | M-3 final record | done | this board | PR [#61](https://github.com/wingbangboozle1-lang/Jack1/pull/61) merged 2026-11-11T02:18:00Z as `e615db293697fabcbe8f0fe78f05cbdc15cffc8b`. `main` push run 42945063407 `Validate decision brief (legacy Pages publication)` = success; legacy `pages-build-deployment` for `e615db2` = success (`pages/builds/latest` = built, updated 2026-11-11T02:18:02Z); Pages API `build_type=legacy`. Live site: https://wingbangboozle1-lang.github.io/Jack1/ | rebase cost documented in interleave notes 1–3 (four rebases, three union resolutions of this board, no other session's work discarded) |
 
 No dataset, builder, page, or test file was edited by this session. Open parallel-session PRs (#5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56) remain untouched.
+---
+
+## Session: arena/a9ee3b57-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/a9ee3b57-jack1` (Arena-assigned branch; platform policy pins this session to
+that branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 02:06 UTC):** local `main` = `ed32462` (PR #58 merge,
+session a6ebbd99, 2026-11-11). `gh pr list` / `gh run list` checked: PR #58 merged; open PRs
+#56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5 are all last active 2026-11-10 or
+earlier, none with a claim on `main`; all exceed the 60-minute no-commit takeover window.
+Session `a6ebbd99` claimed L-1/L-2/L-3 today; L-2 is done and PR #58 merged, their L-3 final
+record may still be in flight — this session does NOT touch L-3's scope (their board record,
+their `gh` PR/Pages operations for their deliverables) while it is active. No active session's
+lock is overridden; all historical records and open PRs are preserved untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| M-1 | Session claim + coordination protocol | in progress | arena/a9ee3b57-jack1 | this board (append-only) |
+| M-2 | Fresh 2026-11-11 comprehensive line-by-line verification of every canonical observation against its exact official source URL (beyond the 11 sources re-read in L-2), derived arithmetic re-computation, privacy/PII rescan, irregularity log | unclaimed | arena/a9ee3b57-jack1 | `verification/2026-11-11-a9ee3b57.md` (new); dataset corrections only if an official page disagrees (with dated audit entry) |
+| M-3 | Repository review line by line (curated pages vs builder vs dataset vs workflows; stale PRs, legacy artifacts, conflict markers, privacy boundaries); flag irregularities for the Flagged for Review page | unclaimed | arena/a9ee3b57-jack1 | `verification/2026-11-11-a9ee3b57.md` (repo-review section); board notes |
+| M-4 | Consolidate the open-questions / answers-needed / how-to-fill-gaps list (decision-gating Q&A) from existing verified content; report gaps; prepare content for integration | unclaimed | arena/a9ee3b57-jack1 | `research/2026-11-11-a9ee3b57/` (new, internal), board notes; canonical-page edits only via final integration after L-3 resolves |
+| M-5 | Final integration for this session's deliverables: gates (build `--check`, unit tests, validator, artifact validate), PR → `main`, merge, GitHub Pages deploy confirmation, final record — to be started only after session a6ebbd99's L-3 is completed or stale | unclaimed (sequential after L-3) | arena/a9ee3b57-jack1 | generated canonical pages (regeneration only), this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other
+sessions' `verification/*` reports, or other sessions' branches is edited or deleted. Shared
+outputs (dataset, generated pages, index, navigation) change only through M-2-verified
+corrections and deterministic regeneration, and only in the final integration step after L-3
+resolves. Small frequent commits; `git pull --rebase origin main` before each push; conflicts
+stop and are resolved without discarding another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
