@@ -1,5 +1,41 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/23064635-jack1` (2026-11-11 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/23064635-jack1`; platform policy prohibits
+creating or switching to `session-<id>/<task>` branches, so the pinned branch is the working and
+integration branch (as prior sessions did). Only `arena/23064635-jack1` is pushed.
+
+**Handoff / non-overlap check (2026-11-11 ~02:08 UTC):** `origin/main` = `ed32462` (PR #58 merge,
+session `a6ebbd99`, merged 02:05:07Z — minutes before this claim; its L-1/L-2/L-3 are complete and no
+claim of theirs is outstanding). `gh pr list --state open` shows only #5, #10, #11, #14, #18, #21, #24,
+#27, #33, #47, #54, #56 — all last active 2026-11-10 or earlier, none with a claim on `main`; they are
+preserved untouched (not merged, not deleted, not copied unverified). No other session holds a lock.
+This branch was rebased onto `origin/main` (`git pull --rebase origin main`) before claiming. This
+claim section sits at the top of the file so a late docs-only follow-up from `a6ebbd99` (appended at
+the end of the file) cannot conflict with it.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| M-1 | Session claim + handoff / non-overlap check | done | arena/23064635-jack1 | this board (this top section only) |
+| M-2 | Repository review (REPO WORK): reproducible audit of **every** tracked file (classification, conflict markers, PII regex, non-official links, orphan/stale files, manifest drift) + irregularity log with manual-review links | in progress | arena/23064635-jack1 | `scripts/repo_audit.py` (new), `verification/repository-line-audit-2026-11-11.tsv` (new), `research/repo-review-2026-11-11-23064635.md` (new) |
+| M-3 | Decision-readiness register: the **questions**, what is already known (with official source), what is missing, and how to discover it (official lookup / records request / professional) — new dataset section + new page | in progress | arena/23064635-jack1 | `data/questions-2026-11-11.json` (new), `research/questions-2026-11-11-23064635.md` (new) |
+| M-4 | Independent line-by-line verification: re-read official pages (all time-sensitive rows first, then the remaining sources), reproduce derived arithmetic, privacy scan; correct / blank / flag | in progress | arena/23064635-jack1 | `verification/2026-11-11-23064635.md` (new) |
+| M-5 | Final integration (after M-2…M-4): wire M-2/M-3/M-4 outputs into the dataset, builder, navigation, flagged/audit/sources pages; supersede stale root briefs; regenerate; build/test/validator/artifact gates; PR → `main`; merge; Pages confirmation; board record | unclaimed (claimed here only after M-2…M-4 are done) | arena/23064635-jack1 | `data/verified-2026-11-10.json`, canonical root `*.html`, `scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, `assets/*`, `EXECUTIVE_SUMMARY.md`, `README.md`, this board |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, any other session's
+`verification/*` report, or any other session's branch/PR is edited or deleted. Shared outputs (dataset,
+generated pages, navigation) change only in M-5, after M-2…M-4 finish. Requests that need another
+session's file are logged here instead of edited. Small commits; `git pull --rebase origin main` before
+every push; a conflict stops work and is resolved as a union without discarding another session's work.
+
+**Privacy rule for this session:** no personal identifier (name, e-mail, phone, street address, APN,
+owner, lease party, rent, value) is copied from any official page, commit metadata, or other source into
+any file. Role-only wording. The merge of this session's PR will pass `--author-email` with the GitHub
+noreply address so no personal e-mail is added to history.
+
+Claimed at 2026-11-11 ~02:10 UTC. Commit + push of this claim precedes all content work.
+
 ## ▶ ACTIVE CLAIM — session `arena/2eefc54d-jack1` (2026-11-10 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/2eefc54d-jack1`; platform policy
