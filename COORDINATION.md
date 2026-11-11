@@ -1340,3 +1340,38 @@ the corrections above before any merge, or they will re-introduce the withdrawn 
 **Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
 `unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
 local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
+
+---
+
+## Session: arena/2d2fb75e-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/2d2fb75e-jack1`. Platform policy pins this session to that branch, so the
+assigned branch is used as the integration branch (as every prior session did). Only
+`arena/2d2fb75e-jack1` is pushed.
+
+**Claim-time handoff check (2026-11-11T02:0xZ):** local `main` = `origin/main` = `dd0705c`
+(PR #57 merge, session 8d46ab6c). No branch, PR, or Actions run newer than that commit. Twelve
+PRs remain **open and unmerged** (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56); all
+are more than 24 hours old with no new commits, i.e. past the 60-minute takeover window, and none
+carries a claim on `main` that is still active. Their branches and PRs are preserved untouched and
+no content is copied from them without independent verification.
+
+Gates re-run at claim time on this branch: `build_public.py --check` → 12 files match;
+`unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, 331 sourced rows. GitHub Pages
+reports `status: built` from `main` (legacy build), last deploy run 19h ago, success.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| N-1 | Session claim + coordination record | done | arena/2d2fb75e-jack1 | this board (append-only) |
+| N-2 | Fresh 2026-11-11 independent verification of published rows against official sources; record ledger + irregularities | in progress | arena/2d2fb75e-jack1 | `verification/2026-11-11-2d2fb75e.md` (new) |
+| N-3 | Requirement gap: a clear, public **open-questions register** (decision-blocking questions, information held vs missing, how to discover each missing item, privacy handling) | in progress | arena/2d2fb75e-jack1 | `data/questions-2026-11-11.json` (new), `questions.html` (new), builder/validator/404/README wiring |
+| N-4 | Final integration gates, PR → `main`, merge, Pages deploy confirmation, publication record | unclaimed | arena/2d2fb75e-jack1 | generated canonical pages, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. The new questions
+register is additive: it reads the existing 90 observations and 32 flags and does not change any
+published value. Shared outputs (builder page list, navigation, `404.html`) are updated only by this
+session's N-4 step, after N-2/N-3 finish. Small frequent commits; rebase before every push;
+conflicts stop and are resolved without discarding another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
