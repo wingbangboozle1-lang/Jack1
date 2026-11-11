@@ -1,12 +1,12 @@
 {
   "meta": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "session": "ac5b9087",
     "title": "Jack in the Box NNN decision brief — central Los Angeles area",
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Re-verified 2026-11-10 by session 8d46ab6c against all 74 official source URLs; see verification/2026-11-10-8d46ab6c.md"
+    "verification": "Previous full 74-source check: 2026-11-10 (see verification/2026-11-10-8d46ab6c.md). Targeted live re-check and rolling-source corrections: 2026-11-11 (see verification/2026-11-11-db9ded39.md). Other rows were not re-verified on 2026-11-11."
   },
   "sources": {
     "census_city": {
@@ -27,7 +27,7 @@
       "title": "Los Angeles Area Economic Summary, updated November 4, 2026",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official statistics"
     },
     "bls_laus": {
@@ -69,7 +69,7 @@
       "title": "Daily Treasury Par Yield Curve Rates, November 2026",
       "publisher": "U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official market data"
     },
     "dof_landing": {
@@ -272,7 +272,7 @@
       "title": "What is the probability that an earthquake will occur in the Los Angeles Area? In the San Francisco Bay area?",
       "publisher": "U.S. Geological Survey",
       "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official hazard science"
     },
     "calfire_fhsz": {
@@ -364,7 +364,7 @@
       "publisher": "California Department of Education",
       "kind": "Official school district profile",
       "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "lavote_dtt": {
       "title": "Documentary Transfer Tax — General Information (County & Special City Rates)",
@@ -399,7 +399,7 @@
       "publisher": "Los Angeles County Metropolitan Transportation Authority",
       "kind": "Official transit project status",
       "url": "https://www.metro.net/projects/westside/",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "metro_lax": {
       "title": "LAX/Metro Transit Center Station Official Opening",
@@ -409,25 +409,25 @@
       "accessed": "2026-11-10"
     },
     "lapd_city": {
-      "title": "LAPD COMPSTAT Citywide Profile (Through Oct 31, 2026)",
+      "title": "LAPD COMPSTAT Citywide Profile (rolling PDF; week ending Nov 7, 2026 at 2026-11-11 access)",
       "publisher": "Los Angeles Police Department",
       "kind": "Official crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "lapd_central": {
-      "title": "LAPD COMPSTAT Operations-Central Bureau Profile (Through Oct 31, 2026)",
+      "title": "LAPD COMPSTAT Operations-Central Bureau Profile (rolling PDF; week ending Nov 7, 2026 at 2026-11-11 access)",
       "publisher": "Los Angeles Police Department",
       "kind": "Official bureau crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/ocbprof.pdf",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "sec_10q_debt": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 7 (Indebtedness / ARDs / Leverage)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "sec_10q_ar": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 1 (Basis & Allowance for Credit Losses)",
@@ -497,21 +497,21 @@
       "publisher": "U.S. Geological Survey",
       "kind": "Official earthquake scenario publication",
       "url": "https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "cdi_fairplan_2025": {
       "title": "Commissioner Approves FAIR Plan Commercial Expansion ($20M/$100M, Release 028-2025)",
       "publisher": "California Department of Insurance",
       "kind": "Official regulatory press release",
       "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release028-2025.cfm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "cdi_catmodel_2025": {
       "title": "CDI Completes First Wildfire Catastrophe Model Review (Release 052-2025)",
       "publisher": "California Department of Insurance",
       "kind": "Official regulatory press release",
       "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release052-2025.cfm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "epa_heat": {
       "title": "Heat Islands Overview (Updated September 30, 2026)",
@@ -964,11 +964,11 @@
       "id": "treasury_yields",
       "category": "Financing",
       "measure": "Treasury par yields",
-      "value": "2Y 4.56%; 5Y 4.67%; 10Y 4.88%; 20Y 5.29%; 30Y 5.26%",
+      "value": "2Y 4.73%; 5Y 4.81%; 10Y 4.98%; 20Y 5.39%; 30Y 5.35%",
       "geography": "U.S. sovereign curve",
-      "period": "November 9, 2026 close",
+      "period": "November 10, 2026 close",
       "status": "verified",
-      "note": "Daily Treasury par yield curve updated November 9, 2026. Risk-free sovereign benchmarks, not commercial NNN cap rates or owner discount rates.",
+      "note": "Official Nov 10 par yield curve; indicative sovereign benchmarks, not commercial NNN cap rates or owner discount rates. Rates move daily.",
       "sources": [
         "treasury"
       ]
@@ -1453,11 +1453,11 @@
       "id": "crime_status",
       "category": "Public safety",
       "measure": "LAPD citywide NIBRS crime profile",
-      "value": "83,596 Person & Property incidents YTD (−10.6% YoY); 8,555 sworn officers",
+      "value": "86,837 Person & Property offenses YTD (−9.2% YoY); 8,555 sworn officers (as of Oct 26)",
       "geography": "City of Los Angeles",
-      "period": "YTD through October 31, 2026 (published Nov 3, 2026)",
+      "period": "YTD through November 7, 2026 (rolling PDF accessed Nov 11)",
       "status": "verified",
-      "note": "LAPD COMPSTAT citywide NIBRS PDF summary while web mapping platform undergoes updates. Citywide trend, not a parcel crime rate.",
+      "note": "Live LAPD COMPSTAT citywide NIBRS PDF changes weekly: capture the report period before reuse. Offenses, not unique incidents or a parcel crime rate. Sworn count separately dated October 26, 2026.",
       "sources": [
         "lapd_city",
         "lapd"
@@ -1548,11 +1548,11 @@
       "id": "metro_transit_drivers",
       "category": "Planning",
       "measure": "LA Metro D Line extension & LAX Transit Center",
-      "value": "D Line Sec. 1 (La Brea/Fairfax/La Cienega) opened May 8, 2026; Sec. 2–3 forecast 2027; LAX Transit Center open",
+      "value": "D Line Section 1 opened May 8, 2026 (La Brea, Fairfax, La Cienega); Sections 2–3 under construction; LAX/Metro Transit Center open",
       "geography": "Central / Westside Los Angeles corridors",
       "period": "2026–2028 major-event cycle",
       "status": "verified",
-      "note": "Major corridor transit upgrades ahead of FIFA 2026, Super Bowl LXI, and LA28. Parcel walk-shed impact requires parcel address.",
+      "note": "Opening and construction status directly supported by Metro. Prior “Sections 2–3 forecast 2027” withheld: current cited project page does not provide that date; no parcel-level uplift is established.",
       "sources": [
         "metro_dline",
         "metro_lax"
@@ -1575,11 +1575,11 @@
       "id": "crime_central_bureau",
       "category": "Public safety",
       "measure": "LAPD Operations-Central Bureau NIBRS crime profile",
-      "value": "23,423 incidents YTD (−2.0% YoY; 28.0% of citywide); Larceny +10.0% (6,213); Robbery +1.3% (1,938)",
+      "value": "24,349 Person & Property offenses YTD (−0.6% YoY; 28.0% of citywide); Larceny +13.6% (6,566); Robbery +0.4% (1,971)",
       "geography": "LAPD Operations-Central Bureau (Central, Hollenbeck, Newton, Northeast, Rampart)",
-      "period": "YTD through October 31, 2026",
+      "period": "YTD through November 7, 2026 (rolling PDF accessed Nov 11)",
       "status": "verified",
-      "note": "Central Bureau accounts for 28% of citywide incidents with rising larceny despite lower citywide totals; verify parcel division/calls directly.",
+      "note": "Rolling LAPD NIBRS PDF; bureau share = 24,349 / 86,837 (rounded). Offenses, not unique incidents or parcel-area counts; obtain parcel division/calls separately.",
       "sources": [
         "lapd_central",
         "lapd"
@@ -1714,11 +1714,11 @@
       "id": "cdi_fairplan_catmodel",
       "category": "Insurance",
       "measure": "CDI FAIR Plan commercial limits & catastrophe model reform",
-      "value": "FAIR Plan commercial limits up to $20M/bldg & $100M/location (thru 2028); Verisk wildfire model approved Jul 24, 2025 w/ 85% distressed-area rule",
+      "value": "FAIR Plan commercial limits up to $20M/building & $100M/location; Verisk wildfire model review completed July 24, 2025; 85% writing requirement for qualifying insurers",
       "geography": "California commercial property insurance market",
-      "period": "Effective 2025–2028 under Sustainable Insurance Strategy",
+      "period": "2025 regulatory announcements; high-value FAIR Plan program stated to expire in 2028",
       "status": "verified",
-      "note": "Expands last-resort commercial limits while voluntary admitted underwriting transitions to forward-looking cat models; verify NNN policy form & sublimits.",
+      "note": "CDI completed review, not approval of any particular insurance rate or policy. FAIR Plan limits are not evidence of this parcel’s coverage; verify quote, exclusions, and effective program terms.",
       "sources": [
         "cdi_fairplan_2025",
         "cdi_catmodel_2025"
@@ -2976,6 +2976,36 @@
       "sources": [
         "repo"
       ]
+    },
+    {
+      "id": "flag_lapd_rolling_pdf_20261111",
+      "item": "LAPD citywide and Central Bureau PDFs are rolling files, not archived snapshots",
+      "reason": "The same official source URLs showed Nov 7 figures on Nov 11, replacing the Oct 31 figures previously published. Historic figures cannot be reproduced from these rolling links.",
+      "action": "Before any decision, request timestamped official report copies and the actual parcel division; recheck both PDFs before quoting; do not treat bureau-wide offenses as parcel-level incidents.",
+      "sources": [
+        "lapd_city",
+        "lapd_central",
+        "lapd"
+      ]
+    },
+    {
+      "id": "flag_cdi_review_not_approval",
+      "item": "Wildfire catastrophe model review vs rate/policy approval",
+      "reason": "CDI July 24, 2025 press release says its review of the Verisk model was completed and it would begin accepting rate applications; it does not establish approval of an insurer rate or availability of parcel coverage.",
+      "action": "Obtain actual parcel-specific quotes and policy terms, including exclusions and binding status; do not infer insurance availability from the model announcement.",
+      "sources": [
+        "cdi_catmodel_2025",
+        "cdi_fairplan_2025"
+      ]
+    },
+    {
+      "id": "flag_metro_future_completion",
+      "item": "D Line Sections 2–3 forecast opening year previously listed as 2027",
+      "reason": "The cited Metro project page confirms Section 1 open and Sections 2–3 under construction, but does not print a 2027 completion date.",
+      "action": "Leave future opening year blank until Metro publishes a dated construction schedule; do not infer nearby parcel benefit.",
+      "sources": [
+        "metro_dline"
+      ]
     }
   ],
   "audit": [
@@ -3147,6 +3177,21 @@
         "cde_sdprofile",
         "usgs_faq",
         "repo"
+      ]
+    },
+    {
+      "id": "audit_db9ded39_20261111",
+      "check": "Targeted 2026-11-11 official-source and rolling-link review",
+      "result": "Corrected two rolling LAPD rows to week ending Nov 7; updated Nov 10 Treasury curve; changed CDI review-completed wording (not approved); re-read USGS probabilities and ShakeOut scenario, CDE enrollment, BLS Nov 4, SEC Q3 debt. Prior 74-source 2026-11-10 verification remains historical, not repeated today. Withheld unsourced 2027 opening forecast for Metro D Line Sections 2–3.",
+      "detail": "Full evidence ledger: verification/2026-11-11-db9ded39.md. City and bureau rolling PDFs replaced Oct 31 figures at the same URLs; flagged. Parcel and owner fields remain blank. Curated artifact privacy and regression gates repeated before publication.",
+      "sources": [
+        "lapd_city",
+        "lapd_central",
+        "treasury",
+        "cdi_catmodel_2025",
+        "usgs_faq",
+        "usgs_shakeout",
+        "metro_dline"
       ]
     }
   ]
