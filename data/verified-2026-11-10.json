@@ -3259,6 +3259,17 @@
         "lapd_city",
         "lapd_central"
       ]
+    },
+    {
+      "id": "audit_db9ded39_questions_20261111",
+      "check": "Post-publication consistency check of decision-gating answers (2026-11-11)",
+      "result": "Two question-register answers aligned to independently verified November 10 Treasury rates and the November 7 LAPD offense-count definition; no property facts filled in.",
+      "detail": "Previous question answer used the dated but superseded November 9 Treasury curve and called NIBRS offenses incidents. Current official pages confirm values; earlier dated rate remains historical only. Full sources and gate status remain linked.",
+      "sources": [
+        "treasury",
+        "lapd_city",
+        "lapd_central"
+      ]
     }
   ],
   "questions": [
@@ -3363,7 +3374,7 @@
     {
       "id": "q_financing",
       "question": "What does money cost if the property is held or refinanced?",
-      "answer": "The risk-free curve at the November 9, 2026 close: 2Y 4.56%, 5Y 4.67%, 10Y 4.88%, 20Y 5.29%, 30Y 5.26%. The tenant's own June 2026 securitization priced at 7.624%. Property-specific spread, LTV, and loan terms are not verified.",
+      "answer": "The U.S. Treasury par curve at the November 10, 2026 close: 2Y 4.73%, 5Y 4.81%, 10Y 4.98%, 20Y 5.39%, 30Y 5.35%. The issuer’s June 2026 securitization priced at 7.624%. Neither is a property-specific loan offer or an owner discount rate; spread, LTV and terms remain unverified.",
       "status": "partial",
       "obtain": "Obtain term sheets from two or three lenders using the verified rent roll and property condition; price the spread, not just the index.",
       "sources": [
@@ -3472,7 +3483,7 @@
     {
       "id": "q_safety",
       "question": "Is crime a trade-area obstacle?",
-      "answer": "Citywide 86,837 Person & Property incidents year to date (−9.2% year over year); Operations-Central Bureau 24,349 (−0.6%), which is 28.0% of citywide at the same week-ending vintage, with larceny +13.6% and robbery +0.4%. Division-level and calls-for-service data at the parcel are not verified.",
+      "answer": "Citywide 86,837 Person & Property offenses year to date (−9.2% year over year); Operations-Central Bureau 24,349 (−0.6%), or 28.0% of citywide for the same week ending November 7, 2026; larceny +13.6% and robbery +0.4%. Not unique incidents or parcel-level counts. Division-level and calls-for-service data are unverified.",
       "status": "partial",
       "obtain": "After the parcel match, pull the reporting division's COMPSTAT and calls-for-service data for a consistent multi-year window rather than a single year-to-date cut.",
       "sources": [

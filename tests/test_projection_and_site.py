@@ -117,6 +117,11 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertNotIn("4.88% 10Y Treasury", pages["decision.html"])
         self.assertNotIn("forecast 2027", obs["metro_transit_drivers"]["value"])
         self.assertIn("review completed", obs["cdi_fairplan_catmodel"]["value"])
+        questions = {q["id"]: q for q in data["questions"]}
+        self.assertIn(obs["treasury_yields"]["period"], questions["q_financing"]["answer"])
+        self.assertIn("10Y 4.98%", questions["q_financing"]["answer"])
+        self.assertIn("offenses", questions["q_safety"]["answer"])
+        self.assertNotIn("incidents year to date", questions["q_safety"]["answer"])
 
     def test_projection_json_matches_model(self):
         outputs = build_public.render_all()
