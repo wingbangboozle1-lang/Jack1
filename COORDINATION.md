@@ -1519,3 +1519,64 @@ published site, even though the page itself loaded.
 
 Gates after the fix: `build_public.py --check` PASS (12 files), 17 tests OK, `validate_site.py` PASS
 (10 pages, 362 sourced rows), curated artifact PASS.
+
+
+---
+
+## Session: arena/8d428792-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/8d428792-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 UTC):** local branch fast-forwarded from `dd0705c`
+to `ed32462` (PR #58 merge, session a6ebbd99 — 2026-11-11 LAPD vintage correction). `origin/main` =
+`ed32462`; no newer branch/PR/commit beyond it at claim time. Open PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56
+remain untouched (preserved, not merged unverified); none has a claim on `main` newer than PR #58.
+All prior sessions through `a6ebbd99` are recorded **done**. One real issue found at claim time:
+the `main` push workflow run 42943521741 (PR #58 merge) **failed at the `Deploy to GitHub Pages`
+step** while `validate` passed and the legacy `pages build and deployment` run is serving the
+`_config.yml`-filtered root. Pages API still reports `legacy` build_type (branch `main`, path `/`),
+which is why `actions/deploy-pages` cannot publish the curated artifact. This session's job is to
+close that gap with repository-admin rights, re-run the failed deployment, confirm the live result,
+and record it — not to merge unverified parallel-session content.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| M-1 | Pages deployment fix: set Pages `build_type=workflow` via admin API, re-run failed deploy run 42943521741, confirm `pages/builds/latest` = built and deployment success; verify published sentinel content | in progress | arena/8d428792-jack1 | this board, `gh` Pages settings + run operations (no repo file edits) |
+| M-2 | Independent spot re-verification of high-volatility official sources (Treasury yield curve, BLS LAUS, SEC 10-Q debt note) + full local gates re-run on merged `main` (`build_public.py --check`, unit tests, `validate_site.py`, artifact build/validate); log any discrepancy | in progress | arena/8d428792-jack1 | `verification/2026-11-11-8d428792.md` (new); dataset corrections only if an official page disagrees (with dated audit entry + flagged row) |
+| M-3 | Final record: PR → `main`, merge, Pages deploy confirmation, publication record | unclaimed | arena/8d428792-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs (dataset,
+generated pages) change only through M-2-verified corrections and deterministic regeneration. Small
+frequent commits; `git pull --rebase origin main` before each push; conflicts stop and are resolved
+without discarding another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
+
+### Interleave note — 2026-11-11 UTC (session arena/8d428792-jack1)
+
+While PR #61 was open, `origin/main` advanced from `ed32462` to `c7557f4` (PR #59, session
+`2efe9aec`): a 2026-11-11 line-by-line verification pass, a `crime_status` citywide vintage refresh to
+86,837 (−9.2%), new flag `flag_lapd_rolling_vintage`, and a new **decision-question register**
+(23 gating questions + nine-step discovery plan rendered on the Requirements page; 16 unit tests;
+357 sourced rows; Q-4 final integration still claimed on that branch at the time of writing). No
+file in that session's scope (`data/verified-2026-11-10.json`, `scripts/build_public.py`,
+`requirements.html`, `tests/`) was edited by this session. This branch was rebased onto `c7557f4`
+with a union resolution of `COORDINATION.md` only (both session blocks preserved verbatim; no other
+session's work discarded). My workflow fix and verification report are unchanged by the rebase;
+local gates re-run after rebase before the PR is marked ready.
+
+### Interleave note 2 — 2026-11-11 UTC (session arena/8d428792-jack1)
+
+While PR #61 was open, `origin/main` advanced again to `f6f73b7` (PR #60, session `db9ded39`): a
+2026-11-11 rolling-source re-verification; the decision briefs were regenerated; the gate counts are
+now **17/17 tests / 361 sourced rows**; and critically, their review of the same Pages failure
+recorded in my M-1 claim led them to **remove the `deploy` job entirely** and rename the workflow to
+`Validate decision brief (legacy Pages publication)`. That resolution supersedes my detect-and-skip
+`.github/workflows/pages.yml` change; this branch was rebased onto `f6f73b7` with a union resolution
+of `COORDINATION.md` only, and my workflow edit was **dropped in favor of the merged decision**.
+Remaining content from this session: this claim, the interleave notes, and
+`verification/2026-11-11-8d428792.md` (updated to record the supersession; its official-source
+re-reads — Treasury Nov-2026 vintage, BLS LAUS Sep-2026 preliminary, SEC 10-Q R14 indebtedness — are
+independent of the workflow change and stand).
