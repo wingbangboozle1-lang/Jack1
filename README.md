@@ -19,7 +19,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
 - `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
-- `requirements.html` — coverage checklist
+- `requirements.html` — decision-question register (question, verified answer or blank, how to obtain, official source), discovery plan, coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
@@ -56,4 +56,4 @@ The verified dataset is `data/verified-2026-11-10.json` (with `data/verified-202
 
 If Pages remains in legacy `main /` mode, `_config.yml` excludes historical/internal files so the legacy fallback serves only the curated root dashboard. The former root `.nojekyll` marker is preserved under `archive/arena-0e369d53-legacy/` and is regenerated inside the workflow artifact. A successful Actions upload alone is not publication proof; the live URL and a sentinel page must be fetched after merge.
 
-Coordination and verification records: `COORDINATION.md`, `verification/2026-11-10-ac5b9087.md`, `research/2026-11-10-ac5b9087/source-notes.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
+Coordination and verification records: `COORDINATION.md`, `verification/2026-11-11-2efe9aec.md`, `verification/2026-11-11-a6ebbd99.md`, `verification/2026-11-10-ac5b9087.md`, `research/2026-11-10-ac5b9087/source-notes.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
