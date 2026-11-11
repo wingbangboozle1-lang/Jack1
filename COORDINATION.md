@@ -1608,3 +1608,42 @@ rather than `/Jack1/pages/…`. Canonical root, `requirements.html` (decision-qu
 | M-3 final record | done | this board | PR [#61](https://github.com/wingbangboozle1-lang/Jack1/pull/61) merged 2026-11-11T02:18:00Z as `e615db293697fabcbe8f0fe78f05cbdc15cffc8b`. `main` push run 42945063407 `Validate decision brief (legacy Pages publication)` = success; legacy `pages-build-deployment` for `e615db2` = success (`pages/builds/latest` = built, updated 2026-11-11T02:18:02Z); Pages API `build_type=legacy`. Live site: https://wingbangboozle1-lang.github.io/Jack1/ | rebase cost documented in interleave notes 1–3 (four rebases, three union resolutions of this board, no other session's work discarded) |
 
 No dataset, builder, page, or test file was edited by this session. Open parallel-session PRs (#5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56) remain untouched.
+
+## Session: arena/7ba2d90a-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/7ba2d90a-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so it is used as the integration branch, as prior sessions did.)
+
+**Claim-time handoff check (2026-11-11, UTC):** local branch `arena/7ba2d90a-jack1` is branched from
+`dd0705c` (PR #57 merge); working tree clean at claim time. Interleave 1: while this claim was being
+rebased, `origin/main` advanced to `ed32462` (PR #58). Interleave 2 (during L-2): `origin/main`
+advanced to `a2730df` (PRs #59–#65 — sessions db9ded39, 2efe9aec, 8d428792: root briefs rewritten to
+the dual-track recommendation, a 23-item decision-question register added (`questions` in the dataset,
+`requirements.html`), nested-404 and legacy `pages.yml` validation fixes, Treasury Nov-10 vintage,
+additional verification ledgers). This claim is preserved verbatim as pushed; parts of the L-2 audit
+below describe the pre-rewrite root briefs and are superseded where PRs #59–#65 re-wrote them
+(supersession note added in `verification/2026-11-11-7ba2d90a.md` Part D). The conflict in this file (both sessions
+appended at the tail) was resolved as a union: a6ebbd99's section is kept verbatim above; this
+session's section is kept below. Nothing of a6ebbd99's work was discarded. To avoid duplicating the
+verification a6ebbd99 just merged, this session's L-2 is re-scoped to: (a) root-brief line audit
+(`EXECUTIVE_SUMMARY.md`, `executive_summary.md`, `DECISION_MEMO.md`, `METHODOLOGY.md`,
+`RISK_REGISTER.md`, `analysis/`, `risks/`, duplicate legacy root pages) checking consistency with the
+published dual-track recommendation; (b) independent re-check of canonical rows whose official sources
+were NOT in a6ebbd99's 2026-11-11 pass (DOF P-2A projections, SCAG, BLS city annual, EDD LA, FRED GDP,
+SEC 10-K Item 2, DIR/LCOLA wages, CDI FAIR Plan, EPA, Port of LA, LA Assessor, BOE/FTB/IRS); (c)
+privacy re-scan; (d) gates. Open stale PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are **not**
+merged and not modified by this session; their branches preserve their work. The three 2026-11-10
+parallel PRs (#47, #54, #56) remain excluded per the K-3 finding (unverified, unclaimed, past the
+60-minute takeover window) unless independently re-verified, which this session does not do.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| L-1 | Session claim + coordination protocol | **in progress → done with this push** | arena/7ba2d90a-jack1 | this board (append-only) |
+| L-2 | Fresh 2026-11-11 independent verification pass: re-read flagged items + high-impact rows against official sources; derived-arithmetic re-computation; root-brief line audit and irregularity log; privacy re-scan | in progress | arena/7ba2d90a-jack1 | `verification/2026-11-11-7ba2d90a.md` (new), dataset corrections only if an official page disagrees (with dated audit entry), regenerated canonical pages |
+| L-3 | Final gates (build `--check`, unit tests, validator, artifact validate), PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed | arena/7ba2d90a-jack1 | generated canonical pages, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Shared outputs (dataset, generated
+pages) change only through L-2-verified corrections and deterministic regeneration. Small frequent
+commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without
+discarding another session's work.
