@@ -1377,3 +1377,16 @@ Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content w
 | L-2 fresh line-by-line verification + privacy scan | done | `verification/2026-11-11-a6ebbd99.md` (new), `data/verified-2026-11-10.json`, regenerated canonical pages | 11 official sources from exact published URLs: Treasury Nov-2026 curve, BLS LAUS, Census QuickFacts city, LA Measure ULA FAQ, SEC 10-Q debt note R14, FEMA NRI county query incl. coastal score, DOF E-1 2026, CDE LAUSD profile, USGS FAQ, LAPD Central Bureau COMPSTAT, live site | All published values matched; all derived arithmetic reproduced exactly (DOF-Census gap 158,501/1.63%; ARD wall $1,429.625M/95.8%; CA 44.1%; transfer-tax stack 0.56/4.56/6.06%); privacy regex scan of 11 published HTML files zero hits; gates green (build --check, 14 tests, validator 10 pages/332 rows) | One vintage correction: LAPD Central Bureau refreshed to week ending Nov 7, 2026 (24,349, −0.6%; Larceny +13.6% 6,566; Robbery +0.4% 1,971); cross-vintage citywide share removed. USGS FAQ reachable again (60/46/31% confirmed; start date still unstated). Carried: SCAG 153%, ULA wording, FHSZ wording, OpenFEMA window, DOF/Census gap, git-metadata privacy, legacy Pages mode, open parallel PRs preserved. |
 
 L-3 is now claimed on this branch for PR → `main`, merge, and Pages deploy confirmation.
+
+---
+## Session: arena/3a09bd79-jack1 — fresh review and publication pass (2026-11-11 UTC)
+
+**Claim-time check:** local `HEAD` and `origin/main` are both `dd0705c864441b77d815d9203fa3c3968f75077e` (PR #57 merge). Prior K-1…K-4 work is recorded complete; no current claim exists for this session. Open PRs #33, #47, #54, and #56 remain untouched; their owners' content will not be copied or merged without independent verification. Arena pins this session to `arena/3a09bd79-jack1`; that fixed branch is used rather than creating or switching to a `session-<id>/<task>` branch.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| N11-1 | Fresh 2026-11-11 line-by-line audit of canonical published data and sources, decision logic, repository/site boundary, privacy, and official-source links; document each result and any irregularity | in progress | arena/3a09bd79-jack1 | `verification/2026-11-11-3a09bd79.md` (new) |
+| N11-2 | Apply only independently source-confirmed corrections to canonical data and regenerate canonical site outputs; keep every unconfirmed property-specific value blank and visibly flagged | unclaimed | arena/3a09bd79-jack1 | `data/verified-2026-11-10.json`, generated canonical pages/assets via `scripts/build_public.py`, new verification report |
+| N11-3 | Final integration gates, live publication check, PR → `main`, merge, Pages deployment confirmation, and completion record | unclaimed | arena/3a09bd79-jack1 | `COORDINATION.md`, generated canonical outputs if changed, GitHub PR/Actions/Pages |
+
+**Scope rules:** no historical/archive or other session verification files will be rewritten. Shared data/site files are touched only after N11-1 documents a reproducible finding; unverified numbers remain blank. Personal identifiers discovered during source review are not copied into this board, reports, datasets, or website. Claim recorded before content work; `git pull --rebase origin main` is required before each push.
