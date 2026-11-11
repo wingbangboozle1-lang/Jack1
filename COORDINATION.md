@@ -1349,9 +1349,9 @@ local-links/privacy/blanks OK; curated artifact build + artifact validation → 
 
 | Task ID | Description | Status | Owning session | Exclusive files / scope |
 |---|---|---|---|---|
-| L-1 | Fresh source/row and privacy review; publish a dated verification ledger, corrections only where independently evidenced | in progress | arena/db9ded39-jack1 | `verification/2026-11-11-db9ded39.md` (new), canonical dataset `data/verified-2026-11-10.json` only for evidenced corrections |
-| L-2 | Final integration of verified changes into curated dashboard, regression/build/link/privacy checks | unclaimed | arena/db9ded39-jack1 | generated root canonical pages, `assets/projections.json`, builder/tests only if needed |
-| L-3 | PR, merge, Pages deployment and public URL check | unclaimed | arena/db9ded39-jack1 | this board (append-only), GitHub PR/Pages operations |
+| L-1 | Fresh source/row and privacy review; publish a dated verification ledger, corrections only where independently evidenced | done | arena/db9ded39-jack1 | `verification/2026-11-11-db9ded39.md` (new), canonical dataset `data/verified-2026-11-10.json` only for evidenced corrections |
+| L-2 | Final integration of verified changes into curated dashboard, regression/build/link/privacy checks | done | arena/db9ded39-jack1 | generated root canonical pages, `assets/projections.json`, builder/tests only if needed |
+| L-3 | PR, merge, Pages deployment and public URL check | in progress | arena/db9ded39-jack1 | this board (append-only), GitHub PR/Pages operations |
 
 Claim must be committed and pushed before content edits. Before pushing further commits run `git pull --rebase origin arena/db9ded39-jack1` (after initial branch push), inspect concurrent main changes, and preserve all work in conflicts. Source URLs and check results will be recorded below when complete. Public artifact excludes owner-specific data and all internal ledgers.
 
@@ -1364,3 +1364,48 @@ L-1: targeted re-read of the 11/07 rolling LAPD city and Central Bureau PDFs, 11
 ### Interleave + publication handoff (2026-11-11 UTC)
 
 `origin/main` advanced during L-2 via parallel session `arena/a6ebbd99-jack1` PR #58 (merge `ed32462`). Its verified 11/07 Central Bureau correction **24,349 / 6,566 / 1,971** agrees with ours; its citywide row and risk text still cite the superseded 10/31 rolling PDF. Preserve their new `audit_a6ebbd99_l2` and verification report, and independently reconcile all overlap rather than overwriting. Their workflow validation passed and the automatic legacy GitHub Pages deployment succeeded, but custom `deploy-pages` failed at “No artifacts named github-pages” (GitHub job annotations); the site remains configured `build_type=legacy`. Attempting to switch Pages with authenticated `gh api` returned HTTP 403 “Resource not accessible by integration”. **L-2 scope extension claimed:** `.github/workflows/pages.yml` for a legacy-compatible, green validation/publication fallback and `README.md` deployment description. Do not claim workflow-built publication until Pages build_type actually switches; retain automatic legacy main-branch Pages with `_config.yml` privacy exclusions. No private details may be published. Integration gates will be rerun after union merge.
+
+---
+
+## Session: arena/a6ebbd99-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/a6ebbd99-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 UTC):** local `main` = `dd0705c` (PR #57 merge, session
+8d46ab6c). `gh pr list` shows open PRs #56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5 —
+all last active 2026-11-10 or earlier, none with a claim on `main` newer than PR #57. All exceed the
+60-minute no-commit takeover window. No active session's lock is overridden; all historical records
+and open PRs are preserved untouched. Live site fetched today and serving the PR #57 build
+(dual-track recommendation, 95.8% ARD wall, 4.5%/4.88% labor/yields). Pages API: `legacy` build_type,
+status `built` — the known workflow-token limitation (flagged, non-blocking).
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| L-1 | Session claim + coordination protocol | done | arena/a6ebbd99-jack1 | this board (append-only) |
+| L-2 | Fresh 2026-11-11 line-by-line verification: re-read key official sources from exact published URLs, recompute derived arithmetic, privacy/PII rescan, irregularity log | in progress | arena/a6ebbd99-jack1 | `verification/2026-11-11-a6ebbd99.md` (new) |
+| L-3 | Final integration gates (build `--check`, unit tests, validator, artifact validate, live-site check), PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/a6ebbd99-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs (dataset,
+generated pages) change only through L-2-verified corrections and deterministic regeneration. Small
+frequent commits; `git pull --rebase origin main` before each push; conflicts stop and are resolved
+without discarding another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
+
+### Session completion record — L-2 (session arena/a6ebbd99-jack1, 2026-11-11 UTC)
+
+| Task | Status | Files touched | Sources re-read this pass | Verification performed | Irregularities logged |
+|---|---|---|---|---|---|
+| L-2 fresh line-by-line verification + privacy scan | done | `verification/2026-11-11-a6ebbd99.md` (new), `data/verified-2026-11-10.json`, regenerated canonical pages | 11 official sources from exact published URLs: Treasury Nov-2026 curve, BLS LAUS, Census QuickFacts city, LA Measure ULA FAQ, SEC 10-Q debt note R14, FEMA NRI county query incl. coastal score, DOF E-1 2026, CDE LAUSD profile, USGS FAQ, LAPD Central Bureau COMPSTAT, live site | All published values matched; all derived arithmetic reproduced exactly (DOF-Census gap 158,501/1.63%; ARD wall $1,429.625M/95.8%; CA 44.1%; transfer-tax stack 0.56/4.56/6.06%); privacy regex scan of 11 published HTML files zero hits; gates green (build --check, 14 tests, validator 10 pages/332 rows) | One vintage correction: LAPD Central Bureau refreshed to week ending Nov 7, 2026 (24,349, −0.6%; Larceny +13.6% 6,566; Robbery +0.4% 1,971); cross-vintage citywide share removed. USGS FAQ reachable again (60/46/31% confirmed; start date still unstated). Carried: SCAG 153%, ULA wording, FHSZ wording, OpenFEMA window, DOF/Census gap, git-metadata privacy, legacy Pages mode, open parallel PRs preserved. |
+
+L-3 is now claimed on this branch for PR → `main`, merge, and Pages deploy confirmation.
+
+**Union resolution (db9ded39):** Merged PR #58 into the pinned branch after independent semantic review. Both verification logs and audit IDs remain; a6ebbd99's Central Bureau 11/07 counts are retained, with db9ded39's additional citywide 11/07 correction, Treasury Nov 10, CDI review wording, Metro unsupported date withholding and rolling-PDF caveats. Conflicted generated pages were regenerated from union dataset; no other session files overwritten. Prior 74-source and both 11/11 reports retain their own dates.
+
+### L-2 integration gates / L-3 publication claim (2026-11-11 UTC)
+
+Union of PR #58 preserved `verification/2026-11-11-a6ebbd99.md` and `audit_a6ebbd99_l2` alongside db9ded39's independent ledger and audit; regenerated pages after semantic dataset merge. Full build `--check`: **12 files pass**. Unit tests: **15/15 pass**. Validator: **10 pages / 336 sourced table rows**; source allowlist, local navigation, blank property values and privacy patterns pass. Curated artifact: only ten pages, 404, three assets and `.nojekyll`; artifact validation passes. Local HTTP smoke: `/`, `/flagged.html`, `/sources.html` return 200; `/data/verified-2026-11-10.json` and `/COORDINATION.md` return 404. Privacy regex check clean on 11 HTML files and five current root briefs; official-source personal contacts never copied. `git diff --check` clean. Historical old summaries replaced with source-linked cautious summary; old versions remain in Git history only. **L-2 done. L-3 claimed now** (this board, PR/Pages) on pinned branch before PR operations.
+
+**Deployment failure remedied in source:** PR #58's custom `deploy-pages` job failed with GitHub “No artifacts named github-pages”, although the separate legacy Pages workflow succeeded and Pages API reports built. A Pages mode switch returned 403 integration restriction; `.github/workflows/pages.yml` is now validation-only, leaving the already successful automatic legacy Pages build as the sole publisher. Do not treat the custom workflow as publishing; verify `pages-build-deployment`, Pages API and live public URL after merge. If a deployment fails, do not claim success.

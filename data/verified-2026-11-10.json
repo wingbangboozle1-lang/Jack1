@@ -13,7 +13,7 @@
       "title": "QuickFacts: Los Angeles city, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official statistics"
     },
     "census_county": {
@@ -34,7 +34,7 @@
       "title": "LAUS series LAUCN060370000000003: Los Angeles County unemployment rate, NSA",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=true",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official statistics"
     },
     "bls_city_annual": {
@@ -146,7 +146,7 @@
       "title": "Measure ULA FAQ",
       "publisher": "Los Angeles Office of Finance",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official tax guidance"
     },
     "ftb_capgains": {
@@ -258,7 +258,7 @@
       "title": "NRI Counties official query: Los Angeles County risk, EAL, vulnerability, resilience, earthquake/wildfire/inland flood",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-11",
       "kind": "official hazard model"
     },
     "fema_hazard_ratings": {
@@ -350,7 +350,7 @@
       "publisher": "California Department of Finance",
       "kind": "Official population/housing release (PDF)",
       "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     },
     "dof_e5": {
       "title": "July 2025 Population Estimates (released February 2026)",
@@ -525,7 +525,7 @@
       "publisher": "FEMA ArcGIS feature service",
       "kind": "Official hazard-model query (JSON)",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,CFLD_RISKS,CFLD_RISKR&returnGeometry=false&f=json",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-11"
     }
   },
   "observations": [
@@ -3194,6 +3194,26 @@
         "usgs_faq",
         "usgs_shakeout",
         "metro_dline"
+      ]
+    },
+    {
+      "id": "audit_a6ebbd99_l2",
+      "check": "Fresh line-by-line re-verification (session a6ebbd99, 2026-11-11)",
+      "result": "PASS with one vintage correction. Re-read 11 official sources from their exact published URLs on 2026-11-11 (Treasury Nov 2026 curve, BLS LAUS county series, Census QuickFacts city, LA Measure ULA FAQ, SEC 10-Q debt note R14, FEMA NRI county query incl. coastal score, DOF E-1 2026, CDE LAUSD District Profile, USGS earthquake FAQ, LAPD Operations-Central Bureau COMPSTAT profile, live site). All derived arithmetic reproduced exactly (DOF-Census gap 158,501/1.63%; ARD wall $1,429.625M/95.8%; CA 44.1%; transfer-tax stack 0.56/4.56/6.06%). Privacy scan of the 11 published HTML files: zero hits.",
+      "detail": "Correction: LAPD Central Bureau row refreshed to the newer COMPSTAT vintage (week ending Nov 7, 2026): 24,349 incidents YTD (-0.6%), Larceny +13.6% (6,566), Robbery +0.4% (1,971); cross-vintage share-of-citywide claim removed. USGS FAQ reachable today (LA 30-year 60%/46%/31% confirmed; start date still unstated, flag carried). Treasury Nov 9 10Y 4.88% confirmed (Nov 10 print 4.98% noted, vintage kept). CDE FRPM still absent from cited page (withheld). Carried flags: SCAG 153%, ULA narrative wording, FHSZ wording, OpenFEMA window, DOF/Census gap, git-metadata privacy, legacy Pages mode. Ledger: verification/2026-11-11-a6ebbd99.md. No personal identifiers copied (LAPD command-staff names, CDE district contacts, DOF contacts seen on official pages were not copied).",
+      "sources": [
+        "lapd_central",
+        "treasury",
+        "bls_laus",
+        "census_city",
+        "ula",
+        "sec_10q_debt",
+        "fema_county_query",
+        "fema_coastal_score",
+        "dof_e1",
+        "cde_sdprofile",
+        "usgs_faq",
+        "live"
       ]
     }
   ]

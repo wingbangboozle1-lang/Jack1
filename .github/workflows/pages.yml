@@ -1,4 +1,4 @@
-name: Validate and publish the decision brief
+name: Validate decision brief (legacy Pages publication)
 
 on:
   push:
@@ -35,43 +35,9 @@ jobs:
           python scripts/build_public.py --out _site
           python scripts/validate_site.py --site _site --artifact
 
-  deploy:
-    if: github.event_name != 'pull_request'
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Prefer workflow-built Pages source
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if gh api "repos/${{ github.repository }}/pages" -X PUT -f build_type=workflow; then
-            echo "Pages source set to workflow."
-          else
-            echo "Pages source switch unavailable; legacy fallback must serve only curated root files."
-          fi
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Build curated public artifact
-        run: python scripts/build_public.py --out _site
-      - name: Validate curated artifact
-        run: python scripts/validate_site.py --site _site --artifact
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+# GitHub Pages is configured for legacy main / source. GitHub runs its own
+# pages-build-deployment on main pushes after this validation. An Actions
+# deploy-pages job fails under legacy mode (and this integration token cannot
+# change build_type: GitHub API 403), so do not race the automatic deployment.
+# Reintroduce workflow-built upload/deploy only after an administrator switches
+# Pages to build_type=workflow and that path is independently verified.
