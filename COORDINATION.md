@@ -1340,3 +1340,32 @@ the corrections above before any merge, or they will re-introduce the withdrawn 
 **Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
 `unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
 local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
+
+---
+
+## Session: arena/a6ebbd99-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/a6ebbd99-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 UTC):** local `main` = `dd0705c` (PR #57 merge, session
+8d46ab6c). `gh pr list` shows open PRs #56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5 —
+all last active 2026-11-10 or earlier, none with a claim on `main` newer than PR #57. All exceed the
+60-minute no-commit takeover window. No active session's lock is overridden; all historical records
+and open PRs are preserved untouched. Live site fetched today and serving the PR #57 build
+(dual-track recommendation, 95.8% ARD wall, 4.5%/4.88% labor/yields). Pages API: `legacy` build_type,
+status `built` — the known workflow-token limitation (flagged, non-blocking).
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| L-1 | Session claim + coordination protocol | done | arena/a6ebbd99-jack1 | this board (append-only) |
+| L-2 | Fresh 2026-11-11 line-by-line verification: re-read key official sources from exact published URLs, recompute derived arithmetic, privacy/PII rescan, irregularity log | in progress | arena/a6ebbd99-jack1 | `verification/2026-11-11-a6ebbd99.md` (new) |
+| L-3 | Final integration gates (build `--check`, unit tests, validator, artifact validate, live-site check), PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/a6ebbd99-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs (dataset,
+generated pages) change only through L-2-verified corrections and deterministic regeneration. Small
+frequent commits; `git pull --rebase origin main` before each push; conflicts stop and are resolved
+without discarding another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
