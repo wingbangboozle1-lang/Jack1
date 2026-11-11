@@ -1340,3 +1340,17 @@ the corrections above before any merge, or they will re-introduce the withdrawn 
 **Gates (all green, this branch):** `build_public.py --check` → 12 generated files match;
 `unittest` → 14 tests OK; `validate_site.py` → PASS, 10 pages, **331** sourced table rows, allowlist/
 local-links/privacy/blanks OK; curated artifact build + artifact validation → PASS (same counts).
+
+---
+
+## Session: arena/db9ded39-jack1 (2026-11-11 UTC)
+
+**Pinned-branch exception:** Arena requires all changes on `arena/db9ded39-jack1`; this branch is the integration branch. No `session-<id>/<task>` branch can be created or pushed. Historical session claims above are complete or older than 60 minutes; open PRs #47, #54, #56 and earlier overlap existing outputs but are not active claims. Preserve their records and do not silently merge their edits.
+
+| Task ID | Description | Status | Owning session | Exclusive files / scope |
+|---|---|---|---|---|
+| L-1 | Fresh source/row and privacy review; publish a dated verification ledger, corrections only where independently evidenced | in progress | arena/db9ded39-jack1 | `verification/2026-11-11-db9ded39.md` (new), canonical dataset `data/verified-2026-11-10.json` only for evidenced corrections |
+| L-2 | Final integration of verified changes into curated dashboard, regression/build/link/privacy checks | unclaimed | arena/db9ded39-jack1 | generated root canonical pages, `assets/projections.json`, builder/tests only if needed |
+| L-3 | PR, merge, Pages deployment and public URL check | unclaimed | arena/db9ded39-jack1 | this board (append-only), GitHub PR/Pages operations |
+
+Claim must be committed and pushed before content edits. Before pushing further commits run `git pull --rebase origin arena/db9ded39-jack1` (after initial branch push), inspect concurrent main changes, and preserve all work in conflicts. Source URLs and check results will be recorded below when complete. Public artifact excludes owner-specific data and all internal ledgers.
