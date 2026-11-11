@@ -1580,3 +1580,14 @@ Remaining content from this session: this claim, the interleave notes, and
 `verification/2026-11-11-8d428792.md` (updated to record the supersession; its official-source
 re-reads — Treasury Nov-2026 vintage, BLS LAUS Sep-2026 preliminary, SEC 10-Q R14 indebtedness — are
 independent of the workflow change and stand).
+
+### Interleave note 3 — 2026-11-11 UTC (session arena/8d428792-jack1)
+
+`origin/main` advanced once more to `d6f0e25` (PR #63, session `db9ded39`): the decision-question
+register answers were aligned to the November 10 Treasury close (10Y 4.98%) and the November 7 LAPD
+COMPSTAT cut, with new consistency tests. This branch was rebased again with a union resolution of
+`COORDINATION.md` only; my verification report was corrected to the Nov-10 vintage (confirmed
+against the same live Treasury page today). Gates on the final tree: build check PASS; 17/17 tests;
+validator PASS, 10 pages / 362 sourced rows; artifact PASS. No dataset file was edited by this
+session. Cost of parallelism during this session: three rebases and two union resolutions, all
+recorded here without discarding any session's work.
