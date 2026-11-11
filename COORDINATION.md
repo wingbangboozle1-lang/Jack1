@@ -1377,3 +1377,33 @@ Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content w
 | L-2 fresh line-by-line verification + privacy scan | done | `verification/2026-11-11-a6ebbd99.md` (new), `data/verified-2026-11-10.json`, regenerated canonical pages | 11 official sources from exact published URLs: Treasury Nov-2026 curve, BLS LAUS, Census QuickFacts city, LA Measure ULA FAQ, SEC 10-Q debt note R14, FEMA NRI county query incl. coastal score, DOF E-1 2026, CDE LAUSD profile, USGS FAQ, LAPD Central Bureau COMPSTAT, live site | All published values matched; all derived arithmetic reproduced exactly (DOF-Census gap 158,501/1.63%; ARD wall $1,429.625M/95.8%; CA 44.1%; transfer-tax stack 0.56/4.56/6.06%); privacy regex scan of 11 published HTML files zero hits; gates green (build --check, 14 tests, validator 10 pages/332 rows) | One vintage correction: LAPD Central Bureau refreshed to week ending Nov 7, 2026 (24,349, −0.6%; Larceny +13.6% 6,566; Robbery +0.4% 1,971); cross-vintage citywide share removed. USGS FAQ reachable again (60/46/31% confirmed; start date still unstated). Carried: SCAG 153%, ULA wording, FHSZ wording, OpenFEMA window, DOF/Census gap, git-metadata privacy, legacy Pages mode, open parallel PRs preserved. |
 
 L-3 is now claimed on this branch for PR → `main`, merge, and Pages deploy confirmation.
+
+---
+
+## Session: arena/2efe9aec-jack1 (2026-11-11 UTC)
+
+**Session ID:** `arena/2efe9aec-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so the assigned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-11 UTC):** session base commit `dd0705c` (PR #57 merge). Before any
+content work, `git fetch` showed `origin/main` had advanced to `ed32462` (PR #58, session `a6ebbd99`),
+so this branch was rebased onto `origin/main` **before** claiming; their LAPD bureau correction,
+dataset refresh, audit entry, verification report and coordination record are preserved intact.
+Open PRs #56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5 are unmerged; none has a claim on
+`main` newer than PR #58 and all exceed the 60-minute no-commit takeover window. They are preserved,
+not merged, and nothing from them is copied unverified.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| Q-1 | Session claim + parallel-session/vintage audit | done | arena/2efe9aec-jack1 | this board (append-only) |
+| Q-2 | Fresh 2026-11-11 line-by-line verification of published rows against exact official URLs, derived arithmetic recomputation, privacy rescan, irregularity log | in progress | arena/2efe9aec-jack1 | `verification/2026-11-11-2efe9aec.md` (new); dataset corrections only where an official page disagrees (each with an audit entry) |
+| Q-3 | **Missing deliverable:** publish the decision-gating question register (question → verified answer or blank → how to obtain → official source) plus a missing-information discovery plan on the Requirements page, per the owner's explicit request | in progress | arena/2efe9aec-jack1 | `data/verified-2026-11-10.json` (`questions` key, flags, audit), `scripts/build_public.py` (requirements page), `requirements.html`, `tests/test_projection_and_site.py` |
+| Q-4 | Final integration gates (build `--check`, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/2efe9aec-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or other sessions' branches is edited or deleted. Shared outputs change only
+through Q-2-verified corrections and deterministic regeneration. Small frequent commits;
+`git pull --rebase origin main` before each push; conflicts stop and are resolved without discarding
+another session's work.
+
+Claimed at 2026-11-11 (UTC). Commit and push of this claim precede all content work.
