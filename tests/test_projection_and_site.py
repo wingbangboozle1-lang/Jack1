@@ -104,6 +104,20 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertEqual(validate_site.privacy_hits("1234-567-890"), ["apn:123…"])
         self.assertEqual(validate_site.privacy_hits("<<<<<<< HEAD"), ["conflict-marker"])
 
+    def test_rolling_sources_and_treasury_card_not_stale(self):
+        data = pm.load_data()
+        obs = {o["id"]: o for o in data["observations"]}
+        pages = build_public.render_all()
+        self.assertIn("86,837", obs["crime_status"]["value"])
+        self.assertIn("24,349", obs["crime_central_bureau"]["value"])
+        self.assertIn("November 7, 2026", obs["crime_status"]["period"])
+        self.assertIn("4.98%", obs["treasury_yields"]["value"])
+        self.assertIn("4.98%", pages["index.html"])
+        self.assertNotIn("Nov 9 10Y Treasury 4.88%", pages["index.html"])
+        self.assertNotIn("4.88% 10Y Treasury", pages["decision.html"])
+        self.assertNotIn("forecast 2027", obs["metro_transit_drivers"]["value"])
+        self.assertIn("review completed", obs["cdi_fairplan_catmodel"]["value"])
+
     def test_projection_json_matches_model(self):
         outputs = build_public.render_all()
         payload = json.loads(outputs["assets/projections.json"])
@@ -123,7 +137,7 @@ class BuildAndValidationTests(unittest.TestCase):
 
     def test_2026_11_10_dataset_enrichment(self):
         data = pm.load_data()
-        self.assertEqual(data["meta"]["date"], "2026-11-10")
+        self.assertEqual(data["meta"]["date"], "2026-11-11")
         obs = {o["id"]: o for o in data["observations"]}
         for required in (
             "tenant_ard_wall",

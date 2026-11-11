@@ -7,6 +7,8 @@ A privacy-safe, official-source decision dashboard for a **reported** Jack in th
 
 ## Recommendation
 
+[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-11) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The previous full 74-source cross-check is dated 2026-11-10; the [2026-11-11 review](verification/2026-11-11-db9ded39.md) rechecked high-impact and rolling sources, not every source afresh.
+
 Prepare sale and renewal cases in parallel. Preserve notice/option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.
 
 This is decision support, not legal, tax, appraisal, or brokerage advice.

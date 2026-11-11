@@ -395,7 +395,7 @@
       "accessed": "2026-11-10"
     },
     "metro_dline": {
-      "title": "D Line Subway Extension Project (Section 1 opened May 8, 2026; Sec. 2–3 forecast 2027)",
+      "title": "D Line Subway Extension Project (Section 1 open; Sections 2–3 under construction)",
       "publisher": "Los Angeles County Metropolitan Transportation Authority",
       "kind": "Official transit project status",
       "url": "https://www.metro.net/projects/westside/",
@@ -1550,7 +1550,7 @@
       "measure": "LA Metro D Line extension & LAX Transit Center",
       "value": "D Line Section 1 opened May 8, 2026 (La Brea, Fairfax, La Cienega); Sections 2–3 under construction; LAX/Metro Transit Center open",
       "geography": "Central / Westside Los Angeles corridors",
-      "period": "2026–2028 major-event cycle",
+      "period": "Status at November 11, 2026; Section 1 opened May 8, 2026",
       "status": "verified",
       "note": "Opening and construction status directly supported by Metro. Prior “Sections 2–3 forecast 2027” withheld: current cited project page does not provide that date; no parcel-level uplift is established.",
       "sources": [
@@ -2262,7 +2262,7 @@
       "category": "Ordinary financial risk",
       "name": "Interest-rate / cap-rate repricing",
       "mechanism": "Higher required returns can reduce value and buyer leverage.",
-      "context": "Treasury 10Y 4.88% on November 9, 2026 is context, not a cap rate.",
+      "context": "Treasury 10Y 4.98% on November 10, 2026 is context, not a net-lease cap rate.",
       "site_status": "unverified",
       "mitigation": "Stress exit cap and discount rate with evidence-backed ranges; avoid fixed-rate assumptions.",
       "sources": [
@@ -2314,7 +2314,7 @@
       "category": "Ordinary insurance risk",
       "name": "Insurance availability / premium shock",
       "mechanism": "Coverage gaps, deductibles, exclusions, or premium increases can reduce net rent and marketability.",
-      "context": "CDI tracker $25.2B paid; FAIR Plan commercial limits expanded to $20M/bldg ($100M/loc) thru 2028; Verisk wildfire cat model approved Jul 2025 w/ 85% distressed-area rule.",
+      "context": "CDI tracker $25.2B paid (July 6, 2026); FAIR commercial limits $20M/building, $100M/location; Verisk wildfire model review completed July 2025, 85% writing requirement for qualifying insurers. Neither guarantees parcel coverage.",
       "site_status": "unverified",
       "mitigation": "Collect policy forms, loss runs, renewal quotes, and business-interruption terms.",
       "sources": [
@@ -2356,7 +2356,7 @@
       "category": "Ordinary community risk",
       "name": "Crime / perception / operating hours",
       "mechanism": "Safety and perception can affect customer traffic, tenant operations, and buyer demand.",
-      "context": "LAPD thru Oct 31, 2026: Citywide −10.6% YoY (83,596), Operations-Central Bureau 23,423 (−2.0% overall, 28% of citywide) with Larceny +10.0% and Robbery +1.3%.",
+      "context": "LAPD rolling PDF thru Nov 7, 2026: citywide 86,837 offenses (−9.2% YoY); Central Bureau 24,349 (−0.6% overall, 28.0% of citywide); larceny +13.6%, robbery +0.4%. Not parcel incidents.",
       "site_status": "unverified",
       "mitigation": "Use current official area data and on-site observation after parcel match.",
       "sources": [
@@ -2751,7 +2751,7 @@
     {
       "id": "flag_crime",
       "item": "Current parcel-area crime statistics",
-      "reason": "LAPD citywide (−10.6%) and Central Bureau (−2.0%, larceny +10.0%) COMPSTAT PDFs are verified through Oct 31, 2026, but parcel-level division and calls for service remain unknown without the site address.",
+      "reason": "LAPD rolling citywide and Central Bureau PDFs are verified for week ending Nov 7, 2026; parcel-level division/calls remain unknown without a confidential parcel match. Figures change weekly.",
       "action": "Use current official area PDFs and consistent dates/boundaries after match.",
       "sources": [
         "lapd_city",
@@ -2901,10 +2901,12 @@
     {
       "id": "flag_root_briefs",
       "item": "Root markdown executive briefs vs the published dashboard",
-      "reason": "2026-11-10 repo line review: EXECUTIVE_SUMMARY.md asserts 'Renew — but renew now' with unsourced cap-rate steps (7.25%/6.50%/6.00%, +20.8%); executive_summary.md cites non-official aggregator figures and predates the verified build; both are excluded from the published artifact and contradict the published dual-track recommendation.",
-      "action": "Treat the published dashboard and README as canonical. Owner to delete or supersede the stale root briefs (and DECISION_MEMO.md/METHODOLOGY.md/RISK_REGISTER.md if inconsistent); do not merge them into the site without source-verification against primary pages.",
+      "reason": "Historical root markdown briefs asserted a categorical renew-and-hold strategy and numerical property assumptions without verified asset inputs; source-linked replacements were prepared Nov 11, 2026. Old texts remain in Git history; noncanonical old data/builds remain in repo.",
+      "action": "Use current EXECUTIVE_SUMMARY.md and curated dashboard. Do not treat historical assumptions, old generated data, or Git history as current verified property facts; retain private owner/parcel information off the site.",
       "sources": [
-        "repo"
+        "repo",
+        "treasury",
+        "sec_10q_debt"
       ]
     },
     {
@@ -2951,8 +2953,8 @@
     {
       "id": "flag_lapd_robbery_corrected",
       "item": "Public-safety row: Central Bureau robbery count",
-      "reason": "Published 1,303; the Operations-Central Bureau COMPSTAT report prints 1,938 (+1.3%).",
-      "action": "Corrected to 1,938. Re-confirm on the next weekly COMPSTAT posting.",
+      "reason": "A prior bureau row used a mismatched count. The official PDF is overwritten weekly, so the earlier 2026-11-10 correction cannot be reconstructed from its current link.",
+      "action": "Current Nov 7 bureau robbery count was rechecked at 1,971 (+0.4%); obtain dated official report copies before reusing any earlier count.",
       "sources": [
         "lapd_central",
         "lapd"
@@ -3183,7 +3185,7 @@
       "id": "audit_db9ded39_20261111",
       "check": "Targeted 2026-11-11 official-source and rolling-link review",
       "result": "Corrected two rolling LAPD rows to week ending Nov 7; updated Nov 10 Treasury curve; changed CDI review-completed wording (not approved); re-read USGS probabilities and ShakeOut scenario, CDE enrollment, BLS Nov 4, SEC Q3 debt. Prior 74-source 2026-11-10 verification remains historical, not repeated today. Withheld unsourced 2027 opening forecast for Metro D Line Sections 2–3.",
-      "detail": "Full evidence ledger: verification/2026-11-11-db9ded39.md. City and bureau rolling PDFs replaced Oct 31 figures at the same URLs; flagged. Parcel and owner fields remain blank. Curated artifact privacy and regression gates repeated before publication.",
+      "detail": "Full evidence ledger: verification/2026-11-11-db9ded39.md. City and bureau rolling PDFs replaced Oct 31 figures at the same URLs; flagged. Parcel and owner fields remain blank. Curated artifact privacy and regression gates repeated before publication. Historical contradictory root markdown briefs superseded in working repository with source-linked canonical summary; older Git history and alternate builds not published.",
       "sources": [
         "lapd_city",
         "lapd_central",
