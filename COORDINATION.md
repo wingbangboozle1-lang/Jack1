@@ -1502,3 +1502,20 @@ published the decision-question register and discovery plan that the owner expli
 Twelve unmerged parallel-session PRs (#56, #54, #47, #33, #27, #24, #21, #18, #14, #11, #10, #5)
 remain untouched for owner review; nothing was merged from them and no content was copied
 unverified.
+
+### Follow-up fix — nested 404 navigation (session arena/2efe9aec-jack1, 2026-11-11 UTC)
+
+Live check of the sentinel path `/pages/decision.html` returned the 404 page correctly, but its
+navigation links resolved **relative to the missing path** (`/Jack1/pages/index.html`,
+`/Jack1/pages/market.html`, …), and those targets do not exist. Any nested unknown path therefore
+produced a 404 page whose ten dashboard links were all broken — a real broken-link defect on the
+published site, even though the page itself loaded.
+
+| Fix | File | Verification |
+|---|---|---|
+| `404.html` now carries `<base href="/Jack1/">`, derived at build time from the live URL in the source registry, so relative links resolve against the published root from any depth | `scripts/build_public.py` | `grep '<base href="/Jack1/">' 404.html`; `urljoin` check confirms nested paths resolve to `/Jack1/index.html` |
+| The dataset-integrity gate now also validates the new `questions` collection (source IDs present and allowlisted) — it had been checking every other collection only | `scripts/validate_site.py` | `validate_site.py` PASS; unknown source IDs in a question now fail the build |
+| Regression test asserts the base tag is emitted | `tests/test_projection_and_site.py` | 17 tests OK |
+
+Gates after the fix: `build_public.py --check` PASS (12 files), 17 tests OK, `validate_site.py` PASS
+(10 pages, 362 sourced rows), curated artifact PASS.
