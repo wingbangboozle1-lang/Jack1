@@ -7,6 +7,8 @@ A privacy-safe, official-source decision dashboard for a **reported** Jack in th
 
 ## Recommendation
 
+[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-11) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The previous full 74-source cross-check is dated 2026-11-10; the [2026-11-11 review](verification/2026-11-11-db9ded39.md) rechecked high-impact and rolling sources, not every source afresh.
+
 Prepare sale and renewal cases in parallel. Preserve notice/option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.
 
 This is decision support, not legal, tax, appraisal, or brokerage advice.
@@ -19,7 +21,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
 - `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
-- `requirements.html` — decision-question register (question, verified answer or blank, how to obtain, official source), discovery plan, coverage checklist
+- `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
@@ -52,8 +54,24 @@ The verified dataset is `data/verified-2026-11-10.json` (with `data/verified-202
 
 ## Deployment
 
-`.github/workflows/pages.yml` validates on PRs and, on `main`, builds a curated `_site` artifact containing only the canonical pages/assets/generated projection data. It attempts to set GitHub Pages to workflow-built source using the workflow token.
+GitHub Pages currently runs in **legacy `main /` mode**. The repository's
+`pages-build-deployment` workflow publishes on merges to `main`; our
+`.github/workflows/pages.yml` validates deterministic pages, tests and curated artifact,
+then leaves publication to the legacy Pages workflow. The former custom
+`deploy-pages` job failed despite successful legacy publication because GitHub could
+not find its `github-pages` artifact; attempting to change Pages mode with the
+integration token returned HTTP 403. This custom job is disabled until an authorized
+administrator switches to workflow-built Pages. Do **not** mistake an upload or a
+build check for publication: verify the new revision at the live URL after every merge.
 
-If Pages remains in legacy `main /` mode, `_config.yml` excludes historical/internal files so the legacy fallback serves only the curated root dashboard. The former root `.nojekyll` marker is preserved under `archive/arena-0e369d53-legacy/` and is regenerated inside the workflow artifact. A successful Actions upload alone is not publication proof; the live URL and a sentinel page must be fetched after merge.
+`_config.yml` excludes historical/internal files in legacy Jekyll publication;
+`_site` contains only the ten canonical HTML pages, `404.html`, and three assets.
+The root `.nojekyll` marker is not published in legacy mode; it exists only in the
+curated local artifact. `archive/`, `data/`, `research/`, `verification/`,
+`COORDINATION.md`, alternate builds and root markdown briefs are not public pages.
 
-Coordination and verification records: `COORDINATION.md`, `verification/2026-11-11-2efe9aec.md`, `verification/2026-11-11-a6ebbd99.md`, `verification/2026-11-10-ac5b9087.md`, `research/2026-11-10-ac5b9087/source-notes.md`, `verification/2026-11-08-0e369d53.md`, `research/0e369d53/source-notes.md`.
+Source and review records: `COORDINATION.md`,
+`verification/2026-11-11-db9ded39.md`,
+`verification/2026-11-11-a6ebbd99.md`,
+`verification/2026-11-11-2efe9aec.md`,
+`verification/2026-11-10-8d46ab6c.md`.

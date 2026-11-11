@@ -157,6 +157,10 @@ def card(title: str, value: str, note: str, href: str, link_label: str) -> str:
 
 def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     s = data["sources"]
+    yield_row = next(o for o in data["observations"] if o["id"] == "treasury_yields")
+    treasury_10y = next((p.split()[1] for p in yield_row["value"].split("; ") if p.startswith("10Y ")), None)
+    if not treasury_10y:
+        raise ValueError("Treasury 10Y benchmark is missing; do not invent a dashboard rate")
     gates = data["questions"]
     open_gates = sum(1 for q in gates if q["status"] in ("open", "blocked"))
     partial_gates = sum(1 for q in gates if q["status"] == "partial")
@@ -167,8 +171,8 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     )
     cards = "".join([
         card("Recommendation", "Dual-track", "Prepare sale and renewal in parallel; preserve notice/option rights.", s["sec_10k"]["url"], "SEC lease-context source"),
-        card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B principal matures ARDs Aug 2029–Feb 2032; 7.624% refi.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
-        card("Latest labor & yields", "4.5% / 4.88%", "Sep 2026 LA NSA unemployment 4.5%; Nov 9 10Y Treasury 4.88%.", s["treasury"]["url"], "U.S. Treasury Nov 9 yield curve"),
+        card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B July-2026 principal has ARDs Aug 2029–Feb 2032; final maturities differ.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
+        card("10Y Treasury benchmark", treasury_10y, f"{yield_row['period']} par yield; not a property cap rate or personal discount rate.", s["treasury"]["url"], "U.S. Treasury daily curve"),
         card("Tenant operating trend", "SSS −1.1%", "Jack Q3 FY26 system −1.1%; franchise allowance +70.3% to $(7.61)M.", s["sec_10q_ar"]["url"], "SEC Q3 FY2026 credit allowance"),
         card("LA exit tax tiers", "0.56–6.06%", "County 0.11% + City 0.45% + ULA 4%/5.5% ($5.4M/$10.9M thresholds).", s["lavote_dtt"]["url"], "LA County DTT & ULA schedule"),
         card("Property inputs", "Blank", "Parcel, lease, rent, value, debt, tax basis, insurance remain unverified.", s["assessor"]["url"], "Official parcel lookup"),
@@ -338,7 +342,7 @@ def build_decision(data: dict[str, Any]) -> str:
     <div class="ws-field"><label for="ws-rent">Current annual NNN base rent ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified annual NOI"></div>
     <div class="ws-field"><label for="ws-years">Remaining lease years to test</label><input id="ws-years" type="number" min="0" step="any" placeholder="Enter exact years"></div>
     <div class="ws-field"><label for="ws-esc">Annual contractual rent growth (%)</label><input id="ws-esc" type="number" step="any" placeholder="Enter lease escalation %"></div>
-    <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Compare vs 4.88% 10Y Treasury"></div>
+    <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Enter confidential hurdle rate"></div>
     <div class="ws-field"><label for="ws-exit-val">Expected gross value at horizon ($)</label><input id="ws-exit-val" type="number" min="0" step="any" placeholder="Enter stabilized/dark exit value"></div>
   </div>
   <div class="ws-outputs" aria-live="polite">
@@ -434,7 +438,7 @@ def build_audit(data: dict[str, Any]) -> str:
   <li><code>python3 scripts/validate_site.py</code> validates pages, row source links, allowlist, local links, blanks, and privacy patterns.</li>
   <li>Public artifact contains only curated pages, assets, and generated projection data. Historical builds remain in Git but are not published.</li>
 </ul>
-<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-8d46ab6c.md</code>, <code>verification/2026-11-11-a6ebbd99.md</code>, <code>verification/2026-11-11-2efe9aec.md</code>.</p>
+<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-8d46ab6c.md</code>, <code>verification/2026-11-11-a6ebbd99.md</code>, <code>verification/2026-11-11-2efe9aec.md</code>, <code>verification/2026-11-11-db9ded39.md</code>. Full 74-source audit: Nov 10; fresh 40-source check and targeted rolling-source rechecks: Nov 11.</p>
 """
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
 
