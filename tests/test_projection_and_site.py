@@ -131,6 +131,8 @@ class BuildAndValidationTests(unittest.TestCase):
     def test_404_aligned_and_worksheet_blank_defaults(self):
         outputs = build_public.render_all()
         self.assertIn("404.html", outputs)
+        # Nested unknown paths must still resolve the dashboard links to the published root.
+        self.assertIn('<base href="/Jack1/">', outputs["404.html"])
         err_html = outputs["404.html"]
         for page in validate_site.PAGES:
             self.assertIn(page, err_html)

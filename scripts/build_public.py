@@ -14,6 +14,7 @@ import shutil
 import sys
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlparse
 
 from projection_model import build_projection_payload, load_data
 
@@ -445,10 +446,16 @@ def build_audit(data: dict[str, Any]) -> str:
 
 def build_404(data: dict[str, Any]) -> str:
     links = "".join(f'    <li><a href="{e(href)}">{e(label)}</a></li>\n' for href, label in NAV)
+    # GitHub Pages serves this file for ANY unknown path, including nested ones. Without an
+    # explicit base, relative links would resolve against the missing path (/pages/index.html)
+    # and stay broken. Derive the published root from the live URL in the source registry.
+    published_path = urlparse(data["sources"]["live"]["url"]).path or "/"
+    base = published_path if published_path.endswith("/") else published_path + "/"
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="{e(base)}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Page not found · Jack in the Box NNN decision brief</title>
