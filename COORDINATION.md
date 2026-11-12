@@ -1737,6 +1737,27 @@ in favour of their S06. Superseding the figures in the N-2 record above: 19 test
 `scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, `README.md` were edited after session
 87c0c876 marked S-1/S-2 done.
 
+## Session arena/f6963e79-jack1 — 2026-11-12 UTC
+
+**Branch constraint:** this Arena session is pinned to `arena/f6963e79-jack1`; it is the integration branch for this session (no `session-<id>/<task>` branches are created).
+
+**Claim-time handoff check (2026-11-12, UTC):** local history was shallow at first; fetched full history (`git fetch --unshallow origin main`). `origin/main` = `8718b42` (PR #71, N-2/N-3 by `arena/1520648f-jack1`, merged). Every earlier claim is `done`; the board has no `in progress` task. No claim is overridden. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are not touched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| F-1 | Close the open L-2 gap: re-scan SEC FY2025 10-K Item 2 (properties) end-to-end via official pages and confirm or correct the California unit count (`941`, `44.1%`) and its wording; log any discrepancy with a dated audit entry | done | arena/f6963e79-jack1 | `verification/2026-11-12-f6963e79.md` (new), `data/verified-2026-11-10.json` (only the SEC California unit rows, flags, and one audit entry), regenerated canonical pages |
+| F-2 | Gates (build `--check`, unit tests, validator, artifact validator), PR → `main`, merge, GitHub Pages confirmation, final record | in progress | arena/f6963e79-jack1 | this board, `gh` operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Small commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved as unions without discarding other sessions' work.
+
+Claimed at 2026-11-12 UTC; this claim is committed and pushed before any content work.
+
+### Session completion record — F-1 (session arena/f6963e79-jack1, 2026-11-12 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| F-1 SEC FY2025 10-K Item 2 re-scan and lease-disclosure check | done | `verification/2026-11-12-f6963e79.md` (new), `data/verified-2026-11-10.json` (one observation note and sources, two new tenant observations, four new flags, one audit entry, one source accessed date, meta verification line), regenerated canonical pages | Official sources read on 2026-11-12: [SEC FY2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm) (Item 1A in part; Items 1C and 2 in full) and [SEC Q3 FY2026 earnings release, Ex. 99.1](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) (Del Taco paragraph, restaurant count table). Matched: CA Jack 96/845/941; CA Del Taco 94/257/351; Jack system 150/1,986/2,136; TX Jack 23/526/549; leased sites 1,585 (74.2%). Derived shares reproduced (44.1%, 69.8%). Added the company-wide lease terms (about 13% of Jack leases with contingent rent) and renewal-rate statements, both printed p. 23. Gates: build `--check` PASS (13 files); 19 unit tests OK; validator PASS (11 pages, 406 sourced rows); curated artifact PASS; privacy scan of published HTML 0 hits. | F1-01 Item 2 page citation p. 21 → p. 22 (corrected); F1-02 Dec. 22, 2025 close date cited to a filing that predates it (source added: Q3 FY2026 release); F1-03 '70% systemwide' wording matches Jack-only 69.8%, not two-brand 67.9% (flagged); F1-04 941 / 2,136 are Sept. 2025 snapshots; Q3 FY2026 system count is 2,115 (flagged); F1-05 repository is public and 58 commits carry a personal email in git author metadata (owner decision; not published on the site, history not rewritten); F1-06 sandbox cannot reach government hosts by HTTP, so the automated 74-URL link check was not run here (individual pages read via page fetch). Not re-read: Item 1A pp. 11, 15–16; financial statement notes. |
+
 ### Session completion record — N-3 (session arena/1520648f-jack1, 2026-11-12 UTC)
 
 | Item | Result |
@@ -1746,3 +1767,11 @@ in favour of their S06. Superseding the figures in the N-2 record above: 19 test
 | Live check | `https://wingbangboozle1-lang.github.io/Jack1/decision.html` serves the risk-by-path table; `suggestions.html` serves S01–S06 plus the W-01–W-10 and discovery tables (the bare URL briefly returned the CDN-cached earlier copy; a cache-busting query returned the new build) |
 | Final counts | 11 content pages + `404.html`; 399 sourced table rows; 19 tests; 37 flags |
 | Tasks | N-1, N-2, N-3 **done**. Open for the owner: choices on S01–S06 / W-01–W-10 / D-01–D-09 and the Flagged for Review items. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. |
+
+### Interleave note — F-2 / session arena/a410e84a-jack1 (2026-11-12 UTC)
+
+`origin/main` advanced to `a491e0f` (PR #73, session `1520648f` N-3 record; PR #72, session `a410e84a` S-1/S-2 board and verification report `verification/2026-11-12-a410e84a.md`) while this session worked. This branch merged `origin/main` (no rebase, no force-push). `COORDINATION.md` conflicted once at the tail (both sides appended); resolved as a union: both sections are kept verbatim, nothing discarded. No conflict in data or generated pages.
+
+Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) in progress and a claim to `data/verified-2026-11-10.json` (questions and flags only, under S-3) and to the generated canonical pages. This session's F-1 changes to the same dataset (one observation note and sources, two tenant observations, four flags, one audit entry) and regenerated pages are in this branch's PR. If PR #72's S-5 merges first, its pages must be regenerated from the merged dataset (the builder is deterministic; `build_public.py --check` is the test). No file of `a410e84a`'s verification report was edited here.
+
+Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
