@@ -1,5 +1,21 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
+
+**Handoff / non-overlap check:** at this content pass `origin/main` = `a491e0f` (PR #73 merge). Suggestions.html, W-01–W-10, D-01–D-09, and S01–S06 are already on main (PRs #69–#73). This session does **not** replace that page. Exclusive additions: October 2026 LA CPI observation, `bls_cpi_la` / `edd_schedule` sources, CPI YoY unpublished flag, W-11/W-12, audit `audit_b3925b6c_pass`. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| B-1 | Session claim + coordination protocol | done | arena/b3925b6c-jack1 | this board (append-only) |
+| B-2 | 2026-11-12 high-volatility re-read; add October CPI; blank/flag unpublished 12-month; suggestions W-11/W-12 | in progress | arena/b3925b6c-jack1 | `verification/2026-11-12-b3925b6c.md` (new); `data/verified-2026-11-10.json` (additions only); regenerated canonical pages; README / EXECUTIVE_SUMMARY CPI line |
+| B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | unclaimed (reserved) | arena/b3925b6c-jack1 | this board, `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited or deleted. Shared table data changes only by adding verified CPI/schedule rows. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/a410e84a-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/a410e84a-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/a410e84a-jack1` is pushed.
