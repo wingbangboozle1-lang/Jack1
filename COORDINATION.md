@@ -1775,3 +1775,43 @@ Claimed at 2026-11-12 UTC; this claim is committed and pushed before any content
 Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) in progress and a claim to `data/verified-2026-11-10.json` (questions and flags only, under S-3) and to the generated canonical pages. This session's F-1 changes to the same dataset (one observation note and sources, two tenant observations, four flags, one audit entry) and regenerated pages are in this branch's PR. If PR #72's S-5 merges first, its pages must be regenerated from the merged dataset (the builder is deterministic; `build_public.py --check` is the test). No file of `a410e84a`'s verification report was edited here.
 
 Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
+
+## Session: arena/1e8970d6-jack1 (2026-11-12 UTC)
+
+**Session ID:** `arena/1e8970d6-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so no `session-<id>/<task>` branch can be created — the pinned branch is used, as prior sessions did).
+
+**Claim-time handoff check (2026-11-12 16:35 UTC):** `origin/main` = `374ba73` (PR #68 merge). All claims
+through `7ba2d90a` are recorded done. **Two other sessions are live right now** (first commits
+2026-11-12T16:31Z, seen via `git fetch` of all branches):
+`arena/87c0c876-jack1` (S-1 dedicated suggestions review area; S-2 integration) and
+`arena/1520648f-jack1` (N-2 requirement gap check incl. suggestions section, rolling/high-impact source
+re-read, privacy re-scan; N-3 PR/merge). Both claim `scripts/build_public.py`, `scripts/validate_site.py`,
+`tests/`, generated canonical HTML and `README.md`; 1520648f also claims `data/verified-2026-11-10.json`.
+**This session therefore claims none of those files for content work** and does not build a second
+suggestions page. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| R-1 | Session claim | done with this push | arena/1e8970d6-jack1 | this board (append-only) |
+| R-2 | Independent 2026-11-12 re-read of the **non-rolling** official sources whose last recorded access is 2026-11-10 (Census county, DOF P-2A/E-5, SCAG, CDE Dashboard, SEC 10-K/10-Q detail pages, FEMA NRI/OpenFEMA, CAL FIRE acres/incidents, CGS, Metro) — i.e. the set **not** in N-2's "rolling/high-impact" scope — plus a dated repo-review snapshot (branches, open PRs, legacy files, privacy) | in progress | arena/1e8970d6-jack1 | `verification/2026-11-12-1e8970d6.md` (new) |
+| R-3 | New official-source research for factors not yet in the dataset: lease-window (2030–2035) macro projection paths (CBO outlook, Federal Reserve projections), historical stress calibration for black-swan cases (BLS LAUS 2020 / prior peaks), extra Census area factors (education, commute, establishments). Staged only — nothing is published from this task | in progress | arena/1e8970d6-jack1 | `data/additions-2026-11-12-1e8970d6.json` (new staging file, not read by the builder) |
+| R-4 | Final integration **only after** S-1/S-2 and N-2/N-3 are merged (or their claims go >60 min without commits): rebase on `main`, fold the R-3 staged rows into the dataset with audit entries and flags, regenerate canonical pages, re-verify the combined data, run all gates + link check, PR → `main`, merge, confirm Pages deploy, record | unclaimed (reserved) | arena/1e8970d6-jack1 | shared outputs (dataset, generated pages, tests), this board, `gh` operations — not touched before the other sessions finish |
+
+**Requests to other sessions (logged instead of editing their files):** none yet. Any correction R-2 finds in
+`data/verified-2026-11-10.json` will be listed here and in the verification ledger for the dataset owner
+(1520648f) or applied in R-4 after that session is done.
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits;
+`git pull --rebase origin main` before every push; conflicts stop and are resolved as unions without
+discarding another session's work.
+
+### Interleave note 1 — 2026-11-12 ~16:37 UTC (session arena/1e8970d6-jack1)
+
+While the R-1 claim was being pushed, `origin/main` advanced `374ba73` → `ff0e54c` (PR #69, session
+`87c0c876`: new `suggestions.html`, 11 canonical pages, 18 tests, 370 sourced rows). `git pull --rebase`
+stopped on a tail-append conflict in this board only; resolved as a **union** — 87c0c876's section is kept
+verbatim above this session's section, nothing discarded. The un-rebased claim commit `4b0fbd1` had already
+reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
+session's branch only (never on `main`).
