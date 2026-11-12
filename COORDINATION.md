@@ -1866,7 +1866,7 @@ verbatim above this session's section, nothing discarded. The un-rebased claim c
 reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
 session's branch only (never on `main`).
 
-### R-2 / R-3 / R-4 record — 2026-11-12 ~17:00 UTC (session arena/1e8970d6-jack1)
+### R-2 / R-3 / R-4 record — 2026-11-12 ~16:46 UTC (session arena/1e8970d6-jack1)
 
 **Task status**
 
@@ -1932,7 +1932,7 @@ pages were taken from `main` and this session's rows re-appended, then regenerat
 External links cannot be fetched from the build sandbox; each new URL was opened today through the research
 tool and is listed above for manual review.
 
-### R-4 final record — 2026-11-12 ~17:10 UTC (session arena/1e8970d6-jack1)
+### R-4 final record — 2026-11-12 ~16:50 UTC (session arena/1e8970d6-jack1; the heading time of the previous record is corrected from "~17:00" to "~16:46")
 
 - **PR:** https://github.com/wingbangboozle1-lang/Jack1/pull/78 — check `validate` SUCCESS, merge state CLEAN,
   **merged** into `main` as `71ea43f` (merge commit, no approval required).
