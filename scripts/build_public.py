@@ -17,15 +17,17 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 
 from projection_model import build_projection_payload, load_data, signal_scorecard
+import build_timeline
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
     ("property.html", "Property & tenant"),
     ("projections.html", "Projections"),
     ("decision.html", "Decision paths"),
+    (build_timeline.PAGE, build_timeline.NAV_LABEL),
     ("suggestions.html", "Suggestions review"),
     ("risks.html", "Risks"),
     ("requirements.html", "Requirements"),
@@ -201,6 +203,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("property.html", "Property & tenant", "Blank asset fields, issuer credit, taxes, lease gates."),
             ("projections.html", "Projections", "Official DOF/SCAG paths, derived arithmetic, gated property model."),
             ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
+            (build_timeline.PAGE, build_timeline.NAV_LABEL, build_timeline.CARD_TEXT),
             ("suggestions.html", "Suggestions review", "Proposals, evidence gaps, approval gates; no automatic changes."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
             ("requirements.html", "Requirements", "Decision questions, discovery plan, coverage checklist."),
@@ -572,7 +575,8 @@ def build_404(data: dict[str, Any]) -> str:
 
 
 def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
-    data = data or load_data()
+    # Session dcb5495c supplement: timeline sources, flags and audit entry join the registry pages.
+    data = build_timeline.merge_supplement(data or load_data())
     payload = build_projection_payload(data)
     return {
         "index.html": build_index(data, payload),
@@ -580,6 +584,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "property.html": build_property(data),
         "projections.html": build_projections(data, payload),
         "decision.html": build_decision(data),
+        build_timeline.PAGE: build_timeline.build_timeline(data, sys.modules[__name__]),
         "suggestions.html": build_suggestions(data),
         "risks.html": build_risks(data),
         "requirements.html": build_requirements(data),

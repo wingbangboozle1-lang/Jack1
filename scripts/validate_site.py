@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from projection_model import build_projection_payload, load_data  # noqa: E402
 
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 PUBLIC_FILES = set(PAGES) | {"404.html", "assets/styles.css", "assets/site.js", "assets/projections.json", ".nojekyll"}
 LEGACY_EXCLUDED_PAGES = ("economy.html", "geography.html", "income.html", "jobs.html", "population.html", "repo-review.html", "schools.html", "tenant.html", "model.html", "projection.html", "risk.html")
 
