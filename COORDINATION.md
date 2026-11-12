@@ -1658,3 +1658,18 @@ discarding another session's work.
 **Interleave disclosure — merge executed over a moving `main`.** While this session worked, `origin/main` advanced through PRs #58, #59, #60, #61, #62, #63, #64, #65, #66 (sessions a6ebbd99, db9ded39, 2efe9aec, 8d428792, 2efe9aec/8d428792). This branch was rebased twice; both `COORDINATION.md` conflicts were resolved as unions preserving every prior section verbatim, and generated pages were regenerated deterministically from the merged dataset. Nothing was force-pushed to `main`; the only force-push in this session was to this session's own branch (`--force-with-lease`) to land the rebase. The final tree used for PR #67's gates is exactly the merged `main` content plus this record.
 
 **Final state of the repository (2026-11-11 UTC):** `main` = `923ab47` + this record. Canonical site live and serving the verified build; 10 content pages + `404.html`; 90 observations / 74 official sources / 23 decision questions / 20 audit entries; every table row source-linked; unverified property fields blank and flagged on the Flagged for Review page; privacy scan clean; stale parallel PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 preserved untouched.
+
+## ▶ ACTIVE CLAIM — session `arena/1520648f-jack1` (2026-11-12 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/1520648f-jack1` (platform policy prohibits
+creating `session-<id>/<task>` branches); the pinned branch is used as the integration branch, as prior
+sessions did. **Handoff / non-overlap check:** at claim time `origin/main` = `374ba73` (PR #68 merge,
+2026-11-11T02:25Z); every earlier claim is `done` or more than 24 hours old with no commits. No active
+claim is overridden. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are not
+merged, modified, or closed.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| N-1 | Session claim | done with this push | arena/1520648f-jack1 | this board (append-only) |
+| N-2 | 2026-11-12 review: gap check of the published site against the owner's requirement list (suggestions review section, decision-question register, per-decision risks); re-read of rolling/high-impact official sources reachable today; privacy re-scan | in progress | arena/1520648f-jack1 | `verification/2026-11-12-1520648f.md` (new), `data/verified-2026-11-10.json` (additions/corrections only, each with audit entry), `scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, regenerated canonical pages, `README.md` |
+| N-3 | Gates, PR → `main`, merge, Pages deploy confirmation, final record | unclaimed (reserved) | arena/1520648f-jack1 | this board, `gh` operations |
