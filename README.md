@@ -89,3 +89,15 @@ historical economic observations. See `verification/2026-11-12-87c0c876.md`.
 A second 2026-11-12 pass (`verification/2026-11-12-1520648f.md`) re-read ten rolling/high-impact
 official sources (all matched, no value changed), added the site-improvement and discovery tables
 to `suggestions.html`, and added the risk-by-decision-path table to `decision.html`.
+
+A third 2026-11-12 pass (`verification/2026-11-12-83da931a.md`, session `arena/83da931a-jack1`) opened 40 of
+the 74 registry sources and compared every row that rests on them. Three published items were corrected:
+the 2027 state minimum-wage percentage (+2.97% was on neither official page; the certified figure is 2.99%
+and the rate arithmetic is 2.96%), the geography of the DOF 11,260 housing-unit row (the release does not
+say county or city), and a credit-loss provision labelled Q3 that the filing reports year to date. The
+other 34 sources were not opened by that session and keep their earlier access dates. Additions, all from
+pages read that day: ten observation rows (franchise rent trend, who holds renewal options, building
+ownership split, unit volume, franchise margin, lease-payment schedule, population drivers, unemployment
+and absenteeism history), two decision questions, a signal scorecard on `projections.html` that sets area
+activity against tenant health, and a separate property / owner view on `decision.html`. The scorecard's
+keep / sell / mixed labels are judgment on official figures and are flagged as such.

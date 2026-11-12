@@ -1,6 +1,6 @@
 # Executive summary — reported Jack in the Box NNN asset, central Los Angeles area
 
-**As of 2026-11-11.** [Live dashboard](https://wingbangboozle1-lang.github.io/Jack1/) · [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack1/flagged.html) · [Source registry](https://wingbangboozle1-lang.github.io/Jack1/sources.html) · [Verification ledger](verification/2026-11-11-db9ded39.md).
+**As of 2026-11-11; area-versus-tenant section and three corrections added 2026-11-12 ([ledger](verification/2026-11-12-83da931a.md)).** [Live dashboard](https://wingbangboozle1-lang.github.io/Jack1/) · [Flagged for Review](https://wingbangboozle1-lang.github.io/Jack1/flagged.html) · [Source registry](https://wingbangboozle1-lang.github.io/Jack1/sources.html) · [Verification ledger](verification/2026-11-11-db9ded39.md).
 
 ## Decision in one minute
 
@@ -20,6 +20,18 @@ This is a decision framework, **not** personal financial, legal, appraisal, brok
 | Exit tax context | LA County basic documentary transfer tax **0.11%** and City base **0.45%**, plus City Measure ULA rates above its published thresholds (subject to property/jurisdiction and exemptions). | Only a conditional cost framework; precise liability cannot be computed without transaction and tax facts. | [LA County Recorder tax schedule](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info) · [LA City Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula) |
 | Extreme events | FEMA rates **Los Angeles County**, not this lot, Very High composite risk; USGS's published ShakeOut is a **hypothetical** scenario, not a predicted site loss. | Confirm parcel FHSZ, fault/soil and flood status and obtain bindable insurance terms before pricing any alternative. | [FEMA county NRI query](https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json) · [USGS ShakeOut scenario](https://www.usgs.gov/publications/shakeout-scenario-a-hypothetical-mw78-earthquake-southern-san-andreas-fault) |
 
+## Area versus tenant — where the evidence points (added 2026-11-12)
+
+The [signal scorecard](https://wingbangboozle1-lang.github.io/Jack1/projections.html#signal-scorecard) sorts 22 official readings by which way each leans. The labels are judgment and the count is unweighted; it is not a forecast.
+
+| Group | Keep or renew | Sell | Mixed | What drives it | Official source |
+|---|---|---|---|---|---|
+| Area economy (10 signals) | 6 | 1 | 3 | Metro payrolls **+0.5%**, restaurant jobs **+7,300**, port volume **+3.38%**, improving district school measures; against a falling state population path. | [BLS LA summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf) · [DOF E-1](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf) |
+| Tenant system (7 signals) | 0 | 5 | 2 | Same-store sales **−1.1%**; restaurant count **2,115 vs 2,168** a year earlier; rent paid by franchisees **−6.8%** year to date (derived from $242,526k vs $260,254k); credit-loss allowance **+70.3%**; **95.8%** of debt principal to refinance 2029–2032. | [SEC Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm) · [10-Q Leases note](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm) |
+| Costs, capital, hazard (5 signals) | 0 | 1 | 4 | Rates, wage floors and transfer tax cut both ways; county disaster exposure stays with whoever owns. | [Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611) · [FEMA county query](https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG&returnGeometry=false&f=json) |
+
+**Reading:** the location looks firmer than the tenant. **For the property**, the best course is secure income: a longer firm term with a verified creditworthy obligor, or a replacement tenant lined up before expiry. **For the owner**, the answer is not yet decidable because concentration, tax basis, income need and debt are blank; keep both exits open and fix a decision date ahead of the lease's notice dates and the tenant's first refinancing date in August 2029. One fact to check first: the company says its renewal options are "generally exercisable at our sole discretion", so the tenant may hold the renewal choice ([10-K Leases note](https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm)).
+
 ## Decisions and risks
 
 | Path | When it could be preferable | Important downside | Evidence needed before choosing | Official context |
@@ -33,7 +45,7 @@ No fabricated probabilities are assigned to wildfires, earthquakes, tenant defau
 
 ## Answer these before an irreversible choice
 
-The [23-question decision register](https://wingbangboozle1-lang.github.io/Jack1/requirements.html) publishes each gate, a verified answer or explicit blank, an evidence-acquisition route and official source. Highest-priority gaps:
+The [25-question decision register](https://wingbangboozle1-lang.github.io/Jack1/requirements.html) publishes each gate, a verified answer or explicit blank, an evidence-acquisition route and official source. Highest-priority gaps:
 
 1. **What is the property?** Match private title/survey to the [Assessor](https://portal.assessor.lacounty.gov/) and [City zoning search](https://planning.lacity.gov/zoning/zoning-search); keep the identifying record **off the public website**.
 2. **What does the executed lease actually require?** Verify expiration, option and notice deadlines, rent, escalations, capital repairs, casualty, NNN allocations, assignment and default provisions from private executed documents; no official source can substitute for that lease.

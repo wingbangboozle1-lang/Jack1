@@ -255,7 +255,7 @@ def validate(site: Path, artifact: bool = False) -> list[str]:
                     errors.append(f"404.html: broken local link {href}")
     # Dataset integrity
     source_ids = set(data["sources"])
-    for collection in ("observations", "property_fields", "decisions", "decision_risks", "risks", "requirements", "questions", "suggestions", "discovery", "flags", "audit"):
+    for collection in ("observations", "property_fields", "decisions", "decision_risks", "risks", "requirements", "questions", "suggestions", "discovery", "signals", "verdicts", "flags", "audit"):
         for item in data[collection]:
             if not item.get("sources"):
                 errors.append(f"dataset {collection} {item.get('id')}: no sources")

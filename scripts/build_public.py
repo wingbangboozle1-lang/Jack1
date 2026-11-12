@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
-from projection_model import build_projection_payload, load_data
+from projection_model import build_projection_payload, load_data, signal_scorecard
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
@@ -51,6 +51,9 @@ def badge(status: str) -> str:
         "answered": ("badge-verified", "Answered — verified"),
         "open": ("badge-review", "Open — information missing"),
         "proposed": ("badge-limited", "Proposed — not implemented"),
+        "keep": ("badge-verified", "Supports keeping / renewing"),
+        "sell": ("badge-review", "Supports selling"),
+        "mixed": ("badge-limited", "Mixed / depends on property facts"),
     }
     cls, label = labels.get(status, ("badge-limited", status.replace("_", " ").title()))
     return f'<span class="badge {cls}">{e(label)}</span>'
@@ -154,6 +157,10 @@ def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str
 """
 
 
+def tally_text(counts: dict[str, int]) -> str:
+    return f'keep or renew {counts["keep"]} · sell {counts["sell"]} · mixed {counts["mixed"]}'
+
+
 def card(title: str, value: str, note: str, href: str, link_label: str) -> str:
     return f'<article class="metric-card"><div class="metric-label">{e(title)}</div><div class="metric-value">{e(value)}</div><p class="metric-meta">{e(note)}</p><a class="metric-source" href="{e(href)}" target="_blank" rel="noopener noreferrer">{e(link_label)}</a></article>'
 
@@ -172,6 +179,8 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
         f"{open_gates} need the property's own documents; {partial_gates} are partly answered; "
         f"{answered_gates} are answered from official sources."
     )
+    score = signal_scorecard(data)
+    area, tenant = score["by_group"]["Area economy"], score["by_group"]["Tenant system"]
     cards = "".join([
         card("Recommendation", "Dual-track", "Prepare sale and renewal in parallel; preserve notice/option rights.", s["sec_10k"]["url"], "SEC lease-context source"),
         card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B July-2026 principal has ARDs Aug 2029–Feb 2032; final maturities differ.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
@@ -180,6 +189,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
         card("LA exit tax tiers", "0.56–6.06%", "County 0.11% + City 0.45% + ULA 4%/5.5% ($5.4M/$10.9M thresholds).", s["lavote_dtt"]["url"], "LA County DTT & ULA schedule"),
         card("Property inputs", "Blank", "Parcel, lease, rent, value, debt, tax basis, insurance remain unverified.", s["assessor"]["url"], "Official parcel lookup"),
         card("Decision gates", f'{len(data["questions"])} questions', gate_summary, "requirements.html", "Open the decision-question register"),
+        card("Area versus tenant", "Area firmer than tenant", f'Area signals — {tally_text(area)}. Tenant signals — {tally_text(tenant)}. Unweighted judgment, not a forecast.', "projections.html#signal-scorecard", "Open the signal scorecard"),
     ])
     categories = "".join(
         f'<a class="category-card" href="{e(href)}"><strong>{e(label)}</strong><span>{e(desc)}</span></a>'
@@ -210,6 +220,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     ["Property-specific inputs", value_cell(None, "unverified"), badge("unverified"), "Parcel, lease, rent, value, debt, condition, insurance, and tax basis remain blank.", source_links(data, ["assessor", "zimas"])],
     ["Tenant 2029–2032 ARD wall", "95.8% ($1,429.6M) of principal", badge("derived"), "Refinancing cliffs (Aug 2029, May 2031 at 7.624%, Feb 2032) overlap the 2030–2035 expiry window.", source_links(data, ["sec_10q_debt", "sec_10q_ar"])],
     ["Official population paths", "DOF declines; SCAG grows", badge("derived"), "DOF E-1 (Jan 2026) and P-2A decline while SCAG grows; do not blend or assign to parcel.", source_links(data, ["dof_e1", "dof_p2a", "scag_appendix"])],
+    ["Area activity versus tenant health", e(f'Area — {tally_text(area)}. Tenant — {tally_text(tenant)}'), badge("analysis"), "The location reads firmer than the tenant system. Secure the income or prepare the exit; do not rely on the brand alone. Unweighted count of sourced signals.", source_links(data, ["bls_summary", "sec_release", "sec_10q_leases"])],
     ["County hazard & insurance", "FEMA NRI 100 / $20M FAIR cap", badge("verified"), "88 FEMA declarations (61 fire); CDI FAIR Plan commercial cap raised to $20M/$100M through 2028.", source_links(data, ["fema_county_query", "openfema_la", "cdi_fairplan_2025"])],
 ])}
 <div class="section-heading"><div><p class="eyebrow">Navigate</p><h2>Category subpages</h2><p>Clean tables, official row sources, and explicit blank fields.</p></div></div>
@@ -282,6 +293,18 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
     stress_rows = [[f'<strong>{e(r["name"])}</strong>', e(r["symbol"]), value_cell(None, "unverified"), e(r["formula"]), source_links(data, r["sources"])] for r in payload["stress"]]
     pm = payload["property_model"]
     pm_rows = [[e(k.replace("_", " ").title()), value_cell(v, "unverified"), badge("blocked"), "Requires verified property inputs; no zero-fill or inferred assumptions.", source_links(data, ["sec_10k", "irs_544", "treasury"])] for k, v in pm["outputs"].items()]
+    score = payload["signals"]
+    signal_rows = [[
+        f'<strong>{e(r["signal"])}</strong><span class="row-note">{e(r["group"])}</span>',
+        e(r["reading"]), badge(r["lean"]), e(r["why"]), source_links(data, r["sources"]),
+    ] for r in data["signals"]]
+    group_items = "".join(f'<li><strong>{e(group)}:</strong> {e(tally_text(counts))}.</li>' for group, counts in score["by_group"].items())
+    scorecard = f"""
+<div class="section-heading"><div><p class="eyebrow">Where the evidence points</p><h2 id="signal-scorecard">Signal scorecard: area activity versus tenant health</h2><p>Each row is an official figure already published on this site, with a judgment on which way it leans for a sell-or-keep decision. All {score["total"]} signals: {e(tally_text(score["overall"]))}.</p></div><span class="badge badge-limited">Analysis / judgment</span></div>
+<ul class="action-list">{group_items}</ul>
+<div class="callout warning"><h3>How to read the count</h3><p>The count is unweighted and describes the area and the tenant system, not this property. It is not a forecast, a probability, or a verdict. The lease, the obligor, and the owner's own position override it. The direction given to each row is open to challenge; see <a href="flagged.html">Flagged for review</a>.</p></div>
+{table("signal-scorecard-table", "Sourced signals and the direction each leans; judgment labels on official figures.", ["Signal", "Latest official reading", "Leans toward", "Why", "Official source"], signal_rows)}
+"""
     body = f"""
 <div class="callout"><h3>Method</h3><p>Official DOF and SCAG projections are published separately. Derived columns are transparent arithmetic from cited official inputs, not official observations. No interpolation, agency blending, parcel extrapolation, cap-rate assumption, rent-growth assumption, or invented probability is used. Property outputs remain blank because required inputs are unverified.</p></div>
 <div class="callout"><h3>Caution: DOF level vs Census estimate</h3><p>DOF lists 9,853,435 for Los Angeles County in 2025; Census lists 9,694,934 for July 1, 2025 (DOF +158,501, +1.63%). The two are different series and the cause of the gap is not stated on the pages read. Read the DOF path below for direction and rate of change, not as an absolute head-count, until reconciled. See <a href="flagged.html">Flagged for review</a>.</p></div>
@@ -294,6 +317,7 @@ def build_projections(data: dict[str, Any], payload: dict[str, Any]) -> str:
 {table("agency-comparison", "Official county population milestones compared.", ["Year", "DOF", "SCAG", "SCAG − DOF", "Difference vs DOF", "Official sources"], comp_rows)}
 <div class="section-heading"><div><p class="eyebrow">SCAG regional sector jobs</p><h2>Six-county SCAG region, 2022–2050</h2><p>Regional sector context only. Manufacturing printed percentage is withheld because it conflicts with its endpoints.</p></div></div>
 {table("sector-projection", "SCAG regional sector job endpoints and derived arithmetic.", ["Sector", "Jobs 2022 → 2050", "Derived change", "Derived CAGR", "Published change / flag", "Official source"], sector_rows)}
+{scorecard}
 <div class="section-heading"><div><p class="eyebrow">Symbolic stress tests</p><h2>Lease and ownership stresses without invented magnitudes</h2><p>Magnitudes and probabilities stay blank until evidence exists. These formulas define what must be measured.</p></div></div>
 {table("stress-tests", "Symbolic stress definitions; numeric shocks are unverified.", ["Stress", "Symbol / input", "Numeric magnitude", "Formula / treatment", "Official source"], stress_rows)}
 <div class="section-heading"><div><p class="eyebrow">Gated property model</p><h2>Property decision outputs</h2><p>Status: {e(pm['status'])}. Missing inputs: {e(', '.join(pm['missing']))}.</p></div><span class="badge badge-review">Blank by design</span></div>
@@ -308,6 +332,7 @@ def build_decision(data: dict[str, Any]) -> str:
     for d in data["decisions"]:
         rows.append([f'<strong>{e(d["path"])}</strong>', e(d["when"]), e(d["tradeoffs"]), e(d["required"]), f'<strong>{e(d["verdict"])}</strong>', source_links(data, d["sources"])])
     risk_rows = [[f'<strong>{e(r["path"])}</strong><span class="row-note">Analysis / judgment</span>', e(r["ordinary"]), e(r["severe"]), e(r["reversible"]), e(r["control"]), source_links(data, r["sources"])] for r in data["decision_risks"]]
+    verdict_rows = [[f'<strong>{e(v["view"])}</strong><span class="row-note">Analysis / judgment</span>', f'<strong>{e(v["verdict"])}</strong>', e(v["reasoning"]), e(v["depends_on"]), source_links(data, v["sources"])] for v in data["verdicts"]]
     balance = [
         ["Wealth preservation", "Verify after-tax net proceeds, insurance, capital reserves, and downside before chasing upside.", source_links(data, ["irs_544", "cdi_claims", "fema_county_query"])],
         ["Growth", "Keep renewal/re-tenanting and alternative-use upside only where evidence supports executable value.", source_links(data, ["sec_release", "zimas", "scag_appendix"])],
@@ -319,6 +344,8 @@ def build_decision(data: dict[str, Any]) -> str:
 {table("decision-paths", "Decision paths, conditions, tradeoffs, and required evidence.", ["Path", "When it can win", "Tradeoffs", "Required evidence", "Provisional view", "Official source"], rows)}
 <div class="section-heading"><div><p class="eyebrow">Risk by path</p><h2 id="risk-by-path">Risks attached to each possible decision</h2><p>Qualitative judgment built from the cited official context. No probabilities or dollar losses are assigned because the property inputs are blank. Full register: <a href="risks.html">Risks</a>.</p></div></div>
 {table("decision-risks", "Ordinary risks, severe-event exposure, reversibility, and controls for each decision path.", ["Path", "Business-as-usual risks", "Rare / black-swan exposure", "Reversibility", "Risk controls", "Official source"], risk_rows)}
+<div class="section-heading"><div><p class="eyebrow">Property and owner, separately</p><h2 id="best-course">Best course for the property, and for the owner</h2><p>Judgment drawn from the <a href="projections.html#signal-scorecard">signal scorecard</a> and the cited filings. The owner view stays conditional because the owner's own figures are blank.</p></div></div>
+{table("best-course-table", "Best course stated separately for the property and for the owner, with what each depends on.", ["View", "Best course", "Reasoning", "Depends on", "Official source"], verdict_rows)}
 <div class="section-heading"><div><p class="eyebrow">Objective balance</p><h2>Preservation, growth, and risk control</h2></div></div>
 {table("objective-balance", "How the recommendation balances the stated objectives.", ["Objective", "Application", "Official source"], balance)}
 <div class="section-heading"><div><p class="eyebrow">Execution sequence</p><h2>Next steps that do not require guessing</h2></div></div>
@@ -494,7 +521,7 @@ def build_audit(data: dict[str, Any]) -> str:
   <li><code>python3 scripts/validate_site.py</code> validates pages, row source links, allowlist, local links, blanks, and privacy patterns.</li>
   <li>Public artifact contains only curated pages, assets, and generated projection data. Historical builds remain in Git but are not published.</li>
 </ul>
-<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-8d46ab6c.md</code>, <code>verification/2026-11-11-a6ebbd99.md</code>, <code>verification/2026-11-11-2efe9aec.md</code>, <code>verification/2026-11-11-db9ded39.md</code>. Full 74-source audit: Nov 10; fresh 40-source check and targeted rolling-source rechecks: Nov 11.</p>
+<p class="small muted">Repository: <a href="{e(data['sources']['repo']['url'])}" target="_blank" rel="noopener noreferrer">GitHub</a> · Live: <a href="{e(data['sources']['live']['url'])}" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · Verification logs: <code>verification/2026-11-08-0e369d53.md</code>, <code>verification/2026-11-10-2eefc54d.md</code>, <code>verification/2026-11-10-ac5b9087.md</code>, <code>verification/2026-11-10-af77a54e.md</code>, <code>verification/2026-11-10-a8681975.md</code>, <code>verification/2026-11-10-c5e199ef.md</code>, <code>verification/2026-11-10-8d46ab6c.md</code>, <code>verification/2026-11-11-a6ebbd99.md</code>, <code>verification/2026-11-11-2efe9aec.md</code>, <code>verification/2026-11-11-db9ded39.md</code>, <code>verification/2026-11-12-83da931a.md</code>. Full 74-source audit: Nov 10; fresh 40-source check and targeted rolling-source rechecks: Nov 11; 40 of 74 sources opened again on Nov 12 with three corrections, the other 34 not opened that day.</p>
 """
     return layout(data, "audit.html", "Verification audit", "Repository, privacy, official-source, projection, and deployment checks with reproducible gates.", body)
 
