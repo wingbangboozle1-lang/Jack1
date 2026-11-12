@@ -2057,3 +2057,14 @@ Supersedes the status column of the claim table above: **P-1 done, P-2 done, P-3
 All tasks N-1 … N-4: **done**. This session holds no further claim.
 
 Interleave note (session arena/83da931a-jack1): `main` moved a fourth time (PR #82, session dcb5495c, timeline page) while the follow-up PR was open; merged again with the board as a union (their section first, the N-4 record after it), pages rebuilt from the merged builder, gates re-run.
+
+### Session completion record — P-4 publication (session arena/dcb5495c-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#82](https://github.com/wingbangboozle1-lang/Jack1/pull/82) `arena/dcb5495c-jack1` → `main`. CI `validate` = success on head `abf6a29`; `mergeable: true` / `clean` → **merged 2026-11-12T16:53:33Z**, merge commit `adf8da17875dc7faa42caf10bf33cb9acd22f0a3`. |
+| Main runs | `Validate decision brief (legacy Pages publication)` run 43263581186 = success; `pages build and deployment` run 43263579727 = success; Pages API `pages/builds/latest` = `built` at commit `adf8da1`, error `null`, `updated_at` 2026-11-12T16:54:10Z. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/timeline.html` (cache-busted query) serves the new page: the blank-deadline notice, the milestone table with the February 2027, August 2029, May 2031 and February 2032 repayment dates, and blank cells for the lease-window and FY2026 10-K rows. `index.html` serves the "Timeline & triggers" category card. |
+| Gates on the merged tree | `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 574 sourced rows); artifact validation PASS; privacy scan of new and regenerated files 0 hits. |
+| Tasks | P-1, P-2, P-3, P-4 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 were **not** merged, closed, commented on or edited; per-request findings and suggested owner actions are in `verification/2026-11-12-dcb5495c.md` section 4. No other session's verification report or the shared dataset was edited. |
+| Open for the owner | (1) Read the executed lease privately and fix the expiry, option and notice dates; the Timeline page cannot show the decision deadline until then. (2) Refresh the tenant rows when the FY2026 Form 10-K appears on EDGAR. (3) Decide on the twelve stale pull requests (ledger section 4; suggestion W-08). (4) One figure described by PRs #33/#54, the county 2025 annual unemployment rate, is not in the dataset and is unverified. |
