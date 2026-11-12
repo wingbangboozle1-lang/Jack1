@@ -6,7 +6,7 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md",
+    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md Session f6963e79 (2026-11-12) re-read SEC FY2025 10-K Item 1A in part (printed pp. 7–10, 12–14, 17–19), Items 1C/2 (pp. 20–23) and the Q3 FY2026 release Del Taco paragraph; see audit_f6963e79_f1.",
     "reverified": "2026-11-12"
   },
   "sources": {
@@ -224,7 +224,7 @@
       "title": "Jack in the Box Inc. FY2025 Form 10-K",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official issuer filing"
     },
     "sec_10q": {
@@ -1153,9 +1153,10 @@
       "geography": "California",
       "period": "FY2025 Form 10-K",
       "status": "verified",
-      "note": "FY2025 Form 10-K Item 2 (Sept. 28, 2025, p. 21). Supersedes prior 2026-11-08 reading that cited the Del Taco California columns (351: 94 company, 257 franchise) rather than Jack in the Box (941: 96 company, 845 franchise). Del Taco was sold Dec. 22, 2025.",
+      "note": "FY2025 Form 10-K Item 2 table, printed p. 22 (session f6963e79 re-scan, 2026-11-12; the printed footer '21' precedes the Item 2 heading). Snapshot as of Sept. 28, 2025; the Q3 FY2026 release reports 2,115 system restaurants at July 5, 2026, so this is not a current count. Supersedes prior 2026-11-08 reading that cited the Del Taco California columns (351: 94 company, 257 franchise) rather than Jack in the Box (941: 96 company, 845 franchise). Del Taco was sold Dec. 22, 2025 (closing date sourced to the Q3 FY2026 release, not the 10-K).",
       "sources": [
-        "sec_10k"
+        "sec_10k",
+        "sec_release"
       ]
     },
     {
@@ -1626,6 +1627,32 @@
         "sec_10k_leases",
         "sec_10k",
         "sec_10q_contingencies"
+      ]
+    },
+    {
+      "id": "tenant_lease_terms_10k",
+      "category": "Tenant",
+      "measure": "Company restaurant lease terms (company-wide disclosure)",
+      "value": "Company leases generally: fixed rent with cost-of-living index adjustments plus real estate taxes, insurance and other expenses. Jack in the Box: about 13% of leases carry contingent rent of 1%–10% of restaurant gross sales once thresholds are met.",
+      "geography": "Jack in the Box Inc. system (company disclosure; not the subject lease)",
+      "period": "FY2025 Form 10-K (as of Sept. 28, 2025)",
+      "status": "verified",
+      "note": "Item 2 narrative, printed p. 23. Describes the issuer's portfolio only. Do not infer rent, escalations, pass-throughs, or percentage rent for the subject property from it.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "tenant_renewal_disclosure_10k",
+      "category": "Tenant",
+      "measure": "Company disclosure on restaurant lease renewal",
+      "value": "Company states it has generally been able to renew restaurant leases as they expire at then-current market rates. Item 1A states that at the end of the lease term and all renewal periods, the company may be unable to renew without substantial additional cost, if at all.",
+      "geography": "Jack in the Box Inc. system (company disclosure; not the subject lease)",
+      "period": "FY2025 Form 10-K (as of Sept. 28, 2025)",
+      "status": "verified",
+      "note": "Renewal-rate statement printed p. 23; Item 1A renewal risk printed p. 13. Both are company-wide statements, not evidence of renewal terms for the subject lease.",
+      "sources": [
+        "sec_10k"
       ]
     },
     {
@@ -2902,7 +2929,7 @@
     {
       "id": "flag_ca_units_correction",
       "item": "Prior 2026-11-08 California unit count (351 / 16.4%) inverted Del Taco vs Jack in the Box",
-      "reason": "Item 2 (p. 21) of the FY2025 Form 10-K prints Del Taco (94 company, 257 franchise, 351 total) in the left columns and Jack in the Box (96 company, 845 franchise, 941 total) in the right columns. Earlier 2026-11-08 datasets accidentally cited Del Taco's 351 (16.4%).",
+      "reason": "Item 2 (printed p. 22) of the FY2025 Form 10-K prints Del Taco (94 company, 257 franchise, 351 total) in the left columns and Jack in the Box (96 company, 845 franchise, 941 total) in the right columns. Earlier 2026-11-08 datasets accidentally cited Del Taco's 351 (16.4%).",
       "action": "Updated tenant_ca_2025 to 941 (96 company, 845 franchise) and tenant_ca_share to 44.1% (CA + TX = 69.8% of 2,136 units), reinforcing California AB 1228 ($20.00/hr) labor exposure as Del Taco was sold Dec. 22, 2025.",
       "sources": [
         "sec_10k",
@@ -3040,6 +3067,44 @@
       "sources": [
         "edd_la",
         "bls_summary"
+      ]
+    },
+    {
+      "id": "flag_sec_item2_page",
+      "item": "FY2025 10-K Item 2 page citation (p. 21 in earlier dataset text)",
+      "reason": "Re-scan of the filing shows the Item 2 heading follows printed footer 21, and the restaurant table is followed by printed footer 22. The values (CA 941 / 96 / 845; Jack total 2,136; TX 549) matched; only the page reference was wrong.",
+      "action": "Citation corrected to printed p. 22 in tenant_ca_2025 and flag_ca_units_correction. No value changed.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "flag_sec_dec22_source",
+      "item": "Del Taco sale closing date (Dec. 22, 2025)",
+      "reason": "The date was attached to a row that cited only the FY2025 10-K, which was filed before the closing and reports only the Oct. 15, 2025 agreement ($115M).",
+      "action": "Date verified against the Q3 FY2026 earnings release (Exhibit 99.1, Aug. 12, 2026), which states the sale was completed Dec. 22, 2025. Source added to tenant_ca_2025.",
+      "sources": [
+        "sec_10k",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "flag_sec_70pct_basis",
+      "item": "10-K approximately 70 percent California plus Texas wording",
+      "reason": "Item 1A says approximately 70% of 'systemwide' restaurants are in California and Texas. That matches the Jack in the Box-only share (1,490 / 2,136 = 69.8%). The two-brand combined share is 1,841 / 2,712 = 67.9% (CA 351 + 941; TX 549; total 576 + 2,136).",
+      "action": "Keep the Jack-only 69.8% figure and label it as Jack-only. Do not present the 70% wording as a two-brand figure.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "flag_sec_snapshot_vintage",
+      "item": "Jack in the Box system and California counts are FY2025 snapshots",
+      "reason": "941 California units and the 2,136 system count are as of Sept. 28, 2025. The Q3 FY2026 release reports 2,115 system restaurants at July 5, 2026 (149 company, 1,966 franchise). No state-level split appears in that release.",
+      "action": "Labelled as FY2025 snapshots in the observation notes. Refresh the state table from the next 10-K or from the 10-Q/10-K text before using it for current-year decisions.",
+      "sources": [
+        "sec_10k",
+        "sec_release"
       ]
     }
   ],
@@ -3343,6 +3408,16 @@
         "edd_la",
         "dir_fastfood",
         "repo"
+      ]
+    },
+    {
+      "id": "audit_f6963e79_f1",
+      "check": "Independent SEC FY2025 10-K Item 2 and lease-disclosure re-scan (session f6963e79, 2026-11-12)",
+      "result": "PASS with one citation correction, one source-link correction, and two company-wide lease disclosures added.",
+      "detail": "Read the filing from the exact SEC URL in the registry: Item 1A in part (printed pp. 7–10, 12–14, 17–19; pp. 11 and 15–16 not read), Items 1C and 2 with printed pp. 20–23 read in full. Matched: California Del Taco 94 / 257 / 351 and Jack in the Box 96 / 845 / 941; Jack in the Box total 150 / 1,986 / 2,136; Texas 549; leased sites 565 + 1,020 = 1,585 (74.2%); 93% franchised. Corrected page citation p. 21 → p. 22. Added Dec. 22, 2025 close source (Q3 FY2026 release). Added tenant_lease_terms_10k (13% contingent rent; company-wide) and tenant_renewal_disclosure_10k (then-current-rate renewals; Item 1A renewal risk). Logged the 70% basis, the FY2025 snapshot vintage and the page correction as flags. Not re-read: Item 1A pp. 11 and 15–16, financial statements and notes.",
+      "sources": [
+        "sec_10k",
+        "sec_release"
       ]
     }
   ],
