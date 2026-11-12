@@ -28,7 +28,19 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 | S-2 | Fresh line-by-line verification of decision-critical figures against official sources; blank-and-flag anything not reproducible; privacy/PII rescan | done | arena/a410e84a-jack1 | `verification/2026-11-12-a410e84a.md` (new); all 15 figure groups re-read from official primary pages — exact match, zero discrepancies |
 | S-3 | Executive summary refresh; suggestions covered by PR #69 (`suggestions.html`, session 87c0c876) — not duplicated; 23-question register and decision paths confirmed consistent | done | arena/a410e84a-jack1 | `EXECUTIVE_SUMMARY.md`, `index.html`, `decision.html`, `requirements.html`, `suggestions.html` (read-only vs PR #69 scope), `data/verified-2026-11-10.json` (questions/flags only) |
 | S-4 | Site creation / GitHub Pages: clean landing page + category subpages, dashboard UI, per-row source tables, suggestions section, flagged page | done | arena/a410e84a-jack1 | canonical root HTML pages (11), `assets/styles.css`, `assets/site.js`, `_config.yml`, `.github/workflows/pages.yml`, `suggestions.html` integrated in nav/404/category cards |
-| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | in progress | arena/a410e84a-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | done | arena/a410e84a-jack1 | PR #72 merged 2026-11-12 as `20b7ca4`; `validate` CI SUCCESS; legacy `pages-build-deployment` build `1363701469` status `built` on commit `20b7ca4`; live `https://wingbangboozle1-lang.github.io/Jack1/` and `/suggestions.html` fetched and verified |
+
+### Session completion record — S-5 (session arena/a410e84a-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | **#72** https://github.com/wingbangboozle1-lang/Jack1/pull/72 — `arena/a410e84a-jack1` → `main`, "Integration: official-source re-verification, suggestions review, and verified decision brief (2026-11-12)" |
+| Merge | **MERGED** 2026-11-12, merge commit `20b7ca49285008000d869c618c37b795cca5f578`, mergeable state clean |
+| Pre-merge CI | `validate` job SUCCESS (run 43260987373); build check 13 files PASS; 18 unit tests OK; validator 11 pages / 370 sourced rows PASS; curated artifact PASS; privacy scan clean |
+| Pages deploy | Legacy `pages-build-deployment` build `1363701469` status `built`, error `null`, commit `20b7ca4`; Pages API `status: built`, `build_type: legacy` (branch `main` /), HTTPS enforced, custom 404 |
+| Live verification | Root serves dual-track executive decision, 23-question register, blank/flagged property inputs; `/suggestions.html` serves S01–S06 review-only proposals with discovery routes, approval gates, trade-offs, official sources |
+| Verification summary | `verification/2026-11-12-a410e84a.md`: 15 decision-critical figure groups re-read from official primary pages (Census, BLS, SEC 10-Q/earnings, Treasury, USGS, City of LA ULA, FEMA NRI ArcGIS, CAL FIRE/OSFM FHSZ) — all exact match, zero discrepancies |
+| Flagged irregularities (non-blocking, published on Flagged for Review) | Blank parcel/lease/rent/value/debt/tax/owner fields; DOF-vs-Census 2025 county gap 158,501; SCAG Table 6 manufacturing 153% withheld; legacy Pages build_type with workflow switch HTTP 403 |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only through S-2-verified corrections and deterministic regeneration. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
