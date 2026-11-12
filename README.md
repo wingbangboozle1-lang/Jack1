@@ -19,13 +19,14 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `market.html` — geography, population, income, jobs, schools, drivers
 - `property.html` — blank asset fields, tenant/issuer context, taxes, gates
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
-- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
+- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths, risk table by decision path + blank-default local owner worksheet
+- `suggestions.html` — review-only: six property/evidence proposals, ten site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
 - `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
-- `404.html` — fallback page linking only to the ten canonical pages
+- `404.html` — fallback page linking only to the eleven canonical pages
 
 Historical `pages/`, `site/`, `archive/`, extra root pages, old data/model/tools, and research notes are preserved in Git but are **not** part of the curated public artifact.
 
@@ -65,7 +66,7 @@ administrator switches to workflow-built Pages. Do **not** mistake an upload or 
 build check for publication: verify the new revision at the live URL after every merge.
 
 `_config.yml` excludes historical/internal files in legacy Jekyll publication;
-`_site` contains only the ten canonical HTML pages, `404.html`, and three assets.
+`_site` contains only the eleven canonical HTML pages, `404.html`, and three assets.
 The root `.nojekyll` marker is not published in legacy mode; it exists only in the
 curated local artifact. `archive/`, `data/`, `research/`, `verification/`,
 `COORDINATION.md`, alternate builds and root markdown briefs are not public pages.
@@ -75,3 +76,16 @@ Source and review records: `COORDINATION.md`,
 `verification/2026-11-11-a6ebbd99.md`,
 `verification/2026-11-11-2efe9aec.md`,
 `verification/2026-11-10-8d46ab6c.md`.
+
+## 2026-11-12 targeted improvement
+
+A dedicated **Suggestions review** page separates proposed actions from approved or
+implemented changes. Six proposals cover privacy, lease evidence, sale/renewal tax
+comparison, permissible reuse, disaster resilience, and source-refresh controls.
+IRS Publication 544 contents, City Planning Zoning Search, and FEMA NRI guidance
+were freshly read for this addition; this is **not** a fresh re-verification of all
+historical economic observations. See `verification/2026-11-12-87c0c876.md`.
+
+A second 2026-11-12 pass (`verification/2026-11-12-1520648f.md`) re-read ten rolling/high-impact
+official sources (all matched, no value changed), added the site-improvement and discovery tables
+to `suggestions.html`, and added the risk-by-decision-path table to `decision.html`.

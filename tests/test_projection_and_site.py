@@ -84,6 +84,23 @@ class BuildAndValidationTests(unittest.TestCase):
             self.assertNotIn("COORDINATION.md", files)
             self.assertFalse(any(f.startswith(("archive/", "research/", "verification/", "pages/", "site/")) for f in files))
 
+    def test_suggestions_are_review_only_and_source_linked(self):
+        outputs = build_public.render_all()
+        page = outputs["suggestions.html"]
+        parser = validate_site.PageParser()
+        parser.feed(page)
+        data = pm.load_data()
+        # Six original proposals (session 87c0c876) plus dataset-driven site and discovery rows (session 1520648f).
+        self.assertEqual(len(parser.rows), 6 + len(data["suggestions"]) + len(data["discovery"]))
+        self.assertEqual(page.count("Proposed · not approved or implemented"), 6)
+        self.assertIn("not verified property conclusions", page)
+        self.assertNotIn("<form", page)
+        for name in validate_site.PAGES:
+            self.assertIn('href="suggestions.html"', outputs[name])
+        self.assertIn('href="suggestions.html"', outputs["404.html"])
+        for row in parser.rows:
+            self.assertTrue(row["source_links"])
+
     def test_every_row_has_official_source(self):
         outputs = build_public.render_all()
         for page in validate_site.PAGES:
@@ -166,6 +183,25 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("Questions that must be answered before a decision", outputs["requirements.html"])
         self.assertIn("decision-questions", outputs["requirements.html"])
         self.assertIn("How to close the blanks without guessing", outputs["requirements.html"])
+
+    def test_suggestions_are_proposals_with_sources(self):
+        data = pm.load_data()
+        self.assertGreaterEqual(len(data["suggestions"]), 8)
+        self.assertEqual(len(data["decision_risks"]), len(data["decisions"]))
+        for coll in ("suggestions", "discovery", "decision_risks"):
+            for item in data[coll]:
+                self.assertTrue(item["sources"], item["id"])
+                for sid in item["sources"]:
+                    self.assertIn(sid, data["sources"], (item["id"], sid))
+        for item in data["suggestions"]:
+            self.assertIn("A.", item["options"], item["id"])
+        outputs = build_public.render_all()
+        page = outputs["suggestions.html"]
+        self.assertIn("Only chosen items will be built", page)
+        self.assertEqual(page.count("Proposed — not implemented"), len(data["suggestions"]) + len(data["discovery"]))
+        self.assertIn("decision-risks", outputs["decision.html"])
+        self.assertIn("suggestions.html", outputs["index.html"])
+        self.assertIn("suggestions.html", outputs["404.html"])
 
     def test_public_safety_rows_share_one_vintage(self):
         data = pm.load_data()
