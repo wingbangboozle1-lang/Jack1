@@ -84,6 +84,21 @@ class BuildAndValidationTests(unittest.TestCase):
             self.assertNotIn("COORDINATION.md", files)
             self.assertFalse(any(f.startswith(("archive/", "research/", "verification/", "pages/", "site/")) for f in files))
 
+    def test_suggestions_are_review_only_and_source_linked(self):
+        outputs = build_public.render_all()
+        page = outputs["suggestions.html"]
+        parser = validate_site.PageParser()
+        parser.feed(page)
+        self.assertEqual(len(parser.rows), 6)
+        self.assertEqual(page.count("Proposed · not approved or implemented"), 6)
+        self.assertIn("not verified property conclusions", page)
+        self.assertNotIn("<form", page)
+        for name in validate_site.PAGES:
+            self.assertIn('href="suggestions.html"', outputs[name])
+        self.assertIn('href="suggestions.html"', outputs["404.html"])
+        for row in parser.rows:
+            self.assertTrue(row["source_links"])
+
     def test_every_row_has_official_source(self):
         outputs = build_public.render_all()
         for page in validate_site.PAGES:

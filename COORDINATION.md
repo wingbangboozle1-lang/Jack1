@@ -1669,3 +1669,9 @@ Claim: existing claims are older than 60 minutes and completed in their completi
 | S-2 Integration checks, PR merge, Pages confirmation | unclaimed | arena/87c0c876-jack1 | this board, GitHub operations |
 
 This is a targeted improvement, not a claim to re-verify every historical source afresh. Existing unknown parcel/lease/owner inputs remain blank; no private documents requested or published. Dataset values and other sessions' reports are outside scope. No approval of property or website proposals will be fabricated.
+
+### S-1 complete / S-2 in progress — 2026-11-12
+
+Added dedicated `suggestions.html` with six source-linked review-only proposals, evidence routes, approval criteria and trade-offs; integrated navigation, landing card, 404 and artifact boundary. Added regression test. No economic value changed. Freshly read IRS Publication 544 contents (not entire publication), City Planning Zoning Search and FEMA NRI guidance. All other inherited links/values explicitly remain prior verification vintages. Verification scope and NRI release compatibility gap published on Flagged for Review; source-registry wording corrected to avoid claiming this session read every source. Details: `verification/2026-11-12-87c0c876.md`.
+
+Gates before PR: build check PASS; 18 tests PASS; canonical and curated artifact validators PASS (11 pages, 370 sourced rows after scope flag). Checks cover local links and source-link presence, not live availability of all external URLs. No private data collected. S-1 done; S-2 now claimed by this session.
