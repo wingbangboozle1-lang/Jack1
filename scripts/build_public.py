@@ -177,9 +177,12 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     open_gates = sum(1 for q in gates if q["status"] in ("open", "blocked"))
     partial_gates = sum(1 for q in gates if q["status"] == "partial")
     answered_gates = sum(1 for q in gates if q["status"] in ("answered", "derived"))
+    judgment_gates = sum(1 for q in gates if q["status"] == "analysis")
+    if open_gates + partial_gates + answered_gates + judgment_gates != len(gates):
+        raise ValueError("Decision-gate summary does not account for every question status")
     gate_summary = (
         f"{open_gates} need the property's own documents; {partial_gates} are partly answered; "
-        f"{answered_gates} are answered from official sources."
+        f"{answered_gates} are answered from official sources; {judgment_gates} are judgment."
     )
     score = signal_scorecard(data)
     area, tenant = score["by_group"]["Area economy"], score["by_group"]["Tenant system"]
