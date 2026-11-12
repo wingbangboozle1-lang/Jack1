@@ -1,0 +1,669 @@
+{
+  "meta": {
+    "date": "2026-11-12",
+    "session": "dcb5495c",
+    "title": "Decision timeline and monitoring triggers, 2026–2035",
+    "scope": "Supplement to data/verified-2026-11-10.json. Adds dated official milestones, statutory clocks, issuer lease statements, monitoring triggers, flags, and one audit entry. Does not change any value in the shared dataset.",
+    "read_at": "2026-11-12, between about 16:30 and 16:50 UTC"
+  },
+  "sources": {
+    "tl_sec_debt": {
+      "title": "Jack in the Box Q3 FY2026 Form 10-Q, Indebtedness note (XBRL R14): note balances, Anticipated Repayment Dates, scheduled principal by fiscal year",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "SEC filing XBRL note",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm",
+      "accessed": "2026-11-12"
+    },
+    "tl_sec_10k_item2": {
+      "title": "Jack in the Box Inc. FY2025 Form 10-K, Item 2 Properties (property-interest table and lease-terms paragraph)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "official issuer filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "accessed": "2026-11-12"
+    },
+    "tl_sec_edgar_10k": {
+      "title": "EDGAR filing index, Jack in the Box Inc., Form 10-K filing dates (2016–2025)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "official filing index",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=807882&type=10-K&dateb=&owner=include&count=10",
+      "accessed": "2026-11-12"
+    },
+    "tl_sec_edgar_8k": {
+      "title": "EDGAR filing index, Jack in the Box Inc., Form 8-K filings (latest listed: filed 2026-09-21)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "kind": "official filing index",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=807882&type=8-K&dateb=&owner=include&count=10",
+      "accessed": "2026-11-12"
+    },
+    "tl_dir_2027": {
+      "title": "News Release 2026-66 (August 13, 2026): California minimum wage $17.40 per hour on January 1, 2027",
+      "publisher": "California Department of Industrial Relations",
+      "kind": "official state labor notice",
+      "url": "https://www.dir.ca.gov/DIRNews/2026/2026-66.html",
+      "accessed": "2026-11-12"
+    },
+    "tl_dir_fastfood": {
+      "title": "Fast Food Minimum Wage Frequently Asked Questions (page footer dated September 2024)",
+      "publisher": "California Department of Industrial Relations",
+      "kind": "official labor rule",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "accessed": "2026-11-12"
+    },
+    "tl_la_wage": {
+      "title": "Office of Wage Standards announcements: 2026 Minimum Wage, $18.42 effective July 1, 2026; rate reset each July 1 on CPI-W",
+      "publisher": "Los Angeles Office of Wage Standards",
+      "kind": "official labor rule",
+      "url": "https://wagesla.lacity.gov/",
+      "accessed": "2026-11-12"
+    },
+    "tl_ula": {
+      "title": "Real Property Transfer Tax and Measure ULA FAQ",
+      "publisher": "Los Angeles Office of Finance",
+      "kind": "official tax guidance",
+      "url": "https://finance.lacity.gov/faq/measure-ula",
+      "accessed": "2026-11-12"
+    },
+    "tl_scag": {
+      "title": "Connect SoCal: Connect SoCal 2050 in development; draft planned for fall 2027",
+      "publisher": "Southern California Association of Governments",
+      "kind": "official planning",
+      "url": "https://scag.ca.gov/connect-socal",
+      "accessed": "2026-11-12"
+    },
+    "tl_cdi_052": {
+      "title": "Press release 052-2025 (July 24, 2025): wildfire catastrophe model review; high-value FAIR Plan commercial policy effective July 26, 2025, 'would expire in 2028'",
+      "publisher": "California Department of Insurance",
+      "kind": "official regulatory press release",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release052-2025.cfm",
+      "accessed": "2026-11-12"
+    },
+    "tl_cdi_028": {
+      "title": "Press release 028-2025 (March 28, 2025): FAIR Plan commercial limits $20 million per building, $100 million per location",
+      "publisher": "California Department of Insurance",
+      "kind": "official regulatory press release",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release028-2025.cfm",
+      "accessed": "2026-11-12"
+    },
+    "tl_dof_p2a": {
+      "title": "Report P-2A: Total Population Projections, California Counties, 2020–2070 (Baseline 2024; Vintage 2026 release, updated 2026-03-13)",
+      "publisher": "California Department of Finance",
+      "kind": "official projection",
+      "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/projections/P2A_County_Total.xlsx",
+      "accessed": "2026-11-12"
+    },
+    "tl_irs_8824": {
+      "title": "2026 Instructions for Form 8824, Like-Kind Exchanges (PDF)",
+      "publisher": "Internal Revenue Service",
+      "kind": "official tax guidance",
+      "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf",
+      "accessed": "2026-11-12"
+    },
+    "tl_irs_8824_html": {
+      "title": "Instructions for Form 8824 (2025), HTML edition",
+      "publisher": "Internal Revenue Service",
+      "kind": "official tax guidance",
+      "url": "https://www.irs.gov/instructions/i8824",
+      "accessed": "2026-11-12"
+    },
+    "tl_prop13": {
+      "title": "Proposition 13 overview",
+      "publisher": "Los Angeles County Assessor",
+      "kind": "official tax guidance",
+      "url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
+      "accessed": "2026-11-12"
+    },
+    "tl_treasury": {
+      "title": "Daily Treasury Par Yield Curve Rates, November 2026 (latest row at this reading: 11/10/2026)",
+      "publisher": "U.S. Department of the Treasury",
+      "kind": "official market data",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "accessed": "2026-11-12"
+    },
+    "tl_usgs": {
+      "title": "What is the probability that an earthquake will occur in the Los Angeles Area?",
+      "publisher": "U.S. Geological Survey",
+      "kind": "official hazard science",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "accessed": "2026-11-12"
+    },
+    "tl_metro": {
+      "title": "Metro D Line Subway Extension project page (Section 1 opened May 8, 2026)",
+      "publisher": "Los Angeles County Metropolitan Transportation Authority",
+      "kind": "official transit project status",
+      "url": "https://www.metro.net/projects/westside/",
+      "accessed": "2026-11-12"
+    },
+    "tl_repo_pulls": {
+      "title": "Jack1 repository: open pull requests",
+      "publisher": "GitHub repository",
+      "kind": "repository provenance",
+      "url": "https://github.com/wingbangboozle1-lang/Jack1/pulls",
+      "accessed": "2026-11-12"
+    },
+    "tl_repo_ledger": {
+      "title": "Jack1 repository: verification ledger for the 2026-11-12 timeline pass (session dcb5495c)",
+      "publisher": "GitHub repository",
+      "kind": "repository provenance",
+      "url": "https://github.com/wingbangboozle1-lang/Jack1/blob/main/verification/2026-11-12-dcb5495c.md",
+      "accessed": "2026-11-12"
+    }
+  },
+  "milestones": [
+    {
+      "id": "tl_now_treasury",
+      "when": "2026-11-10",
+      "sort": "2026-11-10",
+      "milestone": "Latest published Treasury curve",
+      "value": "2Y 4.73% · 5Y 4.81% · 10Y 4.98% · 20Y 5.39% · 30Y 5.35%",
+      "note": "Last row on the official November 2026 table at this reading (2026-11-12, about 16:45 UTC). No row for November 11 or 12 was published yet. November 2026 range for the 10-year so far: 4.84% (Nov 5) to 4.98% (Nov 10).",
+      "meaning": "Benchmark only. It is not a cap rate for this property and not the owner's discount rate.",
+      "status": "verified",
+      "sources": [
+        "tl_treasury"
+      ]
+    },
+    {
+      "id": "tl_fy2026_10k",
+      "when": null,
+      "sort": "2026-11-30",
+      "milestone": "Tenant's FY2026 annual report (Form 10-K)",
+      "value": null,
+      "note": "Filing date is blank because the report is not on EDGAR at this reading. What the index does show: the ten most recent annual reports (2016–2025) were each filed between November 18 and November 30; the latest periodic report is the Q3 FY2026 Form 10-Q filed 2026-08-12; the latest Form 8-K was filed 2026-09-21.",
+      "meaning": "Every tenant figure on this site is as of July 5, 2026. The annual report will restate debt, lease, unit-count and California-concentration figures; refresh them before relying on the tenant-credit rows.",
+      "status": "unverified",
+      "sources": [
+        "tl_sec_edgar_10k",
+        "tl_sec_edgar_8k"
+      ]
+    },
+    {
+      "id": "tl_wage_2027",
+      "when": "2027-01-01",
+      "sort": "2027-01-01",
+      "milestone": "California general minimum wage step",
+      "value": "$17.40 per hour",
+      "note": "Announced in DIR News Release 2026-66 dated August 13, 2026; the Department of Finance certified the increase on July 31, 2026.",
+      "meaning": "Applies to a replacement tenant that is not a covered fast-food chain. Inside the City of Los Angeles the higher city rate governs.",
+      "status": "verified",
+      "sources": [
+        "tl_dir_2027"
+      ]
+    },
+    {
+      "id": "tl_ard_2027",
+      "when": "February 2027",
+      "sort": "2027-02-01",
+      "milestone": "Tenant debt: Anticipated Repayment Date, Series 2022-1 Class A-2-I Notes",
+      "value": "$23.356 million outstanding at July 5, 2026",
+      "note": "3.445% fixed rate. The issuer paid $479.9 million of this class in the June 2026 refinancing; the balance was $511.500 million at September 28, 2025. 1.6% of total debt of $1,491.984 million (derived).",
+      "meaning": "Small relative to the 2029–2032 dates below, but it is the first repayment date and the first test of whether the issuer keeps refinancing ahead of schedule.",
+      "status": "verified",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "tl_la_wage_2027",
+      "when": "2027-07-01",
+      "sort": "2027-07-01",
+      "milestone": "Los Angeles city minimum wage annual reset",
+      "value": null,
+      "note": "The 2027 rate is blank because it is not published. The official page states the new rate is effective July 1 of each year and is based on the CPI-W for the Los Angeles metropolitan area; the current rate is $18.42 effective July 1, 2026.",
+      "meaning": "Recurs every July 1 through the lease window. Raises operating cost for any city tenant whose wage floor is the city rate.",
+      "status": "unverified",
+      "sources": [
+        "tl_la_wage"
+      ]
+    },
+    {
+      "id": "tl_scag_2050",
+      "when": "Fall 2027",
+      "sort": "2027-10-01",
+      "milestone": "Draft Connect SoCal 2050 regional plan and growth forecast",
+      "value": "Draft release planned for fall 2027",
+      "note": "SCAG states the plan is updated every four years and that Connect SoCal 2050 will include forecasts of the future distribution of population, households, employment, land use and housing needs.",
+      "meaning": "Replaces the 2024 SCAG forecast used on the Projections page. It may narrow or widen the present disagreement with the State's declining population path.",
+      "status": "verified",
+      "sources": [
+        "tl_scag"
+      ]
+    },
+    {
+      "id": "tl_fair_2028",
+      "when": "2028",
+      "sort": "2028-06-30",
+      "milestone": "FAIR Plan high-value commercial program sunset",
+      "value": "Program 'would expire in 2028'",
+      "note": "Month not stated on the official page. The program took effect July 26, 2025 with limits of $20 million per building and $100 million per location.",
+      "meaning": "The insurer of last resort for commercial property is described as temporary. Insurance availability after 2028 cannot be assumed for a hold that runs into the 2030s.",
+      "status": "verified",
+      "sources": [
+        "tl_cdi_052",
+        "tl_cdi_028"
+      ]
+    },
+    {
+      "id": "tl_ard_2029",
+      "when": "August 2029",
+      "sort": "2029-08-01",
+      "milestone": "Tenant debt: Anticipated Repayment Date, Series 2019-1 Class A-2-III Notes",
+      "value": "$426.375 million outstanding at July 5, 2026",
+      "note": "4.970% fixed rate. The issuer's own schedule shows $432.250 million of principal in fiscal 2029. If notes are not repaid by the Anticipated Repayment Date, additional interest accrues under the indenture.",
+      "meaning": "First large refinancing test, falling before the earliest year of the reported lease-expiry window. The refinancing outcome will be public before a 2030 expiry.",
+      "status": "verified",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "tl_window_open",
+      "when": null,
+      "sort": "2030-01-01",
+      "milestone": "Reported lease-expiry window opens (2030)",
+      "value": null,
+      "note": "The exact expiry date, renewal options, and notice deadlines are blank: they exist only in the executed lease, which has not been reviewed. '2030–2035' is the owner's reported range, not a verified date.",
+      "meaning": "This is the one date that fixes every deadline on this page. Until it is read from the lease, the timeline can show what surrounds the window but not the decision deadline itself.",
+      "status": "unverified",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    },
+    {
+      "id": "tl_dof_2030",
+      "when": "2030",
+      "sort": "2030-07-01",
+      "milestone": "State projection: Los Angeles County population, 2030",
+      "value": "9,727,305",
+      "note": "−0.86% from the 2026 projection of 9,811,358 (derived). Projection, not a count.",
+      "meaning": "County-level direction only. It cannot be assigned to a trade area or a parcel.",
+      "status": "verified",
+      "sources": [
+        "tl_dof_p2a"
+      ]
+    },
+    {
+      "id": "tl_ard_2031",
+      "when": "May 2031",
+      "sort": "2031-05-01",
+      "milestone": "Tenant debt: Anticipated Repayment Date, Series 2026-1 Class A-2 Notes",
+      "value": "$500.000 million outstanding at July 5, 2026",
+      "note": "7.624% fixed rate, issued June 23, 2026; final legal maturity May 2056. Issuance costs of the variable funding notes (up to $150.0 million) are also amortized through May 2031.",
+      "meaning": "Falls inside the reported expiry window. This is the issuer's most recent and most expensive class of notes.",
+      "status": "verified",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "tl_ard_2032",
+      "when": "February 2032",
+      "sort": "2032-02-01",
+      "milestone": "Tenant debt: Anticipated Repayment Date, Series 2022-1 Class A-2-II Notes",
+      "value": "$503.250 million outstanding at July 5, 2026",
+      "note": "4.136% fixed rate. Together the August 2029, May 2031 and February 2032 dates cover $1,429.625 million, or 95.8% of total debt (derived).",
+      "meaning": "Falls inside the reported expiry window. A renewal signed for a term beyond 2032 depends on all three refinancings succeeding.",
+      "status": "verified",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "tl_dof_2035",
+      "when": "2035",
+      "sort": "2035-07-01",
+      "milestone": "State projection: Los Angeles County population, 2035",
+      "value": "9,708,647",
+      "note": "−1.05% from the 2026 projection of 9,811,358 (derived). Projection, not a count.",
+      "meaning": "The State's path is a slow decline across the whole lease window, not a collapse and not growth.",
+      "status": "verified",
+      "sources": [
+        "tl_dof_p2a"
+      ]
+    },
+    {
+      "id": "tl_window_close",
+      "when": null,
+      "sort": "2035-12-31",
+      "milestone": "Reported lease-expiry window closes (2035)",
+      "value": null,
+      "note": "Blank for the same reason as the 2030 row: the executed lease has not been reviewed.",
+      "meaning": "A five-year uncertainty in the expiry date changes which of the tenant's refinancing dates fall before the decision and which fall after it.",
+      "status": "unverified",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    }
+  ],
+  "principal_schedule": {
+    "rows": [
+      {
+        "period": "Remainder of fiscal 2026",
+        "thousands": 6030
+      },
+      {
+        "period": "Fiscal 2027",
+        "thousands": 73728
+      },
+      {
+        "period": "Fiscal 2028",
+        "thousands": 35500
+      },
+      {
+        "period": "Fiscal 2029",
+        "thousands": 432250
+      },
+      {
+        "period": "Fiscal 2030",
+        "thousands": 16000
+      },
+      {
+        "period": "Thereafter",
+        "thousands": 928476
+      }
+    ],
+    "total_thousands": 1491984,
+    "sources": [
+      "tl_sec_debt"
+    ],
+    "note": "Issuer's schedule assumes repayment by the Anticipated Repayment Dates, a leverage ratio above 5.0x throughout, and a senior leverage ratio above 5.25x but below 6.25x through February 2028."
+  },
+  "clocks": [
+    {
+      "id": "tl_clock_1031_id",
+      "clock": "Like-kind exchange: identify replacement property",
+      "starts": "The day the property given up is transferred",
+      "length": "45 days",
+      "note": "From the 2026 Instructions for Form 8824. Eligibility, non-like-kind proceeds, intermediary rules and California treatment need a tax adviser.",
+      "status": "verified",
+      "sources": [
+        "tl_irs_8824"
+      ]
+    },
+    {
+      "id": "tl_clock_1031_rcv",
+      "clock": "Like-kind exchange: receive replacement property",
+      "starts": "The day the property given up is transferred",
+      "length": "180 days, or the due date of the tax return including extensions, whichever is earlier",
+      "note": "If the timing fails, the gain may be taxable in the year of transfer. Deferral is not forgiveness.",
+      "status": "verified",
+      "sources": [
+        "tl_irs_8824"
+      ]
+    },
+    {
+      "id": "tl_clock_ula",
+      "clock": "Los Angeles city transfer tax and Measure ULA",
+      "starts": "Applies to documents that convey real property within the City of Los Angeles",
+      "length": "Base 0.45%; plus 4% when greater than $5,400,000 but less than $10,900,000; plus 5.5% at $10,900,000 or greater",
+      "note": "Thresholds shown apply to transactions closing after June 30, 2026 and are adjusted annually on the chained CPI; the date and amount of the next adjustment are not stated on the page. The base tax is computed on value net of liens that remain; the ULA tax is computed on gross value, including any assumed loan.",
+      "status": "verified",
+      "sources": [
+        "tl_ula"
+      ]
+    },
+    {
+      "id": "tl_clock_prop13",
+      "clock": "Property-tax reassessment",
+      "starts": "A change in ownership or new construction",
+      "length": "Otherwise assessed value cannot rise more than 2% from one year to the next",
+      "note": "General levy is 1% of assessed value, plus voter-approved indebtedness and direct assessment taxes. A sale resets the buyer's assessed value; who bears the tax under this lease is unverified.",
+      "status": "verified",
+      "sources": [
+        "tl_prop13"
+      ]
+    },
+    {
+      "id": "tl_clock_fastfood",
+      "clock": "Covered fast-food minimum wage",
+      "starts": "Fast Food Council action",
+      "length": "May rise each year by 3.5% or the CPI increase, whichever is smaller",
+      "note": "$20.00 per hour since April 1, 2024 is the only rate on the official page, whose footer is dated September 2024. Whether a later increase has been adopted is not shown there and is left blank.",
+      "status": "verified",
+      "sources": [
+        "tl_dir_fastfood"
+      ]
+    }
+  ],
+  "lease_facts": [
+    {
+      "id": "tl_lease_interest",
+      "finding": "Jack in the Box restaurant buildings by property interest (2,136 total)",
+      "value": "164 company-owned on company-owned land · 565 company-owned on leased land · 1,020 company-leased on leased land · 387 franchise directly owned or directly leased",
+      "note": "As reported in the FY2025 annual report, Item 2. The four categories sum to 2,136.",
+      "status": "verified",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    },
+    {
+      "id": "tl_lease_ground",
+      "finding": "Sites where the company owns the building on land leased from someone else",
+      "value": "565 of 2,136 (26.5%)",
+      "note": "Derived: 565 ÷ 2,136. At these sites the land lease and the building ownership are separate. Whether this property is a land lease or a land-and-building lease is unverified.",
+      "status": "derived",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    },
+    {
+      "id": "tl_lease_franchise_direct",
+      "finding": "Sites where a franchisee owns or leases directly",
+      "value": "387 of 2,136 (18.1%)",
+      "note": "Derived: 387 ÷ 2,136. At these sites the franchisee, not the listed company, owns the building or holds the lease. Which case applies to this property is unverified.",
+      "status": "derived",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "id": "tl_mon_refi",
+      "indicator": "Tenant refinancing ahead of each Anticipated Repayment Date",
+      "latest": "At July 5, 2026: leverage ratio above 5.0x, so scheduled principal payments continue; senior leverage ratio above 5.25x, so $23.3 million of cash-sweep prepayments sit in current debt",
+      "watch": "A filing that shows a note class still outstanding within about a year of its repayment date, or additional interest starting to accrue after one.",
+      "moves": "Strengthens the case to sell or to shorten any renewal; weakens a long passive hold.",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "tl_mon_filing",
+      "indicator": "Next tenant filings",
+      "latest": "Latest annual report filed 2025-11-19; latest quarterly report filed 2026-08-12; latest current report filed 2026-09-21",
+      "watch": "The FY2026 annual report: restaurant closures, California unit count, lease liabilities, and any change to the renewal statement shown on the Property and tenant page.",
+      "moves": "Updates every tenant row; can move the recommendation in either direction.",
+      "sources": [
+        "tl_sec_edgar_10k",
+        "tl_sec_edgar_8k"
+      ]
+    },
+    {
+      "id": "tl_mon_rates",
+      "indicator": "Treasury benchmark",
+      "latest": "10-year 4.98% on 2026-11-10",
+      "watch": "Sustained moves in the 5- to 10-year part of the curve between now and a sale or refinancing date.",
+      "moves": "Higher yields generally lower what a buyer will pay for a fixed rent stream and raise the tenant's refinancing cost; lower yields do the reverse.",
+      "sources": [
+        "tl_treasury"
+      ]
+    },
+    {
+      "id": "tl_mon_wage",
+      "indicator": "Wage floors",
+      "latest": "State $17.40 from 2027-01-01; City of Los Angeles $18.42 since 2026-07-01, reset each July 1; covered fast food $20.00 on the official page",
+      "watch": "Each July 1 city reset and any Fast Food Council increase.",
+      "moves": "Raises operating cost at the site; relevant to the tenant's willingness to renew and to replacement-tenant demand.",
+      "sources": [
+        "tl_dir_2027",
+        "tl_la_wage",
+        "tl_dir_fastfood"
+      ]
+    },
+    {
+      "id": "tl_mon_insurance",
+      "indicator": "Commercial property insurance backstop",
+      "latest": "FAIR Plan high-value commercial program in force since 2025-07-26; stated to expire in 2028",
+      "watch": "Any Department of Insurance notice extending, replacing or ending the program, and the property's own renewal quotes.",
+      "moves": "Loss of the backstop raises hold risk and can reduce buyer demand.",
+      "sources": [
+        "tl_cdi_052"
+      ]
+    },
+    {
+      "id": "tl_mon_population",
+      "indicator": "Official growth forecasts",
+      "latest": "State P-2A: county 9,811,358 (2026) to 9,708,647 (2035). SCAG draft 2050 plan due fall 2027",
+      "watch": "The next State P-2A vintage and the SCAG draft forecast.",
+      "moves": "Context for long-run demand; not a parcel forecast.",
+      "sources": [
+        "tl_dof_p2a",
+        "tl_scag"
+      ]
+    },
+    {
+      "id": "tl_mon_quake",
+      "indicator": "Earthquake base rate",
+      "latest": "Los Angeles region, within 30 years: 60% for magnitude 6.7, 46% for magnitude 7, 31% for magnitude 7.5",
+      "watch": "The figure is a 30-year regional probability whose start date is not stated on the page; it is not converted to the 2030–2035 window here.",
+      "moves": "A reason to verify structure, insurance and reserves before a long hold; it does not by itself favour selling.",
+      "sources": [
+        "tl_usgs"
+      ]
+    },
+    {
+      "id": "tl_mon_transit",
+      "indicator": "Transit investment near the Wilshire corridor",
+      "latest": "D Line Section 1 opened 2026-05-08; Sections 2 and 3 under construction, with no opening date on the project page",
+      "watch": "Official opening dates for Sections 2 and 3.",
+      "moves": "Corridor context only; relevance depends on where the parcel is, which is unverified.",
+      "sources": [
+        "tl_metro"
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "id": "tl_phase_1",
+      "phase": "Now, before the tenant's next annual report",
+      "action": "Read the executed lease and fix the real expiry, option and notice dates. Identify whether the tenant is the listed company or a franchisee.",
+      "why": "Every later deadline depends on these dates, and 18.1% of sites are held directly by franchisees.",
+      "sources": [
+        "tl_sec_10k_item2",
+        "tl_sec_edgar_10k"
+      ]
+    },
+    {
+      "id": "tl_phase_2",
+      "phase": "2027 to mid-2029",
+      "action": "Obtain executable sale pricing and the tenant's renewal terms side by side. Re-read the wage, tax-threshold and insurance rows each July.",
+      "why": "This period ends with the tenant's first large repayment date (August 2029) and contains the stated 2028 end of the FAIR Plan commercial program.",
+      "sources": [
+        "tl_sec_debt",
+        "tl_cdi_052",
+        "tl_la_wage"
+      ]
+    },
+    {
+      "id": "tl_phase_3",
+      "phase": "August 2029 to the verified expiry date",
+      "action": "Decide with the August 2029 refinancing outcome in hand. If the decision is to sell, the exchange clocks of 45 and 180 days start at transfer, so replacement property must be lined up first.",
+      "why": "Two further repayment dates (May 2031, February 2032) fall inside the reported window; a renewal past 2032 relies on all of them.",
+      "sources": [
+        "tl_sec_debt",
+        "tl_irs_8824"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "flag_tl_lease_dates",
+      "item": "Timeline: exact lease expiry, option, and notice dates",
+      "reason": "The owner reports an expiry between 2030 and 2035. No executed lease has been reviewed, so the three window rows on the Timeline page are blank. Without these dates the page can show which official milestones surround the window, but not the decision deadline.",
+      "action": "Read the executed lease and amendments privately; record the dates in an internal workspace only. Do not publish them here.",
+      "sources": [
+        "tl_sec_10k_item2"
+      ]
+    },
+    {
+      "id": "flag_tl_fy2026_10k",
+      "item": "Timeline: tenant FY2026 Form 10-K not yet on EDGAR",
+      "reason": "At the 2026-11-12 reading the EDGAR index lists no annual report for the fiscal year ended September 2026. The ten prior annual reports were filed between November 18 and November 30 of each year. All tenant figures on this site remain as of July 5, 2026.",
+      "action": "Re-read the EDGAR index after the filing appears and refresh the tenant rows; do not assume a filing date.",
+      "sources": [
+        "tl_sec_edgar_10k",
+        "tl_sec_edgar_8k"
+      ]
+    },
+    {
+      "id": "flag_tl_ard_feb2027",
+      "item": "Timeline: February 2027 repayment date omitted from the 2029–2032 headline",
+      "reason": "The overview card and the tenant row describe 95.8% of debt as having repayment dates from August 2029 to February 2032. That is arithmetically correct, but the same official note also gives a February 2027 Anticipated Repayment Date for $23.356 million of Series 2022-1 Class A-2-I Notes, which the headline does not mention.",
+      "action": "No value is wrong. The Timeline page now lists all four dates. Consider adding the February 2027 date to the tenant row when the dataset owner next edits it.",
+      "sources": [
+        "tl_sec_debt"
+      ]
+    },
+    {
+      "id": "flag_tl_irs_editions",
+      "item": "Timeline: IRS Form 8824 instructions, HTML and PDF editions differ",
+      "reason": "At the 2026-11-12 reading the PDF is titled '2026 Instructions for Form 8824' while the HTML page is still titled 'Instructions for Form 8824 (2025)'. The 45-day and 180-day sentences were read from the 2026 PDF.",
+      "action": "Cite the PDF. Re-check the HTML edition before linking to it.",
+      "sources": [
+        "tl_irs_8824",
+        "tl_irs_8824_html"
+      ]
+    },
+    {
+      "id": "flag_tl_ula_reset",
+      "item": "Timeline: next Measure ULA threshold adjustment",
+      "reason": "The official FAQ says the thresholds are adjusted annually on the chained CPI and gives the values for transactions closing after June 30, 2026. It does not state the date or amount of the next adjustment. One answer on the same page still describes the thresholds in words as five million and ten million dollars, the original 2023 amounts, while the note and table on the page show the current figures.",
+      "action": "Leave the next thresholds blank; re-read the FAQ before modelling any sale that closes after June 30, 2027.",
+      "sources": [
+        "tl_ula"
+      ]
+    },
+    {
+      "id": "flag_tl_fastfood_vintage",
+      "item": "Timeline: fast-food wage page is dated September 2024",
+      "reason": "The official FAQ shows $20.00 per hour effective April 1, 2024 and says the Fast Food Council may raise it annually. The page footer is dated September 2024, so a later Council action, if any, would not appear on it.",
+      "action": "Treat $20.00 as the latest rate on the cited page, not as proof that no increase has been adopted. Check the Council's own notices before relying on it.",
+      "sources": [
+        "tl_dir_fastfood"
+      ]
+    },
+    {
+      "id": "flag_tl_stale_prs",
+      "item": "Repository: twelve open pull requests all conflict with main",
+      "reason": "Pull requests #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54 and #56 were opened between 2026-11-06 and 2026-11-10. On 2026-11-12 GitHub reports every one as not mergeable (conflicting), and each was between 66 and 230 commits behind main when read at about 16:47 UTC. Seven of them (#10, #14, #18, #21, #24, #27 and #11) are alternative builds or an obsolete workflow change. Two (#33 and #54) describe four county-level figures. Three of them reached the current dataset on 2026-11-12 through a separate official re-read (pull request #80); a county annual unemployment figure for 2025 did not, and has not been re-verified. Three (#47, #54, #56) carry verification reports that are not on main. The copies of the coordination board on the branches of #11 and #18 contain unresolved merge markers. Suggestion W-08 on the Suggestions review page proposes closing them.",
+      "action": "Owner decision: close them as superseded, or name any whose content should be re-verified and ported. This session did not merge, close, or edit any of them. Per-request findings are in the linked ledger.",
+      "sources": [
+        "tl_repo_pulls",
+        "tl_repo_ledger"
+      ]
+    },
+    {
+      "id": "flag_tl_parallel_claims",
+      "item": "Repository: overlapping claims by concurrent sessions on 2026-11-12",
+      "reason": "At least seven sessions worked on this repository on 2026-11-12, several starting within minutes of each other. At least three of them claimed the same shared files (the verified dataset, the page builder and the generated pages), which the coordination rules reserve for a single final integration session. Each session's claim was visible only on its own branch until merged, so the board on main could not prevent the overlap.",
+      "action": "This session kept its data in a separate file and added one navigation entry. Review the day's merges for duplicated or conflicting edits to shared rows.",
+      "sources": [
+        "tl_repo_ledger",
+        "tl_repo_pulls"
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "audit_dcb5495c_timeline",
+      "check": "Decision timeline and stale pull-request triage, 2026-11-12 (session dcb5495c)",
+      "result": "PASS. Eighteen official pages were read on 2026-11-12 from their exact URLs and every Timeline row was matched to what the page says: the SEC indebtedness note, FY2025 Form 10-K Item 2, two EDGAR indexes, Treasury daily curve, DIR News Release 2026-66, DIR fast-food FAQ, Los Angeles Office of Wage Standards, Measure ULA FAQ, SCAG Connect SoCal, two Department of Insurance releases, State P-2A workbook, IRS Form 8824 instructions (PDF and HTML), County Assessor Proposition 13, USGS earthquake FAQ, and the Metro D Line page.",
+      "detail": "No value in the shared dataset was changed. Values re-read today that already appear elsewhere on the site matched exactly: Treasury 11/10 curve, the four note balances and total debt of $1,491.984 million, 1,585 leased sites of 2,136, State population 2026–2035, 2040 and 2050, ULA thresholds and rates, the 2028 FAIR Plan sunset, the 45- and 180-day exchange periods, the 2% assessment cap, and the USGS 30-year probabilities. Derived figures were recomputed: scheduled principal sums to the stated total; 95.8% and 1.6% shares; −0.86% and −1.05% population changes; 26.5% and 18.1% site shares. The official Form 10-K page lists executive officers by name; no name was copied. Dates that no official page states are blank and flagged.",
+      "sources": [
+        "tl_repo_ledger",
+        "tl_sec_debt",
+        "tl_dof_p2a"
+      ]
+    }
+  ]
+}
