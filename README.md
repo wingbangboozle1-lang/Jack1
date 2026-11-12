@@ -19,8 +19,8 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `market.html` — geography, population, income, jobs, schools, drivers
 - `property.html` — blank asset fields, tenant/issuer context, taxes, gates
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
-- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths + blank-default local owner worksheet
-- `suggestions.html` — six review-only proposals, missing-evidence discovery routes, approval gates and trade-offs
+- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths, risk table by decision path + blank-default local owner worksheet
+- `suggestions.html` — review-only: six property/evidence proposals, ten site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
 - `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
@@ -85,3 +85,7 @@ comparison, permissible reuse, disaster resilience, and source-refresh controls.
 IRS Publication 544 contents, City Planning Zoning Search, and FEMA NRI guidance
 were freshly read for this addition; this is **not** a fresh re-verification of all
 historical economic observations. See `verification/2026-11-12-87c0c876.md`.
+
+A second 2026-11-12 pass (`verification/2026-11-12-1520648f.md`) re-read ten rolling/high-impact
+official sources (all matched, no value changed), added the site-improvement and discovery tables
+to `suggestions.html`, and added the risk-by-decision-path table to `decision.html`.

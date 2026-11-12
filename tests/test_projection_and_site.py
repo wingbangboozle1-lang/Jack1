@@ -89,7 +89,9 @@ class BuildAndValidationTests(unittest.TestCase):
         page = outputs["suggestions.html"]
         parser = validate_site.PageParser()
         parser.feed(page)
-        self.assertEqual(len(parser.rows), 6)
+        data = pm.load_data()
+        # Six original proposals (session 87c0c876) plus dataset-driven site and discovery rows (session 1520648f).
+        self.assertEqual(len(parser.rows), 6 + len(data["suggestions"]) + len(data["discovery"]))
         self.assertEqual(page.count("Proposed · not approved or implemented"), 6)
         self.assertIn("not verified property conclusions", page)
         self.assertNotIn("<form", page)
@@ -181,6 +183,25 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("Questions that must be answered before a decision", outputs["requirements.html"])
         self.assertIn("decision-questions", outputs["requirements.html"])
         self.assertIn("How to close the blanks without guessing", outputs["requirements.html"])
+
+    def test_suggestions_are_proposals_with_sources(self):
+        data = pm.load_data()
+        self.assertGreaterEqual(len(data["suggestions"]), 8)
+        self.assertEqual(len(data["decision_risks"]), len(data["decisions"]))
+        for coll in ("suggestions", "discovery", "decision_risks"):
+            for item in data[coll]:
+                self.assertTrue(item["sources"], item["id"])
+                for sid in item["sources"]:
+                    self.assertIn(sid, data["sources"], (item["id"], sid))
+        for item in data["suggestions"]:
+            self.assertIn("A.", item["options"], item["id"])
+        outputs = build_public.render_all()
+        page = outputs["suggestions.html"]
+        self.assertIn("Only chosen items will be built", page)
+        self.assertEqual(page.count("Proposed — not implemented"), len(data["suggestions"]) + len(data["discovery"]))
+        self.assertIn("decision-risks", outputs["decision.html"])
+        self.assertIn("suggestions.html", outputs["index.html"])
+        self.assertIn("suggestions.html", outputs["404.html"])
 
     def test_public_safety_rows_share_one_vintage(self):
         data = pm.load_data()

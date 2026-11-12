@@ -6,15 +6,15 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md",
-    "reverified": "2026-11-11"
+    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md",
+    "reverified": "2026-11-12"
   },
   "sources": {
     "census_city": {
       "title": "QuickFacts: Los Angeles city, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "census_county": {
@@ -28,7 +28,7 @@
       "title": "Los Angeles Area Economic Summary, updated November 4, 2026",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "bls_laus": {
@@ -49,7 +49,7 @@
       "title": "Los Angeles County preliminary labor force and industry employment, September 2026",
       "publisher": "California Employment Development Department",
       "url": "https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "fred_county_gdp": {
@@ -70,7 +70,7 @@
       "title": "Daily Treasury Par Yield Curve Rates, November 2026",
       "publisher": "U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official market data"
     },
     "dof_landing": {
@@ -147,7 +147,7 @@
       "title": "Measure ULA FAQ",
       "publisher": "Los Angeles Office of Finance",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official tax guidance"
     },
     "ftb_capgains": {
@@ -175,7 +175,7 @@
       "title": "Fast Food Minimum Wage FAQ",
       "publisher": "California Department of Industrial Relations",
       "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official labor rule"
     },
     "dir_minwage": {
@@ -238,7 +238,7 @@
       "title": "Jack in the Box Inc. Q3 FY2026 earnings release, Exhibit 99.1",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official issuer filing"
     },
     "fema_nri": {
@@ -393,7 +393,7 @@
       "publisher": "Port of Los Angeles",
       "kind": "Official port TEU table",
       "url": "https://portoflosangeles.org/business/statistics/container-statistics",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "metro_dline": {
       "title": "D Line Subway Extension Project (Section 1 open; Sections 2–3 under construction)",
@@ -414,14 +414,14 @@
       "publisher": "Los Angeles Police Department",
       "kind": "Official crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "lapd_central": {
       "title": "LAPD COMPSTAT Operations-Central Bureau Profile (rolling PDF; week ending Nov 7, 2026 at 2026-11-11 access)",
       "publisher": "Los Angeles Police Department",
       "kind": "Official bureau crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/ocbprof.pdf",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "sec_10q_debt": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 7 (Indebtedness / ARDs / Leverage)",
@@ -2656,6 +2656,17 @@
         "repo",
         "live"
       ]
+    },
+    {
+      "id": "req_suggestions",
+      "requirement": "Suggestions section for review before any change",
+      "coverage": "Suggestions page holds three review tables: six property and evidence proposals (S01–S06), ten site-improvement proposals with options (W-01–W-10), and a ranked nine-step plan for discovering missing information (D-01–D-09). Nothing is implemented until the owner chooses.",
+      "evidence": "suggestions.html; decision register on requirements.html.",
+      "status": "covered",
+      "sources": [
+        "repo",
+        "live"
+      ]
     }
   ],
   "flags": [
@@ -3020,6 +3031,16 @@
         "lapd_central",
         "lapd"
       ]
+    },
+    {
+      "id": "flag_edd_text_inconsistency",
+      "item": "EDD September 2026 release: education and health services year-over-year narrative",
+      "reason": "The official release text gives the same figure, 37,500 jobs, for both the whole education and health services sector and for health care and social assistance alone, and then adds 6,300 private educational services jobs and an 83 percent share. These statements cannot all hold at once. The dashboard does not publish any of these three figures; its EDD rows (4.8% rate, 4,539,800 payrolls, −4,100 monthly, +20,300 annual, restaurants +7,300) were matched on 2026-11-12.",
+      "action": "Do not cite the EDD narrative figure for education and health services. Use the release's industry table or the BLS summary row (+49.1 thousand, metro area) and name the geography.",
+      "sources": [
+        "edd_la",
+        "bls_summary"
+      ]
     }
   ],
   "audit": [
@@ -3304,6 +3325,25 @@
         "scag_tr",
         "prop13"
       ]
+    },
+    {
+      "id": "audit_1520648f_n2",
+      "check": "2026-11-12 re-read of rolling and high-impact sources; requirement gap check (session 1520648f)",
+      "result": "PASS, no value changed. Ten official sources re-read from their published URLs on 2026-11-12: Treasury daily par yield curve (latest row still November 10, 2026), BLS Los Angeles summary, Census city QuickFacts, SEC Q3 FY2026 earnings release, LAPD citywide and Operations-Central Bureau profiles (week ending November 7, 2026), LA Office of Finance Measure ULA FAQ, Port of Los Angeles container statistics, EDD Los Angeles County release, DIR fast-food minimum wage FAQ. Every published value drawn from these pages matched; derived values reproduced (Central Bureau share 28.0%; transfer-tax stack 0.56/4.56/6.06%).",
+      "detail": "The remaining sources were not re-read on 2026-11-12 and keep their earlier access dates. New irregularity logged: EDD narrative inconsistency (flag_edd_text_inconsistency). Gap check against the owner's requirement list found no risk table organised by decision path and no site-improvement suggestions with selectable options. A concurrent session (87c0c876) published suggestions.html with six property and evidence proposals while this pass was under way; its page and rows are kept unchanged, and this pass adds two further tables to it (ten site-improvement suggestions W-01–W-10 with options, and a nine-step discovery sequence D-01–D-09) plus a risk-by-decision-path table on decision.html. One overlapping draft suggestion (source-refresh scheduling) was dropped in favour of the existing S06. All suggestions are proposals only; none is implemented. Official pages read today show staff contact details and officials' names; none was copied. Ledger: verification/2026-11-12-1520648f.md.",
+      "sources": [
+        "treasury",
+        "bls_summary",
+        "census_city",
+        "sec_release",
+        "lapd_city",
+        "lapd_central",
+        "ula",
+        "port_containers",
+        "edd_la",
+        "dir_fastfood",
+        "repo"
+      ]
     }
   ],
   "questions": [
@@ -3571,6 +3611,343 @@
         "usgs_shakeout",
         "cdi_fairplan_2025",
         "sec_10q_debt"
+      ]
+    }
+  ],
+  "decision_risks": [
+    {
+      "id": "dr_sell",
+      "path": "Sell before expiry",
+      "ordinary": "Pricing risk as remaining term shortens; buyer financing cost; transfer taxes and income tax reduce net proceeds; reinvestment risk on the cash received.",
+      "severe": "Removes this property's exposure to tenant failure, earthquake, fire, and insurance-market shocks from the sale date onward. A capital-market freeze before closing can delay or reprice the sale.",
+      "reversible": "Irreversible once closed. Future rent growth and land-value upside are given up.",
+      "control": "Verify net proceeds after transfer tax and income tax before listing; obtain more than one executable offer; decide the reinvestment plan first.",
+      "sources": [
+        "ula",
+        "lavote_dtt",
+        "irs_544",
+        "ftb_capgains",
+        "treasury"
+      ]
+    },
+    {
+      "id": "dr_renew",
+      "path": "Renew / extend with tenant",
+      "ordinary": "Locks rent and term with one tenant; possible landlord concessions or capital obligations; rent may be set below or above market without evidence.",
+      "severe": "Keeps full exposure to tenant or brand failure, and to earthquake, fire, flood, and insurance-availability shocks, for the extended term.",
+      "reversible": "Partly reversible: a longer verified term can be sold later, but the extension terms themselves bind the owner.",
+      "control": "Confirm the legal obligor and guaranty; negotiate from verified market rent; keep sale pricing in hand as the alternative; verify insurance and reserves.",
+      "sources": [
+        "sec_release",
+        "sec_10q_debt",
+        "sec_10q_ar",
+        "fema_county_query",
+        "cdi_fairplan_2025"
+      ]
+    },
+    {
+      "id": "dr_hold",
+      "path": "Hold without extension",
+      "ordinary": "Value erodes as the lease term runs down; fewer buyers and lenders; vacancy and downtime at expiry if the tenant leaves.",
+      "severe": "Highest combined exposure: a tenant shock or natural disaster close to expiry leaves no lease term, no buyer pool, and possibly no income.",
+      "reversible": "Reversible only while time remains; each year without action narrows the sale and renewal options.",
+      "control": "Do not hold by default. Set a dated trigger for choosing sale or renewal and fund a re-tenanting reserve.",
+      "sources": [
+        "sec_release",
+        "sec_10k",
+        "fema_county_query",
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "dr_user",
+      "path": "Sell to user / operator / redeveloper",
+      "ordinary": "Smaller buyer pool; zoning, entitlement, and environmental diligence can lengthen or break the sale; the existing lease may block delivery.",
+      "severe": "A planning-rule change or a discovered contamination issue can remove the land-value premium entirely.",
+      "reversible": "Irreversible once closed; conditional contracts can fail late.",
+      "control": "Confirm zoning and environmental status for the verified parcel before pricing; limit contingency periods; keep the investor-sale route open.",
+      "sources": [
+        "zimas",
+        "dtla_release",
+        "epa_brownfields",
+        "ula"
+      ]
+    },
+    {
+      "id": "dr_1031",
+      "path": "Sale plus 1031 exchange / diversification",
+      "ordinary": "45-day identification and 180-day completion limits; any cash or non-like-kind property received is taxable; replacement property may be lower quality or over-priced under time pressure.",
+      "severe": "A failed exchange makes the gain taxable; a market shock during the exchange window can strand proceeds or force a poor purchase.",
+      "reversible": "Irreversible; the deferred tax carries over into the replacement property.",
+      "control": "Engage a qualified intermediary and tax advisor before listing; pre-screen replacement property; model the fully taxable outcome as the fallback.",
+      "sources": [
+        "irs_8824",
+        "irs_544",
+        "ftb_capgains"
+      ]
+    },
+    {
+      "id": "dr_refi",
+      "path": "Refinance / recapitalize",
+      "ordinary": "Adds interest cost and a loan maturity; lenders size loans on remaining lease term, so proceeds shrink as expiry nears.",
+      "severe": "Debt turns a vacancy or disaster from lost income into possible default; the loan may mature when the tenant's own refinancing dates fall due.",
+      "reversible": "Reversible only by repayment, often with prepayment cost.",
+      "control": "Borrow only against verified income and term; avoid a maturity inside the lease-expiry window; keep cash reserves for debt service.",
+      "sources": [
+        "treasury",
+        "sec_10q_debt",
+        "sec_release"
+      ]
+    },
+    {
+      "id": "dr_retenant",
+      "path": "Prepare re-tenanting / alternative use",
+      "ordinary": "Downtime without rent while the owner pays taxes, insurance, and upkeep; leasing commissions, tenant improvements, and unknown market rent.",
+      "severe": "A weak local economy or a disaster during vacancy extends downtime indefinitely; a purpose-built restaurant building may need costly conversion.",
+      "reversible": "Reversible; ownership and future options are kept, at a carrying cost.",
+      "control": "Budget downtime and capital before expiry; confirm permitted uses for the verified parcel; collect broker evidence on replacement tenants early.",
+      "sources": [
+        "sec_release",
+        "zimas",
+        "prop13",
+        "edd_la"
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "W-01",
+      "area": "Market evidence",
+      "title": "Replace city and county proxies with trade-area figures",
+      "problem": "Population, income, jobs, and schools are published at city, county, or district level. None of them describes the customers within reach of the property.",
+      "options": "A. After the parcel is confirmed, pull census-tract and 1/3/5-mile figures and keep them internal only. B. Publish them rounded into bands so the location cannot be narrowed down. C. Keep the current proxies.",
+      "recommended": "A, then B only if the owner approves each published band.",
+      "tradeoff": "Biggest gain in decision quality. Publishing small-area figures can reveal the location, so privacy review is required before anything goes on the site.",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "W-02",
+      "area": "Decision tool",
+      "title": "Extend the private worksheet to a sell-versus-hold comparison",
+      "problem": "The worksheet computes transfer tax from a price the owner types in. It does not yet compare after-tax sale proceeds with the value of continuing to hold.",
+      "options": "A. Add owner-entered rent, growth, discount rate, downtime, and tax fields that stay in browser memory, with outputs blank until every input is filled. B. Provide a downloadable blank spreadsheet instead. C. Leave as is.",
+      "recommended": "A.",
+      "tradeoff": "Turns the page into a working decision aid. No defaults may be supplied, and nothing may be stored or transmitted.",
+      "sources": [
+        "ula",
+        "irs_544",
+        "treasury"
+      ]
+    },
+    {
+      "id": "W-03",
+      "area": "Decision tracking",
+      "title": "Decision-gate progress board",
+      "problem": "The question register shows which questions are open but not when each was closed or what changed.",
+      "options": "A. Add a 'closed on' date and a yes/no evidence-held marker per question, with no private values. B. Track progress privately outside the site. C. Leave as is.",
+      "recommended": "A.",
+      "tradeoff": "Shows at a glance how close the decision is. Only status markers may be published, never document contents.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "W-04",
+      "area": "Hazard screening",
+      "title": "Parcel-level hazard screening",
+      "problem": "Hazard rows are county-wide. Flood zone, fault zone, liquefaction zone, and fire hazard zone at the property itself are unknown.",
+      "options": "A. Run the official state and federal map lookups for the confirmed parcel and keep results internal. B. Publish only a yes/no per hazard zone. C. Keep county context only.",
+      "recommended": "A, then B with owner approval.",
+      "tradeoff": "Directly affects insurance, lending, and price. Zone results combined with other details could help identify the parcel.",
+      "sources": [
+        "cgs_alquist_priolo",
+        "cgs_shma",
+        "calfire_fhsz",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "W-05",
+      "area": "Tenant monitoring",
+      "title": "Tenant filing watchlist",
+      "problem": "Tenant figures come from the latest quarterly release. New annual, quarterly, and current reports will supersede them.",
+      "options": "A. Add a table of filings read and the date of the next check, updated on each new filing. B. Rely on periodic full re-verification. C. Leave as is.",
+      "recommended": "A.",
+      "tradeoff": "Keeps the credit view current through the lease-expiry window. Small ongoing effort.",
+      "sources": [
+        "sec_release",
+        "sec_10q",
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "W-06",
+      "area": "Audit trail",
+      "title": "Keep dated copies of rolling source documents",
+      "problem": "The LAPD weekly profiles are replaced at the same address each week, so an earlier figure cannot be re-checked later.",
+      "options": "A. Record a file hash and capture date for each rolling document in the verification log. B. Store the captured files in the repository, outside the published site. C. Leave as is.",
+      "recommended": "A.",
+      "tradeoff": "Makes past figures auditable. Captured official documents can contain officials' names, so copies must stay out of the published site.",
+      "sources": [
+        "lapd_city",
+        "lapd_central"
+      ]
+    },
+    {
+      "id": "W-07",
+      "area": "Publishing",
+      "title": "Publish only the curated pages through a build workflow",
+      "problem": "The site is published directly from the main branch with an exclusion list. A missed exclusion could expose an internal file.",
+      "options": "A. A repository administrator switches GitHub Pages to workflow-built publishing so only the curated artifact is deployed. B. Keep the exclusion list and its automated check. C. Move internal records to a separate private repository.",
+      "recommended": "A; consider C for stronger privacy.",
+      "tradeoff": "Stronger privacy boundary. Requires an administrator action that the automation token cannot perform.",
+      "sources": [
+        "repo",
+        "live"
+      ]
+    },
+    {
+      "id": "W-08",
+      "area": "Repository hygiene",
+      "title": "Resolve the twelve stale open pull requests and legacy pages",
+      "problem": "Twelve older pull requests remain open and unmerged, and superseded page sets remain in the repository. They can confuse reviewers about which version is current.",
+      "options": "A. Close each stale pull request with a note pointing to the current site, keeping branches. B. Re-verify and merge selected ones. C. Leave open.",
+      "recommended": "A.",
+      "tradeoff": "Less confusion and lower risk of an unverified merge. Closing is reversible; nothing is deleted.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "W-09",
+      "area": "Privacy",
+      "title": "Review repository visibility",
+      "problem": "The repository and site are public. No personal information is published, but internal coordination and verification records are publicly readable in the repository.",
+      "options": "A. Owner reviews whether the repository should be private and confirms hosting requirements with the platform before changing. B. Keep public and keep the automated privacy scan. C. Split internal records into a private repository.",
+      "recommended": "Owner decision; A or C if any property document will ever be stored alongside.",
+      "tradeoff": "Reduces exposure. May change how the site is hosted; requirements were not verified in this pass.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "W-10",
+      "area": "Usability",
+      "title": "One-page printable summary for advisors",
+      "problem": "Advisors (broker, tax, legal, insurance) need the recommendation, open questions, and document list in one sheet.",
+      "options": "A. Add a print-styled summary page generated from the same dataset. B. Export a document by hand when needed. C. Leave as is.",
+      "recommended": "A.",
+      "tradeoff": "Faster advisor conversations. Must stay free of property and personal identifiers.",
+      "sources": [
+        "repo"
+      ]
+    }
+  ],
+  "discovery": [
+    {
+      "id": "D-01",
+      "priority": "1",
+      "missing": "Property identity: address, parcel, title, vesting",
+      "method": "Order a title commitment and survey; match the legal description to the county parcel record and the city zoning lookup.",
+      "closes": "Property identity; unlocks every parcel-keyed check.",
+      "sources": [
+        "assessor",
+        "zimas"
+      ]
+    },
+    {
+      "id": "D-02",
+      "priority": "2",
+      "missing": "Lease terms: expiry date, options, notice dates, rent steps, landlord duties",
+      "method": "Read the executed lease and every amendment; request a tenant estoppel; calendar all dates.",
+      "closes": "Lease dates, rent, and owner-borne costs.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "D-03",
+      "priority": "3",
+      "missing": "Who owes the rent: corporate tenant, franchisee, or guarantor",
+      "method": "Take the tenant's legal name and any guaranty from the lease; request operator financial statements; compare with issuer filings.",
+      "closes": "Obligor and tenant credit.",
+      "sources": [
+        "sec_10k",
+        "sec_10q_contingencies"
+      ]
+    },
+    {
+      "id": "D-04",
+      "priority": "4",
+      "missing": "Executable value and market rent",
+      "method": "Commission an appraisal and at least two broker opinions; request extension terms from the tenant in parallel.",
+      "closes": "Value, rent, and the sell-versus-renew comparison.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "D-05",
+      "priority": "5",
+      "missing": "After-tax proceeds: basis, depreciation, entity, rates, exchange eligibility",
+      "method": "Tax advisor workup using purchase records and depreciation schedules; apply the verified transfer-tax tiers.",
+      "closes": "After-tax net proceeds and exchange feasibility.",
+      "sources": [
+        "irs_544",
+        "irs_8824",
+        "ftb_capgains",
+        "ula",
+        "lavote_dtt"
+      ]
+    },
+    {
+      "id": "D-06",
+      "priority": "6",
+      "missing": "Insurance: current coverage, cost, loss history, availability",
+      "method": "Collect the policy and loss runs; obtain two broker indications including the state last-resort plan as a fallback.",
+      "closes": "Insurability and hazard cost.",
+      "sources": [
+        "cdi_fairplan_2025",
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "D-07",
+      "priority": "7",
+      "missing": "Parcel hazards and condition",
+      "method": "Run official fault, liquefaction, fire-zone, and flood lookups for the confirmed parcel; commission condition, seismic, and environmental reports.",
+      "closes": "Hazard, seismic, and capital-reserve questions.",
+      "sources": [
+        "cgs_alquist_priolo",
+        "cgs_shma",
+        "calfire_fhsz",
+        "fema_nri",
+        "epa_brownfields"
+      ]
+    },
+    {
+      "id": "D-08",
+      "priority": "8",
+      "missing": "Trade-area demand: nearby population, income, competition, safety",
+      "method": "Pull small-area census figures and the local police reporting-area series for the confirmed location; keep results internal.",
+      "closes": "Population, consumer, schools, and safety questions at the trade-area level.",
+      "sources": [
+        "census_city",
+        "lapd_central",
+        "cde_directory"
+      ]
+    },
+    {
+      "id": "D-09",
+      "priority": "9",
+      "missing": "Debt: payoff, prepayment terms, lender consent rights",
+      "method": "Request a payoff statement and loan documents from the lender, if any debt exists.",
+      "closes": "Financing and net-proceeds questions.",
+      "sources": [
+        "treasury"
       ]
     }
   ]

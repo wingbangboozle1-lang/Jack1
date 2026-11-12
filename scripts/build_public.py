@@ -50,6 +50,7 @@ def badge(status: str) -> str:
         "analysis": ("badge-limited", "Analysis / judgment"),
         "answered": ("badge-verified", "Answered — verified"),
         "open": ("badge-review", "Open — information missing"),
+        "proposed": ("badge-limited", "Proposed — not implemented"),
     }
     cls, label = labels.get(status, ("badge-limited", status.replace("_", " ").title()))
     return f'<span class="badge {cls}">{e(label)}</span>'
@@ -306,6 +307,7 @@ def build_decision(data: dict[str, Any]) -> str:
     rows = []
     for d in data["decisions"]:
         rows.append([f'<strong>{e(d["path"])}</strong>', e(d["when"]), e(d["tradeoffs"]), e(d["required"]), f'<strong>{e(d["verdict"])}</strong>', source_links(data, d["sources"])])
+    risk_rows = [[f'<strong>{e(r["path"])}</strong><span class="row-note">Analysis / judgment</span>', e(r["ordinary"]), e(r["severe"]), e(r["reversible"]), e(r["control"]), source_links(data, r["sources"])] for r in data["decision_risks"]]
     balance = [
         ["Wealth preservation", "Verify after-tax net proceeds, insurance, capital reserves, and downside before chasing upside.", source_links(data, ["irs_544", "cdi_claims", "fema_county_query"])],
         ["Growth", "Keep renewal/re-tenanting and alternative-use upside only where evidence supports executable value.", source_links(data, ["sec_release", "zimas", "scag_appendix"])],
@@ -315,6 +317,8 @@ def build_decision(data: dict[str, Any]) -> str:
 <section class="hero"><p class="eyebrow">Provisional recommendation</p><h2>Dual-track now; choose only after evidence.</h2><p>{e(data['meta']['recommendation'])}</p></section>
 <div class="section-heading"><div><p class="eyebrow">Path comparison</p><h2>Sell, renew, hold, and related alternatives</h2></div></div>
 {table("decision-paths", "Decision paths, conditions, tradeoffs, and required evidence.", ["Path", "When it can win", "Tradeoffs", "Required evidence", "Provisional view", "Official source"], rows)}
+<div class="section-heading"><div><p class="eyebrow">Risk by path</p><h2 id="risk-by-path">Risks attached to each possible decision</h2><p>Qualitative judgment built from the cited official context. No probabilities or dollar losses are assigned because the property inputs are blank. Full register: <a href="risks.html">Risks</a>.</p></div></div>
+{table("decision-risks", "Ordinary risks, severe-event exposure, reversibility, and controls for each decision path.", ["Path", "Business-as-usual risks", "Rare / black-swan exposure", "Reversibility", "Risk controls", "Official source"], risk_rows)}
 <div class="section-heading"><div><p class="eyebrow">Objective balance</p><h2>Preservation, growth, and risk control</h2></div></div>
 {table("objective-balance", "How the recommendation balances the stated objectives.", ["Objective", "Application", "Official source"], balance)}
 <div class="section-heading"><div><p class="eyebrow">Execution sequence</p><h2>Next steps that do not require guessing</h2></div></div>
@@ -389,6 +393,21 @@ def build_suggestions(data: dict[str, Any]) -> str:
 <p class="small muted">Official links support the evidence route or general context only, not the priority ranking or a property-specific outcome. S01 cites this project's own policy rather than an outside privacy certification. No approval is stored by this static public site.</p>
 """ + table("suggestions-review", "Proposed improvements and evidence-acquisition actions awaiting review.",
                 ["ID / suggested order", "Suggestion", "Missing information and discovery route", "Approval gate and trade-off", "Review state", "Source / context"], rows)
+    site_rows = [[
+        f'<strong>{e(x["id"])} · {e(x["title"])}</strong><span class="row-note">{e(x["area"])}</span>',
+        e(x["problem"]), e(x["options"]), f'<strong>{e(x["recommended"])}</strong>', e(x["tradeoff"]),
+        badge("proposed"), source_links(data, x["sources"]),
+    ] for x in data["suggestions"]]
+    discovery_rows = [[
+        f'<strong>{e(x["id"])} · {e(x["missing"])}</strong><span class="row-note">Priority {e(x["priority"])}</span>',
+        e(x["method"]), e(x["closes"]), badge("proposed"), source_links(data, x["sources"]),
+    ] for x in data["discovery"]]
+    body += f"""
+<div class="section-heading"><div><p class="eyebrow">Choose before changing</p><h2 id="site-suggestions">Suggestions to improve the site for decision making</h2><p>Each row gives the problem, the options, a suggested option, and the trade-off including any privacy effect. To choose, name the row and option (for example “W-02 option A” or “W-08 leave as is”). Only chosen items will be built.</p></div></div>
+{table("site-suggestions-table", "Proposed site improvements awaiting an owner choice.", ["Suggestion", "Problem it addresses", "Options", "Suggested option", "Trade-off / privacy effect", "Status", "Official source"], site_rows)}
+<div class="section-heading"><div><p class="eyebrow">Missing information</p><h2 id="discovery-suggestions">Suggested order for discovering what is missing</h2><p>Each step names the missing information, how to obtain it, and which open questions on the <a href="requirements.html">Requirements</a> page it closes. Source links point to the official lookup or reference for that step; they do not supply the missing value.</p></div></div>
+{table("discovery-table", "Proposed discovery sequence for missing information.", ["Missing information", "Suggested method", "What it closes", "Status", "Official source"], discovery_rows)}
+"""
     return layout(data, "suggestions.html", "Suggestions awaiting review", "A separate review queue: discover missing evidence, compare options, and approve a path before changing anything.", body)
 
 
@@ -457,7 +476,7 @@ def build_sources(data: dict[str, Any]) -> str:
     for sid, src in data["sources"].items():
         rows.append([f'<strong>{e(src["title"])}</strong><span class="row-note">{e(sid)}</span>', e(src["publisher"]), e(src["kind"]), e(src["accessed"]), f'<a class="source-link" href="{e(src["url"])}" target="_blank" rel="noopener noreferrer">Official source</a>'])
     body = f"""
-<div class="callout"><h3>Source policy</h3><p>Only official publishers, official issuer filings, official hosted data services, or repository provenance are used. Nonofficial historical citations are preserved in Git but excluded from this curated artifact. Access dates record prior verification passes, not a promise that every source was re-read in the latest site update. The 2026-11-12 suggestions addition freshly checked only IRS Publication 544 contents, City Planning Zoning Search, and FEMA NRI guidance.</p></div>
+<div class="callout"><h3>Source policy</h3><p>Only official publishers, official issuer filings, official hosted data services, or repository provenance are used. Nonofficial historical citations are preserved in Git but excluded from this curated artifact. Access dates record prior verification passes, not a promise that every source was re-read in the latest site update. The 2026-11-12 suggestions addition freshly checked only IRS Publication 544 contents, City Planning Zoning Search, and FEMA NRI guidance; a second 2026-11-12 pass re-read the ten sources dated 2026-11-12 below.</p></div>
 {table("source-registry", "Official source registry.", ["Source", "Publisher", "Kind", "Accessed", "Link"], rows)}
 """
     return layout(data, "sources.html", "Official source registry", "Every published table row links back to one of these official sources or repository provenance records.", body)
@@ -502,7 +521,7 @@ def build_404(data: dict[str, Any]) -> str:
     <header class="page-intro">
       <p class="eyebrow">404 · Curated dashboard</p>
       <h1>That path is not part of the published decision brief</h1>
-      <p class="lead">The public brief is published as ten curated pages ({e(data['meta']['date'])}). Internal coordination records, verification logs, and historical archives are intentionally excluded from publication.</p>
+      <p class="lead">The public brief is published as {len(PAGES)} curated pages ({e(data['meta']['date'])}). Internal coordination records, verification logs, and historical archives are intentionally excluded from publication.</p>
     </header>
     <section class="hero">
       <p class="eyebrow">Navigate</p>
