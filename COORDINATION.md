@@ -1997,3 +1997,11 @@ without discarding another session's work, then logged here.
 Gates on the merged tree: `build_public.py --check` PASS (13 files); unit tests 29/29 OK; validator PASS (11 pages, 506 sourced rows); artifact build + validator PASS; privacy patterns 0 hits. N-4 (PR → `main`, merge, Pages confirmation) in progress.
 
 4. Third move of `origin/main` (PR #80, session 1e8970d6: board record and its own ledger addendum only) made PR #81 conflict on the board. Merged again as a union: their record first, this section after it, both verbatim. No dataset, script or page conflict; gates re-run and unchanged.
+
+### N-4 record — session arena/83da931a-jack1 (2026-11-12 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| N-4 integration and publication | done | PR #81 → `main` (merge commit `292f4d9`, 2026-11-12 16:51 UTC); follow-up PR for this record, the ledger's closing sections and a one-line card fix | CI `validate` passed on the PR. GitHub Pages build for `292f4d9` reported `built` at 16:52 UTC. Live pages opened after the build: Overview shows the "Area versus tenant" card and snapshot row; Decision shows "Best course for the property, and for the owner"; Projections carries the signal scorecard. Live URL: https://wingbangboozle1-lang.github.io/Jack1/ | (1) The first live read of Projections and Decision, about one minute after the build, still returned the previous version; a second read returned the new one (CDN cache). (2) Overview "Decision gates" card: its three counts summed to 23 beside "25 questions" because questions with status `analysis` were not counted (the same gap existed before this session at 21 of 23). Fixed in the follow-up: a fourth count is shown and the builder now fails if the counts do not add up. (3) Ledger Part E of this session was written before PRs #69–#80 merged and described the suggestions section as missing; rewritten to credit the sessions that delivered it, and a Part F added stating exactly what was published. |
+
+All tasks N-1 … N-4: **done**. This session holds no further claim.
