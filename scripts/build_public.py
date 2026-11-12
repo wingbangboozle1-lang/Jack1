@@ -19,13 +19,14 @@ from urllib.parse import urlparse
 from projection_model import build_projection_payload, load_data
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
     ("property.html", "Property & tenant"),
     ("projections.html", "Projections"),
     ("decision.html", "Decision paths"),
+    ("suggestions.html", "Suggestions review"),
     ("risks.html", "Risks"),
     ("requirements.html", "Requirements"),
     ("flagged.html", "Flagged for review"),
@@ -186,6 +187,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("property.html", "Property & tenant", "Blank asset fields, issuer credit, taxes, lease gates."),
             ("projections.html", "Projections", "Official DOF/SCAG paths, derived arithmetic, gated property model."),
             ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
+            ("suggestions.html", "Suggestions review", "Proposals, evidence gaps, approval gates; no automatic changes."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
             ("requirements.html", "Requirements", "Decision questions, discovery plan, coverage checklist."),
             ("flagged.html", "Flagged for review", "Unconfirmed values and irregularities."),
@@ -357,6 +359,39 @@ def build_decision(data: dict[str, Any]) -> str:
     return layout(data, "decision.html", "Decision paths and balanced recommendation", "A conditional, wealth-preservation-first course among selling, renewing, holding, exchanging, refinancing, and re-tenanting.", body)
 
 
+def build_suggestions(data: dict[str, Any]) -> str:
+    # Recommendations are judgments, not official endorsements or verified asset facts.
+    proposals = [
+        ("S01 · First · Privacy boundary", "Keep all parcel and owner records in an access-controlled internal workspace; publish only anonymous summaries.",
+         "Which details can identify the owner or site? An authorized reviewer must inspect any future document before ingestion; do not upload it to this public repository.",
+         "Approve only after a privacy review of text, metadata and attachments. Risk: identifiers can remain in Git history even after removal from a page.", ["repo"]),
+        ("S02 · First · Evidence acquisition", "Commission a private lease abstract and reconcile it with the notice calendar before making a sale or renewal commitment.",
+         "Obtain the executed lease, amendments, options, guaranty and notices from an authorized custodian. Public issuer filings cannot prove this site's obligor, expiry or NNN obligations.",
+         "Require counsel to confirm exact dates, party obligations and casualty/termination clauses. Risk: missed rights or a renewal with unrecovered landlord costs.", ["sec_10q_leases"]),
+        ("S03 · Next · Exit versus renewal", "Prepare an after-tax sale comparison alongside a negotiated renewal case, without selecting a winner until verified inputs exist.",
+         "Obtain independent valuation and actual transaction costs, debt payoff, tax basis and renewal terms privately. IRS Publication 544 covers dispositions and adjusted basis; it does not supply this owner's basis or tax liability.",
+         "Require tax-adviser review and consistent cash-flow timing. Risk: choosing gross sale price over spendable proceeds, or treating exchange deferral as guaranteed.", ["irs_544", "irs_8824"]),
+        ("S04 · Next · Location and reuse", "Verify the actual planning jurisdiction and permissible alternative use before assigning redevelopment or re-tenanting value.",
+         "An authorized analyst should privately identify the parcel. For City of Los Angeles parcels, ZIMAS provides zoning, overlays, planning applications and permit history; central Los Angeles alone does not establish a parcel or jurisdiction.",
+         "Require planning and permit confirmation plus costed feasibility. Risk: assuming the Downtown plan, drive-through rights or a replacement use applies to this site.", ["zimas"]),
+        ("S05 · Next · Disaster resilience", "Obtain parcel-specific hazard and insurance review; stress-test vacancy, uninsured repair and interrupted rent together.",
+         "FEMA NRI measures baseline risk at tract/county level, not this building's insured loss. Obtain site inspection, policy wording, exclusions, deductibles and binding quotes privately.",
+         "Require an affordable reserve plan and explicit loss-tolerance review. Risk: correlated catastrophe, insurer withdrawal or double-counting regional scores as loss probabilities.", ["fema_nri", "calfire_fhsz"]),
+        ("S06 · Later · Dashboard quality", "Consider a per-row refresh queue that distinguishes new official releases from already reviewed vintages.",
+         "Compare official publication periods and retain release/version history. Display proposed corrections for review before altering any economic input or model output.",
+         "Require source/value/unit/geography reconciliation and regression tests. Risk: rolling source pages silently changing while older numbers remain labeled current.", ["bls_summary", "dof_landing"]),
+    ]
+    rows = [[e(key), e(proposal), e(evidence), e(gate), badge("analysis") + '<span class="row-note">Proposed · not approved or implemented</span>', source_links(data, sources)]
+            for key, proposal, evidence, gate, sources in proposals]
+    body = """
+<div class="callout warning"><h3>Review before implementation</h3><p>These are analyst proposals, not verified property conclusions or official recommendations. Creating this review page does not approve any listed action. No sale, lease negotiation, paid engagement, data collection or automatic source update has been initiated.</p></div>
+<p>Start with the privacy and lease-evidence gates, then compare sale and renewal in parallel. Unknown private inputs remain blank in the <a href="requirements.html">decision-question register</a>; unresolved evidence is on <a href="flagged.html">Flagged for Review</a>. No manual input is required to read this site. Private evidence cannot be discovered reliably from the reported area alone.</p>
+<p class="small muted">Official links support the evidence route or general context only, not the priority ranking or a property-specific outcome. S01 cites this project's own policy rather than an outside privacy certification. No approval is stored by this static public site.</p>
+""" + table("suggestions-review", "Proposed improvements and evidence-acquisition actions awaiting review.",
+                ["ID / suggested order", "Suggestion", "Missing information and discovery route", "Approval gate and trade-off", "Review state", "Source / context"], rows)
+    return layout(data, "suggestions.html", "Suggestions awaiting review", "A separate review queue: discover missing evidence, compare options, and approve a path before changing anything.", body)
+
+
 def build_risks(data: dict[str, Any]) -> str:
     rows = []
     for r in data["risks"]:
@@ -409,6 +444,7 @@ def build_requirements(data: dict[str, Any]) -> str:
 
 def build_flagged(data: dict[str, Any]) -> str:
     rows = [[f'<strong>{e(f["item"])}</strong>', e(f["reason"]), e(f["action"]), badge("unverified"), source_links(data, f["sources"])] for f in data["flags"]]
+    rows.append(["2026-11-12 targeted verification scope", "Suggestions were added without a fresh exhaustive recheck of inherited economic observations. FEMA now describes NRI v1.20; historical ArcGIS figures were not reconciled to that release in this pass.", "Review release/version compatibility before treating inherited hazard figures as latest. See Suggestions review for evidence-acquisition proposals.", badge("partial"), source_links(data, ["fema_nri"])])
     body = f"""
 <div class="callout warning"><h3>Flagged does not mean hidden</h3><p>Unconfirmed values are blank in the dashboard and listed here. Official lookup links show where evidence must come from; they do not verify a missing value.</p></div>
 {table("flagged-review", "Open items, irregularities, and required evidence.", ["Item", "Why open / irregular", "Required action", "Status", "Official source"], rows)}
@@ -421,7 +457,7 @@ def build_sources(data: dict[str, Any]) -> str:
     for sid, src in data["sources"].items():
         rows.append([f'<strong>{e(src["title"])}</strong><span class="row-note">{e(sid)}</span>', e(src["publisher"]), e(src["kind"]), e(src["accessed"]), f'<a class="source-link" href="{e(src["url"])}" target="_blank" rel="noopener noreferrer">Official source</a>'])
     body = f"""
-<div class="callout"><h3>Source policy</h3><p>Only official publishers, official issuer filings, official hosted data services, or repository provenance are used. Nonofficial historical citations are preserved in Git but excluded from this curated artifact. Access date is the date this session read the source.</p></div>
+<div class="callout"><h3>Source policy</h3><p>Only official publishers, official issuer filings, official hosted data services, or repository provenance are used. Nonofficial historical citations are preserved in Git but excluded from this curated artifact. Access dates record prior verification passes, not a promise that every source was re-read in the latest site update. The 2026-11-12 suggestions addition freshly checked only IRS Publication 544 contents, City Planning Zoning Search, and FEMA NRI guidance.</p></div>
 {table("source-registry", "Official source registry.", ["Source", "Publisher", "Kind", "Accessed", "Link"], rows)}
 """
     return layout(data, "sources.html", "Official source registry", "Every published table row links back to one of these official sources or repository provenance records.", body)
@@ -491,6 +527,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "property.html": build_property(data),
         "projections.html": build_projections(data, payload),
         "decision.html": build_decision(data),
+        "suggestions.html": build_suggestions(data),
         "risks.html": build_risks(data),
         "requirements.html": build_requirements(data),
         "flagged.html": build_flagged(data),

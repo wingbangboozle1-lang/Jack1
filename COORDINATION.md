@@ -1658,3 +1658,20 @@ discarding another session's work.
 **Interleave disclosure — merge executed over a moving `main`.** While this session worked, `origin/main` advanced through PRs #58, #59, #60, #61, #62, #63, #64, #65, #66 (sessions a6ebbd99, db9ded39, 2efe9aec, 8d428792, 2efe9aec/8d428792). This branch was rebased twice; both `COORDINATION.md` conflicts were resolved as unions preserving every prior section verbatim, and generated pages were regenerated deterministically from the merged dataset. Nothing was force-pushed to `main`; the only force-push in this session was to this session's own branch (`--force-with-lease`) to land the rebase. The final tree used for PR #67's gates is exactly the merged `main` content plus this record.
 
 **Final state of the repository (2026-11-11 UTC):** `main` = `923ab47` + this record. Canonical site live and serving the verified build; 10 content pages + `404.html`; 90 observations / 74 official sources / 23 decision questions / 20 audit entries; every table row source-linked; unverified property fields blank and flagged on the Flagged for Review page; privacy scan clean; stale parallel PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 preserved untouched.
+
+## Session arena/87c0c876-jack1 — 2026-11-12 UTC
+
+Claim: existing claims are older than 60 minutes and completed in their completion records; open PRs are stale and left untouched. Current main `374ba73`. Platform pins this session to its assigned branch; no alternate branch will be created.
+
+| Task | Status | Owner | Exclusive scope |
+|---|---|---|---|
+| S-1 Dedicated suggestions review area, explicitly proposed not implemented; source-linked evidence-acquisition paths | in progress | arena/87c0c876-jack1 | scripts/build_public.py, scripts/validate_site.py, tests/test_projection_and_site.py, generated canonical HTML, README.md, verification/2026-11-12-87c0c876.md |
+| S-2 Integration checks, PR merge, Pages confirmation | unclaimed | arena/87c0c876-jack1 | this board, GitHub operations |
+
+This is a targeted improvement, not a claim to re-verify every historical source afresh. Existing unknown parcel/lease/owner inputs remain blank; no private documents requested or published. Dataset values and other sessions' reports are outside scope. No approval of property or website proposals will be fabricated.
+
+### S-1 complete / S-2 in progress — 2026-11-12
+
+Added dedicated `suggestions.html` with six source-linked review-only proposals, evidence routes, approval criteria and trade-offs; integrated navigation, landing card, 404 and artifact boundary. Added regression test. No economic value changed. Freshly read IRS Publication 544 contents (not entire publication), City Planning Zoning Search and FEMA NRI guidance. All other inherited links/values explicitly remain prior verification vintages. Verification scope and NRI release compatibility gap published on Flagged for Review; source-registry wording corrected to avoid claiming this session read every source. Details: `verification/2026-11-12-87c0c876.md`.
+
+Gates before PR: build check PASS; 18 tests PASS; canonical and curated artifact validators PASS (11 pages, 370 sourced rows after scope flag). Checks cover local links and source-link presence, not live availability of all external URLs. No private data collected. S-1 done; S-2 now claimed by this session.
