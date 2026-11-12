@@ -9,10 +9,21 @@
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
 | B-1 | Session claim + coordination protocol | done | arena/b3925b6c-jack1 | this board (append-only) |
-| B-2 | 2026-11-12 high-volatility re-read; add October CPI; blank/flag unpublished 12-month; suggestions W-11/W-12 | in progress | arena/b3925b6c-jack1 | `verification/2026-11-12-b3925b6c.md` (new); `data/verified-2026-11-10.json` (additions only); regenerated canonical pages; README / EXECUTIVE_SUMMARY CPI line |
-| B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | unclaimed (reserved) | arena/b3925b6c-jack1 | this board, `gh` operations |
+| B-2 | 2026-11-12 high-volatility re-read; add October CPI; blank/flag unpublished 12-month; suggestions W-11/W-12 | done | arena/b3925b6c-jack1 | `verification/2026-11-12-b3925b6c.md` (new); `data/verified-2026-11-10.json` (additions only); regenerated canonical pages; README / EXECUTIVE_SUMMARY CPI line |
+| B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | done | arena/b3925b6c-jack1 | this board, `gh` operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited or deleted. Shared table data changes only by adding verified CPI/schedule rows. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+### Session completion record — B-2 / B-3 (session arena/b3925b6c-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#77](https://github.com/wingbangboozle1-lang/Jack1/pull/77) `arena/b3925b6c-jack1` → `main` → **merged 2026-11-12T16:45:09Z**, merge commit `b5d6b8ef9894ddde89697ecf7e1d37ab35570693` |
+| Interleave | `origin/main` advanced through PRs #71–#76 while this session worked. Rebases unioned concurrent suggestions (PRs #69–#73) and SEC Item 2 work (PRs #74–#75). Nothing from those sessions was discarded. Stale open PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 untouched. |
+| Gates | 20 unit tests OK; `validate_site.py` PASS (11 pages, 414 sourced rows on this branch); `build_public.py --check` PASS |
+| Pages | PR #77 Pages run 43262075293 was cancelled in favor of a later `main` build. Latest `pages-build-deployment` run **43262115341** (commit `04a5ddb`, which contains #77) = success; Pages API latest build `built` at `04a5ddb` with error `null`. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/market.html` serves October 2026 LA CPI-U **+0.6% m/m** and **12-month change not published**, linked to BLS 26-1670-SAN. `suggestions.html` serves W-11 and W-12. |
+| Tasks | B-1, B-2, B-3 **done**. October 12-month CPI remains blank/flagged until the December 10, 2026 BLS release. |
 
 ---
 
