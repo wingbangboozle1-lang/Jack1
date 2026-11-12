@@ -167,6 +167,25 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("decision-questions", outputs["requirements.html"])
         self.assertIn("How to close the blanks without guessing", outputs["requirements.html"])
 
+    def test_suggestions_are_proposals_with_sources(self):
+        data = pm.load_data()
+        self.assertGreaterEqual(len(data["suggestions"]), 8)
+        self.assertEqual(len(data["decision_risks"]), len(data["decisions"]))
+        for coll in ("suggestions", "discovery", "decision_risks"):
+            for item in data[coll]:
+                self.assertTrue(item["sources"], item["id"])
+                for sid in item["sources"]:
+                    self.assertIn(sid, data["sources"], (item["id"], sid))
+        for item in data["suggestions"]:
+            self.assertIn("A.", item["options"], item["id"])
+        outputs = build_public.render_all()
+        page = outputs["suggestions.html"]
+        self.assertIn("Nothing on this page has been implemented", page)
+        self.assertEqual(page.count("Proposed — not implemented"), len(data["suggestions"]) + len(data["discovery"]))
+        self.assertIn("decision-risks", outputs["decision.html"])
+        self.assertIn("suggestions.html", outputs["index.html"])
+        self.assertIn("suggestions.html", outputs["404.html"])
+
     def test_public_safety_rows_share_one_vintage(self):
         data = pm.load_data()
         obs = {o["id"]: o for o in data["observations"]}

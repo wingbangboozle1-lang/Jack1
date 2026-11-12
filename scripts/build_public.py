@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 from projection_model import build_projection_payload, load_data
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "risks.html", "requirements.html", "suggestions.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
@@ -28,6 +28,7 @@ NAV = [
     ("decision.html", "Decision paths"),
     ("risks.html", "Risks"),
     ("requirements.html", "Requirements"),
+    ("suggestions.html", "Suggestions"),
     ("flagged.html", "Flagged for review"),
     ("sources.html", "Sources"),
     ("audit.html", "Audit"),
@@ -49,6 +50,7 @@ def badge(status: str) -> str:
         "analysis": ("badge-limited", "Analysis / judgment"),
         "answered": ("badge-verified", "Answered — verified"),
         "open": ("badge-review", "Open — information missing"),
+        "proposed": ("badge-limited", "Proposed — not implemented"),
     }
     cls, label = labels.get(status, ("badge-limited", status.replace("_", " ").title()))
     return f'<span class="badge {cls}">{e(label)}</span>'
@@ -188,6 +190,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
             ("requirements.html", "Requirements", "Decision questions, discovery plan, coverage checklist."),
+            ("suggestions.html", "Suggestions", "Proposed improvements and discovery steps to review before any change."),
             ("flagged.html", "Flagged for review", "Unconfirmed values and irregularities."),
             ("sources.html", "Sources", "Official registry with access dates."),
             ("audit.html", "Audit", "Verification, privacy, deployment, and method."),
@@ -304,6 +307,7 @@ def build_decision(data: dict[str, Any]) -> str:
     rows = []
     for d in data["decisions"]:
         rows.append([f'<strong>{e(d["path"])}</strong>', e(d["when"]), e(d["tradeoffs"]), e(d["required"]), f'<strong>{e(d["verdict"])}</strong>', source_links(data, d["sources"])])
+    risk_rows = [[f'<strong>{e(r["path"])}</strong><span class="row-note">Analysis / judgment</span>', e(r["ordinary"]), e(r["severe"]), e(r["reversible"]), e(r["control"]), source_links(data, r["sources"])] for r in data["decision_risks"]]
     balance = [
         ["Wealth preservation", "Verify after-tax net proceeds, insurance, capital reserves, and downside before chasing upside.", source_links(data, ["irs_544", "cdi_claims", "fema_county_query"])],
         ["Growth", "Keep renewal/re-tenanting and alternative-use upside only where evidence supports executable value.", source_links(data, ["sec_release", "zimas", "scag_appendix"])],
@@ -313,6 +317,8 @@ def build_decision(data: dict[str, Any]) -> str:
 <section class="hero"><p class="eyebrow">Provisional recommendation</p><h2>Dual-track now; choose only after evidence.</h2><p>{e(data['meta']['recommendation'])}</p></section>
 <div class="section-heading"><div><p class="eyebrow">Path comparison</p><h2>Sell, renew, hold, and related alternatives</h2></div></div>
 {table("decision-paths", "Decision paths, conditions, tradeoffs, and required evidence.", ["Path", "When it can win", "Tradeoffs", "Required evidence", "Provisional view", "Official source"], rows)}
+<div class="section-heading"><div><p class="eyebrow">Risk by path</p><h2 id="risk-by-path">Risks attached to each possible decision</h2><p>Qualitative judgment built from the cited official context. No probabilities or dollar losses are assigned because the property inputs are blank. Full register: <a href="risks.html">Risks</a>.</p></div></div>
+{table("decision-risks", "Ordinary risks, severe-event exposure, reversibility, and controls for each decision path.", ["Path", "Business-as-usual risks", "Rare / black-swan exposure", "Reversibility", "Risk controls", "Official source"], risk_rows)}
 <div class="section-heading"><div><p class="eyebrow">Objective balance</p><h2>Preservation, growth, and risk control</h2></div></div>
 {table("objective-balance", "How the recommendation balances the stated objectives.", ["Objective", "Application", "Official source"], balance)}
 <div class="section-heading"><div><p class="eyebrow">Execution sequence</p><h2>Next steps that do not require guessing</h2></div></div>
@@ -407,6 +413,26 @@ def build_requirements(data: dict[str, Any]) -> str:
     return layout(data, "requirements.html", "Requirements coverage and decision questions", "The questions that must be answered before a sell-or-renew decision, with verified answers, explicit blanks, and how to obtain what is missing.", body)
 
 
+def build_suggestions(data: dict[str, Any]) -> str:
+    rows = [[
+        f'<strong>{e(x["id"])} · {e(x["title"])}</strong><span class="row-note">{e(x["area"])}</span>',
+        e(x["problem"]), e(x["options"]), f'<strong>{e(x["recommended"])}</strong>', e(x["tradeoff"]),
+        badge("proposed"), source_links(data, x["sources"]),
+    ] for x in data["suggestions"]]
+    drows = [[
+        f'<strong>{e(x["id"])} · {e(x["missing"])}</strong><span class="row-note">Priority {e(x["priority"])}</span>',
+        e(x["method"]), e(x["closes"]), badge("proposed"), source_links(data, x["sources"]),
+    ] for x in data["discovery"]]
+    body = f"""
+<div class="callout warning"><h3>Nothing on this page has been implemented</h3><p>Each row is a proposal. Review the options, pick one per row (for example “S-03 option A” or “S-09 leave as is”), and only the chosen items will be built. Suggestions that involve the property's location or documents are marked for internal handling so that no personal or identifying information reaches the published site.</p></div>
+<div class="section-heading"><div><p class="eyebrow">Review before changing</p><h2 id="site-suggestions">Suggestions to improve the site for decision making</h2><p>Problem, options, the suggested option, and the trade-off including any privacy effect.</p></div></div>
+{table("site-suggestions-table", "Proposed site improvements awaiting an owner choice.", ["Suggestion", "Problem it addresses", "Options", "Suggested option", "Trade-off / privacy effect", "Status", "Official source"], rows)}
+<div class="section-heading"><div><p class="eyebrow">Missing information</p><h2 id="discovery-suggestions">Suggested order for discovering what is missing</h2><p>Each step names the missing information, how to obtain it, and which open questions on the <a href="requirements.html">Requirements</a> page it closes. Source links point to the official lookup or reference for that step; they do not supply the missing value.</p></div></div>
+{table("discovery-table", "Proposed discovery sequence for missing information.", ["Missing information", "Suggested method", "What it closes", "Status", "Official source"], drows)}
+"""
+    return layout(data, "suggestions.html", "Suggestions for review", "Proposed site improvements and discovery steps, with options and trade-offs, to review and choose before any change is implemented.", body)
+
+
 def build_flagged(data: dict[str, Any]) -> str:
     rows = [[f'<strong>{e(f["item"])}</strong>', e(f["reason"]), e(f["action"]), badge("unverified"), source_links(data, f["sources"])] for f in data["flags"]]
     body = f"""
@@ -466,7 +492,7 @@ def build_404(data: dict[str, Any]) -> str:
     <header class="page-intro">
       <p class="eyebrow">404 · Curated dashboard</p>
       <h1>That path is not part of the published decision brief</h1>
-      <p class="lead">The public brief is published as ten curated pages ({e(data['meta']['date'])}). Internal coordination records, verification logs, and historical archives are intentionally excluded from publication.</p>
+      <p class="lead">The public brief is published as {len(PAGES)} curated pages ({e(data['meta']['date'])}). Internal coordination records, verification logs, and historical archives are intentionally excluded from publication.</p>
     </header>
     <section class="hero">
       <p class="eyebrow">Navigate</p>
@@ -493,6 +519,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "decision.html": build_decision(data),
         "risks.html": build_risks(data),
         "requirements.html": build_requirements(data),
+        "suggestions.html": build_suggestions(data),
         "flagged.html": build_flagged(data),
         "sources.html": build_sources(data),
         "audit.html": build_audit(data),
