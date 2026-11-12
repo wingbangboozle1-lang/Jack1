@@ -1718,3 +1718,13 @@ in favour of their S06. Superseding the figures in the N-2 record above: 19 test
 399 sourced rows; suggestion IDs are W-08 (stale PRs) and W-09 (repository visibility). Shared files
 `scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, `README.md` were edited after session
 87c0c876 marked S-1/S-2 done.
+
+### Session completion record — N-3 (session arena/1520648f-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#71](https://github.com/wingbangboozle1-lang/Jack1/pull/71) — CI `validate` SUCCESS, `MERGEABLE`/`CLEAN` → **merged 2026-11-12T16:38:22Z**, merge commit `8718b42366bf7276fdb19b66a05e5a8dac802181` |
+| Main runs | `Validate decision brief (legacy Pages publication)` run 43260858615 = success; `pages build and deployment` run 43260858433 = success; Pages API latest build `built` at commit `8718b42` |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/decision.html` serves the risk-by-path table; `suggestions.html` serves S01–S06 plus the W-01–W-10 and discovery tables (the bare URL briefly returned the CDN-cached earlier copy; a cache-busting query returned the new build) |
+| Final counts | 11 content pages + `404.html`; 399 sourced table rows; 19 tests; 37 flags |
+| Tasks | N-1, N-2, N-3 **done**. Open for the owner: choices on S01–S06 / W-01–W-10 / D-01–D-09 and the Flagged for Review items. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. |
