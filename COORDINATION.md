@@ -1775,3 +1775,14 @@ Claimed at 2026-11-12 UTC; this claim is committed and pushed before any content
 Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) in progress and a claim to `data/verified-2026-11-10.json` (questions and flags only, under S-3) and to the generated canonical pages. This session's F-1 changes to the same dataset (one observation note and sources, two tenant observations, four flags, one audit entry) and regenerated pages are in this branch's PR. If PR #72's S-5 merges first, its pages must be regenerated from the merged dataset (the builder is deterministic; `build_public.py --check` is the test). No file of `a410e84a`'s verification report was edited here.
 
 Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
+
+### Session completion record — F-2 (session arena/f6963e79-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#74](https://github.com/wingbangboozle1-lang/Jack1/pull/74) `arena/f6963e79-jack1` → `main`. CI `validate` = pass (run 43261508576), `MERGEABLE` / `CLEAN` → **merged 2026-11-12T16:42:28Z**, merge commit `47b9fcbfd5cc0974a5103127a770178ba3351d6a`. |
+| Main runs | `Validate decision brief (legacy Pages publication)` run 43261594792 = success; `pages build and deployment` run 43261593115 = success; Pages API `pages/builds/latest` = `built` at commit `47b9fcb`, error `null`, `updated_at` 2026-11-12T16:43:04Z. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/property.html` and `flagged.html` (cache-busted query) serve the new content: the Item 2 page citation (printed p. 22), the Dec. 22, 2025 close source, the company-wide lease rows (about 13% contingent rent; then-current-rate renewals), and the four new flags. |
+| Gates on the merged tree | `build_public.py --check` PASS (13 files); unit tests 19/19 OK; `validate_site.py` PASS (11 pages, 406 sourced rows); artifact validation PASS; privacy scan of published HTML 0 hits. |
+| Tasks | F-1 and F-2 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. PR #69 (`arena/87c0c876-jack1`) and PR #72 (`arena/a410e84a-jack1`) not modified by this session. |
+| Owner items | (1) Repository is public and 58 commits carry a personal email in git author metadata: decide whether to change the GitHub email privacy setting or rewrite history (not done here). (2) Refresh the Jack in the Box state-level unit count from a current official source before any current-year use (941 is a Sept. 28, 2025 snapshot). (3) Re-run the 74-URL link check from an environment with outbound access to the official hosts. |
