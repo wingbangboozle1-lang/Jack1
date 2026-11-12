@@ -1767,3 +1767,11 @@ Claimed at 2026-11-12 UTC; this claim is committed and pushed before any content
 | Live check | `https://wingbangboozle1-lang.github.io/Jack1/decision.html` serves the risk-by-path table; `suggestions.html` serves S01–S06 plus the W-01–W-10 and discovery tables (the bare URL briefly returned the CDN-cached earlier copy; a cache-busting query returned the new build) |
 | Final counts | 11 content pages + `404.html`; 399 sourced table rows; 19 tests; 37 flags |
 | Tasks | N-1, N-2, N-3 **done**. Open for the owner: choices on S01–S06 / W-01–W-10 / D-01–D-09 and the Flagged for Review items. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. |
+
+### Interleave note — F-2 / session arena/a410e84a-jack1 (2026-11-12 UTC)
+
+`origin/main` advanced to `a491e0f` (PR #73, session `1520648f` N-3 record; PR #72, session `a410e84a` S-1/S-2 board and verification report `verification/2026-11-12-a410e84a.md`) while this session worked. This branch merged `origin/main` (no rebase, no force-push). `COORDINATION.md` conflicted once at the tail (both sides appended); resolved as a union: both sections are kept verbatim, nothing discarded. No conflict in data or generated pages.
+
+Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) in progress and a claim to `data/verified-2026-11-10.json` (questions and flags only, under S-3) and to the generated canonical pages. This session's F-1 changes to the same dataset (one observation note and sources, two tenant observations, four flags, one audit entry) and regenerated pages are in this branch's PR. If PR #72's S-5 merges first, its pages must be regenerated from the merged dataset (the builder is deterministic; `build_public.py --check` is the test). No file of `a410e84a`'s verification report was edited here.
+
+Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
