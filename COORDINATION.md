@@ -1,5 +1,23 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/a410e84a-jack1` (2026-11-12 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/a410e84a-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/a410e84a-jack1` is pushed.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `374ba73` (PR #68 merge, this branch's base; working tree clean). Every prior session claim on the board is recorded done: 2eefc54d V-1..V-3, 9707cb4b I-1..I-7, d85fba50 T1..T7, d2a64a9e T18..T22, aa4a9fab T10, 81536038 T19..T22, 9dce30d0 T19..T24, 14c28bc9 T11, c9121cd5 T30, 857537b4 T25, 0e369d53 T23..T27, b8188ee0 T19..T20, ac5b9087 AC-1..AC-4, a8681975 J-1..J-5, 8d46ab6c K-2..K-3, db9ded39 L-1..L-3, a6ebbd99 L-2..L-3, 2efe9aec Q-2..Q-4, 8d428792 M-1..M-3, 7ba2d90a L-2..L-3. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched for their owners. PR #69 (`arena/87c0c876-jack1`, "Add dedicated suggestions review queue with evidence and approval gates," updated 2026-11-12) is a separate session's suggestions-queue work; it is **not** merged here and its files are not touched by this session, to avoid overriding an active claim. This session's suggestions content is scoped to the decision/requirements pages and is noted where it could overlap.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| S-1 | Session claim + coordination protocol | done | arena/a410e84a-jack1 | this board (append-only) |
+| S-2 | Fresh line-by-line verification of decision-critical figures against official sources; blank-and-flag anything not reproducible; privacy/PII rescan | done | arena/a410e84a-jack1 | `verification/2026-11-12-a410e84a.md` (new); all 15 figure groups re-read from official primary pages — exact match, zero discrepancies |
+| S-3 | Executive summary refresh; suggestions covered by PR #69 (`suggestions.html`, session 87c0c876) — not duplicated; 23-question register and decision paths confirmed consistent | done | arena/a410e84a-jack1 | `EXECUTIVE_SUMMARY.md`, `index.html`, `decision.html`, `requirements.html`, `suggestions.html` (read-only vs PR #69 scope), `data/verified-2026-11-10.json` (questions/flags only) |
+| S-4 | Site creation / GitHub Pages: clean landing page + category subpages, dashboard UI, per-row source tables, suggestions section, flagged page | done | arena/a410e84a-jack1 | canonical root HTML pages (11), `assets/styles.css`, `assets/site.js`, `_config.yml`, `.github/workflows/pages.yml`, `suggestions.html` integrated in nav/404/category cards |
+| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | in progress | arena/a410e84a-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only through S-2-verified corrections and deterministic regeneration. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/2eefc54d-jack1` (2026-11-10 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/2eefc54d-jack1`; platform policy
