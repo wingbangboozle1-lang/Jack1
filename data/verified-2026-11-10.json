@@ -6,7 +6,7 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md Session f6963e79 (2026-11-12) re-read SEC FY2025 10-K Item 1A in part (printed pp. 7–10, 12–14, 17–19), Items 1C/2 (pp. 20–23) and the Q3 FY2026 release Del Taco paragraph; see audit_f6963e79_f1. Session b3925b6c (2026-11-12) re-read Treasury Nov-2026 curve (latest print still 11/10), Census city/county QuickFacts, Measure ULA FAQ, USGS UCERF3 FAQ, FRED GDPALL06037, Port of LA container statistics (September still latest), CDI wildfire claims tracker, BLS Los Angeles CPI news release 26-1670-SAN (October 2026), and confirmed JACK FY2026 Form 10-K is not yet on EDGAR; added verified October CPI row (12-month unpublished) and suggestions W-11/W-12. Ledger: verification/2026-11-12-b3925b6c.md. Session 1e8970d6 (2026-11-12) re-read Census QuickFacts city and county, BLS LAUS, FEMA NRI, OpenFEMA, SEC 10-Q debt and revenue notes, CAL FIRE incident pages, USGS FAQ, CDI tracker and the Treasury curve (37 rows matched in full, 2 in part) and added CBO, Federal Reserve, BLS stress-history and USGS Northridge rows; see verification/2026-11-12-1e8970d6.md.",
+    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md Session f6963e79 (2026-11-12) re-read SEC FY2025 10-K Item 1A in part (printed pp. 7–10, 12–14, 17–19), Items 1C/2 (pp. 20–23) and the Q3 FY2026 release Del Taco paragraph; see audit_f6963e79_f1. Session b3925b6c (2026-11-12) re-read Treasury Nov-2026 curve (latest print still 11/10), Census city/county QuickFacts, Measure ULA FAQ, USGS UCERF3 FAQ, FRED GDPALL06037, Port of LA container statistics (September still latest), CDI wildfire claims tracker, BLS Los Angeles CPI news release 26-1670-SAN (October 2026), and confirmed JACK FY2026 Form 10-K is not yet on EDGAR; added verified October CPI row (12-month unpublished) and suggestions W-11/W-12. Ledger: verification/2026-11-12-b3925b6c.md. Session 1e8970d6 (2026-11-12) re-read Census QuickFacts city and county, BLS LAUS, FEMA NRI, OpenFEMA, SEC 10-Q debt and revenue notes, CAL FIRE incident pages, USGS FAQ, CDI tracker and the Treasury curve (37 rows matched in full, 2 in part) and added CBO, Federal Reserve, BLS stress-history and USGS Northridge rows; see verification/2026-11-12-1e8970d6.md. Session 83da931a (2026-11-12) opened 40 of the 74 registry sources and made three corrections; the other 34 were not opened by that session; see verification/2026-11-12-83da931a.md and audit_83da931a_n2.",
     "reverified": "2026-11-12"
   },
   "sources": {
@@ -21,7 +21,7 @@
       "title": "QuickFacts: Los Angeles County, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "bls_summary": {
@@ -35,14 +35,14 @@
       "title": "LAUS series LAUCN060370000000003: Los Angeles County unemployment rate, NSA",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=true",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "bls_city_annual": {
       "title": "Annual unemployment rates for 50 largest cities, 2025",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/lau/city-annual-unemployment-rates.htm",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "edd_la": {
@@ -56,7 +56,7 @@
       "title": "GDPALL06037: Total Gross Domestic Product for Los Angeles County, CA",
       "publisher": "U.S. Bureau of Economic Analysis via FRED",
       "url": "https://fred.stlouisfed.org/series/GDPALL06037",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official statistics"
     },
     "fred_metro_gdp": {
@@ -154,7 +154,7 @@
       "title": "Capital gains and losses",
       "publisher": "California Franchise Tax Board",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official tax guidance"
     },
     "irs_544": {
@@ -189,21 +189,21 @@
       "title": "2026 Minimum Wage Ordinance notice, effective July 1, 2026",
       "publisher": "Los Angeles Office of Wage Standards",
       "url": "https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official labor rule"
     },
     "dashboard_engagement": {
       "title": "California School Dashboard 2026: Los Angeles Unified, Academic Engagement",
       "publisher": "California Department of Education",
       "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-engagement",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official education data"
     },
     "dashboard_performance": {
       "title": "California School Dashboard 2026: Los Angeles Unified, Academic Performance",
       "publisher": "California Department of Education",
       "url": "https://www.caschooldashboard.org/reports/19647330000000/2026/academic-performance",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official education data"
     },
     "dashboard_faq": {
@@ -259,21 +259,21 @@
       "title": "NRI Counties official query: Los Angeles County risk, EAL, vulnerability, resilience, earthquake/wildfire/inland flood",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official hazard model"
     },
     "fema_hazard_ratings": {
       "title": "NRI Counties official query: Los Angeles County 18 hazard ratings",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,AVLN_RISKR,CFLD_RISKR,CWAV_RISKR,DRGT_RISKR,ERQK_RISKR,HAIL_RISKR,HWAV_RISKR,HRCN_RISKR,ISTM_RISKR,IFLD_RISKR,LNDS_RISKR,LTNG_RISKR,SWND_RISKR,TRND_RISKR,TSUN_RISKR,VLCN_RISKR,WFIR_RISKR,WNTW_RISKR&returnGeometry=false&f=json",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-12",
       "kind": "official hazard model"
     },
     "usgs_faq": {
       "title": "What is the probability that an earthquake will occur in the Los Angeles Area? In the San Francisco Bay area?",
       "publisher": "U.S. Geological Survey",
       "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official hazard science"
     },
     "calfire_fhsz": {
@@ -294,7 +294,7 @@
       "title": "Wildfire Claims Tracker, updated July 6, 2026",
       "publisher": "California Department of Insurance",
       "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-12",
       "kind": "official insurance data"
     },
     "lapd": {
@@ -351,7 +351,7 @@
       "publisher": "California Department of Finance",
       "kind": "Official population/housing release (PDF)",
       "url": "https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "dof_e5": {
       "title": "July 2025 Population Estimates (released February 2026)",
@@ -365,28 +365,28 @@
       "publisher": "California Department of Education",
       "kind": "Official school district profile",
       "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "lavote_dtt": {
       "title": "Documentary Transfer Tax — General Information (County & Special City Rates)",
       "publisher": "LA County Registrar-Recorder / County Clerk",
       "kind": "Official tax administration schedule",
       "url": "https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "dir_release_2027": {
       "title": "News Release 2026-66: California Minimum Wage Increases to $17.40 Effective Jan. 1, 2027",
       "publisher": "California Department of Industrial Relations",
       "kind": "Official state labor notice",
       "url": "https://www.dir.ca.gov/DIRNews/2026/2026-66.html",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "port_facts": {
       "title": "Port of Los Angeles Facts and Figures (CY 2025)",
       "publisher": "Port of Los Angeles",
       "kind": "Official port economic summary",
       "url": "https://portoflosangeles.org/business/statistics/facts-and-figures",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "port_containers": {
       "title": "Port of Los Angeles Container Statistics (Through September 2026)",
@@ -400,7 +400,7 @@
       "publisher": "Los Angeles County Metropolitan Transportation Authority",
       "kind": "Official transit project status",
       "url": "https://www.metro.net/projects/westside/",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "metro_lax": {
       "title": "LAX/Metro Transit Center Station Official Opening",
@@ -428,56 +428,56 @@
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "sec_10q_ar": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 1 (Basis & Allowance for Credit Losses)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R8.htm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "sec_10q_leases": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 5 (Leases / Rental Spread)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R12.htm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "sec_10k_leases": {
       "title": "Jack in the Box FY2025 10-K Note 10 (Lease Term & Commitments)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "sec_10q_contingencies": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 13 (Commitments & Contingencies)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R20.htm",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "openfema_la": {
       "title": "OpenFEMA Disaster Declarations Summaries v2 (LA County Query)",
       "publisher": "Federal Emergency Management Agency",
       "kind": "Official federal API dataset",
       "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=state%20eq%20%27CA%27%20and%20contains(designatedArea%2C%20%27Los%20Angeles%27)&%24inlinecount=allpages&%24top=5",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "calfire_palisades": {
       "title": "Palisades Fire Official Incident Record",
       "publisher": "CAL FIRE",
       "kind": "Official incident assessment",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire/",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "calfire_eaton": {
       "title": "Eaton Fire Official Incident Record",
       "publisher": "CAL FIRE",
       "kind": "Official incident assessment",
       "url": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire/",
-      "accessed": "2026-11-10"
+      "accessed": "2026-11-12"
     },
     "cgs_alquist_priolo": {
       "title": "Alquist-Priolo Earthquake Fault Zones",
@@ -505,7 +505,7 @@
       "publisher": "California Department of Insurance",
       "kind": "Official regulatory press release",
       "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release028-2025.cfm",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "cdi_catmodel_2025": {
       "title": "CDI Completes First Wildfire Catastrophe Model Review (Release 052-2025)",
@@ -526,7 +526,7 @@
       "publisher": "FEMA ArcGIS feature service",
       "kind": "Official hazard-model query (JSON)",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,CFLD_RISKS,CFLD_RISKR&returnGeometry=false&f=json",
-      "accessed": "2026-11-11"
+      "accessed": "2026-11-12"
     },
     "bls_cpi_la": {
       "title": "Consumer Price Index, Los Angeles area — October 2026 (news release 26-1670-SAN)",
@@ -590,6 +590,13 @@
       "url": "https://pubs.usgs.gov/of/1996/ofr-96-0263/introduc.htm",
       "accessed": "2026-11-12",
       "kind": "official hazard history"
+    },
+    "dof_minwage_cert": {
+      "title": "Minimum wage increase certification letter for January 1, 2027 (dated July 31, 2026)",
+      "publisher": "California Department of Finance",
+      "kind": "Official state certification letter",
+      "url": "https://dof.ca.gov/media/docs/whats-new/Minimum-Wage-Increase-Notification-Governor-and-Legislative-Letter.pdf",
+      "accessed": "2026-11-12"
     }
   },
   "observations": [
@@ -1038,6 +1045,19 @@
       ]
     },
     {
+      "id": "unemp_city_history",
+      "category": "Labor",
+      "measure": "City annual unemployment rate, five years",
+      "value": "2021 9.0%; 2022 5.1%; 2023 5.3%; 2024 5.9%; 2025 5.8%",
+      "geography": "Los Angeles city",
+      "period": "Annual averages 2021–2025; 2025 is an 11-month average excluding October",
+      "status": "verified",
+      "note": "The rate fell sharply after 2021 and has drifted up since 2022. The 2025 figure is not fully comparable with earlier years.",
+      "sources": [
+        "bls_city_annual"
+      ]
+    },
+    {
       "id": "treasury_yields",
       "category": "Financing",
       "measure": "Treasury par yields",
@@ -1072,6 +1092,19 @@
       "period": "2026 Dashboard",
       "status": "verified",
       "note": "TK–8 denominator 254,681; community indicator, not property rating.",
+      "sources": [
+        "dashboard_engagement"
+      ]
+    },
+    {
+      "id": "schools_absent_history",
+      "category": "Schools",
+      "measure": "LAUSD chronic absenteeism, multi-year",
+      "value": "18.2% (2019); 39.8% (2022); 31% (2023); 23.3% (2024); 21.9% (2025); 21.3% (2026)",
+      "geography": "Los Angeles Unified School District",
+      "period": "Dashboard years 2019 and 2022–2026",
+      "status": "verified",
+      "note": "Still above the 2019 level but down by almost half from the 2022 peak. District-wide; the property's assigned schools are unverified.",
       "sources": [
         "dashboard_engagement"
       ]
@@ -1583,14 +1616,27 @@
       ]
     },
     {
+      "id": "pop_dof_drivers",
+      "category": "Population",
+      "measure": "What moved California's population in 2025",
+      "value": "State 39,593,000 (−0.14%, −54,000); net domestic out-migration 288,600; net legal international migration 126,400 (248,400 in 2024); natural increase 108,200",
+      "geography": "California statewide",
+      "period": "Calendar year 2025; estimate at January 1, 2026 (released May 1, 2026)",
+      "status": "verified",
+      "note": "The release attributes Los Angeles County's loss of 64,000 to the Eaton and Palisades wildfires, normal movement to the Inland Empire, and deportations. Statewide, 11,406 housing units were lost to fire, 11,160 of them in those two fires.",
+      "sources": [
+        "dof_e1"
+      ]
+    },
+    {
       "id": "housing_dof_net_2025",
       "category": "Housing",
-      "measure": "Net housing units added (statewide-highest county total)",
+      "measure": "Net housing units added in 2025 (largest gain listed in the release)",
       "value": "+11,260 net units (62.7% multifamily)",
-      "geography": "Los Angeles County",
+      "geography": "“Los Angeles” as printed in the DOF release; county or city not stated",
       "period": "Calendar Year 2025 (E-1, May 1, 2026)",
       "status": "verified",
-      "note": "Multifamily infill continues expanding dense urban households even amid aggregate population decline; redevelopment context only.",
+      "note": "The release prints 11,260 in a list introduced as counties that also names San Jose, a city, and does not say which Los Angeles is meant. 7,061 of the 11,260 units were multi-family (62.7%). An earlier county label on this row was an inference and was removed on 2026-11-12; see Flagged for Review. Redevelopment context only.",
       "sources": [
         "dof_e1"
       ]
@@ -1684,7 +1730,7 @@
       "geography": "Jack in the Box Inc. franchise receivables",
       "period": "40 weeks ended July 5, 2026",
       "status": "verified",
-      "note": "Q3 provision $3,479k vs $2,361k prior year. Direct balance-sheet signal of franchisee cash-flow stress; subject operator credit remains unverified.",
+      "note": "Year-to-date (40-week) provision $3,479k vs $2,361k in the prior-year period; the source table is headed “Year-to-date”. Direct balance-sheet signal of franchisee cash-flow stress; subject operator credit remains unverified.",
       "sources": [
         "sec_10q_ar"
       ]
@@ -1732,6 +1778,98 @@
       ]
     },
     {
+      "id": "tenant_rent_trend",
+      "category": "Tenant",
+      "measure": "Rent franchisees pay the company (franchise rental revenues)",
+      "value": "Quarter $73,017k vs $76,538k a year earlier (−4.6%); year to date $242,526k vs $260,254k (−6.8%); variable lease income year to date $66,259k vs $80,793k (−18.0%)",
+      "geography": "Jack in the Box Inc. consolidated",
+      "period": "12 and 40 weeks ended July 5, 2026 vs July 6, 2025",
+      "status": "derived",
+      "note": "Dollar figures are printed in the Leases note; the percentage changes are derived from them. Variable lease income is the sales-linked and pass-through part of rent. System-wide; says nothing about rent at the subject property.",
+      "sources": [
+        "sec_10q_leases"
+      ]
+    },
+    {
+      "id": "tenant_option_control",
+      "category": "Tenant",
+      "measure": "Lease length and who holds renewal options (company-wide disclosure)",
+      "value": "Initial terms generally 20 years; renewal options generally exercisable at the company's sole discretion for 1 to 20 years",
+      "geography": "Jack in the Box Inc. real estate leases, company-wide",
+      "period": "FY2025 Form 10-K and Q3 FY2026 Form 10-Q, Leases notes",
+      "status": "verified",
+      "note": "General description of the company's leases, not the subject lease. If the subject lease gives the tenant options, the tenant decides whether to stay and the owner's sell-or-renew choice is narrower than it looks. Read the option clause first.",
+      "sources": [
+        "sec_10k_leases",
+        "sec_10q_leases"
+      ]
+    },
+    {
+      "id": "tenant_site_control",
+      "category": "Tenant",
+      "measure": "Who owns or leases the restaurant buildings",
+      "value": "Of 2,136 buildings: 164 on company-owned land; 565 company-owned on leased land; 1,020 company-leased; 387 owned or leased directly by franchisees",
+      "geography": "Jack in the Box brand, system-wide",
+      "period": "September 28, 2025 (FY2025 Form 10-K, Item 2)",
+      "status": "verified",
+      "note": "Derived shares: company leases land or building at 1,585 sites (74.2%); franchisees hold 387 directly (18.1%). A third-party owner's tenant can therefore be the company or a franchisee; which one applies here is unverified.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "tenant_unit_volume",
+      "category": "Tenant",
+      "measure": "Franchise sales per restaurant and annual rental revenues",
+      "value": "Franchise average unit volume $1,874k (fiscal 2025) vs $1,949k (fiscal 2024); franchise rental revenues $332,735k vs $347,227k (−4.2%)",
+      "geography": "Jack in the Box brand, system-wide",
+      "period": "Fiscal years ended September 28, 2025 and September 29, 2024",
+      "status": "verified",
+      "note": "The filing attributes the rental decline mainly to a $16.5 million drop in percentage rent driven by lower sales. Change in average unit volume is −3.8% (derived). Not the subject restaurant's sales.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "tenant_franchise_margin",
+      "category": "Tenant",
+      "measure": "Franchise-level margin and systemwide sales",
+      "value": "Franchise-level margin $60.3M (37.4%) vs $66.2M (39.3%) a year earlier; systemwide sales −1.4%; 4 openings and 17 closures in the quarter",
+      "geography": "Jack in the Box Inc.",
+      "period": "Q3 FY2026, 12 weeks ended July 5, 2026",
+      "status": "verified",
+      "note": "Non-GAAP measure as defined by the company. The release attributes the decline to lower rent and royalty revenue, fewer restaurants under its closure programme, and higher bad-debt expense.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_count_yoy",
+      "category": "Tenant",
+      "measure": "Restaurant count against a year earlier",
+      "value": "2,115 vs 2,168 (−53, −2.4%); franchise 1,966 vs 2,026; company 149 vs 142",
+      "geography": "Jack in the Box brand, system-wide",
+      "period": "End of Q3 FY2026 vs end of Q3 FY2025",
+      "status": "derived",
+      "note": "Counts are printed in the release; the differences are derived. Same-store sales in the year-earlier quarter were −7.1%.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "tenant_lease_runoff",
+      "category": "Tenant",
+      "measure": "Company's own scheduled lease payments by year",
+      "value": "FY2026 $238,490k; FY2027 $239,965k; FY2028 $197,994k; FY2029 $160,333k; FY2030 $151,714k; later years $1,027,497k; total $2,015,993k, of which $1,303.7M is non-cancellable",
+      "geography": "Jack in the Box Inc. consolidated (operating leases, as lessee)",
+      "period": "As of September 28, 2025",
+      "status": "verified",
+      "note": "Scheduled payments in FY2030 are 36.4% below FY2026 (derived). The schedule declines as existing lease terms run off, which suggests many of the company's own leases reach expiry or option dates in the same years as the subject lease (interpretation). The FY2025 annual report is consolidated and still included Del Taco, sold December 22, 2025.",
+      "sources": [
+        "sec_10k_leases"
+      ]
+    },
+    {
       "id": "dtt_combined_stack",
       "category": "Taxes",
       "measure": "LA County + LA City combined documentary transfer tax stack",
@@ -1749,13 +1887,14 @@
       "id": "wage_state_2027",
       "category": "Labor costs",
       "measure": "California general minimum wage (effective January 1, 2027)",
-      "value": "$17.40/hour (+2.97% CPI escalation from $16.90)",
+      "value": "$17.40/hour, up from $16.90; certified inflation adjustment 2.99%",
       "geography": "California statewide",
       "period": "Effective January 1, 2027 (DIR News Release 2026-66, dated 2026-08-13; DOF certified 2026-07-31)",
       "status": "verified",
-      "note": "Governs smaller/non-AB-1228 re-tenanting prospects unless LA City's $18.42+ CPI-indexed local wage exceeds it.",
+      "note": "The Department of Finance certified a 2.99% rise in the CPI-W on July 31, 2026; the wage itself rises 2.96% (17.40 ÷ 16.90 − 1, derived). An earlier +2.97% on this row matched neither figure and was corrected on 2026-11-12. Governs smaller/non-AB-1228 re-tenanting prospects unless LA City's $18.42+ CPI-indexed local wage exceeds it.",
       "sources": [
-        "dir_release_2027"
+        "dir_release_2027",
+        "dof_minwage_cert"
       ]
     },
     {
@@ -3066,7 +3205,7 @@
     {
       "id": "req_projections",
       "requirement": "Reliable transparent projection/scenario system",
-      "coverage": "Official DOF/SCAG paths published separately; derived arithmetic labeled; property outputs gated blank.",
+      "coverage": "Official DOF/SCAG paths published separately; derived arithmetic labeled; property outputs gated blank. A signal scorecard on the Projections page sets area activity against tenant health.",
       "evidence": "DOF P-2A, SCAG Appendix I, reproducible Python model.",
       "status": "covered",
       "sources": [
@@ -3078,7 +3217,7 @@
     {
       "id": "req_decisions",
       "requirement": "All decision paths and balanced recommendation",
-      "coverage": "Sell, renew, hold, user/redeveloper, 1031, refinance, re-tenanting compared conditionally.",
+      "coverage": "Sell, renew, hold, user/redeveloper, 1031, refinance, re-tenanting compared conditionally. The Decision page states the best course for the property and for the owner separately.",
       "evidence": "Official lease/tax/market context; no invented property inputs.",
       "status": "covered",
       "sources": [
@@ -3418,7 +3557,7 @@
       "id": "flag_rental_spread_yoy",
       "item": "Tenant row: franchise rental revenue YTD change (previously −15.4%)",
       "reason": "The two official 10-Q totals ($242,526k YTD vs $260,254k prior-year YTD) imply −6.8%; no official page prints −15.4%.",
-      "action": "Unreconcilable delta removed from the published value; re-derive from the 10-Q R12 table before any renewal/sale economics use.",
+      "action": "Unreconcilable delta removed from the published value; re-derive from the 10-Q R12 table before any renewal/sale economics use. On 2026-11-12 the change was re-derived from the Leases note and published as a derived Tenant row (−6.8% year to date).",
       "sources": [
         "sec_10q_leases",
         "sec_10k_leases"
@@ -3638,6 +3777,81 @@
         "bls_laus_2020",
         "bls_laus_2007_2013",
         "bls_ces_food_la"
+      ]
+    },
+    {
+      "id": "flag_wage_pct_corrected",
+      "item": "Labor-cost row: 2027 state minimum wage percentage (previously +2.97%)",
+      "reason": "The DIR release prints no percentage. The Department of Finance certification letter states a 2.99 percent rise in the CPI-W. Arithmetic on the two wage rates gives 2.96 percent. The previously published +2.97% matches neither.",
+      "action": "Corrected on 2026-11-12: the row quotes the certified 2.99% with its source and labels 2.96% as derived. The $17.40 rate and its dates were unchanged.",
+      "sources": [
+        "dir_release_2027",
+        "dof_minwage_cert"
+      ]
+    },
+    {
+      "id": "flag_dof_housing_jurisdiction",
+      "item": "Housing row: which Los Angeles the 11,260 net housing units belong to",
+      "reason": "The DOF release lists Los Angeles (11,260), San Diego, Sacramento, Santa Clara and San Jose under the words “Within counties ranked by net housing gains”. San Jose is a city, and the release calls the same places urban areas in its next sentence. It does not say whether 11,260 is the county or the city. The row previously said Los Angeles County.",
+      "action": "County label removed on 2026-11-12; the value is published exactly as printed. Confirm the jurisdiction against the DOF E-5 housing table before using it for any trade-area housing claim.",
+      "sources": [
+        "dof_e1",
+        "dof_e5"
+      ]
+    },
+    {
+      "id": "flag_ar_provision_label",
+      "item": "Tenant row: credit-loss provision period (previously labelled Q3)",
+      "reason": "The official allowance table is headed “Year-to-date”. The $3,479k and $2,361k provisions cover 40 weeks, not the 12-week third quarter.",
+      "action": "Label corrected on 2026-11-12. Values unchanged.",
+      "sources": [
+        "sec_10q_ar"
+      ]
+    },
+    {
+      "id": "flag_ula_faq_wording",
+      "item": "Measure ULA FAQ: older threshold wording beside the current rate table",
+      "reason": "The FAQ narrative still describes the thresholds in round figures of five million and ten million dollars, while its note and rate table give the current $5,400,000 and $10,900,000 for closings after June 30, 2026.",
+      "action": "The dashboard uses the table values, which agree with the County Recorder's schedule. Do not quote the round figures.",
+      "sources": [
+        "ula",
+        "lavote_dtt"
+      ]
+    },
+    {
+      "id": "flag_lapd_text_layer",
+      "item": "LAPD citywide PDF: homicide period-change figures in extracted text",
+      "reason": "In the text extracted from the weekly citywide PDF on 2026-11-12, the homicide line shows a four-week change of −5.8% beside counts of 13 and 22, which cannot both be right. This looks like a text-layer or extraction artefact.",
+      "action": "The dashboard publishes no homicide figure. Read the PDF visually before citing any period change from it.",
+      "sources": [
+        "lapd_city"
+      ]
+    },
+    {
+      "id": "flag_cdi_tracker_age",
+      "item": "Insurance row: wildfire claims tracker last updated July 6, 2026",
+      "reason": "When read on 2026-11-12 the tracker still carried its July 6, 2026 update, four months old, and states that payments will continue to grow.",
+      "action": "Treat the $25.2 billion as a floor at that date. Re-read before use.",
+      "sources": [
+        "cdi_claims"
+      ]
+    },
+    {
+      "id": "flag_scorecard_judgment",
+      "item": "Signal scorecard: the keep / sell / mixed reading of each signal is judgment",
+      "reason": "Every reading in the scorecard is an official figure, but deciding which way a figure leans is analysis. The counts are unweighted, describe the area and the tenant system rather than the property, and are not a forecast or a probability.",
+      "action": "Use the scorecard to see where the evidence points, not as a verdict. Property documents override it. The owner may reclassify any row.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_not_reread_20261112",
+      "item": "Verification scope on 2026-11-12 (session 83da931a): 34 of 74 registry sources not opened",
+      "reason": "Session 83da931a opened 40 registry sources on 2026-11-12. The DOF P-2A and E-5 files, SCAG documents, Proposition 13 and Board of Equalization guidance, IRS Publication 544 and Form 8824 instructions, the DIR general minimum-wage FAQ, the fire-hazard acreage table, the ShakeOut scenario, the September 2026 Form 8-K, the main Form 10-Q document and the lookup tools were not opened by that session.",
+      "action": "Rows resting only on those sources keep the access date shown in the Sources registry. They were read on 2026-11-10 or 2026-11-11 by earlier sessions.",
+      "sources": [
+        "repo"
       ]
     }
   ],
@@ -3985,6 +4199,20 @@
         "cbo_outlook_2026",
         "fed_sep_2026_09"
       ]
+    },
+    {
+      "id": "audit_83da931a_n2",
+      "check": "2026-11-12 re-read of 40 registry sources; three corrections; signal scorecard (session 83da931a)",
+      "result": "PASS with three corrections. 40 of 74 registry sources opened on 2026-11-12 and compared row by row; every published value matched its page except one unsupported percentage, one unsupported geography label and one period label.",
+      "detail": "Corrected: (1) 2027 state minimum wage percentage, +2.97% replaced by the certified 2.99% with 2.96% shown as derived; (2) DOF housing row relabelled because the release does not say county or city for the 11,260 units; (3) credit-loss provision relabelled year to date. Added ten rows read on official pages (franchise rent trend, option control, building ownership split, unit volume, franchise margin, count against prior year, lease-payment schedule, statewide population drivers, city unemployment history, district absenteeism history), two decision questions, a signal scorecard and a separate property / owner view. Derived arithmetic reproduced: 95.8% refinancing share, 44.1% and 69.8% state shares, 74.2% leased share, 0.56 / 4.56 / 6.06% transfer-tax stack, 28.0% Central Bureau share. 34 sources were not opened and are listed on Flagged for Review. No fiscal 2026 Form 10-K was on EDGAR when read. Ledger: verification/2026-11-12-83da931a.md.",
+      "sources": [
+        "sec_10k",
+        "sec_10q_leases",
+        "dof_e1",
+        "dir_release_2027",
+        "dof_minwage_cert",
+        "treasury"
+      ]
     }
   ],
   "questions": [
@@ -4010,14 +4238,26 @@
       ]
     },
     {
+      "id": "q_renewal_control",
+      "question": "Who decides whether the lease is renewed — the owner or the tenant?",
+      "answer": "Unknown for this lease. Company-wide, Jack in the Box says its real estate leases generally start with 20-year terms and carry renewal options of 1 to 20 years that are generally exercisable at its sole discretion. If this lease has such options, the tenant chooses whether to stay.",
+      "status": "partial",
+      "obtain": "Read the option clause: how many options, how long, the notice window, the rent in each option period, and whether the owner can decline. Confirm with a tenant estoppel.",
+      "sources": [
+        "sec_10k_leases",
+        "sec_10q_leases"
+      ]
+    },
+    {
       "id": "q_obligor",
       "question": "Who is legally liable for the rent — the corporate tenant, a franchisee, or a guarantor?",
-      "answer": "Brand identity does not answer this. At July 5, 2026 the Jack in the Box system was 149 company-operated and 1,966 franchise-operated restaurants, and the filings do not identify the obligor on any single lease.",
+      "answer": "Brand identity does not answer this. At July 5, 2026 the Jack in the Box system was 149 company-operated and 1,966 franchise-operated restaurants, and the filings do not identify the obligor on any single lease. At September 28, 2025 the company leased the land or building at 1,585 of 2,136 restaurants and franchisees owned or leased 387 directly, so either arrangement is possible here.",
       "status": "partial",
       "obtain": "Obtain the lease counterparty, any guaranty and its scope, the franchise agreement, tenant financial statements, and a payment/default history.",
       "sources": [
         "sec_10q",
-        "sec_release"
+        "sec_release",
+        "sec_10k"
       ]
     },
     {
@@ -4029,6 +4269,17 @@
       "sources": [
         "sec_release",
         "sec_10q_ar"
+      ]
+    },
+    {
+      "id": "q_rent_capacity",
+      "question": "Is the tenant system's ability to pay rent rising or falling?",
+      "answer": "Falling on the published measures. Rent that franchisees pay the company fell 6.8% in the first 40 weeks of fiscal 2026 ($242,526 thousand against $260,254 thousand), and franchise sales per restaurant averaged $1,874 thousand in fiscal 2025 against $1,949 thousand a year earlier. These are system totals, not this restaurant.",
+      "status": "derived",
+      "obtain": "Request this restaurant's sales reports if the lease grants them, and compare its sales trend and rent-to-sales ratio with the system figures.",
+      "sources": [
+        "sec_10q_leases",
+        "sec_10k"
       ]
     },
     {
@@ -4617,6 +4868,315 @@
       "closes": "Financing and net-proceeds questions.",
       "sources": [
         "treasury"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "sig_jobs",
+      "group": "Area economy",
+      "signal": "Payroll jobs",
+      "reading": "Metro area 6,282.1 thousand in September 2026; +30.2 thousand (+0.5%) over the year",
+      "lean": "keep",
+      "why": "Employment is still growing, slowly. Job growth supports restaurant demand.",
+      "sources": [
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "sig_food_jobs",
+      "group": "Area economy",
+      "signal": "Restaurant and hospitality jobs",
+      "reading": "Metro leisure and hospitality +11.5 thousand (+1.5%) over the year; county restaurants and other eating places +7,300",
+      "lean": "keep",
+      "why": "Local restaurant employers are adding staff, which is not what a shrinking dining market looks like.",
+      "sources": [
+        "bls_summary",
+        "edd_la"
+      ]
+    },
+    {
+      "id": "sig_unemployment",
+      "group": "Area economy",
+      "signal": "Unemployment",
+      "reading": "County 4.5% in September 2026, not seasonally adjusted; city annual average 5.1% (2022), 5.3% (2023), 5.9% (2024), 5.8% (2025)",
+      "lean": "mixed",
+      "why": "The latest month is low, but the city's annual rate has drifted up since 2022.",
+      "sources": [
+        "bls_summary",
+        "bls_city_annual"
+      ]
+    },
+    {
+      "id": "sig_population",
+      "group": "Area economy",
+      "signal": "Population",
+      "reading": "County 9,837,286 on January 1, 2026 (−0.6%); city 3,806,201 (−0.9%); state projection for the county 9,811,358 (2026) to 9,708,647 (2035)",
+      "lean": "sell",
+      "why": "On the state's numbers the customer base shrinks through the lease-expiry window.",
+      "sources": [
+        "dof_e1",
+        "dof_p2a"
+      ]
+    },
+    {
+      "id": "sig_regional_plan",
+      "group": "Area economy",
+      "signal": "Regional plan forecast",
+      "reading": "County population 10,214,000 and employment 5,277,000 in 2030, against 10,046,000 and 5,031,000 in 2019",
+      "lean": "keep",
+      "why": "The regional planning agency expects growth. This conflicts with the state path above; the two are shown separately and never blended.",
+      "sources": [
+        "scag_appendix"
+      ]
+    },
+    {
+      "id": "sig_income_prices",
+      "group": "Area economy",
+      "signal": "Household income and prices",
+      "reading": "City median household income $81,939; poverty rate 16.5%; area prices +3.7% over the year, food +2.8%, energy +20.3%",
+      "lean": "mixed",
+      "why": "The income figure is a 2020–2024 average and cannot be set directly against 2026 inflation. Energy costs are rising fast.",
+      "sources": [
+        "census_city",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "sig_schools",
+      "group": "Area economy",
+      "signal": "Schools",
+      "reading": "District chronic absenteeism 21.3% in 2026, down from 39.8% in 2022; graduation rate 87.6%",
+      "lean": "keep",
+      "why": "District outcomes are improving. This is the whole district, not the property's attendance area.",
+      "sources": [
+        "dashboard_engagement"
+      ]
+    },
+    {
+      "id": "sig_safety",
+      "group": "Area economy",
+      "signal": "Reported crime",
+      "reading": "Citywide offences −9.2% year to date; Central Bureau −0.6%, with larceny +13.6% and robbery +0.4%",
+      "lean": "mixed",
+      "why": "Citywide numbers are improving faster than the central area's, where larceny is up.",
+      "sources": [
+        "lapd_city",
+        "lapd_central"
+      ]
+    },
+    {
+      "id": "sig_trade",
+      "group": "Area economy",
+      "signal": "Port activity",
+      "reading": "Container volume January–September 2026 +3.38% on a year earlier",
+      "lean": "keep",
+      "why": "Goods movement is a large regional employer and is growing.",
+      "sources": [
+        "port_containers"
+      ]
+    },
+    {
+      "id": "sig_transit_plan",
+      "group": "Area economy",
+      "signal": "Transit and planning",
+      "reading": "D Line Section 1 opened May 8, 2026; the downtown plan anticipates 100,000 new homes through 2040",
+      "lean": "keep",
+      "why": "Public investment and planned housing point to more activity in the central area. Neither is tied to this parcel.",
+      "sources": [
+        "metro_dline",
+        "dtla_release"
+      ]
+    },
+    {
+      "id": "sig_same_store_sales",
+      "group": "Tenant system",
+      "signal": "Same-store sales",
+      "reading": "−1.1% in the latest quarter, after −7.1% in the same quarter a year earlier",
+      "lean": "sell",
+      "why": "Sales at existing restaurants are still falling, though more slowly.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "sig_restaurant_count",
+      "group": "Tenant system",
+      "signal": "Restaurant count",
+      "reading": "2,115 at July 5, 2026 against 2,168 a year earlier; guidance of 50–60 closures in fiscal 2026",
+      "lean": "sell",
+      "why": "The chain is shrinking, and a site near lease expiry is the easiest kind to close.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "sig_rent_paid",
+      "group": "Tenant system",
+      "signal": "Rent franchisees pay the company",
+      "reading": "Franchise rental revenues −6.8% year to date; variable lease income −18.0%",
+      "lean": "sell",
+      "why": "Lower sales are reducing the rent collected across the system.",
+      "sources": [
+        "sec_10q_leases"
+      ]
+    },
+    {
+      "id": "sig_franchisee_credit",
+      "group": "Tenant system",
+      "signal": "Franchisee credit",
+      "reading": "Allowance for doubtful accounts $7,607 thousand, up 70.3% since September 28, 2025",
+      "lean": "sell",
+      "why": "The company is reserving more against franchisees who may not pay.",
+      "sources": [
+        "sec_10q_ar"
+      ]
+    },
+    {
+      "id": "sig_refinancing",
+      "group": "Tenant system",
+      "signal": "Tenant refinancing",
+      "reading": "95.8% of $1,491,984 thousand of principal has anticipated repayment dates from August 2029 to February 2032; the newest notes carry 7.624%",
+      "lean": "sell",
+      "why": "Most of the company's debt must be refinanced inside the lease-expiry window.",
+      "sources": [
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "sig_earnings",
+      "group": "Tenant system",
+      "signal": "Tenant earnings",
+      "reading": "Adjusted EBITDA $61.2 million against $57.1 million a year earlier; net earnings from continuing operations $21.0 million against $22.8 million",
+      "lean": "mixed",
+      "why": "Cash earnings rose while net earnings fell.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "sig_renewal_practice",
+      "group": "Tenant system",
+      "signal": "Renewal practice",
+      "reading": "The company says it has generally been able to renew restaurant leases at then-current market rates; options are generally exercisable at its sole discretion",
+      "lean": "mixed",
+      "why": "Renewals are common, but the tenant usually holds the choice.",
+      "sources": [
+        "sec_10k",
+        "sec_10k_leases"
+      ]
+    },
+    {
+      "id": "sig_wage_floor",
+      "group": "Costs and capital",
+      "signal": "Wage floor for the operator",
+      "reading": "Fast-food minimum $20.00 an hour since April 1, 2024; state general minimum $16.90, rising to $17.40 on January 1, 2027; city minimum $18.42",
+      "lean": "mixed",
+      "why": "The fast-food floor has not moved since 2024 while the general floors rise with inflation.",
+      "sources": [
+        "dir_fastfood",
+        "dir_release_2027",
+        "la_wage"
+      ]
+    },
+    {
+      "id": "sig_interest_rates",
+      "group": "Costs and capital",
+      "signal": "Interest rates",
+      "reading": "10-year Treasury 4.98% at the November 10, 2026 close",
+      "lean": "mixed",
+      "why": "Higher rates lower what a buyer will pay and also raise what sale proceeds can earn elsewhere.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "sig_exit_tax",
+      "group": "Costs and capital",
+      "signal": "Cost of selling",
+      "reading": "Transfer tax 0.56% below $5,400,000; 4.56% from $5,400,000 to under $10,900,000; 6.06% at $10,900,000 or more",
+      "lean": "mixed",
+      "why": "The higher tiers matter only if the price reaches the thresholds, and the price is unverified.",
+      "sources": [
+        "lavote_dtt",
+        "ula"
+      ]
+    },
+    {
+      "id": "sig_disaster",
+      "group": "Hazard and insurance",
+      "signal": "Disaster exposure",
+      "reading": "County risk index 100 (Very High); 88 federal disaster declarations, 61 for fire; 60% chance of a magnitude 6.7 earthquake within 30 years",
+      "lean": "sell",
+      "why": "Continued ownership keeps exposure to regional disasters. County figures, not a parcel assessment.",
+      "sources": [
+        "fema_county_query",
+        "openfema_la",
+        "usgs_faq"
+      ]
+    },
+    {
+      "id": "sig_insurance",
+      "group": "Hazard and insurance",
+      "signal": "Insurance market",
+      "reading": "$25.2 billion paid on 41,727 claims from the January 2025 fires as of July 6, 2026; last-resort commercial cover up to $20 million per building",
+      "lean": "mixed",
+      "why": "Cover exists as a last resort; the cost for this property is unknown.",
+      "sources": [
+        "cdi_claims",
+        "cdi_fairplan_2025"
+      ]
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "v_property",
+      "view": "Best for the property",
+      "verdict": "Keep it leased and marketable: a longer firm term with a verified, creditworthy obligor, or a replacement tenant lined up before expiry.",
+      "reasoning": "The area readings lean positive, so the location is not the weak point. The weak point is dependence on one tenant whose system readings lean negative. Secure income in an active area supports value; an approaching expiry with an uncertain tenant undermines it.",
+      "depends_on": "The executed lease, who holds the renewal options, the legal obligor, and what market rent the site would command from another tenant.",
+      "sources": [
+        "sec_10k_leases",
+        "sec_release",
+        "bls_summary",
+        "scag_appendix"
+      ]
+    },
+    {
+      "id": "v_owner",
+      "view": "Best for the owner",
+      "verdict": "Not yet decidable. Keep both exits open and fix a decision date ahead of the lease's notice dates and ahead of the tenant's first refinancing date in August 2029.",
+      "reasoning": "Wealth preservation turns on facts not yet supplied: what share of the owner's wealth this property represents, the tax basis, the need for income, and any debt. If the property is a large share of net worth, the readings favour reducing single-tenant exposure by selling or exchanging while meaningful lease term remains. If it is a small share and a vacancy could be funded, holding or renewing keeps the location's upside.",
+      "depends_on": "After-tax net sale proceeds, owner concentration and liquidity, exchange eligibility, and the renewal terms the tenant will actually sign.",
+      "sources": [
+        "irs_544",
+        "irs_8824",
+        "lavote_dtt",
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "v_avoid",
+      "view": "What to avoid under either view",
+      "verdict": "Drifting to expiry with no extension signed, no sale prepared, and no replacement tenant identified.",
+      "reasoning": "That path keeps every tenant and hazard exposure while the remaining term, and with it the sale value, runs down. It is the only path that gives up both objectives at once.",
+      "depends_on": "A dated calendar of the lease's option and notice deadlines.",
+      "sources": [
+        "sec_10k",
+        "sec_10q_ar",
+        "fema_county_query"
+      ]
+    },
+    {
+      "id": "v_change",
+      "view": "What would change this view",
+      "verdict": "A signed extension with corporate credit behind it; a tenant default, closure notice or failed refinancing; an executable offer above the verified hold value; or parcel checks showing a hazard or zoning constraint.",
+      "reasoning": "Each of these replaces a blank with a fact. The tenant's next annual report, not yet filed on November 12, 2026, will update the closure and lease figures.",
+      "depends_on": "Monitoring the tenant's filings and the items on Flagged for Review.",
+      "sources": [
+        "sec_10k",
+        "sec_release",
+        "zimas"
       ]
     }
   ]

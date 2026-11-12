@@ -287,5 +287,53 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("W-11", outputs["suggestions.html"])
 
 
+    def test_signal_scorecard_and_best_course(self):
+        data = pm.load_data()
+        score = pm.signal_scorecard(data)
+        self.assertEqual(score["total"], len(data["signals"]))
+        self.assertEqual(sum(score["overall"].values()), score["total"])
+        self.assertEqual(set(score["overall"]), set(pm.SIGNAL_LEANS))
+        for group, counts in score["by_group"].items():
+            self.assertEqual(sum(counts.values()), sum(1 for s in data["signals"] if s["group"] == group))
+        for coll in ("signals", "verdicts"):
+            for item in data[coll]:
+                self.assertTrue(item["sources"], item["id"])
+                for sid in item["sources"]:
+                    self.assertIn(sid, data["sources"], (item["id"], sid))
+        for s in data["signals"]:
+            self.assertIn(s["lean"], pm.SIGNAL_LEANS, s["id"])
+            self.assertTrue(s["reading"] and s["why"], s["id"])
+        with self.assertRaises(ValueError):
+            pm.signal_scorecard({"signals": [{"id": "x", "group": "g", "signal": "s", "reading": "r", "lean": "buy", "sources": []}]})
+        outputs = build_public.render_all()
+        self.assertIn('id="signal-scorecard"', outputs["projections.html"])
+        self.assertIn('id="best-course"', outputs["decision.html"])
+        self.assertIn("projections.html#signal-scorecard", outputs["index.html"])
+        # No weight, score, or probability may be attached to a signal.
+        for s in data["signals"]:
+            self.assertFalse({"weight", "score", "probability"} & set(s), s["id"])
+
+    def test_2026_11_12_corrections_83da931a(self):
+        data = pm.load_data()
+        obs = {o["id"]: o for o in data["observations"]}
+        wage = obs["wage_state_2027"]
+        self.assertNotIn("2.97", wage["value"])
+        self.assertIn("2.99%", wage["value"])
+        self.assertAlmostEqual((17.40 / 16.90 - 1) * 100, 2.96, places=2)
+        self.assertIn("dof_minwage_cert", wage["sources"])
+        self.assertNotEqual(obs["housing_dof_net_2025"]["geography"], "Los Angeles County")
+        self.assertNotIn("Q3 provision", obs["tenant_ar_allowance"]["note"])
+        # Derived percentages must reproduce from the official dollar figures in the same row.
+        self.assertAlmostEqual((242526 - 260254) / 260254 * 100, -6.8, places=1)
+        self.assertAlmostEqual((73017 - 76538) / 76538 * 100, -4.6, places=1)
+        self.assertAlmostEqual((66259 - 80793) / 80793 * 100, -18.0, places=1)
+        self.assertIn("−6.8%", obs["tenant_rent_trend"]["value"])
+        self.assertEqual(164 + 565 + 1020 + 387, 2136)
+        self.assertIn("387", obs["tenant_site_control"]["value"])
+        flag_ids = {f["id"] for f in data["flags"]}
+        self.assertTrue({"flag_wage_pct_corrected", "flag_dof_housing_jurisdiction", "flag_ar_provision_label", "flag_scorecard_judgment", "flag_not_reread_20261112"}.issubset(flag_ids))
+        self.assertIn("audit_83da931a_n2", {a["id"] for a in data["audit"]})
+
+
 if __name__ == "__main__":
     unittest.main()

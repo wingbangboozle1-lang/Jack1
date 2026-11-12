@@ -591,5 +591,271 @@
       "retenant_npv": null,
       "recommended_path": null
     }
+  },
+  "signals": {
+    "method": "unweighted count of sourced signals by direction; analysis, not a forecast or probability",
+    "total": 22,
+    "overall": {
+      "keep": 6,
+      "sell": 7,
+      "mixed": 9
+    },
+    "by_group": {
+      "Area economy": {
+        "keep": 6,
+        "sell": 1,
+        "mixed": 3
+      },
+      "Tenant system": {
+        "keep": 0,
+        "sell": 5,
+        "mixed": 2
+      },
+      "Costs and capital": {
+        "keep": 0,
+        "sell": 0,
+        "mixed": 3
+      },
+      "Hazard and insurance": {
+        "keep": 0,
+        "sell": 1,
+        "mixed": 1
+      }
+    },
+    "rows": [
+      {
+        "id": "sig_jobs",
+        "group": "Area economy",
+        "signal": "Payroll jobs",
+        "reading": "Metro area 6,282.1 thousand in September 2026; +30.2 thousand (+0.5%) over the year",
+        "lean": "keep",
+        "sources": [
+          "bls_summary"
+        ]
+      },
+      {
+        "id": "sig_food_jobs",
+        "group": "Area economy",
+        "signal": "Restaurant and hospitality jobs",
+        "reading": "Metro leisure and hospitality +11.5 thousand (+1.5%) over the year; county restaurants and other eating places +7,300",
+        "lean": "keep",
+        "sources": [
+          "bls_summary",
+          "edd_la"
+        ]
+      },
+      {
+        "id": "sig_unemployment",
+        "group": "Area economy",
+        "signal": "Unemployment",
+        "reading": "County 4.5% in September 2026, not seasonally adjusted; city annual average 5.1% (2022), 5.3% (2023), 5.9% (2024), 5.8% (2025)",
+        "lean": "mixed",
+        "sources": [
+          "bls_summary",
+          "bls_city_annual"
+        ]
+      },
+      {
+        "id": "sig_population",
+        "group": "Area economy",
+        "signal": "Population",
+        "reading": "County 9,837,286 on January 1, 2026 (−0.6%); city 3,806,201 (−0.9%); state projection for the county 9,811,358 (2026) to 9,708,647 (2035)",
+        "lean": "sell",
+        "sources": [
+          "dof_e1",
+          "dof_p2a"
+        ]
+      },
+      {
+        "id": "sig_regional_plan",
+        "group": "Area economy",
+        "signal": "Regional plan forecast",
+        "reading": "County population 10,214,000 and employment 5,277,000 in 2030, against 10,046,000 and 5,031,000 in 2019",
+        "lean": "keep",
+        "sources": [
+          "scag_appendix"
+        ]
+      },
+      {
+        "id": "sig_income_prices",
+        "group": "Area economy",
+        "signal": "Household income and prices",
+        "reading": "City median household income $81,939; poverty rate 16.5%; area prices +3.7% over the year, food +2.8%, energy +20.3%",
+        "lean": "mixed",
+        "sources": [
+          "census_city",
+          "bls_summary"
+        ]
+      },
+      {
+        "id": "sig_schools",
+        "group": "Area economy",
+        "signal": "Schools",
+        "reading": "District chronic absenteeism 21.3% in 2026, down from 39.8% in 2022; graduation rate 87.6%",
+        "lean": "keep",
+        "sources": [
+          "dashboard_engagement"
+        ]
+      },
+      {
+        "id": "sig_safety",
+        "group": "Area economy",
+        "signal": "Reported crime",
+        "reading": "Citywide offences −9.2% year to date; Central Bureau −0.6%, with larceny +13.6% and robbery +0.4%",
+        "lean": "mixed",
+        "sources": [
+          "lapd_city",
+          "lapd_central"
+        ]
+      },
+      {
+        "id": "sig_trade",
+        "group": "Area economy",
+        "signal": "Port activity",
+        "reading": "Container volume January–September 2026 +3.38% on a year earlier",
+        "lean": "keep",
+        "sources": [
+          "port_containers"
+        ]
+      },
+      {
+        "id": "sig_transit_plan",
+        "group": "Area economy",
+        "signal": "Transit and planning",
+        "reading": "D Line Section 1 opened May 8, 2026; the downtown plan anticipates 100,000 new homes through 2040",
+        "lean": "keep",
+        "sources": [
+          "metro_dline",
+          "dtla_release"
+        ]
+      },
+      {
+        "id": "sig_same_store_sales",
+        "group": "Tenant system",
+        "signal": "Same-store sales",
+        "reading": "−1.1% in the latest quarter, after −7.1% in the same quarter a year earlier",
+        "lean": "sell",
+        "sources": [
+          "sec_release"
+        ]
+      },
+      {
+        "id": "sig_restaurant_count",
+        "group": "Tenant system",
+        "signal": "Restaurant count",
+        "reading": "2,115 at July 5, 2026 against 2,168 a year earlier; guidance of 50–60 closures in fiscal 2026",
+        "lean": "sell",
+        "sources": [
+          "sec_release"
+        ]
+      },
+      {
+        "id": "sig_rent_paid",
+        "group": "Tenant system",
+        "signal": "Rent franchisees pay the company",
+        "reading": "Franchise rental revenues −6.8% year to date; variable lease income −18.0%",
+        "lean": "sell",
+        "sources": [
+          "sec_10q_leases"
+        ]
+      },
+      {
+        "id": "sig_franchisee_credit",
+        "group": "Tenant system",
+        "signal": "Franchisee credit",
+        "reading": "Allowance for doubtful accounts $7,607 thousand, up 70.3% since September 28, 2025",
+        "lean": "sell",
+        "sources": [
+          "sec_10q_ar"
+        ]
+      },
+      {
+        "id": "sig_refinancing",
+        "group": "Tenant system",
+        "signal": "Tenant refinancing",
+        "reading": "95.8% of $1,491,984 thousand of principal has anticipated repayment dates from August 2029 to February 2032; the newest notes carry 7.624%",
+        "lean": "sell",
+        "sources": [
+          "sec_10q_debt"
+        ]
+      },
+      {
+        "id": "sig_earnings",
+        "group": "Tenant system",
+        "signal": "Tenant earnings",
+        "reading": "Adjusted EBITDA $61.2 million against $57.1 million a year earlier; net earnings from continuing operations $21.0 million against $22.8 million",
+        "lean": "mixed",
+        "sources": [
+          "sec_release"
+        ]
+      },
+      {
+        "id": "sig_renewal_practice",
+        "group": "Tenant system",
+        "signal": "Renewal practice",
+        "reading": "The company says it has generally been able to renew restaurant leases at then-current market rates; options are generally exercisable at its sole discretion",
+        "lean": "mixed",
+        "sources": [
+          "sec_10k",
+          "sec_10k_leases"
+        ]
+      },
+      {
+        "id": "sig_wage_floor",
+        "group": "Costs and capital",
+        "signal": "Wage floor for the operator",
+        "reading": "Fast-food minimum $20.00 an hour since April 1, 2024; state general minimum $16.90, rising to $17.40 on January 1, 2027; city minimum $18.42",
+        "lean": "mixed",
+        "sources": [
+          "dir_fastfood",
+          "dir_release_2027",
+          "la_wage"
+        ]
+      },
+      {
+        "id": "sig_interest_rates",
+        "group": "Costs and capital",
+        "signal": "Interest rates",
+        "reading": "10-year Treasury 4.98% at the November 10, 2026 close",
+        "lean": "mixed",
+        "sources": [
+          "treasury"
+        ]
+      },
+      {
+        "id": "sig_exit_tax",
+        "group": "Costs and capital",
+        "signal": "Cost of selling",
+        "reading": "Transfer tax 0.56% below $5,400,000; 4.56% from $5,400,000 to under $10,900,000; 6.06% at $10,900,000 or more",
+        "lean": "mixed",
+        "sources": [
+          "lavote_dtt",
+          "ula"
+        ]
+      },
+      {
+        "id": "sig_disaster",
+        "group": "Hazard and insurance",
+        "signal": "Disaster exposure",
+        "reading": "County risk index 100 (Very High); 88 federal disaster declarations, 61 for fire; 60% chance of a magnitude 6.7 earthquake within 30 years",
+        "lean": "sell",
+        "sources": [
+          "fema_county_query",
+          "openfema_la",
+          "usgs_faq"
+        ]
+      },
+      {
+        "id": "sig_insurance",
+        "group": "Hazard and insurance",
+        "signal": "Insurance market",
+        "reading": "$25.2 billion paid on 41,727 claims from the January 2025 fires as of July 6, 2026; last-resort commercial cover up to $20 million per building",
+        "lean": "mixed",
+        "sources": [
+          "cdi_claims",
+          "cdi_fairplan_2025"
+        ]
+      }
+    ]
   }
 }

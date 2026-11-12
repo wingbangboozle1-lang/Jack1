@@ -194,6 +194,32 @@ def property_decision_model(inputs: dict[str, Any] | None) -> dict[str, Any]:
     return {"status": "requires_verified_cashflow_schedules", "missing": [], "outputs": outputs}
 
 
+SIGNAL_LEANS = ("keep", "sell", "mixed")
+
+
+def signal_scorecard(data: dict[str, Any]) -> dict[str, Any]:
+    """Unweighted tally of how each sourced signal leans. Judgment labels, not a forecast.
+
+    Returns counts overall and by group. No weights, scores, or probabilities are invented.
+    """
+    rows = data.get("signals", [])
+    overall = {lean: 0 for lean in SIGNAL_LEANS}
+    groups: dict[str, dict[str, int]] = {}
+    for row in rows:
+        lean = row["lean"]
+        if lean not in overall:
+            raise ValueError(f"signal {row.get('id')}: unknown lean {lean!r}")
+        overall[lean] += 1
+        groups.setdefault(row["group"], {k: 0 for k in SIGNAL_LEANS})[lean] += 1
+    return {
+        "method": "unweighted count of sourced signals by direction; analysis, not a forecast or probability",
+        "total": len(rows),
+        "overall": overall,
+        "by_group": groups,
+        "rows": [{"id": r["id"], "group": r["group"], "signal": r["signal"], "reading": r["reading"], "lean": r["lean"], "sources": r["sources"]} for r in rows],
+    }
+
+
 def build_projection_payload(data: dict[str, Any] | None = None) -> dict[str, Any]:
     data = data or load_data()
     return {
@@ -204,6 +230,7 @@ def build_projection_payload(data: dict[str, Any] | None = None) -> dict[str, An
         "sectors": sector_projection(data),
         "stress": data["projections"]["stress"],
         "property_model": property_decision_model(data["projections"]["property_inputs"]),
+        "signals": signal_scorecard(data),
     }
 
 

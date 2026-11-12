@@ -1951,3 +1951,49 @@ tool and is listed above for manual review.
   (image, not transcribed); re-read of CBO and Federal Reserve rows at their next releases; the property-specific
   fields remain blank until private documents are supplied.
 - R-1 … R-4: **done**. This session holds no further claim.
+
+---
+
+## Session: arena/83da931a-jack1 (2026-11-12 UTC)
+
+**Session ID:** `arena/83da931a-jack1` (Arena-assigned branch; the platform pins this session to that
+branch and prohibits creating or pushing `session-<id>/<task>` branches, so the pinned branch is used
+as the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-12 UTC):** branch is cut from `origin/main` = `374ba73` (PR #68
+merge, 2026-11-11T02:25:50Z); working tree clean. `git fetch --all --prune` shows only `origin/main`
+and this branch on the remote. `gh run list` shows no Actions run newer than the PR #68 merge and
+`gh pr list` shows no open PR updated after 2026-11-10T01:05:07Z. Every earlier `in progress` marker
+is therefore more than 24 hours old with no commits, well past the 60-minute takeover rule; no live
+claim is overridden. Open stale PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are
+not merged, closed, or modified by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| N-1 | Session claim + coordination protocol | done with this push | arena/83da931a-jack1 | this board (append-only) |
+| N-2 | Repo review + fresh 2026-11-12 line-by-line re-verification of published rows against official sources; irregularity log; privacy re-scan | in progress | arena/83da931a-jack1 | `verification/2026-11-12-83da931a.md` (new) |
+| N-3 | Requirements-gap pass against the owner brief (executive summary, dedicated suggestions section, question/information/answer register, risk-per-decision, projection system); dataset corrections only where an official page disagrees | unclaimed (reserved, starts after N-2) | arena/83da931a-jack1 | `data/verified-2026-11-10.json`, `scripts/build_public.py`, `scripts/validate_site.py`, `scripts/projection_model.py`, `tests/`, `assets/styles.css`, `assets/site.js`, generated canonical root `*.html`, `404.html`, `assets/projections.json`, `_config.yml`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| N-4 | Final integration gates, PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed (reserved, starts after N-3) | arena/83da931a-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Shared outputs (dataset, index,
+navigation, generated pages) change only in N-3/N-4 after N-2 finishes. Small frequent commits;
+`git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union
+without discarding another session's work, then logged here.
+
+### Session completion record — N-2 / N-3 (session arena/83da931a-jack1, 2026-11-12 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| N-2 fresh read of official sources | done | `verification/2026-11-12-83da931a.md` (new) | 40 of the registry sources opened on 2026-11-12 and compared row by row (Treasury, Census city and county QuickFacts, BLS LA summary / LAUS / city annual, EDD, FRED county GDP, SEC Q3 FY2026 release, 10-Q notes R8 / R12 / R14 / R20, FY2025 10-K Items 1A, 2, 7 and Leases note R16, three FEMA NRI queries, OpenFEMA, LAPD citywide and Central Bureau, Port containers and facts, LA Office of Finance ULA FAQ, County Recorder transfer-tax page, DIR release 2026-66 and fast-food FAQ, LA wage notice, FTB, CDI claims tracker and FAIR Plan release, Metro D Line, School Dashboard ×2, CDE profile, DOF E-1 release, USGS FAQ, CAL FIRE Palisades and Eaton) plus the Department of Finance wage certification letter and the EDGAR filing index. Links per row are in the ledger and the Sources page. Sources **not** opened by this session are listed in the ledger (Part C) and on Flagged for Review. | Three published items did not match their official page and were corrected: `wage_state_2027` percentage (+2.97% → certified 2.99%, arithmetic 2.96%); `housing_dof_net_2025` geography (release does not say county or city for 11,260); `tenant_ar_allowance` provision period (year to date, not Q3). Source-side oddities logged, values unaffected: ULA FAQ round-figure wording, LAPD PDF text-layer homicide change, CDI tracker last updated July 6, 2026, Port table parentheses, CDE profile link to the 2025 Dashboard. No fiscal 2026 Form 10-K on EDGAR when read. |
+| N-3 gap closure | done | `data/verified-2026-11-10.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, regenerated canonical pages and `assets/projections.json`, `README.md`, `EXECUTIVE_SUMMARY.md` | Additions all taken from pages read on 2026-11-12: ten observation rows, two decision questions (`q_renewal_control`, `q_rent_capacity`), one source (`dof_minwage_cert`), eight flags, one audit entry (`audit_83da931a_n2`), a 22-signal scorecard on `projections.html` (unweighted keep / sell / mixed labels on official readings; judgment, flagged as such), and a separate property / owner view on `decision.html`. Derived figures are tested (−6.8% / −4.6% / −18.0% rent changes; 164 + 565 + 1,020 + 387 = 2,136). | Scorecard direction labels are analysis, not official facts: published on Flagged for Review as `flag_scorecard_judgment`. Suggestions page, risk-by-path table and lease-term rows were delivered by sessions 87c0c876, 1520648f and f6963e79 while this session worked; they were kept as merged and not duplicated. |
+
+### Conflict / interleave log — session arena/83da931a-jack1 (2026-11-12 UTC)
+
+1. First push after the claim: `git pull --rebase origin main` stopped on `COORDINATION.md` (PRs #69–#74 had merged since the claim read at `374ba73`). The rebase result was discarded locally to avoid a force-push; `origin/main` was **merged** instead and the board resolved as a union (both sides kept verbatim).
+2. Before the PR: `origin/main` had advanced again (PRs #75–#79, sessions f6963e79, a410e84a, 1e8970d6, b3925b6c). Merge conflicts in `COORDINATION.md`, `data/verified-2026-11-10.json`, `scripts/build_public.py` and generated pages. Resolution without discarding anyone's work: board = union; dataset = **their version taken whole**, then this session's edits re-applied by script on top (the script asserts the three rows it corrects were unchanged by others); builder = both sides kept (their macro-outlook and stress-history tables, then the scorecard; their verification-log line plus this ledger); generated pages rebuilt from the merged dataset. One of this session's draft flags duplicated `flag_calfire_eaton_inspection_text` (session 1e8970d6) and was dropped.
+3. Scope overlap disclosed: the dataset, builder, validator, tests, `README.md` and `EXECUTIVE_SUMMARY.md` were also edited today by sessions 87c0c876, 1520648f, a410e84a, f6963e79, 1e8970d6 and b3925b6c. All of those sessions' rows, flags, tests and tables are present after the merge (29 tests pass, including theirs).
+
+Gates on the merged tree: `build_public.py --check` PASS (13 files); unit tests 29/29 OK; validator PASS (11 pages, 506 sourced rows); artifact build + validator PASS; privacy patterns 0 hits. N-4 (PR → `main`, merge, Pages confirmation) in progress.
+
+4. Third move of `origin/main` (PR #80, session 1e8970d6: board record and its own ledger addendum only) made PR #81 conflict on the board. Merged again as a union: their record first, this section after it, both verbatim. No dataset, script or page conflict; gates re-run and unchanged.
