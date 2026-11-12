@@ -1,5 +1,32 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
+
+**Handoff / non-overlap check:** at this content pass `origin/main` = `a491e0f` (PR #73 merge). Suggestions.html, W-01–W-10, D-01–D-09, and S01–S06 are already on main (PRs #69–#73). This session does **not** replace that page. Exclusive additions: October 2026 LA CPI observation, `bls_cpi_la` / `edd_schedule` sources, CPI YoY unpublished flag, W-11/W-12, audit `audit_b3925b6c_pass`. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| B-1 | Session claim + coordination protocol | done | arena/b3925b6c-jack1 | this board (append-only) |
+| B-2 | 2026-11-12 high-volatility re-read; add October CPI; blank/flag unpublished 12-month; suggestions W-11/W-12 | done | arena/b3925b6c-jack1 | `verification/2026-11-12-b3925b6c.md` (new); `data/verified-2026-11-10.json` (additions only); regenerated canonical pages; README / EXECUTIVE_SUMMARY CPI line |
+| B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | done | arena/b3925b6c-jack1 | this board, `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited or deleted. Shared table data changes only by adding verified CPI/schedule rows. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+### Session completion record — B-2 / B-3 (session arena/b3925b6c-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#77](https://github.com/wingbangboozle1-lang/Jack1/pull/77) `arena/b3925b6c-jack1` → `main` → **merged 2026-11-12T16:45:09Z**, merge commit `b5d6b8ef9894ddde89697ecf7e1d37ab35570693` |
+| Interleave | `origin/main` advanced through PRs #71–#76 while this session worked. Rebases unioned concurrent suggestions (PRs #69–#73) and SEC Item 2 work (PRs #74–#75). Nothing from those sessions was discarded. Stale open PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 untouched. |
+| Gates | 20 unit tests OK; `validate_site.py` PASS (11 pages, 414 sourced rows on this branch); `build_public.py --check` PASS |
+| Pages | PR #77 Pages run 43262075293 was cancelled in favor of a later `main` build. Latest `pages-build-deployment` run **43262115341** (commit `04a5ddb`, which contains #77) = success; Pages API latest build `built` at `04a5ddb` with error `null`. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/market.html` serves October 2026 LA CPI-U **+0.6% m/m** and **12-month change not published**, linked to BLS 26-1670-SAN. `suggestions.html` serves W-11 and W-12. |
+| Tasks | B-1, B-2, B-3 **done**. October 12-month CPI remains blank/flagged until the December 10, 2026 BLS release. |
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/a410e84a-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/a410e84a-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/a410e84a-jack1` is pushed.
@@ -12,7 +39,19 @@
 | S-2 | Fresh line-by-line verification of decision-critical figures against official sources; blank-and-flag anything not reproducible; privacy/PII rescan | done | arena/a410e84a-jack1 | `verification/2026-11-12-a410e84a.md` (new); all 15 figure groups re-read from official primary pages — exact match, zero discrepancies |
 | S-3 | Executive summary refresh; suggestions covered by PR #69 (`suggestions.html`, session 87c0c876) — not duplicated; 23-question register and decision paths confirmed consistent | done | arena/a410e84a-jack1 | `EXECUTIVE_SUMMARY.md`, `index.html`, `decision.html`, `requirements.html`, `suggestions.html` (read-only vs PR #69 scope), `data/verified-2026-11-10.json` (questions/flags only) |
 | S-4 | Site creation / GitHub Pages: clean landing page + category subpages, dashboard UI, per-row source tables, suggestions section, flagged page | done | arena/a410e84a-jack1 | canonical root HTML pages (11), `assets/styles.css`, `assets/site.js`, `_config.yml`, `.github/workflows/pages.yml`, `suggestions.html` integrated in nav/404/category cards |
-| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | in progress | arena/a410e84a-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | done | arena/a410e84a-jack1 | PR #72 merged 2026-11-12 as `20b7ca4`; `validate` CI SUCCESS; legacy `pages-build-deployment` build `1363701469` status `built` on commit `20b7ca4`; live `https://wingbangboozle1-lang.github.io/Jack1/` and `/suggestions.html` fetched and verified |
+
+### Session completion record — S-5 (session arena/a410e84a-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | **#72** https://github.com/wingbangboozle1-lang/Jack1/pull/72 — `arena/a410e84a-jack1` → `main`, "Integration: official-source re-verification, suggestions review, and verified decision brief (2026-11-12)" |
+| Merge | **MERGED** 2026-11-12, merge commit `20b7ca49285008000d869c618c37b795cca5f578`, mergeable state clean |
+| Pre-merge CI | `validate` job SUCCESS (run 43260987373); build check 13 files PASS; 18 unit tests OK; validator 11 pages / 370 sourced rows PASS; curated artifact PASS; privacy scan clean |
+| Pages deploy | Legacy `pages-build-deployment` build `1363701469` status `built`, error `null`, commit `20b7ca4`; Pages API `status: built`, `build_type: legacy` (branch `main` /), HTTPS enforced, custom 404 |
+| Live verification | Root serves dual-track executive decision, 23-question register, blank/flagged property inputs; `/suggestions.html` serves S01–S06 review-only proposals with discovery routes, approval gates, trade-offs, official sources |
+| Verification summary | `verification/2026-11-12-a410e84a.md`: 15 decision-critical figure groups re-read from official primary pages (Census, BLS, SEC 10-Q/earnings, Treasury, USGS, City of LA ULA, FEMA NRI ArcGIS, CAL FIRE/OSFM FHSZ) — all exact match, zero discrepancies |
+| Flagged irregularities (non-blocking, published on Flagged for Review) | Blank parcel/lease/rent/value/debt/tax/owner fields; DOF-vs-Census 2025 county gap 158,501; SCAG Table 6 manufacturing 153% withheld; legacy Pages build_type with workflow switch HTTP 403 |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only through S-2-verified corrections and deterministic regeneration. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
@@ -1776,6 +1815,123 @@ Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) 
 
 Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
 
+### Session completion record — F-2 (session arena/f6963e79-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#74](https://github.com/wingbangboozle1-lang/Jack1/pull/74) `arena/f6963e79-jack1` → `main`. CI `validate` = pass (run 43261508576), `MERGEABLE` / `CLEAN` → **merged 2026-11-12T16:42:28Z**, merge commit `47b9fcbfd5cc0974a5103127a770178ba3351d6a`. |
+| Main runs | `Validate decision brief (legacy Pages publication)` run 43261594792 = success; `pages build and deployment` run 43261593115 = success; Pages API `pages/builds/latest` = `built` at commit `47b9fcb`, error `null`, `updated_at` 2026-11-12T16:43:04Z. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/property.html` and `flagged.html` (cache-busted query) serve the new content: the Item 2 page citation (printed p. 22), the Dec. 22, 2025 close source, the company-wide lease rows (about 13% contingent rent; then-current-rate renewals), and the four new flags. |
+| Gates on the merged tree | `build_public.py --check` PASS (13 files); unit tests 19/19 OK; `validate_site.py` PASS (11 pages, 406 sourced rows); artifact validation PASS; privacy scan of published HTML 0 hits. |
+| Tasks | F-1 and F-2 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. PR #69 (`arena/87c0c876-jack1`) and PR #72 (`arena/a410e84a-jack1`) not modified by this session. |
+| Owner items | (1) Repository is public and 58 commits carry a personal email in git author metadata: decide whether to change the GitHub email privacy setting or rewrite history (not done here). (2) Refresh the Jack in the Box state-level unit count from a current official source before any current-year use (941 is a Sept. 28, 2025 snapshot). (3) Re-run the 74-URL link check from an environment with outbound access to the official hosts. |
+
+## Session: arena/1e8970d6-jack1 (2026-11-12 UTC)
+
+**Session ID:** `arena/1e8970d6-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so no `session-<id>/<task>` branch can be created — the pinned branch is used, as prior sessions did).
+
+**Claim-time handoff check (2026-11-12 16:35 UTC):** `origin/main` = `374ba73` (PR #68 merge). All claims
+through `7ba2d90a` are recorded done. **Two other sessions are live right now** (first commits
+2026-11-12T16:31Z, seen via `git fetch` of all branches):
+`arena/87c0c876-jack1` (S-1 dedicated suggestions review area; S-2 integration) and
+`arena/1520648f-jack1` (N-2 requirement gap check incl. suggestions section, rolling/high-impact source
+re-read, privacy re-scan; N-3 PR/merge). Both claim `scripts/build_public.py`, `scripts/validate_site.py`,
+`tests/`, generated canonical HTML and `README.md`; 1520648f also claims `data/verified-2026-11-10.json`.
+**This session therefore claims none of those files for content work** and does not build a second
+suggestions page. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| R-1 | Session claim | done with this push | arena/1e8970d6-jack1 | this board (append-only) |
+| R-2 | Independent 2026-11-12 re-read of the **non-rolling** official sources whose last recorded access is 2026-11-10 (Census county, DOF P-2A/E-5, SCAG, CDE Dashboard, SEC 10-K/10-Q detail pages, FEMA NRI/OpenFEMA, CAL FIRE acres/incidents, CGS, Metro) — i.e. the set **not** in N-2's "rolling/high-impact" scope — plus a dated repo-review snapshot (branches, open PRs, legacy files, privacy) | in progress | arena/1e8970d6-jack1 | `verification/2026-11-12-1e8970d6.md` (new) |
+| R-3 | New official-source research for factors not yet in the dataset: lease-window (2030–2035) macro projection paths (CBO outlook, Federal Reserve projections), historical stress calibration for black-swan cases (BLS LAUS 2020 / prior peaks), extra Census area factors (education, commute, establishments). Staged only — nothing is published from this task | in progress | arena/1e8970d6-jack1 | `data/additions-2026-11-12-1e8970d6.json` (new staging file, not read by the builder) |
+| R-4 | Final integration **only after** S-1/S-2 and N-2/N-3 are merged (or their claims go >60 min without commits): rebase on `main`, fold the R-3 staged rows into the dataset with audit entries and flags, regenerate canonical pages, re-verify the combined data, run all gates + link check, PR → `main`, merge, confirm Pages deploy, record | unclaimed (reserved) | arena/1e8970d6-jack1 | shared outputs (dataset, generated pages, tests), this board, `gh` operations — not touched before the other sessions finish |
+
+**Requests to other sessions (logged instead of editing their files):** none yet. Any correction R-2 finds in
+`data/verified-2026-11-10.json` will be listed here and in the verification ledger for the dataset owner
+(1520648f) or applied in R-4 after that session is done.
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits;
+`git pull --rebase origin main` before every push; conflicts stop and are resolved as unions without
+discarding another session's work.
+
+### Interleave note 1 — 2026-11-12 ~16:37 UTC (session arena/1e8970d6-jack1)
+
+While the R-1 claim was being pushed, `origin/main` advanced `374ba73` → `ff0e54c` (PR #69, session
+`87c0c876`: new `suggestions.html`, 11 canonical pages, 18 tests, 370 sourced rows). `git pull --rebase`
+stopped on a tail-append conflict in this board only; resolved as a **union** — 87c0c876's section is kept
+verbatim above this session's section, nothing discarded. The un-rebased claim commit `4b0fbd1` had already
+reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
+session's branch only (never on `main`).
+
+### R-2 / R-3 / R-4 record — 2026-11-12 ~17:00 UTC (session arena/1e8970d6-jack1)
+
+**Task status**
+
+| Task ID | Status | Result |
+|---|---|---|
+| R-1 | done | Claim pushed; two board-only rebase conflicts resolved as unions (Interleave notes 1 and 2). |
+| R-2 | **done — partly complete, stated as such** | 37 published dataset rows re-read on their official pages and matching in full, 2 in part, 0 disagreeing. **Not reached** (still carrying earlier sessions' verification, not re-verified by this session): DOF P-2A / E-5 tables, SCAG, California School Dashboard / CDE, SEC 10-K state counts, CAL FIRE hazard-zone acreage, CGS, Metro. Ledger: `verification/2026-11-12-1e8970d6.md`. |
+| R-3 | done | 7 new official sources, 28 sourced rows, 7 flags, 1 audit entry staged in `data/additions-2026-11-12-1e8970d6.json`. |
+| R-4 | done pending merge (PR link and Pages result recorded in the follow-up note) | Staged rows appended to `data/verified-2026-11-10.json`; pages regenerated; gates below. |
+
+**Interleave note 2.** Between the claim and this record `origin/main` advanced `ff0e54c` → `47b9fcb`
+(PRs #70, #71, #72, #73, #74 from `87c0c876`, `1520648f`, `a410e84a`, `f6963e79`). Two more rebases stopped on
+tail-append conflicts in this board only; both were resolved as unions with every other session's text kept
+verbatim. The R-4 start condition (S-1/S-2 and N-2/N-3 merged) was met at 16:41 UTC.
+
+**Overlap disclosure (R-4).** Three sessions still show claims on their own branches with no commit after
+the claim: `83da931a` (N-3 reserved, not started), `b3925b6c` (N-3: dataset `suggestions` key, builder,
+`suggestions.html`), `dcb5495c` (own new files; P-4 hooks later). R-4 touches shared files **additively only**:
+
+- `data/verified-2026-11-10.json` — rows appended to `sources`, `observations`, `flags`, `audit`; one sentence
+  appended to `meta.verification`. No existing row, value, key or the `suggestions` key was edited.
+- `scripts/validate_site.py` — one line: `www.cbo.gov` and `www.federalreserve.gov` added to the allowlist.
+- `scripts/build_public.py` — one four-line hunk in `build_projections`: two `obs_table` calls for the new
+  categories `Macro outlook` and `Stress history`. No navigation, page list or other builder change.
+- `tests/test_additions_1e8970d6.py` — new file (7 tests); existing tests untouched.
+- Regenerated: `projections.html`, `market.html`, `property.html`, `risks.html`, `flagged.html`,
+  `sources.html`, `audit.html` (deterministic output of the builder).
+
+If any of those sessions rebases over this, the dataset change is append-only and the generated pages should
+be regenerated with `python3 scripts/build_public.py`, not hand-merged.
+
+**What was added to the public site**
+
+- `projections.html` — two new tables: official national macro paths (CBO February 2026 outlook; Federal
+  Reserve projections of 2026-09-16, with stated uncertainty bands) and observed Los Angeles stress history
+  (2020 shock; 2007–2010 recession; restaurant-sector jobs).
+- `market.html` — Census households, education, labor-force participation, commute, county income, housing,
+  business counts and retail; latest restaurant-sector jobs.
+- `property.html` — tenant principal maturities by fiscal year; leverage tests and cash sweep.
+- `risks.html` — Northridge 1994 history (both USGS figures); additional FEMA county ratings.
+- `flagged.html` — 7 new flags (CBO rate path below the observed 10-year yield; CBO annual table not
+  transcribed; Fed projections shifted up; USGS Northridge figures conflict; CAL FIRE Eaton wording;
+  city business counts not published; stress series scope).
+
+**Sources (all read 2026-11-12)**: [CBO outlook](https://www.cbo.gov/publication/62105) ·
+[Federal Reserve SEP](https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm) ·
+[BLS LAUS 2016–2026](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2016&to_year=2026) ·
+[BLS LAUS 2007–2013](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2007&to_year=2013) ·
+[BLS CES food services](https://data.bls.gov/timeseries/SMU06310847072200001?output_view=data&include_graphs=false&from_year=2019&to_year=2026) ·
+[USGS Northridge](https://www.usgs.gov/centers/earthquake-science-center/science/m67-january-17-1994-northridge-california-earthquake) ·
+[USGS OFR 96-263](https://pubs.usgs.gov/of/1996/ofr-96-0263/introduc.htm) ·
+[Census city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) ·
+[Census county](https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225) ·
+[SEC 10-Q debt note](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm). Full list
+with per-row results in the ledger.
+
+**Irregularities** (all on Flagged for Review, none blocking): see ledger section 3 (I-1 … I-8).
+
+**Gates before the PR** (re-run after merging `origin/main` `04a5ddb`, PRs #75–#76; the dataset and generated
+pages were taken from `main` and this session's rows re-appended, then regenerated — nothing hand-merged):
+`build_public.py --check` PASS (13 files) · 27 tests PASS (20 existing + 7 new) · validator PASS (11 pages,
+457 sourced rows; allowlist, local links, blanks, privacy) · artifact boundary PASS.
+External links cannot be fetched from the build sandbox; each new URL was opened today through the research
+tool and is listed above for manual review.
+
 ---
 
 ## Session: arena/83da931a-jack1 (2026-11-12 UTC)
@@ -1804,3 +1960,18 @@ not merged, closed, or modified by this session.
 navigation, generated pages) change only in N-3/N-4 after N-2 finishes. Small frequent commits;
 `git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union
 without discarding another session's work, then logged here.
+
+### Session completion record — N-2 / N-3 (session arena/83da931a-jack1, 2026-11-12 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| N-2 fresh read of official sources | done | `verification/2026-11-12-83da931a.md` (new) | 40 of the registry sources opened on 2026-11-12 and compared row by row (Treasury, Census city and county QuickFacts, BLS LA summary / LAUS / city annual, EDD, FRED county GDP, SEC Q3 FY2026 release, 10-Q notes R8 / R12 / R14 / R20, FY2025 10-K Items 1A, 2, 7 and Leases note R16, three FEMA NRI queries, OpenFEMA, LAPD citywide and Central Bureau, Port containers and facts, LA Office of Finance ULA FAQ, County Recorder transfer-tax page, DIR release 2026-66 and fast-food FAQ, LA wage notice, FTB, CDI claims tracker and FAIR Plan release, Metro D Line, School Dashboard ×2, CDE profile, DOF E-1 release, USGS FAQ, CAL FIRE Palisades and Eaton) plus the Department of Finance wage certification letter and the EDGAR filing index. Links per row are in the ledger and the Sources page. Sources **not** opened by this session are listed in the ledger (Part C) and on Flagged for Review. | Three published items did not match their official page and were corrected: `wage_state_2027` percentage (+2.97% → certified 2.99%, arithmetic 2.96%); `housing_dof_net_2025` geography (release does not say county or city for 11,260); `tenant_ar_allowance` provision period (year to date, not Q3). Source-side oddities logged, values unaffected: ULA FAQ round-figure wording, LAPD PDF text-layer homicide change, CDI tracker last updated July 6, 2026, Port table parentheses, CDE profile link to the 2025 Dashboard. No fiscal 2026 Form 10-K on EDGAR when read. |
+| N-3 gap closure | done | `data/verified-2026-11-10.json`, `scripts/build_public.py`, `scripts/projection_model.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, regenerated canonical pages and `assets/projections.json`, `README.md`, `EXECUTIVE_SUMMARY.md` | Additions all taken from pages read on 2026-11-12: ten observation rows, two decision questions (`q_renewal_control`, `q_rent_capacity`), one source (`dof_minwage_cert`), eight flags, one audit entry (`audit_83da931a_n2`), a 22-signal scorecard on `projections.html` (unweighted keep / sell / mixed labels on official readings; judgment, flagged as such), and a separate property / owner view on `decision.html`. Derived figures are tested (−6.8% / −4.6% / −18.0% rent changes; 164 + 565 + 1,020 + 387 = 2,136). | Scorecard direction labels are analysis, not official facts: published on Flagged for Review as `flag_scorecard_judgment`. Suggestions page, risk-by-path table and lease-term rows were delivered by sessions 87c0c876, 1520648f and f6963e79 while this session worked; they were kept as merged and not duplicated. |
+
+### Conflict / interleave log — session arena/83da931a-jack1 (2026-11-12 UTC)
+
+1. First push after the claim: `git pull --rebase origin main` stopped on `COORDINATION.md` (PRs #69–#74 had merged since the claim read at `374ba73`). The rebase result was discarded locally to avoid a force-push; `origin/main` was **merged** instead and the board resolved as a union (both sides kept verbatim).
+2. Before the PR: `origin/main` had advanced again (PRs #75–#79, sessions f6963e79, a410e84a, 1e8970d6, b3925b6c). Merge conflicts in `COORDINATION.md`, `data/verified-2026-11-10.json`, `scripts/build_public.py` and generated pages. Resolution without discarding anyone's work: board = union; dataset = **their version taken whole**, then this session's edits re-applied by script on top (the script asserts the three rows it corrects were unchanged by others); builder = both sides kept (their macro-outlook and stress-history tables, then the scorecard; their verification-log line plus this ledger); generated pages rebuilt from the merged dataset. One of this session's draft flags duplicated `flag_calfire_eaton_inspection_text` (session 1e8970d6) and was dropped.
+3. Scope overlap disclosed: the dataset, builder, validator, tests, `README.md` and `EXECUTIVE_SUMMARY.md` were also edited today by sessions 87c0c876, 1520648f, a410e84a, f6963e79, 1e8970d6 and b3925b6c. All of those sessions' rows, flags, tests and tables are present after the merge (29 tests pass, including theirs).
+
+Gates on the merged tree: `build_public.py --check` PASS (13 files); unit tests 29/29 OK; validator PASS (11 pages, 506 sourced rows); artifact build + validator PASS; privacy patterns 0 hits. N-4 (PR → `main`, merge, Pages confirmation) in progress.

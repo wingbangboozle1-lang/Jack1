@@ -51,6 +51,7 @@ ALLOWED_HOSTS = {
     "www.metro.net", "metro.net",
     "www.epa.gov", "epa.gov",
     "www.portoflosangeles.org", "portoflosangeles.org",
+    "www.cbo.gov", "www.federalreserve.gov",
     "github.com", "wingbangboozle1-lang.github.io",
 }
 # Official hosted services are allowed only for the specific FEMA/CAL FIRE/LAPD resources used.

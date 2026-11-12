@@ -263,8 +263,28 @@ class BuildAndValidationTests(unittest.TestCase):
             "verification/2026-11-08-0e369d53.md",
             "verification/2026-11-11-a6ebbd99.md",
             "verification/2026-11-11-2efe9aec.md",
+            "verification/2026-11-12-b3925b6c.md",
         ):
             self.assertIn(log_name, outputs["audit.html"])
+
+    def test_october_2026_cpi_is_month_over_month_only(self):
+        data = pm.load_data()
+        obs = {o["id"]: o for o in data["observations"]}
+        self.assertIn("cpi_la_oct2026", obs)
+        row = obs["cpi_la_oct2026"]
+        self.assertIn("+0.6%", row["value"])
+        self.assertIn("12-month change not published", row["value"])
+        self.assertEqual(row["sources"], ["bls_cpi_la"])
+        self.assertIn("bls_cpi_la", data["sources"])
+        flag_ids = {f["id"] for f in data["flags"]}
+        self.assertIn("flag_cpi_oct_yoy_unpublished", flag_ids)
+        sug_ids = {s["id"] for s in data["suggestions"]}
+        self.assertIn("W-11", sug_ids)
+        self.assertIn("W-12", sug_ids)
+        outputs = build_public.render_all()
+        self.assertIn("+0.6%", outputs["market.html"])
+        self.assertIn("12-month change not published", outputs["market.html"])
+        self.assertIn("W-11", outputs["suggestions.html"])
 
 
     def test_signal_scorecard_and_best_course(self):

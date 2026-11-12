@@ -7,7 +7,7 @@ A privacy-safe, official-source decision dashboard for a **reported** Jack in th
 
 ## Recommendation
 
-[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-11) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The previous full 74-source cross-check is dated 2026-11-10; the [2026-11-11 review](verification/2026-11-11-db9ded39.md) rechecked high-impact and rolling sources, not every source afresh.
+[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-11, with a 2026-11-12 October CPI addendum) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The previous full 74-source cross-check is dated 2026-11-10; the [2026-11-11 review](verification/2026-11-11-db9ded39.md) rechecked high-impact and rolling sources; [2026-11-12](verification/2026-11-12-b3925b6c.md) added the official October LA CPI month-to-month print and left the unpublished 12-month cell blank.
 
 Prepare sale and renewal cases in parallel. Preserve notice/option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.
 
@@ -20,7 +20,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `property.html` — blank asset fields, tenant/issuer context, taxes, gates
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
 - `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths, risk table by decision path + blank-default local owner worksheet
-- `suggestions.html` — review-only: six property/evidence proposals, ten site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
+- `suggestions.html` — review-only: six property/evidence proposals, twelve site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
 - `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
