@@ -1,0 +1,521 @@
+{
+  "meta": {
+    "session": "1e8970d6",
+    "date": "2026-11-12",
+    "status": "staged — not read by the site builder until integration task R-4",
+    "rule": "Every row cites an official page read on 2026-11-12. Derived rows state their arithmetic. Nothing is inferred; property-specific fields are untouched."
+  },
+  "allowlist_hosts_needed": [
+    "www.cbo.gov",
+    "www.federalreserve.gov"
+  ],
+  "sources": {
+    "cbo_outlook_2026": {
+      "title": "The Budget and Economic Outlook: 2026 to 2036 (February 2026), Chapter 2 economic outlook",
+      "publisher": "Congressional Budget Office",
+      "url": "https://www.cbo.gov/publication/62105",
+      "accessed": "2026-11-12",
+      "kind": "official projection"
+    },
+    "fed_sep_2026_09": {
+      "title": "Summary of Economic Projections, September 16, 2026 FOMC meeting",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "accessed": "2026-11-12",
+      "kind": "official projection"
+    },
+    "bls_laus_2020": {
+      "title": "LAUS series LAUCN060370000000003: Los Angeles County, NSA, 2016–2026 monthly table",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2016&to_year=2026",
+      "accessed": "2026-11-12",
+      "kind": "official statistics"
+    },
+    "bls_laus_2007_2013": {
+      "title": "LAUS series LAUCN060370000000003: Los Angeles County, NSA, 2007–2013 monthly table",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2007&to_year=2013",
+      "accessed": "2026-11-12",
+      "kind": "official statistics"
+    },
+    "bls_ces_food_la": {
+      "title": "CES series SMU06310847072200001: Food Services and Drinking Places, all employees, Los Angeles-Long Beach-Glendale Metropolitan Division, NSA",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://data.bls.gov/timeseries/SMU06310847072200001?output_view=data&include_graphs=false&from_year=2019&to_year=2026",
+      "accessed": "2026-11-12",
+      "kind": "official statistics"
+    },
+    "usgs_northridge": {
+      "title": "M6.7 January 17, 1994 Northridge, California earthquake (Earthquake Science Center)",
+      "publisher": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/centers/earthquake-science-center/science/m67-january-17-1994-northridge-california-earthquake",
+      "accessed": "2026-11-12",
+      "kind": "official hazard history"
+    },
+    "usgs_ofr_96_263": {
+      "title": "USGS Open-File Report 96-263, USGS Response to an Urban Earthquake: Northridge '94, Introduction",
+      "publisher": "U.S. Geological Survey",
+      "url": "https://pubs.usgs.gov/of/1996/ofr-96-0263/introduc.htm",
+      "accessed": "2026-11-12",
+      "kind": "official hazard history"
+    }
+  },
+  "observations": [
+    {
+      "id": "cbo_gdp_path",
+      "category": "Economy",
+      "measure": "CBO projected real GDP growth",
+      "value": "Average 1.8% a year over 2027–2036; potential growth 2.1% (2026–2030) and 1.8% (2031–2036)",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026 (forecast completed December 3, 2025)",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. Sets a slow-growth baseline through the reported 2030–2035 expiry window; read from report text only.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "cbo_unemployment_path",
+      "category": "Labor",
+      "measure": "CBO projected unemployment rate",
+      "value": "4.6% in 2026; near 4.3% in 2028–2031; 4.2% from 2032; average 4.3% over 2027–2036",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. No recession is built into this baseline; compare with the Los Angeles County stress history rows below.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "cbo_inflation_path",
+      "category": "Inflation",
+      "measure": "CBO projected inflation",
+      "value": "PCE 2.7% in 2026, 2.1% in 2028, 2% in 2030; CPI-U 2.8% in 2026 and 2.3% in 2028",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. A fixed or capped lease escalation would be tested against this path; the actual escalation clause is unverified.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "cbo_rates_path",
+      "category": "Financing",
+      "measure": "CBO projected interest rates",
+      "value": "Federal funds 3.9% (Q4 2025) to 3.4% (Q4 2026), then steady; 10-year Treasury 4.1% (Q4 2025) to 4.3% (Q4 2027), stable afterward",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. The actual 10-year par yield on November 10, 2026 (4.98%) is above this path and above CBO's 2026 two-thirds range — see Flagged for Review.",
+      "sources": [
+        "cbo_outlook_2026",
+        "treasury"
+      ]
+    },
+    {
+      "id": "cbo_uncertainty_2026",
+      "category": "Economy",
+      "measure": "CBO two-thirds uncertainty ranges for 2026",
+      "value": "Real GDP growth 0.5%–3.9%; unemployment 3.9%–5.4%; PCE inflation 1.7%–3.7%; 10-year Treasury 3.5%–4.8%",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. CBO's own text names wars, pandemics, natural disasters and financial crises as sources of error outside these ranges.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "cbo_debt_path",
+      "category": "Financing",
+      "measure": "CBO projected federal debt held by the public",
+      "value": "101% of GDP in 2026 rising to 120% in 2036",
+      "geography": "United States",
+      "period": "CBO outlook of February 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. Long-rate and tax-policy backdrop for any hold beyond 2030; no rate effect is quantified here.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "fed_sep_rate_path",
+      "category": "Financing",
+      "measure": "FOMC median federal funds rate projection",
+      "value": "4.1% (2026); 4.1% (2027); 3.9% (2028); 3.6% (2029); longer run 3.2%",
+      "geography": "United States",
+      "period": "Summary of Economic Projections, September 16, 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. June 2026 medians were 3.8% / 3.6% / 3.4% and 3.1% longer run, so the projected path moved up. Policy-rate projections are not cap rates or loan quotes.",
+      "sources": [
+        "fed_sep_2026_09"
+      ]
+    },
+    {
+      "id": "fed_sep_macro",
+      "category": "Economy",
+      "measure": "FOMC median projections: GDP, unemployment, PCE inflation",
+      "value": "Real GDP 2.3 / 2.4 / 2.2 / 2.1% (2026–2029), longer run 2.0%; unemployment 4.1% each year, longer run 4.2%; PCE inflation 3.7 / 2.3 / 2.1 / 2.0%",
+      "geography": "United States",
+      "period": "Summary of Economic Projections, September 16, 2026",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. Participant projections, not a committee forecast; 2026 inflation is well above the 2% objective.",
+      "sources": [
+        "fed_sep_2026_09"
+      ]
+    },
+    {
+      "id": "fed_sep_rate_band",
+      "category": "Financing",
+      "measure": "FOMC 70% confidence interval for the federal funds rate",
+      "value": "2026: 3.6%–4.6%; 2027: 2.4%–5.8%; 2028: 1.6%–6.2%; 2029: 0.8%–6.4%",
+      "geography": "United States",
+      "period": "Summary of Economic Projections, September 16, 2026 (Figure 5 data, based on historical forecast errors)",
+      "status": "verified",
+      "note": "National projection, not a Los Angeles or parcel forecast. The band three years out is more than five percentage points wide: refinancing and exit-pricing cases need a range, not a point.",
+      "sources": [
+        "fed_sep_2026_09"
+      ]
+    },
+    {
+      "id": "laus_2020_shock_rate",
+      "category": "Labor",
+      "measure": "2020 shock: county unemployment rate",
+      "value": "4.8% (February 2020) to 16.8% (April 2020) and 18.9% peak (May 2020); 10.8% in December 2020",
+      "geography": "Los Angeles County, not seasonally adjusted",
+      "period": "February–December 2020",
+      "status": "verified",
+      "note": "Observed speed and size of a black-swan labor shock in this county. History, not a forecast or probability.",
+      "sources": [
+        "bls_laus_2020"
+      ]
+    },
+    {
+      "id": "laus_2020_shock_employment",
+      "category": "Labor",
+      "measure": "2020 shock: county resident employment",
+      "value": "5,054,309 (February 2020) to 3,820,951 (May 2020); −1,233,358 (−24.4%)",
+      "geography": "Los Angeles County, not seasonally adjusted",
+      "period": "February–May 2020",
+      "status": "derived",
+      "note": "Change and percentage are arithmetic on two published monthly levels.",
+      "sources": [
+        "bls_laus_2020"
+      ]
+    },
+    {
+      "id": "laus_2020_recovery",
+      "category": "Labor",
+      "measure": "2020 shock: recovery time",
+      "value": "Rate first back at or below 4.8% in April 2022; highest later employment 4,893,555 (November 2025), still −160,754 (−3.2%) below February 2020",
+      "geography": "Los Angeles County, not seasonally adjusted",
+      "period": "March 2020–September 2026 (October 2025 not published)",
+      "status": "derived",
+      "note": "The months are read from the published table; the gap is arithmetic. The resident-employment level had not regained its February 2020 value through September 2026.",
+      "sources": [
+        "bls_laus_2020"
+      ]
+    },
+    {
+      "id": "laus_gfc_rate",
+      "category": "Labor",
+      "measure": "2007–2010 recession: county unemployment rate",
+      "value": "4.5% (May 2007) to 13.1% peak (July 2010; 648,995 unemployed); still 8.6% in December 2013",
+      "geography": "Los Angeles County, not seasonally adjusted",
+      "period": "2007–2013",
+      "status": "verified",
+      "note": "Ordinary-recession reference: a slower, longer shock than 2020.",
+      "sources": [
+        "bls_laus_2007_2013"
+      ]
+    },
+    {
+      "id": "laus_gfc_duration",
+      "category": "Labor",
+      "measure": "2007–2010 recession: depth and duration",
+      "value": "Employment 4,713,759 (November 2007) to 4,267,379 (January 2010): −446,380 (−9.5%); rate at or above 10.0% for 50 consecutive months (January 2009–February 2013)",
+      "geography": "Los Angeles County, not seasonally adjusted",
+      "period": "November 2007–February 2013",
+      "status": "derived",
+      "note": "Arithmetic and month count on published monthly values. A lease expiry that falls inside such a period faces a multi-year weak re-leasing market.",
+      "sources": [
+        "bls_laus_2007_2013"
+      ]
+    },
+    {
+      "id": "ces_food_2020_shock",
+      "category": "Labor",
+      "measure": "Restaurant-sector jobs in the 2020 shock",
+      "value": "397.9 thousand (February 2020) to 215.7 thousand (April 2020): −182.2 thousand (−45.8%); first back above 397.9 in August 2023 (398.4)",
+      "geography": "Los Angeles-Long Beach-Glendale Metropolitan Division (Los Angeles County), not seasonally adjusted",
+      "period": "February 2020–August 2023",
+      "status": "derived",
+      "note": "Food services and drinking places, all employees. The tenant's own sector lost almost half its local jobs in two months and took about 3.5 years to recover; this is sector employment, not this restaurant's sales.",
+      "sources": [
+        "bls_ces_food_la"
+      ]
+    },
+    {
+      "id": "ces_food_current",
+      "category": "Labor",
+      "measure": "Restaurant-sector jobs, latest",
+      "value": "392.4 thousand (preliminary); +7.2 thousand from September 2025 (385.2); −8.2 thousand from September 2019 (400.6)",
+      "geography": "Los Angeles-Long Beach-Glendale Metropolitan Division (Los Angeles County), not seasonally adjusted",
+      "period": "September 2026 preliminary",
+      "status": "derived",
+      "note": "Year-over-year gain but still below the same month of 2019; differences are arithmetic on published monthly values.",
+      "sources": [
+        "bls_ces_food_la"
+      ]
+    },
+    {
+      "id": "census_households",
+      "category": "Population",
+      "measure": "Households and persons per household",
+      "value": "City 1,439,097 households, 2.61 persons; County 3,416,449 households, 2.81 persons",
+      "geography": "City of Los Angeles; Los Angeles County",
+      "period": "2020–2024 ACS 5-year",
+      "status": "verified",
+      "note": "Household count is the customer base behind the population figures.",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_age_65",
+      "category": "Population",
+      "measure": "Persons 65 years and over",
+      "value": "County 17.1%",
+      "geography": "Los Angeles County",
+      "period": "July 1, 2025 (V2025)",
+      "status": "verified",
+      "note": "Ageing context for long-run quick-service demand; no demand effect is quantified.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_education",
+      "category": "Income",
+      "measure": "Educational attainment, age 25+",
+      "value": "City: high school or higher 79.6%, bachelor's or higher 38.5%; County: 80.9% and 36.0%",
+      "geography": "City of Los Angeles; Los Angeles County",
+      "period": "2020–2024 ACS 5-year",
+      "status": "verified",
+      "note": "Workforce and earning-capacity context; city-wide, not the trade area.",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_labor_force",
+      "category": "Income",
+      "measure": "Civilian labor force participation and mean commute",
+      "value": "City 66.4%, 30.7 minutes; County 64.7%, 30.4 minutes",
+      "geography": "City of Los Angeles; Los Angeles County",
+      "period": "2020–2024 ACS 5-year",
+      "status": "verified",
+      "note": "Commute-time context for drive-through traffic patterns; no traffic count for the site is known.",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_county_income_detail",
+      "category": "Income",
+      "measure": "County per-capita income and poverty",
+      "value": "Per capita $45,792; persons in poverty 13.3%",
+      "geography": "Los Angeles County",
+      "period": "2020–2024 ACS 5-year (2024 dollars); poverty per QuickFacts",
+      "status": "verified",
+      "note": "County comparison for the city rows above (city $47,685 and 16.5%).",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_county_housing",
+      "category": "Housing",
+      "measure": "County housing tenure, value, rent and permits",
+      "value": "Owner-occupied 45.9%; median value $834,200; median gross rent $1,954; building permits 22,250 (2025)",
+      "geography": "Los Angeles County",
+      "period": "2020–2024 ACS 5-year; permits 2025",
+      "status": "verified",
+      "note": "County comparison for the city housing rows; permits indicate the pace of new supply.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_county_business",
+      "category": "Economy",
+      "measure": "County employer base",
+      "value": "304,988 employer establishments; 3,987,736 employees (+2.3% 2022–2023); annual payroll $299,616,607 thousand; 1,165,040 nonemployer establishments (2024)",
+      "geography": "Los Angeles County",
+      "period": "2023 County Business Patterns; 2024 Nonemployer Statistics",
+      "status": "verified",
+      "note": "QuickFacts publishes these counts for the county only; the city rows are marked X (not applicable). See Flagged for Review.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "census_county_retail",
+      "category": "Economy",
+      "measure": "County retail and food-service sales",
+      "value": "Retail $213,932,785 thousand ($22,010 per capita); accommodation and food services $44,000,801 thousand",
+      "geography": "Los Angeles County",
+      "period": "2022 Economic Census",
+      "status": "verified",
+      "note": "County comparison for the city sales rows; five-yearly census, not current sales.",
+      "sources": [
+        "census_county"
+      ]
+    },
+    {
+      "id": "tenant_debt_maturities",
+      "category": "Tenant",
+      "measure": "Scheduled principal maturities by fiscal year",
+      "value": "Remainder of 2026 $6.030M; 2027 $73.728M; 2028 $35.500M; 2029 $432.250M; 2030 $16.000M; thereafter $928.476M (total $1,491.984M)",
+      "geography": "Jack in the Box Inc. consolidated",
+      "period": "Form 10-Q, quarter ended July 5, 2026",
+      "status": "verified",
+      "note": "Schedule assumes repayment at anticipated repayment dates. The 2029 step and the post-2030 balance fall on or inside the reported 2030–2035 lease-expiry window; issuer-level, the lease obligor is unverified.",
+      "sources": [
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "tenant_leverage_triggers",
+      "category": "Tenant",
+      "measure": "Securitization leverage tests and cash sweep",
+      "value": "Holding-company leverage above 5.0x (scheduled amortization continues); senior ABS leverage above 5.25x; $23.3M cash-sweep prepayment in current maturities; variable funding notes $39.0M drawn at 6.946%, $54.6M unused",
+      "geography": "Jack in the Box Inc. consolidated",
+      "period": "Form 10-Q, quarter ended July 5, 2026",
+      "status": "verified",
+      "note": "Tripped leverage tests divert cash to debt paydown. Read from the indebtedness note; no covenant default is stated on the page read.",
+      "sources": [
+        "sec_10q_debt"
+      ]
+    },
+    {
+      "id": "usgs_northridge_1994",
+      "category": "Hazards",
+      "measure": "1994 Northridge earthquake (M6.7) losses",
+      "value": "USGS science page: 33 killed, over 7,000 injured, 20,000 homeless, about $40 billion property damage. USGS Open-File Report 96-263: 57 died, more than 9,000 injured, more than 20,000 displaced, $20 billion estimated losses, more than 1,600 buildings red-tagged and 7,300 yellow-tagged",
+      "geography": "Los Angeles region",
+      "period": "January 17, 1994",
+      "status": "verified",
+      "note": "Last major urban earthquake in this region. The two USGS pages give different loss and casualty totals; both are shown as published and the difference is on Flagged for Review. Not a parcel loss estimate.",
+      "sources": [
+        "usgs_northridge",
+        "usgs_ofr_96_263"
+      ]
+    },
+    {
+      "id": "nri_additional_ratings",
+      "category": "Hazards",
+      "measure": "FEMA NRI county ratings not listed above",
+      "value": "Avalanche Relatively High; hail, strong wind and winter weather Relatively Moderate; cold wave Very Low",
+      "geography": "Los Angeles County",
+      "period": "National Risk Index county record read November 12, 2026",
+      "status": "verified",
+      "note": "County-wide ratings reflect mountain areas and total exposure; they say nothing about a central-city parcel.",
+      "sources": [
+        "fema_county_query"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "flag_cbo_vs_actual_10y",
+      "item": "CBO 10-year Treasury path sits below the observed yield",
+      "reason": "CBO's February 2026 outlook projects the 10-year Treasury at 4.1% (Q4 2025) rising to 4.3% (Q4 2027), with a two-thirds range of 3.5%–4.8% for 2026. Treasury's official par yield for November 10, 2026 is 4.98%, above both. The CBO forecast was completed December 3, 2025 and has not been updated on the page read.",
+      "action": "Do not use the CBO rate path as a central case for sale pricing or refinancing. Use it as a low-rate reference alongside the observed curve and the FOMC confidence band; re-read when CBO publishes its next update.",
+      "sources": [
+        "cbo_outlook_2026",
+        "treasury"
+      ]
+    },
+    {
+      "id": "flag_cbo_table_not_transcribed",
+      "item": "CBO year-by-year 2030–2035 values not transcribed",
+      "reason": "CBO's Table 2-1 (annual projections by year) is published as an image on the HTML page and could not be read as text in this pass. Only values stated in the report's text are published; the per-year 2030–2035 cells are left out rather than read off a chart.",
+      "action": "A reviewer can open the report PDF and read Table 2-1 directly if annual values are needed.",
+      "sources": [
+        "cbo_outlook_2026"
+      ]
+    },
+    {
+      "id": "flag_fed_sep_shift",
+      "item": "FOMC rate projections moved up between June and September 2026",
+      "reason": "The September 16, 2026 median federal funds projection for end-2026 is 4.1% against 3.8% in June; 2027 is 4.1% against 3.6%; the longer-run median is 3.2% against 3.1%. Median 2026 PCE inflation is 3.7%.",
+      "action": "Treat any rate assumption made before September 2026 as stale. Re-read after each quarterly projection release.",
+      "sources": [
+        "fed_sep_2026_09"
+      ]
+    },
+    {
+      "id": "flag_usgs_northridge_conflict",
+      "item": "USGS Northridge 1994 loss figures differ between two USGS pages",
+      "reason": "The USGS Earthquake Science Center page states 33 killed, over 7,000 injured and about $40 billion in property damage. USGS Open-File Report 96-263 states 57 died, more than 9,000 injured and $20 billion in estimated losses. Neither page explains the difference.",
+      "action": "Both figures are published side by side. Do not quote a single Northridge loss figure from this site without naming which USGS page it came from.",
+      "sources": [
+        "usgs_northridge",
+        "usgs_ofr_96_263"
+      ]
+    },
+    {
+      "id": "flag_calfire_eaton_inspection_text",
+      "item": "CAL FIRE Eaton Fire page: inspection status wording is inconsistent",
+      "reason": "The CAL FIRE Eaton incident page (updated August 6, 2026) carries both a statement that structures are 100% inspected and a statement that damage inspections are ongoing. The destroyed (9,419) and damaged (1,076) counts match the dataset.",
+      "action": "Counts are published as shown on the page; treat them as possibly not final and re-read before citing.",
+      "sources": [
+        "calfire_eaton"
+      ]
+    },
+    {
+      "id": "flag_census_city_business_x",
+      "item": "City-level business counts not published in QuickFacts",
+      "reason": "Census QuickFacts marks the employer-establishment, employment, payroll and nonemployer rows as X (not applicable) for the City of Los Angeles. Only county values exist on the pages read.",
+      "action": "County values are published and labelled as county. No city or trade-area business count is inferred.",
+      "sources": [
+        "census_city",
+        "census_county"
+      ]
+    },
+    {
+      "id": "flag_recovery_series_scope",
+      "item": "Stress-history rows are county or metro-division series, not the site",
+      "reason": "The 2020 and 2007–2010 rows are BLS resident-employment (LAUS) and payroll (CES) series for Los Angeles County or the Los Angeles-Long Beach-Glendale Metropolitan Division. They are revised annually by BLS and the October 2025 LAUS month is not published. They show what happened to the area, not to this restaurant, tenant or parcel.",
+      "action": "Use them to size downside cases in the private worksheet; do not treat them as probabilities or as site sales history.",
+      "sources": [
+        "bls_laus_2020",
+        "bls_laus_2007_2013",
+        "bls_ces_food_la"
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "audit_1e8970d6_r2",
+      "check": "Independent re-read of non-rolling official sources and new projection research, 2026-11-12 (session 1e8970d6)",
+      "result": "PASS — no published value changed. 37 existing dataset rows were compared with their official pages and matched in full and 2 in part; 28 new sourced rows and 7 flags were added.",
+      "detail": "Re-read on 2026-11-12: Census QuickFacts city and county (all sections), BLS LAUS county series, FEMA National Risk Index county record, OpenFEMA declarations count, SEC Form 10-Q indebtedness and revenue notes, SEC third-quarter earnings release (first section), CAL FIRE Palisades and Eaton incident pages, USGS probability FAQ, CDI wildfire claims tracker, Treasury par yield curve, DOF E-1 press release (first section). New sources read: CBO Budget and Economic Outlook 2026–2036, Federal Reserve Summary of Economic Projections (September 16, 2026), BLS LAUS 2007–2013 and 2016–2026 monthly tables, BLS CES food-services series, two USGS Northridge pages. Not re-read in this pass (carried from earlier sessions' verification): DOF P-2A workbook, SCAG tables, California School Dashboard, SEC Form 10-K state counts, CAL FIRE hazard-zone acreage, CGS, Metro, EPA, LAPD, Port, tax and wage pages.",
+      "sources": [
+        "census_city",
+        "census_county",
+        "bls_laus",
+        "fema_county_query",
+        "sec_10q_debt",
+        "cbo_outlook_2026",
+        "fed_sep_2026_09"
+      ]
+    }
+  ]
+}
