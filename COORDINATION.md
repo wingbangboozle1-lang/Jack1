@@ -1681,3 +1681,40 @@ merged, modified, or closed.
 | N-2 review, re-read, gap closure | done | `verification/2026-11-12-1520648f.md` (new), `data/verified-2026-11-10.json`, `scripts/build_public.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `README.md`, regenerated canonical pages incl. new `suggestions.html` | Ten official sources re-read on 2026-11-12 ([Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611), [BLS LA summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf), [Census city QuickFacts](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225), [SEC Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm), [LAPD citywide](https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf), [LAPD Central Bureau](https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/ocbprof.pdf), [Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula), [Port of LA containers](https://portoflosangeles.org/business/statistics/container-statistics), [EDD LA](https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf), [DIR fast-food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm)); all matched, no value changed. Other sources not re-read today. Gates: build check 13 files PASS; 18 tests OK; validator 11 pages / 393 sourced rows PASS; artifact PASS; privacy scan clean. | N2-01 EDD narrative inconsistency (new flag); N2-02 missing suggestions section and risk-by-path table (added, proposals only); N2-03 personal details on official pages not copied; N2-04 BLS extraction fragment unused; N2-05 twelve stale PRs untouched (suggestion S-09); N2-06 repository-visibility hosting requirement unverified. |
 
 N-3 claimed by this session: gates, PR → `main`, merge, Pages confirmation.
+
+## Session arena/87c0c876-jack1 — 2026-11-12 UTC
+
+Claim: existing claims are older than 60 minutes and completed in their completion records; open PRs are stale and left untouched. Current main `374ba73`. Platform pins this session to its assigned branch; no alternate branch will be created.
+
+| Task | Status | Owner | Exclusive scope |
+|---|---|---|---|
+| S-1 Dedicated suggestions review area, explicitly proposed not implemented; source-linked evidence-acquisition paths | in progress | arena/87c0c876-jack1 | scripts/build_public.py, scripts/validate_site.py, tests/test_projection_and_site.py, generated canonical HTML, README.md, verification/2026-11-12-87c0c876.md |
+| S-2 Integration checks, PR merge, Pages confirmation | unclaimed | arena/87c0c876-jack1 | this board, GitHub operations |
+
+This is a targeted improvement, not a claim to re-verify every historical source afresh. Existing unknown parcel/lease/owner inputs remain blank; no private documents requested or published. Dataset values and other sessions' reports are outside scope. No approval of property or website proposals will be fabricated.
+
+### S-1 complete / S-2 in progress — 2026-11-12
+
+Added dedicated `suggestions.html` with six source-linked review-only proposals, evidence routes, approval criteria and trade-offs; integrated navigation, landing card, 404 and artifact boundary. Added regression test. No economic value changed. Freshly read IRS Publication 544 contents (not entire publication), City Planning Zoning Search and FEMA NRI guidance. All other inherited links/values explicitly remain prior verification vintages. Verification scope and NRI release compatibility gap published on Flagged for Review; source-registry wording corrected to avoid claiming this session read every source. Details: `verification/2026-11-12-87c0c876.md`.
+
+Gates before PR: build check PASS; 18 tests PASS; canonical and curated artifact validators PASS (11 pages, 370 sourced rows after scope flag). Checks cover local links and source-link presence, not live availability of all external URLs. No private data collected. S-1 done; S-2 now claimed by this session.
+
+### S-2 complete — publication record, 2026-11-12 UTC
+
+PR https://github.com/wingbangboozle1-lang/Jack1/pull/69 merged at 2026-11-12T16:33:09Z as `ff0e54ce27f54f5f47932682e5ceed3d7f12c55b`. No PR CI checks were reported; local deterministic/build/unit/privacy/link gates passed before merge. GitHub legacy `pages-build-deployment` run **43259912104** completed successfully (build, deploy and status). Live `https://wingbangboozle1-lang.github.io/Jack1/suggestions.html` fetched after deployment: all six proposals, source links, unapproved status and evidence gates present. S-1 and S-2 done. No private identifier added; no property action taken. Pages-generated workflow emitted nonblocking Node/runner migration annotations; deployment succeeded. Existing stale open PRs untouched.
+
+### Conflict / duplicate-work log — session arena/1520648f-jack1 (2026-11-12 UTC)
+
+Session `arena/87c0c876-jack1` claimed and merged a suggestions page (PRs #69, #70) between this session's
+claim read (`374ba73`) and its first content push; neither claim was visible to the other at claim time, so both
+sessions worked on the same owner requirement. `git pull --rebase origin main` stopped on conflicts
+(`COORDINATION.md`, `README.md`, `scripts/build_public.py`, `scripts/validate_site.py`, generated pages).
+Resolution without discarding their work: rebase aborted; `origin/main` merged; board resolved as a union;
+their builder, validator, README, six S01–S06 rows, flag row and test kept; this session's additions
+re-applied on top as two extra tables on the same page (W-01–W-10 site suggestions with options, D-01–D-09
+discovery sequence), a risk-by-decision-path table on `decision.html`, one new flag, one audit entry. Their
+test's fixed row count (6) was made dataset-aware; the overlapping draft row on refresh scheduling was dropped
+in favour of their S06. Superseding the figures in the N-2 record above: 19 tests OK; validator 11 pages /
+399 sourced rows; suggestion IDs are W-08 (stale PRs) and W-09 (repository visibility). Shared files
+`scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, `README.md` were edited after session
+87c0c876 marked S-1/S-2 done.

@@ -2660,7 +2660,7 @@
     {
       "id": "req_suggestions",
       "requirement": "Suggestions section for review before any change",
-      "coverage": "Suggestions page lists site-improvement proposals with options and trade-offs, and a ranked plan for discovering missing information. Nothing is implemented until the owner chooses.",
+      "coverage": "Suggestions page holds three review tables: six property and evidence proposals (S01–S06), ten site-improvement proposals with options (W-01–W-10), and a ranked nine-step plan for discovering missing information (D-01–D-09). Nothing is implemented until the owner chooses.",
       "evidence": "suggestions.html; decision register on requirements.html.",
       "status": "covered",
       "sources": [
@@ -3330,7 +3330,7 @@
       "id": "audit_1520648f_n2",
       "check": "2026-11-12 re-read of rolling and high-impact sources; requirement gap check (session 1520648f)",
       "result": "PASS, no value changed. Ten official sources re-read from their published URLs on 2026-11-12: Treasury daily par yield curve (latest row still November 10, 2026), BLS Los Angeles summary, Census city QuickFacts, SEC Q3 FY2026 earnings release, LAPD citywide and Operations-Central Bureau profiles (week ending November 7, 2026), LA Office of Finance Measure ULA FAQ, Port of Los Angeles container statistics, EDD Los Angeles County release, DIR fast-food minimum wage FAQ. Every published value drawn from these pages matched; derived values reproduced (Central Bureau share 28.0%; transfer-tax stack 0.56/4.56/6.06%).",
-      "detail": "The remaining sources were not re-read on 2026-11-12 and keep their earlier access dates. New irregularity logged: EDD narrative inconsistency (flag_edd_text_inconsistency). Gap check against the owner's requirement list found no dedicated suggestions section and no risk table organised by decision path; added suggestions.html (improvement suggestions with options, a discovery plan in table form) and a risk-by-decision-path table on decision.html. All suggestions are proposals only; none is implemented. Official pages read today show staff contact details and officials' names; none was copied. Ledger: verification/2026-11-12-1520648f.md.",
+      "detail": "The remaining sources were not re-read on 2026-11-12 and keep their earlier access dates. New irregularity logged: EDD narrative inconsistency (flag_edd_text_inconsistency). Gap check against the owner's requirement list found no risk table organised by decision path and no site-improvement suggestions with selectable options. A concurrent session (87c0c876) published suggestions.html with six property and evidence proposals while this pass was under way; its page and rows are kept unchanged, and this pass adds two further tables to it (ten site-improvement suggestions W-01–W-10 with options, and a nine-step discovery sequence D-01–D-09) plus a risk-by-decision-path table on decision.html. One overlapping draft suggestion (source-refresh scheduling) was dropped in favour of the existing S06. All suggestions are proposals only; none is implemented. Official pages read today show staff contact details and officials' names; none was copied. Ledger: verification/2026-11-12-1520648f.md.",
       "sources": [
         "treasury",
         "bls_summary",
@@ -3716,7 +3716,7 @@
   ],
   "suggestions": [
     {
-      "id": "S-01",
+      "id": "W-01",
       "area": "Market evidence",
       "title": "Replace city and county proxies with trade-area figures",
       "problem": "Population, income, jobs, and schools are published at city, county, or district level. None of them describes the customers within reach of the property.",
@@ -3729,21 +3729,7 @@
       ]
     },
     {
-      "id": "S-02",
-      "area": "Data freshness",
-      "title": "Scheduled refresh check for rolling sources",
-      "problem": "Treasury yields, LAPD weekly profiles, BLS and EDD monthly releases, Port of LA counts, and SEC filings change after each verification date. Refresh currently depends on a manual session.",
-      "options": "A. A scheduled workflow that opens a pull request listing sources due for re-reading, with a human or agent confirming each value. B. A visible 'last verified' age indicator per row only. C. Keep manual refresh.",
-      "recommended": "B first (low risk), then A.",
-      "tradeoff": "Reduces stale figures. Automated fetching must never write a value without a line-by-line check against the official page.",
-      "sources": [
-        "treasury",
-        "lapd_city",
-        "bls_summary"
-      ]
-    },
-    {
-      "id": "S-03",
+      "id": "W-02",
       "area": "Decision tool",
       "title": "Extend the private worksheet to a sell-versus-hold comparison",
       "problem": "The worksheet computes transfer tax from a price the owner types in. It does not yet compare after-tax sale proceeds with the value of continuing to hold.",
@@ -3757,7 +3743,7 @@
       ]
     },
     {
-      "id": "S-04",
+      "id": "W-03",
       "area": "Decision tracking",
       "title": "Decision-gate progress board",
       "problem": "The question register shows which questions are open but not when each was closed or what changed.",
@@ -3769,7 +3755,7 @@
       ]
     },
     {
-      "id": "S-05",
+      "id": "W-04",
       "area": "Hazard screening",
       "title": "Parcel-level hazard screening",
       "problem": "Hazard rows are county-wide. Flood zone, fault zone, liquefaction zone, and fire hazard zone at the property itself are unknown.",
@@ -3784,7 +3770,7 @@
       ]
     },
     {
-      "id": "S-06",
+      "id": "W-05",
       "area": "Tenant monitoring",
       "title": "Tenant filing watchlist",
       "problem": "Tenant figures come from the latest quarterly release. New annual, quarterly, and current reports will supersede them.",
@@ -3798,7 +3784,7 @@
       ]
     },
     {
-      "id": "S-07",
+      "id": "W-06",
       "area": "Audit trail",
       "title": "Keep dated copies of rolling source documents",
       "problem": "The LAPD weekly profiles are replaced at the same address each week, so an earlier figure cannot be re-checked later.",
@@ -3811,7 +3797,7 @@
       ]
     },
     {
-      "id": "S-08",
+      "id": "W-07",
       "area": "Publishing",
       "title": "Publish only the curated pages through a build workflow",
       "problem": "The site is published directly from the main branch with an exclusion list. A missed exclusion could expose an internal file.",
@@ -3824,7 +3810,7 @@
       ]
     },
     {
-      "id": "S-09",
+      "id": "W-08",
       "area": "Repository hygiene",
       "title": "Resolve the twelve stale open pull requests and legacy pages",
       "problem": "Twelve older pull requests remain open and unmerged, and superseded page sets remain in the repository. They can confuse reviewers about which version is current.",
@@ -3836,7 +3822,7 @@
       ]
     },
     {
-      "id": "S-10",
+      "id": "W-09",
       "area": "Privacy",
       "title": "Review repository visibility",
       "problem": "The repository and site are public. No personal information is published, but internal coordination and verification records are publicly readable in the repository.",
@@ -3848,7 +3834,7 @@
       ]
     },
     {
-      "id": "S-11",
+      "id": "W-10",
       "area": "Usability",
       "title": "One-page printable summary for advisors",
       "problem": "Advisors (broker, tax, legal, insurance) need the recommendation, open questions, and document list in one sheet.",
