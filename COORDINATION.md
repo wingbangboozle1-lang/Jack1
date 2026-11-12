@@ -1866,7 +1866,7 @@ verbatim above this session's section, nothing discarded. The un-rebased claim c
 reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
 session's branch only (never on `main`).
 
-### R-2 / R-3 / R-4 record — 2026-11-12 ~17:00 UTC (session arena/1e8970d6-jack1)
+### R-2 / R-3 / R-4 record — 2026-11-12 ~16:46 UTC (session arena/1e8970d6-jack1)
 
 **Task status**
 
@@ -1932,6 +1932,26 @@ pages were taken from `main` and this session's rows re-appended, then regenerat
 External links cannot be fetched from the build sandbox; each new URL was opened today through the research
 tool and is listed above for manual review.
 
+### R-4 final record — 2026-11-12 ~16:50 UTC (session arena/1e8970d6-jack1; the heading time of the previous record is corrected from "~17:00" to "~16:46")
+
+- **PR:** https://github.com/wingbangboozle1-lang/Jack1/pull/78 — check `validate` SUCCESS, merge state CLEAN,
+  **merged** into `main` as `71ea43f` (merge commit, no approval required).
+- **Pages:** `gh api repos/wingbangboozle1-lang/Jack1/pages/builds/latest` → `status: built`, commit `c4b9741`
+  (PR #79 from `b3925b6c`, which contains `71ea43f`), no error. Live fetch of
+  https://wingbangboozle1-lang.github.io/Jack1/projections.html shows the new "Official macro paths across
+  the 2030–2035 lease window" and "What past shocks did to Los Angeles jobs" tables with their source links.
+- **Post-merge gates on `main` `c4b9741`:** build check PASS (13 files) · 27 tests PASS · validator PASS
+  (11 pages, 457 sourced rows) · all 28 rows from this session present.
+- **R-2 addendum (read after the merge, no data change):** CDE district profile (enrollment 497,105; English
+  Learners 81,328 / 16.4%), School Dashboard 2026 academic engagement (absenteeism 21.3%, graduation 87.6%)
+  and the CAL FIRE acreage table (Los Angeles 330,431 / 77,951 / 769,561 / 1,177,944; 65.3%) all match.
+  R-2 total: 42 rows match in full, 2 in part, 0 disagree. Still not re-read by this session: DOF P-2A / E-5
+  tables, SCAG, Dashboard ELA / math, SEC 10-K state counts, CGS, Metro.
+- **Open items handed on (non-blocking, all on Flagged for Review):** CBO annual 2030–2035 table values
+  (image, not transcribed); re-read of CBO and Federal Reserve rows at their next releases; the property-specific
+  fields remain blank until private documents are supplied.
+- R-1 … R-4: **done**. This session holds no further claim.
+
 ---
 
 ## Session: arena/83da931a-jack1 (2026-11-12 UTC)
@@ -1975,3 +1995,5 @@ without discarding another session's work, then logged here.
 3. Scope overlap disclosed: the dataset, builder, validator, tests, `README.md` and `EXECUTIVE_SUMMARY.md` were also edited today by sessions 87c0c876, 1520648f, a410e84a, f6963e79, 1e8970d6 and b3925b6c. All of those sessions' rows, flags, tests and tables are present after the merge (29 tests pass, including theirs).
 
 Gates on the merged tree: `build_public.py --check` PASS (13 files); unit tests 29/29 OK; validator PASS (11 pages, 506 sourced rows); artifact build + validator PASS; privacy patterns 0 hits. N-4 (PR → `main`, merge, Pages confirmation) in progress.
+
+4. Third move of `origin/main` (PR #80, session 1e8970d6: board record and its own ledger addendum only) made PR #81 conflict on the board. Merged again as a union: their record first, this section after it, both verbatim. No dataset, script or page conflict; gates re-run and unchanged.
