@@ -6,7 +6,7 @@
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
     "recommendation": "Prepare sale and renewal cases in parallel. Preserve notice and option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds (accounting for LA's 0.56%/4.56%/6.06% transfer-tax tiers) with risk-adjusted ownership value while monitoring Jack in the Box's 2029–2032 debt ARD wall ($1.430B / 95.8% of principal). Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.",
     "privacy": "No owner, parcel, lease-party, or personal financial identifiers are published. Unverified property values are blank and flagged. Local worksheet inputs default blank and stay in browser memory only.",
-    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md Session f6963e79 (2026-11-12) re-read SEC FY2025 10-K Item 1A in part (printed pp. 7–10, 12–14, 17–19), Items 1C/2 (pp. 20–23) and the Q3 FY2026 release Del Taco paragraph; see audit_f6963e79_f1. Session 1e8970d6 (2026-11-12) re-read Census QuickFacts city and county, BLS LAUS, FEMA NRI, OpenFEMA, SEC 10-Q debt and revenue notes, CAL FIRE incident pages, USGS FAQ, CDI tracker and the Treasury curve (37 rows matched in full, 2 in part) and added CBO, Federal Reserve, BLS stress-history and USGS Northridge rows; see verification/2026-11-12-1e8970d6.md.",
+    "verification": "Re-verified 2026-11-10 by session 8d46ab6c (all 74 official source URLs) and 2026-11-11 by sessions a6ebbd99 (11 sources), db9ded39 (40 source URLs), 2efe9aec (re-verification + decision-question register), 8d428792 (Treasury/LAUS/10-Q spot check) and 7ba2d90a (23 sources, incl. FRED, BLS summary, EDD, DIR, IRS/FTB/BOE, Port of LA, DTLA, LAVote, CAL FIRE, SCAG Appendix I); see verification/2026-11-10-8d46ab6c.md, verification/2026-11-11-a6ebbd99.md, verification/2026-11-11-db9ded39.md, verification/2026-11-11-2efe9aec.md, verification/2026-11-11-8d428792.md and verification/2026-11-11-7ba2d90a.md; 2026-11-12 session 1520648f re-read 10 rolling/high-impact official sources (Treasury, BLS summary, Census city QuickFacts, SEC Q3 release, LAPD citywide and Central Bureau, LA Office of Finance ULA, Port of LA containers, EDD, DIR fast-food FAQ) — all published values matched; the other sources were not re-read on 2026-11-12; see verification/2026-11-12-1520648f.md Session f6963e79 (2026-11-12) re-read SEC FY2025 10-K Item 1A in part (printed pp. 7–10, 12–14, 17–19), Items 1C/2 (pp. 20–23) and the Q3 FY2026 release Del Taco paragraph; see audit_f6963e79_f1. Session b3925b6c (2026-11-12) re-read Treasury Nov-2026 curve (latest print still 11/10), Census city/county QuickFacts, Measure ULA FAQ, USGS UCERF3 FAQ, FRED GDPALL06037, Port of LA container statistics (September still latest), CDI wildfire claims tracker, BLS Los Angeles CPI news release 26-1670-SAN (October 2026), and confirmed JACK FY2026 Form 10-K is not yet on EDGAR; added verified October CPI row (12-month unpublished) and suggestions W-11/W-12. Ledger: verification/2026-11-12-b3925b6c.md. Session 1e8970d6 (2026-11-12) re-read Census QuickFacts city and county, BLS LAUS, FEMA NRI, OpenFEMA, SEC 10-Q debt and revenue notes, CAL FIRE incident pages, USGS FAQ, CDI tracker and the Treasury curve (37 rows matched in full, 2 in part) and added CBO, Federal Reserve, BLS stress-history and USGS Northridge rows; see verification/2026-11-12-1e8970d6.md.",
     "reverified": "2026-11-12"
   },
   "sources": {
@@ -528,6 +528,20 @@
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,CFLD_RISKS,CFLD_RISKR&returnGeometry=false&f=json",
       "accessed": "2026-11-11"
     },
+    "bls_cpi_la": {
+      "title": "Consumer Price Index, Los Angeles area — October 2026 (news release 26-1670-SAN)",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "accessed": "2026-11-12",
+      "kind": "official statistics"
+    },
+    "edd_schedule": {
+      "title": "California EDD Labor Market Information data release schedule (2026)",
+      "publisher": "California Employment Development Department",
+      "url": "https://labormarketinfo.edd.ca.gov/data-release-schedule.html",
+      "accessed": "2026-11-12",
+      "kind": "official schedule"
+    },
     "cbo_outlook_2026": {
       "title": "The Budget and Economic Outlook: 2026 to 2036 (February 2026), Chapter 2 economic outlook",
       "publisher": "Congressional Budget Office",
@@ -982,6 +996,19 @@
       "note": "Cost pressure context; lease escalations may not match CPI.",
       "sources": [
         "bls_summary"
+      ]
+    },
+    {
+      "id": "cpi_la_oct2026",
+      "category": "Inflation",
+      "measure": "Los Angeles-Long Beach-Anaheim CPI-U, October 2026",
+      "value": "All items +0.6% m/m; food +0.9%; food away from home +0.5%; energy +1.6%; all items less food and energy +0.5%; 12-month change not published",
+      "geography": "Los Angeles-Long Beach-Anaheim, CA",
+      "period": "October 2026 (released November 10, 2026)",
+      "status": "verified",
+      "note": "Not seasonally adjusted. BLS could not publish an October 2026 12-month percent change because October 2025 indexes were not collected during the 2025 lapse in appropriations. CPI is not a property rent, cap-rate, or parcel operating-cost series. September 2026 12-month all-items change remains +3.7% on the BLS Area Economic Summary.",
+      "sources": [
+        "bls_cpi_la"
       ]
     },
     {
@@ -3526,6 +3553,26 @@
       ]
     },
     {
+      "id": "flag_cpi_oct_yoy_unpublished",
+      "item": "Los Angeles CPI-U October 2026 12-month percent change",
+      "reason": "BLS news release 26-1670-SAN (November 10, 2026) prints October 2026 1-month all-items +0.6% and leaves the 12-month cell blank because October 2025 indexes were not collected during the 2025 lapse in appropriations. The September 2026 12-month all-items change (+3.7%) remains on the Area Economic Summary and is not a substitute for an October 12-month rate.",
+      "action": "Keep the October 12-month value blank. Re-read the official Los Angeles CPI news release after the December 10, 2026 publication. Do not approximate the missing local 12-month change.",
+      "sources": [
+        "bls_cpi_la",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "flag_2026_11_12_scope",
+      "item": "2026-11-12 targeted verification scope",
+      "reason": "Sessions 87c0c876, 1520648f, a410e84a, and f6963e79 published suggestions and selected 2026-11-12 re-reads. Session b3925b6c re-read selected high-volatility pages on 2026-11-12 (Treasury, Census, ULA, USGS, FRED, Port, CDI, BLS LA CPI news release 26-1670-SAN, JACK EDGAR) and did not re-read every inherited source. FEMA now describes NRI v1.20; historical ArcGIS figures were not reconciled to that release in this pass.",
+      "action": "Review release/version compatibility before treating inherited hazard figures as latest. See Suggestions for evidence-acquisition proposals. Do not treat every access date as a 2026-11-12 re-read.",
+      "sources": [
+        "fema_nri",
+        "bls_cpi_la"
+      ]
+    },
+    {
       "id": "flag_cbo_vs_actual_10y",
       "item": "CBO 10-year Treasury path sits below the observed yield",
       "reason": "CBO's February 2026 outlook projects the 10-year Treasury at 4.1% (Q4 2025) rising to 4.3% (Q4 2027), with a two-thirds range of 3.5%–4.8% for 2026. Treasury's official par yield for November 10, 2026 is 4.98%, above both. The CBO forecast was completed December 3, 2025 and has not been updated on the page read.",
@@ -3907,6 +3954,24 @@
       ]
     },
     {
+      "id": "audit_b3925b6c_pass",
+      "check": "2026-11-12 independent re-verification (session b3925b6c)",
+      "result": "PASS — high-volatility official pages re-read; October CPI added; Suggestions register already on main kept; no withdrawn values reintroduced",
+      "detail": "Re-read on 2026-11-12 from exact published URLs: Treasury daily par yield curve for November 2026 (latest print 11/10/2026: 2Y 4.73, 5Y 4.81, 10Y 4.98, 20Y 5.39, 30Y 5.35; no 11/11 print — seven entries in the month table); Census QuickFacts city (3,869,089; −0.8%; $81,939; $47,685; 16.5%; $1,933; 36.0%; $921,200; retail $81,351,523 thousand; food services $17,366,966 thousand; land 469.49; density 8,304.2) and county (9,694,934; −3.2%; $90,112; land 4,059.28); Measure ULA FAQ ($5,400,000 / $10,900,000; 4% / 5.5%; base 0.45%); USGS UCERF3 FAQ (60% / 46% / 31%); FRED GDPALL06037 ($1,002,965,029 thousand for 2024, updated February 5, 2026; next release December 2, 2026); Port of Los Angeles container statistics (September 2026 still the latest month: 1,042,652.30 TEUs, +18.07%; calendar 2026 8,081,625.55, +3.38%); CDI wildfire claims tracker (41,727 / 40,482 / $25.2 billion, updated July 6, 2026); BLS Los Angeles CPI news release 26-1670-SAN (October 2026 all items +0.6% m/m, food +0.9%, food away from home +0.5%, energy +1.6%, all items less food and energy +0.5%; 12-month not published). JACK FY2026 Form 10-K was not on EDGAR; the Q3 FY2026 Form 10-Q filed August 12, 2026 (period ended July 5, 2026) remains the latest quarterly report located. Personal contacts printed on official pages were not copied. Concurrent PR #74/#75 SEC Item 2 work is preserved. Ledger: verification/2026-11-12-b3925b6c.md.",
+      "sources": [
+        "treasury",
+        "census_city",
+        "census_county",
+        "ula",
+        "usgs_faq",
+        "fred_county_gdp",
+        "port_containers",
+        "cdi_claims",
+        "bls_cpi_la",
+        "sec_10q"
+      ]
+    },
+    {
       "id": "audit_1e8970d6_r2",
       "check": "Independent re-read of non-rolling official sources and new projection research, 2026-11-12 (session 1e8970d6)",
       "result": "PASS — no published value changed. 37 existing dataset rows were compared with their official pages and matched in full and 2 in part; 28 new sourced rows and 7 flags were added.",
@@ -4073,13 +4138,14 @@
     {
       "id": "q_consumer",
       "question": "Can local households absorb menu-price increases?",
-      "answer": "City median household income $81,939 and county $90,112 (2020–2024 ACS, 2024 dollars); city poverty rate 16.5%; LA-area CPI +3.7% all items and +2.8% food year over year; median gross rent $1,933/month. Trade-area income is not verified.",
+      "answer": "City median household income $81,939 and county $90,112 (2020–2024 ACS, 2024 dollars); city poverty rate 16.5%; LA-area CPI +3.7% all items and +2.8% food year over year (September 2026); October 2026 CPI-U all items +0.6% month-to-month (12-month October change not published); median gross rent $1,933/month. Trade-area income is not verified.",
       "status": "partial",
       "obtain": "Replace city/county medians with 1-, 3-, and 5-mile ring income and household counts from the parcel-based demographic report.",
       "sources": [
         "census_city",
         "census_county",
-        "bls_summary"
+        "bls_summary",
+        "bls_cpi_la"
       ]
     },
     {
@@ -4419,6 +4485,33 @@
       "tradeoff": "Faster advisor conversations. Must stay free of property and personal identifiers.",
       "sources": [
         "repo"
+      ]
+    },
+    {
+      "id": "W-11",
+      "area": "Inflation evidence",
+      "title": "Do not invent an October 2026 LA CPI 12-month rate",
+      "problem": "BLS published October 2026 one-month changes for Los Angeles-Long Beach-Anaheim but left the 12-month cell blank because October 2025 indexes were not collected.",
+      "options": "A. Keep the October 12-month cell blank and show September +3.7% YoY separately from October +0.6% m/m until the December 10, 2026 release. B. Approximate a local 12-month rate from the national CPI or from September. C. Drop inflation rows until a 12-month figure exists.",
+      "recommended": "A. Publish only what BLS printed; wait for the official December 10, 2026 Los Angeles CPI news release.",
+      "tradeoff": "Users see a newer month without a YoY rate. Inventing a 12-month figure would look more complete and would be false.",
+      "sources": [
+        "bls_cpi_la",
+        "bls_summary"
+      ]
+    },
+    {
+      "id": "W-12",
+      "area": "Labor evidence",
+      "title": "Wait for the scheduled October 2026 EDD county release",
+      "problem": "Published labor rows are September 2026. Unofficial October unemployment stories are not an official EDD or BLS vintage.",
+      "options": "A. Keep September figures until the official EDD substate PDF or BLS LAUS prints October 2026. B. Paste a third-party October rate. C. Blank the labor rows until then.",
+      "recommended": "A. EDD’s 2026 schedule lists the October California/substate release on November 20, 2026; re-read la$pds.pdf and BLS LAUS on or after that date.",
+      "tradeoff": "Labor context lags one month. Publishing an unofficial or wrong-month rate as if it were EDD/BLS would be worse.",
+      "sources": [
+        "edd_schedule",
+        "edd_la",
+        "bls_laus"
       ]
     }
   ],

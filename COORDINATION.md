@@ -1,5 +1,21 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
+
+**Handoff / non-overlap check:** at this content pass `origin/main` = `a491e0f` (PR #73 merge). Suggestions.html, W-01–W-10, D-01–D-09, and S01–S06 are already on main (PRs #69–#73). This session does **not** replace that page. Exclusive additions: October 2026 LA CPI observation, `bls_cpi_la` / `edd_schedule` sources, CPI YoY unpublished flag, W-11/W-12, audit `audit_b3925b6c_pass`. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| B-1 | Session claim + coordination protocol | done | arena/b3925b6c-jack1 | this board (append-only) |
+| B-2 | 2026-11-12 high-volatility re-read; add October CPI; blank/flag unpublished 12-month; suggestions W-11/W-12 | in progress | arena/b3925b6c-jack1 | `verification/2026-11-12-b3925b6c.md` (new); `data/verified-2026-11-10.json` (additions only); regenerated canonical pages; README / EXECUTIVE_SUMMARY CPI line |
+| B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | unclaimed (reserved) | arena/b3925b6c-jack1 | this board, `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited or deleted. Shared table data changes only by adding verified CPI/schedule rows. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/a410e84a-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/a410e84a-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/a410e84a-jack1` is pushed.
@@ -12,7 +28,19 @@
 | S-2 | Fresh line-by-line verification of decision-critical figures against official sources; blank-and-flag anything not reproducible; privacy/PII rescan | done | arena/a410e84a-jack1 | `verification/2026-11-12-a410e84a.md` (new); all 15 figure groups re-read from official primary pages — exact match, zero discrepancies |
 | S-3 | Executive summary refresh; suggestions covered by PR #69 (`suggestions.html`, session 87c0c876) — not duplicated; 23-question register and decision paths confirmed consistent | done | arena/a410e84a-jack1 | `EXECUTIVE_SUMMARY.md`, `index.html`, `decision.html`, `requirements.html`, `suggestions.html` (read-only vs PR #69 scope), `data/verified-2026-11-10.json` (questions/flags only) |
 | S-4 | Site creation / GitHub Pages: clean landing page + category subpages, dashboard UI, per-row source tables, suggestions section, flagged page | done | arena/a410e84a-jack1 | canonical root HTML pages (11), `assets/styles.css`, `assets/site.js`, `_config.yml`, `.github/workflows/pages.yml`, `suggestions.html` integrated in nav/404/category cards |
-| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | in progress | arena/a410e84a-jack1 | generated canonical pages, `assets/projections.json`, this board, `gh` PR/Pages operations |
+| S-5 | Final integration gates (build --check, unit tests, validator, artifact validate, local HTTP smoke, live-site check), PR → main, merge, Pages deploy confirmation, final record | done | arena/a410e84a-jack1 | PR #72 merged 2026-11-12 as `20b7ca4`; `validate` CI SUCCESS; legacy `pages-build-deployment` build `1363701469` status `built` on commit `20b7ca4`; live `https://wingbangboozle1-lang.github.io/Jack1/` and `/suggestions.html` fetched and verified |
+
+### Session completion record — S-5 (session arena/a410e84a-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | **#72** https://github.com/wingbangboozle1-lang/Jack1/pull/72 — `arena/a410e84a-jack1` → `main`, "Integration: official-source re-verification, suggestions review, and verified decision brief (2026-11-12)" |
+| Merge | **MERGED** 2026-11-12, merge commit `20b7ca49285008000d869c618c37b795cca5f578`, mergeable state clean |
+| Pre-merge CI | `validate` job SUCCESS (run 43260987373); build check 13 files PASS; 18 unit tests OK; validator 11 pages / 370 sourced rows PASS; curated artifact PASS; privacy scan clean |
+| Pages deploy | Legacy `pages-build-deployment` build `1363701469` status `built`, error `null`, commit `20b7ca4`; Pages API `status: built`, `build_type: legacy` (branch `main` /), HTTPS enforced, custom 404 |
+| Live verification | Root serves dual-track executive decision, 23-question register, blank/flagged property inputs; `/suggestions.html` serves S01–S06 review-only proposals with discovery routes, approval gates, trade-offs, official sources |
+| Verification summary | `verification/2026-11-12-a410e84a.md`: 15 decision-critical figure groups re-read from official primary pages (Census, BLS, SEC 10-Q/earnings, Treasury, USGS, City of LA ULA, FEMA NRI ArcGIS, CAL FIRE/OSFM FHSZ) — all exact match, zero discrepancies |
+| Flagged irregularities (non-blocking, published on Flagged for Review) | Blank parcel/lease/rent/value/debt/tax/owner fields; DOF-vs-Census 2025 county gap 158,501; SCAG Table 6 manufacturing 153% withheld; legacy Pages build_type with workflow switch HTTP 403 |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only through S-2-verified corrections and deterministic regeneration. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
@@ -1776,6 +1804,17 @@ Overlap disclosure: session `a410e84a` has S-5 (final integration, PR → main) 
 
 Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; validator PASS (11 pages, 406 sourced rows); artifact validator PASS; privacy scan of published HTML 0 hits.
 
+### Session completion record — F-2 (session arena/f6963e79-jack1, 2026-11-12 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#74](https://github.com/wingbangboozle1-lang/Jack1/pull/74) `arena/f6963e79-jack1` → `main`. CI `validate` = pass (run 43261508576), `MERGEABLE` / `CLEAN` → **merged 2026-11-12T16:42:28Z**, merge commit `47b9fcbfd5cc0974a5103127a770178ba3351d6a`. |
+| Main runs | `Validate decision brief (legacy Pages publication)` run 43261594792 = success; `pages build and deployment` run 43261593115 = success; Pages API `pages/builds/latest` = `built` at commit `47b9fcb`, error `null`, `updated_at` 2026-11-12T16:43:04Z. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/property.html` and `flagged.html` (cache-busted query) serve the new content: the Item 2 page citation (printed p. 22), the Dec. 22, 2025 close source, the company-wide lease rows (about 13% contingent rent; then-current-rate renewals), and the four new flags. |
+| Gates on the merged tree | `build_public.py --check` PASS (13 files); unit tests 19/19 OK; `validate_site.py` PASS (11 pages, 406 sourced rows); artifact validation PASS; privacy scan of published HTML 0 hits. |
+| Tasks | F-1 and F-2 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. PR #69 (`arena/87c0c876-jack1`) and PR #72 (`arena/a410e84a-jack1`) not modified by this session. |
+| Owner items | (1) Repository is public and 58 commits carry a personal email in git author metadata: decide whether to change the GitHub email privacy setting or rewrite history (not done here). (2) Refresh the Jack in the Box state-level unit count from a current official source before any current-year use (941 is a Sept. 28, 2025 snapshot). (3) Re-run the 74-URL link check from an environment with outbound access to the official hosts. |
+
 ## Session: arena/1e8970d6-jack1 (2026-11-12 UTC)
 
 **Session ID:** `arena/1e8970d6-jack1` (Arena-assigned branch; platform policy pins this session to that
@@ -1875,7 +1914,9 @@ with per-row results in the ledger.
 
 **Irregularities** (all on Flagged for Review, none blocking): see ledger section 3 (I-1 … I-8).
 
-**Gates before the PR**: `build_public.py --check` PASS (13 files) · 26 tests PASS (19 existing + 7 new) ·
-validator PASS (11 pages, 449 sourced rows; allowlist, local links, blanks, privacy) · artifact boundary PASS.
+**Gates before the PR** (re-run after merging `origin/main` `04a5ddb`, PRs #75–#76; the dataset and generated
+pages were taken from `main` and this session's rows re-appended, then regenerated — nothing hand-merged):
+`build_public.py --check` PASS (13 files) · 27 tests PASS (20 existing + 7 new) · validator PASS (11 pages,
+457 sourced rows; allowlist, local links, blanks, privacy) · artifact boundary PASS.
 External links cannot be fetched from the build sandbox; each new URL was opened today through the research
 tool and is listed above for manual review.
