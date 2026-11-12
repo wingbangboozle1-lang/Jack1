@@ -1658,3 +1658,32 @@ discarding another session's work.
 **Interleave disclosure — merge executed over a moving `main`.** While this session worked, `origin/main` advanced through PRs #58, #59, #60, #61, #62, #63, #64, #65, #66 (sessions a6ebbd99, db9ded39, 2efe9aec, 8d428792, 2efe9aec/8d428792). This branch was rebased twice; both `COORDINATION.md` conflicts were resolved as unions preserving every prior section verbatim, and generated pages were regenerated deterministically from the merged dataset. Nothing was force-pushed to `main`; the only force-push in this session was to this session's own branch (`--force-with-lease`) to land the rebase. The final tree used for PR #67's gates is exactly the merged `main` content plus this record.
 
 **Final state of the repository (2026-11-11 UTC):** `main` = `923ab47` + this record. Canonical site live and serving the verified build; 10 content pages + `404.html`; 90 observations / 74 official sources / 23 decision questions / 20 audit entries; every table row source-linked; unverified property fields blank and flagged on the Flagged for Review page; privacy scan clean; stale parallel PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 preserved untouched.
+
+---
+
+## Session: arena/83da931a-jack1 (2026-11-12 UTC)
+
+**Session ID:** `arena/83da931a-jack1` (Arena-assigned branch; the platform pins this session to that
+branch and prohibits creating or pushing `session-<id>/<task>` branches, so the pinned branch is used
+as the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-12 UTC):** branch is cut from `origin/main` = `374ba73` (PR #68
+merge, 2026-11-11T02:25:50Z); working tree clean. `git fetch --all --prune` shows only `origin/main`
+and this branch on the remote. `gh run list` shows no Actions run newer than the PR #68 merge and
+`gh pr list` shows no open PR updated after 2026-11-10T01:05:07Z. Every earlier `in progress` marker
+is therefore more than 24 hours old with no commits, well past the 60-minute takeover rule; no live
+claim is overridden. Open stale PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are
+not merged, closed, or modified by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| N-1 | Session claim + coordination protocol | done with this push | arena/83da931a-jack1 | this board (append-only) |
+| N-2 | Repo review + fresh 2026-11-12 line-by-line re-verification of published rows against official sources; irregularity log; privacy re-scan | in progress | arena/83da931a-jack1 | `verification/2026-11-12-83da931a.md` (new) |
+| N-3 | Requirements-gap pass against the owner brief (executive summary, dedicated suggestions section, question/information/answer register, risk-per-decision, projection system); dataset corrections only where an official page disagrees | unclaimed (reserved, starts after N-2) | arena/83da931a-jack1 | `data/verified-2026-11-10.json`, `scripts/build_public.py`, `scripts/validate_site.py`, `scripts/projection_model.py`, `tests/`, `assets/styles.css`, `assets/site.js`, generated canonical root `*.html`, `404.html`, `assets/projections.json`, `_config.yml`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| N-4 | Final integration gates, PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed (reserved, starts after N-3) | arena/83da931a-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Shared outputs (dataset, index,
+navigation, generated pages) change only in N-3/N-4 after N-2 finishes. Small frequent commits;
+`git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union
+without discarding another session's work, then logged here.
