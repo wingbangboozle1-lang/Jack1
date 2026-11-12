@@ -1718,3 +1718,18 @@ in favour of their S06. Superseding the figures in the N-2 record above: 19 test
 399 sourced rows; suggestion IDs are W-08 (stale PRs) and W-09 (repository visibility). Shared files
 `scripts/build_public.py`, `scripts/validate_site.py`, `tests/`, `README.md` were edited after session
 87c0c876 marked S-1/S-2 done.
+
+## Session arena/f6963e79-jack1 — 2026-11-12 UTC
+
+**Branch constraint:** this Arena session is pinned to `arena/f6963e79-jack1`; it is the integration branch for this session (no `session-<id>/<task>` branches are created).
+
+**Claim-time handoff check (2026-11-12, UTC):** local history was shallow at first; fetched full history (`git fetch --unshallow origin main`). `origin/main` = `8718b42` (PR #71, N-2/N-3 by `arena/1520648f-jack1`, merged). Every earlier claim is `done`; the board has no `in progress` task. No claim is overridden. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are not touched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| F-1 | Close the open L-2 gap: re-scan SEC FY2025 10-K Item 2 (properties) end-to-end via official pages and confirm or correct the California unit count (`941`, `44.1%`) and its wording; log any discrepancy with a dated audit entry | in progress | arena/f6963e79-jack1 | `verification/2026-11-12-f6963e79.md` (new), `data/verified-2026-11-10.json` (only the SEC California unit rows, flags, and one audit entry), regenerated canonical pages |
+| F-2 | Gates (build `--check`, unit tests, validator, artifact validator), PR → `main`, merge, GitHub Pages confirmation, final record | unclaimed (reserved) | arena/f6963e79-jack1 | this board, `gh` operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Small commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved as unions without discarding other sessions' work.
+
+Claimed at 2026-11-12 UTC; this claim is committed and pushed before any content work.
