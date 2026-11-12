@@ -1814,3 +1814,109 @@ Gates on the merged tree: build `--check` PASS (13 files); unit tests 19/19 OK; 
 | Gates on the merged tree | `build_public.py --check` PASS (13 files); unit tests 19/19 OK; `validate_site.py` PASS (11 pages, 406 sourced rows); artifact validation PASS; privacy scan of published HTML 0 hits. |
 | Tasks | F-1 and F-2 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 untouched. PR #69 (`arena/87c0c876-jack1`) and PR #72 (`arena/a410e84a-jack1`) not modified by this session. |
 | Owner items | (1) Repository is public and 58 commits carry a personal email in git author metadata: decide whether to change the GitHub email privacy setting or rewrite history (not done here). (2) Refresh the Jack in the Box state-level unit count from a current official source before any current-year use (941 is a Sept. 28, 2025 snapshot). (3) Re-run the 74-URL link check from an environment with outbound access to the official hosts. |
+
+## Session: arena/1e8970d6-jack1 (2026-11-12 UTC)
+
+**Session ID:** `arena/1e8970d6-jack1` (Arena-assigned branch; platform policy pins this session to that
+branch, so no `session-<id>/<task>` branch can be created — the pinned branch is used, as prior sessions did).
+
+**Claim-time handoff check (2026-11-12 16:35 UTC):** `origin/main` = `374ba73` (PR #68 merge). All claims
+through `7ba2d90a` are recorded done. **Two other sessions are live right now** (first commits
+2026-11-12T16:31Z, seen via `git fetch` of all branches):
+`arena/87c0c876-jack1` (S-1 dedicated suggestions review area; S-2 integration) and
+`arena/1520648f-jack1` (N-2 requirement gap check incl. suggestions section, rolling/high-impact source
+re-read, privacy re-scan; N-3 PR/merge). Both claim `scripts/build_public.py`, `scripts/validate_site.py`,
+`tests/`, generated canonical HTML and `README.md`; 1520648f also claims `data/verified-2026-11-10.json`.
+**This session therefore claims none of those files for content work** and does not build a second
+suggestions page. Stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are untouched.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| R-1 | Session claim | done with this push | arena/1e8970d6-jack1 | this board (append-only) |
+| R-2 | Independent 2026-11-12 re-read of the **non-rolling** official sources whose last recorded access is 2026-11-10 (Census county, DOF P-2A/E-5, SCAG, CDE Dashboard, SEC 10-K/10-Q detail pages, FEMA NRI/OpenFEMA, CAL FIRE acres/incidents, CGS, Metro) — i.e. the set **not** in N-2's "rolling/high-impact" scope — plus a dated repo-review snapshot (branches, open PRs, legacy files, privacy) | in progress | arena/1e8970d6-jack1 | `verification/2026-11-12-1e8970d6.md` (new) |
+| R-3 | New official-source research for factors not yet in the dataset: lease-window (2030–2035) macro projection paths (CBO outlook, Federal Reserve projections), historical stress calibration for black-swan cases (BLS LAUS 2020 / prior peaks), extra Census area factors (education, commute, establishments). Staged only — nothing is published from this task | in progress | arena/1e8970d6-jack1 | `data/additions-2026-11-12-1e8970d6.json` (new staging file, not read by the builder) |
+| R-4 | Final integration **only after** S-1/S-2 and N-2/N-3 are merged (or their claims go >60 min without commits): rebase on `main`, fold the R-3 staged rows into the dataset with audit entries and flags, regenerate canonical pages, re-verify the combined data, run all gates + link check, PR → `main`, merge, confirm Pages deploy, record | unclaimed (reserved) | arena/1e8970d6-jack1 | shared outputs (dataset, generated pages, tests), this board, `gh` operations — not touched before the other sessions finish |
+
+**Requests to other sessions (logged instead of editing their files):** none yet. Any correction R-2 finds in
+`data/verified-2026-11-10.json` will be listed here and in the verification ledger for the dataset owner
+(1520648f) or applied in R-4 after that session is done.
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions'
+`verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits;
+`git pull --rebase origin main` before every push; conflicts stop and are resolved as unions without
+discarding another session's work.
+
+### Interleave note 1 — 2026-11-12 ~16:37 UTC (session arena/1e8970d6-jack1)
+
+While the R-1 claim was being pushed, `origin/main` advanced `374ba73` → `ff0e54c` (PR #69, session
+`87c0c876`: new `suggestions.html`, 11 canonical pages, 18 tests, 370 sourced rows). `git pull --rebase`
+stopped on a tail-append conflict in this board only; resolved as a **union** — 87c0c876's section is kept
+verbatim above this session's section, nothing discarded. The un-rebased claim commit `4b0fbd1` had already
+reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
+session's branch only (never on `main`).
+
+### R-2 / R-3 / R-4 record — 2026-11-12 ~17:00 UTC (session arena/1e8970d6-jack1)
+
+**Task status**
+
+| Task ID | Status | Result |
+|---|---|---|
+| R-1 | done | Claim pushed; two board-only rebase conflicts resolved as unions (Interleave notes 1 and 2). |
+| R-2 | **done — partly complete, stated as such** | 37 published dataset rows re-read on their official pages and matching in full, 2 in part, 0 disagreeing. **Not reached** (still carrying earlier sessions' verification, not re-verified by this session): DOF P-2A / E-5 tables, SCAG, California School Dashboard / CDE, SEC 10-K state counts, CAL FIRE hazard-zone acreage, CGS, Metro. Ledger: `verification/2026-11-12-1e8970d6.md`. |
+| R-3 | done | 7 new official sources, 28 sourced rows, 7 flags, 1 audit entry staged in `data/additions-2026-11-12-1e8970d6.json`. |
+| R-4 | done pending merge (PR link and Pages result recorded in the follow-up note) | Staged rows appended to `data/verified-2026-11-10.json`; pages regenerated; gates below. |
+
+**Interleave note 2.** Between the claim and this record `origin/main` advanced `ff0e54c` → `47b9fcb`
+(PRs #70, #71, #72, #73, #74 from `87c0c876`, `1520648f`, `a410e84a`, `f6963e79`). Two more rebases stopped on
+tail-append conflicts in this board only; both were resolved as unions with every other session's text kept
+verbatim. The R-4 start condition (S-1/S-2 and N-2/N-3 merged) was met at 16:41 UTC.
+
+**Overlap disclosure (R-4).** Three sessions still show claims on their own branches with no commit after
+the claim: `83da931a` (N-3 reserved, not started), `b3925b6c` (N-3: dataset `suggestions` key, builder,
+`suggestions.html`), `dcb5495c` (own new files; P-4 hooks later). R-4 touches shared files **additively only**:
+
+- `data/verified-2026-11-10.json` — rows appended to `sources`, `observations`, `flags`, `audit`; one sentence
+  appended to `meta.verification`. No existing row, value, key or the `suggestions` key was edited.
+- `scripts/validate_site.py` — one line: `www.cbo.gov` and `www.federalreserve.gov` added to the allowlist.
+- `scripts/build_public.py` — one four-line hunk in `build_projections`: two `obs_table` calls for the new
+  categories `Macro outlook` and `Stress history`. No navigation, page list or other builder change.
+- `tests/test_additions_1e8970d6.py` — new file (7 tests); existing tests untouched.
+- Regenerated: `projections.html`, `market.html`, `property.html`, `risks.html`, `flagged.html`,
+  `sources.html`, `audit.html` (deterministic output of the builder).
+
+If any of those sessions rebases over this, the dataset change is append-only and the generated pages should
+be regenerated with `python3 scripts/build_public.py`, not hand-merged.
+
+**What was added to the public site**
+
+- `projections.html` — two new tables: official national macro paths (CBO February 2026 outlook; Federal
+  Reserve projections of 2026-09-16, with stated uncertainty bands) and observed Los Angeles stress history
+  (2020 shock; 2007–2010 recession; restaurant-sector jobs).
+- `market.html` — Census households, education, labor-force participation, commute, county income, housing,
+  business counts and retail; latest restaurant-sector jobs.
+- `property.html` — tenant principal maturities by fiscal year; leverage tests and cash sweep.
+- `risks.html` — Northridge 1994 history (both USGS figures); additional FEMA county ratings.
+- `flagged.html` — 7 new flags (CBO rate path below the observed 10-year yield; CBO annual table not
+  transcribed; Fed projections shifted up; USGS Northridge figures conflict; CAL FIRE Eaton wording;
+  city business counts not published; stress series scope).
+
+**Sources (all read 2026-11-12)**: [CBO outlook](https://www.cbo.gov/publication/62105) ·
+[Federal Reserve SEP](https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm) ·
+[BLS LAUS 2016–2026](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2016&to_year=2026) ·
+[BLS LAUS 2007–2013](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2007&to_year=2013) ·
+[BLS CES food services](https://data.bls.gov/timeseries/SMU06310847072200001?output_view=data&include_graphs=false&from_year=2019&to_year=2026) ·
+[USGS Northridge](https://www.usgs.gov/centers/earthquake-science-center/science/m67-january-17-1994-northridge-california-earthquake) ·
+[USGS OFR 96-263](https://pubs.usgs.gov/of/1996/ofr-96-0263/introduc.htm) ·
+[Census city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) ·
+[Census county](https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225) ·
+[SEC 10-Q debt note](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm). Full list
+with per-row results in the ledger.
+
+**Irregularities** (all on Flagged for Review, none blocking): see ledger section 3 (I-1 … I-8).
+
+**Gates before the PR** (re-run after merging `origin/main` `04a5ddb`, PRs #75–#76; the dataset and generated
+pages were taken from `main` and this session's rows re-appended, then regenerated — nothing hand-merged):
+`build_public.py --check` PASS (13 files) · 27 tests PASS (20 existing + 7 new) · validator PASS (11 pages,
+457 sourced rows; allowlist, local links, blanks, privacy) · artifact boundary PASS.
+External links cannot be fetched from the build sandbox; each new URL was opened today through the research
+tool and is listed above for manual review.
