@@ -1815,3 +1815,67 @@ stopped on a tail-append conflict in this board only; resolved as a **union** �
 verbatim above this session's section, nothing discarded. The un-rebased claim commit `4b0fbd1` had already
 reached this session's own branch; it is replaced by the rebased commit with `--force-with-lease` on this
 session's branch only (never on `main`).
+
+### R-2 / R-3 / R-4 record — 2026-11-12 ~17:00 UTC (session arena/1e8970d6-jack1)
+
+**Task status**
+
+| Task ID | Status | Result |
+|---|---|---|
+| R-1 | done | Claim pushed; two board-only rebase conflicts resolved as unions (Interleave notes 1 and 2). |
+| R-2 | **done — partly complete, stated as such** | 37 published dataset rows re-read on their official pages and matching in full, 2 in part, 0 disagreeing. **Not reached** (still carrying earlier sessions' verification, not re-verified by this session): DOF P-2A / E-5 tables, SCAG, California School Dashboard / CDE, SEC 10-K state counts, CAL FIRE hazard-zone acreage, CGS, Metro. Ledger: `verification/2026-11-12-1e8970d6.md`. |
+| R-3 | done | 7 new official sources, 28 sourced rows, 7 flags, 1 audit entry staged in `data/additions-2026-11-12-1e8970d6.json`. |
+| R-4 | done pending merge (PR link and Pages result recorded in the follow-up note) | Staged rows appended to `data/verified-2026-11-10.json`; pages regenerated; gates below. |
+
+**Interleave note 2.** Between the claim and this record `origin/main` advanced `ff0e54c` → `47b9fcb`
+(PRs #70, #71, #72, #73, #74 from `87c0c876`, `1520648f`, `a410e84a`, `f6963e79`). Two more rebases stopped on
+tail-append conflicts in this board only; both were resolved as unions with every other session's text kept
+verbatim. The R-4 start condition (S-1/S-2 and N-2/N-3 merged) was met at 16:41 UTC.
+
+**Overlap disclosure (R-4).** Three sessions still show claims on their own branches with no commit after
+the claim: `83da931a` (N-3 reserved, not started), `b3925b6c` (N-3: dataset `suggestions` key, builder,
+`suggestions.html`), `dcb5495c` (own new files; P-4 hooks later). R-4 touches shared files **additively only**:
+
+- `data/verified-2026-11-10.json` — rows appended to `sources`, `observations`, `flags`, `audit`; one sentence
+  appended to `meta.verification`. No existing row, value, key or the `suggestions` key was edited.
+- `scripts/validate_site.py` — one line: `www.cbo.gov` and `www.federalreserve.gov` added to the allowlist.
+- `scripts/build_public.py` — one four-line hunk in `build_projections`: two `obs_table` calls for the new
+  categories `Macro outlook` and `Stress history`. No navigation, page list or other builder change.
+- `tests/test_additions_1e8970d6.py` — new file (7 tests); existing tests untouched.
+- Regenerated: `projections.html`, `market.html`, `property.html`, `risks.html`, `flagged.html`,
+  `sources.html`, `audit.html` (deterministic output of the builder).
+
+If any of those sessions rebases over this, the dataset change is append-only and the generated pages should
+be regenerated with `python3 scripts/build_public.py`, not hand-merged.
+
+**What was added to the public site**
+
+- `projections.html` — two new tables: official national macro paths (CBO February 2026 outlook; Federal
+  Reserve projections of 2026-09-16, with stated uncertainty bands) and observed Los Angeles stress history
+  (2020 shock; 2007–2010 recession; restaurant-sector jobs).
+- `market.html` — Census households, education, labor-force participation, commute, county income, housing,
+  business counts and retail; latest restaurant-sector jobs.
+- `property.html` — tenant principal maturities by fiscal year; leverage tests and cash sweep.
+- `risks.html` — Northridge 1994 history (both USGS figures); additional FEMA county ratings.
+- `flagged.html` — 7 new flags (CBO rate path below the observed 10-year yield; CBO annual table not
+  transcribed; Fed projections shifted up; USGS Northridge figures conflict; CAL FIRE Eaton wording;
+  city business counts not published; stress series scope).
+
+**Sources (all read 2026-11-12)**: [CBO outlook](https://www.cbo.gov/publication/62105) ·
+[Federal Reserve SEP](https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm) ·
+[BLS LAUS 2016–2026](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2016&to_year=2026) ·
+[BLS LAUS 2007–2013](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=false&from_year=2007&to_year=2013) ·
+[BLS CES food services](https://data.bls.gov/timeseries/SMU06310847072200001?output_view=data&include_graphs=false&from_year=2019&to_year=2026) ·
+[USGS Northridge](https://www.usgs.gov/centers/earthquake-science-center/science/m67-january-17-1994-northridge-california-earthquake) ·
+[USGS OFR 96-263](https://pubs.usgs.gov/of/1996/ofr-96-0263/introduc.htm) ·
+[Census city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) ·
+[Census county](https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225) ·
+[SEC 10-Q debt note](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm). Full list
+with per-row results in the ledger.
+
+**Irregularities** (all on Flagged for Review, none blocking): see ledger section 3 (I-1 … I-8).
+
+**Gates before the PR**: `build_public.py --check` PASS (13 files) · 26 tests PASS (19 existing + 7 new) ·
+validator PASS (11 pages, 449 sourced rows; allowlist, local links, blanks, privacy) · artifact boundary PASS.
+External links cannot be fetched from the build sandbox; each new URL was opened today through the research
+tool and is listed above for manual review.

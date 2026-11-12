@@ -2,10 +2,10 @@
   "meta": {
     "session": "1e8970d6",
     "date": "2026-11-12",
-    "status": "staged — not read by the site builder until integration task R-4",
+    "status": "integrated into data/verified-2026-11-10.json by task R-4 as an append-only merge; this file is the provenance record and is not read by the site builder",
     "rule": "Every row cites an official page read on 2026-11-12. Derived rows state their arithmetic. Nothing is inferred; property-specific fields are untouched."
   },
-  "allowlist_hosts_needed": [
+  "allowlist_hosts_added": [
     "www.cbo.gov",
     "www.federalreserve.gov"
   ],
@@ -63,7 +63,7 @@
   "observations": [
     {
       "id": "cbo_gdp_path",
-      "category": "Economy",
+      "category": "Macro outlook",
       "measure": "CBO projected real GDP growth",
       "value": "Average 1.8% a year over 2027–2036; potential growth 2.1% (2026–2030) and 1.8% (2031–2036)",
       "geography": "United States",
@@ -76,7 +76,7 @@
     },
     {
       "id": "cbo_unemployment_path",
-      "category": "Labor",
+      "category": "Macro outlook",
       "measure": "CBO projected unemployment rate",
       "value": "4.6% in 2026; near 4.3% in 2028–2031; 4.2% from 2032; average 4.3% over 2027–2036",
       "geography": "United States",
@@ -89,7 +89,7 @@
     },
     {
       "id": "cbo_inflation_path",
-      "category": "Inflation",
+      "category": "Macro outlook",
       "measure": "CBO projected inflation",
       "value": "PCE 2.7% in 2026, 2.1% in 2028, 2% in 2030; CPI-U 2.8% in 2026 and 2.3% in 2028",
       "geography": "United States",
@@ -102,7 +102,7 @@
     },
     {
       "id": "cbo_rates_path",
-      "category": "Financing",
+      "category": "Macro outlook",
       "measure": "CBO projected interest rates",
       "value": "Federal funds 3.9% (Q4 2025) to 3.4% (Q4 2026), then steady; 10-year Treasury 4.1% (Q4 2025) to 4.3% (Q4 2027), stable afterward",
       "geography": "United States",
@@ -116,7 +116,7 @@
     },
     {
       "id": "cbo_uncertainty_2026",
-      "category": "Economy",
+      "category": "Macro outlook",
       "measure": "CBO two-thirds uncertainty ranges for 2026",
       "value": "Real GDP growth 0.5%–3.9%; unemployment 3.9%–5.4%; PCE inflation 1.7%–3.7%; 10-year Treasury 3.5%–4.8%",
       "geography": "United States",
@@ -129,7 +129,7 @@
     },
     {
       "id": "cbo_debt_path",
-      "category": "Financing",
+      "category": "Macro outlook",
       "measure": "CBO projected federal debt held by the public",
       "value": "101% of GDP in 2026 rising to 120% in 2036",
       "geography": "United States",
@@ -142,7 +142,7 @@
     },
     {
       "id": "fed_sep_rate_path",
-      "category": "Financing",
+      "category": "Macro outlook",
       "measure": "FOMC median federal funds rate projection",
       "value": "4.1% (2026); 4.1% (2027); 3.9% (2028); 3.6% (2029); longer run 3.2%",
       "geography": "United States",
@@ -155,7 +155,7 @@
     },
     {
       "id": "fed_sep_macro",
-      "category": "Economy",
+      "category": "Macro outlook",
       "measure": "FOMC median projections: GDP, unemployment, PCE inflation",
       "value": "Real GDP 2.3 / 2.4 / 2.2 / 2.1% (2026–2029), longer run 2.0%; unemployment 4.1% each year, longer run 4.2%; PCE inflation 3.7 / 2.3 / 2.1 / 2.0%",
       "geography": "United States",
@@ -168,7 +168,7 @@
     },
     {
       "id": "fed_sep_rate_band",
-      "category": "Financing",
+      "category": "Macro outlook",
       "measure": "FOMC 70% confidence interval for the federal funds rate",
       "value": "2026: 3.6%–4.6%; 2027: 2.4%–5.8%; 2028: 1.6%–6.2%; 2029: 0.8%–6.4%",
       "geography": "United States",
@@ -181,7 +181,7 @@
     },
     {
       "id": "laus_2020_shock_rate",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "2020 shock: county unemployment rate",
       "value": "4.8% (February 2020) to 16.8% (April 2020) and 18.9% peak (May 2020); 10.8% in December 2020",
       "geography": "Los Angeles County, not seasonally adjusted",
@@ -194,7 +194,7 @@
     },
     {
       "id": "laus_2020_shock_employment",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "2020 shock: county resident employment",
       "value": "5,054,309 (February 2020) to 3,820,951 (May 2020); −1,233,358 (−24.4%)",
       "geography": "Los Angeles County, not seasonally adjusted",
@@ -207,7 +207,7 @@
     },
     {
       "id": "laus_2020_recovery",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "2020 shock: recovery time",
       "value": "Rate first back at or below 4.8% in April 2022; highest later employment 4,893,555 (November 2025), still −160,754 (−3.2%) below February 2020",
       "geography": "Los Angeles County, not seasonally adjusted",
@@ -220,7 +220,7 @@
     },
     {
       "id": "laus_gfc_rate",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "2007–2010 recession: county unemployment rate",
       "value": "4.5% (May 2007) to 13.1% peak (July 2010; 648,995 unemployed); still 8.6% in December 2013",
       "geography": "Los Angeles County, not seasonally adjusted",
@@ -233,7 +233,7 @@
     },
     {
       "id": "laus_gfc_duration",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "2007–2010 recession: depth and duration",
       "value": "Employment 4,713,759 (November 2007) to 4,267,379 (January 2010): −446,380 (−9.5%); rate at or above 10.0% for 50 consecutive months (January 2009–February 2013)",
       "geography": "Los Angeles County, not seasonally adjusted",
@@ -246,7 +246,7 @@
     },
     {
       "id": "ces_food_2020_shock",
-      "category": "Labor",
+      "category": "Stress history",
       "measure": "Restaurant-sector jobs in the 2020 shock",
       "value": "397.9 thousand (February 2020) to 215.7 thousand (April 2020): −182.2 thousand (−45.8%); first back above 397.9 in August 2023 (398.4)",
       "geography": "Los Angeles-Long Beach-Glendale Metropolitan Division (Los Angeles County), not seasonally adjusted",
