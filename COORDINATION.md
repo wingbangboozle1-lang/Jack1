@@ -2207,3 +2207,26 @@ QA-1 is complete. This session did not change the recommendation: dual-track sal
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. `data/verified-2026-11-10.json` is not edited by this session. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
 Claimed at: 2026-11-13 (UTC).
+---
+
+## Session: arena/8628021a-jack1 (2026-11-13 UTC)
+
+**Session ID:** `arena/8628021a-jack1` (Arena-pinned branch; integration branch for this session, based on `main` @ `27d4025`).
+
+**Claim-time non-overlap check (2026-11-13):** `origin/main` = `27d4025` (PR #84). Open PR #85 (`arena/277574d9-jack1`, QA-1: build, test, privacy-pattern and Pages gates; claims only `verification/2026-11-13-277574d9.md` and this board). No other `in progress` claim on `main`. This session does **not** repeat QA-1 and does not touch the shared pages, navigation or scripts.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| V-1 | Independent 2026-11-13 re-read of twelve headline observations that drive the decision (Census city/county, BLS LAUS and CES headline, EDD county rate, Treasury par yields, LA-area CPI, FOMC and CBO paths, FEMA NRI composite, SEC issuer headline). Values change only where the official page disagrees; each row gets a dated access note and a link | in progress | arena/8628021a-jack1 | `verification/2026-11-13-8628021a.md` (new); `data/verified-2026-11-10.json` only for value corrections with an audit entry; this board (append only) |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Small commits; `git pull --rebase origin main` before every push.
+
+### V-1 completion record — session arena/8628021a-jack1 (2026-11-13 UTC)
+
+Supersedes the status column of the V-1 claim above: **V-1 done.** No other task is claimed by this session.
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| V-1 independent headline re-verification | done | `verification/2026-11-13-8628021a.md` (new); `data/verified-2026-11-10.json` (access dates on 12 sources, one flag, one audit entry; no observation value changed); regenerated canonical pages; this board | 13 official pages opened on 2026-11-13 and 74 published headline rows compared: [Census city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225), [Census county](https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225), [BLS LA summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf), [BLS LAUS county](https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=true), [EDD county release](https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf), [Treasury Nov 2026](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611), [BLS LA CPI Oct 2026](https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm), [LA wage notice](https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf), [DIR minimum wage FAQ](https://www.dir.ca.gov/dlse/faq_minimumwage.htm), [FEMA NRI county record](https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,RISK_SCORE,RISK_RATNG,EAL_VALT,EAL_VALB,EAL_RATNG,SOVI_SCORE,RESL_RATNG&returnGeometry=false&f=json), [Federal Reserve SEP Sep 2026](https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm), [SEC Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm), [Measure ULA FAQ](https://finance.lacity.gov/faq/measure-ula). Result: 74 of 74 compared rows match; 0 changed. | (1) ULA FAQ body text still says $5M / $10M while its note and table say $5.4M / $10.9M (already flagged, re-confirmed). (2) Treasury 11/12 and 11/13 prints are now published; the dated 11/10 row is kept (new flag `flag_treasury_refresh_20261113`). (3) Not re-read today: CBO (image table), FEMA earthquake and wildfire rows, DIR 2027 release, FRED, LAPD, Port, CAL FIRE, SCAG, Metro, schools and 10-K/10-Q detail rows. |
+
+Gates on this branch: `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 576 sourced rows); artifact validation PASS.

@@ -21,7 +21,7 @@
       "title": "QuickFacts: Los Angeles County, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "bls_summary": {
@@ -35,7 +35,7 @@
       "title": "LAUS series LAUCN060370000000003: Los Angeles County unemployment rate, NSA",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LAUCN060370000000003?output_view=data&include_graphs=true",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "bls_city_annual": {
@@ -49,7 +49,7 @@
       "title": "Los Angeles County preliminary labor force and industry employment, September 2026",
       "publisher": "California Employment Development Department",
       "url": "https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "fred_county_gdp": {
@@ -182,14 +182,14 @@
       "title": "Minimum Wage FAQ",
       "publisher": "California Department of Industrial Relations",
       "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-13",
       "kind": "official labor rule"
     },
     "la_wage": {
       "title": "2026 Minimum Wage Ordinance notice, effective July 1, 2026",
       "publisher": "Los Angeles Office of Wage Standards",
       "url": "https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official labor rule"
     },
     "dashboard_engagement": {
@@ -3933,6 +3933,15 @@
         "fema_county_query",
         "calfire_acres"
       ]
+    },
+    {
+      "id": "flag_treasury_refresh_20261113",
+      "item": "Treasury par yield row is the November 10, 2026 close; newer official prints exist",
+      "reason": "On 2026-11-13 the Treasury November 2026 table published the 11/12 and 11/13 par yields (11/13: 2Y 4.88%, 5Y 4.98%, 10Y 5.15%, 20Y 5.52%, 30Y 5.47%). The published 11/10 row was re-read and matches. Rates move daily.",
+      "action": "Leave the dated 11/10 row as published, or refresh it from the Treasury table before any pricing or discount-rate use. Indicative sovereign benchmarks only; not NNN cap rates.",
+      "sources": [
+        "treasury"
+      ]
     }
   ],
   "audit": [
@@ -4348,6 +4357,27 @@
         "sec_10q_debt",
         "fema_county_query",
         "calfire_acres"
+      ]
+    },
+    {
+      "id": "audit_8628021a_v1",
+      "check": "2026-11-13 independent re-read of twelve headline observation groups (session arena/8628021a-jack1)",
+      "result": "PASS, no value changed. 13 official pages opened (the Federal Reserve page included) on 2026-11-13; headline rows compared: 74 (all matched; 0 changed). Sources: Census city and county QuickFacts, BLS LA Area Economic Summary, BLS LAUS county series, EDD county release, Treasury November curve, BLS LA-area CPI release, LA city wage notice, DIR minimum-wage FAQ, FEMA NRI county record, Federal Reserve September 2026 SEP tables 1, 2 and 5, SEC Q3 FY2026 earnings release, Measure ULA FAQ. Not re-read this session: CBO (image-only), FEMA earthquake and wildfire rows, DIR 2027 release, FRED GDP, city annual unemployment, LAPD, Port, CAL FIRE, SCAG, Metro, and the 10-K/10-Q rows.",
+      "detail": "Access dates on the twelve sources read today were moved to 2026-11-13; the Federal Reserve source keeps its 2026-11-12 date because a regression test pins that record. Flag added: the Treasury row is dated and has newer official prints (flag_treasury_refresh_20261113). The ULA FAQ wording discrepancy was re-confirmed on the official page and is already flagged (flag_ula_faq_wording). Ledger with the 74 compared rows: verification/2026-11-13-8628021a.md.",
+      "sources": [
+        "census_city",
+        "census_county",
+        "bls_summary",
+        "bls_laus",
+        "edd_la",
+        "treasury",
+        "bls_cpi_la",
+        "la_wage",
+        "dir_minwage",
+        "fema_county_query",
+        "sec_release",
+        "fed_sep_2026_09",
+        "ula"
       ]
     }
   ],
