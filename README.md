@@ -80,7 +80,7 @@ Source and review records: `COORDINATION.md`,
 
 ## 2026-11-13 re-read and irregularity log
 
-Session `arena/d5e4c6bf-jack1` re-read 20 decision-critical figure groups (about 70 values) on 13 official primary pages. All matched; no value changed. Four irregularities and one re-read gap were added to Flagged for Review. The privacy rescan found no personal identifiers in the artifact or dataset. Ledger: `verification/2026-11-13-d5e4c6bf.md`.
+Session `arena/d5e4c6bf-jack1` re-read 20 decision-critical figure groups (about 70 values) on 13 official primary pages. 19 matched. The 20th (debt maturities) matches its page values, but the 10-Q maturity table does not reconcile with its own repayment tranches (F-08, already flagged by session `103ff2d8`). No value changed. Four irregularities and one re-read gap were added to Flagged for Review. The privacy rescan found no personal identifiers in the artifact or dataset. Ledger: `verification/2026-11-13-d5e4c6bf.md`.
 
 ## 2026-11-12 targeted improvement
 
