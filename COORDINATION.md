@@ -81,7 +81,7 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 | U-1 | Session claim + coordination protocol | done with this push | arena/103ff2d8-jack1 | this board (append-only, top section) |
 | U-2 | Fresh line-by-line re-read of a stated sample of decision-critical published rows against their official primary pages on 2026-11-13 (exact match, discrepancy, or unverified); privacy rescan of the repo's published artifact | in progress | arena/103ff2d8-jack1 | `verification/2026-11-13-103ff2d8.md` (new) |
 | U-3 | Gate re-run on `main` (build check, unit tests, validator, artifact validation, link check) and recording of any failure. Data or page changes only if U-2 finds a discrepancy, and then only in `data/verified-2026-11-10.json` and regenerated canonical pages | unclaimed (reserved, starts after U-2) | arena/103ff2d8-jack1 | gate outputs recorded in `verification/2026-11-13-103ff2d8.md`; no other file unless U-2 requires it |
-| U-4 | PR → `main`, merge without approval, GitHub Pages deploy confirmation, final record | unclaimed (reserved, starts after U-3) | arena/103ff2d8-jack1 | this board, `gh` PR/Pages operations |
+| U-4 | PR → `main`, merge without approval, GitHub Pages deploy confirmation, final record | done | arena/103ff2d8-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union without discarding another session's work, then logged here.
 
@@ -139,6 +139,17 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 
 Claimed at 2026-11-13 UTC. Commit and push of this claim precede all content work.
 
+### PR and merge record — U-4 (session arena/103ff2d8-jack1, 2026-11-13 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#92](https://github.com/wingbangboozle1-lang/Jack1/pull/92) `arena/103ff2d8-jack1` → `main`. Check `validate` = SUCCESS; `mergeStateStatus` CLEAN. **Merged 2026-11-13T21:57:17Z**, merge commit `e857303f9cc66d98c043ebf33bc73792f15693bd` (`gh pr merge 92 --merge`, no approval required). |
+| Pages | Pages build for `70152ff` = built; later build for `53c55e3` (main head after PR #88, #90, #93) = built, error `null`. `git merge-base --is-ancestor e857303 origin/main` = true, so the live build contains the merge. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/flagged.html` serves the new row "Row tenant_debt_maturities: Jack in the Box debt maturity table vs. anticipated-repayment tranches". |
+| Gates | See the completion record above (build check, 41/41 tests, validator 578 rows, artifact validation, privacy 0 hits). |
+| Tasks | U-1, U-2, U-3, U-4 **done**. This session holds no further claim. |
+
+Concurrent merges after #92: PRs #88 (ce301d17), #90 (19dc1915), #93 (2841bfac). Their board sections were kept; no hunk of theirs was dropped. This record is landed by a follow-up PR, because `main` is changed only through PRs.
 
 ---
 
