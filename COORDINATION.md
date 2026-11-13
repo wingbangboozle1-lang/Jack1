@@ -92,6 +92,26 @@ Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on
 
 ---
 
+## ▶ ACTIVE CLAIM — session `arena/d5e4c6bf-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/d5e4c6bf-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/d5e4c6bf-jack1` is pushed.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `27d4025` (PR #84 merge, 2026-11-12 16:56 UTC). No other session holds a live claim: every claim above is recorded `done` and none is newer than 60 minutes. Open PRs #5–#56 are stale (`dirty`, behind `main`) and are **not** touched by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| D5-1 | Session claim + coordination protocol | done with this push | arena/d5e4c6bf-jack1 | this board (append-only) |
+| D5-2 | Baseline gates on `main` (build --check, unit tests, validator) and privacy rescan of tracked files and the curated artifact | in progress | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md` (new) |
+| D5-3 | Fresh line-by-line re-read of decision-critical figures on official primary pages (Census, DOF, BLS, Treasury, FEMA, USGS, CAL FIRE, City of LA, SEC); exact-match or blank-and-flag | unclaimed | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md`; `data/verified-2026-11-10.json` only if a value is proven wrong |
+| D5-4 | Regenerate canonical pages, gates, PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/d5e4c6bf-jack1 | regenerated canonical pages; this board; `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push.
+
+Claimed at 2026-11-13 UTC. Commit and push of this claim precede all content work.
+
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
