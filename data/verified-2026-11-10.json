@@ -49,7 +49,7 @@
       "title": "Los Angeles County preliminary labor force and industry employment, September 2026",
       "publisher": "California Employment Development Department",
       "url": "https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "fred_county_gdp": {
@@ -280,7 +280,7 @@
       "title": "Fire Hazard Severity Zones",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-13",
       "kind": "official hazard mapping"
     },
     "calfire_acres": {
@@ -294,7 +294,7 @@
       "title": "Wildfire Claims Tracker, updated July 6, 2026",
       "publisher": "California Department of Insurance",
       "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official insurance data"
     },
     "lapd": {
@@ -414,7 +414,7 @@
       "publisher": "Los Angeles Police Department",
       "kind": "Official crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "lapd_central": {
       "title": "LAPD COMPSTAT Operations-Central Bureau Profile (rolling PDF; week ending Nov 7, 2026 at 2026-11-11 access)",
@@ -597,6 +597,34 @@
       "kind": "Official state certification letter",
       "url": "https://dof.ca.gov/media/docs/whats-new/Minimum-Wage-Increase-Notification-Governor-and-Legislative-Letter.pdf",
       "accessed": "2026-11-12"
+    },
+    "sec_edgar_8k_list": {
+      "title": "EDGAR filing index: Form 8-K, Jack in the Box Inc. (CIK 807882)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=807882&type=8-K&dateb=&owner=include&count=10",
+      "accessed": "2026-11-13",
+      "kind": "official issuer filing"
+    },
+    "calfire_2026_faq": {
+      "title": "2026 FHSZ FAQs Updated November 2026 (PDF; footer 'CAL FIRE – November 6, 2026 FAQ')",
+      "publisher": "CAL FIRE / Office of the State Fire Marshal",
+      "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/2026-fhsz-faqs-updated-november-2026-(1).pdf?rev=f021c301325946979fd56cba38ffb07a&hash=D6BA706E25C812150B15BDB650E16A29",
+      "accessed": "2026-11-13",
+      "kind": "official FAQ (PDF)"
+    },
+    "github_commit_email_doc": {
+      "title": "Setting your commit email address - GitHub Docs",
+      "publisher": "GitHub, Inc.",
+      "url": "https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address",
+      "accessed": "2026-11-13",
+      "kind": "official platform documentation"
+    },
+    "github_sensitive_data_doc": {
+      "title": "Removing sensitive data from a repository - GitHub Docs",
+      "publisher": "GitHub, Inc.",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+      "accessed": "2026-11-13",
+      "kind": "official platform documentation"
     }
   },
   "observations": [
@@ -1071,6 +1099,19 @@
       ]
     },
     {
+      "id": "treasury_yields_2026_11_13",
+      "category": "Financing",
+      "measure": "Treasury par yields, latest close read 2026-11-13",
+      "value": "2Y 4.88%; 5Y 4.98%; 10Y 5.15%; 20Y 5.52%; 30Y 5.47%",
+      "geography": "U.S. sovereign curve",
+      "period": "November 13, 2026 close",
+      "status": "verified",
+      "note": "Read from the official Treasury daily par yield curve on 2026-11-13 (November 13 row on the page). The November 10 row above is kept unchanged because the landing card and financing answer cite it. The 10Y rose 17 bp between the two closes. Indicative sovereign benchmark, not a cap rate or owner discount rate. Rates move daily.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
       "id": "schools_grad",
       "category": "Schools",
       "measure": "LAUSD combined four-/five-year graduation rate",
@@ -1252,6 +1293,19 @@
       "note": "Issuer-level governance context only; does not identify this unit's tenant or guarantor. Roles described without personal names. Read 08 Nov 2026 (session b8188ee0).",
       "sources": [
         "sec_8k_sept2026"
+      ]
+    },
+    {
+      "id": "tenant_latest_8k",
+      "category": "Tenant",
+      "measure": "Most recent Form 8-K on EDGAR (issuer-level filing index)",
+      "value": "Latest listed 8-K filed 2026-09-21 (items 1.01, 5.02, 7.01, 9.01); previous 8-K filed 2026-08-20 (items 5.02, 7.01, 9.01); no later 8-K listed",
+      "geography": "Jack in the Box Inc. (issuer)",
+      "period": "EDGAR 8-K listing read 2026-11-13",
+      "status": "verified",
+      "note": "Issuer-level index only. The content of the September 21 filing is covered by tenant_governance; the item 1.01 content was not read on 2026-11-13. No 8-K filed after September 21, 2026 appeared on the listing. Does not identify this unit's tenant or guarantor.",
+      "sources": [
+        "sec_edgar_8k_list"
       ]
     },
     {
@@ -1922,7 +1976,8 @@
       "sources": [
         "calfire_fhsz",
         "calfire_palisades",
-        "calfire_eaton"
+        "calfire_eaton",
+        "calfire_2026_faq"
       ]
     },
     {
@@ -3872,6 +3927,37 @@
         "sec_10q",
         "sec_10q_debt"
       ]
+    },
+    {
+      "id": "flag_646fddf8_treasury_card_dated",
+      "item": "Landing-card and financing-answer 10-year Treasury figure is the November 10 close, not the latest close",
+      "reason": "The official daily curve read on 2026-11-13 shows 10Y 5.15% at the November 13 close, against 4.98% on November 10 (+17 bp). The landing card and the financing answer keep the dated November 10 reading, which is correctly dated but no longer the latest.",
+      "action": "Before any financing, discount-rate, or sale-timing conclusion, use the dated reading that the decision needs and re-read the official curve that day. Refresh the card and financing answer at the next integration pass.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "flag_646fddf8_lapd_population_basis",
+      "item": "LAPD and DOF city population and area figures differ",
+      "reason": "LAPD's citywide profile read on 2026-11-13 lists population 3,908,705 and area 472.93 sq. miles. DOF's E-1 city estimate for January 1, 2026 is 3,806,201, and the dataset's Census land-area row is 469.49 sq. miles (2020 Census geography). The sources use different dates, definitions and purposes, and the cause was not established. The dataset does not use the LAPD population or area.",
+      "action": "Do not use the LAPD population or area in any per-capita or density figure. Cite DOF or Census with the vintage stated. Ask LAPD or DOF for the basis if the difference matters.",
+      "sources": [
+        "lapd_city",
+        "dof_e1",
+        "census_city"
+      ]
+    },
+    {
+      "id": "flag_646fddf8_commit_email_privacy",
+      "item": "Personal email addresses appear in public git commit metadata (not on the published site)",
+      "reason": "The GitHub REST commit list for the main branch (262 commits, read 2026-11-13) shows 101 commits whose author email is a personal address rather than a GitHub no-reply address. GitHub's documentation says a changed commit-email setting does not alter earlier commits. The address is not reproduced in this dataset or on any page, and the site does not display it. The repository is public, so its history is public.",
+      "action": "Owner decision. Options: (a) accept the exposure; (b) rewrite history (for example with git-filter-repo), which changes every affected commit hash, disturbs open pull requests, and requires each collaborator to re-clone; (c) enable 'Keep my email addresses private' for future commits. No session has rewritten history or force-pushed.",
+      "sources": [
+        "repo",
+        "github_commit_email_doc",
+        "github_sensitive_data_doc"
+      ]
     }
   ],
   "audit": [
@@ -4266,6 +4352,27 @@
         "ula",
         "fema_county_query",
         "openfema_la"
+      ]
+    },
+    {
+      "id": "audit_646fddf8_q3",
+      "check": "2026-11-13 targeted re-read of rolling official sources and commit-metadata privacy check (session 646fddf8)",
+      "result": "PASS for the ten official pages read (nine publisher pages plus the CAL FIRE FAQ PDF): every compared value matched an existing row. Two new dated rows were added (Treasury November 13 close; EDGAR 8-K listing). The Port October row was updated by session 19dc1915 and this session's read confirmed its values. No existing value was changed. Three flags raised; one privacy irregularity in public commit metadata.",
+      "detail": "Pages read on 2026-11-13 (ten official pages): Treasury Daily Par Yield Curve, November 2026 (Nov 10 row matched in full; Nov 13 row added); SEC EDGAR 8-K listing for CIK 807882 (latest 8-K 2026-09-21 matched tenant_governance; new row); BLS Los Angeles Area Economic Summary updated Nov 4, 2026 (all listed unemployment, payroll, sector, CPI and wage values matched); BLS Los Angeles CPI release 26-1670-SAN dated Nov 10, 2026 (October m/m values matched; 12-month change not published, matched); CAL FIRE FHSZ page (2026 SRA comment period open, matched) and its November 6, 2026 FAQ PDF (date confirmed; cited on the SRA row); CDI wildfire claims tracker (updated July 6, 2026; matched); Port of LA container statistics (October 2026 values match the row updated by 19dc1915; the September monthly row was not re-read, but its YTD equals the October page's calendar-year total less October); EDD Los Angeles County release for September 2026 (matched); LAPD citywide profile for 10/11/26–11/07/26 (matched; population basis flagged). GitHub REST commit listing (262 commits on main) and two GitHub documents were read for the privacy flag. Full ledger: verification/2026-11-13-646fddf8.md.",
+      "sources": [
+        "treasury",
+        "sec_edgar_8k_list",
+        "bls_summary",
+        "bls_cpi_la",
+        "calfire_fhsz",
+        "calfire_2026_faq",
+        "cdi_claims",
+        "port_containers",
+        "edd_la",
+        "lapd_city",
+        "repo",
+        "github_commit_email_doc",
+        "github_sensitive_data_doc"
       ]
     }
   ],
