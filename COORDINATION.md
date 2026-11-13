@@ -101,9 +101,9 @@ Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
 | D5-1 | Session claim + coordination protocol | done with this push | arena/d5e4c6bf-jack1 | this board (append-only) |
-| D5-2 | Baseline gates on `main` (build --check, unit tests, validator) and privacy rescan of tracked files and the curated artifact | in progress | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md` (new) |
-| D5-3 | Fresh line-by-line re-read of decision-critical figures on official primary pages (Census, DOF, BLS, Treasury, FEMA, USGS, CAL FIRE, City of LA, SEC); exact-match or blank-and-flag | unclaimed | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md`; `data/verified-2026-11-10.json` only if a value is proven wrong |
-| D5-4 | Regenerate canonical pages, gates, PR → `main`, merge, Pages deploy confirmation, final record | unclaimed | arena/d5e4c6bf-jack1 | regenerated canonical pages; this board; `gh` operations |
+| D5-2 | Baseline gates on `main` (build --check, unit tests, validator) and privacy rescan of tracked files and the curated artifact | done | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md` (new) |
+| D5-3 | Fresh line-by-line re-read of decision-critical figures on official primary pages (Census, DOF, BLS, Treasury, FEMA, USGS, CAL FIRE, City of LA, SEC); exact-match or blank-and-flag | done | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md`; `data/verified-2026-11-10.json` additions only (4 flags, 1 audit entry; no value changed); `README.md` one section |
+| D5-4 | Regenerate canonical pages, gates, PR → `main`, merge, Pages deploy confirmation, final record | in progress | arena/d5e4c6bf-jack1 | regenerated canonical pages; this board; `gh` operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push.
 

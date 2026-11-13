@@ -3942,6 +3942,55 @@
       "sources": [
         "treasury"
       ]
+    },
+    {
+      "id": "flag_d5e4c6bf_legacy_property_data",
+      "item": "Legacy file data/property_data.md labels figures VERIFIED that cite non-official websites (session 2026-11-13 review, not published)",
+      "reason": "The legacy table marks population (42,707), median age (33) and central Los Angeles income ($62,295) as VERIFIED with third-party sources (teamcirca.com, losangelesrc.org) and describes some as U.S. Census Bureau data. Those page-level sources were not checked against an official page, so the label is unsupported. The published site does not use these values.",
+      "action": "Not edited by session d5e4c6bf (file belongs to session d85fba50). Recommend retiring the file or moving it to archive/. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-01.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_d5e4c6bf_fastfood_council",
+      "item": "Covered fast-food minimum wage ($20.00/hour): official FAQ read on 2026-11-13; the Fast Food Council decision page was not located",
+      "reason": "The DIR FAQ states $20.00 per hour from April 1, 2024 and shows no later adjustment. Third-party commentary dated October–November 2026 reports no Council increase. Those commentaries are not official and are not cited as evidence.",
+      "action": "Owner to confirm the current rate and any Council action on the Fast Food Council page before relying on it for 2027 projections. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-03.",
+      "sources": [
+        "dir_fastfood"
+      ]
+    },
+    {
+      "id": "flag_d5e4c6bf_treasury_asof",
+      "item": "Treasury benchmark is dated November 10, 2026; the official daily table now lists November 12 and November 13",
+      "reason": "The official table (re-read 2026-11-13) shows 11/12/2026 10-year 5.10% and 11/13/2026 10-year 5.15%, against 4.98% on 11/10/2026. The dataset keeps the 11/10 close so that every figure shares one as-of date. Tests and the 10Y dashboard card use 4.98%.",
+      "action": "Refresh the treasury_yields row, its dependent card and tests together in the next data pass. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-04.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "flag_d5e4c6bf_nri_version",
+      "item": "FEMA National Risk Index version label (v1.20, December 2025) not confirmed on the source response",
+      "reason": "Every NRI county value for Los Angeles County (06037) re-read on 2026-11-13 matches the dataset. The ArcGIS response does not carry the version label.",
+      "action": "Confirm the version label on the FEMA NRI data page before the next publication. Values stand as verified. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-05.",
+      "sources": [
+        "fema_county_query",
+        "fema_nri"
+      ]
+    },
+    {
+      "id": "flag_d5e4c6bf_not_reread",
+      "item": "Values not re-read on 2026-11-13: county transfer-tax component 0.11%, 2026 state minimum wage $16.90, the 2.99% certification, tenant FY2025 California unit count, CAL FIRE acreage table, LAPD crime status",
+      "reason": "Session d5e4c6bf re-read 20 figure groups (about 70 values) on official primary pages. These six items were outside that pass and keep their earlier access dates on the Sources registry.",
+      "action": "Re-read in the next verification pass. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-06.",
+      "sources": [
+        "dir_minwage",
+        "dof_minwage_cert",
+        "lavote_dtt",
+        "lapd"
+      ]
     }
   ],
   "audit": [
@@ -4378,6 +4427,27 @@
         "sec_release",
         "fed_sep_2026_09",
         "ula"
+      ]
+    },
+    {
+      "id": "audit_d5e4c6bf_reread",
+      "check": "2026-11-13 line-by-line re-read of 20 decision-critical figure groups (19 match; 1 partial) on official primary pages; privacy rescan; baseline gates (session arena/d5e4c6bf-jack1)",
+      "result": "PASS for values; one reconciliation gap found. 19 of 20 re-read figure groups matched their official page with no value changed. Row tenant_debt_maturities matches the page values, but the 10-Q maturity table does not reconcile with its own ARD tranches ($74,774k gap; see flag_debt_schedule_arithmetic, session 103ff2d8, confirmed here). Privacy rescan: no email, phone, parcel number or named individual in the artifact or dataset. Four flags and one re-read gap were added; no observation value was edited.",
+      "detail": "Pages read on 2026-11-13: Census QuickFacts (City of Los Angeles); BLS Los Angeles Area Economic Summary (updated Nov 4, 2026); BLS unemployment rates for the 50 largest cities; LA Office of Wage Standards minimum-wage notice (effective July 1, 2026); LA Office of Finance Measure ULA FAQ; DIR news release 2026-66; DIR Fast Food Minimum Wage FAQ; Treasury daily par yield curve (November 2026); Jack in the Box Q3 FY2026 earnings release (Ex. 99.1); Jack in the Box Form 10-Q indebtedness note (R14); California DOF E-1 press release (May 1, 2026); FEMA NRI county record (ArcGIS query); USGS earthquake-probability FAQ. Derived arithmetic reproduced: ARD share 95.8% (1,429.625 of 1,491.984) and the city transfer-tax base 0.45%. Ledger: verification/2026-11-13-d5e4c6bf.md.",
+      "sources": [
+        "census_city",
+        "bls_summary",
+        "bls_city_annual",
+        "la_wage",
+        "ula",
+        "dir_release_2027",
+        "dir_fastfood",
+        "treasury",
+        "sec_release",
+        "sec_10q_debt",
+        "dof_e1",
+        "fema_county_query",
+        "usgs_faq"
       ]
     }
   ],
