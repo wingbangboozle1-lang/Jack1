@@ -11,7 +11,7 @@
 | R-1 | Session claim + coordination protocol | done | arena/19dc1915-jack1 | this board (append-only) |
 | R-2 | Independent official re-read of eight decision-critical sources (Census city, BLS CPI Los Angeles, DIR minimum-wage release, LA Office of Finance ULA FAQ, USGS UCERF3 FAQ, SEC Q3 FY2026 release, BLS Los Angeles economic summary, Port of Los Angeles container statistics) | done (7 match; Port updated, see R-3) | arena/19dc1915-jack1 | `verification/2026-11-13-19dc1915.md` (new) |
 | R-3 | Port of Los Angeles row: official page now shows October 2026; update the observation, source title/access date, and dependent answer; flag early-posting timing (`flag_port_timing`) | done | arena/19dc1915-jack1 | `data/verified-2026-11-10.json` (port rows, one flag, one audit entry, accessed dates of the eight re-read sources only); regenerated canonical pages; `build_public.py` audit list (one line) |
-| R-4 | Gates, PR → main, merge without waiting, Pages confirmation, final record | in progress | arena/19dc1915-jack1 | this board, `gh` operations |
+| R-4 | Gates, PR → main, merge without waiting, Pages confirmation, final record | done | arena/19dc1915-jack1 | this board, `gh` operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited. Personal contact details printed on official releases (press and investor-relations contacts) are not transcribed. Small commits; `git pull --rebase origin main` before every push.
 
@@ -24,6 +24,18 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 | Verification | Row-level match for seven sources; Port updated from September to October 2026 (provisional). Ledger: `verification/2026-11-13-19dc1915.md`. |
 | Dataset changes | `data/verified-2026-11-10.json`: Port observation, source title and access date, one requirements answer, `flag_port_timing`, audit `audit_19dc1915_r2`, access dates for seven re-read sources. No other value changed. |
 | Irregularities | I-1 Port October figures visible 2026-11-13, before the page's stated "on or around the 15th" timing (re-read after 2026-11-15). I-3 Census income/housing rows not re-read today. I-5 stale open PRs #5–#56 still open for owners. |
+
+
+### Session completion record — R-4 (session arena/19dc1915-jack1, 2026-11-13 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#87](https://github.com/wingbangboozle1-lang/Jack1/pull/87) `arena/19dc1915-jack1` → `main`. CI `validate` = success on head `d12d626`. `gh pr merge 87 --merge` → **MERGED 2026-11-13T21:55:24Z**, merge commit `71850177d530d4dbad7f3a94d2a38a5e59642de7`. |
+| Pages | Pages API `pages/builds/latest` = `built` at commit `7185017`, error `null`, updated 2026-11-13T21:56:07Z. `pages-build-deployment` run 43514927454 = success; `validate` run 43514927600 = success on `main`. |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/market.html` serves the October 2026 Port row (1,026,871.65 TEUs, +21.03%; YTD 9,108,497.20, +5.11%) with the provisional flag. `flagged.html` serves the existing Flagged for Review entries. |
+| Gates on the merged tree | `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 576 sourced rows); `--out` artifact + `validate_site.py --artifact` PASS. |
+| Irregularities published | I-1 Port early posting (re-read after 2026-11-15; `flag_port_timing`); I-3 Census income/housing rows not re-read today; I-4 ULA FAQ narrative wording; I-5 stale open PRs #5–#56 left for owners. Non-blocking; published on Flagged for Review. |
+| Not done this session | A full re-read of all 84 registry sources (last complete pass 2026-11-10; targeted passes 2026-11-11 and 2026-11-12). The eight sources above were re-read. |
 
 ---
 
