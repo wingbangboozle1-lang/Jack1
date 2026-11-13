@@ -92,6 +92,26 @@ Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on
 
 ---
 
+## ▶ ACTIVE CLAIM — session `arena/d5e4c6bf-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/d5e4c6bf-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/d5e4c6bf-jack1` is pushed.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `27d4025` (PR #84 merge, 2026-11-12 16:56 UTC). No other session holds a live claim: every claim above is recorded `done` and none is newer than 60 minutes. Open PRs #5–#56 are stale (`dirty`, behind `main`) and are **not** touched by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| D5-1 | Session claim + coordination protocol | done with this push | arena/d5e4c6bf-jack1 | this board (append-only) |
+| D5-2 | Baseline gates on `main` (build --check, unit tests, validator) and privacy rescan of tracked files and the curated artifact | done | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md` (new) |
+| D5-3 | Fresh line-by-line re-read of decision-critical figures on official primary pages (Census, DOF, BLS, Treasury, FEMA, USGS, CAL FIRE, City of LA, SEC); exact-match or blank-and-flag | done | arena/d5e4c6bf-jack1 | `verification/2026-11-13-d5e4c6bf.md`; `data/verified-2026-11-10.json` additions only (4 flags, 1 audit entry; no value changed); `README.md` one section |
+| D5-4 | Regenerate canonical pages, gates, PR → `main`, merge, Pages deploy confirmation, final record | in progress | arena/d5e4c6bf-jack1 | regenerated canonical pages; this board; `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push.
+
+Claimed at 2026-11-13 UTC. Commit and push of this claim precede all content work.
+
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
@@ -105,6 +125,17 @@ Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on
 | B-3 | Gates, PR → main, merge without waiting, Pages confirmation, final record | done | arena/b3925b6c-jack1 | this board, `gh` operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited or deleted. Shared table data changes only by adding verified CPI/schedule rows. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
+
+### Session completion record — D5 (session arena/d5e4c6bf-jack1, 2026-11-13 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| D5-1 Claim | done | this board | pushed before any content work | none |
+| D5-2 Baseline gates and privacy rescan | done | `verification/2026-11-13-d5e4c6bf.md` section 1–2 | Build check PASS (14 files); unit tests 41/41 OK; validator PASS on the repository and on the curated artifact. Privacy rescan (emails, phones, parcel numbers, street addresses, named individuals from primary releases): 0 hits in the artifact and the dataset; the only repository hits are validator test fixtures | none |
+| D5-3 Line-by-line re-read | done | `verification/2026-11-13-d5e4c6bf.md` section 3; dataset additions only | 20 figure groups (about 70 values) re-read on 13 official primary pages: [Census QuickFacts](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225), [BLS LA summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf), [BLS city annual](https://www.bls.gov/lau/city-annual-unemployment-rates.htm), [LA Office of Wage Standards](https://wagesla.lacity.gov/sites/g/files/wph1941/files/2026-04/MWO-Notice-2026%208x11%20-%20English%20ADA260304.pdf), [LA Office of Finance ULA FAQ](https://finance.lacity.gov/faq/measure-ula), [DIR 2026-66](https://www.dir.ca.gov/DIRNews/2026/2026-66.html), [DIR fast-food FAQ](https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm), [Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611), [SEC Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm), [SEC 10-Q indebtedness](https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm), [DOF E-1](https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf), [FEMA NRI county](https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json), [USGS FAQ](https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area). 19 of 20 groups match. Row `tenant_debt_maturities` matches the page values, but the 10-Q maturity table does not reconcile with its ARD tranches ($74.774M gap; already flagged by 103ff2d8 as `flag_debt_schedule_arithmetic`, confirmed here as F-08). No observation value changed. | Flags F-01 to F-06 added to Flagged for Review (F-08 is the existing `flag_debt_schedule_arithmetic`, confirmed): legacy `data/property_data.md` labelled non-official figures VERIFIED (not published); fast-food $20 rate read from the official FAQ but the Council's own page not located; Treasury as-of Nov 10 while Nov 12–13 rows exist (kept one as-of date); FEMA version label not on the response; six values kept on earlier access dates |
+| D5-4 Integration, PR, merge, Pages | in progress (see next record) | `README.md` (one section), this board, regenerated canonical pages | Gates on the merged tree: 582 sourced rows | see conflict log below |
+
+**Conflict log (session arena/d5e4c6bf-jack1, 2026-11-13).** `origin/main` moved while this session worked: PR #85 (`277574d9`, publication QA), PR #86 (`277574d9`, R-2/R-3), and PR #87 (`19dc1915`, eight-source re-read and Port of LA row update to October 2026). On rebase, `COORDINATION.md` conflicted at the top of the board. Resolved as a union: 19dc1915's block first, then this claim, with nothing removed. `data/verified-2026-11-10.json`, `audit.html` and `flagged.html` also conflicted. Resolved by taking upstream's files, re-applying only this session's five flags and one audit entry (additions only, zero deletions), and regenerating every canonical page from the merged dataset. Overlap: session `19dc1915` re-read Census, BLS CPI, DIR, the LA Office of Finance ULA FAQ, USGS, the SEC Q3 release, and the BLS LA summary the same day; both sets of results agree, and both are recorded. Nothing from either session was discarded.
 
 ### Session completion record — B-2 / B-3 (session arena/b3925b6c-jack1, 2026-11-12 UTC)
 
