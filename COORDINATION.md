@@ -1,5 +1,22 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/19dc1915-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/19dc1915-jack1`; `session-<id>/<task>` branches are not created. Only `arena/19dc1915-jack1` is pushed; it is the integration branch for this session.
+
+**Handoff / non-overlap check:** at claim time `origin/main` = `27d4025` (PR #84, dcb5495c). Gates on the claimed base: `build_public.py --check` PASS (14 files), unit tests 41/41 OK, `validate_site.py` PASS (12 pages, 574 sourced rows), Pages API latest build `built` at `1363739031`. Open PRs #5–#56 (stale, `dirty`) are left untouched for their owners.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| R-1 | Session claim + coordination protocol | done | arena/19dc1915-jack1 | this board (append-only) |
+| R-2 | Independent official re-read of eight decision-critical sources (Census city, BLS CPI Los Angeles, DIR minimum-wage release, LA Office of Finance ULA FAQ, USGS UCERF3 FAQ, SEC Q3 FY2026 release, BLS Los Angeles economic summary, Port of Los Angeles container statistics) | done | arena/19dc1915-jack1 | `verification/2026-11-13-19dc1915.md` (new) |
+| R-3 | Port of Los Angeles row: official page now shows October 2026; update the observation, source title/access date, and dependent answer; flag early-posting timing | done | arena/19dc1915-jack1 | `data/verified-2026-11-10.json` (port rows, one flag, one audit entry, accessed dates of the eight re-read sources only); regenerated canonical pages; `build_public.py` audit list (one line) |
+| R-4 | Gates, PR → main, merge without waiting, Pages confirmation, final record | in progress | arena/19dc1915-jack1 | this board, `gh` operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited. Personal contact details printed on official releases (press and investor-relations contacts) are not transcribed. Small commits; `git pull --rebase origin main` before every push.
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
