@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-11-11",
+    "date": "2026-11-13",
     "session": "ac5b9087",
     "title": "Jack in the Box NNN decision brief — central Los Angeles area",
     "premise": "Reported Jack in the Box NNN-leased property near central Los Angeles with approximate 2030–2035 lease expiry. The parcel, legal tenant, guarantor, rent, value, debt, condition, insurance, tax basis, and owner finances remain unverified.",
@@ -252,7 +252,7 @@
       "title": "National Risk Index Counties feature layer; data updated December 16, 2025",
       "publisher": "FEMA via ArcGIS Living Atlas",
       "url": "https://fema.maps.arcgis.com/home/item.html?id=39485e8035d446a5bff03259508ae355",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-13",
       "kind": "official hazard model"
     },
     "fema_county_query": {
@@ -266,7 +266,7 @@
       "title": "NRI Counties official query: Los Angeles County 18 hazard ratings",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,AVLN_RISKR,CFLD_RISKR,CWAV_RISKR,DRGT_RISKR,ERQK_RISKR,HAIL_RISKR,HWAV_RISKR,HRCN_RISKR,ISTM_RISKR,IFLD_RISKR,LNDS_RISKR,LTNG_RISKR,SWND_RISKR,TRND_RISKR,TSUN_RISKR,VLCN_RISKR,WFIR_RISKR,WNTW_RISKR&returnGeometry=false&f=json",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official hazard model"
     },
     "usgs_faq": {
@@ -428,14 +428,14 @@
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R14.htm",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "sec_10q_ar": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 1 (Basis & Allowance for Credit Losses)",
       "publisher": "U.S. Securities and Exchange Commission",
       "kind": "SEC filing XBRL note",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R8.htm",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "sec_10q_leases": {
       "title": "Jack in the Box Q3 FY2026 10-Q Note 5 (Leases / Rental Spread)",
@@ -2384,11 +2384,11 @@
       "measure": "FEMA NRI county ratings not listed above",
       "value": "Avalanche Relatively High; hail, strong wind and winter weather Relatively Moderate; cold wave Very Low",
       "geography": "Los Angeles County",
-      "period": "National Risk Index county record read November 12, 2026",
+      "period": "NRI v1.20, December 2025",
       "status": "verified",
       "note": "County-wide ratings reflect mountain areas and total exposure; they say nothing about a central-city parcel.",
       "sources": [
-        "fema_county_query"
+        "fema_hazard_ratings"
       ]
     }
   ],
@@ -2929,7 +2929,7 @@
       "category": "Ordinary financial risk",
       "name": "Interest-rate / cap-rate repricing",
       "mechanism": "Higher required returns can reduce value and buyer leverage.",
-      "context": "Treasury 10Y 4.98% on November 10, 2026 is context, not a net-lease cap rate.",
+      "context": "Treasury 10Y 5.15% on November 13, 2026 is context, not a net-lease cap rate.",
       "site_status": "unverified",
       "mitigation": "Stress exit cap and discount rate with evidence-backed ranges; avoid fixed-rate assumptions.",
       "sources": [
@@ -3759,8 +3759,8 @@
     {
       "id": "flag_2026_11_12_scope",
       "item": "2026-11-12 targeted verification scope",
-      "reason": "Sessions 87c0c876, 1520648f, a410e84a, and f6963e79 published suggestions and selected 2026-11-12 re-reads. Session b3925b6c re-read selected high-volatility pages on 2026-11-12 (Treasury, Census, ULA, USGS, FRED, Port, CDI, BLS LA CPI news release 26-1670-SAN, JACK EDGAR) and did not re-read every inherited source. FEMA now describes NRI v1.20; historical ArcGIS figures were not reconciled to that release in this pass.",
-      "action": "Review release/version compatibility before treating inherited hazard figures as latest. See Suggestions for evidence-acquisition proposals. Do not treat every access date as a 2026-11-12 re-read.",
+      "reason": "The 2026-11-12 sessions re-read selected high-volatility and decision-critical sources, not every inherited source. On 2026-11-13, session c1cabdaf reconciled the FEMA version question: FEMA’s product page identifies December 2025 NRI v1.20, and the official ArcGIS item identifies the same data version (1.20.0; layer data updated December 16, 2025). The current Los Angeles County query matches the published v1.20 county metrics and hazard ratings. This does not make either pass a full-source re-verification.",
+      "action": "FEMA NRI v1.20 version compatibility is reconciled; county values remain county-scale only. Keep all other source access dates as recorded and see verification/2026-11-13-c1cabdaf.md for the limited follow-up scope. Do not treat every inherited value as re-read on November 12 or 13.",
       "sources": [
         "fema_nri",
         "bls_cpi_la"
@@ -3930,9 +3930,9 @@
     },
     {
       "id": "flag_treasury_superseded_20261113",
-      "item": "Treasury par-yield row dated November 10, 2026 is no longer the latest reading",
-      "reason": "The row is correct for its date. The official curve now shows the November 13, 2026 close: 10-year 5.15% (up from 4.98% on November 10; 5.10% on November 12), 2-year 4.88%, 30-year 5.47%. Sovereign benchmarks are not cap rates.",
-      "action": "Use the dated November 13 observation for current rate context and refresh before any rate-sensitive decision. Do not treat either reading as a commercial cap rate or discount rate.",
+      "item": "Treasury yields are dated sovereign benchmarks, not property financing terms",
+      "reason": "The current rate context now uses the official November 13, 2026 par-yield close: 2Y 4.88%, 5Y 4.98%, 10Y 5.15%, 20Y 5.52%, 30Y 5.47%. The separate November 10 observation remains a correct historical snapshot. Treasury yields move daily and are not commercial cap rates, property loan offers or owner discount rates.",
+      "action": "Re-read the official daily curve at the time of any pricing or refinancing decision; obtain property-specific lender terms and comparable-sale evidence. Do not use a Treasury yield alone as a property valuation input.",
       "sources": [
         "treasury"
       ]
@@ -3977,15 +3977,6 @@
       ]
     },
     {
-      "id": "flag_treasury_refresh_20261113",
-      "item": "Treasury par yield row is the November 10, 2026 close; newer official prints exist",
-      "reason": "On 2026-11-13 the Treasury November 2026 table published the 11/12 and 11/13 par yields (11/13: 2Y 4.88%, 5Y 4.98%, 10Y 5.15%, 20Y 5.52%, 30Y 5.47%). The published 11/10 row was re-read and matches. Rates move daily.",
-      "action": "Leave the dated 11/10 row as published, or refresh it from the Treasury table before any pricing or discount-rate use. Indicative sovereign benchmarks only; not NNN cap rates.",
-      "sources": [
-        "treasury"
-      ]
-    },
-    {
       "id": "flag_d5e4c6bf_legacy_property_data",
       "item": "Legacy file data/property_data.md labels figures VERIFIED that cite non-official websites (session 2026-11-13 review, not published)",
       "reason": "The legacy table marks population (42,707), median age (33) and central Los Angeles income ($62,295) as VERIFIED with third-party sources (teamcirca.com, losangelesrc.org) and describes some as U.S. Census Bureau data. Those page-level sources were not checked against an official page, so the label is unsupported. The published site does not use these values.",
@@ -4001,25 +3992,6 @@
       "action": "Owner to confirm the current rate and any Council action on the Fast Food Council page before relying on it for 2027 projections. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-03.",
       "sources": [
         "dir_fastfood"
-      ]
-    },
-    {
-      "id": "flag_d5e4c6bf_treasury_asof",
-      "item": "Treasury benchmark is dated November 10, 2026; the official daily table now lists November 12 and November 13",
-      "reason": "The official table (re-read 2026-11-13) shows 11/12/2026 10-year 5.10% and 11/13/2026 10-year 5.15%, against 4.98% on 11/10/2026. The dataset keeps the 11/10 close so that every figure shares one as-of date. Tests and the 10Y dashboard card use 4.98%.",
-      "action": "Refresh the treasury_yields row, its dependent card and tests together in the next data pass. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-04.",
-      "sources": [
-        "treasury"
-      ]
-    },
-    {
-      "id": "flag_d5e4c6bf_nri_version",
-      "item": "FEMA National Risk Index version label (v1.20, December 2025) not confirmed on the source response",
-      "reason": "Every NRI county value for Los Angeles County (06037) re-read on 2026-11-13 matches the dataset. The ArcGIS response does not carry the version label.",
-      "action": "Confirm the version label on the FEMA NRI data page before the next publication. Values stand as verified. Ledger: verification/2026-11-13-d5e4c6bf.md, flag F-05.",
-      "sources": [
-        "fema_county_query",
-        "fema_nri"
       ]
     },
     {
@@ -4534,6 +4506,27 @@
         "github_commit_email_doc",
         "github_sensitive_data_doc"
       ]
+    },
+    {
+      "id": "audit_c1cabdaf_20261113",
+      "check": "2026-11-13 targeted decision-system follow-up: current Treasury context, FEMA NRI v1.20/source labels, and credit-loss period (session c1cabdaf)",
+      "result": "PASS with presentation and citation corrections. The existing Nov 13 Treasury observation is now used by the financing answer, index card, rate signal/risk and summary; the historical Nov 10 row remains dated. FEMA v1.20 is confirmed, LA County values match, and the additional-ratings row now cites the query that contains those fields. No NRI numeric values or property-specific inputs changed.",
+      "detail": "Opened the official Treasury November 2026 par-yield table: November 13 2Y 4.88%, 5Y 4.98%, 10Y 5.15%, 20Y 5.52%, 30Y 5.47%; November 10 (10Y 4.98%) and November 12 (5.10%) remain historical dated observations. FEMA’s National Risk Index product page labels the December 2025 release v1.20; the ArcGIS county item explicitly says Data Version December 2025 (1.20.0), data updated Dec 16, 2025. The official Los Angeles County (06037) query matches composite risk 100/Very High, total EAL $7,601,846,373 (rounded), building value $5,946,330,343, social vulnerability 55.375/Relatively Moderate, resilience 13.550/Very Low, and the listed earthquake, wildfire and inland-flood values. The separate 18-rating query returns the other hazard ratings; the additional-ratings row was linked to this query rather than the composite-only query. BLS Los Angeles Area Economic Summary (updated Nov 4) and October CPI release match the published Sep labor/CPI and Oct +0.6% m/m facts; the Oct 12-month rate remains unpublished. Census QuickFacts city population 3,869,089 matches. Jack Q3 FY2026 release system same-store sales (-1.1%) and end-quarter count (2,115) match. SEC 10-Q R8 confirms the franchise-receivable allowance magnitude $4.466M to $7.607M and its 40-week year-to-date provision $2.361M to $3.479M; the provision label is YTD; the existing prior-session correction record is retained. SEC R14.htm debt-note endpoint returned only an XBRL document stub in this read; no debt value was changed, and the existing $74.774M maturity/ARD reconciliation flag remains unresolved. CAL FIRE’s current official page states the 2026 SRA comment period is open and distinguishes hazard from risk; no parcel classification was inferred. This was a targeted check, not a fresh line-by-line re-open of the complete source registry. No owner, parcel, lease-party or personal financial data was collected or published; see verification/2026-11-13-c1cabdaf.md for exact URLs and scope.",
+      "sources": [
+        "treasury",
+        "fema_nri",
+        "fema_county_item",
+        "fema_county_query",
+        "fema_hazard_ratings",
+        "bls_summary",
+        "bls_cpi_la",
+        "census_city",
+        "sec_release",
+        "sec_10q",
+        "sec_10q_ar",
+        "sec_10q_debt",
+        "calfire_fhsz"
+      ]
     }
   ],
   "questions": [
@@ -4661,7 +4654,7 @@
     {
       "id": "q_financing",
       "question": "What does money cost if the property is held or refinanced?",
-      "answer": "The U.S. Treasury par curve at the November 10, 2026 close: 2Y 4.73%, 5Y 4.81%, 10Y 4.98%, 20Y 5.39%, 30Y 5.35%. The issuer’s June 2026 securitization priced at 7.624%. Neither is a property-specific loan offer or an owner discount rate; spread, LTV and terms remain unverified.",
+      "answer": "The U.S. Treasury par curve at the November 13, 2026 close: 2Y 4.88%, 5Y 4.98%, 10Y 5.15%, 20Y 5.52%, 30Y 5.47%. The issuer’s June 2026 securitization priced at 7.624%. Neither is a property-specific loan offer or an owner discount rate; spread, LTV and terms remain unverified.",
       "status": "partial",
       "obtain": "Obtain term sheets from two or three lenders using the verified rent roll and property condition; price the spread, not just the index.",
       "sources": [
@@ -5404,7 +5397,7 @@
       "id": "sig_interest_rates",
       "group": "Costs and capital",
       "signal": "Interest rates",
-      "reading": "10-year Treasury 4.98% at the November 10, 2026 close",
+      "reading": "10-year Treasury 5.15% at the November 13, 2026 close",
       "lean": "mixed",
       "why": "Higher rates lower what a buyer will pay and also raise what sale proceeds can earn elsewhere.",
       "sources": [

@@ -150,7 +150,7 @@ def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str
         <header class="page-intro"><p class="eyebrow">{e(data['meta']['title'])}</p><h1>{e(title)}</h1><p class="lead">{e(subtitle)}</p></header>
         {body}
       </main>
-      <footer class="footer">Decision support, not legal, tax, appraisal, or brokerage advice. Every table row links to an official source. <a href="sources.html">Source registry</a> · <a href="flagged.html">Flagged for review</a> · <a href="audit.html">Audit</a></footer>
+      <footer class="footer">Decision support, not legal, tax, appraisal, or brokerage advice. Economic and legal observation rows link to official sources; repository or publication-state rows use labeled provenance. <a href="sources.html">Source registry</a> · <a href="flagged.html">Flagged for review</a> · <a href="audit.html">Audit</a></footer>
     </div>
   </div>
   <script src="assets/site.js"></script>
@@ -169,7 +169,19 @@ def card(title: str, value: str, note: str, href: str, link_label: str) -> str:
 
 def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
     s = data["sources"]
-    yield_row = next(o for o in data["observations"] if o["id"] == "treasury_yields")
+    # Keep dated snapshots for audit, but show the latest explicit Treasury row on the landing card.
+    yield_rows = [
+        o for o in data["observations"]
+        if o["id"] == "treasury_yields" or o["id"].startswith("treasury_yields_")
+    ]
+    if not yield_rows:
+        raise ValueError("Treasury yield observation is missing; do not invent a dashboard rate")
+
+    def treasury_snapshot_key(row: dict[str, Any]) -> str:
+        suffix = row["id"][len("treasury_yields"):].lstrip("_")
+        return suffix if suffix.isdigit() else "00000000"
+
+    yield_row = max(yield_rows, key=treasury_snapshot_key)
     treasury_10y = next((p.split()[1] for p in yield_row["value"].split("; ") if p.startswith("10Y ")), None)
     if not treasury_10y:
         raise ValueError("Treasury 10Y benchmark is missing; do not invent a dashboard rate")
@@ -190,7 +202,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
         card("Recommendation", "Dual-track", "Prepare sale and renewal in parallel; preserve notice/option rights.", s["sec_10k"]["url"], "SEC lease-context source"),
         card("Tenant ARD debt wall", "95.8% ('29–'32)", "$1.430B of $1.492B July-2026 principal has ARDs Aug 2029–Feb 2032; final maturities differ.", s["sec_10q_debt"]["url"], "SEC Q3 FY2026 Debt Note"),
         card("10Y Treasury benchmark", treasury_10y, f"{yield_row['period']} par yield; not a property cap rate or personal discount rate.", s["treasury"]["url"], "U.S. Treasury daily curve"),
-        card("Tenant operating trend", "SSS −1.1%", "Jack Q3 FY26 system −1.1%; franchise allowance +70.3% to $(7.61)M.", s["sec_10q_ar"]["url"], "SEC Q3 FY2026 credit allowance"),
+        card("Tenant operating trend", "SSS −1.1%", "Jack Q3 FY26 system −1.1%; franchise credit-loss allowance +70.3% year-to-date, to $(7.61)M.", s["sec_10q_ar"]["url"], "SEC Q3 FY2026 credit allowance"),
         card("LA exit tax tiers", "0.56–6.06%", "County 0.11% + City 0.45% + ULA 4%/5.5% ($5.4M/$10.9M thresholds).", s["lavote_dtt"]["url"], "LA County DTT & ULA schedule"),
         card("Property inputs", "Blank", "Parcel, lease, rent, value, debt, tax basis, insurance remain unverified.", s["assessor"]["url"], "Official parcel lookup"),
         card("Decision gates", f'{len(data["questions"])} questions', gate_summary, "requirements.html", "Open the decision-question register"),

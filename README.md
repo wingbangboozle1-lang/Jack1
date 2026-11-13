@@ -7,7 +7,7 @@ A privacy-safe, official-source decision dashboard for a **reported** Jack in th
 
 ## Recommendation
 
-[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-11, with a 2026-11-12 October CPI addendum) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The previous full 74-source cross-check is dated 2026-11-10; the [2026-11-11 review](verification/2026-11-11-db9ded39.md) rechecked high-impact and rolling sources; [2026-11-12](verification/2026-11-12-b3925b6c.md) added the official October LA CPI month-to-month print and left the unpublished 12-month cell blank.
+[Current source-linked executive summary](EXECUTIVE_SUMMARY.md) (2026-11-13; the Nov. 13 Treasury curve is the current rate context, and the October LA CPI 12-month cell remains blank as BLS did not publish it) replaces contradictory historical root briefs that asserted numerical property outcomes without verified asset inputs. Older alternative builds/data remain in Git but are excluded from the published artifact. The full source cross-check is dated 2026-11-10; later scoped reviews re-read selected high-impact and rolling sources on Nov. 11–13. The [2026-11-13 C-1 ledger](verification/2026-11-13-c1cabdaf.md) records this targeted follow-up and its limits.
 
 Prepare sale and renewal cases in parallel. Preserve notice/option rights, verify the actual obligor and lease, and compare after-tax net sale proceeds with risk-adjusted ownership value. Do not make an irreversible sell/extend choice or drift to expiry without a funded re-tenanting alternative.
 
@@ -23,7 +23,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `timeline.html` — dated official milestones 2026–2035 around the reported expiry window, the tenant's principal schedule, statutory clocks, and monitoring triggers; unknown dates blank (data: `data/timeline-2026-11-12-dcb5495c.json`, builder: `scripts/build_timeline.py`)
 - `suggestions.html` — review-only: six property/evidence proposals, twelve site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
-- `requirements.html` — decision-question register (23 questions with verified answer or blank, acquisition route, official source) and coverage checklist
+- `requirements.html` — decision-question register (25 questions with verified answer or blank, acquisition route, official source) and coverage checklist
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
@@ -49,7 +49,7 @@ The verified dataset is `data/verified-2026-11-10.json` (with `data/verified-202
 ## Privacy and source policy
 
 - No owner, parcel, lease-party, or personal financial identifiers are published.
-- Every published table row links to an official source or repository provenance record.
+- Every economic or legal observation row links to its official source; rows documenting repository or publication state use a clearly labeled repository-provenance source.
 - Unconfirmed values are blank and appear on `flagged.html`.
 - Derived values are labeled as calculations from cited official inputs.
 - Official DOF and SCAG projections are kept separate; no interpolation, blending, or parcel extrapolation.
@@ -106,3 +106,7 @@ ownership split, unit volume, franchise margin, lease-payment schedule, populati
 and absenteeism history), two decision questions, a signal scorecard on `projections.html` that sets area
 activity against tenant health, and a separate property / owner view on `decision.html`. The scorecard's
 keep / sell / mixed labels are judgment on official figures and are flagged as such.
+
+## 2026-11-13 focused C-1 follow-up
+
+The Treasury card and financing answer now use the verified November 13 daily close; the November 10 observation remains a dated historical snapshot. FEMA’s official product page and ArcGIS item confirm the December 2025 NRI v1.20 release, and the Los Angeles County query matches the county-level values. The additional-hazard row now links to the official 18-rating query that actually contains those fields. The SEC allowance note is described as year-to-date (40 weeks), not a quarter-only result. This pass did not re-open every published row or infer parcel-specific exposure; the executed lease, parcel, obligor, property value, debt, condition, insurance and owner-specific inputs remain unverified. See `verification/2026-11-13-c1cabdaf.md` for checked URLs, arithmetic, privacy limits and the still-open debt-schedule discrepancy.

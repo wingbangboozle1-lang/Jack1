@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-11-11",
+    "date": "2026-11-13",
     "session": "ac5b9087",
     "method": "official inputs + transparent arithmetic; no interpolation or parcel extrapolation"
   },
@@ -816,7 +816,7 @@
         "id": "sig_interest_rates",
         "group": "Costs and capital",
         "signal": "Interest rates",
-        "reading": "10-year Treasury 4.98% at the November 10, 2026 close",
+        "reading": "10-year Treasury 5.15% at the November 13, 2026 close",
         "lean": "mixed",
         "sources": [
           "treasury"
