@@ -14,7 +14,7 @@
       "title": "QuickFacts: Los Angeles city, California; Vintage 2025",
       "publisher": "U.S. Census Bureau",
       "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "census_county": {
@@ -70,7 +70,7 @@
       "title": "Daily Treasury Par Yield Curve Rates, November 2026",
       "publisher": "U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official market data"
     },
     "dof_landing": {
@@ -231,7 +231,7 @@
       "title": "Jack in the Box Inc. Q3 FY2026 Form 10-Q",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/jack-20260705.htm",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-13",
       "kind": "official issuer filing"
     },
     "sec_release": {
@@ -245,7 +245,7 @@
       "title": "National Risk Index for Natural Hazards; v1.20 December 2025",
       "publisher": "Federal Emergency Management Agency",
       "url": "https://www.fema.gov/flood-maps/products-tools/national-risk-index",
-      "accessed": "2026-11-10",
+      "accessed": "2026-11-13",
       "kind": "official hazard model"
     },
     "fema_county_item": {
@@ -259,7 +259,7 @@
       "title": "NRI Counties official query: Los Angeles County risk, EAL, vulnerability, resilience, earthquake/wildfire/inland flood",
       "publisher": "FEMA ArcGIS feature service",
       "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Counties/FeatureServer/0/query?where=STCOFIPS%3D%2706037%27&outFields=COUNTY,STCOFIPS,RISK_SCORE,RISK_RATNG,EAL_SCORE,EAL_VALT,EAL_VALB,SOVI_SCORE,SOVI_RATNG,RESL_SCORE,RESL_RATNG,ERQK_RISKS,ERQK_RISKR,ERQK_EALT,WFIR_RISKS,WFIR_RISKR,WFIR_EALT,IFLD_RISKS,IFLD_RISKR,IFLD_EALT&returnGeometry=false&f=json",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official hazard model"
     },
     "fema_hazard_ratings": {
@@ -463,7 +463,7 @@
       "publisher": "Federal Emergency Management Agency",
       "kind": "Official federal API dataset",
       "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=state%20eq%20%27CA%27%20and%20contains(designatedArea%2C%20%27Los%20Angeles%27)&%24inlinecount=allpages&%24top=5",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "calfire_palisades": {
       "title": "Palisades Fire Official Incident Record",
@@ -3862,6 +3862,16 @@
       "sources": [
         "port_containers"
       ]
+    },
+    {
+      "id": "flag_debt_schedule_arithmetic",
+      "item": "Row tenant_debt_maturities: Jack in the Box debt maturity table vs. anticipated-repayment tranches (Form 10-Q, quarter ended July 5, 2026)",
+      "reason": "Every tranche balance and anticipated-repayment date in Note 7 matches the published rows: 2019-1 Class A-2-III $426,375k (ARD August 2029); 2026-1 Class A-2 $500,000k (ARD May 2031); 2022-1 Class A-2-II $503,250k (ARD February 2032); total debt $1,491,984k. The maturity table, which assumes repayment on the ARDs, does not reconcile with them. Its 'thereafter' line is $928,476k, but the 2031 and 2032 tranches alone total $1,003,250k, a $74,774k difference that the filing does not explain.",
+      "action": "Use the ARD dates and tranche balances as verified. Treat the year-by-year split beyond 2030 as unreconciled. Before any sale or refinancing conclusion that depends on timing, obtain the indenture amortization terms or the issuer's securitization reporting, and re-read Note 7 in the next 10-Q or 10-K.",
+      "sources": [
+        "sec_10q",
+        "sec_10q_debt"
+      ]
     }
   ],
   "audit": [
@@ -4237,6 +4247,25 @@
         "sec_release",
         "bls_summary",
         "port_containers"
+      ]
+    },
+    {
+      "id": "audit_103ff2d8_u2",
+      "check": "2026-11-13 primary-page re-read of 11 decision-critical source groups (session 103ff2d8)",
+      "result": "PASS on values: 0 published values changed. 1 irregularity flagged: the Form 10-Q maturity table does not reconcile with its own anticipated-repayment tranches ($74.774M; flag_debt_schedule_arithmetic).",
+      "detail": "Opened on 2026-11-13 UTC and compared with the published rows. (1) BLS Los Angeles Area Economic Summary, updated Nov 4, 2026: unemployment Sep 2026 city 4.5%, county 4.5%, metro 4.4%; metro payrolls 6,282.1 thousand, +30.2 thousand (+0.5%); CPI-U metro Sep 2026 3.7%, food 2.8%, energy 20.3%. Match. (2) BLS CPI Los Angeles release 26-1670-SAN (Nov 10, 2026): October all items +0.6% m/m, less food and energy +0.5%, food +0.9%, energy +1.6%, food away from home +0.5%; 12-month change not published. Match. (3) Census QuickFacts Los Angeles city, V2025: 3,869,089. Match. (4) DOF E-1 workbook (released May 1, 2026), city row Los Angeles: 3,839,536 (1/1/2025) and 3,806,201 (1/1/2026), -0.9%. Match. (5) DIR release 2026-66 (Aug 13, 2026): state minimum wage $17.40 from Jan 1, 2027; exempt salary threshold $72,384. Match. (6) SEC Exhibit 99.1, Q3 FY2026 (Aug 12, 2026): restaurants 2,115 total, 149 company, 1,966 franchise; prior year 2,168, 142, 2,026; franchise-level margin $60.3M (37.4%) vs $66.2M (39.3%). Match. (7) SEC Form 10-Q, quarter ended July 5, 2026, main document, Note 7 Indebtedness and maturity table: values match; ARD arithmetic does not reconcile (see flag). The XBRL page R14.htm returned only a placeholder to this check, so Note 7 was read from the main document. (8) Treasury daily par yield curve, November 2026 table: Nov 10 2Y 4.73, 5Y 4.81, 10Y 4.98, 20Y 5.39, 30Y 5.35. Match. (9) Los Angeles Office of Finance Real Property Transfer Tax and Measure ULA FAQ: thresholds $5,400,000 and $10,900,000 for transactions after June 30, 2026; ULA 4% and 5.5%; base 0.45%. Match. The county 0.11% was not re-read on this date. (10) FEMA National Risk Index, official county feature service (STCOFIPS 06037): composite 100 Very High; expected annual loss total $7,601,846,373; building value $5,946,330,343; earthquake EAL $4,565,736,367; wildfire score 99.936 with EAL $155,191,812; inland flooding EAL $2,808,736,524; social vulnerability 55.375; resilience 13.550 Very Low. Match. (11) OpenFEMA disaster declarations, California, designated area Los Angeles: 88. Match. Access dates were updated only for registry URLs read on this date.",
+      "sources": [
+        "bls_summary",
+        "bls_cpi_la",
+        "census_city",
+        "dof_e1",
+        "dir_release_2027",
+        "sec_release",
+        "sec_10q",
+        "treasury",
+        "ula",
+        "fema_county_query",
+        "openfema_la"
       ]
     }
   ],

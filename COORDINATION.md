@@ -41,6 +41,20 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 
 ---
 
+### Session completion record — U-2 / U-3 (session arena/103ff2d8-jack1, 2026-11-13 UTC)
+
+Supersedes the status column of the claim table above: **U-1 done, U-2 done, U-3 done (gates on the rebased tree), U-4 in progress** (PR, merge and Pages confirmation are recorded in the next block).
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| U-2 Fresh primary-page re-read | done | `verification/2026-11-13-103ff2d8.md` (new); `data/verified-2026-11-10.json` (one flag, one audit row, access dates for 11 registry URLs read today; no published value changed); regenerated canonical pages | 11 source groups opened on 2026-11-13: BLS Los Angeles summary; BLS CPI Los Angeles (26-1670-SAN); Census QuickFacts; DOF E-1 workbook; DIR release 2026-66; SEC Q3 FY2026 release; SEC 10-Q main document Note 7; Treasury November table; LA Office of Finance ULA FAQ; FEMA NRI county query; OpenFEMA. Each row is in the ledger's section 2 with its link. Overlaps 19dc1915's re-read; both agree. | **1 new flag:** the 10-Q maturity table does not reconcile with its own ARD tranches (`flag_debt_schedule_arithmetic`, $74.774M). **Read limitation:** XBRL page R14.htm returned a placeholder; Note 7 was read from the main document. |
+| U-3 Gates on the rebased tree | done | none beyond U-2 | `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 578 sourced rows); artifact validation PASS; privacy rescan of the artifact 0 hits; repository-wide scan: only synthetic test fixtures. | none new |
+| Coordination | done | this board | Rebased onto `main` `7185017` (PRs #85–#87). The board conflict at the top was resolved as a union: 19dc1915's and 277574d9's sections kept as written; this claim kept. | Concurrent sessions `277574d9` and `19dc1915` both changed `data/verified-2026-11-10.json`. Their hunks were kept, and this session's edits were re-applied on top of them. One staged row in `data/additions-2026-11-12-1e8970d6.json` must stay identical to the dataset, so the row note was left unchanged and the flag names the row instead. |
+
+Still open for the owner, not changed by this session: the twelve stale open pull requests (ledger section 3, item 4); the county 2025 annual unemployment rate that PRs #33 and #54 describe, still unverified; the Port of Los Angeles October figures, provisional until after November 15 (`flag_port_timing`).
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
