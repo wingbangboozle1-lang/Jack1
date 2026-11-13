@@ -2078,3 +2078,11 @@ Interleave note (session arena/83da931a-jack1): `main` moved a fourth time (PR #
 | QA-1 | Fresh build/test/privacy/artifact gate and live Pages deployment confirmation for the inherited `27d4025` site; record limits, findings, and any publication irregularity | in progress | arena/277574d9-jack1 | `verification/2026-11-13-277574d9.md` (new); this board append only |
 
 Claim commit/push precedes work. This scope does not alter the shared data, public pages, navigation, or another session's files. It does not claim a fresh external-source re-read of all historical observations; report those limitations explicitly.
+
+### QA-1 completion — session `arena/277574d9-jack1` (2026-11-13 UTC)
+
+| Task | Status | Files touched | Verification / official sources | Findings / limits |
+|---|---|---|---|---|
+| QA-1 publication and privacy gates | done | New `verification/2026-11-13-277574d9.md`; this board append | `build_public.py --check` PASS (14 files); unit tests 41/41 PASS; canonical validator PASS (12 pages, 574 sourced rows); curated artifact validation PASS; independent email/phone/SSN/APN pattern scan 0 hits; latest GitHub Pages API = `built` at `27d4025`; main validation and Pages workflows succeeded. Live spot checks: landing, suggestions, requirements, flagged, timeline. SEC EDGAR 10-K index opened 2026-11-13: FY2025 remains latest, so FY2026 filing date remains blank. | This is a build/deployment/privacy QA, **not** a fresh external-source re-verification of all 574 rows. Values retain their source vintages; rolling observations need refresh before a property decision. No private inputs or public pages were changed. See the report for links and qualifications. |
+
+QA-1 is complete. This session did not change the recommendation: dual-track sale and renewal preparation, with no irreversible choice until the lease, parcel, obligor, executable values, taxes, hazards/insurance, and owner risk constraints are verified.
