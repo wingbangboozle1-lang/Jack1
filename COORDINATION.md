@@ -1,5 +1,22 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/646fddf8-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/646fddf8-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is the integration branch (as prior sessions did). Only `arena/646fddf8-jack1` is pushed.
+
+**Claim-time handoff check (2026-11-13 21:53 UTC):** branch cut from `origin/main` = `27d4025` (PR #84 merge, session dcb5495c P-4 follow-up). Working tree clean. `gh pr list --state open` shows only the twelve stale PRs already recorded (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56), none updated after 2026-11-10; the last Actions runs are the PR #84 merge and Pages build (success). No live claim exists; every prior claim is recorded done, so no claim is overridden. The stale PRs are not merged, closed, commented on or edited by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| Q-1 | Session claim + coordination protocol | done with this push | arena/646fddf8-jack1 | this board (append-only) |
+| Q-2 | Live-site and gate check at claim time; privacy re-scan of all tracked files, git commit metadata and history authors; repo irregularity log | in progress | arena/646fddf8-jack1 | `verification/2026-11-13-646fddf8.md` (new) |
+| Q-3 | Targeted re-read of rolling-sensitive official rows (SEC EDGAR JACK filing index for a FY2026 Form 10-K, Treasury, BLS/Census latest releases, CAL FIRE FHSZ status, FEMA NRI); blank-and-flag any mismatch; add only values read on the date | unclaimed (starts after Q-2) | arena/646fddf8-jack1 | `data/verified-2026-11-10.json` (additions/corrections only, rows read today), regenerated canonical pages, `verification/2026-11-13-646fddf8.md` |
+| Q-4 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, final record | unclaimed (starts after Q-3) | arena/646fddf8-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union that keeps other sessions' hunks, then logged here.
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/b3925b6c-jack1` (2026-11-12 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/b3925b6c-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch. Only `arena/b3925b6c-jack1` is pushed.
