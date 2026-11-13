@@ -2207,3 +2207,16 @@ QA-1 is complete. This session did not change the recommendation: dual-track sal
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. `data/verified-2026-11-10.json` is not edited by this session. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
 Claimed at: 2026-11-13 (UTC).
+---
+
+## Session: arena/8628021a-jack1 (2026-11-13 UTC)
+
+**Session ID:** `arena/8628021a-jack1` (Arena-pinned branch; integration branch for this session, based on `main` @ `27d4025`).
+
+**Claim-time non-overlap check (2026-11-13):** `origin/main` = `27d4025` (PR #84). Open PR #85 (`arena/277574d9-jack1`, QA-1: build, test, privacy-pattern and Pages gates; claims only `verification/2026-11-13-277574d9.md` and this board). No other `in progress` claim on `main`. This session does **not** repeat QA-1 and does not touch the shared pages, navigation or scripts.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| V-1 | Independent 2026-11-13 re-read of twelve headline observations that drive the decision (Census city/county, BLS LAUS and CES headline, EDD county rate, Treasury par yields, LA-area CPI, FOMC and CBO paths, FEMA NRI composite, SEC issuer headline). Values change only where the official page disagrees; each row gets a dated access note and a link | in progress | arena/8628021a-jack1 | `verification/2026-11-13-8628021a.md` (new); `data/verified-2026-11-10.json` only for value corrections with an audit entry; this board (append only) |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Small commits; `git pull --rebase origin main` before every push.
