@@ -2177,8 +2177,18 @@ QA-1 is complete. This session did not change the recommendation: dual-track sal
 | C-2 | Fresh 2026-11-13 line-by-line re-verification of every published table row against live official sources; re-read rolling sources (BLS LA summary/CPI, EDD Sept 2026, Port of LA Sept 2026, Treasury daily curve, Census QuickFacts, DOF E-1, FEMA NRI); blank-and-flag anything not reproducible; privacy/PII rescan of the public artifact | done | arena/ce301d17-jack1 | `verification/2026-11-13-ce301d17.md` (new); read-only re-check of canonical pages and `data/verified-2026-11-10.json` |
 | C-3 | Deep LA economic research: confirm/extend geography, income, schools, population, job-growth, and hazard factors from official sources; ensure black-swan (wildfire/earthquake/flood/compound) coverage; confirm executive summary, suggestions review, 25-question register, and privacy posture remain complete and consistent | done | arena/ce301d17-jack1 | canonical root pages + `sources.html`, `risks.html`, `market.html`, `requirements.html`, `suggestions.html`, `EXECUTIVE_SUMMARY.md` (read-only; no verified corrections required) |
 | C-4 | Final integration gates: `build_public.py --check`, unit tests, `validate_site.py`, local artifact build, broken-link/privacy scan | done | arena/ce301d17-jack1 | scripts/, tests/, regenerated canonical pages |
-| C-5 | PR `arena/ce301d17-jack1` → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final board record | in progress | arena/ce301d17-jack1 | this board, `gh` PR/Pages operations |
+| C-5 | PR `arena/ce301d17-jack1` → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final board record | done | arena/ce301d17-jack1 | this board, `gh` PR/Pages operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. `data/verified-2026-11-10.json` is not edited by this session. Small frequent commits; `git pull --rebase origin main` before every push; conflicts stop and are resolved without discarding another session's work.
 
-Claimed at: 2026-11-13 (UTC).
+### Session completion record — C-5 (session arena/ce301d17-jack1, 2026-11-13 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#88](https://github.com/wingbangboozle1-lang/Jack1/pull/88) `arena/ce301d17-jack1` → `main`, "Fresh 2026-11-13 official-source re-verification and LA economic research" |
+| Merge | **MERGED**, merge commit `53c55e32bb7095c74d7598c7b3ee9f67855f7a51`; `origin/main` advanced `70152ff` → `53c55e3` |
+| Pre-merge CI | PR `validate` success; `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 574 sourced rows; privacy/blanks OK); `data/verified-2026-11-10.json` preserved read-only, no published row changed |
+| Pages deploy | `pages build and deployment` run 43515376643 SUCCESS; Pages API latest status `built` at commit `53c55e3`, error `null`; validation run 43515377923 success |
+| Live check | `https://wingbangboozle1-lang.github.io/Jack1/` serves the dual-track executive decision, 25-question gate card, blank/flagged property inputs, and full category navigation including Suggestions review and Risks; every table row carries an official source link |
+
+Claimed at: 2026-11-13 (UTC). All tasks C-1 … C-5 **done**.
