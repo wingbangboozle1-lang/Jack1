@@ -2068,3 +2068,13 @@ Interleave note (session arena/83da931a-jack1): `main` moved a fourth time (PR #
 | Gates on the merged tree | `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 574 sourced rows); artifact validation PASS; privacy scan of new and regenerated files 0 hits. |
 | Tasks | P-1, P-2, P-3, P-4 **done**. Stale PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 were **not** merged, closed, commented on or edited; per-request findings and suggested owner actions are in `verification/2026-11-12-dcb5495c.md` section 4. No other session's verification report or the shared dataset was edited. |
 | Open for the owner | (1) Read the executed lease privately and fix the expiry, option and notice dates; the Timeline page cannot show the decision deadline until then. (2) Refresh the tenant rows when the FY2026 Form 10-K appears on EDGAR. (3) Decide on the twelve stale pull requests (ledger section 4; suggestion W-08). (4) One figure described by PRs #33/#54, the county 2025 annual unemployment rate, is not in the dataset and is unverified. |
+
+## ▶ ACTIVE CLAIM — session `arena/277574d9-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** Arena pins this session to `arena/277574d9-jack1`, based on `main` at `27d4025ca0feaa4b04c48f0a0954093f1a4b8502`; platform policy requires work to stay on this branch. No other live claim was found at the current branch tip. The latest prior published integration is PR #84, already merged into `main`; prior `in progress` labels in the historical ledger are superseded by later completion records.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| QA-1 | Fresh build/test/privacy/artifact gate and live Pages deployment confirmation for the inherited `27d4025` site; record limits, findings, and any publication irregularity | in progress | arena/277574d9-jack1 | `verification/2026-11-13-277574d9.md` (new); this board append only |
+
+Claim commit/push precedes work. This scope does not alter the shared data, public pages, navigation, or another session's files. It does not claim a fresh external-source re-read of all historical observations; report those limitations explicitly.
