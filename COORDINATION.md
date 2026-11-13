@@ -24,6 +24,20 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 | Verification | Row-level match for seven sources; Port updated from September to October 2026 (provisional). Ledger: `verification/2026-11-13-19dc1915.md`. |
 | Dataset changes | `data/verified-2026-11-10.json`: Port observation, source title and access date, one requirements answer, `flag_port_timing`, audit `audit_19dc1915_r2`, access dates for seven re-read sources. No other value changed. |
 | Irregularities | I-1 Port October figures visible 2026-11-13, before the page's stated "on or around the 15th" timing (re-read after 2026-11-15). I-3 Census income/housing rows not re-read today. I-5 stale open PRs #5–#56 still open for owners. |
+## ▶ ACTIVE CLAIM — session `arena/103ff2d8-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/103ff2d8-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is used as the integration branch (as prior sessions did). Only `arena/103ff2d8-jack1` is pushed.
+
+**Claim-time handoff check (2026-11-13 UTC):** `origin/main` = `27d4025` (PR #84 merge, `arena/dcb5495c-jack1`), which is this branch's base. `git fetch --all --prune` shows no other live branch. The twelve stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) and the open PR #56 remain untouched. No claim on the board is newer than 2026-11-12 16:53 UTC, so no live claim is overridden.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| U-1 | Session claim + coordination protocol | done with this push | arena/103ff2d8-jack1 | this board (append-only, top section) |
+| U-2 | Fresh line-by-line re-read of a stated sample of decision-critical published rows against their official primary pages on 2026-11-13 (exact match, discrepancy, or unverified); privacy rescan of the repo's published artifact | in progress | arena/103ff2d8-jack1 | `verification/2026-11-13-103ff2d8.md` (new) |
+| U-3 | Gate re-run on `main` (build check, unit tests, validator, artifact validation, link check) and recording of any failure. Data or page changes only if U-2 finds a discrepancy, and then only in `data/verified-2026-11-10.json` and regenerated canonical pages | unclaimed (reserved, starts after U-2) | arena/103ff2d8-jack1 | gate outputs recorded in `verification/2026-11-13-103ff2d8.md`; no other file unless U-2 requires it |
+| U-4 | PR → `main`, merge without approval, GitHub Pages deploy confirmation, final record | unclaimed (reserved, starts after U-3) | arena/103ff2d8-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union without discarding another session's work, then logged here.
 
 ---
 
