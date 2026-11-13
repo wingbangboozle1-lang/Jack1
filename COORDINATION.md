@@ -1,5 +1,35 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/646fddf8-jack1` (2026-11-13 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/646fddf8-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is the integration branch (as prior sessions did). Only `arena/646fddf8-jack1` is pushed.
+
+**Claim-time handoff check (2026-11-13 21:53 UTC):** branch cut from `origin/main` = `27d4025` (PR #84 merge, session dcb5495c P-4 follow-up). Working tree clean. `gh pr list --state open` shows only the twelve stale PRs already recorded (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56), none updated after 2026-11-10; the last Actions runs are the PR #84 merge and Pages build (success). No live claim exists; every prior claim is recorded done, so no claim is overridden. The stale PRs are not merged, closed, commented on or edited by this session.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| Q-1 | Session claim + coordination protocol | done with this push | arena/646fddf8-jack1 | this board (append-only) |
+| Q-2 | Privacy check of git commit metadata and history authors (narrowed at claim: the file-content gate and live-page check were already completed by QA-1, `277574d9`, and were not repeated) | done | arena/646fddf8-jack1 | `verification/2026-11-13-646fddf8.md` (new) |
+| Q-3 | Re-read of rolling official sources (Treasury curve, EDGAR 8-K listing, BLS LA summary and CPI, CAL FIRE FHSZ and FAQ, CDI tracker, Port of LA, EDD, LAPD) against existing rows; add only values read on the date; overlaps with 19dc1915 / 103ff2d8 / 2841bfac logged and not duplicated | done | arena/646fddf8-jack1 | `data/verified-2026-11-10.json` (additions only), `scripts/validate_site.py` (one allowlist host), regenerated canonical pages, `verification/2026-11-13-646fddf8.md` |
+| Q-4 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, final record | in progress | arena/646fddf8-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved as a union that keeps other sessions' hunks, then logged here.
+### Session completion record — Q-2 / Q-3 (session `arena/646fddf8-jack1`, 2026-11-13 UTC)
+
+Reconciled after `main` moved three times on 2026-11-13. Overlapping items from sessions `19dc1915`, `103ff2d8`, `2841bfac` and `ce301d17` were confirmed, not duplicated.
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| Q-2 privacy of commit metadata (narrowed) | done | `verification/2026-11-13-646fddf8.md`; flag `flag_646fddf8_commit_email_privacy` (quantified follow-up to `flag_git_metadata_privacy`) | GitHub REST commit listing for `main` (262 commits, read 2026-11-13); [GitHub Docs: commit email](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address); [GitHub Docs: removing sensitive data](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository). | **101 of 262 commits** carry a personal email address in author metadata. Not on the site, and the address is not written anywhere in the repository. Owner decision on history; no history was rewritten. Earlier privacy scans covered file contents only. |
+| Q-3 rolling re-read | done | `data/verified-2026-11-10.json` (additions only: one observation `tenant_latest_8k`, four sources, one citation added to `calfire_2026_sra_fires`, two flags, one audit entry, access dates for eight re-read sources); `scripts/validate_site.py` (`docs.github.com` added to the official-host allowlist); regenerated canonical pages | Ten official pages read 2026-11-13: [Treasury curve](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611), [EDGAR 8-K listing](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=807882&type=8-K&dateb=&owner=include&count=10), [BLS LA summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf), [BLS LA CPI](https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm), [CAL FIRE FHSZ](https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones), [CAL FIRE FAQ PDF](https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/2026-fhsz-faqs-updated-november-2026-(1).pdf?rev=f021c301325946979fd56cba38ffb07a&hash=D6BA706E25C812150B15BDB650E16A29), [CDI tracker](https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm), [Port of LA](https://portoflosangeles.org/business/statistics/container-statistics), [EDD LA release](https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf), [LAPD profile](https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf). Every compared value matched a row on `main`. Gates on this branch: `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 601 sourced rows); artifact validation PASS. | (1) Landing card and financing answer cite the Nov 10 10Y (4.98%); Nov 13 is 5.15% (`flag_treasury_superseded_20261113`, already on main). (2) LAPD population 3,908,705 vs DOF 3,806,201; area 472.93 vs Census 469.49 sq mi; unexplained, not used (`flag_646fddf8_lapd_population_basis`). (3) Port September monthly row not re-read. (4) About 75 of 84 registry sources not re-read today. Overlap with 19dc1915 / 103ff2d8 / 2841bfac logged here; their edits kept. |
+
+Gate results on this branch are also recorded in `verification/2026-11-13-646fddf8.md`. The Q-4 publication record follows once the PR is merged and the Pages build is confirmed.
+
+---
+
+
+---
+
 ## ▶ ACTIVE CLAIM — session `arena/2841bfac-jack1` (2026-11-13 UTC)
 
 **Session ID:** `arena/2841bfac-jack1` (the platform pins this session to that branch and prohibits creating or pushing `session-<id>/<task>` branches; the pinned branch is the integration branch, as prior sessions did).

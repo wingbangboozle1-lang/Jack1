@@ -280,7 +280,7 @@
       "title": "Fire Hazard Severity Zones",
       "publisher": "California State Fire Marshal / CAL FIRE",
       "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
-      "accessed": "2026-11-11",
+      "accessed": "2026-11-13",
       "kind": "official hazard mapping"
     },
     "calfire_acres": {
@@ -294,7 +294,7 @@
       "title": "Wildfire Claims Tracker, updated July 6, 2026",
       "publisher": "California Department of Insurance",
       "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/Wildfire-Claims-Tracker.cfm",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official insurance data"
     },
     "lapd": {
@@ -414,7 +414,7 @@
       "publisher": "Los Angeles Police Department",
       "kind": "Official crime statistics (PDF)",
       "url": "https://lapdonlinestrgeacc.blob.core.usgovcloudapi.net/lapdonlinemedia/cityprof.pdf",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "lapd_central": {
       "title": "LAPD COMPSTAT Operations-Central Bureau Profile (rolling PDF; week ending Nov 7, 2026 at 2026-11-11 access)",
@@ -597,6 +597,34 @@
       "kind": "Official state certification letter",
       "url": "https://dof.ca.gov/media/docs/whats-new/Minimum-Wage-Increase-Notification-Governor-and-Legislative-Letter.pdf",
       "accessed": "2026-11-12"
+    },
+    "sec_edgar_8k_list": {
+      "title": "EDGAR filing index: Form 8-K, Jack in the Box Inc. (CIK 807882)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=807882&type=8-K&dateb=&owner=include&count=10",
+      "accessed": "2026-11-13",
+      "kind": "official issuer filing"
+    },
+    "calfire_2026_faq": {
+      "title": "2026 FHSZ FAQs Updated November 2026 (PDF; footer 'CAL FIRE – November 6, 2026 FAQ')",
+      "publisher": "CAL FIRE / Office of the State Fire Marshal",
+      "url": "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/osfm-website/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/2026-fhsz-faqs-updated-november-2026-(1).pdf?rev=f021c301325946979fd56cba38ffb07a&hash=D6BA706E25C812150B15BDB650E16A29",
+      "accessed": "2026-11-13",
+      "kind": "official FAQ (PDF)"
+    },
+    "github_commit_email_doc": {
+      "title": "Setting your commit email address - GitHub Docs",
+      "publisher": "GitHub, Inc.",
+      "url": "https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address",
+      "accessed": "2026-11-13",
+      "kind": "official platform documentation"
+    },
+    "github_sensitive_data_doc": {
+      "title": "Removing sensitive data from a repository - GitHub Docs",
+      "publisher": "GitHub, Inc.",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+      "accessed": "2026-11-13",
+      "kind": "official platform documentation"
     }
   },
   "observations": [
@@ -1268,6 +1296,19 @@
       ]
     },
     {
+      "id": "tenant_latest_8k",
+      "category": "Tenant",
+      "measure": "Most recent Form 8-K on EDGAR (issuer-level filing index)",
+      "value": "Latest listed 8-K filed 2026-09-21 (items 1.01, 5.02, 7.01, 9.01); previous 8-K filed 2026-08-20 (items 5.02, 7.01, 9.01); no later 8-K listed",
+      "geography": "Jack in the Box Inc. (issuer)",
+      "period": "EDGAR 8-K listing read 2026-11-13",
+      "status": "verified",
+      "note": "Issuer-level index only. The content of the September 21 filing is covered by tenant_governance; the item 1.01 content was not read on 2026-11-13. No 8-K filed after September 21, 2026 appeared on the listing. Does not identify this unit's tenant or guarantor.",
+      "sources": [
+        "sec_edgar_8k_list"
+      ]
+    },
+    {
       "id": "tenant_ca_2025",
       "category": "Tenant",
       "measure": "California Jack in the Box restaurants, FY2025",
@@ -1935,7 +1976,8 @@
       "sources": [
         "calfire_fhsz",
         "calfire_palisades",
-        "calfire_eaton"
+        "calfire_eaton",
+        "calfire_2026_faq"
       ]
     },
     {
@@ -3991,6 +4033,28 @@
         "lavote_dtt",
         "lapd"
       ]
+    },
+    {
+      "id": "flag_646fddf8_commit_email_privacy",
+      "item": "Commit-metadata privacy exposure, quantified (follow-up to flag_git_metadata_privacy)",
+      "reason": "The GitHub REST commit list for the main branch (262 commits, read 2026-11-13) shows 101 commits whose author email is a personal address rather than a GitHub no-reply address. The address is not reproduced in this dataset or on any page. GitHub's documentation says a changed commit-email setting does not alter earlier commits, so the exposure in past commits remains until history is rewritten.",
+      "action": "Owner decision (same as flag_git_metadata_privacy). Rewriting history, for example with git-filter-repo, changes every affected commit hash, disturbs open pull requests and forks, and requires each collaborator to re-clone. No session has rewritten history or force-pushed.",
+      "sources": [
+        "repo",
+        "github_commit_email_doc",
+        "github_sensitive_data_doc"
+      ]
+    },
+    {
+      "id": "flag_646fddf8_lapd_population_basis",
+      "item": "LAPD and DOF city population and area figures differ",
+      "reason": "LAPD's citywide profile read on 2026-11-13 lists population 3,908,705 and area 472.93 sq. miles. DOF's E-1 city estimate for January 1, 2026 is 3,806,201, and the dataset's Census land-area row is 469.49 sq. miles (2020 Census geography). The sources use different dates, definitions and purposes, and the cause was not established. The dataset does not use the LAPD population or area.",
+      "action": "Do not use the LAPD population or area in any per-capita or density figure. Cite DOF or Census with the vintage stated. Ask LAPD or DOF for the basis if the difference matters.",
+      "sources": [
+        "lapd_city",
+        "dof_e1",
+        "census_city"
+      ]
     }
   ],
   "audit": [
@@ -4448,6 +4512,27 @@
         "dof_e1",
         "fema_county_query",
         "usgs_faq"
+      ]
+    },
+    {
+      "id": "audit_646fddf8_q3",
+      "check": "2026-11-13 targeted re-read of rolling official sources and quantified commit-metadata check (session 646fddf8)",
+      "result": "PASS for the ten official pages read (nine publisher pages plus the CAL FIRE FAQ PDF): every compared value matched a row on main. Added: EDGAR 8-K listing row, CAL FIRE FAQ citation, GitHub sources, two flags. Treasury Nov 13 and Port October rows were already on main from other sessions and were confirmed, not duplicated.",
+      "detail": "Pages read on 2026-11-13 (ten official pages): Treasury Daily Par Yield Curve, November 2026 (Nov 10 and Nov 13 rows match); SEC EDGAR 8-K listing for CIK 807882 (latest 8-K 2026-09-21, matches tenant_governance; new row tenant_latest_8k); BLS Los Angeles Area Economic Summary updated Nov 4, 2026 (listed unemployment, payroll, sector, CPI and wage values match); BLS Los Angeles CPI release 26-1670-SAN dated Nov 10, 2026 (October values match; 12-month change not published); CAL FIRE FHSZ page (2026 SRA comment period open) and its November 6, 2026 FAQ PDF (date confirmed; now cited on calfire_2026_sra_fires); CDI wildfire claims tracker (updated July 6, 2026; matches); Port of LA container statistics (October values match the row on main; the September monthly row was not re-read); EDD Los Angeles County release for September 2026 (matches); LAPD citywide profile for 10/11/26–11/07/26 (matches; population basis flagged as flag_646fddf8_lapd_population_basis). GitHub REST commit listing (262 commits on main) and two GitHub documents were read for the quantified privacy follow-up. Full ledger: verification/2026-11-13-646fddf8.md.",
+      "sources": [
+        "treasury",
+        "sec_edgar_8k_list",
+        "bls_summary",
+        "bls_cpi_la",
+        "calfire_fhsz",
+        "calfire_2026_faq",
+        "cdi_claims",
+        "port_containers",
+        "edd_la",
+        "lapd_city",
+        "repo",
+        "github_commit_email_doc",
+        "github_sensitive_data_doc"
       ]
     }
   ],

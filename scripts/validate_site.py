@@ -53,6 +53,8 @@ ALLOWED_HOSTS = {
     "www.portoflosangeles.org", "portoflosangeles.org",
     "www.cbo.gov", "www.federalreserve.gov",
     "github.com", "wingbangboozle1-lang.github.io",
+    # Official GitHub platform documentation (added 2026-11-13, session 646fddf8, for the commit-metadata privacy flag).
+    "docs.github.com",
 }
 # Official hosted services are allowed only for the specific FEMA/CAL FIRE/LAPD resources used.
 ALLOWED_HOST_PATH_PREFIXES = {
