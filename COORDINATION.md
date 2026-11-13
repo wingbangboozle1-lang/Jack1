@@ -9,9 +9,9 @@
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
 | V-1 | Session claim + coordination protocol | done with this push | arena/2841bfac-jack1 | this board (append-only) |
-| V-2 | Independent line-by-line re-read of decision-critical rows against the official primary pages (about 16 rows from about 12 official pages), opened 2026-11-13; any disagreement blanked and flagged | in progress | arena/2841bfac-jack1 | `verification/2026-11-13-2841bfac.md` (new) |
-| V-3 | Irregularity and privacy scan of the tracked repository: non-official sources in legacy files, CDN-hosted official PDFs, superseded market rows; new flags and one dated observation (Treasury 13 Nov 2026 close) | in progress | arena/2841bfac-jack1 | `data/verified-2026-11-10.json` (additions only), `scripts/build_public.py` (no edit expected), regenerated canonical pages |
-| V-4 | Integration: gates, PR → `main`, merge without waiting, GitHub Pages confirmation, final record | unclaimed (reserved; starts after V-2/V-3) | arena/2841bfac-jack1 | this board, `gh` PR/Pages operations |
+| V-2 | Independent line-by-line re-read of decision-critical rows against the official primary pages (38 published rows in 14 groups from 13 official pages), opened 2026-11-13; any disagreement blanked and flagged | done | arena/2841bfac-jack1 | `verification/2026-11-13-2841bfac.md` (new) |
+| V-3 | Irregularity and privacy scan of the tracked repository: non-official sources in legacy files, CDN-hosted official PDFs, superseded market rows; new flags and one dated observation (Treasury 13 Nov 2026 close) | done | arena/2841bfac-jack1 | `data/verified-2026-11-10.json` (additions only), `scripts/build_public.py` (no edit expected), regenerated canonical pages |
+| V-4 | Integration: gates, PR → `main`, merge without waiting, GitHub Pages confirmation, final record | in progress (started after V-2/V-3) | arena/2841bfac-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only in V-3/V-4. Small frequent commits; `git pull --rebase origin main` before every push; conflicts are resolved as a union and logged here.
 
@@ -40,6 +40,15 @@ Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`
 | Verification | Row-level match for seven sources; Port updated from September to October 2026 (provisional). Ledger: `verification/2026-11-13-19dc1915.md`. |
 | Dataset changes | `data/verified-2026-11-10.json`: Port observation, source title and access date, one requirements answer, `flag_port_timing`, audit `audit_19dc1915_r2`, access dates for seven re-read sources. No other value changed. |
 | Irregularities | I-1 Port October figures visible 2026-11-13, before the page's stated "on or around the 15th" timing (re-read after 2026-11-15). I-3 Census income/housing rows not re-read today. I-5 stale open PRs #5–#56 still open for owners. |
+
+### Session completion record — V-2 / V-3 (session arena/2841bfac-jack1, 2026-11-13 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| V-2 independent re-read | done | `verification/2026-11-13-2841bfac.md` (new) | 13 official pages opened 2026-11-13 (Census QuickFacts LA city; Treasury par curve; LA ULA FAQ; LA County / City transfer tax; DIR 2026-66; LA minimum wage notice; BLS CPI LA Oct 2026 release 26-1670-SAN; BLS LA Area Economic Summary; DOF E-1 press release (partial); SEC Q3 FY2026 Ex. 99.1; SEC 10-Q note R14; FEMA NRI LA County query; CAL FIRE FHSZ acreage PDF). 38 published rows in 14 groups compared line by line: **all matched; no published value changed.** Arithmetic reproduced (44.1% / 69.8% state shares, 95.8% ARD share, 65.3% Very High share, +17 bp, 2.96%, −0.8%, transfer-tax stack). | Partial reads: DOF E-1 county table (9,837,286) and the DOF 2.99% certification letter not reached. About 536 published rows not re-read in this pass (keep existing access dates). |
+| V-3 irregularity and privacy scan | done | `data/verified-2026-11-10.json` (additions only: observation `treasury_yields_20261113`, flags `flag_treasury_superseded_20261113`, `flag_calfire_cdn_host_20261113`, `flag_legacy_nonofficial_sources_20261113`, `flag_v2_scope_20261113`, audit `audit_2841bfac_v2`); regenerated canonical pages (`market.html`, `property.html`, `flagged.html`, `audit.html`) | Gates after change: `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 581 sourced rows); artifact validation PASS; privacy regex scan of the 13 public pages 0 hits. Official hosts: the published allowlist excludes all non-government hosts found in legacy files. | (1) The 10 Nov Treasury row is correct as dated but superseded by the 13 Nov close (10Y 4.98% → 5.15%). (2) CAL FIRE acreage PDF served from an Azure CDN hostname (content verified). (3) Legacy files outside the published set cite more than 40 non-government hosts, some labelled VERIFIED (e.g. `data/property_data.md`); not published; cleanup needs an owner-approved PR. (4) Hosting intermediaries (ArcGIS, LAPD blob storage, CAL FIRE CDN) flagged, not replaced. |
+
+Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on `27d4025`) was merged to `main` as PR #85 while this session worked. Its file (`verification/2026-11-13-277574d9.md`) and board rows were kept verbatim; this session's changes do not overlap its scope.
 
 ---
 

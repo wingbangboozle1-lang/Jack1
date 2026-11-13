@@ -1071,6 +1071,19 @@
       ]
     },
     {
+      "id": "treasury_yields_20261113",
+      "category": "Financing",
+      "measure": "Treasury par yields, latest official reading",
+      "value": "2Y 4.88%; 5Y 4.98%; 10Y 5.15%; 20Y 5.52%; 30Y 5.47%",
+      "geography": "U.S. sovereign curve",
+      "period": "November 13, 2026 close (read November 13, 2026)",
+      "status": "verified",
+      "note": "Official daily par yield curve. The 10-year was 4.98% on November 10 (row above) and 5.10% on November 12: +17 basis points in three sessions. Indicative sovereign benchmarks, not commercial NNN cap rates or owner discount rates. Rates move daily; refresh before any decision.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
       "id": "schools_grad",
       "category": "Schools",
       "measure": "LAUSD combined four-/five-year graduation rate",
@@ -3862,6 +3875,54 @@
       "sources": [
         "port_containers"
       ]
+    },
+    {
+      "id": "flag_treasury_superseded_20261113",
+      "item": "Treasury par-yield row dated November 10, 2026 is no longer the latest reading",
+      "reason": "The row is correct for its date. The official curve now shows the November 13, 2026 close: 10-year 5.15% (up from 4.98% on November 10; 5.10% on November 12), 2-year 4.88%, 30-year 5.47%. Sovereign benchmarks are not cap rates.",
+      "action": "Use the dated November 13 observation for current rate context and refresh before any rate-sensitive decision. Do not treat either reading as a commercial cap rate or discount rate.",
+      "sources": [
+        "treasury"
+      ]
+    },
+    {
+      "id": "flag_calfire_cdn_host_20261113",
+      "item": "CAL FIRE acreage PDF is served from a CDN hostname, not a .gov host",
+      "reason": "The link goes to an Azure CDN endpoint (34c031f8-…-cdn-endpoint.azureedge.net). The document is the State Fire Marshal / CAL FIRE FHSZ acreage table. Its Los Angeles County row was re-read on 2026-11-13 and matches the published figures (330,431 / 77,951 / 769,561 / 1,177,944; Very High share 65.3%).",
+      "action": "Keep the official-content link. Before citing the PDF in a formal document, confirm it from the State Fire Marshal pages.",
+      "sources": [
+        "calfire_acres"
+      ]
+    },
+    {
+      "id": "flag_legacy_nonofficial_sources_20261113",
+      "item": "Legacy repository files cite non-government sites, some labelled VERIFIED",
+      "reason": "Not on the published pages (the validator allowlist excludes these hosts). A census of tracked files outside archive/ and verification/ found more than 40 non-government hosts, including losangelesrc.org (45 links), plainhazard.com (44), usschoolindex.org (39), explore.disasteraware.com (31) and teamcirca.com (25). data/property_data.md, a 2026-11-06 legacy file, labels rows VERIFIED from teamcirca.com and losangelesrc.org.",
+      "action": "Do not cite these files as verified. This session did not delete or edit them. Any cleanup (remove or archive) needs an owner-approved PR.",
+      "sources": [
+        "repo"
+      ]
+    },
+    {
+      "id": "flag_v2_scope_20261113",
+      "item": "Scope of the 2026-11-13 independent re-read (session 2841bfac)",
+      "reason": "Thirteen official pages opened on 2026-11-13 covering 38 published rows in 14 groups: Census population; Treasury curve; ULA thresholds; LA transfer tax; DIR 2027 minimum wage; LA City minimum wage; BLS October 2026 CPI; BLS LA summary (unemployment, payrolls, wages, September CPI); DOF E-1 (partial); SEC Q3 FY2026 release; SEC debt note R14; FEMA NRI LA County query; CAL FIRE acreage PDF. All matched; no published value changed. About 536 rows were not re-read in this pass.",
+      "action": "Refresh rolling rows before a property decision. Read the ledger verification/2026-11-13-2841bfac.md for links, partial reads and limits.",
+      "sources": [
+        "census_city",
+        "treasury",
+        "ula",
+        "lavote_dtt",
+        "dir_release_2027",
+        "la_wage",
+        "bls_cpi_la",
+        "bls_summary",
+        "dof_e1",
+        "sec_release",
+        "sec_10q_debt",
+        "fema_county_query",
+        "calfire_acres"
+      ]
     }
   ],
   "audit": [
@@ -4237,6 +4298,27 @@
         "sec_release",
         "bls_summary",
         "port_containers"
+      ]
+    },
+    {
+      "id": "audit_2841bfac_v2",
+      "check": "2026-11-13 independent re-read of 13 official pages (38 published rows) and repository irregularity scan (session 2841bfac)",
+      "result": "PASS. Every value read matched its published row; no published value changed. One dated observation added (Treasury, 13 Nov 2026). Four flags added: superseded Treasury row, CDN-hosted CAL FIRE PDF, non-government links in legacy repository files, and this scope note.",
+      "detail": "Re-read: Census QuickFacts (population, base, change); Treasury par curve (10 Nov matched; 13 Nov added); ULA FAQ thresholds; LA County/City transfer tax; DIR 2026-66; LA minimum wage notice ($18.42); BLS CPI Oct 2026 release (+0.6% m/m; 12-month unpublished); BLS LA summary (Sep 2026 unemployment, payrolls, sectors, CPI, wage); DOF E-1 (partial); SEC Q3 FY2026 release; SEC 10-Q note R14 (debt table, ARD dates, 95.8% share); FEMA NRI county query; CAL FIRE FHSZ acreage PDF. Arithmetic reproduced: 44.1% and 69.8% state shares, 65.3% Very High share, +17 bp, 2.96% state wage change, −0.8% population change, transfer-tax stack. Privacy regex scan of tracked files: no personal identifiers. Ledger: verification/2026-11-13-2841bfac.md.",
+      "sources": [
+        "census_city",
+        "treasury",
+        "ula",
+        "lavote_dtt",
+        "dir_release_2027",
+        "la_wage",
+        "bls_cpi_la",
+        "bls_summary",
+        "dof_e1",
+        "sec_release",
+        "sec_10q_debt",
+        "fema_county_query",
+        "calfire_acres"
       ]
     }
   ],
