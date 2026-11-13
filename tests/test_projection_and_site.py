@@ -128,17 +128,62 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("86,837", obs["crime_status"]["value"])
         self.assertIn("24,349", obs["crime_central_bureau"]["value"])
         self.assertIn("November 7, 2026", obs["crime_status"]["period"])
-        self.assertIn("4.98%", obs["treasury_yields"]["value"])
-        self.assertIn("4.98%", pages["index.html"])
+        self.assertIn("10Y 4.98%", obs["treasury_yields"]["value"])  # dated Nov 10 snapshot stays intact
+        latest_curve = obs["treasury_yields_20261113"]
+        self.assertIn("10Y 5.15%", latest_curve["value"])
+        self.assertEqual(latest_curve["period"], "November 13, 2026 close (read November 13, 2026)")
+        self.assertIn("5.15%", pages["index.html"])
+        self.assertIn("November 13, 2026 close", pages["index.html"])
         self.assertNotIn("Nov 9 10Y Treasury 4.88%", pages["index.html"])
         self.assertNotIn("4.88% 10Y Treasury", pages["decision.html"])
         self.assertNotIn("forecast 2027", obs["metro_transit_drivers"]["value"])
         self.assertIn("review completed", obs["cdi_fairplan_catmodel"]["value"])
         questions = {q["id"]: q for q in data["questions"]}
-        self.assertIn(obs["treasury_yields"]["period"], questions["q_financing"]["answer"])
-        self.assertIn("10Y 4.98%", questions["q_financing"]["answer"])
+        self.assertIn("November 13, 2026 close", questions["q_financing"]["answer"])
+        self.assertIn("10Y 5.15%", questions["q_financing"]["answer"])
+        risks = {r["id"]: r for r in data["risks"]}
+        signals = {s["id"]: s for s in data["signals"]}
+        self.assertIn("10Y 5.15%", risks["risk_rates"]["context"])
+        self.assertIn("5.15%", signals["sig_interest_rates"]["reading"])
         self.assertIn("offenses", questions["q_safety"]["answer"])
         self.assertNotIn("incidents year to date", questions["q_safety"]["answer"])
+
+    def test_20261113_treasury_and_nri_reconciliation(self):
+        data = pm.load_data()
+        sources = data["sources"]
+        observations = {o["id"]: o for o in data["observations"]}
+        self.assertEqual(data["meta"]["date"], "2026-11-13")
+        self.assertEqual(data["meta"]["reverified"], "2026-11-12")
+        self.assertEqual(sources["treasury"]["accessed"], "2026-11-13")
+        self.assertEqual(
+            observations["treasury_yields_20261113"]["value"],
+            "2Y 4.88%; 5Y 4.98%; 10Y 5.15%; 20Y 5.52%; 30Y 5.47%",
+        )
+        self.assertEqual(sources["fema_county_item"]["accessed"], "2026-11-13")
+        self.assertEqual(sources["fema_hazard_ratings"]["accessed"], "2026-11-13")
+        self.assertIn("v1.20", observations["nri_composite"]["period"])
+        self.assertEqual(observations["nri_composite"]["value"], "Score 100; Very High")
+        self.assertIn("$7,601,846,373 total", observations["nri_eal"]["value"])
+        self.assertEqual(observations["nri_additional_ratings"]["sources"], ["fema_hazard_ratings"])
+        self.assertIn("NRI v1.20", observations["nri_additional_ratings"]["period"])
+        self.assertIn("AVLN_RISKR", sources["fema_hazard_ratings"]["url"])
+        self.assertIn("WNTW_RISKR", sources["fema_hazard_ratings"]["url"])
+        flag_ids = {f["id"] for f in data["flags"]}
+        self.assertNotIn("flag_d5e4c6bf_nri_version", flag_ids)
+        self.assertNotIn("flag_treasury_refresh_20261113", flag_ids)
+        self.assertNotIn("flag_d5e4c6bf_treasury_asof", flag_ids)
+        self.assertIn("Year-to-date (40-week) provision", observations["tenant_ar_allowance"]["note"])
+        scope_flag = next(f for f in data["flags"] if f["id"] == "flag_2026_11_12_scope")
+        self.assertIn("1.20.0", scope_flag["reason"])
+        self.assertNotIn("not reconciled", scope_flag["reason"].lower())
+        audit = next(a for a in data["audit"] if a["id"] == "audit_c1cabdaf_20261113")
+        self.assertIn("November 13", audit["detail"])
+        self.assertIn("fema_hazard_ratings", audit["sources"])
+        summary = (ROOT / "EXECUTIVE_SUMMARY.md").read_text(encoding="utf-8")
+        self.assertIn("5.15%", summary)
+        self.assertIn("10-Q credit-loss note", summary)
+        self.assertIn("70.3% year to date", summary)
+        self.assertIn("franchise credit-loss allowance +70.3% year-to-date", build_public.render_all()["index.html"])
 
     def test_projection_json_matches_model(self):
         outputs = build_public.render_all()
@@ -227,7 +272,7 @@ class BuildAndValidationTests(unittest.TestCase):
 
     def test_2026_11_10_dataset_enrichment(self):
         data = pm.load_data()
-        self.assertEqual(data["meta"]["date"], "2026-11-11")
+        self.assertEqual(data["meta"]["date"], "2026-11-13")
         obs = {o["id"]: o for o in data["observations"]}
         for required in (
             "tenant_ard_wall",

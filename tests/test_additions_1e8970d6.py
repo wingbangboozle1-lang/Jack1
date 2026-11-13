@@ -23,13 +23,23 @@ class AdditionsTest(unittest.TestCase):
         cls.staged = json.loads(STAGED.read_text(encoding="utf-8"))
         cls.obs = {o["id"]: o for o in cls.data["observations"]}
 
-    def test_every_staged_item_is_in_the_dataset_unchanged(self):
+    def test_every_staged_item_is_preserved_except_audited_citation_correction(self):
         for sid, src in self.staged["sources"].items():
             self.assertEqual(self.data["sources"][sid], src)
         for coll in ("observations", "flags", "audit"):
             have = {x["id"]: x for x in self.data[coll]}
             for item in self.staged[coll]:
-                self.assertEqual(have[item["id"]], item)
+                current = have[item["id"]]
+                if coll == "observations" and item["id"] == "nri_additional_ratings":
+                    # C-1 verified that the composite query omits these fields; preserve values,
+                    # but point this row to the separate official 18-hazard-ratings query.
+                    prior = {k: v for k, v in item.items() if k not in ("period", "sources")}
+                    corrected = {k: v for k, v in current.items() if k not in ("period", "sources")}
+                    self.assertEqual(corrected, prior)
+                    self.assertEqual(current["period"], "NRI v1.20, December 2025")
+                    self.assertEqual(current["sources"], ["fema_hazard_ratings"])
+                else:
+                    self.assertEqual(current, item)
 
     def test_staged_rows_have_allowlisted_official_sources(self):
         for item in self.staged["observations"] + self.staged["flags"]:

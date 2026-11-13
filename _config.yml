@@ -1,6 +1,6 @@
 # Legacy GitHub Pages fallback configuration.
 # Preferred publication path is the workflow-built curated artifact in .github/workflows/pages.yml.
-# If Pages remains in legacy main / mode, Jekyll must serve only the canonical data-driven dashboard.
+# Pages is configured for legacy main / source; Jekyll must serve only the canonical data-driven dashboard.
 title: Jack in the Box NNN decision brief
 description: Verified, privacy-safe decision dashboard for a reported central Los Angeles area NNN property.
 exclude:
