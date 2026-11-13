@@ -1,5 +1,21 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/2841bfac-jack1` (2026-11-13 UTC)
+
+**Session ID:** `arena/2841bfac-jack1` (the platform pins this session to that branch and prohibits creating or pushing `session-<id>/<task>` branches; the pinned branch is the integration branch, as prior sessions did).
+
+**Claim-time handoff check (2026-11-13 UTC):** `origin/main` = `27d4025` (PR #84 merge, 2026-11-12T16:5x UTC); working tree clean; `git fetch --all --prune` shows only `origin/main` and this branch on the remote for this work. Open PRs #5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56 are stale (recorded by P-3, `verification/2026-11-12-dcb5495c.md` §4) and are **not** touched. Every earlier board entry is `done`; no live claim is overridden. Gates on `27d4025` re-run at claim time: `build_public.py --check` PASS (14 files), unit tests 41/41 OK, `validate_site.py` PASS (12 pages, 574 sourced rows), artifact validation PASS.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| V-1 | Session claim + coordination protocol | done with this push | arena/2841bfac-jack1 | this board (append-only) |
+| V-2 | Independent line-by-line re-read of decision-critical rows against the official primary pages (38 published rows in 14 groups from 13 official pages), opened 2026-11-13; any disagreement blanked and flagged | done | arena/2841bfac-jack1 | `verification/2026-11-13-2841bfac.md` (new) |
+| V-3 | Irregularity and privacy scan of the tracked repository: non-official sources in legacy files, CDN-hosted official PDFs, superseded market rows; new flags and one dated observation (Treasury 13 Nov 2026 close) | done | arena/2841bfac-jack1 | `data/verified-2026-11-10.json` (additions only), `scripts/build_public.py` (no edit expected), regenerated canonical pages |
+| V-4 | Integration: gates, PR → `main`, merge without waiting, GitHub Pages confirmation, final record | in progress (started after V-2/V-3) | arena/2841bfac-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** no file under `archive/`, `pages/`, `site/`, `research/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Shared outputs change only in V-3/V-4. Small frequent commits; `git pull --rebase origin main` before every push; conflicts are resolved as a union and logged here.
+
+Claimed 2026-11-13 UTC. Commit and push of this claim precede all content work.
 ## ▶ ACTIVE CLAIM — session `arena/19dc1915-jack1` (2026-11-13 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/19dc1915-jack1`; `session-<id>/<task>` branches are not created. Only `arena/19dc1915-jack1` is pushed; it is the integration branch for this session.
@@ -64,6 +80,15 @@ Still open for the owner, not changed by this session: the twelve stale open pul
 | Gates on the merged tree | `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 576 sourced rows); `--out` artifact + `validate_site.py --artifact` PASS. |
 | Irregularities published | I-1 Port early posting (re-read after 2026-11-15; `flag_port_timing`); I-3 Census income/housing rows not re-read today; I-4 ULA FAQ narrative wording; I-5 stale open PRs #5–#56 left for owners. Non-blocking; published on Flagged for Review. |
 | Not done this session | A full re-read of all 84 registry sources (last complete pass 2026-11-10; targeted passes 2026-11-11 and 2026-11-12). The eight sources above were re-read. |
+
+### Session completion record — V-2 / V-3 (session arena/2841bfac-jack1, 2026-11-13 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities |
+|---|---|---|---|---|
+| V-2 independent re-read | done | `verification/2026-11-13-2841bfac.md` (new) | 13 official pages opened 2026-11-13 (Census QuickFacts LA city; Treasury par curve; LA ULA FAQ; LA County / City transfer tax; DIR 2026-66; LA minimum wage notice; BLS CPI LA Oct 2026 release 26-1670-SAN; BLS LA Area Economic Summary; DOF E-1 press release (partial); SEC Q3 FY2026 Ex. 99.1; SEC 10-Q note R14; FEMA NRI LA County query; CAL FIRE FHSZ acreage PDF). 38 published rows in 14 groups compared line by line: **all matched; no published value changed.** Arithmetic reproduced (44.1% / 69.8% state shares, 95.8% ARD share, 65.3% Very High share, +17 bp, 2.96%, −0.8%, transfer-tax stack). | Partial reads: DOF E-1 county table (9,837,286) and the DOF 2.99% certification letter not reached. About 536 published rows not re-read in this pass (keep existing access dates). |
+| V-3 irregularity and privacy scan | done | `data/verified-2026-11-10.json` (additions only: observation `treasury_yields_20261113`, flags `flag_treasury_superseded_20261113`, `flag_calfire_cdn_host_20261113`, `flag_legacy_nonofficial_sources_20261113`, `flag_v2_scope_20261113`, audit `audit_2841bfac_v2`); regenerated canonical pages (`market.html`, `property.html`, `flagged.html`, `audit.html`) | Gates after change: `build_public.py --check` PASS (14 files); unit tests 41/41 OK; `validate_site.py` PASS (12 pages, 583 sourced rows on the merged tree with PRs #86–#87); artifact validation PASS; privacy regex scan of the 13 public pages 0 hits. Official hosts: the published allowlist excludes all non-government hosts found in legacy files. | (1) The 10 Nov Treasury row is correct as dated but superseded by the 13 Nov close (10Y 4.98% → 5.15%). (2) CAL FIRE acreage PDF served from an Azure CDN hostname (content verified). (3) Legacy files outside the published set cite more than 40 non-government hosts, some labelled VERIFIED (e.g. `data/property_data.md`); not published; cleanup needs an owner-approved PR. (4) Hosting intermediaries (ArcGIS, LAPD blob storage, CAL FIRE CDN) flagged, not replaced. |
+
+Concurrent sessions: `arena/277574d9-jack1` (QA-1, build / privacy / Pages QA on `27d4025`) was merged to `main` as PR #85 while this session worked. Its file (`verification/2026-11-13-277574d9.md`) and board rows were kept verbatim; this session's changes do not overlap its scope.
 
 ---
 
