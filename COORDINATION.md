@@ -2086,3 +2086,12 @@ Claim commit/push precedes work. This scope does not alter the shared data, publ
 | QA-1 publication and privacy gates | done | New `verification/2026-11-13-277574d9.md`; this board append | `build_public.py --check` PASS (14 files); unit tests 41/41 PASS; canonical validator PASS (12 pages, 574 sourced rows); curated artifact validation PASS; independent email/phone/SSN/APN pattern scan 0 hits; latest GitHub Pages API = `built` at `27d4025`; main validation and Pages workflows succeeded. Live spot checks: landing, suggestions, requirements, flagged, timeline. SEC EDGAR 10-K index opened 2026-11-13: FY2025 remains latest, so FY2026 filing date remains blank. | This is a build/deployment/privacy QA, **not** a fresh external-source re-verification of all 574 rows. Values retain their source vintages; rolling observations need refresh before a property decision. No private inputs or public pages were changed. See the report for links and qualifications. |
 
 QA-1 is complete. This session did not change the recommendation: dual-track sale and renewal preparation, with no irreversible choice until the lease, parcel, obligor, executable values, taxes, hazards/insurance, and owner risk constraints are verified.
+
+### QA-1 publication record — session `arena/277574d9-jack1` (2026-11-13 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#85](https://github.com/wingbangboozle1-lang/Jack1/pull/85) — merged 2026-11-13T21:53:26Z; merge commit `ef700f9d94cfede6f5c05a30e48bee6c2e92d58e`. |
+| Checks | PR `validate` SUCCESS (run [43514599467](https://github.com/wingbangboozle1-lang/Jack1/actions/runs/43514599467)); post-merge validation SUCCESS (run [43514647534](https://github.com/wingbangboozle1-lang/Jack1/actions/runs/43514647534)). |
+| Pages | Build/deployment run [43514647191](https://github.com/wingbangboozle1-lang/Jack1/actions/runs/43514647191) SUCCESS; Pages API latest status `built` at `ef700f9`, updated 2026-11-13T21:54:02Z, error `null`. The public site itself was spot-checked before this documentation-only update; no public HTML/data changed in PR #85. |
+| Result | Current session QA and report are merged. The implementation and evidence-boundary conclusions are unchanged; see `verification/2026-11-13-277574d9.md`. |
