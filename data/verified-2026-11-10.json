@@ -28,7 +28,7 @@
       "title": "Los Angeles Area Economic Summary, updated November 4, 2026",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "bls_laus": {
@@ -147,7 +147,7 @@
       "title": "Measure ULA FAQ",
       "publisher": "Los Angeles Office of Finance",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official tax guidance"
     },
     "ftb_capgains": {
@@ -238,7 +238,7 @@
       "title": "Jack in the Box Inc. Q3 FY2026 earnings release, Exhibit 99.1",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official issuer filing"
     },
     "fema_nri": {
@@ -273,7 +273,7 @@
       "title": "What is the probability that an earthquake will occur in the Los Angeles Area? In the San Francisco Bay area?",
       "publisher": "U.S. Geological Survey",
       "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official hazard science"
     },
     "calfire_fhsz": {
@@ -379,7 +379,7 @@
       "publisher": "California Department of Industrial Relations",
       "kind": "Official state labor notice",
       "url": "https://www.dir.ca.gov/DIRNews/2026/2026-66.html",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "port_facts": {
       "title": "Port of Los Angeles Facts and Figures (CY 2025)",
@@ -389,11 +389,11 @@
       "accessed": "2026-11-12"
     },
     "port_containers": {
-      "title": "Port of Los Angeles Container Statistics (Through September 2026)",
+      "title": "Port of Los Angeles Container Statistics (Through October 2026)",
       "publisher": "Port of Los Angeles",
       "kind": "Official port TEU table",
       "url": "https://portoflosangeles.org/business/statistics/container-statistics",
-      "accessed": "2026-11-12"
+      "accessed": "2026-11-13"
     },
     "metro_dline": {
       "title": "D Line Subway Extension Project (Section 1 open; Sections 2–3 under construction)",
@@ -532,7 +532,7 @@
       "title": "Consumer Price Index, Los Angeles area — October 2026 (news release 26-1670-SAN)",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
-      "accessed": "2026-11-12",
+      "accessed": "2026-11-13",
       "kind": "official statistics"
     },
     "edd_schedule": {
@@ -1645,11 +1645,11 @@
       "id": "port_containers_2026",
       "category": "Economic drivers",
       "measure": "Port of Los Angeles container throughput",
-      "value": "Sep 2026: 1,042,652.30 TEUs (+18.07% YoY); YTD Jan–Sep: 8,081,625.55 TEUs (+3.38% YoY)",
+      "value": "Oct 2026: 1,026,871.65 TEUs (+21.03% YoY); YTD Jan–Oct: 9,108,497.20 TEUs (+5.11% YoY). Supersedes Sep 2026 (1,042,652.30 TEUs, +18.07%; YTD Jan–Sep 8,081,625.55, +3.38%), verified 2026-11-12.",
       "geography": "Port of Los Angeles",
-      "period": "Through September 2026",
+      "period": "Through October 2026 (visible on 2026-11-13; provisional, see flag_port_timing)",
       "status": "verified",
-      "note": "Rebounding 2026 regional freight volumes; macro goods-movement indicator, not site traffic.",
+      "note": "Rebounding 2026 regional freight volumes; macro goods-movement indicator, not site traffic. Posting timing is irregular: the page says prior-month statistics are released on or around the 15th; October figures were visible on 2026-11-13.",
       "sources": [
         "port_containers"
       ]
@@ -3853,6 +3853,15 @@
       "sources": [
         "repo"
       ]
+    },
+    {
+      "id": "flag_port_timing",
+      "item": "Port of Los Angeles October 2026 container counts: early posting",
+      "reason": "The official container-statistics page, read 2026-11-13, shows October 2026 counts, while its text says prior-month statistics are released on or around the 15th of the following month. The page does not show a posting date.",
+      "action": "Re-read the page after November 15, 2026 and confirm the October values before relying on them. Until then, treat the row as provisional.",
+      "sources": [
+        "port_containers"
+      ]
     }
   ],
   "audit": [
@@ -4213,6 +4222,22 @@
         "dof_minwage_cert",
         "treasury"
       ]
+    },
+    {
+      "id": "audit_19dc1915_r2",
+      "check": "2026-11-13 independent re-read of eight decision-critical official sources (session 19dc1915)",
+      "result": "PASS for seven sources; one row updated: Port of Los Angeles container statistics advanced from September to October 2026 (provisional, flag_port_timing).",
+      "detail": "Re-read from the exact published URLs. BLS CPI Los Angeles, October 2026 release 26-1670-SAN dated 2026-11-10: +0.6% month-to-month, October 12-month change not published (matches). DIR release 2026-66 (August 13, 2026): $17.40 per hour from January 1, 2027; $72,384 exempt-salary threshold (matches). LA Office of Finance ULA FAQ: $5,400,000 / $10,900,000 thresholds at 4% / 5.5%, base $2.25 per $500 (matches; narrative wording flag still applies). USGS UCERF3 FAQ: 60% M6.7, 46% M7.0, 31% M7.5 within 30 years (matches). SEC Q3 FY2026 release (August 12, 2026): same-store sales -1.1%; franchise -1.2%; company -0.9%; 2,115 restaurants, 149 company and 1,966 franchise (matches). BLS Los Angeles economic summary updated November 4, 2026: unemployment City 4.5%, County 4.5%, Metro 4.4%; metro payrolls 6,282.1 thousand, +30.2 thousand (+0.5%) (matches). Census QuickFacts city: population 3,869,089 and -0.8% re-read (matches); income and other QuickFacts rows were not re-read today and keep their earlier access date. Contact names and phone numbers printed on the releases were not transcribed.",
+      "sources": [
+        "census_city",
+        "bls_cpi_la",
+        "dir_release_2027",
+        "ula",
+        "usgs_faq",
+        "sec_release",
+        "bls_summary",
+        "port_containers"
+      ]
     }
   ],
   "questions": [
@@ -4473,7 +4498,7 @@
     {
       "id": "q_trade",
       "question": "Do goods-movement and trade flows matter locally?",
-      "answer": "Port of Los Angeles handled 10,239,318 TEUs in 2025; September 2026 was 1,042,652.30 TEUs (+18.07% year over year) and calendar-year-to-date 8,081,625.55 (+3.38%). The link to a central-Los Angeles restaurant site is indirect.",
+      "answer": "Port of Los Angeles handled 10,239,318 TEUs in 2025; October 2026 was 1,026,871.65 TEUs (+21.03% year over year) and calendar-year-to-date 9,108,497.20 (+5.11%), visible on 2026-11-13 and provisional until the page confirms it. The link to a central-Los Angeles restaurant site is indirect.",
       "status": "answered",
       "obtain": "Already verified as context only. Use it as a regional demand signal, not as a parcel-level input.",
       "sources": [

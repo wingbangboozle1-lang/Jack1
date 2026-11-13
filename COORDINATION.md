@@ -9,11 +9,21 @@
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
 | R-1 | Session claim + coordination protocol | done | arena/19dc1915-jack1 | this board (append-only) |
-| R-2 | Independent official re-read of eight decision-critical sources (Census city, BLS CPI Los Angeles, DIR minimum-wage release, LA Office of Finance ULA FAQ, USGS UCERF3 FAQ, SEC Q3 FY2026 release, BLS Los Angeles economic summary, Port of Los Angeles container statistics) | done | arena/19dc1915-jack1 | `verification/2026-11-13-19dc1915.md` (new) |
-| R-3 | Port of Los Angeles row: official page now shows October 2026; update the observation, source title/access date, and dependent answer; flag early-posting timing | done | arena/19dc1915-jack1 | `data/verified-2026-11-10.json` (port rows, one flag, one audit entry, accessed dates of the eight re-read sources only); regenerated canonical pages; `build_public.py` audit list (one line) |
+| R-2 | Independent official re-read of eight decision-critical sources (Census city, BLS CPI Los Angeles, DIR minimum-wage release, LA Office of Finance ULA FAQ, USGS UCERF3 FAQ, SEC Q3 FY2026 release, BLS Los Angeles economic summary, Port of Los Angeles container statistics) | done (7 match; Port updated, see R-3) | arena/19dc1915-jack1 | `verification/2026-11-13-19dc1915.md` (new) |
+| R-3 | Port of Los Angeles row: official page now shows October 2026; update the observation, source title/access date, and dependent answer; flag early-posting timing (`flag_port_timing`) | done | arena/19dc1915-jack1 | `data/verified-2026-11-10.json` (port rows, one flag, one audit entry, accessed dates of the eight re-read sources only); regenerated canonical pages; `build_public.py` audit list (one line) |
 | R-4 | Gates, PR → main, merge without waiting, Pages confirmation, final record | in progress | arena/19dc1915-jack1 | this board, `gh` operations |
 
 Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, or other sessions' `verification/*` reports is edited. Personal contact details printed on official releases (press and investor-relations contacts) are not transcribed. Small commits; `git pull --rebase origin main` before every push.
+
+
+### Session record — R-2 / R-3 (session arena/19dc1915-jack1, 2026-11-13 UTC)
+
+| Item | Result |
+|---|---|
+| Sources re-read (exact URLs) | [Census QuickFacts, LA city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) (population only); [BLS CPI LA, Oct 2026](https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm); [DIR 2026-66](https://www.dir.ca.gov/DIRNews/2026/2026-66.html); [LA ULA FAQ](https://finance.lacity.gov/faq/measure-ula); [USGS UCERF3 FAQ](https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area); [SEC Q3 FY2026 release](https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm); [BLS LA economic summary](https://www.bls.gov/regions/west/summary/BLSSummary_LosAngeles.pdf); [Port container statistics](https://portoflosangeles.org/business/statistics/container-statistics) |
+| Verification | Row-level match for seven sources; Port updated from September to October 2026 (provisional). Ledger: `verification/2026-11-13-19dc1915.md`. |
+| Dataset changes | `data/verified-2026-11-10.json`: Port observation, source title and access date, one requirements answer, `flag_port_timing`, audit `audit_19dc1915_r2`, access dates for seven re-read sources. No other value changed. |
+| Irregularities | I-1 Port October figures visible 2026-11-13, before the page's stated "on or around the 15th" timing (re-read after 2026-11-15). I-3 Census income/housing rows not re-read today. I-5 stale open PRs #5–#56 still open for owners. |
 
 ---
 
