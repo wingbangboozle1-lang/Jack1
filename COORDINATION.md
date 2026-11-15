@@ -2639,6 +2639,7 @@ Claim commit/push precedes all content work.
 
 
 
+
 ## ▶ ACTIVE CLAIM — session `arena/e193fc7b-jack1` (2026-11-15 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/e193fc7b-jack1`; the `session-<id>/<task>` naming in the brief is not used. Only `arena/e193fc7b-jack1` is pushed. Branched from `origin/main` = `e344369` (PR #107 merge); working tree clean at claim time. No open claim exists on the board tail (`arena/8fa315b9-jack1` is done). Open PRs #5–#56 (stale) are not touched.
@@ -2674,3 +2675,4 @@ Claim commit/push precedes all content work.
 **Other flags from this session (flagged, non-blocking):** Q4 FY25 same-store and openings/closures unread (`flag_e193_q4fy25_gap`); 10-Q maturity-table difference of $74,774k unresolved (`flag_debt_schedule_arithmetic`); ULA base-versus-gross on assumed debt (`flag_e193_ula_base_vs_gross`); 1% California surcharge resolved on FTB line 62 (`flag_e193_ca_surcharge`); 2026 federal capital-gain thresholds not read (`flag_e193_irs_threshold_year`).
 
 **Sources read this session (2026-11-15):** SEC Q1, Q2 and Q3 FY26 releases (restaurant-count tables, Franchise-Level Margin reconciliations); Form 8-K 2026-06-23 Exhibit 99.1; IRS Topics 409 and 559; FTB 2025 Form 540 rate schedules and booklet (line 62); Measure ULA FAQ chunks 1 and 2. Full list and URLs: `verification/2026-11-15-e193fc7b.md`.
+
