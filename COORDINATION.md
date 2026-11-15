@@ -2562,3 +2562,11 @@ The required `git pull --rebase origin main` after the claim commit found an app
 ### J-1 scope addendum — source registry freshness
 
 This task also includes `data/verified-2026-11-10.json`, solely to update the access dates for official pages re-read for the calculator/advisor sheet and append the matching audit record. No observation value, private property field, lease fact, or owner input will be added or changed. These shared data/page outputs are handled as final integration work; no other live session claims them.
+
+### J-1 scope coordination and second rebase log — session `arena/5b9e6b53-jack1` (2026-11-15 UTC)
+
+The next required rebase found a second append-at-EOF conflict in this board: `origin/main` advanced from `b9480a7` to `c8a4f04` through the merged PRs #109 and #111. The conflict was resolved as a union; the `arena/9674db08-jack1` review, fixes, claims and merged PR records are retained. No code file conflicted.
+
+The latest board contains the `I-9674C` claim for `assets/site.js` and `tests/test_projection_and_site.py`; although its PR #111 is merged, its board status is still in progress. To avoid editing an owned file, J-1 is narrowed: this session will **not** edit either file. The local calculator will be isolated in new `assets/private-calculator.js`; its tests will be in new `tests/test_private_calculator.py`. The printable summary will use a separate new `assets/advisor-print.js`. All other originally claimed, unowned files remain in scope. No change to the other session's claim/report is requested.
+
+Open PR #110 (session `arena/484395e3-jack1`) touches only `COORDINATION.md`, its own `verification/2026-11-15-484395e3.md`, and GitHub integration operations. This session will not modify that report or branch; J-2 remains reserved until that integration activity settles, after which its own PR/deploy will be handled independently.
