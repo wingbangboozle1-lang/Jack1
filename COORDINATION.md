@@ -2528,3 +2528,17 @@ The PR #109 live-site review showed the new static Hold PV helper text was overw
 | I-9674C | Synchronize the live worksheet's dynamic blank-state helper with the required exit-cost input; add regression assertion; record PR #109 merge and Pages deployment | in progress | arena/9674db08-jack1 | `assets/site.js`, `tests/test_projection_and_site.py`, `COORDINATION.md`, verification report |
 
 Claim follows PR #109 merge on `main` (`08d89fc`); no private or parcel data is involved.
+
+### I-9674C completion and publication record — session `arena/9674db08-jack1` (2026-11-15 UTC)
+
+| Item | Result |
+|---|---|
+| I-9674 / I-9674B | **Done.** Independent review and blank-input Hold PV correction recorded above. No data value or personal information added. |
+| I-9674C | **Done.** Runtime blank-state helper synchronized to require brokerage/other exit cost; regression test covers both JS guard and displayed message. |
+| PR #109 | [Fix unknown exit-cost default in local property worksheet](https://github.com/wingbangboozle1-lang/Jack1/pull/109) merged 2026-11-15T23:11:06Z; merge commit `08d89fc6f6e8bfa22004c969ce2d72d3a95e6972`. `validate` passed. Pages build `1373102879` completed `built` on that commit, workflow run `43773411919` succeeded. Live inspection exposed outdated JS fallback copy (not a calculation defect); I-9674C was opened to fix it rather than claiming the message was correct. |
+| PR #111 | [Synchronize Hold PV blank-state message](https://github.com/wingbangboozle1-lang/Jack1/pull/111) merged 2026-11-15T23:14:01Z; merge commit `c8a4f043394e483fda278437b9d6a7805a71391e`. `validate` passed (run 43773651372). |
+| Final Pages confirmation | GitHub Pages API: build `1373108188`, commit `c8a4f043394e483fda278437b9d6a7805a71391e`, status `built`, error `null`; workflow run `43773683781` succeeded (build/deploy/report jobs). Cache-busted live fetch of `decision.html` shows the current privacy/tax caveat and correct brokerage-required Hold PV helper. Cache-busted live fetch of `assets/site.js` includes the `brokerPct !== null` guard and corrected runtime fallback. |
+| Final gates | 14 generated files deterministic; 43/43 Python tests; 12 pages / 599 sourced rows pass; curated artifact pass; JS syntax and diff checks pass; five-file privacy pattern scan 0 hits. |
+| Remaining limits | No property-specific sale/renewal verdict without private verified inputs. Site remains legacy Pages (`main /`); official current ULA tiers must not be projected into 2030–2035. Other flagged private-input, source, debt-schedule, Census tract, and Git metadata issues remain as previously logged; they were not hidden or rewritten. |
+
+PR #109's first Pages deployment did build successfully; this session's immediate cache-busted read found the page script overwrote the static helper text. PR #111 corrected the dynamic text. Final live verification above is after its deployment; the earlier transient copy mismatch is recorded for auditability.
