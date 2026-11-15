@@ -84,6 +84,36 @@ class BuildAndValidationTests(unittest.TestCase):
             self.assertNotIn("COORDINATION.md", files)
             self.assertFalse(any(f.startswith(("archive/", "research/", "verification/", "pages/", "site/")) for f in files))
 
+    def test_advisor_summary_is_printable_privacy_safe_and_source_linked(self):
+        outputs = build_public.render_all()
+        page = outputs["advisor-summary.html"]
+        parser = validate_site.PageParser()
+        parser.feed(page)
+        self.assertIn('<body class="advisor-print">', page)
+        self.assertIn("data-print-page", page)
+        self.assertIn("advisor-gates", page)
+        self.assertIn("anticipated repayment dates", page)
+        self.assertIn("As of July 5, 2026", page)
+        self.assertIn("no address, APN, owner, lease file or owner-finance data", page)
+        self.assertIn("advisor-summary.html", parser.nav_links)
+        self.assertEqual(len(parser.rows), 5)
+        for row in parser.rows:
+            self.assertTrue(row["source_links"])
+            for link in row["source_links"]:
+                self.assertTrue(validate_site.allowed_external(link), link)
+        self.assertEqual(parser.nonempty_input_values, [])
+        self.assertEqual(validate_site.privacy_hits(page), [])
+        self.assertIn("advisor-summary.html", outputs["index.html"])
+        self.assertIn("advisor-summary.html", outputs["404.html"])
+        css = (ROOT / "assets" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("@page advisor-summary", css)
+        self.assertIn("size: letter portrait", css)
+        js = (ROOT / "assets" / "site.js").read_text(encoding="utf-8")
+        self.assertIn("window.print()", js)
+        self.assertNotIn("localStorage", js)
+        self.assertNotIn("sessionStorage", js)
+        self.assertNotIn("fetch(", js)
+
     def test_suggestions_are_review_only_and_source_linked(self):
         outputs = build_public.render_all()
         page = outputs["suggestions.html"]

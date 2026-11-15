@@ -15,6 +15,9 @@
       }
     });
   }
+  document.querySelectorAll("[data-print-page]").forEach(function (button) {
+    button.addEventListener("click", function () { window.print(); });
+  });
   document.querySelectorAll("[data-table-search]").forEach(function (input) {
     var table = document.getElementById(input.getAttribute("data-table-search"));
     if (!table) return;

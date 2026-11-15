@@ -3375,7 +3375,7 @@
     {
       "id": "req_suggestions",
       "requirement": "Suggestions section for review before any change",
-      "coverage": "Suggestions page holds three review tables: six property and evidence proposals (S01–S06), ten site-improvement proposals with options (W-01–W-10), and a ranked nine-step plan for discovering missing information (D-01–D-09). Nothing is implemented until the owner chooses.",
+      "coverage": "Suggestions page holds three review tables: six property and evidence proposals (S01–S06), twelve site-improvement proposals with options (W-01–W-12), and a ranked nine-step plan for discovering missing information (D-01–D-09). W-10's one-page advisor summary is implemented per the explicit request; all other proposals remain unapproved until chosen.",
       "evidence": "suggestions.html; decision register on requirements.html.",
       "status": "covered",
       "sources": [
