@@ -19,7 +19,9 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `market.html` — geography, population, income, jobs, schools, drivers
 - `property.html` — blank asset fields, tenant/issuer context, taxes, gates
 - `projections.html` — official DOF/SCAG paths, derived arithmetic, gated property model
-- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths, risk table by decision path + blank-default local owner worksheet
+- `decision.html` — sell, renew, hold, exchange, refinance, re-tenant paths, risk table by decision path + blank-default local owner worksheet (after-tax on both paths; outputs blank until every input is entered)
+- `gates.html` — decision-gate progress board: six gates over the 25-question register, evidence-held marker, closing-date column (blank until a gate closes)
+- `advisor.html` — one-page printable summary for advisers, generated from the same dataset; prints on one Letter page
 - `timeline.html` — dated official milestones 2026–2035 around the reported expiry window, the tenant's principal schedule, statutory clocks, and monitoring triggers; unknown dates blank (data: `data/timeline-2026-11-12-dcb5495c.json`, builder: `scripts/build_timeline.py`)
 - `suggestions.html` — review-only: six property/evidence proposals, twelve site-improvement suggestions with options, and a ranked nine-step discovery sequence; nothing is implemented until chosen
 - `risks.html` — ordinary, rare high-impact, and black-swan risks
@@ -27,7 +29,7 @@ This is decision support, not legal, tax, appraisal, or brokerage advice.
 - `flagged.html` — unconfirmed values and irregularities
 - `sources.html` — official source registry
 - `audit.html` — verification, privacy, deployment, and method
-- `404.html` — fallback page linking only to the twelve canonical pages
+- `404.html` — fallback page linking only to the fourteen canonical pages
 
 Historical `pages/`, `site/`, `archive/`, extra root pages, old data/model/tools, and research notes are preserved in Git but are **not** part of the curated public artifact.
 
@@ -67,7 +69,7 @@ administrator switches to workflow-built Pages. Do **not** mistake an upload or 
 build check for publication: verify the new revision at the live URL after every merge.
 
 `_config.yml` excludes historical/internal files in legacy Jekyll publication;
-`_site` contains only the twelve canonical HTML pages, `404.html`, and three assets.
+`_site` contains only the fourteen canonical HTML pages, `404.html`, and three assets.
 The root `.nojekyll` marker is not published in legacy mode; it exists only in the
 curated local artifact. `archive/`, `data/`, `research/`, `verification/`,
 `COORDINATION.md`, alternate builds and root markdown briefs are not public pages.

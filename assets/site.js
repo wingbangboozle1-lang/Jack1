@@ -27,6 +27,10 @@
     });
   });
 
+  document.querySelectorAll("[data-print]").forEach(function (btn) {
+    btn.addEventListener("click", function () { window.print(); });
+  });
+
   var ws = document.getElementById("owner-worksheet");
   if (!ws) return;
 
@@ -60,17 +64,25 @@
     return 0.0056;
   }
 
+  // Both paths are after tax and use the same owner-entered rates, so the spread is like for like.
+  // Hold path: after-tax rent less interest, plus exit value net of exit costs, horizon debt and tax on
+  // exit gain, minus after-tax re-leasing downtime. Every hold input must be present or the output stays blank.
   function updateWorksheet() {
     var price = num("ws-sale-price");
     var debt = num("ws-debt");
+    var debtExit = num("ws-debt-exit");
     var brokerPct = num("ws-broker-pct");
     var basis = num("ws-tax-basis");
     var taxPct = num("ws-tax-rate");
     var rent = num("ws-rent");
+    var rentTaxPct = num("ws-rent-tax");
+    var interest = num("ws-interest");
     var years = num("ws-years");
     var escPct = num("ws-esc");
     var discPct = num("ws-discount");
     var exitVal = num("ws-exit-val");
+    var downMonths = num("ws-downtime");
+    var carry = num("ws-carry");
     var jurEl = document.getElementById("ws-jurisdiction");
     var exchEl = document.getElementById("ws-exchange");
     var jur = jurEl ? jurEl.value : "la_city";
@@ -91,7 +103,7 @@
       if (is1031) {
         estTax = 0;
         netProceeds = price - debt - closingCost;
-        setOut("ws-out-sale", fmtUsd(netProceeds), "1031 deferred tax assumed $0 (subject to 45/180-day Form 8824 & zero boot); after debt & " + fmtUsd(closingCost) + " closing/DTT.");
+        setOut("ws-out-sale", fmtUsd(netProceeds), "1031 deferred tax assumed $0 (subject to 45/180-day Form 8824 & zero boot); after debt & " + fmtUsd(closingCost) + " closing/DTT. Not like-for-like with the hold case, which pays tax on exit.");
       } else if (basis !== null && taxPct !== null) {
         var taxableGain = Math.max(0, (price - closingCost) - basis);
         estTax = taxableGain * (taxPct / 100);
@@ -105,32 +117,43 @@
     }
 
     var holdPv = null;
-    if (rent !== null && years !== null && years > 0 && escPct !== null && discPct !== null && exitVal !== null && debt !== null && brokerPct !== null) {
+    var holdReady = rent !== null && rentTaxPct !== null && interest !== null && years !== null && years > 0 &&
+      escPct !== null && discPct !== null && exitVal !== null && debtExit !== null && basis !== null &&
+      taxPct !== null && brokerPct !== null && downMonths !== null && carry !== null &&
+      downMonths >= 0 && carry >= 0 && rentTaxPct >= 0 && rentTaxPct <= 100 && taxPct >= 0 && taxPct <= 100 && discPct > -100;
+    if (holdReady) {
       var r = discPct / 100;
       var g = escPct / 100;
-      var pvRent = 0;
+      var tr = rentTaxPct / 100;
+      var tg = taxPct / 100;
+      var afterTaxRent = function (t) { return (rent * Math.pow(1 + g, t - 1) - interest) * (1 - tr); };
+      var pvOps = 0;
       var fullYears = Math.floor(years);
       for (var t = 1; t <= fullYears; t++) {
-        pvRent += (rent * Math.pow(1 + g, t - 1)) / Math.pow(1 + r, t);
+        pvOps += afterTaxRent(t) / Math.pow(1 + r, t);
       }
       var rem = years - fullYears;
       if (rem > 0) {
-        pvRent += (rem * rent * Math.pow(1 + g, years - 1)) / Math.pow(1 + r, years);
+        pvOps += (rem * afterTaxRent(years)) / Math.pow(1 + r, years);
       }
-      var exitRate = laTransferRate(exitVal, jur);
-      var exitCost = exitVal * ((exitRate || 0) + (brokerPct / 100));
-      var netExit = exitVal - exitCost - debt;
-      var pvExit = netExit / Math.pow(1 + r, years);
-      holdPv = pvRent + pvExit;
-      setOut("ws-out-hold", fmtUsd(holdPv), "PV of rent (" + fmtUsd(pvRent) + ") + PV of net exit after debt & exit transfer/closing (" + fmtUsd(pvExit) + ").");
+      var exitRate = laTransferRate(exitVal, jur) || 0;
+      var exitCost = exitVal * (exitRate + brokerPct / 100);
+      var exitGain = Math.max(0, exitVal - exitCost - basis);
+      var exitTax = exitGain * tg;
+      var netExitAT = exitVal - exitCost - debtExit - exitTax;
+      var pvExit = netExitAT / Math.pow(1 + r, years);
+      var downLoss = (rent * Math.pow(1 + g, years) * downMonths / 12 + carry * downMonths / 12) * (1 - tr);
+      var pvDown = downLoss / Math.pow(1 + r, years);
+      holdPv = pvOps + pvExit - pvDown;
+      setOut("ws-out-hold", fmtUsd(holdPv), "After-tax PV of rent less interest (" + fmtUsd(pvOps) + ") + PV of exit net of costs, horizon debt and exit-gain tax (" + fmtUsd(pvExit) + ") − PV of after-tax re-leasing downtime (" + fmtUsd(pvDown) + ").");
     } else {
-      setOut("ws-out-hold", "—", "Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, debt, and brokerage/other exit cost %.");
+      setOut("ws-out-hold", "—", "Requires every hold input: rent, rent tax rate, interest, years, escalation, discount rate, exit value, horizon debt balance, gain rate, tax basis, closing cost % and downtime (enter 0 where none).");
     }
 
     if (netProceeds !== null && holdPv !== null) {
       var spread = holdPv - netProceeds;
       var verdict = spread >= 0 ? "Hold / Extend ahead by " + fmtUsd(spread) : "After-tax Sale ahead by " + fmtUsd(-spread);
-      setOut("ws-out-spread", verdict, "Sensitivity check on owner-entered assumptions only; verify lease options, credit, and tax advice.");
+      setOut("ws-out-spread", verdict, "Arithmetic on owner-entered assumptions only, not a recommendation. Verify lease options, credit, valuation and tax with your advisers.");
     } else {
       setOut("ws-out-spread", "—", "Complete both Sale and Hold inputs above to compare paths locally.");
     }

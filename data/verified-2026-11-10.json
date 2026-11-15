@@ -4027,6 +4027,91 @@
         "dof_e1",
         "census_city"
       ]
+    },
+    {
+      "id": "flag_1d0e4b3c_tract_blocked",
+      "item": "W-01 trade-area and census-tract figures (not published)",
+      "reason": "Tract-level Census figures need a Census API key. The public repository does not identify the parcel, so no tract or 1/3/5-mile trade area can be selected. Session 3970d1c0 confirmed the key requirement on 2026-11-15; no tract value is on the site.",
+      "action": "Owner supplies the parcel match privately through an authorised adviser. The analyst then pulls tract figures from official Census files inside the offline workspace, and publishes only bands the owner approves.",
+      "sources": [
+        "census_city"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_parcel_hazard_blocked",
+      "item": "W-04 parcel-level hazard screening (not published)",
+      "reason": "Fault, fire-zone and flood zoning are parcel-specific. They cannot be looked up without the confirmed parcel, so the site shows county context only.",
+      "action": "After the parcel match, run the official CGS, CAL FIRE and FEMA lookups for that parcel and keep the results internal. Publish only yes/no zone flags if the owner approves.",
+      "sources": [
+        "cgs_alquist_priolo",
+        "cgs_shma",
+        "calfire_fhsz"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_neighbourhood_blocked",
+      "item": "Neighbourhood-level data around the parcel (planning, traffic, schools, competitors)",
+      "reason": "Local planning, traffic, school and competitor evidence depends on the location. The public site uses city, county and district figures only.",
+      "action": "Run the planning, traffic, school and competitor pulls in the offline workspace for the confirmed location; publish aggregates only.",
+      "sources": [
+        "zimas",
+        "cde_directory"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_lease_abstract_blocked",
+      "item": "Private lease abstract and notice-calendar reconciliation",
+      "reason": "The executed lease, amendments, guaranty and notices are not public. Issuer filings cannot establish this site's expiry, options, rent or NNN obligations.",
+      "action": "Commission a private lease abstract from counsel and reconcile it with the notice calendar before any sale or renewal commitment. Keep the document offline.",
+      "sources": [
+        "sec_10k"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_short_lease_quotes_blocked",
+      "item": "Short-lease discount priced from real quotes",
+      "reason": "The repository holds no real quotes for a short lease or early exit. Any discount figure would be invented, so none is published.",
+      "action": "Obtain written quotes from at least two brokers or the tenant, price the short-lease discount from them privately, and enter the result only in the owner worksheet.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_cashflow_model_blocked",
+      "item": "Versioned cash-flow model and back-test (not built)",
+      "reason": "A back-tested model needs verified property cash flows and a comparable transaction history. Neither exists in the repository, so no model output is published.",
+      "action": "Build and back-test the model only after the lease, rent, value, debt and tax-basis inputs are verified; version it and separate observations from assumptions.",
+      "sources": [
+        "dof_landing"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_same_store_series_partial",
+      "item": "Multi-quarter same-store sales series (partial)",
+      "reason": "The dashboard shows the Q3 FY2026 reading and the year-earlier Q3 comparison. A longer series across quarters, from issuer releases and filings, was not assembled in this session.",
+      "action": "Add each quarter's system same-store sales from the issuer's earnings releases and 10-Qs, with the source link and filing date, before reading a trend.",
+      "sources": [
+        "sec_release"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_worksheet_limits",
+      "item": "Owner worksheet simplifications",
+      "reason": "The browser worksheet taxes both paths at owner-entered rates. It does not model depreciation, passive-loss rules, the state/federal split, or timing. The 1031 path is not like-for-like with the hold case, because the exit tax is deferred.",
+      "action": "Use the worksheet only for sensitivity checks. A tax adviser replaces the owner-entered rates with the verified basis and rates before any decision.",
+      "sources": [
+        "irs_544",
+        "irs_8824"
+      ]
+    },
+    {
+      "id": "flag_1d0e4b3c_print_fit",
+      "item": "One-page advisor sheet: print fit by browser",
+      "reason": "The one-page fit was checked in headless Chromium on Letter paper (one page). Other browsers and printers can reflow the sheet slightly.",
+      "action": "Print once from your own browser before handing the sheet to an adviser; use the browser's print preview to confirm one page.",
+      "sources": [
+        "live"
+      ]
     }
   ],
   "audit": [
@@ -4527,6 +4612,15 @@
         "sec_10q_debt",
         "calfire_fhsz"
       ]
+    },
+    {
+      "id": "audit_1d0e4b3c_20261115",
+      "check": "2026-11-15 decision-tool and presentation build (session arena/1d0e4b3c-jack1): worksheet arithmetic, decision-gate board, one-page advisor sheet, blocked-item flags",
+      "result": "PASS. Worksheet formulas match independent arithmetic on a worked example (test inputs, not property figures) and stay blank with any missing input. Gate board covers all 25 register questions. One-page advisor sheet renders on one Letter page in headless Chromium print. No new external figure was added; every published figure is an existing verified row.",
+      "detail": "Changes: hold-side after-tax, horizon debt, interest, downtime and carrying cost added to the owner worksheet (assets/site.js, scripts/build_public.py); new pages gates.html and advisor.html generated from this dataset; suggestions W-02, W-03 and W-10 marked implemented; nine flags added for blocked items. Verification ledger: verification/2026-11-15-1d0e4b3c.md.",
+      "sources": [
+        "live"
+      ]
     }
   ],
   "questions": [
@@ -4947,7 +5041,8 @@
         "ula",
         "irs_544",
         "treasury"
-      ]
+      ],
+      "status": "implemented"
     },
     {
       "id": "W-03",
@@ -4959,7 +5054,8 @@
       "tradeoff": "Shows at a glance how close the decision is. Only status markers may be published, never document contents.",
       "sources": [
         "repo"
-      ]
+      ],
+      "status": "implemented"
     },
     {
       "id": "W-04",
@@ -5050,7 +5146,8 @@
       "tradeoff": "Faster advisor conversations. Must stay free of property and personal identifiers.",
       "sources": [
         "repo"
-      ]
+      ],
+      "status": "implemented"
     },
     {
       "id": "W-11",

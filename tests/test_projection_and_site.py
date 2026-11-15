@@ -207,12 +207,13 @@ class BuildAndValidationTests(unittest.TestCase):
     def test_hold_worksheet_requires_exit_cost_input(self):
         # Unknown exit transaction costs must not silently become zero in Hold PV.
         js = (ROOT / "assets" / "site.js").read_text(encoding="utf-8")
-        self.assertIn("debt !== null && brokerPct !== null", js)
-        self.assertIn("exitVal * ((exitRate || 0) + (brokerPct / 100))", js)
+        # Session 1d0e4b3c rewrote the hold path: closing/exit cost % is still required before any hold figure.
+        self.assertIn("taxPct !== null && brokerPct !== null", js)
+        self.assertIn("exitVal * (exitRate + brokerPct / 100)", js)
         self.assertNotIn("(brokerPct || 0)", js)
-        self.assertIn("exit value, debt, and brokerage/other exit cost %", js)
+        self.assertIn("closing cost %", js)
         decision = build_public.render_all()["decision.html"]
-        self.assertIn("exit value, debt, and brokerage/other exit cost %", decision)
+        self.assertIn("closing %", decision)
 
     def test_decision_question_register(self):
         data = pm.load_data()
@@ -253,7 +254,10 @@ class BuildAndValidationTests(unittest.TestCase):
         outputs = build_public.render_all()
         page = outputs["suggestions.html"]
         self.assertIn("Only chosen items will be built", page)
-        self.assertEqual(page.count("Proposed — not implemented"), len(data["suggestions"]) + len(data["discovery"]))
+        implemented = [x for x in data["suggestions"] if x.get("status") == "implemented"]
+        self.assertTrue(implemented, "owner-brief items must be marked implemented")
+        self.assertEqual(page.count("Implemented 2026-11-15 (owner brief)"), len(implemented))
+        self.assertEqual(page.count("Proposed — not implemented"), len(data["suggestions"]) - len(implemented) + len(data["discovery"]))
         self.assertIn("decision-risks", outputs["decision.html"])
         self.assertIn("suggestions.html", outputs["index.html"])
         self.assertIn("suggestions.html", outputs["404.html"])
