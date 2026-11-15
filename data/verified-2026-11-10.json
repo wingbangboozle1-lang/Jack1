@@ -4221,6 +4221,15 @@
         "irs_tc559",
         "ftb_540_booklet_2025"
       ]
+    },
+    {
+      "id": "flag_2a163ce9_advisor_summary_print_fit",
+      "item": "One-page Letter print fit of advisor-summary.html",
+      "reason": "The page has a dedicated U.S. Letter portrait print rule, but a PDF page count was not measured in this environment: Chrome/Chromium is unavailable and WeasyPrint lacks its native Pango library.",
+      "action": "Use Chrome/Chromium print preview to confirm the page is exactly one Letter page; adjust print sizing if it overflows before distribution.",
+      "sources": [
+        "repo"
+      ]
     }
   ],
   "audit": [
