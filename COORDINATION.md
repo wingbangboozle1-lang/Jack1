@@ -2398,3 +2398,21 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 |---|---|---|---|---|
 | H-2 tract-level trade-area feasibility | done (blocker recorded; no values added) | `verification/2026-11-15-3970d1c0.md` (new) | Census API tract and county requests return "Missing Key" ([api.census.gov/data/missing_key.html](https://api.census.gov/data/missing_key.html)); [Census ACS API page](https://www.census.gov/programs-surveys/acs/data/data-via-api.html); [Census QuickFacts LA city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) | Tract data need a registered Census API key (manual step, excluded by the brief). Static Census files not tested. Tract rows stay blank and unverified. |
 | H-3 live-site check, gates, PR, merge | in progress → see PR record | this board, ledger | Live Pages build `1367449111` `built` at `2b886d2`; gates above | — |
+
+## ▶ ACTIVE CLAIM — session `arena/e6c0fe83-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/e6c0fe83-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is the integration branch (as prior sessions did). Only `arena/e6c0fe83-jack1` is pushed. Branched from `origin/main` = `2b886d2` (PR #100 merge, session `arena/c1cabdaf-jack1`); working tree clean at claim time.
+
+**Claim-time handoff check (2026-11-15 UTC):** `git fetch --all --prune` shows `origin/main` = `2b886d2`, equal to this branch head. Open PRs: #101 and #102 are live today (2026-11-15) and touch `COORDINATION.md` plus their own verification files; those sessions' verification files are **not** touched by this session. The twelve stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched for their owners, as recorded by prior sessions. Every earlier board entry is `done`; no live claim is overridden. Gates on `2b886d2` re-run at claim time: `build_public.py --check` PASS (14 files), unit tests 42/42 OK, `validate_site.py` PASS (12 pages, 599 sourced rows). Pages API `status: built`, `build_type: legacy`, source `main /`.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-1 | Session claim + coordination protocol | done with this push | arena/e6c0fe83-jack1 | this board (append-only) |
+| I-2 | Repo review + line-by-line verification of decision-critical rows against official sources; blank-and-flag anything not reproducible; irregularity log with links | in progress | arena/e6c0fe83-jack1 | new `verification/2026-11-15-e6c0fe83.md`; canonical pages/data read-only; no file claimed by open PRs #101/#102 |
+| I-3 | Site creation / GitHub Pages live site: confirm clean landing page + category subpages, dashboard tables with per-row official source links, build with no broken links, privacy scan | in progress | arena/e6c0fe83-jack1 | canonical root HTML + `assets/` + generated `projections.json`; regenerate from dataset if needed |
+| I-4 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final record | unclaimed (reserved) | arena/e6c0fe83-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. The verification files of open PRs #101 (`verification/2026-11-15-3970d1c0.md`) and #102 are not touched. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
+
+Claim commit/push precedes all content work.
+
