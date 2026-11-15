@@ -2416,3 +2416,13 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 
 Claim commit/push precedes all content work.
 
+
+### H-3 PR, merge and Pages record — session `arena/3970d1c0-jack1` (2026-11-15 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#101](https://github.com/wingbangboozle1-lang/Jack1/pull/101) `arena/3970d1c0-jack1` → `main`; CI `validate` = success (run 43715251322); mergeable |
+| Merge | Merged by `gh pr merge 101 --merge`; merge commit `f73f741ca39d6ddeee1033a0f0901bb1abccd052` |
+| Pages | Legacy `main /`. Live homepage https://wingbangboozle1-lang.github.io/Jack1/ fetched after the merge and serves the current dashboard. The Pages build API (`/pages/builds/latest`) returned GitHub rate-limit 403 at 12:48–12:52 UTC, so the build record could not be read from the API; it was not assumed. |
+| Gates on the merged tree | `build_public.py --check` PASS (14 files); 42 unit tests OK; `validate_site.py` PASS (12 pages, 599 sourced rows); artifact validation PASS |
+| Open for the owner | (1) Census tract data needs a Census API key (manual step excluded by the brief); tract rows remain blank. (2) Private browser calculator not built; needs its own privacy review. (3) Commit-metadata privacy flag `flag_646fddf8_commit_email_privacy` still open. |
