@@ -2497,3 +2497,13 @@ Verification: `scripts/build_public.py --check` passed (14 generated files); Pyt
 | I-9674 | Independent inherited-state release gate and privacy-safe model review: run deterministic build/tests/site and artifact gates; inspect the public worksheet's privacy behavior and documented calculation boundaries; record current blockers and official-source links without changing shared data, generated pages, navigation, or another session's report | in progress | arena/9674db08-jack1 | `verification/2026-11-15-9674db08.md` (new); this board append only |
 
 Claim-time evidence: `HEAD` and `origin/main` both `6d1498c`; clean working tree before claim; current active claim table has no owner with an unfinished task on this branch tip. Existing project requirements, decision register, suggestion page, privacy review and outstanding parcel/private-input gates have existing coverage; this task does not duplicate or override them. Claim-only commit follows before content work.
+
+### I-9674 scope extension: one safety-default correction (2026-11-15 UTC)
+
+During the claimed browser worksheet review, found an actionable violation of the project's blank-means-unknown rule: Hold PV treated an empty brokerage/other closing-cost percentage as 0% via `brokerPct || 0`, despite sale requiring that input. A hold result could therefore be shown as if costs were known. No other live claim owns these files at the current branch tip. Add narrowly scoped task I-9674B, claimed by the same session before edits; no shared data, index/navigation or optional suggestions are changed.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-9674B | Require the owner-entered exit transaction-cost percentage before calculating Hold PV; remove the implicit zero; correct the UI requirement text and add a regression test | in progress | arena/9674db08-jack1 | `assets/site.js`; `scripts/build_public.py` (worksheet text only); generated `decision.html`; `tests/test_projection_and_site.py`; verification report; this board |
+
+Claim extension committed and pushed before implementation.
