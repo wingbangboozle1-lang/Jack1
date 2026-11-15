@@ -2542,3 +2542,19 @@ Claim follows PR #109 merge on `main` (`08d89fc`); no private or parcel data is 
 | Remaining limits | No property-specific sale/renewal verdict without private verified inputs. Site remains legacy Pages (`main /`); official current ULA tiers must not be projected into 2030–2035. Other flagged private-input, source, debt-schedule, Census tract, and Git metadata issues remain as previously logged; they were not hidden or rewritten. |
 
 PR #109's first Pages deployment did build successfully; this session's immediate cache-busted read found the page script overwrote the static helper text. PR #111 corrected the dynamic text. Final live verification above is after its deployment; the earlier transient copy mismatch is recorded for auditability.
+## ▶ ACTIVE CLAIM — session `arena/5b9e6b53-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/5b9e6b53-jack1`; platform policy requires work on this branch, so no `session-<id>/<task>` branch is created. This branch starts at `6d1498c` (the current `origin/main` base named in the Arena branch note). The branch and the shared task board are not switched or renamed.
+
+**Claim-time handoff check (2026-11-15 UTC):** read the task board through its last entry, V-68, before claiming. All tasks in the latest completed records are done. The open-PR check shows only the twelve historical PRs already recorded (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56); no live claim overlaps this scope. Current head is `6d1498c` (PR #106 merge); working tree was clean. Existing canonical pages already include a blank-default, in-browser worksheet, but its effective-tax-rate shortcut and assumptions need a safer, explicit review; W-10 remains proposed and no print summary page exists.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| J-1 | Complete the privacy review and safe, blank-default, browser-only sell-versus-hold worksheet; add a one-page, print-ready advisor summary generated from the existing verified dataset. Keep all owner/parcel/lease inputs out of the repository and do not add geographic or personal details. | in progress | arena/5b9e6b53-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `assets/site.js`, `assets/styles.css`, new `advisor-summary.html`, new `assets/private-calculator.js`, canonical generated HTML, `tests/test_projection_and_site.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, new `verification/2026-11-15-5b9e6b53.md`, this board |
+| J-2 | Re-run source-boundary/build/unit/privacy/artifact and broken-link gates; open and merge a PR from this branch only if every gate passes; confirm Pages deploy; record result. | reserved — starts after J-1 | arena/5b9e6b53-jack1 | this board, `gh` PR/Pages operations; no other session's verification report or stale PR |
+
+**Claim commit/push precedes content work.** Before every push, rebase this branch on current `origin/main`; a conflict stops work and is logged without discarding other sessions' changes.
+
+### Rebase conflict log — session `arena/5b9e6b53-jack1` (2026-11-15 UTC)
+
+The required `git pull --rebase origin main` after the claim commit found an append-at-EOF conflict in `COORDINATION.md`: while the claim was being prepared, `main` advanced from `6d1498c` to `b9480a7` through PRs #107 and #108, whose completion records were also appended to this board. The conflict was resolved as a union: both merged-session records and this claim are retained. Neither session's verification file, canonical data, nor site output was edited or discarded. No other file was conflicted.
