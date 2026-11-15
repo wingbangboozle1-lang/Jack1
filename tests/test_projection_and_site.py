@@ -204,6 +204,15 @@ class BuildAndValidationTests(unittest.TestCase):
         dp.feed(outputs["decision.html"])
         self.assertEqual(dp.nonempty_input_values, [])
 
+    def test_hold_worksheet_requires_exit_cost_input(self):
+        # Unknown exit transaction costs must not silently become zero in Hold PV.
+        js = (ROOT / "assets" / "site.js").read_text(encoding="utf-8")
+        self.assertIn("debt !== null && brokerPct !== null", js)
+        self.assertIn("exitVal * ((exitRate || 0) + (brokerPct / 100))", js)
+        self.assertNotIn("(brokerPct || 0)", js)
+        decision = build_public.render_all()["decision.html"]
+        self.assertIn("exit value, debt, and brokerage/other exit cost %", decision)
+
     def test_decision_question_register(self):
         data = pm.load_data()
         questions = data["questions"]

@@ -2486,3 +2486,35 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | R-501 | done | Read-only reproducible audit, plus `verification/2026-11-15-50172659.md` |
 
 Verification: `scripts/build_public.py --check` passed (14 generated files); Python unit tests passed (42); `scripts/validate_site.py` passed (12 pages, 599 sourced rows); curated `_site` artifact validation passed (12 pages). No content values were independently refreshed in this pass. The report records missing private evidence and existing irregularities. No parcel, owner, lease, tenant-contact or personal-finance information was added. Official source links are included in the report; existing source values retain their earlier review dates.
+
+
+## ▶ ACTIVE CLAIM — session `arena/9674db08-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** Arena pins this session to `arena/9674db08-jack1` at `6d1498c` (`origin/main`). I will remain on this branch; the task-board request's separate `session-<id>/<task>` branch convention cannot override that platform constraint. Current-tree review found no uncompleted claim at this tip; older `in progress` labels below are historical and superseded by their later completion records.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-9674 | Independent inherited-state release gate and privacy-safe model review: run deterministic build/tests/site and artifact gates; inspect the public worksheet's privacy behavior and documented calculation boundaries; record current blockers and official-source links without changing shared data, generated pages, navigation, or another session's report | in progress | arena/9674db08-jack1 | `verification/2026-11-15-9674db08.md` (new); this board append only |
+
+Claim-time evidence: `HEAD` and `origin/main` both `6d1498c`; clean working tree before claim; current active claim table has no owner with an unfinished task on this branch tip. Existing project requirements, decision register, suggestion page, privacy review and outstanding parcel/private-input gates have existing coverage; this task does not duplicate or override them. Claim-only commit follows before content work.
+
+### I-9674 scope extension: one safety-default correction (2026-11-15 UTC)
+
+During the claimed browser worksheet review, found an actionable violation of the project's blank-means-unknown rule: Hold PV treated an empty brokerage/other closing-cost percentage as 0% via `brokerPct || 0`, despite sale requiring that input. A hold result could therefore be shown as if costs were known. No other live claim owns these files at the current branch tip. Add narrowly scoped task I-9674B, claimed by the same session before edits; no shared data, index/navigation or optional suggestions are changed.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-9674B | Require the owner-entered exit transaction-cost percentage before calculating Hold PV; remove the implicit zero; correct the UI requirement text and add a regression test | in progress | arena/9674db08-jack1 | `assets/site.js`; `scripts/build_public.py` (worksheet text only); generated `decision.html`; `tests/test_projection_and_site.py`; verification report; this board |
+
+Claim extension committed and pushed before implementation.
+
+### I-9674 / I-9674B completion — session `arena/9674db08-jack1` (2026-11-15 UTC)
+
+| Task | Status | Files touched | Verification / official sources | Findings / irregularities |
+|---|---|---|---|---|
+| I-9674 inherited-state release/privacy review | done | `verification/2026-11-15-9674db08.md`; this board append | 43 unit tests pass; `build_public.py --check` pass (14 generated files); `validate_site.py` pass (12 pages, 599 sourced rows); curated artifact validation pass; `node --check assets/site.js` and `git diff --check` pass; ad hoc pattern scan on five public artifact files: 0 hits. Read [LA Office of Finance ULA FAQ](https://finance.lacity.gov/faq/measure-ula), [LA County Recorder DTT guidance](https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info), [IRS Publication 544](https://www.irs.gov/publications/p544), and [IRS Form 8824 instructions](https://www.irs.gov/instructions/i8824) on 2026-11-15. Full limits and findings in the report. | No property-specific outcome is supportable without private property/lease/tax/quote evidence. Current ULA tiers are not 2030–2035 tax forecasts; percentage DTT and blended gain-rate widget are simplifications, not a tax opinion. Browser memory is not equivalent to an access-controlled internal workspace. |
+| I-9674B Hold PV zero-default correction | done | `assets/site.js`, `scripts/build_public.py` (worksheet only), generated `decision.html`, `tests/test_projection_and_site.py`, report | Hold PV now requires brokerage/other exit-cost input and has no missing-input-to-zero fallback; UI explains the requirement and clearly discloses public-page privacy and tax/transfer-rate limits. Regression test added; 43/43 tests and all gates above pass. No data values or navigation changed. | New code defect closed; no parcel identifiers or personal finances added. |
+
+**Rebase/conflict record:** `origin/main` advanced from `e344369` (PR #107) to `b9480a7` (PR #108) during work. Rebase conflicts occurred only in append-only `COORDINATION.md`; resolution retained the upstream session records (#107/#108) and this session's claim/extension, with no code conflicts or discarded changes. The first branch push had been based on the older tip; after rebasing, a lease-protected force update was applied only to this session's own `arena/9674db08-jack1` ref so the remote reflects the preserved union. Subsequent pushes follow `git pull --rebase origin main`.
+
+**Publication status at this record:** local build gates pass; the change is ready for PR. GitHub Pages still serves the prior deployed main until this branch is merged and the next legacy Pages build is confirmed. Do not describe this correction as live before that check.

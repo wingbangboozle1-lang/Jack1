@@ -81,7 +81,7 @@
     <div>
       <p class="eyebrow">Private local calculator · zero defaults</p>
       <h2 id="worksheet-heading">Owner decision worksheet (browser memory only)</h2>
-      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests, applying the verified LA transfer-tax tiers (0.56% / 4.56% / 6.06% city; 0.11% county-only).</p>
+      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests. This public page is not an access-controlled workspace: browser extensions, screenshots, or a shared device may expose entered values. Do not enter parcel/owner identifiers or lease documents; use only a trusted private device and clear fields when done. Transfer-tax rates are a simplified current-schedule estimate: County/City base taxes round up per $500, and LA ULA thresholds adjust annually, so current tiers are not a forecast for a 2030–2035 sale. The taxable-sale rate is a user-entered blended estimate, not a tax computation.</p>
     </div>
     <button type="button" class="button button-secondary ws-reset" data-ws-reset>Clear inputs</button>
   </div>
@@ -102,7 +102,7 @@
   <div class="ws-outputs" aria-live="polite">
     <div class="ws-card"><div class="metric-label">Combined DTT + ULA</div><div class="ws-val" id="ws-out-dtt">—</div><p class="micro muted" id="ws-out-dtt-note">Enter a sale price to evaluate the 0.56% / 4.56% / 6.06% LA transfer-tax tier.</p></div>
     <div class="ws-card"><div class="metric-label">Net sale proceeds</div><div class="ws-val" id="ws-out-sale">—</div><p class="micro muted" id="ws-out-sale-note">Requires sale price, debt payoff, and brokerage/other cost % locally.</p></div>
-    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, and debt.</p></div>
+    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, debt, and brokerage/other exit cost %.</p></div>
     <div class="ws-card ws-highlight"><div class="metric-label">Local path spread</div><div class="ws-val" id="ws-out-spread">—</div><p class="micro muted" id="ws-out-spread-note">Complete both Sale and Hold inputs above to compare paths locally.</p></div>
   </div>
 </section>
