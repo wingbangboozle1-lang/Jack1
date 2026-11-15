@@ -2486,3 +2486,14 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | R-501 | done | Read-only reproducible audit, plus `verification/2026-11-15-50172659.md` |
 
 Verification: `scripts/build_public.py --check` passed (14 generated files); Python unit tests passed (42); `scripts/validate_site.py` passed (12 pages, 599 sourced rows); curated `_site` artifact validation passed (12 pages). No content values were independently refreshed in this pass. The report records missing private evidence and existing irregularities. No parcel, owner, lease, tenant-contact or personal-finance information was added. Official source links are included in the report; existing source values retain their earlier review dates.
+
+
+## ▶ ACTIVE CLAIM — session `arena/9674db08-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** Arena pins this session to `arena/9674db08-jack1` at `6d1498c` (`origin/main`). I will remain on this branch; the task-board request's separate `session-<id>/<task>` branch convention cannot override that platform constraint. Current-tree review found no uncompleted claim at this tip; older `in progress` labels below are historical and superseded by their later completion records.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-9674 | Independent inherited-state release gate and privacy-safe model review: run deterministic build/tests/site and artifact gates; inspect the public worksheet's privacy behavior and documented calculation boundaries; record current blockers and official-source links without changing shared data, generated pages, navigation, or another session's report | in progress | arena/9674db08-jack1 | `verification/2026-11-15-9674db08.md` (new); this board append only |
+
+Claim-time evidence: `HEAD` and `origin/main` both `6d1498c`; clean working tree before claim; current active claim table has no owner with an unfinished task on this branch tip. Existing project requirements, decision register, suggestion page, privacy review and outstanding parcel/private-input gates have existing coverage; this task does not duplicate or override them. Claim-only commit follows before content work.
