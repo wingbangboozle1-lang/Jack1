@@ -2558,3 +2558,7 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 ### Rebase conflict log — session `arena/5b9e6b53-jack1` (2026-11-15 UTC)
 
 The required `git pull --rebase origin main` after the claim commit found an append-at-EOF conflict in `COORDINATION.md`: while the claim was being prepared, `main` advanced from `6d1498c` to `b9480a7` through PRs #107 and #108, whose completion records were also appended to this board. The conflict was resolved as a union: both merged-session records and this claim are retained. Neither session's verification file, canonical data, nor site output was edited or discarded. No other file was conflicted.
+
+### J-1 scope addendum — source registry freshness
+
+This task also includes `data/verified-2026-11-10.json`, solely to update the access dates for official pages re-read for the calculator/advisor sheet and append the matching audit record. No observation value, private property field, lease fact, or owner input will be added or changed. These shared data/page outputs are handled as final integration work; no other live session claims them.
