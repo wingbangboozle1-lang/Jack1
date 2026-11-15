@@ -2634,3 +2634,5 @@ Claim commit/push precedes all content work.
 **Carried open items (not blockers for the merge; they appear on Flagged for Review):** Census tract data (API key needed); parcel hazard screening (needs a private address or APN); print check of `advisor.html` (owned by 1d0e4b3c); 2026 CA rate schedule; private calculator inputs (owner and CPA only); commit-metadata privacy (`flag_646fddf8_commit_email_privacy`, owner decision); legacy Pages mode; stale open PRs.
 
 **K-6:** done for this session's merge and Pages confirmation. The record is pushed on this pinned branch and goes to `main` via the next docs PR, following the pattern of PR #114.
+
+**Correction to item 3 above.** No dataset flag was created for the marker lines. The item is recorded only on this board (no `flag_4c386ad4_coordination_markers` exists). It is a board-hygiene note for the `484395e3` session owner, not a public flag.
