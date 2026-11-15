@@ -2410,7 +2410,7 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 | I-1 | Session claim + coordination protocol | done with this push | arena/e6c0fe83-jack1 | this board (append-only) |
 | I-2 | Repo review + line-by-line verification of decision-critical rows against official sources; blank-and-flag anything not reproducible; irregularity log with links | done | arena/e6c0fe83-jack1 | `verification/2026-11-15-e6c0fe83.md`; canonical pages/data read-only; no file claimed by open PRs #101/#102 |
 | I-3 | Site creation / GitHub Pages live site: confirm clean landing page + category subpages, dashboard tables with per-row official source links, build with no broken links, privacy scan | done | arena/e6c0fe83-jack1 | canonical root HTML + `assets/` + generated `projections.json`; regenerated from dataset |
-| I-4 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final record | in progress | arena/e6c0fe83-jack1 | this board, `gh` PR/Pages operations |
+| I-4 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final record | in progress — PR #103 merged (commit 1fc475e, 2026-11-15T12:49:21Z); first legacy Pages build on 1fc475e errored ("Page build failed"); rebuild triggered by this record commit; confirming live deploy | arena/e6c0fe83-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. The verification files of open PRs #101 (`verification/2026-11-15-3970d1c0.md`) and #102 are not touched. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
@@ -2426,3 +2426,17 @@ Claim commit/push precedes all content work.
 | Pages | Legacy `main /`. Live homepage https://wingbangboozle1-lang.github.io/Jack1/ fetched after the merge and serves the current dashboard. The Pages build API (`/pages/builds/latest`) returned GitHub rate-limit 403 at 12:48–12:52 UTC, so the build record could not be read from the API; it was not assumed. |
 | Gates on the merged tree | `build_public.py --check` PASS (14 files); 42 unit tests OK; `validate_site.py` PASS (12 pages, 599 sourced rows); artifact validation PASS |
 | Open for the owner | (1) Census tract data needs a Census API key (manual step excluded by the brief); tract rows remain blank. (2) Private browser calculator not built; needs its own privacy review. (3) Commit-metadata privacy flag `flag_646fddf8_commit_email_privacy` still open. |
+
+### I-4 completion record — session `arena/e6c0fe83-jack1` (2026-11-15 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#103](https://github.com/wingbangboozle1-lang/Jack1/pull/103) `arena/e6c0fe83-jack1` → `main`, "Final integration: verified decision dashboard, GitHub Pages live site, and publication record" |
+| Merge | **MERGED** 2026-11-15T12:49:21Z, merge commit `1fc475eaf414430b46bc81e78493e208f1759971` (`gh pr merge 103 --merge`, no approval waited for) |
+| Main | `origin/main` = `1fc475e` (confirmed by `git fetch`; merge commit is an ancestor) |
+| Sources verified (line-by-line vs official primary pages) | Census QuickFacts LA city; BLS LA Area Economic Summary; Treasury daily par yield curve Nov 2026; FEMA NRI LA County 06037 (v1.20); LA Office of Finance Measure ULA FAQ; SEC JACK Form 10-Q Q3 FY2026. All matched; zero published values changed. Record: `verification/2026-11-15-e6c0fe83.md` |
+| Gates (local, pre-merge) | `build_public.py --check` PASS (14 files); unit tests 42/42 OK; `validate_site.py` PASS (12 pages, 599 sourced rows; allowlist/local links/privacy/blanks OK); curated artifact PASS; privacy pattern scan 0 hits |
+| Pages deploy | First legacy build on merge commit `1fc475e` (build 1371806318) **errored** "Page build failed." (duration 0; the prior `f73f741` build also errored while `2b886d2` built fine — intermittent/environmental, content identical to a previously built commit). Rebuild triggered by this record commit's PR merge; **confirming live deploy** before marking I-4 done. |
+| Irregularities (non-blocking; on Flagged for Review) | Debt-schedule gap $74.774M; ULA FAQ body text vs operative table; Treasury vintage; legacy Pages `build_type: legacy` (workflow switch HTTP 403 — owner/admin action); stale open PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 untouched; active PRs #101/#102 verification files not touched. |
+
+Live site: https://wingbangboozle1-lang.github.io/Jack1/ (legacy `main /`, HTTPS enforced).
