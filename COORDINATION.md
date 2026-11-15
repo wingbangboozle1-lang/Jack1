@@ -2408,9 +2408,9 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
 | I-1 | Session claim + coordination protocol | done with this push | arena/e6c0fe83-jack1 | this board (append-only) |
-| I-2 | Repo review + line-by-line verification of decision-critical rows against official sources; blank-and-flag anything not reproducible; irregularity log with links | in progress | arena/e6c0fe83-jack1 | new `verification/2026-11-15-e6c0fe83.md`; canonical pages/data read-only; no file claimed by open PRs #101/#102 |
-| I-3 | Site creation / GitHub Pages live site: confirm clean landing page + category subpages, dashboard tables with per-row official source links, build with no broken links, privacy scan | in progress | arena/e6c0fe83-jack1 | canonical root HTML + `assets/` + generated `projections.json`; regenerate from dataset if needed |
-| I-4 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final record | unclaimed (reserved) | arena/e6c0fe83-jack1 | this board, `gh` PR/Pages operations |
+| I-2 | Repo review + line-by-line verification of decision-critical rows against official sources; blank-and-flag anything not reproducible; irregularity log with links | done | arena/e6c0fe83-jack1 | `verification/2026-11-15-e6c0fe83.md`; canonical pages/data read-only; no file claimed by open PRs #101/#102 |
+| I-3 | Site creation / GitHub Pages live site: confirm clean landing page + category subpages, dashboard tables with per-row official source links, build with no broken links, privacy scan | done | arena/e6c0fe83-jack1 | canonical root HTML + `assets/` + generated `projections.json`; regenerated from dataset |
+| I-4 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, live-site check, final record | in progress | arena/e6c0fe83-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. The verification files of open PRs #101 (`verification/2026-11-15-3970d1c0.md`) and #102 are not touched. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
