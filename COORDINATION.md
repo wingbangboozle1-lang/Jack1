@@ -2486,3 +2486,7 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | R-501 | done | Read-only reproducible audit, plus `verification/2026-11-15-50172659.md` |
 
 Verification: `scripts/build_public.py --check` passed (14 generated files); Python unit tests passed (42); `scripts/validate_site.py` passed (12 pages, 599 sourced rows); curated `_site` artifact validation passed (12 pages). No content values were independently refreshed in this pass. The report records missing private evidence and existing irregularities. No parcel, owner, lease, tenant-contact or personal-finance information was added. Official source links are included in the report; existing source values retain their earlier review dates.
+
+### R-501 publication record
+
+PR [#108](https://github.com/wingbangboozle1-lang/Jack1/pull/108) was merged to `main` using `gh pr merge 108 --merge` on 2026-11-15 UTC. No CI checks were reported for the branch; local reproducible gates recorded above passed. This change is documentation-only and does not alter the Pages artifact, data rows, or site. GitHub Pages deployment was not triggered by a coordination/verification-only change, and no new deployment was claimed. Existing live site remains: https://wingbangboozle1-lang.github.io/Jack1/ .
