@@ -2691,3 +2691,43 @@ Claim commit/push precedes all content work.
 | Out of scope (blocked on owner or private inputs) | W-01, W-04, neighbourhood and tract data (Census API key), short-lease quotes, parcel hazard zones, cash-flow back-test |
 
 E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-6 with this record.
+## ▶ ACTIVE CLAIM — session `arena/2a163ce9-jack1` (2026-11-15 UTC)
+
+**Pinned branch:** `arena/2a163ce9-jack1`, branched from `6d1498ca47ac7a421251abb43993b211fe2ad33c`. Arena requires this session to stay on the pinned branch; no session-named branch is created. Before claiming, read the full board and refreshed `origin/main` through PR #108 (`b9480a7`). The most recent claims (#107 and #108) are complete and limited to verification records; no active content claim appears at the board tail. The twelve stale PRs already logged by prior sessions remain untouched.
+
+**Claim scope:** close the explicitly requested W-10 deliverable by adding a privacy-safe, one-page, print-styled advisor summary generated from the existing verified public dataset. Do not add owner, parcel, lease, or personal-finance identifiers; do not add new economic values or imply a new source verification. The page will state the conditional decision rule, known evidence, decision-critical unknowns, next gates, and source links. As final integration, update the canonical navigation, validator, tests, and W-10 implementation status only after confirming all prior claims are done.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| PRN-1 | W-10 one-page printable advisor summary, generated from existing public evidence; preserve privacy and blank/unverified status; integrate as a canonical page and test print/page/source/privacy gates | done (site build and local gates pass; print-page count separately flagged) | arena/2a163ce9-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `assets/styles.css`, `assets/site.js`, generated canonical pages, `README.md`, `COORDINATION.md`; no edits to other verification reports or historical files |
+| PRN-2 | Final build, source-link, privacy, test, artifact, PR, merge, and Pages verification record | in progress | arena/2a163ce9-jack1 | `COORDINATION.md`, new `verification/2026-11-15-2a163ce9.md`, `gh` PR/Pages operations |
+
+Claim commit/push precedes content work. Before each push, pull/rebase from `origin/main`; resolve board conflicts as append-only unions. Stale PRs remain unmodified. The summary is not a substitute for an advisor's review and will not select a sell/renew winner without verified private inputs.
+
+**Rebase/interleave note (2026-11-15 UTC):** `origin/main` advanced from `b9480a7` to `34bd742` through PRs #109–#114, including PR #113's separate printable advisor page (`advisor.html`) and decision-gate board (`gates.html`). This task retains the explicitly requested `advisor-summary.html` deliverable while preserving those merged pages and their content; the W-10 cross-link will point to the requested path. The first rebase conflict is an append-only `COORDINATION.md` overlap; the resolution keeps both the upstream records and this claim. PRN-1 remains in progress pending integration and final verification.
+
+**Second rebase note (2026-11-15 UTC):** `origin/main` advanced from `34bd742` to `7987164` while this branch was being prepared, including PR #115 and later integrations. The `COORDINATION.md` conflict was resolved as an append-only union: all upstream task/merge records and this session's claim are retained. No other files are part of this claim-commit conflict.
+
+**PRN-1 scope correction (append-only):** the canonical stylesheet is `assets/styles.css` (plural), not `assets/style.css`; the print control also uses `assets/site.js`. The data change records W-10 implementation and project coverage only; no economic, personal, parcel, or lease values are added or changed. PR #113 supplied the separate `advisor.html`; preserve it and the gate/worksheet/after-tax work while maintaining the explicitly requested `advisor-summary.html` route.
+
+**Third rebase/interleave note (2026-11-15 UTC):** while this feature commit was being integrated, `origin/main` advanced through PRs #115, #117 and #119 to `7987164`, adding `aftertax.html` and tenant trend content among other updates. Generated-page conflicts are resolved by keeping the upstream builder outputs as the base and regenerating all canonical pages from the combined builder/dataset. The upstream worksheet, after-tax module, gate board, `advisor.html`, tenant series, flags and source/data changes are preserved; summary-specific wiring is additive. `COORDINATION.md` remains a union of both sides. Full validation follows.
+
+### PRN-1B scope extension — record unmeasured print fit (2026-11-15 UTC)
+
+The page uses a dedicated Letter portrait `@page` and compact print rules, but its actual PDF page count has not been measured. No Chrome/Chromium executable is available, and WeasyPrint cannot load because the native Pango library is missing. The existing `flag_1d0e4b3c_print_fit` concerns the separate `advisor.html` sheet, so extend this task before edits to add a distinct, clearly labeled Flagged for Review item for `advisor-summary.html` print fit and a regression test. This records a technical verification gap only; no economic, personal, parcel, or lease value is changed.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| PRN-1B | Register that `advisor-summary.html` page count is unmeasured; expose the review/action on `flagged.html` and test its visibility | done | arena/2a163ce9-jack1 | `data/verified-2026-11-10.json`, generated `flagged.html`, `tests/test_projection_and_site.py`, `COORDINATION.md` |
+
+**Fourth rebase note (2026-11-15 UTC):** the final claim-extension rebase conflict was confined to this append-only board. The current PRN-1 scope correction and integration notes are retained once, followed by the PRN-1B extension; all earlier upstream records remain intact.
+
+### PRN-1 / PRN-1B local completion — session `arena/2a163ce9-jack1` (2026-11-15 UTC)
+
+| Task | Status | Verification / outcome |
+|---|---|---|
+| PRN-1 | **done locally** | Added and wired the requested `advisor-summary.html`, print handler, Letter CSS, page/nav/index/404 links, W-10 cross-link, tests, and README documentation. Kept the merged `advisor.html` and other upstream pages. No new economic/property values or private information added. |
+| PRN-1B | **done locally** | Added `flag_2a163ce9_advisor_summary_print_fit` and a regression assertion that its item/action appear on `flagged.html`. |
+| PRN-2 | **in progress** | `build_public.py --check`: PASS (18 generated files); unit tests: 84 PASS; root validator: PASS (16 pages, 706 sourced rows); curated artifact: PASS (16 pages, 706 sourced rows); `node --check assets/site.js`: PASS; `git diff --check`: PASS before this report/board update. |
+
+**Print verification limitation:** the page specifies U.S. Letter portrait, but its actual PDF page count was not measured: Chrome/Chromium is unavailable and WeasyPrint lacks native Pango. This remains visibly flagged; do not claim a one-page rendering until checked in browser print preview. Full pre-PR record: `verification/2026-11-15-2a163ce9.md`. PR CI, merge, Pages build, and live-site check remain pending.

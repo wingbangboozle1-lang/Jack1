@@ -46,7 +46,7 @@ code { background: #eef1f5; padding: .1rem .3rem; border-radius: 6px; font-size:
 .hero { background: linear-gradient(135deg, #ffffff, #eef3ff); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
 .hero h2 { margin: .35rem 0 .6rem; font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
-.button { display: inline-block; background: var(--accent); color: #fff; padding: .6rem .9rem; border-radius: 10px; font-weight: 700; }
+.button { display: inline-block; background: var(--accent); color: #fff; padding: .6rem .9rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--accent); font: inherit; cursor: pointer; }
 .button:hover { text-decoration: none; filter: brightness(.96); }
 .button-secondary { background: #fff; color: var(--accent); border: 1px solid var(--accent); }
 .callout { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 12px; padding: 1rem 1.1rem; }
@@ -171,4 +171,74 @@ tbody tr:hover { background: #fafbff; }
 @media print {
   .main-column:has(.advisor-sheet) > .page-intro, main:has(.advisor-sheet) > .page-intro, .main-column:has(.advisor-sheet) > .footer { display: none !important; }
   .advisor-sheet .adv-block table th { text-align: left; }
+}
+
+/* Advisor brief: compact on screen and a dedicated U.S. Letter print layout. */
+.advisor-controls { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.advisor-meta { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: .82rem; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
+.advisor-recommendation { padding: 1.1rem 1.25rem; }
+.advisor-recommendation h2 { margin: .2rem 0 .4rem; }
+.advisor-recommendation p { margin: .3rem 0; }
+.advisor-rule { border-top: 1px solid var(--line); padding-top: .45rem; }
+.advisor-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+.advisor-fact { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: .75rem; box-shadow: var(--shadow); }
+.advisor-fact h3 { margin: 0 0 .3rem; font-size: .95rem; }
+.advisor-fact p { margin: 0 0 .4rem; font-size: .85rem; }
+.advisor-source-links { display: flex; gap: .2rem .6rem; flex-wrap: wrap; }
+.advisor-owner-note { border: 1px solid var(--line); border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 8px; padding: .7rem .85rem; font-size: .85rem; }
+.advisor-disclaimer { color: var(--muted); font-size: .78rem; margin: 0; }
+@media (max-width: 700px) {
+  .advisor-evidence-grid { grid-template-columns: 1fr; }
+  .advisor-meta { flex-direction: column; }
+}
+@page advisor-summary {
+  size: letter portrait;
+  margin: .3in;
+}
+@media print {
+  body.advisor-print { page: advisor-summary; background: #fff; color: #111; font-size: 8pt; line-height: 1.15; }
+  body.advisor-print .shell { display: block; min-height: 0; }
+  body.advisor-print .sidebar,
+  body.advisor-print .topbar,
+  body.advisor-print .footer,
+  body.advisor-print .skip-link,
+  body.advisor-print .advisor-screen-only { display: none !important; }
+  body.advisor-print .main-column { display: block; }
+  body.advisor-print .content { width: auto; max-width: none; margin: 0; padding: 0; gap: .055in; }
+  body.advisor-print .page-intro { margin: 0; }
+  body.advisor-print .page-intro .eyebrow { font-size: 6.5pt; margin: 0; }
+  body.advisor-print .page-intro h1 { font-size: 16pt; line-height: 1.05; margin: 0 0 .025in; }
+  body.advisor-print .page-intro .lead { font-size: 7pt; line-height: 1.1; }
+  body.advisor-print .advisor-meta { font-size: 6.5pt; line-height: 1.1; gap: .06in .12in; padding: 0 0 .025in; }
+  body.advisor-print .advisor-recommendation { padding: .065in .09in; box-shadow: none; border-radius: 4px; }
+  body.advisor-print .advisor-recommendation .eyebrow { font-size: 6pt; }
+  body.advisor-print .advisor-recommendation h2 { font-size: 10.5pt; line-height: 1.05; margin: .01in 0 .025in; }
+  body.advisor-print .advisor-recommendation p { font-size: 7pt; line-height: 1.1; margin: .02in 0; }
+  body.advisor-print .advisor-rule { padding-top: .025in; }
+  body.advisor-print .advisor-source-links { gap: 0 .06in; }
+  body.advisor-print .advisor-source-links .source-link { font-size: 6pt; }
+  body.advisor-print .advisor-section-heading { margin: 0; }
+  body.advisor-print .advisor-section-heading .eyebrow { font-size: 6pt; }
+  body.advisor-print .advisor-section-heading h2 { font-size: 8.5pt; line-height: 1.05; margin: 0; }
+  body.advisor-print .advisor-section-heading p { font-size: 6.5pt; line-height: 1.08; }
+  body.advisor-print .advisor-evidence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .035in; }
+  body.advisor-print .advisor-fact { padding: .04in .055in; border-radius: 3px; box-shadow: none; break-inside: avoid; }
+  body.advisor-print .advisor-fact h3 { font-size: 7.4pt; line-height: 1.05; margin: 0 0 .02in; }
+  body.advisor-print .advisor-fact p { font-size: 6.8pt; line-height: 1.08; margin: 0 0 .02in; }
+  body.advisor-print .advisor-fact .source-link { font-size: 5.8pt; }
+  body.advisor-print #advisor-gates { table-layout: fixed; font-size: 6.8pt; line-height: 1.08; }
+  body.advisor-print #advisor-gates caption { font-size: 6.5pt; padding: .02in .04in; }
+  body.advisor-print #advisor-gates th,
+  body.advisor-print #advisor-gates td { position: static; font-size: 6.5pt; line-height: 1.08; padding: .03in .04in; overflow-wrap: anywhere; }
+  body.advisor-print #advisor-gates th:nth-child(1) { width: 17%; }
+  body.advisor-print #advisor-gates th:nth-child(2) { width: 13%; }
+  body.advisor-print #advisor-gates th:nth-child(3) { width: 47%; }
+  body.advisor-print #advisor-gates th:nth-child(4) { width: 23%; }
+  body.advisor-print #advisor-gates .row-note,
+  body.advisor-print #advisor-gates .source-link { font-size: 5.8pt; margin-top: .01in; }
+  body.advisor-print #advisor-gates .badge { font-size: 5.5pt; padding: 0 .03in; }
+  body.advisor-print .advisor-owner-note { font-size: 6.6pt; line-height: 1.1; padding: .04in .055in; border-radius: 3px; }
+  body.advisor-print .advisor-disclaimer { font-size: 6pt; line-height: 1.05; }
+  body.advisor-print a { color: #111; text-decoration: underline; }
+  body.advisor-print tr { break-inside: avoid; }
 }

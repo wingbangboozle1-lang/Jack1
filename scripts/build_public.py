@@ -21,7 +21,7 @@ import build_timeline
 import build_decision_tools
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "aftertax.html", "gates.html", "advisor.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "aftertax.html", "gates.html", "advisor.html", "advisor-summary.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
@@ -30,6 +30,7 @@ NAV = [
     ("decision.html", "Decision paths"),
     ("gates.html", "Decision gates"),
     ("advisor.html", "Advisor one-pager"),
+    ("advisor-summary.html", "Decision-gate summary"),
     ("aftertax.html", "After-tax module"),
     (build_timeline.PAGE, build_timeline.NAV_LABEL),
     ("suggestions.html", "Suggestions review"),
@@ -121,13 +122,14 @@ def obs_table(data: dict[str, Any], table_id: str, caption: str, categories: lis
     return table(table_id, caption, ["Finding", "Value", "Geography / period", "Status and decision relevance", "Official source"], observation_rows(data, categories, ids))
 
 
-def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str) -> str:
+def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str, body_class: str = "") -> str:
     nav_parts = []
     for href, label in NAV:
         active = " active" if href == page else ""
         current = ' aria-current="page"' if href == page else ""
         nav_parts.append(f'<a class="nav-link{active}" href="{e(href)}"{current}>{e(label)}</a>')
     nav = "\n".join(nav_parts)
+    body_attr = f' class="{e(body_class)}"' if body_class else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -137,7 +139,7 @@ def layout(data: dict[str, Any], page: str, title: str, subtitle: str, body: str
   <meta name="description" content="{e(subtitle)}">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body{body_attr}>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
     <aside class="sidebar" id="site-nav" aria-label="Dashboard sections">
@@ -219,6 +221,7 @@ def build_index(data: dict[str, Any], payload: dict[str, Any]) -> str:
             ("property.html", "Property & tenant", "Blank asset fields, issuer credit, taxes, lease gates."),
             ("projections.html", "Projections", "Official DOF/SCAG paths, derived arithmetic, gated property model."),
             ("decision.html", "Decision paths", "Sell, renew, hold, exchange, refinance, re-tenant + local worksheet."),
+            ("advisor-summary.html", "Decision-gate summary", "Conditional sale/renew course, public evidence limits, open gates, and private adviser inputs."),
             (build_timeline.PAGE, build_timeline.NAV_LABEL, build_timeline.CARD_TEXT),
             ("suggestions.html", "Suggestions review", "Proposals, evidence gaps, approval gates; no automatic changes."),
             ("risks.html", "Risks", "Ordinary, rare high-impact, and black-swan stresses."),
@@ -504,7 +507,7 @@ def build_suggestions(data: dict[str, Any]) -> str:
     rows = [[e(key), e(proposal), e(evidence), e(gate), badge("analysis") + '<span class="row-note">Proposed · not approved or implemented</span>', source_links(data, sources)]
             for key, proposal, evidence, gate, sources in proposals]
     body = """
-<div class="callout warning"><h3>Review before implementation</h3><p>These are analyst proposals, not verified property conclusions or official recommendations. Creating this review page does not approve any listed action. No sale, lease negotiation, paid engagement, data collection or automatic source update has been initiated. The owner's written brief of 2026-11-15 asked for W-02 (worksheet), W-03 (gate board) and W-10 (advisor sheet), which are now built and marked implemented; W-01, W-04 and the other items remain proposals, blocked on private inputs (see Flagged for review).</p></div>
+<div class="callout warning"><h3>Review before implementation</h3><p>These are analyst proposals, not verified property conclusions or official recommendations. Creating this review page does not approve any listed action. No sale, lease negotiation, paid engagement, data collection or automatic source update has been initiated. The owner's written brief of 2026-11-15 asked for W-02 (worksheet), W-03 (gate board) and W-10 (advisor sheet), which are now built and marked implemented. The requested-path <a href="advisor-summary.html">advisor decision-gate summary</a> supplements the original <a href="advisor.html">advisor one-pager</a>. W-01, W-04 and the other items remain proposals, blocked on private inputs (see Flagged for review).</p></div>
 <p>Start with the privacy and lease-evidence gates, then compare sale and renewal in parallel. Unknown private inputs remain blank in the <a href="requirements.html">decision-question register</a>; unresolved evidence is on <a href="flagged.html">Flagged for Review</a>. No manual input is required to read this site. Private evidence cannot be discovered reliably from the reported area alone.</p>
 <p class="small muted">Official links support the evidence route or general context only, not the priority ranking or a property-specific outcome. S01 cites this project's own policy rather than an outside privacy certification. No approval is stored by this static public site.</p>
 """ + table("suggestions-review", "Proposed improvements and evidence-acquisition actions awaiting review.",
@@ -512,7 +515,7 @@ def build_suggestions(data: dict[str, Any]) -> str:
     site_rows = [[
         f'<strong>{e(x["id"])} · {e(x["title"])}</strong><span class="row-note">{e(x["area"])}</span>',
         e(x["problem"]), e(x["options"]), f'<strong>{e(x["recommended"])}</strong>', e(x["tradeoff"]),
-        (badge("verified").replace("Verified", "Implemented 2026-11-15 (owner brief)") if x.get("status") == "implemented" else badge("proposed")),
+        ((badge("verified").replace("Verified", "Implemented 2026-11-15 (owner brief)") + ('<span class="row-note"><a href="advisor-summary.html">Open requested-path summary</a></span>' if x["id"] == "W-10" else "")) if x.get("status") == "implemented" else badge("proposed")),
         source_links(data, x["sources"]),
     ] for x in data["suggestions"]]
     discovery_rows = [[
@@ -701,6 +704,133 @@ def gate_progress(data: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str,
     return summary, questions, totals
 
 
+def build_advisor_summary(data: dict[str, Any]) -> str:
+    """Build a one-page advisor brief using only the existing public dataset."""
+    questions = {q["id"]: q for q in data["questions"]}
+    observations = {o["id"]: o for o in data["observations"]}
+    required = {
+        "q_identity", "q_lease_dates", "q_renewal_control", "q_obligor", "q_tenant_credit",
+        "q_rent", "q_value", "q_after_tax", "q_transfer_tax", "q_population", "q_consumer",
+        "q_schools", "q_safety", "q_development", "q_hazard", "q_seismic", "q_insurance",
+    }
+    missing = required - questions.keys()
+    if missing:
+        raise ValueError(f"Advisor summary is missing decision questions: {sorted(missing)}")
+    observation_ids = {"tenant_sss", "tenant_count_yoy", "tenant_ard_wall"}
+    missing_observations = observation_ids - observations.keys()
+    if missing_observations:
+        raise ValueError(f"Advisor summary is missing issuer observations: {sorted(missing_observations)}")
+
+    evidence_cards = [
+        (
+            "Tenant system · not the site obligor",
+            f"Q3 FY2026 same-store sales: {observations['tenant_sss']['value']}; restaurant counts: {observations['tenant_count_yoy']['value']}. These issuer-level facts do not identify this site's tenant or store performance.",
+            ["sec_release"],
+        ),
+        (
+            "Issuer refinancing · not property debt",
+            observations["tenant_ard_wall"]["value"].replace(" due ARD ", " at anticipated repayment dates ")
+            + f" ({observations['tenant_ard_wall']['period']}). Issuer-level context, not property debt.",
+            ["sec_10q"],
+        ),
+        (
+            "Area economy · no trade-area match",
+            "City, county and regional indicators are not a site trade-area study. Population paths differ; tract/radius trends, assigned schools, traffic, competitors and local safety remain unmatched.",
+            ["census_city", "dof_e1", "scag_appendix", "cde_sdprofile"],
+        ),
+        (
+            "Hazard / insurance · regional only",
+            "FEMA, CAL FIRE and USGS context does not identify this site's flood/fire/seismic zones, insurability, repair exposure or rent interruption. No parcel-specific result is asserted.",
+            ["fema_county_query", "calfire_fhsz", "usgs_faq", "cdi_fairplan_2025"],
+        ),
+    ]
+    cards_html = "".join(
+        f'<article class="advisor-fact"><h3>{e(title)}</h3><p>{e(text)}</p>'
+        f'<div class="advisor-source-links">{source_links(data, sources)}</div></article>'
+        for title, text, sources in evidence_cards
+    )
+
+    gate_specs = [
+        (
+            "Identity, lease & notice control",
+            ["q_identity", "q_lease_dates", "q_renewal_control"],
+            "Privately match title, vesting, survey and parcel; abstract the executed lease, amendments, guaranty and estoppel; confirm actual expiry, options and notice/ROFR dates; reconcile every deadline to the calendar.",
+            ["assessor", "zimas", "sec_10q"],
+        ),
+        (
+            "Obligor, rent & NNN economics",
+            ["q_obligor", "q_tenant_credit", "q_rent"],
+            "Confirm tenant/guarantor and payment history; collect rent roll, escalations/recoveries, landlord-retained costs, operating statements and any permitted site sales data.",
+            ["sec_10q", "sec_release"],
+        ),
+        (
+            "Executable sale vs. renewal; after-tax hold case",
+            ["q_value", "q_after_tax", "q_transfer_tax"],
+            "Get appraisal/BOVs, executable sale bids and written extension terms. Have a CPA reconcile basis/depreciation/entity, debt payoff, closing costs, taxes and exchange eligibility; compare with risk-adjusted hold cash flows.",
+            ["irs_544", "irs_8824", "ftb_capgains", "ula"],
+        ),
+        (
+            "Trade area & local demand",
+            ["q_population", "q_consumer", "q_schools", "q_safety", "q_development"],
+            "After secure parcel match, obtain tract/radius trends, assigned-school outcomes, competitor/traffic evidence, applicable plans and multi-year local safety. Keep city/county data as context until replaced.",
+            ["census_city", "scag_appendix", "cde_sdprofile", "lapd_central", "zimas"],
+        ),
+        (
+            "Parcel hazard, condition & insurability",
+            ["q_hazard", "q_seismic", "q_insurance"],
+            "Privately screen flood/fire/seismic/soil; obtain engineering/PCA, policy and loss runs, and written quotes. Stress rent loss, repairs, deductibles, reserves and exit liquidity together.",
+            ["fema_county_query", "calfire_fhsz", "usgs_faq", "cdi_claims"],
+        ),
+    ]
+    gate_rows = []
+    for title, question_ids, action, sources in gate_specs:
+        statuses = {questions[qid]["status"] for qid in question_ids}
+        if "blocked" in statuses:
+            state = "blocked"
+        elif "open" in statuses:
+            state = "open"
+        elif "partial" in statuses:
+            state = "partial"
+        else:
+            state = "answered"
+        gate_rows.append([
+            f'<strong>{e(title)}</strong><span class="row-note">{len(question_ids)} linked decision questions</span>',
+            badge(state),
+            e(action),
+            source_links(data, sources),
+        ])
+
+    recommendation_sources = ["sec_10q", "irs_544", "lavote_dtt", "ula"]
+    body = f"""
+<div class="advisor-controls advisor-screen-only">
+  <button type="button" class="button" data-print-page>Print / save as PDF</button>
+  <span class="small muted">Designed for one U.S. Letter page; printer scaling may vary. Source links remain clickable in many PDF viewers.</span>
+</div>
+<div class="advisor-meta"><span><strong>Public evidence snapshot:</strong> {e(data['meta']['date'])}; source vintages vary.</span><span><strong>Reported asset:</strong> central L.A.; 2030–2035 expiry window is unverified.</span><span><strong>Privacy:</strong> no address, APN, owner, lease file or owner-finance data.</span></div>
+<section class="hero advisor-recommendation" aria-labelledby="advisor-recommendation">
+  <p class="eyebrow">Best current course · no winner selected</p>
+  <h2 id="advisor-recommendation">Preserve optionality: prepare sale and negotiated renewal in parallel.</h2>
+  <p>Do not choose a path until executable after-tax sale proceeds are compared with risk-adjusted hold/renew value using verified property, lease, tenant and owner inputs.</p>
+  <p class="advisor-rule"><strong>Commitment gate:</strong> verify the legal parcel, lease/obligor and notice calendar; obtain written sale and extension terms; confirm debt/tax inputs and parcel-level hazards/insurance; fund re-tenanting before expiry.</p>
+  <div class="advisor-source-links">{source_links(data, recommendation_sources)}</div>
+</section>
+<div class="section-heading advisor-section-heading"><div><p class="eyebrow">What the public evidence does—and does not—say</p><h2>Decision context</h2></div></div>
+<section class="advisor-evidence-grid" aria-label="Source-linked decision context">{cards_html}</section>
+<div class="section-heading advisor-section-heading"><div><p class="eyebrow">Clear before any irreversible choice</p><h2>Open decision gates and documents to obtain privately</h2><p>Sources below are official lookup or general context links; they do not establish any missing parcel or lease fact. Full question register: <a href="requirements.html#decision-questions">{len(data['questions'])} questions</a>.</p></div></div>
+{table("advisor-gates", "Decision gates, current status, documents/evidence required, and official sources.", ["Gate", "Status", "Private documents / next evidence", "Official source / lookup"], gate_rows, searchable=False)}
+<div class="advisor-owner-note"><strong>Owner inputs stay private.</strong> Keep wealth concentration, liquidity needs, risk limits, tax/entity records and reinvestment plans with authorized advisers—not on this site. The blank-default calculator runs in browser memory; <a href="decision.html#owner-worksheet">open the local worksheet</a>. See <a href="flagged.html">Flagged for Review</a>.</div>
+<p class="advisor-disclaimer">Decision support only, not legal, tax, appraisal, insurance or brokerage advice. No new economic values are added here; re-check source vintages and private property facts before acting.</p>
+"""
+    return layout(
+        data,
+        "advisor-summary.html",
+        "One-page advisor summary",
+        "An anonymized, source-linked summary of the conditional recommendation, public evidence, missing documents and decision gates.",
+        body.strip(),
+        body_class="advisor-print",
+    )
+
+
 def build_gates(data: dict[str, Any]) -> str:
     summary, questions, totals = gate_progress(data)
     total_q = len(questions)
@@ -788,6 +918,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "decision.html": build_decision(data),
         "gates.html": build_gates(data),
         "advisor.html": build_advisor(data),
+        "advisor-summary.html": build_advisor_summary(data),
         build_decision_tools.AFTERTAX_PAGE: build_decision_tools.build_aftertax(data, sys.modules[__name__]),
         build_timeline.PAGE: build_timeline.build_timeline(data, sys.modules[__name__]),
         "suggestions.html": build_suggestions(data),
