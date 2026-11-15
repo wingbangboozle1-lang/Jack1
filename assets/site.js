@@ -105,7 +105,7 @@
     }
 
     var holdPv = null;
-    if (rent !== null && years !== null && years > 0 && escPct !== null && discPct !== null && exitVal !== null && debt !== null) {
+    if (rent !== null && years !== null && years > 0 && escPct !== null && discPct !== null && exitVal !== null && debt !== null && brokerPct !== null) {
       var r = discPct / 100;
       var g = escPct / 100;
       var pvRent = 0;
@@ -118,7 +118,7 @@
         pvRent += (rem * rent * Math.pow(1 + g, years - 1)) / Math.pow(1 + r, years);
       }
       var exitRate = laTransferRate(exitVal, jur);
-      var exitCost = exitVal * ((exitRate || 0) + ((brokerPct || 0) / 100));
+      var exitCost = exitVal * ((exitRate || 0) + (brokerPct / 100));
       var netExit = exitVal - exitCost - debt;
       var pvExit = netExit / Math.pow(1 + r, years);
       holdPv = pvRent + pvExit;
