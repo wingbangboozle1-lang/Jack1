@@ -147,7 +147,7 @@
       "title": "Measure ULA FAQ",
       "publisher": "Los Angeles Office of Finance",
       "url": "https://finance.lacity.gov/faq/measure-ula",
-      "accessed": "2026-11-13",
+      "accessed": "2026-11-15",
       "kind": "official tax guidance"
     },
     "ftb_capgains": {
@@ -238,7 +238,7 @@
       "title": "Jack in the Box Inc. Q3 FY2026 earnings release, Exhibit 99.1",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
-      "accessed": "2026-11-13",
+      "accessed": "2026-11-15",
       "kind": "official issuer filing"
     },
     "fema_nri": {
@@ -625,6 +625,55 @@
       "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
       "accessed": "2026-11-13",
       "kind": "official platform documentation"
+    },
+    "sec_q1_release": {
+      "title": "Jack in the Box Inc. Q1 FY2026 earnings release, Exhibit 99.1 (Form 8-K, filed 2026-02-18)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm",
+      "accessed": "2026-11-15",
+      "kind": "official issuer filing"
+    },
+    "sec_q2_release": {
+      "title": "Jack in the Box Inc. Q2 FY2026 earnings release, Exhibit 99.1 (Form 8-K, filed 2026-05-13)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm",
+      "accessed": "2026-11-15",
+      "kind": "official issuer filing"
+    },
+    "irs_tc409": {
+      "title": "IRS Topic no. 409, Capital gains and losses",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/taxtopics/tc409",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "irs_tc559": {
+      "title": "IRS Topic no. 559, Net investment income tax",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/taxtopics/tc559",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "ftb_540_rates_2025": {
+      "title": "2025 California Tax Rate Schedules (Form 540)",
+      "publisher": "California Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "ftb_540_booklet_2025": {
+      "title": "2025 California Form 540 Forms & Instructions, Personal Income Tax Booklet (line 62, Behavioral Health Services Tax)",
+      "publisher": "California Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.pdf",
+      "accessed": "2026-11-15",
+      "kind": "official tax agency publication"
+    },
+    "sec_8k_2026_06_23": {
+      "title": "Jack in the Box Inc. Form 8-K, Exhibit 99.1 (completes $500 million securitized financing facility, 2026-06-23)",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000079/ex991-pressreleasexdebtclo.htm",
+      "accessed": "2026-11-15",
+      "kind": "official issuer filing"
     }
   },
   "observations": [
@@ -4112,6 +4161,66 @@
       "sources": [
         "live"
       ]
+    },
+    {
+      "id": "flag_e193_q4fy25_gap",
+      "item": "Tenant series: Q4 FY2025 same-store sales, openings and closures not read",
+      "reason": "The Q4 FY2025 earnings release was not opened in this session. Q4 FY2025 franchise rent and the year-end restaurant count come from the Q1 FY2026 release; the same-store and opening/closing cells are blank.",
+      "action": "Open the Q4 FY2025 earnings release on EDGAR and fill only the blank cells from it.",
+      "sources": [
+        "sec_q1_release"
+      ]
+    },
+    {
+      "id": "flag_e193_q1_sixteen_week",
+      "item": "Tenant series: Q1 quarters are 16 weeks, others 12",
+      "reason": "Q1 FY2025 and Q1 FY2026 cover 16 weeks, so raw franchise rent is not comparable with 12-week quarters. The page shows per-week amounts as a derived column.",
+      "action": "Compare Q1 with Q1 (or use per-week amounts); do not compare Q1 directly with Q2 or Q3.",
+      "sources": [
+        "sec_q1_release",
+        "sec_q2_release"
+      ]
+    },
+    {
+      "id": "flag_e193_irs_threshold_year",
+      "item": "Federal capital-gain thresholds cited are for 2025 taxable years",
+      "reason": "IRS Topic 409 states the 0%, 15% and 20% thresholds for taxable years beginning in 2025. The 2026 thresholds were not read in this session. The 25% cap on unrecaptured section 1250 gain and the 3.8% NIIT (Topic 559) were read.",
+      "action": "Re-read the 2026 thresholds before using them; the worksheet asks the owner to enter the rate in any case.",
+      "sources": [
+        "irs_tc409",
+        "irs_tc559"
+      ]
+    },
+    {
+      "id": "flag_e193_ca_surcharge",
+      "item": "California 1% Behavioral Health Services Tax above $1,000,000 taxable income (resolved 2026-11-15)",
+      "reason": "Confirmed on the FTB 2025 Form 540 instructions, line 62: if taxable income is more than $1,000,000, the tax is 1% of the amount above $1,000,000 (whole dollars). The FTB 2025 rate schedule shows the 12.30% top bracket above $742,953 for single filers. The worksheet's state-rate field is owner-entered and does not add this surcharge automatically.",
+      "action": "Owner to add the surcharge to the state-rate input when taxable income exceeds $1,000,000, or compute it on line 62 directly.",
+      "sources": [
+        "ftb_540_rates_2025",
+        "ftb_540_booklet_2025"
+      ]
+    },
+    {
+      "id": "flag_e193_ula_base_vs_gross",
+      "item": "Transfer-tax base differs when the buyer assumes debt",
+      "reason": "Measure ULA FAQ (chunk 2 of 2, read 2026-11-15): the base tax is calculated on net value (excluding any lien remaining at sale) and the ULA tax on gross value (including it). The worksheet applies one combined rate to the full sale price, which matches a sale where existing debt is paid off at closing. It does not model an assumed loan.",
+      "action": "Owner to confirm the structure. If debt is assumed, split the base (0.56% county+city) and ULA tiers onto different bases before using the sell-now figure.",
+      "sources": [
+        "ula",
+        "lavote_dtt"
+      ]
+    },
+    {
+      "id": "flag_e193_worksheet_review",
+      "item": "Sell-versus-hold worksheet (decision.html, built by arena/1d0e4b3c-jack1): 1031 verdict and single tax rate",
+      "reason": "Independent check (session e193fc7b, 2026-11-15) matched the taxable-sale case to the dollar: transfer tax $28,000; net sale $3,010,400; hold value $3,773,932; spread $763,532. Two review findings: (1) On the 1031 path the worksheet assumes $0 tax on the sale but still prints an 'After-tax Sale ahead' verdict against a taxed hold (a $98,068 example). The note says the paths are not like-for-like, but the verdict is still shown. (2) The sale and exit use one owner-entered effective tax rate. The worksheet does not split the 25% unrecaptured §1250 rate or the 3.8% NIIT, and does not mention the 1% California surcharge above $1,000,000 taxable income.",
+      "action": "Owner or integration to decide: suppress the spread verdict when the 1031 path is selected, or label it as not comparable; and either split the recapture and NIIT rates or state the blended-rate assumption in the worksheet. No change made in this session (another session's file).",
+      "sources": [
+        "irs_tc409",
+        "irs_tc559",
+        "ftb_540_booklet_2025"
+      ]
     }
   ],
   "audit": [
@@ -4620,6 +4729,23 @@
       "detail": "Changes: hold-side after-tax, horizon debt, interest, downtime and carrying cost added to the owner worksheet (assets/site.js, scripts/build_public.py); new pages gates.html and advisor.html generated from this dataset; suggestions W-02, W-03 and W-10 marked implemented; nine flags added for blocked items. Verification ledger: verification/2026-11-15-1d0e4b3c.md.",
       "sources": [
         "live"
+      ]
+    },
+    {
+      "id": "audit_e193fc7b_20261115",
+      "check": "2026-11-15 session e193fc7b: tenant series (E-5) and source re-reads",
+      "result": "PASS for every value added. Values were read from the official page on 2026-11-15 and matched arithmetic checks; blanks remain where a source was not read.",
+      "detail": "Added seven quarters of tenant series (Q1 FY2025 to Q3 FY2026) from the SEC earnings releases: restaurant counts (company, franchise, total), openings and closures, system same-store sales, and franchise rental revenue. Re-read 2026-11-15: Q1 FY2026 release (restaurant-count table: Q4 FY2025 at 150/1,986/2,136 and Q1 FY2025 end at 152/2,038/2,190; openings 6 and closures 14 in Q1 FY2026); Q3 FY2026 release (restaurant-count table: Q3 FY2025 split 142/2,026/2,168 with 6 openings and 21 closures; Q3 FY2026 with 4 and 17; Franchise-Level Margin reconciliation: franchise rent 73,017 vs 76,538). IRS Topic 559 (NIIT 3.8%; thresholds $200,000 single or head of household, $250,000 married filing jointly). Measure ULA FAQ chunks 1 and 2 (base tax on net value, ULA tax on gross value; flagged as flag_e193_ula_base_vs_gross). FTB 2025 Form 540 booklet line 62 (Behavioral Health Services Tax, 1% of taxable income above $1,000,000; resolves flag_e193_ca_surcharge). Form 8-K filed 2026-06-23, Exhibit 99.1: $500M Series 2026-1 Class A-2 at 7.624%; does not explain the $74,774k debt-schedule difference (flag_debt_schedule_arithmetic remains open). Arithmetic: FY2025 quarters sum to 332,735 (matches FY2025 10-K row); FY2026 Q1 to Q3 sum to 242,526 (matches the 40-week 10-Q row); restaurant roll-forwards reconcile for each quarter with a stated opening and closing count. Q4 FY2025 same-store sales and openings/closures were not read (flag_e193_q4fy25_gap).",
+      "sources": [
+        "sec_q1_release",
+        "sec_q2_release",
+        "sec_release",
+        "irs_tc559",
+        "irs_tc409",
+        "ftb_540_booklet_2025",
+        "ftb_540_rates_2025",
+        "ula",
+        "sec_8k_2026_06_23"
       ]
     }
   ],
@@ -5589,6 +5715,150 @@
         "sec_release",
         "zimas"
       ]
+    }
+  ],
+  "tenant_series": [
+    {
+      "id": "ts_q1_fy25",
+      "label": "Q1 FY2025",
+      "weeks": 16,
+      "period_end": "2025-01-19",
+      "sss_system": "+0.4%",
+      "restaurants_end": {
+        "total": 2190,
+        "company": 152,
+        "franchise": 2038
+      },
+      "opened": 5,
+      "closed": 6,
+      "franchise_rent_k": 105781,
+      "prior_id": null,
+      "sources": [
+        "sec_q1_release"
+      ],
+      "note": "16-week quarter. Prior-year comparative printed in the Q1 FY2026 release (same-store table, restaurant counts, Appendix A)."
+    },
+    {
+      "id": "ts_q2_fy25",
+      "label": "Q2 FY2025",
+      "weeks": 12,
+      "period_end": "2025-04-13",
+      "sss_system": "(4.4%)",
+      "restaurants_end": {
+        "total": 2183,
+        "company": 146,
+        "franchise": 2037
+      },
+      "opened": 5,
+      "closed": 12,
+      "franchise_rent_k": 77935,
+      "prior_id": null,
+      "sources": [
+        "sec_q2_release",
+        "sec_q1_release"
+      ],
+      "note": "Prior-year comparative in the Q2 FY2026 release; franchise rent also in the Q1 FY2026 release appendix."
+    },
+    {
+      "id": "ts_q3_fy25",
+      "label": "Q3 FY2025",
+      "weeks": 12,
+      "period_end": "2025-07-06",
+      "sss_system": "(7.1%)",
+      "restaurants_end": {
+        "total": 2168,
+        "company": 142,
+        "franchise": 2026
+      },
+      "opened": 6,
+      "closed": 21,
+      "franchise_rent_k": 76538,
+      "prior_id": null,
+      "sources": [
+        "sec_release",
+        "sec_q1_release"
+      ],
+      "note": "Prior-year comparative in the Q3 FY2026 release: restaurant count table (142 company / 2,026 franchise / 2,168 total, re-read 2026-11-15). Franchise rent also in the Q1 FY2026 release appendix."
+    },
+    {
+      "id": "ts_q4_fy25",
+      "label": "Q4 FY2025",
+      "weeks": 12,
+      "period_end": "2025-09-28",
+      "sss_system": null,
+      "restaurants_end": {
+        "total": 2136,
+        "company": 150,
+        "franchise": 1986
+      },
+      "opened": null,
+      "closed": null,
+      "franchise_rent_k": 72481,
+      "prior_id": null,
+      "sources": [
+        "sec_q1_release"
+      ],
+      "note": "Same-store sales and openings/closures for this quarter were not read in this session (flag_e193_q4fy25_gap). Restaurant count (150 / 1,986 / 2,136) is the 'at Q4' row of the Q1 FY2026 release (re-read 2026-11-15); franchise rent from its Appendix A."
+    },
+    {
+      "id": "ts_q1_fy26",
+      "label": "Q1 FY2026",
+      "weeks": 16,
+      "period_end": "2026-01-18",
+      "sss_system": "(6.7%)",
+      "restaurants_end": {
+        "total": 2128,
+        "company": 149,
+        "franchise": 1979
+      },
+      "opened": 6,
+      "closed": 14,
+      "franchise_rent_k": 97387,
+      "prior_id": "ts_q1_fy25",
+      "sources": [
+        "sec_q1_release"
+      ],
+      "note": "16-week quarter ended January 18, 2026. Franchise rent from Appendix A and the Franchise-Level Margin reconciliation of the Q1 FY2026 release."
+    },
+    {
+      "id": "ts_q2_fy26",
+      "label": "Q2 FY2026",
+      "weeks": 12,
+      "period_end": "2026-04-12",
+      "sss_system": "(3.8%)",
+      "restaurants_end": {
+        "total": 2128,
+        "company": 149,
+        "franchise": 1979
+      },
+      "opened": 9,
+      "closed": 9,
+      "franchise_rent_k": 72122,
+      "prior_id": "ts_q2_fy25",
+      "sources": [
+        "sec_q2_release"
+      ],
+      "note": "Franchise rental revenue from the Franchise-Level Margin reconciliation of the same release."
+    },
+    {
+      "id": "ts_q3_fy26",
+      "label": "Q3 FY2026",
+      "weeks": 12,
+      "period_end": "2026-07-05",
+      "sss_system": "(1.1%)",
+      "restaurants_end": {
+        "total": 2115,
+        "company": 149,
+        "franchise": 1966
+      },
+      "opened": 4,
+      "closed": 17,
+      "franchise_rent_k": 73017,
+      "prior_id": "ts_q3_fy25",
+      "sources": [
+        "sec_release"
+      ],
+      "note": "Franchise rental revenue from the Franchise-Level Margin reconciliation of the same release (re-read 2026-11-15). The same 12-week figures ($73,017k and $76,538k) appear in the tenant_rent_trend row, which is sourced to the 10-Q leases note."
     }
   ]
 }
