@@ -2614,3 +2614,25 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
 Claim commit/push precedes all content work.
+
+## ▶ RECORD — session `arena/4c386ad4-jack1` (2026-11-15 UTC): PR #115 merged, Pages confirmed (K-6)
+
+| Item | Result |
+|---|---|
+| PR | [#115](https://github.com/wingbangboozle1-lang/Jack1/pull/115) `arena/4c386ad4-jack1` → `main`: `aftertax.html` (verified federal / CA / LA transfer-tax rules, blank inputs, no network or storage), `assets/aftertax.js`, `data/k-4c386ad4-supplement.json`, `tests/test_decision_tools.py` (14 tests), `verification/2026-11-15-4c386ad4.md` (ledger incl. K-5 endpoint feasibility), this board. Progress board and advisor were **not** duplicated (superseded by PR #113). |
+| CI | `validate` = SUCCESS on head `e8a7c53` (run 43774409013). Merge state CLEAN before merge. |
+| Merge | **MERGED** 2026-11-15T23:22:18Z, merge commit `def6fd5` (`gh pr merge 115 --merge`, no approval waited for; not `--auto`). |
+| Pages | Legacy `main /`. Build for `def6fd5` **built** (2026-11-15T23:22:53Z, no error). Live fetches with cache-buster: `aftertax.html` (rules table and blank calculator render), `flagged.html`, `index.html` (nav includes After-tax module). |
+| Gates on the merged tree | `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK; `validate_site.py` PASS (15 pages, 679 sourced rows); curated artifact build and `--artifact` validation PASS. |
+
+**Protocol deviations, logged for the board (no force push was used):**
+1. The first push of this session's claim (`69536a7`) was rewritten by a rebase. The remote then rejected a normal push. Resolved with a merge that records `69536a7` as integrated. Every one of its 18 `COORDINATION.md` lines was verified present first; the merge keeps this tree (`-s ours`), so nothing was dropped.
+2. After the branch was pushed, `main` moved twice (PR #114, PR #110). Those rebases were replaced with merges of `origin/main` into the pinned branch, for the same no-force-push reason.
+3. `origin/main` (commit `373778b`, session `arena/484395e3-jack1`, J-1/J-2 claim) carried six unresolved conflict-marker lines in `COORDINATION.md` (`<<<<<<<`, `=======`, `>>>>>>>`). Resolved on this branch by removing only those marker lines; every content line from every session is kept. Owner of `484395e3` may want to confirm. Logged as `flag_4c386ad4_coordination_markers`.
+4. The shared `property_fields` source mismatch (see the earlier update on this board) is unchanged; it needs the dataset owner.
+
+**Carried open items (not blockers for the merge; they appear on Flagged for Review):** Census tract data (API key needed); parcel hazard screening (needs a private address or APN); print check of `advisor.html` (owned by 1d0e4b3c); 2026 CA rate schedule; private calculator inputs (owner and CPA only); commit-metadata privacy (`flag_646fddf8_commit_email_privacy`, owner decision); legacy Pages mode; stale open PRs.
+
+**K-6:** done for this session's merge and Pages confirmation. The record is pushed on this pinned branch and goes to `main` via the next docs PR, following the pattern of PR #114.
+
+**Correction to item 3 above.** No dataset flag was created for the marker lines. The item is recorded only on this board (no `flag_4c386ad4_coordination_markers` exists). It is a board-hygiene note for the `484395e3` session owner, not a public flag.
