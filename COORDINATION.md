@@ -2698,3 +2698,7 @@ E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-
 Claim-time check: current `origin/main` after fast-forward is `b9480a7`. Existing worksheet does run locally, but review found it defaults to Los Angeles city transfer-tax jurisdiction and taxable-sale mode, applies current debt payoff to a future exit, and treats inputs as if a simplified after-tax comparison were complete. This task will make the public tool conservative and explicit; it will not add private inputs or choose a property outcome.
 
 Claim commit/push precedes content work. Before each push, fetch and rebase this pinned branch on `origin/main`; push only `arena/ee3778f7-jack1`.
+
+### EE-1 scope amendment — session `arena/ee3778f7-jack1`
+
+The request explicitly includes W-02, so Option A is treated as selected for this narrowly scoped implementation. To avoid leaving the public review table factually stale, the task also includes `data/verified-2026-11-10.json` limited to (a) W-02 selection/implementation status, (b) access dates for the two official transfer-tax schedules re-read on 2026-11-15, and (c) the corresponding audit entry. Regenerated `suggestions.html`, `sources.html`, and `audit.html` are integration outputs. No economic observation, parcel/owner record, shared navigation, or personal information will be changed.
