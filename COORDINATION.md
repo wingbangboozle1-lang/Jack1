@@ -2440,3 +2440,26 @@ Claim commit/push precedes all content work.
 | Irregularities (non-blocking; on Flagged for Review) | Debt-schedule gap $74.774M; ULA FAQ body text vs operative table; Treasury vintage; legacy Pages `build_type: legacy` (workflow switch HTTP 403 — owner/admin action); stale open PRs #5/#10/#11/#14/#18/#21/#24/#27/#33/#47/#54/#56 untouched; active PRs #101/#102 verification files not touched. |
 
 Live site: https://wingbangboozle1-lang.github.io/Jack1/ (legacy `main /`, HTTPS enforced).
+
+## Session arena/68cf1fcf-jack1 — 2026-11-15 UTC (post-PR #100 verification)
+
+Pinned Arena branch `arena/68cf1fcf-jack1` (base `2b886d2` = `origin/main`). Scope: independent re-check of the published state only; no dataset, parcel or owner data was added or changed.
+
+| Task ID | Description | Status | Owning session | Files / scope |
+|---|---|---|---|---|
+| V-68 | Post-merge verification: gates, live Pages, Treasury spot-check, privacy scan of artifact | done | arena/68cf1fcf-jack1 | this board (append only) |
+
+Verification performed on 2026-11-15:
+- `scripts/build_public.py --check`: PASS (14 generated files match `data/verified-2026-11-10.json`).
+- `python3 -m unittest discover -s tests`: 42 tests OK.
+- `scripts/validate_site.py` and artifact validation (`--out` then `--site --artifact`): PASS, 12 pages, 599 sourced rows.
+- Live site `https://wingbangboozle1-lang.github.io/Jack1/`: serves the current build; GitHub Pages API reports `status: built`, `build_type: legacy`, source `main /`; the latest `pages-build-deployment` run on `main` succeeded.
+- Treasury spot-check: [Daily Treasury Par Yield Curve, Nov 2026](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611). The 11/13/2026 10 Yr row is 5.15, and the 20 Yr and 30 Yr are 5.52 and 5.47. The site's 5.15% card matches. Nov 15, 2026 is a Sunday, so Nov 13 is the latest print.
+- Privacy scan of the curated artifact: 0 e-mail addresses; 0 street-address or parcel-number patterns. The only regex hit was the generic label "APN" (Assessor's Parcel Number, no number) on `requirements.html` and `flagged.html`.
+
+Irregularities (non-blocking; already on `flagged.html` or noted here):
+- Git history: 101 of 262 commits on `main` carry a personal author e-mail (flag `flag_646fddf8_commit_email_privacy`). Not on the site. Changing history needs an owner decision; nothing was rewritten here.
+- Twelve stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) are untouched and should be closed or triaged by the owner.
+- Requests that need owner-held documents or a private, access-controlled environment (lease abstract, owner finances, short-lease quotes, parcel-level hazard zoning for a specific address, a private calculator with personal inputs) cannot be completed from public official sources. They remain blank and flagged; a public GitHub Pages site cannot hold them privately.
+
+Claim note: the request asked for `session-<id>/<task>` branches. Arena pins this session to `arena/68cf1fcf-jack1`, so that naming was not used. Only this branch is pushed.
