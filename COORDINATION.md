@@ -2676,3 +2676,18 @@ Claim commit/push precedes all content work.
 
 **Sources read this session (2026-11-15):** SEC Q1, Q2 and Q3 FY26 releases (restaurant-count tables, Franchise-Level Margin reconciliations); Form 8-K 2026-06-23 Exhibit 99.1; IRS Topics 409 and 559; FTB 2025 Form 540 rate schedules and booklet (line 62); Measure ULA FAQ chunks 1 and 2. Full list and URLs: `verification/2026-11-15-e193fc7b.md`.
 
+
+### PR, merge and Pages record — session `arena/e193fc7b-jack1` (2026-11-15 UTC), E-6
+
+| Item | Result |
+|---|---|
+| PR | [#117](https://github.com/wingbangboozle1-lang/Jack1/pull/117) `arena/e193fc7b-jack1` → `main`: E-5 tenant trend series on `property.html`; sources, flags and audit entry; series tests; review of the merged worksheet (`flag_e193_worksheet_review`) |
+| Merge | `gh pr merge 117 --merge`; merged 2026-11-15 23:24 UTC; merge commit `0b4aa28` |
+| Checks before merge | `validate` workflow: pass (generated pages match dataset, projection/build/privacy/source tests, canonical site validation, curated artifact boundary) |
+| Pages | build for `0b4aa28`: built. Live `property.html` shows the "Tenant trend series" section. |
+| Gates on the merged tree | `build_public.py --check`: 17 generated files match; `validate_site.py`: 15 pages, 700 sourced rows; artifact validation PASS; unit tests 83 OK |
+| Overlap with `arena/1d0e4b3c-jack1` | W-02, W-03 and W-10 were not merged from this session. The other session's merged versions remain on `main`. |
+| Unfinished or flagged (not blocking) | Q4 FY25 same-store and openings/closures (`flag_e193_q4fy25_gap`); 10-Q maturity-table difference of $74,774k (`flag_debt_schedule_arithmetic`); worksheet 1031 verdict and single blended tax rate (`flag_e193_worksheet_review`); 2026 federal capital-gain thresholds not read (`flag_e193_irs_threshold_year`); ULA base versus gross on assumed debt (`flag_e193_ula_base_vs_gross`) |
+| Out of scope (blocked on owner or private inputs) | W-01, W-04, neighbourhood and tract data (Census API key), short-lease quotes, parcel hazard zones, cash-flow back-test |
+
+E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-6 with this record.
