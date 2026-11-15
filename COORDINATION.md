@@ -2572,7 +2572,19 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 |---|---|---|---|---|
 | J-1 | Session claim + coordination protocol | done with this push | arena/484395e3-jack1 | this board (append-only) |
 | J-2 | Independent re-read of decision-critical published rows against official primary pages today (2026-11-15); blank-and-flag anything not reproducible; privacy scan of the curated artifact; new dated verification record | done | arena/484395e3-jack1 | `verification/2026-11-15-484395e3.md`; canonical pages/data read-only |
-| J-3 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, final record | in progress | arena/484395e3-jack1 | this board, `gh` PR/Pages operations |
+| J-3 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, final record | done | arena/484395e3-jack1 | this board, `gh` PR/Pages operations |
+
+### J-3 completion record — session `arena/484395e3-jack1` (2026-11-15 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#110](https://github.com/wingbangboozle1-lang/Jack1/pull/110) `arena/484395e3-jack1` → `main`, "J-3 final integration: independent re-verification record and coordination claim (session arena/484395e3-jack1)" |
+| Merge | Merged by `gh pr merge 110 --merge`; merge commit `d14b608c4c573a65ffef8328782f62a623af0059` |
+| Main | `origin/main` = `d14b608` (includes this branch) |
+| Pre-merge gates on this branch | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); privacy scan 0 hits |
+| Spot verification (read 2026-11-15 vs official pages) | Treasury 10Y 11/13/2026 5.15% and 11/10/2026 4.98%; BLS LA CPI-U all items Sep-26 +3.7%; Census LA city population Jul 1 2025 3,869,089 / owner-occupied 36.0% / median value $921,200 / median gross rent $1,933; FEMA NRI v1.20 December 2025; SEC EDGAR JACK latest 8-K 0000807882-26-000098 filed 2026-09-21. All matched `main`; no value changed, blanked, or newly flagged. |
+| Pages deploy | Pages `status: built`, `build_type: legacy`, source `main /`; build `1373122669` on commit `d14b608`, status `built`, error `null`, workflow run succeeded — live deploy confirmed at https://wingbangboozle1-lang.github.io/Jack1/ |
+| Irregularities (non-blocking; on Flagged for Review) | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); twelve stale open PRs untouched; Census tract key required for tract rows; blank property fields; private-calculator privacy review. No new irregularities from this session. |
 
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
