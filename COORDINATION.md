@@ -2472,3 +2472,8 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 |---|---|---|---|---|
 | Z-1 | Claim + post-integration gates and privacy/decision-readiness review | in progress | arena/8fa315b9-jack1 | `COORDINATION.md` append-only; `verification/2026-11-15-8fa315b9.md` |
 
+### Z-1 completion — session `arena/8fa315b9-jack1` (2026-11-15 UTC)
+
+| Task | Status | Files touched | Verification / sources | Irregularities |
+|---|---|---|---|---|
+| Post-integration reproducibility and decision-readiness review | done | `verification/2026-11-15-8fa315b9.md`; this board append only | `build_public.py --check` PASS (14 generated files); 42 unit tests PASS; `validate_site.py` PASS (12 pages, 599 sourced rows); curated artifact build and artifact-boundary validation PASS. This was a reproducibility check of the already cited registry and no new data value was published, so no new source assertion was made. | Parcel-specific recommendation remains impossible from public verified inputs alone. Preserve private lease, parcel, tax, hazard and quote inputs offline with authorized advisers. Prior records retain other open issues. |
