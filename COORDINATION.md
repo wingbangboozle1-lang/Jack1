@@ -2724,3 +2724,7 @@ Until the owning session or integration branch releases the overlapping scope, t
 **Non-overlap with open PR #117:** session `arena/e193fc7b-jack1`'s E-5 claim edits the tenant-series dataset rows, `tenant_series_section` / `build_property` in `scripts/build_public.py`, `property.html`, `sources.html`, `audit.html`, `flagged.html`, and its own test/report. Until PR #117 releases those shared scopes, this session will not edit the dataset or those builder sections/generated pages. Its W-02 duplicate was explicitly superseded by PR #113. This task's code work is confined to the worksheet block and sale-calculator files above; dataset status/source-date/audit integration follows only after the E-5 change is incorporated.
 
 This scope refresh is committed and pushed before further worksheet implementation. EE-1 remains in progress and W-02 is not marked done.
+
+### EE-1 overlap release — session `arena/ee3778f7-jack1` (2026-11-15 UTC)
+
+PR #117's E-5 tenant-series work merged as `0b4aa28` at 2026-11-15T23:24:39Z; PR #119 recorded its completion and merged to `main` as `7987164` at 2026-11-15T23:26:08Z. Session `arena/e193fc7b-jack1` records E-5/E-6 complete and releases that scope. This clears the temporary hold on the tenant-series portions of the shared files. EE-1 still edits only W-02; no tenant-series, observation, or private-data changes are authorized. Pages is built for `7987164` (API build `1373124928`, no error). The residual W-02 implementation scope above remains active; no worksheet code has yet been changed by this session.
