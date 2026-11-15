@@ -2377,3 +2377,24 @@ Supersedes the status column above: **C-1 and C-2 done; C-3 final integration in
 | C-2 targeted consistency and evidence-source follow-up | done | `data/verified-2026-11-10.json`; `scripts/build_public.py`; `tests/test_projection_and_site.py`; regression expectation in `tests/test_additions_1e8970d6.py`; `EXECUTIVE_SUMMARY.md`, `README.md`, `METHODOLOGY.md`, `_config.yml`; regenerated 12 canonical pages and `assets/projections.json`; new `verification/2026-11-13-c1cabdaf.md` | Reopened official Treasury November curve; FEMA NRI product page, ArcGIS county item, LA County composite and 18-rating queries; BLS LA summary and October CPI; Census city QuickFacts; SEC Q3 release, 10-Q R8 and R14 endpoint; CAL FIRE FHSZ page. Treasury Nov. 13 values match. FEMA data version 1.20.0 is confirmed and county metrics match. Corrected `nri_additional_ratings` to cite `fema_hazard_ratings`, the query that returns those fields. SEC R8 supports the 40-week YTD allowance period and $4.466M → $7.607M balance change (70.3%); no local-operator inference. Exact URLs and detail are in the new ledger. | R14.htm returned an XBRL stub; no debt values were rechecked or changed. The existing $74.774M maturity/ARD gap remains flagged. Coastal-flood numeric score was not reopened. This was not an all-row audit; property/parcel facts remain blank. Resolved duplicate Treasury vintage flags and the FEMA version flag were removed; one live-rate warning remains. |
 
 Final local gates after C-2: `build_public.py --check` PASS (14 generated files); unit tests PASS (42); `validate_site.py` PASS (12 pages, 599 sourced rows); curated artifact validation PASS (same); privacy pattern scan 0 hits across 23 artifact, data, canonical-doc, and C-1 ledger files. These gates will be rerun after the required rebase onto the latest `origin/main` and before publication.
+
+## ▶ ACTIVE CLAIM — session `arena/3970d1c0-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/3970d1c0-jack1` (integration branch for this session, as prior sessions did). No other branch is created or pushed.
+
+**Claim-time check (2026-11-15):** `origin/main` = `2b886d2` (PR #100). `build_public.py --check` PASS (14 files); unit tests 42/42 OK; `validate_site.py` PASS (12 pages, 599 sourced rows). Live Pages (`build_type=legacy`, `main /`) status `built` at `2b886d2`; live `flagged.html` fetched and matches `main`. No open claim on the board.
+
+**Scope discipline:** no change to `data/`, generated pages, `site/`, `pages/`, `archive/`, or any other session's ledger. No private, parcel, owner, lease, or tenant-identifying data is added or requested.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| H-1 | Session claim + coordination protocol | done with this push | arena/3970d1c0-jack1 | this board (append-only) |
+| H-2 | Tract-level trade-area evidence feasibility (brief items W-01 and "tract-level trend evidence"): test whether official Census tract data can be read from this environment; record blocker and exact next step; fill no values | in progress | arena/3970d1c0-jack1 | `verification/2026-11-15-3970d1c0.md` (new); this board (append-only) |
+| H-3 | Live-site verification of the deployed `main` (Pages build commit, sentinel page) and final gates, PR → `main`, merge, Pages confirmation, final record | in progress (starts after H-2) | arena/3970d1c0-jack1 | this board, `verification/2026-11-15-3970d1c0.md`, `gh` PR/Pages operations |
+
+### H-2 / H-3 completion record — session `arena/3970d1c0-jack1` (2026-11-15 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities / limits |
+|---|---|---|---|---|
+| H-2 tract-level trade-area feasibility | done (blocker recorded; no values added) | `verification/2026-11-15-3970d1c0.md` (new) | Census API tract and county requests return "Missing Key" ([api.census.gov/data/missing_key.html](https://api.census.gov/data/missing_key.html)); [Census ACS API page](https://www.census.gov/programs-surveys/acs/data/data-via-api.html); [Census QuickFacts LA city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) | Tract data need a registered Census API key (manual step, excluded by the brief). Static Census files not tested. Tract rows stay blank and unverified. |
+| H-3 live-site check, gates, PR, merge | in progress → see PR record | this board, ledger | Live Pages build `1367449111` `built` at `2b886d2`; gates above | — |
