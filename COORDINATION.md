@@ -2477,3 +2477,12 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | Task | Status | Files touched | Verification / sources | Irregularities |
 |---|---|---|---|---|
 | Post-integration reproducibility and decision-readiness review | done | `verification/2026-11-15-8fa315b9.md`; this board append only | `build_public.py --check` PASS (14 generated files); 42 unit tests PASS; `validate_site.py` PASS (12 pages, 599 sourced rows); curated artifact build and artifact-boundary validation PASS. This was a reproducibility check of the already cited registry and no new data value was published, so no new source assertion was made. | Parcel-specific recommendation remains impossible from public verified inputs alone. Preserve private lease, parcel, tax, hazard and quote inputs offline with authorized advisers. Prior records retain other open issues. |
+## Session `arena/50172659-jack1` — 2026-11-15 UTC
+
+**Pinned branch:** `arena/50172659-jack1`, branched from `6d1498ca` (PR #106 merge). Per Arena branch constraint, work remained on this branch; no session-named branch was created. Read the coordination board before work. Existing task records describe completed prior sessions; this review does not claim or edit their scopes, canonical data, or site pages.
+
+| Task | Status | Scope |
+|---|---|---|
+| R-501 | done | Read-only reproducible audit, plus `verification/2026-11-15-50172659.md` |
+
+Verification: `scripts/build_public.py --check` passed (14 generated files); Python unit tests passed (42); `scripts/validate_site.py` passed (12 pages, 599 sourced rows); curated `_site` artifact validation passed (12 pages). No content values were independently refreshed in this pass. The report records missing private evidence and existing irregularities. No parcel, owner, lease, tenant-contact or personal-finance information was added. Official source links are included in the report; existing source values retain their earlier review dates.
