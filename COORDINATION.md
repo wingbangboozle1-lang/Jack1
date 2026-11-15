@@ -2477,3 +2477,20 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | Task | Status | Files touched | Verification / sources | Irregularities |
 |---|---|---|---|---|
 | Post-integration reproducibility and decision-readiness review | done | `verification/2026-11-15-8fa315b9.md`; this board append only | `build_public.py --check` PASS (14 generated files); 42 unit tests PASS; `validate_site.py` PASS (12 pages, 599 sourced rows); curated artifact build and artifact-boundary validation PASS. This was a reproducibility check of the already cited registry and no new data value was published, so no new source assertion was made. | Parcel-specific recommendation remains impossible from public verified inputs alone. Preserve private lease, parcel, tax, hazard and quote inputs offline with authorized advisers. Prior records retain other open issues. |
+
+## ▶ ACTIVE CLAIM — session `arena/e193fc7b-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/e193fc7b-jack1`; the `session-<id>/<task>` naming in the brief is not used. Only `arena/e193fc7b-jack1` is pushed. Branched from `origin/main` = `e344369` (PR #107 merge); working tree clean at claim time. No open claim exists on the board tail (`arena/8fa315b9-jack1` is done). Open PRs #5–#56 (stale) are not touched.
+
+**Owner brief items in this scope** (from the requirements list): W-02 (sell-versus-hold worksheet), W-03 (decision-gate progress board), W-10 (one-page printable advisor summary), the after-tax module, and the same-store / unit-count / closure / franchise-rent series. Items that need the parcel, owner documents, Census tract keys, or private quotes are **not** in this scope and stay blank and flagged (W-01, W-04, neighbourhood and tract data, short-lease quotes, parcel hazard zones, cash-flow back-test).
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| E-1 | Session claim + coordination protocol | done with this push | arena/e193fc7b-jack1 | this board (append-only) |
+| E-2 | W-03 decision-gate progress board: gates linked to existing question IDs; status, closed-on (blank unless evidenced), evidence-held marker; no private values | unclaimed → in progress | arena/e193fc7b-jack1 | `requirements.html` (generated), `data/verified-2026-11-10.json` (additions), `scripts/build_public.py` (additive), `tests/test_projection_and_site.py` |
+| E-3 | W-10 one-page printable advisor summary (new page `advisor.html`, print CSS, generated from dataset; no property/personal identifiers) | in progress | arena/e193fc7b-jack1 | new `advisor.html`, `scripts/build_public.py`, `scripts/validate_site.py` (page list), `_config.yml` if needed, `404.html`, `index.html` nav only, `tests/` |
+| E-4 | W-02 sell-versus-hold worksheet + after-tax module: browser-only, blank defaults, outputs blank until every input is entered; statutory rate references from official pages | in progress | arena/e193fc7b-jack1 | `decision.html` (generated), `assets/site.js`, `assets/styles.css`, `scripts/build_public.py`, data additions with sources |
+| E-5 | Same-store sales, system unit count, closures and franchise rental revenue as a multi-quarter series from SEC filings (direction, not one quarter) | in progress | arena/e193fc7b-jack1 | `market.html` or `risks.html` (generated), data additions, `verification/2026-11-15-e193fc7b.md` |
+| E-6 | Gate re-run, privacy scan, live-site check, PR → `main`, merge, Pages confirmation, final record | unclaimed (after E-2..E-5) | arena/e193fc7b-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** `COORDINATION.md` append-only; no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Every new value is read from an official page on the access date and recorded with its URL in `verification/2026-11-15-e193fc7b.md`. Small commits; `git pull --rebase origin main` before every push.
