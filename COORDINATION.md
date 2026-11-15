@@ -2416,3 +2416,14 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 
 Claim commit/push precedes all content work.
 
+---
+
+## ▶ ACTIVE CLAIM — session `arena/c932bc71-jack1` (2026-11-15 UTC)
+
+**Takeover / preflight:** the current Arena-pinned branch is `arena/c932bc71-jack1` at `2b886d2` (the current `origin/main`, PR #100 merge); the working tree was clean. The latest board item was session `arena/c1cabdaf-jack1` C-3, reserved for final integration and not completed in the board. Its last recorded activity is 2026-11-13, more than 60 minutes ago, so this session takes over only that final-integration task. `gh pr list --state open` reports the previously logged stale PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56); none is a current task branch. The Pages API reports the latest build `built` for `2b886d2`. No earlier task scope is being taken over or duplicated.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| C-3 | Take over final integration: run the deterministic public build, unit tests, source/link/privacy validator and artifact checks on the merged site; inspect the coverage and flagged gaps against the brief; if clean, record the verification, open a PR from this pinned branch, merge it, and confirm the Pages build. Do not introduce parcel or owner identifiers or make unsupported property-specific claims. | in progress | arena/c932bc71-jack1 | `COORDINATION.md` (append-only); new `verification/2026-11-15-c932bc71.md`; GitHub PR/Pages operations. Canonical content is changed only if a concrete failing gate or source-confirmed discrepancy is found; any such scope expansion will be logged before edits. |
+
+**Branch/protocol constraint:** the platform pins this session to `arena/c932bc71-jack1`, so no `session-<id>/<task>` branch is created or checked out. Work and any push stay on the pinned branch. Before each push, pull/rebase against `origin/main`; never rewrite `main`. Existing stale PRs are left untouched.
