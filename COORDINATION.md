@@ -1,5 +1,23 @@
 # COORDINATION.md
 
+## ▶ ACTIVE CLAIM — session `arena/bb18a3b5-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/bb18a3b5-jack1`; the `session-<id>/<task>` branch scheme is not used (platform policy). The pinned branch is the integration branch and only it is pushed. Base: `origin/main` = `2b886d2` (PR #100 merge). No other live claim exists; the last claim (`c1cabdaf`, PR #100) is recorded done and is not overridden. Open PRs #5–#56 are stale and are not touched.
+
+**User selection (2026-11-15):** the user selected suggestions **W-01, W-02, W-03, W-04, W-10** for build, plus the requested modules (private browser calculator, after-tax module, short-lease quotes, neighbourhood/tract evidence, parcel hazard screening, cash-flow back-test). Items that need the confirmed parcel, executed lease or real quotes cannot be built without inventing inputs; they are recorded as **blocked** with the exact unlock step, not filled.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| BB-1 | Session claim (this section) | done with this push | arena/bb18a3b5-jack1 | this board (append-only) |
+| BB-2 | W-02 extend the private worksheet to sell-versus-hold with an after-tax module built from verified tax rules (IRS Rev. Proc. 2025-32 §4.03, IRS Topic 409/559, FTB 2025 Form 540 schedules and line 62, LA Office of Finance ULA FAQ); blank inputs, outputs blank until complete, browser memory only | in progress | arena/bb18a3b5-jack1 | `assets/worksheet.js` (new), `assets/site.js` (worksheet hook only), `scripts/build_public.py` (`build_decision` worksheet block and tax-rule table), `tests/test_worksheet.mjs` (new), `tests/test_bb18a3b5.py` (new) |
+| BB-3 | W-03 decision-gate progress board: per-question closed-on date (from a dated official source) and evidence-held yes/no; status only, no private values | reserved | arena/bb18a3b5-jack1 | `data/verified-2026-11-10.json` (new question fields and additions only), `scripts/build_public.py` (`build_requirements`) |
+| BB-4 | W-10 one-page printable advisor summary (`advisors.html`), generated from the dataset, no identifiers | reserved | arena/bb18a3b5-jack1 | `scripts/build_public.py` (new builder, PAGES/NAV, index card), `scripts/validate_site.py` (PAGES), `assets/styles.css` (print rules only) |
+| BB-5 | Status of W-01 and W-04 and of the other requested modules: blocked register with unlock steps and official lookup routes; flags | reserved | arena/bb18a3b5-jack1 | `data/verified-2026-11-10.json` (flags, suggestion status fields), `scripts/build_public.py` (`build_suggestions`) |
+| BB-6 | Repo review of this session: gates, irregularities, privacy scan; ledger `verification/2026-11-15-bb18a3b5.md` | reserved | arena/bb18a3b5-jack1 | `verification/2026-11-15-bb18a3b5.md` (new), `README.md` (one section) |
+| BB-7 | Final gates, PR → `main`, merge, GitHub Pages live check, final record | reserved | arena/bb18a3b5-jack1 | this board (append only); `gh` PR operations |
+
+Scope discipline: no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Commits are small; `git pull --rebase origin main` precedes every push. A rebase conflict stops work and is resolved as a union, then logged here.
+
 ## ▶ ACTIVE CLAIM — session `arena/646fddf8-jack1` (2026-11-13 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/646fddf8-jack1`; platform policy prohibits creating or switching to `session-<id>/<task>` branches, so the pinned branch is the integration branch (as prior sessions did). Only `arena/646fddf8-jack1` is pushed.
