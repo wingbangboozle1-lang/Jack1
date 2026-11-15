@@ -2548,7 +2548,6 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 
 `origin/main` moved to `fb6f39d` (PRs #108–#112; session `arena/9674db08-jack1` worksheet privacy review and session `arena/50172659-jack1` decision-readiness audit) while this branch was open. Conflicts and resolution: `COORDINATION.md` kept as a union (both sides). `assets/site.js` and `scripts/build_public.py`: this session's worksheet kept (its hold path already required the exit-cost %, the new version requires it too); main's privacy paragraph (shared devices, no identifiers, transfer-tax simplification, taxable-sale estimate) was re-applied verbatim, with one sentence added on after-tax treatment. `decision.html` regenerated. One assertion in `tests/test_projection_and_site.py` that pinned the old formula string was updated to the new formula and wording; its intent (exit cost required, no zero default) is kept. Gates re-run after the rebase: `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 rows); artifact validation PASS.
 
-<<<<<<< HEAD
 ### PR, merge and Pages record — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 | Item | Result |
@@ -2560,7 +2559,45 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 | Gates on the merged tree | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS |
 | Unfinished (owner or external) | Census tract figures (API key and parcel match), parcel hazard screening, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series: all blocked on private or owner-held inputs; each is flagged (`flag_1d0e4b3c_*`) and not published |
 | Carried irregularities | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); Pages mode legacy `main /` (workflow switch needs an admin); stale open PRs #5–#56 still open for owners |
-=======
+## ▶ ACTIVE CLAIM — session `arena/4c386ad4-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/4c386ad4-jack1` (integration branch, as prior sessions did). The `session-<id>/<task>` naming in the brief is not used; only `arena/4c386ad4-jack1` is pushed.
+
+**Claim-time check (2026-11-15):** `origin/main` = `e344369` (PR #107). Fast-forwarded to it; working tree clean. No open claim on the board tail (last claim `arena/8fa315b9-jack1` is recorded done). Gates at claim time: `build_public.py --check` PASS (14 files), 42 unit tests OK, `validate_site.py` PASS (12 pages, 599 sourced rows).
+
+**Scope discipline:** no private, parcel, owner, lease, tenant-identifying, or tract-identifying data is added or requested. Existing `verification/*` reports of other sessions are not edited. The `session-<id>` naming rule is replaced by the Arena branch pin, as above.
+
+| Task ID | Description | Status | Owning session | Files / scope |
+|---|---|---|---|---|
+| K-1 | Session claim + coordination protocol | done with this push | arena/4c386ad4-jack1 | this board (append-only) |
+| K-2 | W-03 decision-gate progress board: a new `progress.html` page built from existing dataset rows (questions, discovery steps, flags), each row linked to its official source or repository-provenance source | in progress | arena/4c386ad4-jack1 | `progress.html` (new); builder in `scripts/build_public.py` |
+| K-3 | W-10 one-page printable advisor summary: `advisor.html` with print CSS (one Letter page), aggregate content only | in progress | arena/4c386ad4-jack1 | `advisor.html` (new); builder in `scripts/build_public.py` |
+| K-4 | After-tax module: `aftertax.html`, a browser-only calculator (no storage, no network, all inputs blank) that applies verified federal, California and LA transfer-tax rules to produce one after-tax sale number, compared with the hold case only when hold inputs are entered; rules re-read from official pages this session | in progress | arena/4c386ad4-jack1 | `aftertax.html` (new); additive rows in `data/verified-2026-11-10.json`; `verification/2026-11-15-4c386ad4.md` (new) |
+| K-5 | W-01 trade-area / tract feasibility and W-04 parcel hazard feasibility: test official Census API and hazard endpoints from this environment; record blockers; fill no values | in progress | arena/4c386ad4-jack1 | `verification/2026-11-15-4c386ad4.md` |
+| K-6 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, live check, final record | reserved | arena/4c386ad4-jack1 | this board, `gh` PR/Pages operations |
+
+## ▶ UPDATE — session `arena/4c386ad4-jack1` (2026-11-15 UTC): overlap log, scope change, K-5 record
+
+**Overlap logged (cross-session).** Session `arena/1d0e4b3c-jack1` (X1-1 to X1-5; merged as PR #113, `21083ca` on `main`) built the W-02 worksheet, W-03 decision-gate board (`gates.html`), W-10 one-page advisor (`advisor.html`) and blocked-item flags while this session's K-2 (progress board) and K-3 (advisor) were in progress. Both sessions wanted `advisor.html`, and the same W-03/W-10 items.
+
+**Resolution (this session).** This session does **not** replace or re-create `gates.html` or `advisor.html`. Main's files are kept unchanged. The duplicate `progress.html` and `advisor.html` builders were dropped before any push. The only change to those files is one navigation link added by the shared build. K-2 and K-3 are closed as *superseded by PR #113*. K-4 is narrowed to `aftertax.html`, a browser calculator that applies the official federal, California and LA transfer-tax rules to the sale side (the W-02 worksheet takes rates as inputs). The two are complementary and each links to the other.
+
+**Duplicate rows (logged, not edited).** The claim block above (K-1 to K-6) shows K-2 to K-6 twice. This came from the earlier `COORDINATION.md` rebase conflict, which was resolved by keeping both sides. Content is identical; no claim changed. Future sessions can ignore the second copy.
+
+**Status by task**
+
+| Task | Status | Note |
+|---|---|---|
+| K-1 | done | claim (this board) |
+| K-2 | superseded by PR #113 (`gates.html`) | not re-built here |
+| K-3 | superseded by PR #113 (`advisor.html`) | not re-built here; print check belongs to 1d0e4b3c |
+| K-4 | done (narrowed) | `aftertax.html`, `assets/aftertax.js`, `data/k-4c386ad4-supplement.json`, `tests/test_decision_tools.py` (14 tests, Node + independent Python arithmetic); 2026 CA schedule not verified (flag) |
+| K-5 | done (records only, no values filled) | `verification/2026-11-15-4c386ad4.md` §4: Census API "Missing Key" (blocked, key needed); FEMA NRI county endpoint responds (LA County, not parcel); OpenFEMA declarations respond; NFHL parcel layer HTTP 500 (blocked); CAL FIRE FHSZ viewer is interactive (manual, parcel needs private address) |
+| K-6 | in progress | gates, PR → `main`, merge, Pages confirmation, final record |
+
+**Cross-scope request (not edited).** Shared `data/verified-2026-11-10.json` `property_fields`: `pf_value` cites Treasury yields and an SEC earnings release; `pf_debt` cites Treasury yields; `pf_rent` and `pf_expiry` cite the tenant's annual report. None of these publishes the value they are listed against. Logged as `flag_4c386ad4_property_field_sources`. **Owner or the dataset owner to re-point** to appraisal or broker opinion, loan documents, and the executed lease and estoppel. Values stay blank.
+
+**Gates on the rebased tree (`137bfc9` + this work):** `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK (includes 1d0e4b3c's tests); `validate_site.py` PASS (15 pages, 679 sourced rows). Print check of `advisor.html` not re-run here (owned by 1d0e4b3c).
 
 ## ▶ ACTIVE CLAIM — session `arena/484395e3-jack1` (2026-11-15 UTC)
 
@@ -2577,4 +2614,3 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
 Claim commit/push precedes all content work.
->>>>>>> db42c01 (J-1/J-2 claim and independent re-verification (session arena/484395e3-jack1) — rebased onto origin/main 21083ca)

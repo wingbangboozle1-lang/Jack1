@@ -1,0 +1,429 @@
+{
+  "meta": {
+    "session": "4c386ad4",
+    "date": "2026-11-15",
+    "purpose": "After-tax sale module (K-4) and feasibility records (K-5). Additive supplement; the shared verified dataset is not edited. The decision-gate board (gates.html) and the one-page advisor sheet (advisor.html) were built by session 1d0e4b3c (PR #113); this session's duplicate pages were dropped to avoid overlap.",
+    "rules_read_on": "2026-11-15",
+    "privacy": "Rule tables only. No parcel, owner, lease, tenant-identifying, tract, or personal financial value is stored here. The calculator's inputs live only in the reader's browser memory."
+  },
+  "sources": {
+    "irs_rp_2025_32": {
+      "title": "Rev. Proc. 2025-32: 2026 inflation-adjusted items, section 4.03 Maximum Capital Gains Rate",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "irs_topic_409": {
+      "title": "Topic no. 409, Capital gains and losses (25% maximum on unrecaptured section 1250 gain)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/taxtopics/tc409",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "irs_niit": {
+      "title": "Net Investment Income Tax (3.8%; statutory thresholds by filing status)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/individuals/net-investment-income-tax",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "ftb_540_schedules_2025": {
+      "title": "2025 California Tax Rate Schedules (Form 540, Schedules X, Y and Z)",
+      "publisher": "California Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "ftb_540es_bhst": {
+      "title": "2025 Instructions for Form 540-ES: Behavioral Health Services Tax worksheet (1% above $1,000,000 taxable income)",
+      "publisher": "California Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov/forms/2025/2025-540-es-instructions.pdf",
+      "accessed": "2026-11-15",
+      "kind": "official tax guidance"
+    },
+    "census_api_key": {
+      "title": "Census Data API: 'Missing Key' response (a valid key must be included with each data API request)",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://api.census.gov/data/missing_key.html",
+      "accessed": "2026-11-15",
+      "kind": "official statistics"
+    },
+    "census_api_signup": {
+      "title": "Census Data API key sign-up page",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://api.census.gov/data/key_signup.html",
+      "accessed": "2026-11-15",
+      "kind": "official statistics"
+    }
+  },
+  "rules": {
+    "federal_ltcg_2026": {
+      "zero_rate_max": {
+        "single": 49450,
+        "mfj": 98900,
+        "hoh": 66200,
+        "mfs": 49450
+      },
+      "fifteen_rate_max": {
+        "single": 545500,
+        "mfj": 613700,
+        "hoh": 579600,
+        "mfs": 306850
+      },
+      "top_ltcg_rate": 0.2,
+      "mid_ltcg_rate": 0.15,
+      "unrecaptured_1250_max_rate": 0.25,
+      "source_ids": [
+        "irs_rp_2025_32",
+        "irs_topic_409"
+      ],
+      "quote": "Maximum zero rate amounts and maximum 15 percent rate amounts, taxable years beginning in 2026 (Rev. Proc. 2025-32, section 4.03). Single/All other: $49,450 / $545,500; MFJ and surviving spouse: $98,900 / $613,700; HOH: $66,200 / $579,600; MFS: $49,450 / $306,850."
+    },
+    "niit": {
+      "rate": 0.038,
+      "threshold": {
+        "single": 200000,
+        "hoh": 200000,
+        "mfj": 250000,
+        "mfs": 125000
+      },
+      "source_ids": [
+        "irs_niit"
+      ],
+      "quote": "3.8% on the lesser of net investment income or modified AGI above $250,000 (MFJ or qualifying widow(er)), $125,000 (MFS), or $200,000 (single or HOH)."
+    },
+    "ca_schedules_2025": {
+      "schedule_for_status": {
+        "single": "X",
+        "mfs": "X",
+        "mfj": "Y",
+        "hoh": "Z"
+      },
+      "X": [
+        [
+          0,
+          11079,
+          0.0,
+          0.01
+        ],
+        [
+          11079,
+          26264,
+          110.79,
+          0.02
+        ],
+        [
+          26264,
+          41452,
+          414.49,
+          0.04
+        ],
+        [
+          41452,
+          57542,
+          1022.01,
+          0.06
+        ],
+        [
+          57542,
+          72724,
+          1987.41,
+          0.08
+        ],
+        [
+          72724,
+          371479,
+          3201.97,
+          0.093
+        ],
+        [
+          371479,
+          445771,
+          30986.19,
+          0.103
+        ],
+        [
+          445771,
+          742953,
+          38638.27,
+          0.113
+        ],
+        [
+          742953,
+          null,
+          72219.84,
+          0.123
+        ]
+      ],
+      "Y": [
+        [
+          0,
+          22158,
+          0.0,
+          0.01
+        ],
+        [
+          22158,
+          52528,
+          221.58,
+          0.02
+        ],
+        [
+          52528,
+          82904,
+          828.98,
+          0.04
+        ],
+        [
+          82904,
+          115084,
+          2044.02,
+          0.06
+        ],
+        [
+          115084,
+          145448,
+          3974.82,
+          0.08
+        ],
+        [
+          145448,
+          742958,
+          6403.94,
+          0.093
+        ],
+        [
+          742958,
+          891542,
+          61972.37,
+          0.103
+        ],
+        [
+          891542,
+          1485906,
+          77276.52,
+          0.113
+        ],
+        [
+          1485906,
+          null,
+          144439.65,
+          0.123
+        ]
+      ],
+      "Z": [
+        [
+          0,
+          22173,
+          0.0,
+          0.01
+        ],
+        [
+          22173,
+          52530,
+          221.73,
+          0.02
+        ],
+        [
+          52530,
+          67716,
+          828.87,
+          0.04
+        ],
+        [
+          67716,
+          83805,
+          1436.31,
+          0.06
+        ],
+        [
+          83805,
+          98990,
+          2401.65,
+          0.08
+        ],
+        [
+          98990,
+          505208,
+          3616.45,
+          0.093
+        ],
+        [
+          505208,
+          606251,
+          41394.72,
+          0.103
+        ],
+        [
+          606251,
+          1010417,
+          51802.15,
+          0.113
+        ],
+        [
+          1010417,
+          null,
+          97472.91,
+          0.123
+        ]
+      ],
+      "source_ids": [
+        "ftb_540_schedules_2025"
+      ],
+      "quote": "Schedule X (single or married/RDP filing separately), Y (married/RDP filing jointly or qualifying surviving spouse), Z (head of household); nine brackets from 1% to 12.3%, each printed with its base tax and marginal rate."
+    },
+    "ca_bhst": {
+      "threshold": 1000000,
+      "rate": 0.01,
+      "source_ids": [
+        "ftb_540es_bhst"
+      ],
+      "quote": "Behavioral Health Services Tax (previously Mental Health Services Tax): 1% of taxable income over $1,000,000."
+    },
+    "dtt": {
+      "county_per_500": 0.55,
+      "city_base_per_500": 2.25,
+      "la_city_county_full_rate": 0.0011,
+      "min_taxable_value": 100,
+      "ula_lower_threshold": 5400000,
+      "ula_upper_threshold": 10900000,
+      "ula_mid_rate": 0.04,
+      "ula_top_rate": 0.055,
+      "ula_effective_for_closings_after": "2026-06-30",
+      "source_ids": [
+        "lavote_dtt",
+        "ula"
+      ],
+      "quote_county": "Documentary transfer tax at $0.55 for each $500, or fractional part thereof; computed on consideration exceeding $100 (LA County Registrar-Recorder).",
+      "quote_la_city": "Los Angeles (effective 7/1/26): $2.25 for each $500 or fraction thereof, AND either 4% of the total transaction value of sales above $5,400,000 but less than $10,900,000, OR 5.5% of the total transaction value of sales at or above $10,900,000. The County rate for the City of Los Angeles is calculated at the full $1.10 per $1,000 (LA County Registrar-Recorder).",
+      "quote_faq": "City FAQ, effective for transactions closing after June 30, 2026: transactions greater than $5,400,000 but less than $10,900,000 are assessed 4%; $10,900,000 or greater, 5.5%."
+    },
+    "selling_expenses": {
+      "source_ids": [
+        "irs_544"
+      ],
+      "quote": "Amount realized is the total received, less selling expenses; Publication 544, chapter 1, Example 1 subtracts selling expenses from the amount realized before the adjusted basis is deducted."
+    }
+  },
+  "flags": [
+    {
+      "id": "flag_4c386ad4_ltcg_stacking",
+      "item": "Federal capital-gain stacking in the after-tax module is simplified",
+      "reason": "The calculator places the gain above federal taxable income plus the unrecaptured section 1250 amount to choose between the 0%, 15% and 20% bands, and taxes the unrecaptured amount at the 25% statutory maximum. The Schedule D Tax Worksheet was not reproduced line by line, so the result can differ from a filed return.",
+      "action": "A CPA computes the federal tax on the actual return and enters the result for the decision file. Do not treat the calculator output as a filing figure.",
+      "sources": [
+        "irs_rp_2025_32",
+        "irs_topic_409"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_fed_year",
+      "item": "2026 federal thresholds apply to a 2026 sale only",
+      "reason": "Rev. Proc. 2025-32 sets 2026 breakpoints. The sale is expected in the 2030-2035 window, and the amounts are inflation-indexed each year. Thresholds for later years were not verified.",
+      "action": "Re-read the Rev. Proc. for the sale year before any commitment and enter that year's figures in the calculator.",
+      "sources": [
+        "irs_rp_2025_32"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_ca_schedule_year",
+      "item": "California rate schedules are the 2025 Form 540 schedules",
+      "reason": "The FTB 2025 schedules were the latest verified on 2026-11-15. The module uses them for every year and does not index them.",
+      "action": "Confirm the FTB schedule for the sale year before the sale decision and update the calculator table.",
+      "sources": [
+        "ftb_540_schedules_2025",
+        "ftb_540es_bhst"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_ula_band_reading",
+      "item": "ULA band rate is read as a flat rate on the full transaction value",
+      "reason": "The City's rate table and Recorder text say 4% or 5.5% of the total transaction value by band. The FAQ body text was already flagged (flag_ula_faq_wording). The calculator follows the operative table and does not compute a marginal split.",
+      "action": "Tax counsel confirms the band reading and any exemption before a sale commitment. Thresholds are CPI-indexed, so re-read them for the closing year.",
+      "sources": [
+        "ula",
+        "lavote_dtt"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_transfer_tax_payer",
+      "item": "Who pays the documentary transfer tax is not verified",
+      "reason": "Payment responsibility is set by the purchase agreement and local practice, and no executed agreement is in the repository. The calculator asks the user to choose and does not assume.",
+      "action": "Enter the payer from the draft purchase agreement. If the buyer pays, the transfer tax is excluded from the seller's net.",
+      "sources": [
+        "lavote_dtt",
+        "ula"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_1250_definition",
+      "item": "Unrecaptured section 1250 amount is an input from the CPA, not computed",
+      "reason": "Publication 544 (2025), chapter 4, defines unrecaptured section 1250 gain as the part of any long-term capital gain on real property that is due to depreciation. It cannot be more than the net section 1231 gain or include gain otherwise treated as ordinary income. The calculator caps the entered amount only at the total gain, so it does not enforce the net section 1231 limit. The dollar amount needs the depreciation schedule and Form 4797, which are not public, so the input stays blank.",
+      "action": "The CPA provides the unrecaptured section 1250 amount from the depreciation schedule and the Form 4797 workpapers, already limited to the net section 1231 gain and excluding ordinary recapture. Do not enter a value taken from a public source.",
+      "sources": [
+        "irs_544",
+        "irs_topic_409"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_ca_basis",
+      "item": "California basis may differ from federal basis",
+      "reason": "A single basis input is used for both returns unless the user enters a separate California gain. Whether California basis differs for this property was not verified.",
+      "action": "The CPA confirms the California gain and enters it separately if it differs.",
+      "sources": [
+        "ftb_540_schedules_2025"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_census_key",
+      "item": "Census tract data are blocked: the Census API requires a key",
+      "reason": "A data request to the Census API returned 'Missing Key' from this environment. The API page states that a valid key must be included with each request. Key sign-up is a manual step outside this build.",
+      "action": "The owner signs up for a Census key and runs the tract pull in the access-controlled workflow. No tract value is published until it is read and verified.",
+      "sources": [
+        "census_api_key",
+        "census_api_signup"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_tract_location",
+      "item": "Trade-area tracts (W-01) and parcel hazard screening (W-04) need the private location",
+      "reason": "Tract selection and parcel-level hazard zones depend on the property location. The location is not in the repository or on the site, and this session did not request or infer it.",
+      "action": "Run the tract and parcel steps inside the access-controlled workflow with an authorized adviser. Publish only aggregate, non-identifying results.",
+      "sources": [
+        "census_api_key",
+        "calfire_fhsz"
+      ]
+    },
+    {
+      "id": "flag_4c386ad4_property_field_sources",
+      "item": "Some property-field source links do not publish the value they are listed against",
+      "reason": "In the shared property_fields list, the market value row (pf_value) cites U.S. Treasury yield data and an SEC earnings release; the property debt row (pf_debt) cites Treasury yield data; the rent and expiry rows (pf_rent, pf_expiry) cite the tenant's annual report. None of these sources publishes a property's market value, property debt terms, or a specific lease's rent or expiry. The blank property inputs stay blank in the calculator. The cited sources on the shared dataset are not changed here.",
+      "action": "Owner or the shared-dataset session to re-point these rows to the correct evidence (appraisal or broker opinion, the loan documents, the executed lease, and the estoppel). Not changed here: the shared dataset is out of this session's scope.",
+      "sources": [
+        "treasury",
+        "sec_release",
+        "sec_10k"
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "audit_4c386ad4_20261115",
+      "check": "2026-11-15 after-tax rule re-read, calculator build, hand-worked cases and feasibility checks (session 4c386ad4)",
+      "result": "PARTIAL. Ran on 2026-11-15: rule values checked against the listed official sources; the tests in tests/test_decision_tools.py pass, including three hand-worked after-tax cases, an independent Python implementation compared against assets/aftertax.js run in Node, and edge cases (ULA boundary, loss, debt above net, CA gain override). NOT run here: a browser print check. The one-page advisor sheet (advisor.html) belongs to session 1d0e4b3c, which reports its own headless-Chromium one-page check; it is not re-run or claimed by this session. No browser in this sandbox for the after-tax page. The unrecaptured section 1250 definition was verified from Publication 544 (2025) chapter 4 (chunk 42); the dollar amount stays a CPA input. The 2026 CA rate schedule is not verified; the 2025 schedules are used.",
+      "detail": "Read on 2026-11-15: IRS Rev. Proc. 2025-32 section 4.03 (2026 zero-rate and 15%-rate ceilings); IRS Topic 409 (25% maximum on unrecaptured section 1250 gain; 2025 amounts shown on that page, not used); IRS NIIT page (thresholds); FTB 2025 Form 540 rate schedules X, Y, Z (nine brackets each); FTB 2025 Form 540-ES instructions (BHST 1% over $1,000,000); LA Office of Finance Measure ULA FAQ (rate table, 2026 thresholds, effective date); LA County Registrar-Recorder documentary transfer tax page (county and LA City rates, rounding); IRS Publication 544 chapter 1 amount realized and selling-expense example (contents read in chunks). Census Data API request returned 'Missing Key' (api.census.gov/data/missing_key.html). Publication 544 chapter 4 (2025) was read for the unrecaptured section 1250 definition (chunk 42). Not re-read: the 2026 California rate schedule (not published in the sources reached); Census tract tables (key required). Publication 544 chunks 11-13, 19, 21, 23, 30, 33, 36-40 were also read; they contain condemnation, like-kind exchange, timber and section 1245/1250 ordinary-income rules, which the calculator does not compute.",
+      "sources": [
+        "census_api_key",
+        "ftb_540_schedules_2025",
+        "ftb_540es_bhst",
+        "irs_544",
+        "irs_niit",
+        "irs_rp_2025_32",
+        "irs_topic_409",
+        "lavote_dtt",
+        "ula"
+      ]
+    }
+  ]
+}
