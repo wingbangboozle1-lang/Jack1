@@ -20,13 +20,15 @@ from projection_model import build_projection_payload, load_data, signal_scoreca
 import build_timeline
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "gates.html", "advisor.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
     ("property.html", "Property & tenant"),
     ("projections.html", "Projections"),
     ("decision.html", "Decision paths"),
+    ("gates.html", "Decision gates"),
+    ("advisor.html", "Advisor one-pager"),
     (build_timeline.PAGE, build_timeline.NAV_LABEL),
     ("suggestions.html", "Suggestions review"),
     ("risks.html", "Risks"),
@@ -383,7 +385,7 @@ def build_decision(data: dict[str, Any]) -> str:
     <div>
       <p class="eyebrow">Private local calculator · zero defaults</p>
       <h2 id="worksheet-heading">Owner decision worksheet (browser memory only)</h2>
-      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests. This public page is not an access-controlled workspace: browser extensions, screenshots, or a shared device may expose entered values. Do not enter parcel/owner identifiers or lease documents; use only a trusted private device and clear fields when done. Transfer-tax rates are a simplified current-schedule estimate: County/City base taxes round up per $500, and LA ULA thresholds adjust annually, so current tiers are not a forecast for a 2030–2035 sale. The taxable-sale rate is a user-entered blended estimate, not a tax computation.</p>
+      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests. This public page is not an access-controlled workspace: browser extensions, screenshots, or a shared device may expose entered values. Do not enter parcel/owner identifiers or lease documents; use only a trusted private device and clear fields when done. Transfer-tax rates are a simplified current-schedule estimate: County/City base taxes round up per $500, and LA ULA thresholds adjust annually, so current tiers are not a forecast for a 2030–2035 sale. The taxable-sale rate is a user-entered blended estimate, not a tax computation. Both paths are after tax at the owner’s own rates, so the spread is like for like. Depreciation, passive-loss, state/federal split, and timing are not modelled; your tax adviser’s figures replace the simplifications.</p>
     </div>
     <button type="button" class="button button-secondary ws-reset" data-ws-reset>Clear inputs</button>
   </div>
@@ -391,20 +393,25 @@ def build_decision(data: dict[str, Any]) -> str:
     <div class="ws-field"><label for="ws-jurisdiction">Transfer-tax jurisdiction</label><select id="ws-jurisdiction"><option value="la_city">City of Los Angeles (County 0.11% + City 0.45% + ULA)</option><option value="county_only">LA County unincorporated / non-special city (0.11%)</option></select></div>
     <div class="ws-field"><label for="ws-exchange">Income tax mode</label><select id="ws-exchange"><option value="taxable">Taxable sale (apply gain basis &amp; rate)</option><option value="1031">1031 like-kind exchange deferral (IRS Form 8824)</option></select></div>
     <div class="ws-field"><label for="ws-sale-price">Executable sale price ($)</label><input id="ws-sale-price" type="number" min="0" step="any" placeholder="Enter verified quote"></div>
-    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment at sale, now ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-debt-exit">Debt balance at horizon ($)</label><input id="ws-debt-exit" type="number" min="0" step="any" placeholder="Enter balance (0 if unencumbered)"></div>
     <div class="ws-field"><label for="ws-broker-pct">Brokerage &amp; other closing costs (%)</label><input id="ws-broker-pct" type="number" min="0" step="any" placeholder="Enter % (excl. transfer tax)"></div>
     <div class="ws-field"><label for="ws-tax-basis">Adjusted tax basis ($)</label><input id="ws-tax-basis" type="number" min="0" step="any" placeholder="Enter CPA basis (if taxable)"></div>
     <div class="ws-field"><label for="ws-tax-rate">Combined federal + CA gain/recapture rate (%)</label><input id="ws-tax-rate" type="number" min="0" step="any" placeholder="Enter blended tax %"></div>
-    <div class="ws-field"><label for="ws-rent">Current annual NNN base rent ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified annual NOI"></div>
+    <div class="ws-field"><label for="ws-rent">Annual NNN base rent, first hold year ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified lease rent"></div>
+    <div class="ws-field"><label for="ws-rent-tax">Income tax rate on net rent (%)</label><input id="ws-rent-tax" type="number" min="0" max="100" step="any" placeholder="Enter owner marginal rate"></div>
+    <div class="ws-field"><label for="ws-interest">Annual interest on debt during hold ($)</label><input id="ws-interest" type="number" step="any" placeholder="Enter 0 if unencumbered"></div>
     <div class="ws-field"><label for="ws-years">Remaining lease years to test</label><input id="ws-years" type="number" min="0" step="any" placeholder="Enter exact years"></div>
     <div class="ws-field"><label for="ws-esc">Annual contractual rent growth (%)</label><input id="ws-esc" type="number" step="any" placeholder="Enter lease escalation %"></div>
     <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Enter confidential hurdle rate"></div>
     <div class="ws-field"><label for="ws-exit-val">Expected gross value at horizon ($)</label><input id="ws-exit-val" type="number" min="0" step="any" placeholder="Enter stabilized/dark exit value"></div>
+    <div class="ws-field"><label for="ws-downtime">Re-leasing downtime after horizon (months)</label><input id="ws-downtime" type="number" min="0" step="any" placeholder="Enter 0 if none"></div>
+    <div class="ws-field"><label for="ws-carry">Carrying cost during downtime ($/yr)</label><input id="ws-carry" type="number" min="0" step="any" placeholder="Enter 0 if none"></div>
   </div>
   <div class="ws-outputs" aria-live="polite">
     <div class="ws-card"><div class="metric-label">Combined DTT + ULA</div><div class="ws-val" id="ws-out-dtt">—</div><p class="micro muted" id="ws-out-dtt-note">Enter a sale price to evaluate the 0.56% / 4.56% / 6.06% LA transfer-tax tier.</p></div>
     <div class="ws-card"><div class="metric-label">Net sale proceeds</div><div class="ws-val" id="ws-out-sale">—</div><p class="micro muted" id="ws-out-sale-note">Requires sale price, debt payoff, and brokerage/other cost % locally.</p></div>
-    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, debt, and brokerage/other exit cost %.</p></div>
+    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires every hold input above (rent, rent tax, interest, years, escalation, discount rate, exit value, horizon debt, gain rate, basis, closing %, downtime, carrying cost).</p></div>
     <div class="ws-card ws-highlight"><div class="metric-label">Local path spread</div><div class="ws-val" id="ws-out-spread">—</div><p class="micro muted" id="ws-out-spread-note">Complete both Sale and Hold inputs above to compare paths locally.</p></div>
   </div>
 </section>
@@ -437,7 +444,7 @@ def build_suggestions(data: dict[str, Any]) -> str:
     rows = [[e(key), e(proposal), e(evidence), e(gate), badge("analysis") + '<span class="row-note">Proposed · not approved or implemented</span>', source_links(data, sources)]
             for key, proposal, evidence, gate, sources in proposals]
     body = """
-<div class="callout warning"><h3>Review before implementation</h3><p>These are analyst proposals, not verified property conclusions or official recommendations. Creating this review page does not approve any listed action. No sale, lease negotiation, paid engagement, data collection or automatic source update has been initiated.</p></div>
+<div class="callout warning"><h3>Review before implementation</h3><p>These are analyst proposals, not verified property conclusions or official recommendations. Creating this review page does not approve any listed action. No sale, lease negotiation, paid engagement, data collection or automatic source update has been initiated. The owner's written brief of 2026-11-15 asked for W-02 (worksheet), W-03 (gate board) and W-10 (advisor sheet), which are now built and marked implemented; W-01, W-04 and the other items remain proposals, blocked on private inputs (see Flagged for review).</p></div>
 <p>Start with the privacy and lease-evidence gates, then compare sale and renewal in parallel. Unknown private inputs remain blank in the <a href="requirements.html">decision-question register</a>; unresolved evidence is on <a href="flagged.html">Flagged for Review</a>. No manual input is required to read this site. Private evidence cannot be discovered reliably from the reported area alone.</p>
 <p class="small muted">Official links support the evidence route or general context only, not the priority ranking or a property-specific outcome. S01 cites this project's own policy rather than an outside privacy certification. No approval is stored by this static public site.</p>
 """ + table("suggestions-review", "Proposed improvements and evidence-acquisition actions awaiting review.",
@@ -445,7 +452,8 @@ def build_suggestions(data: dict[str, Any]) -> str:
     site_rows = [[
         f'<strong>{e(x["id"])} · {e(x["title"])}</strong><span class="row-note">{e(x["area"])}</span>',
         e(x["problem"]), e(x["options"]), f'<strong>{e(x["recommended"])}</strong>', e(x["tradeoff"]),
-        badge("proposed"), source_links(data, x["sources"]),
+        (badge("verified").replace("Verified", "Implemented 2026-11-15 (owner brief)") if x.get("status") == "implemented" else badge("proposed")),
+        source_links(data, x["sources"]),
     ] for x in data["suggestions"]]
     discovery_rows = [[
         f'<strong>{e(x["id"])} · {e(x["missing"])}</strong><span class="row-note">Priority {e(x["priority"])}</span>',
@@ -586,6 +594,128 @@ def build_404(data: dict[str, Any]) -> str:
 """
 
 
+def first_source(data: dict[str, Any], ids: Iterable[str]) -> str:
+    """One official link per row on the one-page sheet; the remainder is on the full pages."""
+    ids = list(ids)
+    if not ids:
+        return source_links(data, ids)
+    more = len(ids) - 1
+    tail = f' <span class="row-note">+{more} more on the full pages</span>' if more else ""
+    return source_links(data, ids[:1]) + tail
+
+
+GATES = [
+    ("G1", "Asset identity and lease evidence", ["q_identity", "q_lease_dates", "q_renewal_control", "q_obligor", "q_rent", "q_value"]),
+    ("G2", "Tenant credit and debt", ["q_tenant_credit", "q_rent_capacity", "q_refi_wall", "q_financing"]),
+    ("G3", "Tax and transaction cost", ["q_after_tax", "q_transfer_tax"]),
+    ("G4", "Area economy, demand and schools", ["q_population", "q_jobs", "q_labor_cost", "q_consumer", "q_schools", "q_safety", "q_development", "q_trade"]),
+    ("G5", "Hazard, insurance and black-swan exposure", ["q_hazard", "q_insurance", "q_seismic", "q_black_swan"]),
+    ("G6", "Decision rule", ["q_decision_rule"]),
+]
+# Evidence-held marker (derived from the register status; no document contents are shown).
+EVIDENCE_HELD = {
+    "answered": "Yes — public evidence",
+    "derived": "Yes — derived from public inputs",
+    "partial": "Partly",
+    "open": "No",
+    "blocked": "No — private inputs needed",
+    "analysis": "No — judgment only",
+}
+
+
+def gate_progress(data: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]], dict[str, int]]:
+    questions = {q["id"]: q for q in data["questions"]}
+    assigned = [qid for _, _, ids in GATES for qid in ids]
+    if sorted(assigned) != sorted(questions):
+        missing = sorted(set(questions) - set(assigned))
+        extra = sorted(set(assigned) - set(questions))
+        raise ValueError(f"gate mapping does not cover the register: missing={missing} extra={extra}")
+    summary = []
+    for code, title, ids in GATES:
+        counts = {"answered": 0, "derived": 0, "partial": 0, "open": 0, "blocked": 0, "analysis": 0}
+        for qid in ids:
+            counts[questions[qid]["status"]] += 1
+        done = counts["answered"] + counts["derived"]
+        summary.append({"code": code, "title": title, "total": len(ids), "done": done, "counts": counts})
+    totals = {k: sum(g["counts"][k] for g in summary) for k in ("answered", "derived", "partial", "open", "blocked", "analysis")}
+    return summary, questions, totals
+
+
+def build_gates(data: dict[str, Any]) -> str:
+    summary, questions, totals = gate_progress(data)
+    total_q = len(questions)
+    done_total = totals["answered"] + totals["derived"]
+    cards = "".join(
+        f'<article class="gate-card"><div class="gate-head"><span class="gate-code">{e(g["code"])}</span><strong>{e(g["title"])}</strong></div>'
+        f'<progress value="{g["done"]}" max="{g["total"]}" aria-label="{e(g["title"])}: {g["done"]} of {g["total"]} answered or derived"></progress>'
+        f'<p class="micro muted">{g["done"]} of {g["total"]} answered or derived · {g["counts"]["partial"]} partly · {g["counts"]["open"] + g["counts"]["blocked"]} open or blocked · {g["counts"]["analysis"]} judgment</p></article>'
+        for g in summary
+    )
+    rows = []
+    for code, title, ids in GATES:
+        for qid in ids:
+            q = questions[qid]
+            rows.append([
+                f'<strong>{e(code)} · {e(title)}</strong>',
+                f'<strong>{e(q["question"])}</strong><span class="row-note">{e(qid)}</span>',
+                badge(q["status"]),
+                e(EVIDENCE_HELD[q["status"]]),
+                value_cell(None),
+                e(q["obtain"]),
+                source_links(data, q["sources"]),
+            ])
+    body = f"""
+<section class="hero" aria-labelledby="gate-summary"><p class="eyebrow">Progress on the decision</p><h2 id="gate-summary">{done_total} of {total_q} gate questions answered or derived from public official sources</h2>
+<p>{totals["partial"]} are partly held, {totals["open"] + totals["blocked"]} are open or blocked on private documents, and {totals["analysis"]} are judgment rather than evidence. Counts use only the register status; a gate is not closed until its private evidence is held and dated.</p></section>
+<div class="section-heading"><div><p class="eyebrow">Six gates</p><h2 id="gate-progress">Progress by decision gate</h2><p>Each bar counts questions answered or derived from public inputs. Blank cells are unverified and intentionally empty.</p></div></div>
+<div class="gate-grid">{cards}</div>
+<div class="section-heading"><div><p class="eyebrow">Question by question</p><h2 id="gate-questions">Evidence held and what is still needed</h2><p>The closing-date column stays blank until a gate is closed and dated. No closing date has been recorded for any gate, so none is shown. Source links point to the official pages behind each register answer.</p></div></div>
+{table("gate-board", "Decision gates: status, evidence-held marker, closing date (blank), what is still needed, and official sources.", ["Gate", "Question", "Status", "Evidence held", "Closed on", "Still needed", "Official sources"], rows)}
+<p class="small muted">Full answers and the source for each: <a href="requirements.html">Requirements register</a>. Unconfirmed items: <a href="flagged.html">Flagged for review</a>. Suggested discovery steps: <a href="suggestions.html#discovery-suggestions">Suggestions review</a>.</p>
+"""
+    return layout(data, "gates.html", "Decision-gate progress board", "Six decision gates built from the 25-question register. A gate counts as progress only when its answer is verified or derived from official sources.", body)
+
+
+def build_advisor(data: dict[str, Any]) -> str:
+    obs = {o["id"]: o for o in data["observations"]}
+    figure_ids = ["tenant_sss", "tenant_ard_wall", "tenant_rent_trend", "dtt_combined_stack", "nri_composite"]
+    figure_rows = []
+    for oid in figure_ids:
+        o = obs[oid]
+        figure_rows.append([
+            f'<strong>{e(o["measure"])}</strong><span class="row-note">{e(o["geography"])}</span>',
+            e(o["value"]),
+            e(o["period"]),
+            first_source(data, o["sources"]),
+        ])
+    decision_ids = ["sell_before_expiry", "renew_extend", "hold_status_quo", "retenant"]
+    dec = {d["id"]: d for d in data["decisions"]}
+    decision_rows = [[f'<strong>{e(dec[d]["path"])}</strong>', e(dec[d]["verdict"]), first_source(data, dec[d]["sources"])] for d in decision_ids]
+    blank_fields = [p["field"] for p in data["property_fields"] if p["value"] is None]
+    open_questions = [q for q in data["questions"] if q["status"] in ("open", "blocked")]
+    open_items = "".join(f'<li><strong>{e(q["question"])}</strong> {badge(q["status"])} {first_source(data, q["sources"])}</li>' for q in open_questions)
+    discovery_items = "".join(f"<li>{e(x['missing'])}</li>" for x in data["discovery"][:6])
+    body = f"""
+<div class="no-print toolbar"><button type="button" class="button" data-print>Print one-page summary</button><span class="micro muted">Prints on one letter page. Remove browser headers and footers in the print dialog.</span></div>
+<article class="advisor-sheet" aria-label="One-page advisor summary">
+  <header class="adv-head">
+    <div><p class="eyebrow">Advisor one-page summary · generated {e(data['meta']['date'])}</p><h2>Jack in the Box NNN · central Los Angeles (reported, unverified)</h2></div>
+    <p class="adv-note">For brokers, tax, legal and insurance advisers. Not legal, tax, appraisal or brokerage advice. No owner, parcel, lease-party or personal identifiers. Blank = not verified.</p>
+  </header>
+  <section class="adv-block"><h3>Recommendation</h3><p>{e(data['meta']['recommendation'])}</p></section>
+  <section class="adv-block"><h3>Decision paths (provisional, conditional)</h3>{table("advisor-paths", "Decision paths and provisional views.", ["Path", "Provisional view", "Official source"], decision_rows, searchable=False)}</section>
+  <section class="adv-block"><h3>Verified figures advisers will check</h3>{table("advisor-figures", "Verified official figures used in this brief.", ["Figure", "Value", "Period", "Official source"], figure_rows, searchable=False)}</section>
+  <section class="adv-block"><h3>Still missing (blank and unverified)</h3><p class="adv-list">{e(", ".join(blank_fields))}.</p></section>
+  <div class="adv-two">
+    <section class="adv-block"><h3>Next evidence steps, in order</h3><ol class="adv-steps">{discovery_items}</ol></section>
+    <section class="adv-block"><h3>Open or blocked questions</h3><ol class="adv-steps adv-open">{open_items}</ol></section>
+  </div>
+  <footer class="adv-foot">Source links on each row; full register on <a href="requirements.html">Requirements</a>, gate progress on <a href="gates.html">Decision gates</a>, unverified items on <a href="flagged.html">Flagged for review</a>.</footer>
+</article>
+"""
+    return layout(data, "advisor.html", "Advisor one-page summary", "A printable one-page brief generated from the same verified dataset as the dashboard.", body)
+
+
 def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
     # Session dcb5495c supplement: timeline sources, flags and audit entry join the registry pages.
     data = build_timeline.merge_supplement(data or load_data())
@@ -596,6 +726,8 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "property.html": build_property(data),
         "projections.html": build_projections(data, payload),
         "decision.html": build_decision(data),
+        "gates.html": build_gates(data),
+        "advisor.html": build_advisor(data),
         build_timeline.PAGE: build_timeline.build_timeline(data, sys.modules[__name__]),
         "suggestions.html": build_suggestions(data),
         "risks.html": build_risks(data),

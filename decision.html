@@ -17,6 +17,8 @@
 <a class="nav-link" href="property.html">Property &amp; tenant</a>
 <a class="nav-link" href="projections.html">Projections</a>
 <a class="nav-link active" href="decision.html" aria-current="page">Decision paths</a>
+<a class="nav-link" href="gates.html">Decision gates</a>
+<a class="nav-link" href="advisor.html">Advisor one-pager</a>
 <a class="nav-link" href="timeline.html">Timeline &amp; triggers</a>
 <a class="nav-link" href="suggestions.html">Suggestions review</a>
 <a class="nav-link" href="risks.html">Risks</a>
@@ -81,7 +83,7 @@
     <div>
       <p class="eyebrow">Private local calculator · zero defaults</p>
       <h2 id="worksheet-heading">Owner decision worksheet (browser memory only)</h2>
-      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests. This public page is not an access-controlled workspace: browser extensions, screenshots, or a shared device may expose entered values. Do not enter parcel/owner identifiers or lease documents; use only a trusted private device and clear fields when done. Transfer-tax rates are a simplified current-schedule estimate: County/City base taxes round up per $500, and LA ULA thresholds adjust annually, so current tiers are not a forecast for a 2030–2035 sale. The taxable-sale rate is a user-entered blended estimate, not a tax computation.</p>
+      <p class="small muted">All fields start blank by design so no rent, cap rate, or tax basis is assumed. Calculations run locally in your browser without cookies, storage, or network requests. This public page is not an access-controlled workspace: browser extensions, screenshots, or a shared device may expose entered values. Do not enter parcel/owner identifiers or lease documents; use only a trusted private device and clear fields when done. Transfer-tax rates are a simplified current-schedule estimate: County/City base taxes round up per $500, and LA ULA thresholds adjust annually, so current tiers are not a forecast for a 2030–2035 sale. The taxable-sale rate is a user-entered blended estimate, not a tax computation. Both paths are after tax at the owner’s own rates, so the spread is like for like. Depreciation, passive-loss, state/federal split, and timing are not modelled; your tax adviser’s figures replace the simplifications.</p>
     </div>
     <button type="button" class="button button-secondary ws-reset" data-ws-reset>Clear inputs</button>
   </div>
@@ -89,20 +91,25 @@
     <div class="ws-field"><label for="ws-jurisdiction">Transfer-tax jurisdiction</label><select id="ws-jurisdiction"><option value="la_city">City of Los Angeles (County 0.11% + City 0.45% + ULA)</option><option value="county_only">LA County unincorporated / non-special city (0.11%)</option></select></div>
     <div class="ws-field"><label for="ws-exchange">Income tax mode</label><select id="ws-exchange"><option value="taxable">Taxable sale (apply gain basis &amp; rate)</option><option value="1031">1031 like-kind exchange deferral (IRS Form 8824)</option></select></div>
     <div class="ws-field"><label for="ws-sale-price">Executable sale price ($)</label><input id="ws-sale-price" type="number" min="0" step="any" placeholder="Enter verified quote"></div>
-    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-debt">Debt payoff &amp; prepayment at sale, now ($)</label><input id="ws-debt" type="number" min="0" step="any" placeholder="Enter payoff (0 if unencumbered)"></div>
+    <div class="ws-field"><label for="ws-debt-exit">Debt balance at horizon ($)</label><input id="ws-debt-exit" type="number" min="0" step="any" placeholder="Enter balance (0 if unencumbered)"></div>
     <div class="ws-field"><label for="ws-broker-pct">Brokerage &amp; other closing costs (%)</label><input id="ws-broker-pct" type="number" min="0" step="any" placeholder="Enter % (excl. transfer tax)"></div>
     <div class="ws-field"><label for="ws-tax-basis">Adjusted tax basis ($)</label><input id="ws-tax-basis" type="number" min="0" step="any" placeholder="Enter CPA basis (if taxable)"></div>
     <div class="ws-field"><label for="ws-tax-rate">Combined federal + CA gain/recapture rate (%)</label><input id="ws-tax-rate" type="number" min="0" step="any" placeholder="Enter blended tax %"></div>
-    <div class="ws-field"><label for="ws-rent">Current annual NNN base rent ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified annual NOI"></div>
+    <div class="ws-field"><label for="ws-rent">Annual NNN base rent, first hold year ($)</label><input id="ws-rent" type="number" min="0" step="any" placeholder="Enter verified lease rent"></div>
+    <div class="ws-field"><label for="ws-rent-tax">Income tax rate on net rent (%)</label><input id="ws-rent-tax" type="number" min="0" max="100" step="any" placeholder="Enter owner marginal rate"></div>
+    <div class="ws-field"><label for="ws-interest">Annual interest on debt during hold ($)</label><input id="ws-interest" type="number" step="any" placeholder="Enter 0 if unencumbered"></div>
     <div class="ws-field"><label for="ws-years">Remaining lease years to test</label><input id="ws-years" type="number" min="0" step="any" placeholder="Enter exact years"></div>
     <div class="ws-field"><label for="ws-esc">Annual contractual rent growth (%)</label><input id="ws-esc" type="number" step="any" placeholder="Enter lease escalation %"></div>
     <div class="ws-field"><label for="ws-discount">Owner after-tax discount rate (%)</label><input id="ws-discount" type="number" min="0" step="any" placeholder="Enter confidential hurdle rate"></div>
     <div class="ws-field"><label for="ws-exit-val">Expected gross value at horizon ($)</label><input id="ws-exit-val" type="number" min="0" step="any" placeholder="Enter stabilized/dark exit value"></div>
+    <div class="ws-field"><label for="ws-downtime">Re-leasing downtime after horizon (months)</label><input id="ws-downtime" type="number" min="0" step="any" placeholder="Enter 0 if none"></div>
+    <div class="ws-field"><label for="ws-carry">Carrying cost during downtime ($/yr)</label><input id="ws-carry" type="number" min="0" step="any" placeholder="Enter 0 if none"></div>
   </div>
   <div class="ws-outputs" aria-live="polite">
     <div class="ws-card"><div class="metric-label">Combined DTT + ULA</div><div class="ws-val" id="ws-out-dtt">—</div><p class="micro muted" id="ws-out-dtt-note">Enter a sale price to evaluate the 0.56% / 4.56% / 6.06% LA transfer-tax tier.</p></div>
     <div class="ws-card"><div class="metric-label">Net sale proceeds</div><div class="ws-val" id="ws-out-sale">—</div><p class="micro muted" id="ws-out-sale-note">Requires sale price, debt payoff, and brokerage/other cost % locally.</p></div>
-    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, debt, and brokerage/other exit cost %.</p></div>
+    <div class="ws-card"><div class="metric-label">Hold PV (rent + net exit)</div><div class="ws-val" id="ws-out-hold">—</div><p class="micro muted" id="ws-out-hold-note">Requires every hold input above (rent, rent tax, interest, years, escalation, discount rate, exit value, horizon debt, gain rate, basis, closing %, downtime, carrying cost).</p></div>
     <div class="ws-card ws-highlight"><div class="metric-label">Local path spread</div><div class="ws-val" id="ws-out-spread">—</div><p class="micro muted" id="ws-out-spread-note">Complete both Sale and Hold inputs above to compare paths locally.</p></div>
   </div>
 </section>

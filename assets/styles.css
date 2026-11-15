@@ -114,3 +114,61 @@ tbody tr:hover { background: #fafbff; }
   .table-wrap { overflow: visible; border: 0; }
   th { position: static; }
 }
+
+/* Decision-gate board and one-page advisor summary (session arena/1d0e4b3c-jack1) */
+.gate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .85rem; margin: .5rem 0 1.25rem; }
+.gate-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; display: flex; flex-direction: column; gap: .45rem; box-shadow: var(--shadow); }
+.gate-head { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.gate-code { font-size: .75rem; font-weight: 800; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: .1rem .5rem; }
+.gate-card progress { width: 100%; height: .7rem; accent-color: var(--accent); }
+.toolbar { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-bottom: .75rem; }
+.advisor-sheet { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.25rem; font-size: .9rem; line-height: 1.35; }
+.adv-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: .4rem; margin-bottom: .5rem; }
+.adv-head h2 { margin: .1rem 0 0; font-size: 1.2rem; }
+.adv-head .eyebrow { margin: 0; }
+.adv-note { margin: 0; max-width: 46ch; font-size: .78rem; color: var(--muted); }
+.adv-block { margin: .45rem 0; }
+.adv-block h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .2rem; color: var(--accent); }
+.adv-block p { margin: .15rem 0; }
+.adv-block table { font-size: .78rem; }
+.adv-block th, .adv-block td { padding: .3rem .45rem; }
+.adv-two { display: grid; grid-template-columns: 1fr 1.25fr; gap: 1rem; align-items: start; }
+.adv-list { font-size: .8rem; }
+.adv-steps { font-size: .8rem; margin: .3rem 0 0 1.1rem; padding: 0; }
+.adv-foot { font-size: .72rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: .35rem; margin-top: .4rem; }
+@page { size: letter; margin: .4in; }
+@media print {
+  .no-print { display: none !important; }
+  .advisor-sheet { border: 0; padding: 0; font-size: 8pt; line-height: 1.2; box-shadow: none; }
+  .advisor-sheet .adv-block { margin: .22rem 0; }
+  .advisor-sheet .adv-block table { font-size: 7.2pt; }
+  .advisor-sheet .adv-open .badge { font-size: 6.6pt; padding: 0 .3rem; }
+  .advisor-sheet .adv-open li { margin-bottom: .1rem; }
+  .advisor-sheet .adv-block th, .advisor-sheet .adv-block td { padding: .08rem .25rem; }
+  .advisor-sheet .adv-head h2 { font-size: 11pt; }
+  .advisor-sheet .adv-note, .advisor-sheet .adv-foot, .advisor-sheet .adv-steps, .advisor-sheet .adv-list { font-size: 7pt; }
+  .advisor-sheet .adv-block h3 { font-size: 7.8pt; margin-bottom: .08rem; }
+  .advisor-sheet .row-note { display: none; }
+  .advisor-sheet .source-link { color: #17202a; text-decoration: none; }
+  .advisor-sheet .eyebrow { font-size: 7pt; }
+  .gate-grid { break-inside: avoid; }
+  .page-intro .lead { font-size: 9pt; }
+}
+
+/* One-page sheet: fixed column widths and hidden site chrome in print (advisor.html only) */
+#advisor-paths th:nth-child(1), #advisor-paths td:nth-child(1) { width: 20%; }
+#advisor-paths th:nth-child(2), #advisor-paths td:nth-child(2) { width: 52%; }
+#advisor-paths th:nth-child(3), #advisor-paths td:nth-child(3) { width: 28%; }
+#advisor-figures th:nth-child(1), #advisor-figures td:nth-child(1) { width: 24%; }
+#advisor-figures th:nth-child(2), #advisor-figures td:nth-child(2) { width: 40%; }
+#advisor-figures th:nth-child(3), #advisor-figures td:nth-child(3) { width: 14%; }
+#advisor-figures th:nth-child(4), #advisor-figures td:nth-child(4) { width: 22%; }
+#advisor-open th:nth-child(1), #advisor-open td:nth-child(1) { width: 50%; }
+#advisor-open th:nth-child(2), #advisor-open td:nth-child(2) { width: 18%; }
+#advisor-open th:nth-child(3), #advisor-open td:nth-child(3) { width: 32%; }
+.advisor-sheet .source-link { font-size: inherit; font-weight: 400; }
+.advisor-sheet .adv-block td .source-link { color: var(--accent); }
+@media print {
+  .main-column:has(.advisor-sheet) > .page-intro, main:has(.advisor-sheet) > .page-intro, .main-column:has(.advisor-sheet) > .footer { display: none !important; }
+  .advisor-sheet .adv-block table th { text-align: left; }
+}
