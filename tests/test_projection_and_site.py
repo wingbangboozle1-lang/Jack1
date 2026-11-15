@@ -210,6 +210,7 @@ class BuildAndValidationTests(unittest.TestCase):
         self.assertIn("debt !== null && brokerPct !== null", js)
         self.assertIn("exitVal * ((exitRate || 0) + (brokerPct / 100))", js)
         self.assertNotIn("(brokerPct || 0)", js)
+        self.assertIn("exit value, debt, and brokerage/other exit cost %", js)
         decision = build_public.render_all()["decision.html"]
         self.assertIn("exit value, debt, and brokerage/other exit cost %", decision)
 

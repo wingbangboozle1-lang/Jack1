@@ -124,7 +124,7 @@
       holdPv = pvRent + pvExit;
       setOut("ws-out-hold", fmtUsd(holdPv), "PV of rent (" + fmtUsd(pvRent) + ") + PV of net exit after debt & exit transfer/closing (" + fmtUsd(pvExit) + ").");
     } else {
-      setOut("ws-out-hold", "—", "Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, and debt.");
+      setOut("ws-out-hold", "—", "Requires annual NNN rent, remaining years, escalation %, discount rate %, exit value, debt, and brokerage/other exit cost %.");
     }
 
     if (netProceeds !== null && holdPv !== null) {

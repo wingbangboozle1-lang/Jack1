@@ -2518,3 +2518,13 @@ Claim extension committed and pushed before implementation.
 **Rebase/conflict record:** `origin/main` advanced from `e344369` (PR #107) to `b9480a7` (PR #108) during work. Rebase conflicts occurred only in append-only `COORDINATION.md`; resolution retained the upstream session records (#107/#108) and this session's claim/extension, with no code conflicts or discarded changes. The first branch push had been based on the older tip; after rebasing, a lease-protected force update was applied only to this session's own `arena/9674db08-jack1` ref so the remote reflects the preserved union. Subsequent pushes follow `git pull --rebase origin main`.
 
 **Publication status at this record:** local build gates pass; the change is ready for PR. GitHub Pages still serves the prior deployed main until this branch is merged and the next legacy Pages build is confirmed. Do not describe this correction as live before that check.
+
+### I-9674 scope extension: synchronize dynamic worksheet fallback (2026-11-15 UTC)
+
+The PR #109 live-site review showed the new static Hold PV helper text was overwritten by `assets/site.js` with its older incomplete fallback message when fields are blank. Extend the same narrow worksheet scope to synchronize that JavaScript message and test both template and runtime fallback copy. No other live task owns `assets/site.js` or the associated test. Claim before editing.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| I-9674C | Synchronize the live worksheet's dynamic blank-state helper with the required exit-cost input; add regression assertion; record PR #109 merge and Pages deployment | in progress | arena/9674db08-jack1 | `assets/site.js`, `tests/test_projection_and_site.py`, `COORDINATION.md`, verification report |
+
+Claim follows PR #109 merge on `main` (`08d89fc`); no private or parcel data is involved.
