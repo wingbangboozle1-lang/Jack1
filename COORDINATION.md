@@ -2587,3 +2587,19 @@ Full ledger: `verification/2026-11-15-1d0e4b3c.md`.
 | Gates on the merged tree | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS |
 | Unfinished (owner or external) | Census tract figures (API key and parcel match), parcel hazard screening, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series: all blocked on private or owner-held inputs; each is flagged (`flag_1d0e4b3c_*`) and not published |
 | Carried irregularities | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); Pages mode legacy `main /` (workflow switch needs an admin); stale open PRs #5–#56 still open for owners |
+## ▶ ACTIVE CLAIM — session `arena/4c386ad4-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/4c386ad4-jack1` (integration branch, as prior sessions did). The `session-<id>/<task>` naming in the brief is not used; only `arena/4c386ad4-jack1` is pushed.
+
+**Claim-time check (2026-11-15):** `origin/main` = `e344369` (PR #107). Fast-forwarded to it; working tree clean. No open claim on the board tail (last claim `arena/8fa315b9-jack1` is recorded done). Gates at claim time: `build_public.py --check` PASS (14 files), 42 unit tests OK, `validate_site.py` PASS (12 pages, 599 sourced rows).
+
+**Scope discipline:** no private, parcel, owner, lease, tenant-identifying, or tract-identifying data is added or requested. Existing `verification/*` reports of other sessions are not edited. The `session-<id>` naming rule is replaced by the Arena branch pin, as above.
+
+| Task ID | Description | Status | Owning session | Files / scope |
+|---|---|---|---|---|
+| K-1 | Session claim + coordination protocol | done with this push | arena/4c386ad4-jack1 | this board (append-only) |
+| K-2 | W-03 decision-gate progress board: a new `progress.html` page built from existing dataset rows (questions, discovery steps, flags), each row linked to its official source or repository-provenance source | in progress | arena/4c386ad4-jack1 | `progress.html` (new); builder in `scripts/build_public.py` |
+| K-3 | W-10 one-page printable advisor summary: `advisor.html` with print CSS (one Letter page), aggregate content only | in progress | arena/4c386ad4-jack1 | `advisor.html` (new); builder in `scripts/build_public.py` |
+| K-4 | After-tax module: `aftertax.html`, a browser-only calculator (no storage, no network, all inputs blank) that applies verified federal, California and LA transfer-tax rules to produce one after-tax sale number, compared with the hold case only when hold inputs are entered; rules re-read from official pages this session | in progress | arena/4c386ad4-jack1 | `aftertax.html` (new); additive rows in `data/verified-2026-11-10.json`; `verification/2026-11-15-4c386ad4.md` (new) |
+| K-5 | W-01 trade-area / tract feasibility and W-04 parcel hazard feasibility: test official Census API and hazard endpoints from this environment; record blockers; fill no values | in progress | arena/4c386ad4-jack1 | `verification/2026-11-15-4c386ad4.md` |
+| K-6 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, live check, final record | reserved | arena/4c386ad4-jack1 | this board, `gh` PR/Pages operations |
