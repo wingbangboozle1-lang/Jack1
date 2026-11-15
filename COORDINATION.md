@@ -2477,6 +2477,7 @@ Claim-time check: pinned active branch `arena/8fa315b9-jack1`, base `6d1498ca47a
 | Task | Status | Files touched | Verification / sources | Irregularities |
 |---|---|---|---|---|
 | Post-integration reproducibility and decision-readiness review | done | `verification/2026-11-15-8fa315b9.md`; this board append only | `build_public.py --check` PASS (14 generated files); 42 unit tests PASS; `validate_site.py` PASS (12 pages, 599 sourced rows); curated artifact build and artifact-boundary validation PASS. This was a reproducibility check of the already cited registry and no new data value was published, so no new source assertion was made. | Parcel-specific recommendation remains impossible from public verified inputs alone. Preserve private lease, parcel, tax, hazard and quote inputs offline with authorized advisers. Prior records retain other open issues. |
+
 ## Session `arena/50172659-jack1` — 2026-11-15 UTC
 
 **Pinned branch:** `arena/50172659-jack1`, branched from `6d1498ca` (PR #106 merge). Per Arena branch constraint, work remained on this branch; no session-named branch was created. Read the coordination board before work. Existing task records describe completed prior sessions; this review does not claim or edit their scopes, canonical data, or site pages.
@@ -2543,35 +2544,6 @@ Claim follows PR #109 merge on `main` (`08d89fc`); no private or parcel data is 
 
 PR #109's first Pages deployment did build successfully; this session's immediate cache-busted read found the page script overwrote the static helper text. PR #111 corrected the dynamic text. Final live verification above is after its deployment; the earlier transient copy mismatch is recorded for auditability.
 
-## ▶ ACTIVE CLAIM — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
-
-**Branch constraint:** this Arena session is pinned to `arena/1d0e4b3c-jack1` (base `6d1498c`, now fast-forwarded to `origin/main` = `e344369`, PR #107). Platform policy prohibits creating or switching to `session-<id>/<task>` branches, so this pinned branch is the only branch used and pushed.
-
-**Claim-time handoff check (2026-11-15 UTC):** `git fetch --all --prune` shows `origin/main` = `e344369`. The only commits since the base are PR #107 (`arena/8fa315b9-jack1`, task Z-1, done; ledger-only). No `in progress` claim exists on the board. Open PRs: the twelve stale PRs (#5 … #56) recorded by prior sessions, plus any live PRs listed by `gh pr list`; none is edited here. Gates at claim time were re-run on `e344369`: see the completion record.
-
-**Owner brief received in this session (summary):** implement the brief's W-02 (sell-versus-hold worksheet with after-tax module), W-03 (decision-gate progress board), W-10 (one-page printable advisor summary), and record why W-01, W-04, neighbourhood, parcel-level, tract, lease-abstract, short-lease-quote and back-tested-model items cannot be completed publicly. The owner asked for no manual input; private inputs stay blank.
-
-**Shared-file scope for this session:** this session is also the integration session for this change (no other claim is active). Shared files touched: `scripts/build_public.py` (PAGES/NAV, `build_decision`, `build_suggestions`, two new builders), `scripts/validate_site.py` (PAGES only), `assets/site.js` (worksheet logic only), `README.md` (page list), `data/verified-2026-11-10.json` (new flags, suggestion status fields only), regenerated canonical pages, `tests/` (new test file). No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited.
-
-| Task ID | Description | Status | Owning session | Files / scope |
-|---|---|---|---|---|
-| X1-1 | Session claim, handoff check and coordination record | done with this push | arena/1d0e4b3c-jack1 | this board (append-only) |
-| X1-2 | W-02 sell-versus-hold worksheet: add the missing hold-side tax (rent and exit gain), downtime and carrying cost, and interest during hold, so both paths are after-tax and blank until every input is entered; test formulas against independent arithmetic | done | arena/1d0e4b3c-jack1 | `assets/site.js` (worksheet block only), `scripts/build_public.py` (`build_decision` worksheet markup only), `tests/test_worksheet_1d0e4b3c.py` (new), `verification/2026-11-15-1d0e4b3c.md` (new) |
-| X1-3 | W-03 decision-gate progress board: new page `gates.html` grouping the 25 register questions into six decision gates, with status, evidence-held marker, a blank closed-on column, and source links | done | arena/1d0e4b3c-jack1 | `gates.html` (new, generated), `scripts/build_public.py` (new builder only) |
-| X1-4 | W-10 one-page printable advisor summary: new page `advisor.html` with print CSS, generated from the same dataset, free of property and personal identifiers | done (one Letter page verified in headless Chromium) | arena/1d0e4b3c-jack1 | `advisor.html` (new, generated), `scripts/build_public.py` (new builder only) |
-| X1-5 | Integration: navigation, validator page list, README page list, suggestion status fields (W-02/W-03/W-10 implemented; others proposed), flags for blocked items, gates, PR → `main`, merge without waiting, Pages confirmation, final record | in progress (starts after X1-2 to X1-4) | arena/1d0e4b3c-jack1 | `scripts/validate_site.py` (PAGES), `README.md`, `data/verified-2026-11-10.json` (flags, suggestion status), this board, `gh` PR/Pages operations |
-
-### Completion record — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
-
-Full ledger: `verification/2026-11-15-1d0e4b3c.md`.
-
-| Task | Status | Files touched | Verification / sources | Irregularities |
-|---|---|---|---|---|
-| X1-2 W-02 worksheet (after-tax hold, horizon debt, interest, downtime, carrying cost; blank until complete) | done | `assets/site.js`, `scripts/build_public.py` (worksheet markup), `tests/test_worksheet_1d0e4b3c.py`, `decision.html` | Node execution of the real browser code against independent Python arithmetic on a worked example: sale net $2,975,400; hold PV $2,627,780; spread $347,620 (test inputs, not property figures). Missing input blanks the hold; no defaults; no storage or network calls. Sources: existing rows `ula`, `irs_544`, `irs_8824`, `treasury` on the page. | Simplifications (no depreciation, passive loss, state/federal split, interest timing; 1031 not like-for-like): `flag_1d0e4b3c_worksheet_limits`. |
-| X1-3 W-03 gate board | done | `gates.html` (new), `scripts/build_public.py` (builder) | All 25 register questions mapped to six gates (builder enforces coverage); counts 7 answered or derived / 11 partial / 5 open or blocked / 2 judgment; closed-on cells blank; every row sourced. | No closing date recorded for any gate; board shows blanks by design. |
-| X1-4 W-10 advisor one-pager | done | `advisor.html` (new), `scripts/build_public.py`, `assets/styles.css` (print rules) | Rendered with headless Chromium on Letter: one page. Figures are existing verified rows with source links. No `@`, APN number or street-address pattern. | Print fit may vary by browser: `flag_1d0e4b3c_print_fit`. |
-| X1-5 integration | in progress (PR and merge below) | `scripts/validate_site.py` (PAGES), `README.md`, `data/verified-2026-11-10.json` (9 flags, 1 audit entry, `status` on W-02/W-03/W-10), `tests/test_projection_and_site.py` (suggestion status count), `tests/test_gates_advisor_1d0e4b3c.py` | `build_public.py --check` PASS (16 files); 57 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS. | Blocked items (not published, flagged): W-01 tracts (Census key + parcel), W-04 parcel hazard, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series. |
-
 ### Interleave note — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 `origin/main` moved to `fb6f39d` (PRs #108–#112; session `arena/9674db08-jack1` worksheet privacy review and session `arena/50172659-jack1` decision-readiness audit) while this branch was open. Conflicts and resolution: `COORDINATION.md` kept as a union (both sides). `assets/site.js` and `scripts/build_public.py`: this session's worksheet kept (its hold path already required the exit-cost %, the new version requires it too); main's privacy paragraph (shared devices, no identifiers, transfer-tax simplification, taxable-sale estimate) was re-applied verbatim, with one sentence added on after-tax treatment. `decision.html` regenerated. One assertion in `tests/test_projection_and_site.py` that pinned the old formula string was updated to the new formula and wording; its intent (exit cost required, no zero default) is kept. Gates re-run after the rebase: `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 rows); artifact validation PASS.
@@ -2626,3 +2598,19 @@ Full ledger: `verification/2026-11-15-1d0e4b3c.md`.
 **Cross-scope request (not edited).** Shared `data/verified-2026-11-10.json` `property_fields`: `pf_value` cites Treasury yields and an SEC earnings release; `pf_debt` cites Treasury yields; `pf_rent` and `pf_expiry` cite the tenant's annual report. None of these publishes the value they are listed against. Logged as `flag_4c386ad4_property_field_sources`. **Owner or the dataset owner to re-point** to appraisal or broker opinion, loan documents, and the executed lease and estoppel. Values stay blank.
 
 **Gates on the rebased tree (`137bfc9` + this work):** `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK (includes 1d0e4b3c's tests); `validate_site.py` PASS (15 pages, 679 sourced rows). Print check of `advisor.html` not re-run here (owned by 1d0e4b3c).
+
+## ▶ ACTIVE CLAIM — session `arena/484395e3-jack1` (2026-11-15 UTC)
+
+**Session ID:** `arena/484395e3-jack1` (the platform pins this session to that branch and prohibits creating or pushing `session-<id>/<task>` branches; the pinned branch is the integration branch, as prior sessions did). Branched from `origin/main` = `6d1498c` (PR #106 merge, 2026-11-15).
+
+**Claim-time handoff check (2026-11-15 UTC):** `git fetch --all --prune` initially showed `origin/main` = `6d1498c`, equal to this branch head. Before push, `origin/main` had advanced to `b9480a7` (PR #107 and PR #108 merges), then to `08d89fc` (PR #109 merge), then to `c8a4f04` (PR #111 merge) and `fb6f39d` (PR #112 merge); this commit was rebased onto `fb6f39d` as a union on `COORDINATION.md`; the entries of sessions `arena/8fa315b9-jack1`, `arena/50172659-jack1`, and `arena/9674db08-jack1` above are kept intact. No data, generated page, or another session's report was changed. Open PRs: none newly touched by this session; the twelve stale open PRs (#5, #10, #11, #14, #18, #21, #24, #27, #33, #47, #54, #56) remain untouched for their owners. Earlier board entries (through `arena/68cf1fcf-jack1`, V-68 done) are `done`; no live claim is overridden. Gates re-run at claim time: `build_public.py --check` PASS (14 files); unit tests 42/42 OK; `validate_site.py` PASS (12 pages, 599 sourced rows); artifact validation PASS; live Pages at https://wingbangboozle1-lang.github.io/Jack1/ reported `status: built`, `build_type: legacy`, source `main /`.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| J-1 | Session claim + coordination protocol | done with this push | arena/484395e3-jack1 | this board (append-only) |
+| J-2 | Independent re-read of decision-critical published rows against official primary pages today (2026-11-15); blank-and-flag anything not reproducible; privacy scan of the curated artifact; new dated verification record | done | arena/484395e3-jack1 | `verification/2026-11-15-484395e3.md`; canonical pages/data read-only |
+| J-3 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, final record | in progress | arena/484395e3-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
+
+Claim commit/push precedes all content work.
