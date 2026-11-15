@@ -18,9 +18,10 @@ from urllib.parse import urlparse
 
 from projection_model import build_projection_payload, load_data, signal_scorecard
 import build_timeline
+import build_decision_tools
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "gates.html", "advisor.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
+PAGES = ["index.html", "market.html", "property.html", "projections.html", "decision.html", "aftertax.html", "gates.html", "advisor.html", "timeline.html", "suggestions.html", "risks.html", "requirements.html", "flagged.html", "sources.html", "audit.html"]
 NAV = [
     ("index.html", "Overview"),
     ("market.html", "Market & community"),
@@ -29,6 +30,7 @@ NAV = [
     ("decision.html", "Decision paths"),
     ("gates.html", "Decision gates"),
     ("advisor.html", "Advisor one-pager"),
+    ("aftertax.html", "After-tax module"),
     (build_timeline.PAGE, build_timeline.NAV_LABEL),
     ("suggestions.html", "Suggestions review"),
     ("risks.html", "Risks"),
@@ -718,7 +720,7 @@ def build_advisor(data: dict[str, Any]) -> str:
 
 def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
     # Session dcb5495c supplement: timeline sources, flags and audit entry join the registry pages.
-    data = build_timeline.merge_supplement(data or load_data())
+    data = build_decision_tools.merge_supplement(build_timeline.merge_supplement(data or load_data()))
     payload = build_projection_payload(data)
     return {
         "index.html": build_index(data, payload),
@@ -728,6 +730,7 @@ def render_all(data: dict[str, Any] | None = None) -> dict[str, str]:
         "decision.html": build_decision(data),
         "gates.html": build_gates(data),
         "advisor.html": build_advisor(data),
+        build_decision_tools.AFTERTAX_PAGE: build_decision_tools.build_aftertax(data, sys.modules[__name__]),
         build_timeline.PAGE: build_timeline.build_timeline(data, sys.modules[__name__]),
         "suggestions.html": build_suggestions(data),
         "risks.html": build_risks(data),
@@ -767,7 +770,7 @@ def main() -> int:
         return 0
     if args.out:
         write_outputs(outputs, args.out)
-        for asset in ("styles.css", "site.js"):
+        for asset in ("styles.css", "site.js", "aftertax.js"):
             shutil.copyfile(ROOT / "assets" / asset, args.out / "assets" / asset)
         (args.out / ".nojekyll").write_text("", encoding="utf-8")
         print(f"Wrote curated artifact to {args.out} ({len(PAGES)} pages).")

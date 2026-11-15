@@ -2603,3 +2603,26 @@ Full ledger: `verification/2026-11-15-1d0e4b3c.md`.
 | K-4 | After-tax module: `aftertax.html`, a browser-only calculator (no storage, no network, all inputs blank) that applies verified federal, California and LA transfer-tax rules to produce one after-tax sale number, compared with the hold case only when hold inputs are entered; rules re-read from official pages this session | in progress | arena/4c386ad4-jack1 | `aftertax.html` (new); additive rows in `data/verified-2026-11-10.json`; `verification/2026-11-15-4c386ad4.md` (new) |
 | K-5 | W-01 trade-area / tract feasibility and W-04 parcel hazard feasibility: test official Census API and hazard endpoints from this environment; record blockers; fill no values | in progress | arena/4c386ad4-jack1 | `verification/2026-11-15-4c386ad4.md` |
 | K-6 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, live check, final record | reserved | arena/4c386ad4-jack1 | this board, `gh` PR/Pages operations |
+
+## ▶ UPDATE — session `arena/4c386ad4-jack1` (2026-11-15 UTC): overlap log, scope change, K-5 record
+
+**Overlap logged (cross-session).** Session `arena/1d0e4b3c-jack1` (X1-1 to X1-5; merged as PR #113, `21083ca` on `main`) built the W-02 worksheet, W-03 decision-gate board (`gates.html`), W-10 one-page advisor (`advisor.html`) and blocked-item flags while this session's K-2 (progress board) and K-3 (advisor) were in progress. Both sessions wanted `advisor.html`, and the same W-03/W-10 items.
+
+**Resolution (this session).** This session does **not** replace or re-create `gates.html` or `advisor.html`. Main's files are kept unchanged. The duplicate `progress.html` and `advisor.html` builders were dropped before any push. The only change to those files is one navigation link added by the shared build. K-2 and K-3 are closed as *superseded by PR #113*. K-4 is narrowed to `aftertax.html`, a browser calculator that applies the official federal, California and LA transfer-tax rules to the sale side (the W-02 worksheet takes rates as inputs). The two are complementary and each links to the other.
+
+**Duplicate rows (logged, not edited).** The claim block above (K-1 to K-6) shows K-2 to K-6 twice. This came from the earlier `COORDINATION.md` rebase conflict, which was resolved by keeping both sides. Content is identical; no claim changed. Future sessions can ignore the second copy.
+
+**Status by task**
+
+| Task | Status | Note |
+|---|---|---|
+| K-1 | done | claim (this board) |
+| K-2 | superseded by PR #113 (`gates.html`) | not re-built here |
+| K-3 | superseded by PR #113 (`advisor.html`) | not re-built here; print check belongs to 1d0e4b3c |
+| K-4 | done (narrowed) | `aftertax.html`, `assets/aftertax.js`, `data/k-4c386ad4-supplement.json`, `tests/test_decision_tools.py` (14 tests, Node + independent Python arithmetic); 2026 CA schedule not verified (flag) |
+| K-5 | done (records only, no values filled) | `verification/2026-11-15-4c386ad4.md` §4: Census API "Missing Key" (blocked, key needed); FEMA NRI county endpoint responds (LA County, not parcel); OpenFEMA declarations respond; NFHL parcel layer HTTP 500 (blocked); CAL FIRE FHSZ viewer is interactive (manual, parcel needs private address) |
+| K-6 | in progress | gates, PR → `main`, merge, Pages confirmation, final record |
+
+**Cross-scope request (not edited).** Shared `data/verified-2026-11-10.json` `property_fields`: `pf_value` cites Treasury yields and an SEC earnings release; `pf_debt` cites Treasury yields; `pf_rent` and `pf_expiry` cite the tenant's annual report. None of these publishes the value they are listed against. Logged as `flag_4c386ad4_property_field_sources`. **Owner or the dataset owner to re-point** to appraisal or broker opinion, loan documents, and the executed lease and estoppel. Values stay blank.
+
+**Gates on the rebased tree (`137bfc9` + this work):** `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK (includes 1d0e4b3c's tests); `validate_site.py` PASS (15 pages, 679 sourced rows). Print check of `advisor.html` not re-run here (owned by 1d0e4b3c).
