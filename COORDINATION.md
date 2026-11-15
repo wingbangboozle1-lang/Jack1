@@ -2547,7 +2547,6 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 ### Interleave note — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 `origin/main` moved to `fb6f39d` (PRs #108–#112; session `arena/9674db08-jack1` worksheet privacy review and session `arena/50172659-jack1` decision-readiness audit) while this branch was open. Conflicts and resolution: `COORDINATION.md` kept as a union (both sides). `assets/site.js` and `scripts/build_public.py`: this session's worksheet kept (its hold path already required the exit-cost %, the new version requires it too); main's privacy paragraph (shared devices, no identifiers, transfer-tax simplification, taxable-sale estimate) was re-applied verbatim, with one sentence added on after-tax treatment. `decision.html` regenerated. One assertion in `tests/test_projection_and_site.py` that pinned the old formula string was updated to the new formula and wording; its intent (exit cost required, no zero default) is kept. Gates re-run after the rebase: `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 rows); artifact validation PASS.
-
 ### PR, merge and Pages record — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 | Item | Result |
@@ -2636,10 +2635,6 @@ Claim commit/push precedes all content work.
 **K-6:** done for this session's merge and Pages confirmation. The record is pushed on this pinned branch and goes to `main` via the next docs PR, following the pattern of PR #114.
 
 **Correction to item 3 above.** No dataset flag was created for the marker lines. The item is recorded only on this board (no `flag_4c386ad4_coordination_markers` exists). It is a board-hygiene note for the `484395e3` session owner, not a public flag.
-
-
-
-
 ## ▶ ACTIVE CLAIM — session `arena/e193fc7b-jack1` (2026-11-15 UTC)
 
 **Branch constraint:** this Arena session is pinned to `arena/e193fc7b-jack1`; the `session-<id>/<task>` naming in the brief is not used. Only `arena/e193fc7b-jack1` is pushed. Branched from `origin/main` = `e344369` (PR #107 merge); working tree clean at claim time. No open claim exists on the board tail (`arena/8fa315b9-jack1` is done). Open PRs #5–#56 (stale) are not touched.
@@ -2691,3 +2686,15 @@ Claim commit/push precedes all content work.
 | Out of scope (blocked on owner or private inputs) | W-01, W-04, neighbourhood and tract data (Census API key), short-lease quotes, parcel hazard zones, cash-flow back-test |
 
 E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-6 with this record.
+
+## ▶ ACTIVE CLAIM — session `arena/ee3778f7-jack1` (2026-11-15 UTC)
+
+**Pinned branch:** `arena/ee3778f7-jack1`, based on `6d1498ca`; fetched and fast-forwarded from `origin/main` to `b9480a7` before this claim. Arena pins this session to the named branch; no other branch is created or used. The coordination board and current repository were read first. Previous integration and post-integration reviews are complete; the only open PRs are the twelve stale PRs already listed above and remain untouched. No live task claim is being overridden.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| EE-1 | W-02: audit and correct the blank-default, browser-only sell / hold-to-expiry / negotiated-renewal worksheet; remove unverified default jurisdiction/tax assumptions, separate current and future payoffs, state the verified-source and tax-adviser limits, and add behavioral/build/privacy tests | in progress | arena/ee3778f7-jack1 | `COORDINATION.md` (append-only); `scripts/build_public.py`; `assets/site.js` and/or a new worksheet JS module; generated `decision.html`; tests; `README.md`; new `verification/2026-11-15-ee3778f7.md`. No shared observation dataset, owner/parcel/lease data, index/navigation, or other session's report is in scope. |
+
+Claim-time check: current `origin/main` after fast-forward is `b9480a7`. Existing worksheet does run locally, but review found it defaults to Los Angeles city transfer-tax jurisdiction and taxable-sale mode, applies current debt payoff to a future exit, and treats inputs as if a simplified after-tax comparison were complete. This task will make the public tool conservative and explicit; it will not add private inputs or choose a property outcome.
+
+Claim commit/push precedes content work. Before each push, fetch and rebase this pinned branch on `origin/main`; push only `arena/ee3778f7-jack1`.
