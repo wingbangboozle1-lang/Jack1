@@ -2711,3 +2711,13 @@ Claim commit/push precedes content work. Before each push, pull/rebase from `ori
 **PRN-1 scope correction (append-only):** the canonical stylesheet is `assets/styles.css` (plural), not `assets/style.css`; the print control also uses `assets/site.js`. The data change records W-10 implementation and project coverage only; no economic, personal, parcel, or lease values are added or changed. PR #113 supplied the separate `advisor.html`; preserve it and the gate/worksheet/after-tax work while maintaining the explicitly requested `advisor-summary.html` route.
 
 **Third rebase/interleave note (2026-11-15 UTC):** while this feature commit was being integrated, `origin/main` advanced through PRs #115, #117 and #119 to `7987164`, adding `aftertax.html` and tenant trend content among other updates. Generated-page conflicts are resolved by keeping the upstream builder outputs as the base and regenerating all canonical pages from the combined builder/dataset. The upstream worksheet, after-tax module, gate board, `advisor.html`, tenant series, flags and source/data changes are preserved; summary-specific wiring is additive. `COORDINATION.md` remains a union of both sides. Full validation follows.
+
+### PRN-1B scope extension — record unmeasured print fit (2026-11-15 UTC)
+
+The page uses a dedicated Letter portrait `@page` and compact print rules, but its actual PDF page count has not been measured. No Chrome/Chromium executable is available, and WeasyPrint cannot load because the native Pango library is missing. The existing `flag_1d0e4b3c_print_fit` concerns the separate `advisor.html` sheet, so extend this task before edits to add a distinct, clearly labeled Flagged for Review item for `advisor-summary.html` print fit and a regression test. This records a technical verification gap only; no economic, personal, parcel, or lease value is changed.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| PRN-1B | Register that `advisor-summary.html` page count is unmeasured; expose the review/action on `flagged.html` and test its visibility | in progress | arena/2a163ce9-jack1 | `data/verified-2026-11-10.json`, generated `flagged.html`, `tests/test_projection_and_site.py`, `COORDINATION.md` |
+
+**Fourth rebase note (2026-11-15 UTC):** the final claim-extension rebase conflict was confined to this append-only board. The current PRN-1 scope correction and integration notes are retained once, followed by the PRN-1B extension; all earlier upstream records remain intact.
