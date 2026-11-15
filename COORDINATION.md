@@ -2391,3 +2391,10 @@ Final local gates after C-2: `build_public.py --check` PASS (14 generated files)
 | H-1 | Session claim + coordination protocol | done with this push | arena/3970d1c0-jack1 | this board (append-only) |
 | H-2 | Tract-level trade-area evidence feasibility (brief items W-01 and "tract-level trend evidence"): test whether official Census tract data can be read from this environment; record blocker and exact next step; fill no values | in progress | arena/3970d1c0-jack1 | `verification/2026-11-15-3970d1c0.md` (new); this board (append-only) |
 | H-3 | Live-site verification of the deployed `main` (Pages build commit, sentinel page) and final gates, PR → `main`, merge, Pages confirmation, final record | in progress (starts after H-2) | arena/3970d1c0-jack1 | this board, `verification/2026-11-15-3970d1c0.md`, `gh` PR/Pages operations |
+
+### H-2 / H-3 completion record — session `arena/3970d1c0-jack1` (2026-11-15 UTC)
+
+| Task | Status | Files touched | Sources / verification performed | Irregularities / limits |
+|---|---|---|---|---|
+| H-2 tract-level trade-area feasibility | done (blocker recorded; no values added) | `verification/2026-11-15-3970d1c0.md` (new) | Census API tract and county requests return "Missing Key" ([api.census.gov/data/missing_key.html](https://api.census.gov/data/missing_key.html)); [Census ACS API page](https://www.census.gov/programs-surveys/acs/data/data-via-api.html); [Census QuickFacts LA city](https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045225) | Tract data need a registered Census API key (manual step, excluded by the brief). Static Census files not tested. Tract rows stay blank and unverified. |
+| H-3 live-site check, gates, PR, merge | in progress → see PR record | this board, ledger | Live Pages build `1367449111` `built` at `2b886d2`; gates above | — |
