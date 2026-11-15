@@ -2548,7 +2548,6 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 
 `origin/main` moved to `fb6f39d` (PRs #108–#112; session `arena/9674db08-jack1` worksheet privacy review and session `arena/50172659-jack1` decision-readiness audit) while this branch was open. Conflicts and resolution: `COORDINATION.md` kept as a union (both sides). `assets/site.js` and `scripts/build_public.py`: this session's worksheet kept (its hold path already required the exit-cost %, the new version requires it too); main's privacy paragraph (shared devices, no identifiers, transfer-tax simplification, taxable-sale estimate) was re-applied verbatim, with one sentence added on after-tax treatment. `decision.html` regenerated. One assertion in `tests/test_projection_and_site.py` that pinned the old formula string was updated to the new formula and wording; its intent (exit cost required, no zero default) is kept. Gates re-run after the rebase: `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 rows); artifact validation PASS.
 
-<<<<<<< HEAD
 ### PR, merge and Pages record — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 | Item | Result |
@@ -2560,7 +2559,7 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 | Gates on the merged tree | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS |
 | Unfinished (owner or external) | Census tract figures (API key and parcel match), parcel hazard screening, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series: all blocked on private or owner-held inputs; each is flagged (`flag_1d0e4b3c_*`) and not published |
 | Carried irregularities | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); Pages mode legacy `main /` (workflow switch needs an admin); stale open PRs #5–#56 still open for owners |
-=======
+
 
 ## ▶ ACTIVE CLAIM — session `arena/484395e3-jack1` (2026-11-15 UTC)
 
@@ -2589,4 +2588,3 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
 Claim commit/push precedes all content work.
->>>>>>> db42c01 (J-1/J-2 claim and independent re-verification (session arena/484395e3-jack1) — rebased onto origin/main 21083ca)
