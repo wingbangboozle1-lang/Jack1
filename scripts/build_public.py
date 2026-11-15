@@ -272,6 +272,63 @@ def build_market(data: dict[str, Any]) -> str:
     return layout(data, "market.html", "Market and community fundamentals", "Official city/county/metro context with explicit geography and period labels; no parcel catchment is inferred.", body)
 
 
+def _pct(text: str) -> float:
+    t = text.strip()
+    neg = t.startswith("(")
+    value = float(t.strip("()%+ "))
+    return -value if neg else value
+
+
+def tenant_series_section(data: dict[str, Any]) -> str:
+    series = data["tenant_series"]
+    by_id = {s["id"]: s for s in series}
+    rows = []
+    for s in series:
+        rc = s["restaurants_end"]
+        prior = by_id.get(s["prior_id"]) if s.get("prior_id") else None
+        if prior:
+            yoy_text = f'{(s["franchise_rent_k"] / prior["franchise_rent_k"] - 1) * 100:+.1f}%'
+            yoy_cell = f'<td>{e(yoy_text)}<span class="row-note">Derived vs {e(prior["label"])}</span></td>'
+        else:
+            yoy_cell = '<td class="blank-value" aria-label="No prior-year row in this series"></td>'
+        per_week = f'{s["franchise_rent_k"] / s["weeks"]:,.1f}'
+        oc = None if s["opened"] is None or s["closed"] is None else f'{s["opened"]} / {s["closed"]}'
+        rows.append([
+            f'<strong>{e(s["label"])}</strong><span class="row-note">{s["weeks"]} weeks · ended {e(s["period_end"])}</span><span class="row-note">{e(s["note"])}</span>',
+            value_cell(s["sss_system"]),
+            f'<td>{rc["total"]:,}<span class="row-note">company {rc["company"]} · franchise {rc["franchise"]:,}</span></td>',
+            value_cell(oc),
+            f'<td>{s["franchise_rent_k"]:,}</td>',
+            f'<td>{e(per_week)}<span class="row-note">Derived: rent ÷ weeks</span></td>',
+            yoy_cell,
+            source_links(data, s["sources"]),
+        ])
+    recent = [s for s in series if s["sss_system"] and s["period_end"] >= "2025-04-01"]
+    vals = [_pct(s["sss_system"]) for s in recent]
+    yoys = [s["franchise_rent_k"] / by_id[s["prior_id"]]["franchise_rent_k"] - 1 for s in series if s.get("prior_id")]
+    first, last = series[0]["restaurants_end"]["total"], series[-1]["restaurants_end"]["total"]
+    latest_note = " The latest reported quarter is the least negative of these." if vals[-1] == max(vals) else ""
+    direction = (
+        f"Franchise rent was lower than a year earlier in all {len(yoys)} quarters that have a prior-year row "
+        f"({min(yoys) * 100:+.1f}% to {max(yoys) * 100:+.1f}%). System same-store sales were negative in every reported quarter "
+        f"from {recent[0]['label']} to {recent[-1]['label']} (Q4 FY2025 not read; range {min(vals):+.1f}% to {max(vals):+.1f}%).{latest_note} "
+        f"The restaurant count moved from {first:,} to {last:,} across the series ({last - first:+,}, {(last / first - 1) * 100:+.1f}%)."
+    )
+    body_intro = (
+        '<div class="callout"><h3>Direction, not one quarter</h3>'
+        f'<p>{e(direction)} Analysis of official issuer figures, not a forecast and not a property-level finding. '
+        'The figures are system-wide (company and franchise restaurants), so they describe the brand, not this restaurant.</p></div>'
+    )
+    return (
+        '<div class="section-heading"><div><p class="eyebrow">Tenant trend series</p><h2 id="tenant-series">Same-store sales, unit counts, closures and franchise rent</h2>'
+        '<p>Quarterly series from the issuer\'s earnings releases. Q1 quarters cover 16 weeks and the others 12, so use the per-week column to compare across them. Blank cells are not read yet.</p></div></div>\n'
+        + body_intro + "\n"
+        + table("tenant-series", "Quarterly tenant series: same-store sales, restaurant counts, openings and closures, and franchise rent.",
+                ["Quarter", "Same-store sales (system)", "Restaurants at period end", "Opened / closed", "Franchise rent ($000)", "Rent per week ($000, derived)", "Rent vs year earlier (derived)", "Official source"], rows)
+        + "\n"
+    )
+
+
 def build_property(data: dict[str, Any]) -> str:
     rows = []
     for field in data["property_fields"]:
@@ -295,6 +352,7 @@ def build_property(data: dict[str, Any]) -> str:
 {table("property-gates", "Evidence gates for any sell/extend/hold decision.", ["Gate", "Requirement", "Status", "Official source"], gates)}
 <div class="section-heading"><div><p class="eyebrow">Tenant / issuer context</p><h2>Jack in the Box public-company credit context</h2><p>These are issuer-wide disclosures, not confirmation of the subject restaurant, operator, or lease.</p></div></div>
 {obs_table(data, "tenant-context", "SEC issuer context.", ["Tenant"])}
+{tenant_series_section(data)}
 <div class="section-heading"><div><p class="eyebrow">Taxes · wages · financing</p><h2>Rules that change net proceeds and tenant capacity</h2></div></div>
 {obs_table(data, "property-tax-wage", "Tax, wage, and financing rules.", ["Taxes", "Labor costs", "Financing"])}
 """
