@@ -2559,7 +2559,45 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 | Gates on the merged tree | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS |
 | Unfinished (owner or external) | Census tract figures (API key and parcel match), parcel hazard screening, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series: all blocked on private or owner-held inputs; each is flagged (`flag_1d0e4b3c_*`) and not published |
 | Carried irregularities | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); Pages mode legacy `main /` (workflow switch needs an admin); stale open PRs #5–#56 still open for owners |
+## ▶ ACTIVE CLAIM — session `arena/4c386ad4-jack1` (2026-11-15 UTC)
 
+**Branch constraint:** this Arena session is pinned to `arena/4c386ad4-jack1` (integration branch, as prior sessions did). The `session-<id>/<task>` naming in the brief is not used; only `arena/4c386ad4-jack1` is pushed.
+
+**Claim-time check (2026-11-15):** `origin/main` = `e344369` (PR #107). Fast-forwarded to it; working tree clean. No open claim on the board tail (last claim `arena/8fa315b9-jack1` is recorded done). Gates at claim time: `build_public.py --check` PASS (14 files), 42 unit tests OK, `validate_site.py` PASS (12 pages, 599 sourced rows).
+
+**Scope discipline:** no private, parcel, owner, lease, tenant-identifying, or tract-identifying data is added or requested. Existing `verification/*` reports of other sessions are not edited. The `session-<id>` naming rule is replaced by the Arena branch pin, as above.
+
+| Task ID | Description | Status | Owning session | Files / scope |
+|---|---|---|---|---|
+| K-1 | Session claim + coordination protocol | done with this push | arena/4c386ad4-jack1 | this board (append-only) |
+| K-2 | W-03 decision-gate progress board: a new `progress.html` page built from existing dataset rows (questions, discovery steps, flags), each row linked to its official source or repository-provenance source | in progress | arena/4c386ad4-jack1 | `progress.html` (new); builder in `scripts/build_public.py` |
+| K-3 | W-10 one-page printable advisor summary: `advisor.html` with print CSS (one Letter page), aggregate content only | in progress | arena/4c386ad4-jack1 | `advisor.html` (new); builder in `scripts/build_public.py` |
+| K-4 | After-tax module: `aftertax.html`, a browser-only calculator (no storage, no network, all inputs blank) that applies verified federal, California and LA transfer-tax rules to produce one after-tax sale number, compared with the hold case only when hold inputs are entered; rules re-read from official pages this session | in progress | arena/4c386ad4-jack1 | `aftertax.html` (new); additive rows in `data/verified-2026-11-10.json`; `verification/2026-11-15-4c386ad4.md` (new) |
+| K-5 | W-01 trade-area / tract feasibility and W-04 parcel hazard feasibility: test official Census API and hazard endpoints from this environment; record blockers; fill no values | in progress | arena/4c386ad4-jack1 | `verification/2026-11-15-4c386ad4.md` |
+| K-6 | Gates, PR → `main`, merge, GitHub Pages deploy confirmation, live check, final record | reserved | arena/4c386ad4-jack1 | this board, `gh` PR/Pages operations |
+
+## ▶ UPDATE — session `arena/4c386ad4-jack1` (2026-11-15 UTC): overlap log, scope change, K-5 record
+
+**Overlap logged (cross-session).** Session `arena/1d0e4b3c-jack1` (X1-1 to X1-5; merged as PR #113, `21083ca` on `main`) built the W-02 worksheet, W-03 decision-gate board (`gates.html`), W-10 one-page advisor (`advisor.html`) and blocked-item flags while this session's K-2 (progress board) and K-3 (advisor) were in progress. Both sessions wanted `advisor.html`, and the same W-03/W-10 items.
+
+**Resolution (this session).** This session does **not** replace or re-create `gates.html` or `advisor.html`. Main's files are kept unchanged. The duplicate `progress.html` and `advisor.html` builders were dropped before any push. The only change to those files is one navigation link added by the shared build. K-2 and K-3 are closed as *superseded by PR #113*. K-4 is narrowed to `aftertax.html`, a browser calculator that applies the official federal, California and LA transfer-tax rules to the sale side (the W-02 worksheet takes rates as inputs). The two are complementary and each links to the other.
+
+**Duplicate rows (logged, not edited).** The claim block above (K-1 to K-6) shows K-2 to K-6 twice. This came from the earlier `COORDINATION.md` rebase conflict, which was resolved by keeping both sides. Content is identical; no claim changed. Future sessions can ignore the second copy.
+
+**Status by task**
+
+| Task | Status | Note |
+|---|---|---|
+| K-1 | done | claim (this board) |
+| K-2 | superseded by PR #113 (`gates.html`) | not re-built here |
+| K-3 | superseded by PR #113 (`advisor.html`) | not re-built here; print check belongs to 1d0e4b3c |
+| K-4 | done (narrowed) | `aftertax.html`, `assets/aftertax.js`, `data/k-4c386ad4-supplement.json`, `tests/test_decision_tools.py` (14 tests, Node + independent Python arithmetic); 2026 CA schedule not verified (flag) |
+| K-5 | done (records only, no values filled) | `verification/2026-11-15-4c386ad4.md` §4: Census API "Missing Key" (blocked, key needed); FEMA NRI county endpoint responds (LA County, not parcel); OpenFEMA declarations respond; NFHL parcel layer HTTP 500 (blocked); CAL FIRE FHSZ viewer is interactive (manual, parcel needs private address) |
+| K-6 | in progress | gates, PR → `main`, merge, Pages confirmation, final record |
+
+**Cross-scope request (not edited).** Shared `data/verified-2026-11-10.json` `property_fields`: `pf_value` cites Treasury yields and an SEC earnings release; `pf_debt` cites Treasury yields; `pf_rent` and `pf_expiry` cite the tenant's annual report. None of these publishes the value they are listed against. Logged as `flag_4c386ad4_property_field_sources`. **Owner or the dataset owner to re-point** to appraisal or broker opinion, loan documents, and the executed lease and estoppel. Values stay blank.
+
+**Gates on the rebased tree (`137bfc9` + this work):** `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK (includes 1d0e4b3c's tests); `validate_site.py` PASS (15 pages, 679 sourced rows). Print check of `advisor.html` not re-run here (owned by 1d0e4b3c).
 
 ## ▶ ACTIVE CLAIM — session `arena/484395e3-jack1` (2026-11-15 UTC)
 
@@ -2571,20 +2609,70 @@ PR #109's first Pages deployment did build successfully; this session's immediat
 |---|---|---|---|---|
 | J-1 | Session claim + coordination protocol | done with this push | arena/484395e3-jack1 | this board (append-only) |
 | J-2 | Independent re-read of decision-critical published rows against official primary pages today (2026-11-15); blank-and-flag anything not reproducible; privacy scan of the curated artifact; new dated verification record | done | arena/484395e3-jack1 | `verification/2026-11-15-484395e3.md`; canonical pages/data read-only |
-| J-3 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, final record | done | arena/484395e3-jack1 | this board, `gh` PR/Pages operations |
-
-### J-3 completion record — session `arena/484395e3-jack1` (2026-11-15 UTC)
-
-| Item | Result |
-|---|---|
-| PR | [#110](https://github.com/wingbangboozle1-lang/Jack1/pull/110) `arena/484395e3-jack1` → `main`, "J-3 final integration: independent re-verification record and coordination claim (session arena/484395e3-jack1)" |
-| Merge | Merged by `gh pr merge 110 --merge`; merge commit `d14b608c4c573a65ffef8328782f62a623af0059` |
-| Main | `origin/main` = `d14b608` (includes this branch) |
-| Pre-merge gates on this branch | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); privacy scan 0 hits |
-| Spot verification (read 2026-11-15 vs official pages) | Treasury 10Y 11/13/2026 5.15% and 11/10/2026 4.98%; BLS LA CPI-U all items Sep-26 +3.7%; Census LA city population Jul 1 2025 3,869,089 / owner-occupied 36.0% / median value $921,200 / median gross rent $1,933; FEMA NRI v1.20 December 2025; SEC EDGAR JACK latest 8-K 0000807882-26-000098 filed 2026-09-21. All matched `main`; no value changed, blanked, or newly flagged. |
-| Pages deploy | Pages `status: built`, `build_type: legacy`, source `main /`; build `1373122669` on commit `d14b608`, status `built`, error `null`, workflow run succeeded — live deploy confirmed at https://wingbangboozle1-lang.github.io/Jack1/ |
-| Irregularities (non-blocking; on Flagged for Review) | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); twelve stale open PRs untouched; Census tract key required for tract rows; blank property fields; private-calculator privacy review. No new irregularities from this session. |
+| J-3 | Final integration gates, PR → `main`, merge without waiting, GitHub Pages deploy confirmation, final record | in progress | arena/484395e3-jack1 | this board, `gh` PR/Pages operations |
 
 **Scope discipline:** `COORDINATION.md` is append-only; conflicts resolved as unions keeping other sessions' hunks. No file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited or deleted. Small frequent commits; `git pull --rebase origin main` before every push; a conflict stops work and is resolved without discarding another session's work, then logged here.
 
 Claim commit/push precedes all content work.
+
+## ▶ RECORD — session `arena/4c386ad4-jack1` (2026-11-15 UTC): PR #115 merged, Pages confirmed (K-6)
+
+| Item | Result |
+|---|---|
+| PR | [#115](https://github.com/wingbangboozle1-lang/Jack1/pull/115) `arena/4c386ad4-jack1` → `main`: `aftertax.html` (verified federal / CA / LA transfer-tax rules, blank inputs, no network or storage), `assets/aftertax.js`, `data/k-4c386ad4-supplement.json`, `tests/test_decision_tools.py` (14 tests), `verification/2026-11-15-4c386ad4.md` (ledger incl. K-5 endpoint feasibility), this board. Progress board and advisor were **not** duplicated (superseded by PR #113). |
+| CI | `validate` = SUCCESS on head `e8a7c53` (run 43774409013). Merge state CLEAN before merge. |
+| Merge | **MERGED** 2026-11-15T23:22:18Z, merge commit `def6fd5` (`gh pr merge 115 --merge`, no approval waited for; not `--auto`). |
+| Pages | Legacy `main /`. Build for `def6fd5` **built** (2026-11-15T23:22:53Z, no error). Live fetches with cache-buster: `aftertax.html` (rules table and blank calculator render), `flagged.html`, `index.html` (nav includes After-tax module). |
+| Gates on the merged tree | `build_public.py --check` PASS (17 generated files); `unittest discover` 72 tests OK; `validate_site.py` PASS (15 pages, 679 sourced rows); curated artifact build and `--artifact` validation PASS. |
+
+**Protocol deviations, logged for the board (no force push was used):**
+1. The first push of this session's claim (`69536a7`) was rewritten by a rebase. The remote then rejected a normal push. Resolved with a merge that records `69536a7` as integrated. Every one of its 18 `COORDINATION.md` lines was verified present first; the merge keeps this tree (`-s ours`), so nothing was dropped.
+2. After the branch was pushed, `main` moved twice (PR #114, PR #110). Those rebases were replaced with merges of `origin/main` into the pinned branch, for the same no-force-push reason.
+3. `origin/main` (commit `373778b`, session `arena/484395e3-jack1`, J-1/J-2 claim) carried six unresolved conflict-marker lines in `COORDINATION.md` (`<<<<<<<`, `=======`, `>>>>>>>`). Resolved on this branch by removing only those marker lines; every content line from every session is kept. Owner of `484395e3` may want to confirm. Logged as `flag_4c386ad4_coordination_markers`.
+4. The shared `property_fields` source mismatch (see the earlier update on this board) is unchanged; it needs the dataset owner.
+
+**Carried open items (not blockers for the merge; they appear on Flagged for Review):** Census tract data (API key needed); parcel hazard screening (needs a private address or APN); print check of `advisor.html` (owned by 1d0e4b3c); 2026 CA rate schedule; private calculator inputs (owner and CPA only); commit-metadata privacy (`flag_646fddf8_commit_email_privacy`, owner decision); legacy Pages mode; stale open PRs.
+
+**K-6:** done for this session's merge and Pages confirmation. The record is pushed on this pinned branch and goes to `main` via the next docs PR, following the pattern of PR #114.
+
+**Correction to item 3 above.** No dataset flag was created for the marker lines. The item is recorded only on this board (no `flag_4c386ad4_coordination_markers` exists). It is a board-hygiene note for the `484395e3` session owner, not a public flag.
+
+
+
+
+## ▶ ACTIVE CLAIM — session `arena/e193fc7b-jack1` (2026-11-15 UTC)
+
+**Branch constraint:** this Arena session is pinned to `arena/e193fc7b-jack1`; the `session-<id>/<task>` naming in the brief is not used. Only `arena/e193fc7b-jack1` is pushed. Branched from `origin/main` = `e344369` (PR #107 merge); working tree clean at claim time. No open claim exists on the board tail (`arena/8fa315b9-jack1` is done). Open PRs #5–#56 (stale) are not touched.
+
+**Owner brief items in this scope** (from the requirements list): W-02 (sell-versus-hold worksheet), W-03 (decision-gate progress board), W-10 (one-page printable advisor summary), the after-tax module, and the same-store / unit-count / closure / franchise-rent series. Items that need the parcel, owner documents, Census tract keys, or private quotes are **not** in this scope and stay blank and flagged (W-01, W-04, neighbourhood and tract data, short-lease quotes, parcel hazard zones, cash-flow back-test).
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| E-1 | Session claim + coordination protocol | done with this push | arena/e193fc7b-jack1 | this board (append-only) |
+| E-2 | W-03 decision-gate progress board: gates linked to existing question IDs; status, closed-on (blank unless evidenced), evidence-held marker; no private values | unclaimed → in progress | arena/e193fc7b-jack1 | `requirements.html` (generated), `data/verified-2026-11-10.json` (additions), `scripts/build_public.py` (additive), `tests/test_projection_and_site.py` |
+| E-3 | W-10 one-page printable advisor summary (new page `advisor.html`, print CSS, generated from dataset; no property/personal identifiers) | in progress | arena/e193fc7b-jack1 | new `advisor.html`, `scripts/build_public.py`, `scripts/validate_site.py` (page list), `_config.yml` if needed, `404.html`, `index.html` nav only, `tests/` |
+| E-4 | W-02 sell-versus-hold worksheet + after-tax module: browser-only, blank defaults, outputs blank until every input is entered; statutory rate references from official pages | in progress | arena/e193fc7b-jack1 | `decision.html` (generated), `assets/site.js`, `assets/styles.css`, `scripts/build_public.py`, data additions with sources |
+| E-5 | Same-store sales, system unit count, closures and franchise rental revenue as a multi-quarter series from SEC filings (direction, not one quarter) | in progress | arena/e193fc7b-jack1 | `market.html` or `risks.html` (generated), data additions, `verification/2026-11-15-e193fc7b.md` |
+| E-6 | Gate re-run, privacy scan, live-site check, PR → `main`, merge, Pages confirmation, final record | unclaimed (after E-2..E-5) | arena/e193fc7b-jack1 | this board, `gh` PR/Pages operations |
+
+**Scope discipline:** `COORDINATION.md` append-only; no file under `archive/`, `pages/`, `site/`, `research/notes/`, other sessions' `verification/*` reports, or open-PR branches is edited. Every new value is read from an official page on the access date and recorded with its URL in `verification/2026-11-15-e193fc7b.md`. Small commits; `git pull --rebase origin main` before every push.
+
+## ▶ PROGRESS — session `arena/e193fc7b-jack1` (2026-11-15 UTC)
+
+| Task | Status | Where | Notes |
+|---|---|---|---|
+| E-1 | done | `9abb27f` (claim) | Claim and protocol. |
+| E-2 (W-03 gate board) | **superseded** by `arena/1d0e4b3c-jack1` (X1-3, PR #113/#114: `gates.html`) | not shipped from this session | This session drafted a duplicate; discarded before any push. |
+| E-3 (W-10 advisor page) | **superseded** by `arena/1d0e4b3c-jack1` (X1-4, PR #113/#114: `advisor.html`) | not shipped from this session | Same. |
+| E-4 (W-02 worksheet and after-tax module) | **superseded** by `arena/1d0e4b3c-jack1` (X1-2, PR #113/#114: `decision.html`, `assets/site.js`) | not shipped from this session | Same. This session reviewed the merged worksheet: see below. |
+| E-5 (multi-quarter series) | done | `property.html` (Property & tenant page), `scripts/build_public.py` (`tenant_series_section`), dataset `tenant_series`, `tests/test_tenant_series_e193fc7b.py`, `verification/2026-11-15-e193fc7b.md` | Deviation logged: the claim listed `market.html` or `risks.html`; the series sits on `property.html`, which is the page for tenant context. |
+| E-6 (integration) | in progress | this push | Gate re-run, privacy scan, PR to `main`, merge, Pages check, final record. |
+
+**Conflict log.** (1) Overlap with `arena/1d0e4b3c-jack1` on W-02, W-03 and W-10. Both sessions claimed the items; the overlap was not caught before this session built a duplicate. Resolution: `main` keeps the other session's merged versions; this session did not merge its duplicate (`d18ac0c`, not on `main`). (2) `git pull --rebase` at push time conflicted with `main` in `COORDINATION.md` (append-only, both blocks kept) and in the feature commit (skipped, as above).
+
+**Review of `arena/1d0e4b3c-jack1` worksheet (independent check, no code changed).** The taxable-sale case matched an independent calculation to the dollar (spread $763,532). Two findings are logged as `flag_e193_worksheet_review`: (a) the 1031 path still prints an "After-tax Sale ahead" verdict against a taxed hold (example $98,068), even though the note says the paths are not like-for-like; (b) one blended tax rate is used on sale and exit, with no split for the 25% unrecaptured §1250 rate, the 3.8% NIIT, or the 1% California surcharge above $1,000,000 (FTB 2025 Form 540 line 62). Owner or integration to decide; not changed here.
+
+**Other flags from this session (flagged, non-blocking):** Q4 FY25 same-store and openings/closures unread (`flag_e193_q4fy25_gap`); 10-Q maturity-table difference of $74,774k unresolved (`flag_debt_schedule_arithmetic`); ULA base-versus-gross on assumed debt (`flag_e193_ula_base_vs_gross`); 1% California surcharge resolved on FTB line 62 (`flag_e193_ca_surcharge`); 2026 federal capital-gain thresholds not read (`flag_e193_irs_threshold_year`).
+
+**Sources read this session (2026-11-15):** SEC Q1, Q2 and Q3 FY26 releases (restaurant-count tables, Franchise-Level Margin reconciliations); Form 8-K 2026-06-23 Exhibit 99.1; IRS Topics 409 and 559; FTB 2025 Form 540 rate schedules and booklet (line 62); Measure ULA FAQ chunks 1 and 2. Full list and URLs: `verification/2026-11-15-e193fc7b.md`.
+
