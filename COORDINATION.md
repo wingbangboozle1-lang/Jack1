@@ -2699,8 +2699,8 @@ E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-
 
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
-| PRN-1 | W-10 one-page printable advisor summary, generated from existing public evidence; preserve privacy and blank/unverified status; integrate as a canonical page and test print/page/source/privacy gates | in progress | arena/2a163ce9-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `assets/style.css`, generated canonical pages, `README.md`, `COORDINATION.md`; no edits to other verification reports or historical files |
-| PRN-2 | Final build, source-link, privacy, test, artifact, PR, merge, and Pages verification record | reserved / not started | arena/2a163ce9-jack1 | `COORDINATION.md`, new `verification/2026-11-15-2a163ce9.md`, `gh` PR/Pages operations |
+| PRN-1 | W-10 one-page printable advisor summary, generated from existing public evidence; preserve privacy and blank/unverified status; integrate as a canonical page and test print/page/source/privacy gates | done (site build and local gates pass; print-page count separately flagged) | arena/2a163ce9-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `assets/styles.css`, `assets/site.js`, generated canonical pages, `README.md`, `COORDINATION.md`; no edits to other verification reports or historical files |
+| PRN-2 | Final build, source-link, privacy, test, artifact, PR, merge, and Pages verification record | in progress | arena/2a163ce9-jack1 | `COORDINATION.md`, new `verification/2026-11-15-2a163ce9.md`, `gh` PR/Pages operations |
 
 Claim commit/push precedes content work. Before each push, pull/rebase from `origin/main`; resolve board conflicts as append-only unions. Stale PRs remain unmodified. The summary is not a substitute for an advisor's review and will not select a sell/renew winner without verified private inputs.
 
@@ -2718,6 +2718,16 @@ The page uses a dedicated Letter portrait `@page` and compact print rules, but i
 
 | Task ID | Description | Status | Owning session | Files / scope (exclusive) |
 |---|---|---|---|---|
-| PRN-1B | Register that `advisor-summary.html` page count is unmeasured; expose the review/action on `flagged.html` and test its visibility | in progress | arena/2a163ce9-jack1 | `data/verified-2026-11-10.json`, generated `flagged.html`, `tests/test_projection_and_site.py`, `COORDINATION.md` |
+| PRN-1B | Register that `advisor-summary.html` page count is unmeasured; expose the review/action on `flagged.html` and test its visibility | done | arena/2a163ce9-jack1 | `data/verified-2026-11-10.json`, generated `flagged.html`, `tests/test_projection_and_site.py`, `COORDINATION.md` |
 
 **Fourth rebase note (2026-11-15 UTC):** the final claim-extension rebase conflict was confined to this append-only board. The current PRN-1 scope correction and integration notes are retained once, followed by the PRN-1B extension; all earlier upstream records remain intact.
+
+### PRN-1 / PRN-1B local completion — session `arena/2a163ce9-jack1` (2026-11-15 UTC)
+
+| Task | Status | Verification / outcome |
+|---|---|---|
+| PRN-1 | **done locally** | Added and wired the requested `advisor-summary.html`, print handler, Letter CSS, page/nav/index/404 links, W-10 cross-link, tests, and README documentation. Kept the merged `advisor.html` and other upstream pages. No new economic/property values or private information added. |
+| PRN-1B | **done locally** | Added `flag_2a163ce9_advisor_summary_print_fit` and a regression assertion that its item/action appear on `flagged.html`. |
+| PRN-2 | **in progress** | `build_public.py --check`: PASS (18 generated files); unit tests: 84 PASS; root validator: PASS (16 pages, 706 sourced rows); curated artifact: PASS (16 pages, 706 sourced rows); `node --check assets/site.js`: PASS; `git diff --check`: PASS before this report/board update. |
+
+**Print verification limitation:** the page specifies U.S. Letter portrait, but its actual PDF page count was not measured: Chrome/Chromium is unavailable and WeasyPrint lacks native Pango. This remains visibly flagged; do not claim a one-page rendering until checked in browser print preview. Full pre-PR record: `verification/2026-11-15-2a163ce9.md`. PR CI, merge, Pages build, and live-site check remain pending.
