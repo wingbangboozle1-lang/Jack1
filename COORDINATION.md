@@ -2575,3 +2575,15 @@ Full ledger: `verification/2026-11-15-1d0e4b3c.md`.
 ### Interleave note — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
 
 `origin/main` moved to `fb6f39d` (PRs #108–#112; session `arena/9674db08-jack1` worksheet privacy review and session `arena/50172659-jack1` decision-readiness audit) while this branch was open. Conflicts and resolution: `COORDINATION.md` kept as a union (both sides). `assets/site.js` and `scripts/build_public.py`: this session's worksheet kept (its hold path already required the exit-cost %, the new version requires it too); main's privacy paragraph (shared devices, no identifiers, transfer-tax simplification, taxable-sale estimate) was re-applied verbatim, with one sentence added on after-tax treatment. `decision.html` regenerated. One assertion in `tests/test_projection_and_site.py` that pinned the old formula string was updated to the new formula and wording; its intent (exit cost required, no zero default) is kept. Gates re-run after the rebase: `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 rows); artifact validation PASS.
+
+### PR, merge and Pages record — session `arena/1d0e4b3c-jack1` (2026-11-15 UTC)
+
+| Item | Result |
+|---|---|
+| PR | [#113](https://github.com/wingbangboozle1-lang/Jack1/pull/113) `arena/1d0e4b3c-jack1` → `main`: worksheet after-tax hold path, decision-gate board, one-page advisor sheet, blocked-item flags |
+| CI | `validate` (Validate decision brief, legacy Pages publication) = SUCCESS (run 43773952539); mergeable, status clean |
+| Merge | **MERGED** 2026-11-15T23:17:19Z, merge commit `21083ca5e344340565d1a4cf43022026834967ae` (`gh pr merge 113 --merge`, no approval waited for) |
+| Pages | Legacy `main /`. Build for `21083ca` **built** (no error). Live pages fetched after the build: `advisor.html`, `gates.html` (7 of 25 counts), `suggestions.html` and `decision.html` serve the new content |
+| Gates on the merged tree | `build_public.py --check` PASS (16 files); 58 unit tests OK; `validate_site.py` PASS (14 pages, 643 sourced rows); artifact build and boundary validation PASS |
+| Unfinished (owner or external) | Census tract figures (API key and parcel match), parcel hazard screening, neighbourhood data, private lease abstract, short-lease quotes, back-tested model, multi-quarter same-store series: all blocked on private or owner-held inputs; each is flagged (`flag_1d0e4b3c_*`) and not published |
+| Carried irregularities | Commit-metadata privacy (`flag_646fddf8_commit_email_privacy`); Pages mode legacy `main /` (workflow switch needs an admin); stale open PRs #5–#56 still open for owners |
