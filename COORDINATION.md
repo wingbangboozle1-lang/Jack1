@@ -2691,3 +2691,19 @@ Claim commit/push precedes all content work.
 | Out of scope (blocked on owner or private inputs) | W-01, W-04, neighbourhood and tract data (Census API key), short-lease quotes, parcel hazard zones, cash-flow back-test |
 
 E-6 is complete. Session `arena/e193fc7b-jack1` releases its claim on E-5 and E-6 with this record.
+## ▶ ACTIVE CLAIM — session `arena/2a163ce9-jack1` (2026-11-15 UTC)
+
+**Pinned branch:** `arena/2a163ce9-jack1`, branched from `6d1498ca47ac7a421251abb43993b211fe2ad33c`. Arena requires this session to stay on the pinned branch; no session-named branch is created. Before claiming, read the full board and refreshed `origin/main` through PR #108 (`b9480a7`). The most recent claims (#107 and #108) are complete and limited to verification records; no active content claim appears at the board tail. The twelve stale PRs already logged by prior sessions remain untouched.
+
+**Claim scope:** close the explicitly requested W-10 deliverable by adding a privacy-safe, one-page, print-styled advisor summary generated from the existing verified public dataset. Do not add owner, parcel, lease, or personal-finance identifiers; do not add new economic values or imply a new source verification. The page will state the conditional decision rule, known evidence, decision-critical unknowns, next gates, and source links. As final integration, update the canonical navigation, validator, tests, and W-10 implementation status only after confirming all prior claims are done.
+
+| Task ID | Description | Status | Owning session | Files / scope (exclusive) |
+|---|---|---|---|---|
+| PRN-1 | W-10 one-page printable advisor summary, generated from existing public evidence; preserve privacy and blank/unverified status; integrate as a canonical page and test print/page/source/privacy gates | in progress | arena/2a163ce9-jack1 | `scripts/build_public.py`, `scripts/validate_site.py`, `tests/test_projection_and_site.py`, `assets/style.css`, generated canonical pages, `README.md`, `COORDINATION.md`; no edits to other verification reports or historical files |
+| PRN-2 | Final build, source-link, privacy, test, artifact, PR, merge, and Pages verification record | reserved / not started | arena/2a163ce9-jack1 | `COORDINATION.md`, new `verification/2026-11-15-2a163ce9.md`, `gh` PR/Pages operations |
+
+Claim commit/push precedes content work. Before each push, pull/rebase from `origin/main`; resolve board conflicts as append-only unions. Stale PRs remain unmodified. The summary is not a substitute for an advisor's review and will not select a sell/renew winner without verified private inputs.
+
+**Rebase/interleave note (2026-11-15 UTC):** `origin/main` advanced from `b9480a7` to `34bd742` through PRs #109–#114, including PR #113's separate printable advisor page (`advisor.html`) and decision-gate board (`gates.html`). This task retains the explicitly requested `advisor-summary.html` deliverable while preserving those merged pages and their content; the W-10 cross-link will point to the requested path. The first rebase conflict is an append-only `COORDINATION.md` overlap; the resolution keeps both the upstream records and this claim. PRN-1 remains in progress pending integration and final verification.
+
+**Second rebase note (2026-11-15 UTC):** `origin/main` advanced from `34bd742` to `7987164` while this branch was being prepared, including PR #115 and later integrations. The `COORDINATION.md` conflict was resolved as an append-only union: all upstream task/merge records and this session's claim are retained. No other files are part of this claim-commit conflict.
